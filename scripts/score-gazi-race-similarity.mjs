@@ -16,7 +16,7 @@ const runSqlite = (args) => {
   return result.stdout;
 };
 
-const distanceScore = (distanceM) => {
+export const distanceScore = (distanceM) => {
   const distance = Number(distanceM);
   if (!Number.isFinite(distance)) return 0;
   if (distance === 2400) return 35;
@@ -27,24 +27,24 @@ const distanceScore = (distanceM) => {
   return Math.max(0, 12 - Math.round(Math.abs(distance - 2400) / 100));
 };
 
-const surfaceScore = (surface) => {
+export const surfaceScore = (surface) => {
   if (surface === "Çim") return 25;
   if (surface === "Sentetik") return 8;
   return 0;
 };
 
-const breedScore = (breed) => {
+export const breedScore = (breed) => {
   return breed === "İngiliz" ? 20 : 0;
 };
 
-const ageScore = (ageCondition) => {
+export const ageScore = (ageCondition) => {
   const text = String(ageCondition ?? "").toLocaleLowerCase("tr-TR");
   if (text.includes("3 yaşlı") && text.includes("ingiliz")) return 15;
   if (text.includes("3 ve yukarı") && text.includes("ingiliz")) return 5;
   return 0;
 };
 
-const classScore = (raceClass) => {
+export const classScore = (raceClass) => {
   const text = String(raceClass ?? "").toLocaleUpperCase("tr-TR");
   if (/\bG\s*1\b/.test(text)) return 5;
   if (/\bG\s*2\b/.test(text)) return 4;
@@ -54,11 +54,11 @@ const classScore = (raceClass) => {
   return 0;
 };
 
-const normalizeName = (value) => {
+export const normalizeName = (value) => {
   return String(value ?? "").toLocaleUpperCase("tr-TR");
 };
 
-const classifyNamedPrep = (name) => {
+export const classifyNamedPrep = (name) => {
   const normalized = normalizeName(name);
   if (!normalized) return null;
   if (normalized === "GAZİ") return "target-race";
@@ -70,7 +70,7 @@ const classifyNamedPrep = (name) => {
   return null;
 };
 
-const scoreRace = (race) => {
+export const scoreRace = (race) => {
   const factors = {
     distance: distanceScore(race.distance_m),
     surface: surfaceScore(race.surface),
@@ -86,7 +86,7 @@ const scoreRace = (race) => {
   };
 };
 
-const classifySignalTier = (race) => {
+export const classifySignalTier = (race) => {
   const namedPrep = classifyNamedPrep(race.name);
   if (namedPrep) return namedPrep;
 
@@ -101,7 +101,7 @@ const classifySignalTier = (race) => {
   return "weak-context";
 };
 
-const buildExplanation = (race) => {
+export const buildExplanation = (race) => {
   const notes = [];
   if (race.factors.distance >= 30) notes.push("Gazi mesafesine çok yakın");
   else if (race.factors.distance >= 20) notes.push("orta-uzun mesafe sinyali");
@@ -116,7 +116,7 @@ const buildExplanation = (race) => {
   return notes.join(", ");
 };
 
-const readRaces = (dbPath, year) => {
+export const readRaces = (dbPath, year) => {
   const yearFilter = year ? `WHERE strftime('%Y', date) = '${year.replace(/'/g, "''")}'` : "";
   const sql = `
     SELECT json_group_array(json_object(
@@ -177,4 +177,6 @@ const main = async () => {
   console.log(json);
 };
 
-main();
+if (process.argv[1]?.endsWith("score-gazi-race-similarity.mjs")) {
+  main();
+}

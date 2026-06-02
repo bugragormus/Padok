@@ -7,6 +7,7 @@ const signalLabels = {
 
 const state = {
   data: null,
+  routeReport: null,
   query: "",
   year: "all"
 };
@@ -68,6 +69,49 @@ const renderRaces = (races) => {
         </div>
         <div class="tag-row">
           ${race.signals.map((signal) => `<span class="tag">${signal}</span>`).join("")}
+        </div>
+      </article>
+    `)
+    .join("");
+};
+
+const tierLabels = {
+  "target-race": "Hedef",
+  "core-prep": "Ana prova",
+  "classic-speed": "Klasik hiz",
+  "stamina-proxy": "Mesafe sinyali",
+  "surface-breed": "Pist/irk",
+  "weak-context": "Baglam"
+};
+
+const formatDate = (value) => {
+  if (!value) return "Tarih yok";
+  const [year, month, day] = value.split("-");
+  return `${day}.${month}.${year}`;
+};
+
+const renderRouteReport = (report) => {
+  document.querySelector("#race-grid").innerHTML = report.routeRaces
+    .map((race) => `
+      <article class="race-card race-card--route">
+        <div class="race-card__top">
+          <div>
+            <p class="card-date">${formatDate(race.date)} · ${formatText(race.venue)}</p>
+            <h3>${race.name}</h3>
+            <p class="muted">${race.explanation}</p>
+          </div>
+          <span class="pill">${tierLabels[race.signalTier] ?? race.signalTier}</span>
+        </div>
+        <div class="race-facts">
+          <div class="fact"><span>Mesafe</span><strong>${race.distance_m}m</strong></div>
+          <div class="fact"><span>Pist</span><strong>${race.surface}</strong></div>
+          <div class="fact"><span>Sinif</span><strong>${formatText(race.race_class)}</strong></div>
+          <div class="fact"><span>Skor</span><strong>${race.similarityScore}</strong></div>
+        </div>
+        <div class="winner-line">
+          <span>Kazanan</span>
+          <strong>${formatText(race.winner_name)}</strong>
+          ${race.jockey_name ? `<em>${race.jockey_name}</em>` : ""}
         </div>
       </article>
     `)
@@ -141,11 +185,23 @@ const bindEvents = () => {
 };
 
 const init = async () => {
-  const response = await fetch("./data/gazi-knowledge-base.json");
-  state.data = await response.json();
+  const [knowledgeResponse, routeResponse] = await Promise.all([
+    fetch("./data/gazi-knowledge-base.json"),
+    fetch("./data/gazi-route-report.json").catch(() => null)
+  ]);
+
+  state.data = await knowledgeResponse.json();
+
+  if (routeResponse?.ok) {
+    state.routeReport = await routeResponse.json();
+  }
 
   renderTarget(state.data.targetRace);
-  renderRaces(state.data.prepRaces);
+  if (state.routeReport?.routeRaces?.length) {
+    renderRouteReport(state.routeReport);
+  } else {
+    renderRaces(state.data.prepRaces);
+  }
   renderYears(state.data.horses);
   renderCandidates();
   bindEvents();

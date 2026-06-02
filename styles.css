@@ -241,6 +241,10 @@ h2 {
   gap: 14px;
 }
 
+.race-card--route {
+  align-content: start;
+}
+
 .race-card__top,
 .candidate-card__top {
   display: flex;
@@ -298,6 +302,31 @@ h2 {
   padding: 5px 8px;
   font-size: 0.75rem;
   font-weight: 800;
+}
+
+.card-date {
+  margin-bottom: 7px;
+  color: var(--green);
+  font-size: 0.78rem;
+  font-weight: 900;
+}
+
+.winner-line {
+  display: grid;
+  gap: 3px;
+  border-top: 1px solid var(--line);
+  padding-top: 12px;
+}
+
+.winner-line span,
+.winner-line em {
+  color: var(--muted);
+  font-size: 0.78rem;
+  font-style: normal;
+}
+
+.winner-line strong {
+  font-size: 1rem;
 }
 
 .toolbar {

@@ -5,6 +5,7 @@
     "fetch:tjk-named-races": "node scripts/fetch-tjk-named-races.mjs",
     "import:tjk-race-index": "node scripts/import-tjk-race-index.mjs",
     "import:tjk-named-races": "node scripts/import-tjk-named-races.mjs",
+    "export:gazi-route": "node scripts/export-gazi-route-report.mjs",
     "score:gazi-race-similarity": "node scripts/score-gazi-race-similarity.mjs"
   },
   "devDependencies": {}
