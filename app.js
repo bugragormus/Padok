@@ -13,6 +13,11 @@ const state = {
 };
 
 const formatText = (value) => value ?? "Bekleniyor";
+const escapeHtml = (value) => String(value ?? "")
+  .replace(/&/g, "&amp;")
+  .replace(/</g, "&lt;")
+  .replace(/>/g, "&gt;")
+  .replace(/"/g, "&quot;");
 
 const computeScore = (signals, weights) => {
   const weighted = Object.entries(weights).reduce((sum, [key, weight]) => {
@@ -90,6 +95,28 @@ const formatDate = (value) => {
   return `${day}.${month}.${year}`;
 };
 
+const renderRaceEntries = (entries = []) => {
+  if (!entries.length) return "";
+
+  return `
+    <div class="race-entries" aria-label="Koşu sonuçları">
+      ${entries.map((entry) => `
+        <div class="race-entry">
+          <span class="race-entry__position">${escapeHtml(entry.finish_position)}</span>
+          <div class="race-entry__horse">
+            <strong>${escapeHtml(entry.horse_name)}</strong>
+            <span>${escapeHtml(entry.jockey_name)}</span>
+          </div>
+          <div class="race-entry__result">
+            <strong>${escapeHtml(entry.finish_time)}</strong>
+            <span>HP ${formatText(entry.handicap_point)}</span>
+          </div>
+        </div>
+      `).join("")}
+    </div>
+  `;
+};
+
 const renderRouteReport = (report) => {
   document.querySelector("#race-grid").innerHTML = report.routeRaces
     .map((race) => `
@@ -113,6 +140,7 @@ const renderRouteReport = (report) => {
           <strong>${formatText(race.winner_name)}</strong>
           ${race.jockey_name ? `<em>${race.jockey_name}</em>` : ""}
         </div>
+        ${renderRaceEntries(race.entries)}
       </article>
     `)
     .join("");

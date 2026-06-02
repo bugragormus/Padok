@@ -32,11 +32,39 @@ const readRouteRaces = (dbPath, year) => {
       'sex_condition', r.sex_condition,
       'distance_m', COALESCE(r.distance_m, irr.distance_m),
       'surface', COALESCE(r.surface, irr.surface),
-      'winner_time', COALESCE(r.winner_time, irr.winner_time),
-      'winner_name', irr.winner_name,
-      'jockey_name', irr.jockey_name,
-      'owner_name', irr.owner_name
-    ))
+	      'winner_time', COALESCE(r.winner_time, irr.winner_time),
+	      'winner_name', irr.winner_name,
+	      'jockey_name', irr.jockey_name,
+	      'owner_name', irr.owner_name,
+	      'entries', json(COALESCE((
+	        SELECT json_group_array(json_object(
+	          'finish_position', ordered_entries.finish_position,
+	          'horse_name', ordered_entries.horse_name,
+	          'jockey_name', ordered_entries.jockey_name,
+	          'weight', ordered_entries.weight,
+	          'finish_time', ordered_entries.finish_time,
+	          'margin', ordered_entries.margin,
+	          'handicap_point', ordered_entries.handicap_point,
+	          'starting_price', ordered_entries.starting_price
+	        ))
+	        FROM (
+	          SELECT
+	            re.finish_position,
+	            h.canonical_name AS horse_name,
+	            j.canonical_name AS jockey_name,
+	            re.weight,
+	            re.finish_time,
+	            re.margin,
+	            re.handicap_point,
+	            re.starting_price
+	          FROM race_entries re
+	          JOIN horses h ON h.id = re.horse_id
+	          LEFT JOIN jockeys j ON j.id = re.jockey_id
+	          WHERE re.race_id = r.id
+	          ORDER BY re.finish_position
+	        ) ordered_entries
+	      ), '[]'))
+	    ))
     FROM important_race_results irr
     LEFT JOIN races r ON r.source_race_id = irr.source_race_id
     WHERE irr.race_year = ${Number.parseInt(year, 10)}

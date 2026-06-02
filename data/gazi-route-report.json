@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-06-02T22:57:59.502Z",
+  "generatedAt": "2026-06-02T23:09:21.239Z",
   "dbPath": "data/padok.sqlite",
   "year": 2025,
   "routeRaces": [
@@ -20,6 +20,7 @@
       "winner_name": "TONBİ",
       "jockey_name": "S.KAYA",
       "owner_name": "ŞEVKİ BALCI",
+      "entries": [],
       "factors": {
         "distance": 11,
         "surface": 25,
@@ -48,6 +49,7 @@
       "winner_name": "AMAZING TOUCH",
       "jockey_name": "G.KOCAKAYA",
       "owner_name": "KEMAL KURT",
+      "entries": [],
       "factors": {
         "distance": 11,
         "surface": 25,
@@ -76,6 +78,108 @@
       "winner_name": "SPECIAL MAN",
       "jockey_name": "V.ABİŞ",
       "owner_name": "MELİH TEMEL",
+      "entries": [
+        {
+          "finish_position": 1,
+          "horse_name": "SPECIAL MAN",
+          "jockey_name": "VEDAT ABİŞ",
+          "weight": 58,
+          "finish_time": "2.15.08",
+          "margin": "Burun",
+          "handicap_point": 91,
+          "starting_price": "3,10"
+        },
+        {
+          "finish_position": 2,
+          "horse_name": "ZAMBUR AGA",
+          "jockey_name": "GÖKHAN KOCAKAYA",
+          "weight": 58,
+          "finish_time": "2.15.09",
+          "margin": "1,5 Boy",
+          "handicap_point": 88,
+          "starting_price": "2,55"
+        },
+        {
+          "finish_position": 3,
+          "horse_name": "GRANDE FLUSSO",
+          "jockey_name": "MÜSLÜM ÇELİK",
+          "weight": 58,
+          "finish_time": "2.15.30",
+          "margin": "1,5 Boy",
+          "handicap_point": 85,
+          "starting_price": "29,45"
+        },
+        {
+          "finish_position": 4,
+          "horse_name": "TULUMAR",
+          "jockey_name": "ÖZCAN YILDIRIM",
+          "weight": 58,
+          "finish_time": "2.15.52",
+          "margin": "1 Boy",
+          "handicap_point": 100,
+          "starting_price": "3,55"
+        },
+        {
+          "finish_position": 5,
+          "horse_name": "BELGRATHAN",
+          "jockey_name": "SELİM KAYA",
+          "weight": 58,
+          "finish_time": "2.15.68",
+          "margin": null,
+          "handicap_point": 82,
+          "starting_price": "7,20"
+        },
+        {
+          "finish_position": 6,
+          "horse_name": "SEDAT",
+          "jockey_name": "ERCAN ÇANKAYA",
+          "weight": 58,
+          "finish_time": "2.15.70",
+          "margin": null,
+          "handicap_point": 77,
+          "starting_price": "35,35"
+        },
+        {
+          "finish_position": 7,
+          "horse_name": "BROARTS",
+          "jockey_name": "AHMET ÇELİK",
+          "weight": 58,
+          "finish_time": "2.16.15",
+          "margin": null,
+          "handicap_point": 80,
+          "starting_price": "13,30"
+        },
+        {
+          "finish_position": 8,
+          "horse_name": "SOULFUL BOY",
+          "jockey_name": "SADETTİN BOYRAZ",
+          "weight": 58,
+          "finish_time": "2.16.32",
+          "margin": null,
+          "handicap_point": 69,
+          "starting_price": "26,55"
+        },
+        {
+          "finish_position": 9,
+          "horse_name": "I HAVE A DREAM",
+          "jockey_name": "MEHMET AKYAVUZ",
+          "weight": 58,
+          "finish_time": "2.21.98",
+          "margin": null,
+          "handicap_point": 82,
+          "starting_price": "62,25"
+        },
+        {
+          "finish_position": 10,
+          "horse_name": "EL VERDUGO",
+          "jockey_name": "MEHMET SALİH ÇELİK",
+          "weight": 58,
+          "finish_time": "2.23.97",
+          "margin": null,
+          "handicap_point": 74,
+          "starting_price": "52,30"
+        }
+      ],
       "factors": {
         "distance": 30,
         "surface": 25,
@@ -104,6 +208,7 @@
       "winner_name": "HANDSOME KING",
       "jockey_name": "H.ÇİZİK",
       "owner_name": "ASUMAN YENİCE",
+      "entries": [],
       "factors": {
         "distance": 30,
         "surface": 25,
@@ -132,6 +237,7 @@
       "winner_name": "BOON NAM",
       "jockey_name": "E.YAVUZ",
       "owner_name": "ARMAĞAN ARAZ",
+      "entries": [],
       "factors": {
         "distance": 30,
         "surface": 25,
@@ -160,6 +266,7 @@
       "winner_name": "CUTHA",
       "jockey_name": "A.ÇELİK",
       "owner_name": "HULUSİ ÇİL",
+      "entries": [],
       "factors": {
         "distance": 35,
         "surface": 25,

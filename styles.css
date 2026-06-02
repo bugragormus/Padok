@@ -329,6 +329,68 @@ h2 {
   font-size: 1rem;
 }
 
+.race-entries {
+  display: grid;
+  gap: 7px;
+  border-top: 1px solid var(--line);
+  padding-top: 12px;
+}
+
+.race-entry {
+  display: grid;
+  grid-template-columns: 26px minmax(0, 1fr) auto;
+  gap: 10px;
+  align-items: center;
+  min-height: 42px;
+  padding: 8px;
+  border: 1px solid #edf0ea;
+  border-radius: 8px;
+  background: #fbfcfa;
+}
+
+.race-entry__position {
+  display: inline-grid;
+  place-items: center;
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  background: #edf4ef;
+  color: var(--green-2);
+  font-size: 0.78rem;
+  font-weight: 900;
+}
+
+.race-entry__horse,
+.race-entry__result {
+  display: grid;
+  gap: 2px;
+  min-width: 0;
+}
+
+.race-entry__horse strong,
+.race-entry__horse span,
+.race-entry__result strong,
+.race-entry__result span {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.race-entry__horse strong,
+.race-entry__result strong {
+  font-size: 0.86rem;
+}
+
+.race-entry__horse span,
+.race-entry__result span {
+  color: var(--muted);
+  font-size: 0.74rem;
+}
+
+.race-entry__result {
+  text-align: right;
+}
+
 .toolbar {
   display: flex;
   gap: 12px;
