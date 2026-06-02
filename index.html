@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="tr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Padok | Gazi Kosusu Analiz</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <header class="hero">
+      <img class="hero__image" src="./assets/race-analytics-hero.png" alt="Cim pistte yaris ve analiz atmosferi" />
+      <div class="hero__shade"></div>
+      <nav class="topbar" aria-label="Ana navigasyon">
+        <a class="brand" href="./index.html">Padok</a>
+        <div class="topbar__links">
+          <a href="#races">Kosular</a>
+          <a href="#candidates">Adaylar</a>
+          <a href="#method">Metod</a>
+        </div>
+      </nav>
+      <section class="hero__content">
+        <p class="eyebrow">Gazi Kosusu odakli yaris analizi</p>
+        <h1>Veriyi tek ekranda topla, sezgiyi daha iyi kalibre et.</h1>
+        <p class="hero__copy">
+          Gazi'ye giden yoldaki prep kosularini, mesafe-pist uyumunu ve at bazli form sinyallerini yan yana koyan karar destek panosu.
+        </p>
+        <div class="hero__actions">
+          <a class="button button--primary" href="#candidates">Adaylari incele</a>
+          <a class="button button--ghost" href="./docs/research-plan.md">Arastirma planı</a>
+        </div>
+      </section>
+    </header>
+
+    <main>
+      <section class="overview" aria-label="Gazi Kosusu hedef profili">
+        <div>
+          <p class="section-kicker">Hedef profil</p>
+          <h2 id="target-title">Gazi Kosusu</h2>
+          <p id="target-summary" class="muted"></p>
+        </div>
+        <dl class="metric-strip" id="target-metrics"></dl>
+      </section>
+
+      <section class="layout" id="races">
+        <div class="section-heading">
+          <p class="section-kicker">Kosu haritasi</p>
+          <h2>Gazi'ye benzeyen sinyalleri ayir.</h2>
+          <p class="muted">
+            Bir kosunun Gazi icin degeri, sadece kazanandan gelmez. Mesafe, pist, yas, irk, sehir ve yaris sinifi birlikte okunmali.
+          </p>
+        </div>
+        <div class="race-grid" id="race-grid"></div>
+      </section>
+
+      <section class="workspace" id="candidates">
+        <div class="section-heading">
+          <p class="section-kicker">Aday panosu</p>
+          <h2>Ilk skor, tartisma icin bir pusula.</h2>
+          <p class="muted">
+            Bu skor elle girilmis baslangic sinyallerinden uretiliyor. Canli veri eklendiginde ayni mantik otomatik hesaplanacak.
+          </p>
+        </div>
+
+        <div class="toolbar" aria-label="Aday filtreleri">
+          <label class="search">
+            <span>At ara</span>
+            <input id="horse-search" type="search" placeholder="Cutha, Special Man..." />
+          </label>
+          <label class="select">
+            <span>Yil</span>
+            <select id="year-filter"></select>
+          </label>
+        </div>
+
+        <div class="candidate-grid" id="candidate-grid"></div>
+      </section>
+
+      <section class="method" id="method">
+        <div class="section-heading">
+          <p class="section-kicker">Ogrenme notu</p>
+          <h2>Bu projede once model degil, veri guvenilirligi kazanir.</h2>
+        </div>
+        <div class="method-grid">
+          <article>
+            <h3>1. Normalize et</h3>
+            <p>Dereceyi saniyeye, pist ve mesafeyi standart kategoriye, kosu adlarini canonical isimlere cevir.</p>
+          </article>
+          <article>
+            <h3>2. Karsilastir</h3>
+            <p>Her kosuyu Gazi profiline uzaklik/yakinlik acisindan puanla; 1600m hiz sinyali ile 2200m stamina sinyalini ayri oku.</p>
+          </article>
+          <article>
+            <h3>3. Backtest yap</h3>
+            <p>Gecmis yillarda prep kosusu skorlarinin Gazi ilk 3 sonucu ile ne kadar ortustugunu test et.</p>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <span>Padok MVP</span>
+      <span>Bahis onerisi degildir; analiz ve ogrenme amaclidir.</span>
+    </footer>
+
+    <script src="./app.js" type="module"></script>
+  </body>
+</html>

@@ -1,0 +1,234 @@
+{
+  "meta": {
+    "updatedAt": "2026-06-03",
+    "disclaimer": "Bu veri seti ilk MVP icin elle derlenmis ve gelistirmeye acik bir baslangic bilgisidir. Canli tahmin veya bahis onerisi degildir.",
+    "sources": [
+      {
+        "name": "TJK Kosu Sorgulama",
+        "url": "https://www.tjk.org/TR/YarisSever/Query/DataRows/KosuSorgulama",
+        "note": "Tarih, sehir, kosu sirasi, kosu grubu, kosu cinsi, mesafe, pist, kazanan, derece ve handikap puani alanlari icin ana kaynak."
+      },
+      {
+        "name": "TJK Gunluk Yaris Sonuclari",
+        "url": "https://www.tjk.org/TR/YarisSever/Info/Page/GunlukYarisSonuclari",
+        "note": "At bazli sonuc detaylari icin kullanilacak ana sayfa."
+      },
+      {
+        "name": "TJK 07.06.2025 Ankara Gunluk Program PDF",
+        "url": "https://medya-cdn.tjk.org/raporftp/TJKPDF/2025/2025-06-07/PDF/GunlukYarisProgrami/07.06.2025-Ankara-GunlukYarisProgrami-TR.pdf",
+        "note": "2025 Mehmet Akif Ersoy Kosusu program kosullari icin ornek PDF."
+      }
+    ]
+  },
+  "targetRace": {
+    "name": "Gazi Kosusu",
+    "editionFocus": "2026",
+    "canonicalProfile": {
+      "age": "3 yasli",
+      "breed": "Ingiliz",
+      "surface": "Cim",
+      "distanceMeters": 2400,
+      "venue": "Istanbul Veliefendi",
+      "importance": "Turk yarisciliginin derbisi; sadece belirli jenerasyondaki 3 yasli Ingiliz taylari icin zirve hedef."
+    },
+    "analysisGoal": "Gazi'ye benzer kosulardan gelen performans sinyallerini birlestirerek adaylari insan tarafindan okunabilir sekilde siralamak."
+  },
+  "prepRaces": [
+    {
+      "name": "Mehmet Akif Ersoy Kosusu",
+      "aliases": ["MAE"],
+      "typicalProfile": {
+        "age": "3 yasli",
+        "breed": "Ingiliz",
+        "surface": "Cim",
+        "distanceMeters": 2200,
+        "venue": "Ankara",
+        "class": "G2"
+      },
+      "whyItMatters": "Gazi'ye yakin mesafe, cim pist ve 3 yasli Ingiliz kosulu nedeniyle dayanıklilik ve kalite sinyali verir.",
+      "signals": ["stamina", "late pace", "group class", "travel resilience"],
+      "confidence": "high"
+    },
+    {
+      "name": "Sait Akson Kosusu",
+      "aliases": ["Sait Aksoy", "SAK"],
+      "typicalProfile": {
+        "age": "3 yasli",
+        "breed": "Ingiliz",
+        "surface": "Cim",
+        "distanceMeters": 2200,
+        "venue": "Istanbul Veliefendi",
+        "class": "G2",
+        "sexCondition": "Erkek"
+      },
+      "whyItMatters": "Veliefendi ciminde uzun mesafeye yakin bir prova oldugu icin pist uyumu ve Gazi temposuna adaptasyonu gosterir.",
+      "signals": ["course fit", "stamina", "field strength"],
+      "confidence": "high"
+    },
+    {
+      "name": "Kisrak Kosusu",
+      "aliases": ["Kısrak Koşusu"],
+      "typicalProfile": {
+        "age": "3 yasli",
+        "breed": "Ingiliz",
+        "surface": "Cim",
+        "distanceMeters": 2100,
+        "venue": "Istanbul Veliefendi",
+        "sexCondition": "Disi"
+      },
+      "whyItMatters": "Disi taylar icin Gazi oncesi kalite ve mesafe yatkinligi sinyali verir.",
+      "signals": ["filly class", "course fit", "stamina"],
+      "confidence": "medium"
+    },
+    {
+      "name": "Erkek Tay Deneme",
+      "aliases": ["2000 Guineas Turkey"],
+      "typicalProfile": {
+        "age": "3 yasli",
+        "breed": "Ingiliz",
+        "surface": "Cim",
+        "distanceMeters": 1600,
+        "venue": "Istanbul Veliefendi",
+        "sexCondition": "Erkek"
+      },
+      "whyItMatters": "Hiz ve sinif sinyali verir; tek basina Gazi mesafesi icin yeterli degildir ama kalite filtresi olarak gucludur.",
+      "signals": ["speed", "class", "course fit"],
+      "confidence": "medium"
+    },
+    {
+      "name": "Disi Tay Deneme",
+      "aliases": ["1000 Guineas Turkey"],
+      "typicalProfile": {
+        "age": "3 yasli",
+        "breed": "Ingiliz",
+        "surface": "Cim",
+        "distanceMeters": 1600,
+        "venue": "Istanbul Veliefendi",
+        "sexCondition": "Disi"
+      },
+      "whyItMatters": "Disi taylarda sinif ve hiz sinyali verir; Gazi icin mesafe uzatma kabiliyeti ayrica kontrol edilmelidir.",
+      "signals": ["speed", "filly class", "course fit"],
+      "confidence": "medium"
+    }
+  ],
+  "horses": [
+    {
+      "name": "Cutha",
+      "year": 2025,
+      "profile": {
+        "sex": "Erkek",
+        "breed": "Ingiliz",
+        "age": 3
+      },
+      "observations": [
+        {
+          "race": "Gazi Kosusu",
+          "date": "2025-06-29",
+          "position": 1,
+          "distanceMeters": 2400,
+          "surface": "Cim",
+          "jockey": "Ahmet Celik",
+          "note": "2025 Gazi galibi; MVP'de hedef degiskenin ornek etiketi olarak tutuluyor."
+        }
+      ],
+      "manualSignals": {
+        "classSignal": 96,
+        "staminaSignal": 94,
+        "courseSignal": 92,
+        "recencySignal": 89
+      }
+    },
+    {
+      "name": "Handsome King",
+      "year": 2025,
+      "profile": {
+        "sex": "Erkek",
+        "breed": "Ingiliz",
+        "age": 3
+      },
+      "observations": [
+        {
+          "race": "Gazi Kosusu",
+          "date": "2025-06-29",
+          "position": 2,
+          "distanceMeters": 2400,
+          "surface": "Cim",
+          "jockey": "Hisman Cizik",
+          "note": "2025 Gazi ikincisi; final performans referansi."
+        }
+      ],
+      "manualSignals": {
+        "classSignal": 92,
+        "staminaSignal": 91,
+        "courseSignal": 88,
+        "recencySignal": 86
+      }
+    },
+    {
+      "name": "Special Man",
+      "year": 2025,
+      "profile": {
+        "sex": "Erkek",
+        "breed": "Ingiliz",
+        "age": 3
+      },
+      "observations": [
+        {
+          "race": "Mehmet Akif Ersoy Kosusu",
+          "date": "2025-06-07",
+          "position": 1,
+          "distanceMeters": 2200,
+          "surface": "Cim",
+          "finishTime": "2.15.08",
+          "note": "Gazi oncesi kritik 2200m cim prova galibi."
+        },
+        {
+          "race": "Gazi Kosusu",
+          "date": "2025-06-29",
+          "position": 3,
+          "distanceMeters": 2400,
+          "surface": "Cim",
+          "note": "Prep kosusu galibiyetinin Gazi performansina tasindigi pozitif orneklerden biri."
+        }
+      ],
+      "manualSignals": {
+        "classSignal": 93,
+        "staminaSignal": 95,
+        "courseSignal": 84,
+        "recencySignal": 92
+      }
+    },
+    {
+      "name": "2026 Aday Havuzu",
+      "year": 2026,
+      "profile": {
+        "sex": "Karma",
+        "breed": "Ingiliz",
+        "age": 3
+      },
+      "observations": [
+        {
+          "race": "Canli veri bekleniyor",
+          "date": "2026-06-03",
+          "position": null,
+          "note": "TJK aday listesi ve 2026 prep sonuclari ingestion eklendikten sonra burasi otomatik dolacak."
+        }
+      ],
+      "manualSignals": {
+        "classSignal": 50,
+        "staminaSignal": 50,
+        "courseSignal": 50,
+        "recencySignal": 50
+      }
+    }
+  ],
+  "scoring": {
+    "weights": {
+      "classSignal": 0.28,
+      "staminaSignal": 0.3,
+      "courseSignal": 0.22,
+      "recencySignal": 0.2
+    },
+    "notes": "Bu agirliklar ilk tartisma icin sezgisel baslangic degerleridir. Gercek veri geldikce backtest ile ayarlanmalidir."
+  }
+}
