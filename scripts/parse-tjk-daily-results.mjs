@@ -35,6 +35,28 @@ const extractQueryId = (href, key) => {
   return match ? decodeURIComponent(match[1]) : "";
 };
 
+const extractProgramVenue = (html) => {
+  const match = String(html ?? "").match(/<div class=["']program["'] id=["']([^"']+)["']/i);
+  return stripTags(match?.[1] ?? "");
+};
+
+const parseRaceTabs = (html) => {
+  const tabs = new Map();
+  const anchors = [...String(html ?? "").matchAll(/<a\b([^>]*)href=["']#(\d+)["'][^>]*>([\s\S]*?)<\/a>/gi)];
+
+  for (const [, attrs, sourceRaceId, labelHtml] of anchors) {
+    const label = stripTags(labelHtml);
+    const raceNo = Number.parseInt(label.match(/(\d+)\.\s*Koşu/i)?.[1] ?? "", 10);
+    const raceTime = label.match(/(\d{1,2}\.\d{2})/)?.[1] ?? "";
+    const venue = stripTags(attrs.match(/sehir=["']([^"']+)["']/i)?.[1] ?? "");
+
+    if (!Number.isFinite(raceNo)) continue;
+    tabs.set(sourceRaceId, { raceNo, raceTime, venue });
+  }
+
+  return tabs;
+};
+
 const normalizeHorseName = (value) => {
   return String(value ?? "")
     .replace(/\(\d+\)\s*$/, "")
@@ -82,13 +104,19 @@ const parseEntry = (rowHtml) => {
 };
 
 export const parseDailyResults = (html) => {
+  const programVenue = extractProgramVenue(html);
+  const raceTabs = parseRaceTabs(html);
   const raceBlocks = [...String(html).matchAll(/<div id=["']kosubilgisi-(\d+)["'][^>]*>([\s\S]*?)(?=<div id=["']kosubilgisi-\d+["']|<input type=["']hidden["'] class=["']totalKosuSayisi|$)/gi)];
 
   return raceBlocks.map(([, sourceRaceId, blockHtml]) => {
+    const tab = raceTabs.get(sourceRaceId);
     const rows = [...blockHtml.matchAll(/<tr class=["'](?:even|odd)["']>([\s\S]*?)<\/tr>/gi)].map(([, rowHtml]) => parseEntry(rowHtml));
 
     return {
       sourceRaceId,
+      venue: tab?.venue || programVenue,
+      raceNo: tab?.raceNo ?? null,
+      raceTime: tab?.raceTime ?? "",
       entries: rows.filter((entry) => entry.horseName)
     };
   });

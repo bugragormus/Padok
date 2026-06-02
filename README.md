@@ -2,7 +2,7 @@
 
 Gazi Kosusu odakli at yarisi analiz uygulamasi.
 
-Bu repo su anda bilincli olarak bagimliliksiz bir statik MVP olarak kuruldu. Amac once veri modelini, temel korelasyon mantigini ve arayuz ihtiyacini netlestirmek; daha sonra TJK/Yenibeygir ingestion, SQLite/Postgres ve ML katmanina gecmek.
+Bu repo su anda bilincli olarak bagimliliksiz bir statik MVP olarak kuruldu. Amac once veri modelini, temel korelasyon mantigini ve arayuz ihtiyacini netlestirmek; TJK ingestion ve SQLite katmani uzerinden giderek daha sonra API ve ML katmanina gecmek.
 
 ## Ilk Hipotez
 
@@ -39,6 +39,18 @@ Sonra tarayicida `http://localhost:5173` ac.
 
 Alternatif olarak `index.html` dosyasini dogrudan tarayicida acmak da yeterli.
 
+## Veri Yenileme
+
+2025 Gazi rota raporunu lokal DB'deki eksik gunluk sonuclarla yenilemek icin:
+
+```bash
+npm run refresh:gazi-route -- --year 2025 --out data/gazi-route-report.json
+```
+
+Bu komut sonucu eksik ama tarihi gecmis Gazi rota kosularini bulur, TJK gunluk sonuc sayfalarini ceker, at bazli entry verilerini import eder ve frontend'in okudugu JSON raporunu yeniden uretir.
+
+Canli ve ucretsiz yayin plani icin bkz. `docs/live-data-plan.md`.
+
 ## Mimari Karar
 
 Kisa vadede veri akisi su sekilde ilerleyecek:
@@ -46,8 +58,8 @@ Kisa vadede veri akisi su sekilde ilerleyecek:
 1. Ingestion scriptleri TJK/Yenibeygir kaynaklarini okur.
 2. Ham veri `raw` klasor mantigiyla saklanir.
 3. Normalize edilmis veri SQLite tablolarina yazilir.
-4. API bu tablolardan aday, kosu, jokey ve skor verisini servis eder.
-5. Arayuz API'den okur ve analiz panosunu gunceller.
+4. Static export katmani frontend'in okuyacagi JSON raporlarini uretir.
+5. Sonraki asamada API bu tablolardan aday, kosu, jokey ve skor verisini servis eder.
 
 Detayli kararlar icin bkz. `docs/architecture.md`.
 

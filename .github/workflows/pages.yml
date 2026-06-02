@@ -1,0 +1,85 @@
+name: Deploy Padok Pages
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+  schedule:
+    - cron: "37 8,18 * * *"
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    env:
+      GAZI_YEAR: "2026"
+      GAZI_START_DATE: "01.03.2026"
+      GAZI_END_DATE: "30.06.2026"
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+
+      - name: Install SQLite
+        run: sudo apt-get update && sudo apt-get install -y sqlite3
+
+      - name: Initialize runtime database
+        run: |
+          mkdir -p data/raw data/processed
+          sqlite3 data/padok.sqlite < db/schema.sql
+
+      - name: Fetch race index
+        run: |
+          npm run fetch:tjk-race-index -- \
+            --start "$GAZI_START_DATE" \
+            --end "$GAZI_END_DATE" \
+            --page 1 \
+            --pages 20 \
+            --until-empty
+
+      - name: Import race index
+        run: npm run import:tjk-race-index -- --input data/processed/tjk/kosu-sorgulama
+
+      - name: Fetch named races
+        run: npm run fetch:tjk-named-races -- --page 1 --pages 30 --until-empty
+
+      - name: Import named races
+        run: npm run import:tjk-named-races -- --input data/processed/tjk/named-races
+
+      - name: Refresh Gazi route data
+        run: npm run refresh:gazi-route -- --year "$GAZI_YEAR" --out data/gazi-route-report.json
+
+      - name: Prepare static site
+        run: |
+          mkdir -p dist/assets dist/data
+          cp index.html app.js styles.css .nojekyll dist/
+          cp assets/* dist/assets/
+          cp data/gazi-knowledge-base.json data/gazi-route-report.json dist/data/
+
+      - name: Configure Pages
+        uses: actions/configure-pages@v5
+
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: "dist"
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4

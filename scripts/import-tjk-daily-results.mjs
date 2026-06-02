@@ -3,6 +3,9 @@ import { tmpdir } from "node:os";
 import { join } from "node:path";
 import { spawnSync } from "node:child_process";
 
+const raceSourceName = "TJK KosuSorgulama";
+const raceSourceBaseUrl = "https://www.tjk.org/TR/YarisSever/Query/DataRows/KosuSorgulama";
+
 const getArgValue = (args, name) => {
   const index = args.indexOf(name);
   if (index === -1) return undefined;
@@ -85,9 +88,60 @@ const resolveInputPaths = async (args) => {
 };
 
 const buildSql = (races) => {
-  const statements = ["PRAGMA foreign_keys = ON;", "BEGIN;"];
+  const statements = [
+    "PRAGMA foreign_keys = ON;",
+    "BEGIN;",
+    `INSERT INTO sources (name, base_url, reliability)
+      VALUES (${escapeSql(raceSourceName)}, ${escapeSql(raceSourceBaseUrl)}, 'official')
+      ON CONFLICT(name) DO UPDATE SET
+        base_url = excluded.base_url,
+        reliability = excluded.reliability;`
+  ];
 
   for (const race of races) {
+    if (race.sourceRaceId && race.date && race.venue) {
+      statements.push(`INSERT INTO races (
+          source_id,
+          source_race_id,
+          date,
+          venue,
+          race_no,
+          name,
+          race_class,
+          distance_m,
+          surface
+        )
+        VALUES (
+          (SELECT id FROM sources WHERE name = ${escapeSql(raceSourceName)}),
+          ${escapeSql(race.sourceRaceId)},
+          ${escapeSql(race.date)},
+          ${escapeSql(race.venue)},
+          ${toIntegerSql(race.raceNo)},
+          (SELECT race_name FROM important_race_results WHERE source_race_id = ${escapeSql(race.sourceRaceId)} LIMIT 1),
+          (SELECT race_class FROM important_race_results WHERE source_race_id = ${escapeSql(race.sourceRaceId)} LIMIT 1),
+          (SELECT distance_m FROM important_race_results WHERE source_race_id = ${escapeSql(race.sourceRaceId)} LIMIT 1),
+          (SELECT surface FROM important_race_results WHERE source_race_id = ${escapeSql(race.sourceRaceId)} LIMIT 1)
+        )
+        ON CONFLICT(source_id, source_race_id) DO UPDATE SET
+          date = excluded.date,
+          venue = excluded.venue,
+          race_no = excluded.race_no,
+          name = COALESCE(races.name, excluded.name),
+          race_class = COALESCE(races.race_class, excluded.race_class),
+          distance_m = COALESCE(races.distance_m, excluded.distance_m),
+          surface = COALESCE(races.surface, excluded.surface);`);
+    }
+
+    const raceIdSql = `(SELECT id FROM races
+      WHERE source_race_id = ${escapeSql(race.sourceRaceId)}
+         OR (
+          date = ${escapeSql(race.date)}
+          AND venue = ${escapeSql(race.venue)}
+          AND race_no = ${toIntegerSql(race.raceNo)}
+        )
+      ORDER BY CASE WHEN source_race_id = ${escapeSql(race.sourceRaceId)} THEN 0 ELSE 1 END
+      LIMIT 1)`;
+
     for (const entry of race.entries ?? []) {
       if (!race.sourceRaceId || !entry.horseName) continue;
 
@@ -121,11 +175,11 @@ const buildSql = (races) => {
           margin,
           scratched,
           owner
-        )
-        VALUES (
-          (SELECT id FROM races WHERE source_race_id = ${escapeSql(race.sourceRaceId)}),
-          (SELECT id FROM horses WHERE source_horse_id = ${escapeSql(entry.horseId)}),
-          (SELECT id FROM jockeys WHERE source_jockey_id = ${escapeSql(entry.jockeyId)}),
+	        )
+	        VALUES (
+	          ${raceIdSql},
+	          (SELECT id FROM horses WHERE source_horse_id = ${escapeSql(entry.horseId)}),
+	          (SELECT id FROM jockeys WHERE source_jockey_id = ${escapeSql(entry.jockeyId)}),
           (SELECT id FROM trainers WHERE source_trainer_id = ${escapeSql(entry.trainerId)}),
           ${toIntegerSql(entry.gate)},
           ${toRealSql(entry.weight)},

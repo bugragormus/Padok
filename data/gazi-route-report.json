@@ -1,14 +1,14 @@
 {
-  "generatedAt": "2026-06-02T23:09:21.239Z",
+  "generatedAt": "2026-06-02T23:34:31.558Z",
   "dbPath": "data/padok.sqlite",
   "year": 2025,
   "routeRaces": [
     {
-      "id": null,
-      "source_race_id": null,
+      "id": 523,
+      "source_race_id": "217267",
       "date": "2025-05-18",
-      "venue": null,
-      "race_no": null,
+      "venue": "İstanbul",
+      "race_no": 6,
       "name": "Bİ'TALİH ERKEK TAY DENEME",
       "race_class": "G 1",
       "age_condition": null,
@@ -20,7 +20,148 @@
       "winner_name": "TONBİ",
       "jockey_name": "S.KAYA",
       "owner_name": "ŞEVKİ BALCI",
-      "entries": [],
+      "entries": [
+        {
+          "finish_position": 1,
+          "horse_name": "TONBİ",
+          "jockey_name": "SELİM KAYA",
+          "weight": 58,
+          "finish_time": "1.39.78",
+          "margin": "Burun",
+          "handicap_point": 90,
+          "starting_price": "10,10"
+        },
+        {
+          "finish_position": 2,
+          "horse_name": "DEO VOLENTE",
+          "jockey_name": "ÖZCAN YILDIRIM",
+          "weight": 58,
+          "finish_time": "1.39.79",
+          "margin": "1 Boy",
+          "handicap_point": 99,
+          "starting_price": "5,65"
+        },
+        {
+          "finish_position": 3,
+          "horse_name": "LETS WIN TOGETHER",
+          "jockey_name": "ALİ YILDIZ",
+          "weight": 58,
+          "finish_time": "1.39.91",
+          "margin": "Boyun",
+          "handicap_point": 74,
+          "starting_price": "2,25"
+        },
+        {
+          "finish_position": 4,
+          "horse_name": "BRAIN BROOSTER",
+          "jockey_name": "AHMET ÇELİK",
+          "weight": 58,
+          "finish_time": "1.39.96",
+          "margin": "Burun",
+          "handicap_point": 90,
+          "starting_price": "7,60"
+        },
+        {
+          "finish_position": 5,
+          "horse_name": "SPECIAL MAN",
+          "jockey_name": "VEDAT ABİŞ",
+          "weight": 58,
+          "finish_time": "1.39.97",
+          "margin": null,
+          "handicap_point": 88,
+          "starting_price": "9,10"
+        },
+        {
+          "finish_position": 6,
+          "horse_name": "TOUCH THE MOON",
+          "jockey_name": "GÖKHAN KOCAKAYA",
+          "weight": 58,
+          "finish_time": "1.40.62",
+          "margin": null,
+          "handicap_point": 99,
+          "starting_price": "2,25"
+        },
+        {
+          "finish_position": 7,
+          "horse_name": "KALKÜTA",
+          "jockey_name": "GÖRKEM ÖZÇELİK",
+          "weight": 58,
+          "finish_time": "1.40.67",
+          "margin": null,
+          "handicap_point": 55,
+          "starting_price": "130,60"
+        },
+        {
+          "finish_position": 8,
+          "horse_name": "LUCERYS",
+          "jockey_name": "HIŞMAN ÇİZİK",
+          "weight": 58,
+          "finish_time": "1.40.90",
+          "margin": null,
+          "handicap_point": 57,
+          "starting_price": "56,70"
+        },
+        {
+          "finish_position": 9,
+          "horse_name": "MAGIC SELECTRA",
+          "jockey_name": "AKIN SÖZEN",
+          "weight": 58,
+          "finish_time": "1.41.02",
+          "margin": null,
+          "handicap_point": 91,
+          "starting_price": "6,25"
+        },
+        {
+          "finish_position": 10,
+          "horse_name": "RON WEASLEY",
+          "jockey_name": "ERCAN ÇANKAYA",
+          "weight": 58,
+          "finish_time": "1.41.13",
+          "margin": null,
+          "handicap_point": 74,
+          "starting_price": "7,60"
+        },
+        {
+          "finish_position": 11,
+          "horse_name": "CAZATOR DE OSOS",
+          "jockey_name": "MEHMET AKYAVUZ",
+          "weight": 58,
+          "finish_time": "1.41.86",
+          "margin": null,
+          "handicap_point": 84,
+          "starting_price": "80,10"
+        },
+        {
+          "finish_position": 12,
+          "horse_name": "GALİOĞLU",
+          "jockey_name": "MÜSLÜM ÇELİK",
+          "weight": 58,
+          "finish_time": "1.41.94",
+          "margin": null,
+          "handicap_point": 69,
+          "starting_price": "72,55"
+        },
+        {
+          "finish_position": 13,
+          "horse_name": "KLEIN",
+          "jockey_name": "NEVZAT AVCİ",
+          "weight": 58,
+          "finish_time": "1.43.31",
+          "margin": null,
+          "handicap_point": 98,
+          "starting_price": "7,05"
+        },
+        {
+          "finish_position": 14,
+          "horse_name": "DECENT MAN",
+          "jockey_name": "AYHAN KURŞUN",
+          "weight": 58,
+          "finish_time": "1.43.70",
+          "margin": null,
+          "handicap_point": 68,
+          "starting_price": "38,60"
+        }
+      ],
       "factors": {
         "distance": 11,
         "surface": 25,
@@ -33,11 +174,11 @@
       "explanation": "zayıf mesafe sinyali, çim pist uyumu, sınıf sinyali var, Bİ'TALİH ERKEK TAY DENEME isimli koşusu"
     },
     {
-      "id": null,
-      "source_race_id": null,
+      "id": 526,
+      "source_race_id": "217268",
       "date": "2025-05-18",
-      "venue": null,
-      "race_no": null,
+      "venue": "İstanbul",
+      "race_no": 9,
       "name": "DİŞİ TAY DENEME",
       "race_class": "G 1",
       "age_condition": null,
@@ -49,7 +190,208 @@
       "winner_name": "AMAZING TOUCH",
       "jockey_name": "G.KOCAKAYA",
       "owner_name": "KEMAL KURT",
-      "entries": [],
+      "entries": [
+        {
+          "finish_position": 1,
+          "horse_name": "AMAZING TOUCH",
+          "jockey_name": "GÖKHAN KOCAKAYA",
+          "weight": 58,
+          "finish_time": "1.40.27",
+          "margin": "Yarım Boy",
+          "handicap_point": 85,
+          "starting_price": "4,35"
+        },
+        {
+          "finish_position": 2,
+          "horse_name": "TAURUS",
+          "jockey_name": "MEHMET KAYA",
+          "weight": 58,
+          "finish_time": "1.40.34",
+          "margin": "Boyun",
+          "handicap_point": 84,
+          "starting_price": "5,40"
+        },
+        {
+          "finish_position": 3,
+          "horse_name": "BEAUTY OF DARKNESS",
+          "jockey_name": "HIŞMAN ÇİZİK",
+          "weight": 58,
+          "finish_time": "1.40.39",
+          "margin": "2 Boy",
+          "handicap_point": 73,
+          "starting_price": "4,10"
+        },
+        {
+          "finish_position": 4,
+          "horse_name": "BOON NAM",
+          "jockey_name": "ERHAN YAVUZ",
+          "weight": 58,
+          "finish_time": "1.40.70",
+          "margin": "1,5 Boy",
+          "handicap_point": 72,
+          "starting_price": "86,05"
+        },
+        {
+          "finish_position": 5,
+          "horse_name": "VISENYA",
+          "jockey_name": "ÖZCAN YILDIRIM",
+          "weight": 58,
+          "finish_time": "1.40.88",
+          "margin": null,
+          "handicap_point": 77,
+          "starting_price": "10,25"
+        },
+        {
+          "finish_position": 6,
+          "horse_name": "DEJAVU",
+          "jockey_name": "ALİ YILDIZ",
+          "weight": 58,
+          "finish_time": "1.40.93",
+          "margin": null,
+          "handicap_point": 85,
+          "starting_price": "7,45"
+        },
+        {
+          "finish_position": 7,
+          "horse_name": "PRİNCESA ADA",
+          "jockey_name": "ERCAN ÇANKAYA",
+          "weight": 58,
+          "finish_time": "1.41.20",
+          "margin": null,
+          "handicap_point": 54,
+          "starting_price": "92,40"
+        },
+        {
+          "finish_position": 8,
+          "horse_name": "PETITE LOUVE",
+          "jockey_name": "AYHAN KURŞUN",
+          "weight": 58,
+          "finish_time": "1.41.28",
+          "margin": null,
+          "handicap_point": 49,
+          "starting_price": "4,35"
+        },
+        {
+          "finish_position": 9,
+          "horse_name": "JOLENE",
+          "jockey_name": "AHMET ÇELİK",
+          "weight": 58,
+          "finish_time": "1.41.92",
+          "margin": null,
+          "handicap_point": 75,
+          "starting_price": "15,95"
+        },
+        {
+          "finish_position": 10,
+          "horse_name": "KIZIM BERİL",
+          "jockey_name": "BEKİR MERT MIRIK",
+          "weight": 58,
+          "finish_time": "1.41.93",
+          "margin": null,
+          "handicap_point": 62,
+          "starting_price": "72,60"
+        },
+        {
+          "finish_position": 11,
+          "horse_name": "GRAND RAPIDS",
+          "jockey_name": "VEDAT ABİŞ",
+          "weight": 58,
+          "finish_time": "1.42.34",
+          "margin": null,
+          "handicap_point": 83,
+          "starting_price": "22,00"
+        },
+        {
+          "finish_position": 12,
+          "horse_name": "GINNY WEASLEY",
+          "jockey_name": "AKIN SÖZEN",
+          "weight": 58,
+          "finish_time": "1.42.87",
+          "margin": null,
+          "handicap_point": 74,
+          "starting_price": "22,95"
+        },
+        {
+          "finish_position": 13,
+          "horse_name": "FLY FOREVER",
+          "jockey_name": "ERHAN AKTUĞ",
+          "weight": 58,
+          "finish_time": "1.42.88",
+          "margin": null,
+          "handicap_point": 63,
+          "starting_price": "43,25"
+        },
+        {
+          "finish_position": 14,
+          "horse_name": "BUMMER GIRL",
+          "jockey_name": "MEHMET AKYAVUZ",
+          "weight": 58,
+          "finish_time": "1.43.74",
+          "margin": null,
+          "handicap_point": 76,
+          "starting_price": "53,15"
+        },
+        {
+          "finish_position": 15,
+          "horse_name": "BAHAMA MAMA",
+          "jockey_name": "MUHAMMED MİR BİLGİN",
+          "weight": 58,
+          "finish_time": "1.44.19",
+          "margin": null,
+          "handicap_point": 54,
+          "starting_price": "104,75"
+        },
+        {
+          "finish_position": 16,
+          "horse_name": "NORTHERN NURDETTA",
+          "jockey_name": "MÜSLÜM ÇELİK",
+          "weight": 58,
+          "finish_time": "1.44.47",
+          "margin": null,
+          "handicap_point": 73,
+          "starting_price": "39,20"
+        },
+        {
+          "finish_position": 17,
+          "horse_name": "POLE STAR",
+          "jockey_name": "NEVZAT AVCİ",
+          "weight": 58,
+          "finish_time": "1.44.62",
+          "margin": null,
+          "handicap_point": 74,
+          "starting_price": "28,35"
+        },
+        {
+          "finish_position": 18,
+          "horse_name": "MİA STAR",
+          "jockey_name": "SADETTİN BOYRAZ",
+          "weight": 58,
+          "finish_time": "1.44.89",
+          "margin": null,
+          "handicap_point": 62,
+          "starting_price": "68,60"
+        },
+        {
+          "finish_position": 19,
+          "horse_name": "SWEET CAROLINE",
+          "jockey_name": "GÖRKEM ÖZÇELİK",
+          "weight": 58,
+          "finish_time": "1.52.88",
+          "margin": null,
+          "handicap_point": 42,
+          "starting_price": "153,25"
+        },
+        {
+          "finish_position": 20,
+          "horse_name": "MAKE ME FLY",
+          "jockey_name": "SELİM KAYA",
+          "weight": 58,
+          "finish_time": "2.02.84",
+          "margin": null,
+          "handicap_point": 81,
+          "starting_price": "7,95"
+        }
+      ],
       "factors": {
         "distance": 11,
         "surface": 25,
@@ -208,7 +550,168 @@
       "winner_name": "HANDSOME KING",
       "jockey_name": "H.ÇİZİK",
       "owner_name": "ASUMAN YENİCE",
-      "entries": [],
+      "entries": [
+        {
+          "finish_position": null,
+          "horse_name": "QUANTUM OF SOLACE",
+          "jockey_name": "ÖZCAN YILDIRIM",
+          "weight": 58,
+          "finish_time": "Koşmaz",
+          "margin": null,
+          "handicap_point": 76,
+          "starting_price": null
+        },
+        {
+          "finish_position": 1,
+          "horse_name": "HANDSOME KING",
+          "jockey_name": "HIŞMAN ÇİZİK",
+          "weight": 58,
+          "finish_time": "2.17.28",
+          "margin": "Boyun",
+          "handicap_point": 69,
+          "starting_price": "22,45"
+        },
+        {
+          "finish_position": 2,
+          "horse_name": "LOST KING",
+          "jockey_name": "NEVZAT AVCİ",
+          "weight": 58,
+          "finish_time": "2.17.31",
+          "margin": "Boyun",
+          "handicap_point": 76,
+          "starting_price": "17,95"
+        },
+        {
+          "finish_position": 3,
+          "horse_name": "PUROSANGUE",
+          "jockey_name": "GÖKHAN KOCAKAYA",
+          "weight": 58,
+          "finish_time": "2.17.34",
+          "margin": "Boyun",
+          "handicap_point": 89,
+          "starting_price": "6,95"
+        },
+        {
+          "finish_position": 4,
+          "horse_name": "CUTHA",
+          "jockey_name": "MEHMET SALİH ÇELİK",
+          "weight": 58,
+          "finish_time": "2.17.39",
+          "margin": "2 Boy",
+          "handicap_point": 86,
+          "starting_price": "30,15"
+        },
+        {
+          "finish_position": 5,
+          "horse_name": "MÜNÜRTOR",
+          "jockey_name": "ERHAN AKTUĞ",
+          "weight": 58,
+          "finish_time": "2.17.62",
+          "margin": null,
+          "handicap_point": 63,
+          "starting_price": "44,20"
+        },
+        {
+          "finish_position": 6,
+          "horse_name": "BRAIN BROOSTER",
+          "jockey_name": "AHMET ÇELİK",
+          "weight": 58,
+          "finish_time": "2.17.78",
+          "margin": null,
+          "handicap_point": 94,
+          "starting_price": "1,95"
+        },
+        {
+          "finish_position": 7,
+          "horse_name": "GALİOĞLU",
+          "jockey_name": "MEHMET AKYAVUZ",
+          "weight": 58,
+          "finish_time": "2.17.84",
+          "margin": null,
+          "handicap_point": 69,
+          "starting_price": "91,60"
+        },
+        {
+          "finish_position": 8,
+          "horse_name": "KALKÜTA",
+          "jockey_name": "GÖRKEM ÖZÇELİK",
+          "weight": 58,
+          "finish_time": "2.17.90",
+          "margin": null,
+          "handicap_point": 59,
+          "starting_price": "76,50"
+        },
+        {
+          "finish_position": 9,
+          "horse_name": "ALBAYRAK",
+          "jockey_name": "SELİM KAYA",
+          "weight": 58,
+          "finish_time": "2.18.09",
+          "margin": null,
+          "handicap_point": 82,
+          "starting_price": "5,20"
+        },
+        {
+          "finish_position": 10,
+          "horse_name": "UNKNOWN VENTUS",
+          "jockey_name": "ALİ YILDIZ",
+          "weight": 58,
+          "finish_time": "2.18.52",
+          "margin": null,
+          "handicap_point": 67,
+          "starting_price": "56,45"
+        },
+        {
+          "finish_position": 11,
+          "horse_name": "MAGIC SELECTRA",
+          "jockey_name": "AKIN SÖZEN",
+          "weight": 58,
+          "finish_time": "2.18.89",
+          "margin": null,
+          "handicap_point": 91,
+          "starting_price": "7,90"
+        },
+        {
+          "finish_position": 12,
+          "horse_name": "GÖK BERK",
+          "jockey_name": "VEDAT ABİŞ",
+          "weight": 58,
+          "finish_time": "2.18.94",
+          "margin": null,
+          "handicap_point": 95,
+          "starting_price": "8,35"
+        },
+        {
+          "finish_position": 13,
+          "horse_name": "DRAGON FORCE",
+          "jockey_name": "AYHAN KURŞUN",
+          "weight": 58,
+          "finish_time": "2.19.24",
+          "margin": null,
+          "handicap_point": 62,
+          "starting_price": "39,90"
+        },
+        {
+          "finish_position": 14,
+          "horse_name": "SAMURAI CEK",
+          "jockey_name": "ONUR ATMACA",
+          "weight": 58,
+          "finish_time": "2.21.03",
+          "margin": null,
+          "handicap_point": 40,
+          "starting_price": "111,80"
+        },
+        {
+          "finish_position": 15,
+          "horse_name": "AYBAR FIRTINASI",
+          "jockey_name": "SADETTİN BOYRAZ",
+          "weight": 58,
+          "finish_time": "2.43.22",
+          "margin": null,
+          "handicap_point": 57,
+          "starting_price": "49,30"
+        }
+      ],
       "factors": {
         "distance": 30,
         "surface": 25,
@@ -237,7 +740,228 @@
       "winner_name": "BOON NAM",
       "jockey_name": "E.YAVUZ",
       "owner_name": "ARMAĞAN ARAZ",
-      "entries": [],
+      "entries": [
+        {
+          "finish_position": 1,
+          "horse_name": "BOON NAM",
+          "jockey_name": "ERHAN YAVUZ",
+          "weight": 58,
+          "finish_time": "2.11.45",
+          "margin": "Boyun",
+          "handicap_point": 80,
+          "starting_price": "13,60"
+        },
+        {
+          "finish_position": 2,
+          "horse_name": "AMAZING TOUCH",
+          "jockey_name": "GÖKHAN KOCAKAYA",
+          "weight": 58,
+          "finish_time": "2.11.49",
+          "margin": "2,5 Boy",
+          "handicap_point": 100,
+          "starting_price": "3,70"
+        },
+        {
+          "finish_position": 3,
+          "horse_name": "PETITE LOUVE",
+          "jockey_name": "AYHAN KURŞUN",
+          "weight": 58,
+          "finish_time": "2.11.81",
+          "margin": "Baş",
+          "handicap_point": 51,
+          "starting_price": "3,70"
+        },
+        {
+          "finish_position": 4,
+          "horse_name": "DEJAVU",
+          "jockey_name": "ALİ YILDIZ",
+          "weight": 58,
+          "finish_time": "2.11.83",
+          "margin": "1 Boy",
+          "handicap_point": 85,
+          "starting_price": "9,70"
+        },
+        {
+          "finish_position": 5,
+          "horse_name": "CAPE COD",
+          "jockey_name": "MUHAMMED MİR BİLGİN",
+          "weight": 58,
+          "finish_time": "2.11.98",
+          "margin": null,
+          "handicap_point": 73,
+          "starting_price": "22,30"
+        },
+        {
+          "finish_position": 6,
+          "horse_name": "VISENYA",
+          "jockey_name": "ÖZCAN YILDIRIM",
+          "weight": 58,
+          "finish_time": "2.11.99",
+          "margin": null,
+          "handicap_point": 79,
+          "starting_price": "5,25"
+        },
+        {
+          "finish_position": 7,
+          "horse_name": "TAURUS",
+          "jockey_name": "AHMET ÇELİK",
+          "weight": 58,
+          "finish_time": "2.12.08",
+          "margin": null,
+          "handicap_point": 94,
+          "starting_price": "3,45"
+        },
+        {
+          "finish_position": 8,
+          "horse_name": "BEAUTY OF DARKNESS",
+          "jockey_name": "HIŞMAN ÇİZİK",
+          "weight": 58,
+          "finish_time": "2.12.19",
+          "margin": null,
+          "handicap_point": 87,
+          "starting_price": "9,05"
+        },
+        {
+          "finish_position": 9,
+          "horse_name": "JOLENE",
+          "jockey_name": "MUSTAFA ÇİÇEK",
+          "weight": 58,
+          "finish_time": "2.12.60",
+          "margin": null,
+          "handicap_point": 75,
+          "starting_price": "67,40"
+        },
+        {
+          "finish_position": 10,
+          "horse_name": "REMEMBER LOVE",
+          "jockey_name": "NEVZAT AVCİ",
+          "weight": 58,
+          "finish_time": "2.12.61",
+          "margin": null,
+          "handicap_point": 54,
+          "starting_price": "50,80"
+        },
+        {
+          "finish_position": 11,
+          "horse_name": "POLE STAR",
+          "jockey_name": "GÖKHAN BEKTAŞ",
+          "weight": 58,
+          "finish_time": "2.12.62",
+          "margin": null,
+          "handicap_point": 74,
+          "starting_price": "112,50"
+        },
+        {
+          "finish_position": 12,
+          "horse_name": "MEANING OF LIFE",
+          "jockey_name": "AKIN SÖZEN",
+          "weight": 58,
+          "finish_time": "2.12.63",
+          "margin": null,
+          "handicap_point": 57,
+          "starting_price": "28,55"
+        },
+        {
+          "finish_position": 13,
+          "horse_name": "PRİNCESA ADA",
+          "jockey_name": "MEHMET AKYAVUZ",
+          "weight": 58,
+          "finish_time": "2.12.95",
+          "margin": null,
+          "handicap_point": 59,
+          "starting_price": "87,75"
+        },
+        {
+          "finish_position": 14,
+          "horse_name": "LA SPEZIA",
+          "jockey_name": "ERHAN AKTUĞ",
+          "weight": 58,
+          "finish_time": "2.13.08",
+          "margin": null,
+          "handicap_point": 41,
+          "starting_price": "115,55"
+        },
+        {
+          "finish_position": 15,
+          "horse_name": "SHINNY",
+          "jockey_name": "VEDAT ABİŞ",
+          "weight": 58,
+          "finish_time": "2.13.15",
+          "margin": null,
+          "handicap_point": 77,
+          "starting_price": "14,80"
+        },
+        {
+          "finish_position": 16,
+          "horse_name": "KIZIM BERİL",
+          "jockey_name": "ONUR YILDIZ",
+          "weight": 58,
+          "finish_time": "2.14.16",
+          "margin": null,
+          "handicap_point": 62,
+          "starting_price": "141,25"
+        },
+        {
+          "finish_position": 17,
+          "horse_name": "VIOLET EIGHTEEN",
+          "jockey_name": "GÖKHAN GÖKÇE",
+          "weight": 58,
+          "finish_time": "2.14.26",
+          "margin": null,
+          "handicap_point": 52,
+          "starting_price": "159,55"
+        },
+        {
+          "finish_position": 18,
+          "horse_name": "GENGAR",
+          "jockey_name": "SELİM KAYA",
+          "weight": 58,
+          "finish_time": "2.14.33",
+          "margin": null,
+          "handicap_point": 67,
+          "starting_price": "9,70"
+        },
+        {
+          "finish_position": 19,
+          "horse_name": "VICTORY MARSEILLE",
+          "jockey_name": "MEHMET SALİH ÇELİK",
+          "weight": 58,
+          "finish_time": "2.16.36",
+          "margin": null,
+          "handicap_point": 53,
+          "starting_price": "69,20"
+        },
+        {
+          "finish_position": 20,
+          "horse_name": "GHİSCAR",
+          "jockey_name": "MEHMET KAYA",
+          "weight": 58,
+          "finish_time": "2.16.98",
+          "margin": null,
+          "handicap_point": 42,
+          "starting_price": "61,95"
+        },
+        {
+          "finish_position": 21,
+          "horse_name": "RUSCUK",
+          "jockey_name": "GÖRKEM ÖZÇELİK",
+          "weight": 58,
+          "finish_time": "2.18.88",
+          "margin": null,
+          "handicap_point": 56,
+          "starting_price": "94,55"
+        },
+        {
+          "finish_position": 22,
+          "horse_name": "MAKE ME FLY",
+          "jockey_name": "TOLGA YILDIZ",
+          "weight": 58,
+          "finish_time": "Derecesiz",
+          "margin": null,
+          "handicap_point": 81,
+          "starting_price": "27,85"
+        }
+      ],
       "factors": {
         "distance": 30,
         "surface": 25,
@@ -250,11 +974,11 @@
       "explanation": "Gazi mesafesine çok yakın, çim pist uyumu, İngiliz at koşusu, 3 yaşlı İngiliz profili, sınıf sinyali var, Bİ'TALİH KISRAK isimli koşusu"
     },
     {
-      "id": null,
-      "source_race_id": null,
+      "id": 532,
+      "source_race_id": "218277",
       "date": "2025-06-29",
-      "venue": null,
-      "race_no": null,
+      "venue": "İstanbul",
+      "race_no": 6,
       "name": "GAZİ",
       "race_class": "G 1",
       "age_condition": null,
@@ -266,7 +990,228 @@
       "winner_name": "CUTHA",
       "jockey_name": "A.ÇELİK",
       "owner_name": "HULUSİ ÇİL",
-      "entries": [],
+      "entries": [
+        {
+          "finish_position": 1,
+          "horse_name": "CUTHA",
+          "jockey_name": "AHMET ÇELİK",
+          "weight": 58,
+          "finish_time": "2.30.28",
+          "margin": "Yarım Boy",
+          "handicap_point": 89,
+          "starting_price": "15,45"
+        },
+        {
+          "finish_position": 2,
+          "horse_name": "HANDSOME KING",
+          "jockey_name": "HIŞMAN ÇİZİK",
+          "weight": 58,
+          "finish_time": "2.30.38",
+          "margin": "Baş",
+          "handicap_point": 98,
+          "starting_price": "8,45"
+        },
+        {
+          "finish_position": 3,
+          "horse_name": "SPECIAL MAN",
+          "jockey_name": "VEDAT ABİŞ",
+          "weight": 58,
+          "finish_time": "2.30.40",
+          "margin": "2 Boy",
+          "handicap_point": 100,
+          "starting_price": "8,75"
+        },
+        {
+          "finish_position": 4,
+          "horse_name": "BELGRATHAN",
+          "jockey_name": "ALİ KAÇMAZ",
+          "weight": 58,
+          "finish_time": "2.30.69",
+          "margin": "1 Boy",
+          "handicap_point": 82,
+          "starting_price": "50,85"
+        },
+        {
+          "finish_position": 5,
+          "horse_name": "BRAIN BROOSTER",
+          "jockey_name": "ÖZCAN YILDIRIM",
+          "weight": 58,
+          "finish_time": "2.30.83",
+          "margin": null,
+          "handicap_point": 94,
+          "starting_price": "12,45"
+        },
+        {
+          "finish_position": 6,
+          "horse_name": "DATABASE",
+          "jockey_name": "AKIN SÖZEN",
+          "weight": 58,
+          "finish_time": "2.30.87",
+          "margin": null,
+          "handicap_point": 96,
+          "starting_price": "7,05"
+        },
+        {
+          "finish_position": 7,
+          "horse_name": "MAGIC WEAPON",
+          "jockey_name": "AYHAN KURŞUN",
+          "weight": 58,
+          "finish_time": "2.30.93",
+          "margin": null,
+          "handicap_point": 86,
+          "starting_price": "21,90"
+        },
+        {
+          "finish_position": 8,
+          "horse_name": "TONBİ",
+          "jockey_name": "MEHMET AKYAVUZ",
+          "weight": 58,
+          "finish_time": "2.31.16",
+          "margin": null,
+          "handicap_point": 104,
+          "starting_price": "8,55"
+        },
+        {
+          "finish_position": 9,
+          "horse_name": "PATRICK STAR",
+          "jockey_name": "MUHAMMED MİR BİLGİN",
+          "weight": 58,
+          "finish_time": "2.31.18",
+          "margin": null,
+          "handicap_point": 103,
+          "starting_price": "18,30"
+        },
+        {
+          "finish_position": 10,
+          "horse_name": "ZAMBUR AGA",
+          "jockey_name": "GÖKHAN KOCAKAYA",
+          "weight": 58,
+          "finish_time": "2.31.20",
+          "margin": null,
+          "handicap_point": 94,
+          "starting_price": "6,85"
+        },
+        {
+          "finish_position": 11,
+          "horse_name": "ALBAYRAK",
+          "jockey_name": "MEHMET KAYA",
+          "weight": 58,
+          "finish_time": "2.31.21",
+          "margin": null,
+          "handicap_point": 82,
+          "starting_price": "25,55"
+        },
+        {
+          "finish_position": 12,
+          "horse_name": "TULUMAR",
+          "jockey_name": "MUSTAFA ÇİÇEK",
+          "weight": 58,
+          "finish_time": "2.31.49",
+          "margin": null,
+          "handicap_point": 100,
+          "starting_price": "18,70"
+        },
+        {
+          "finish_position": 13,
+          "horse_name": "GRANDE FLUSSO",
+          "jockey_name": "MÜSLÜM ÇELİK",
+          "weight": 58,
+          "finish_time": "2.31.84",
+          "margin": null,
+          "handicap_point": 89,
+          "starting_price": "26,40"
+        },
+        {
+          "finish_position": 14,
+          "horse_name": "BOON NAM",
+          "jockey_name": "ERHAN YAVUZ",
+          "weight": 56,
+          "finish_time": "2.32.13",
+          "margin": null,
+          "handicap_point": 100,
+          "starting_price": "25,55"
+        },
+        {
+          "finish_position": 15,
+          "horse_name": "LOST KING",
+          "jockey_name": "NEVZAT AVCİ",
+          "weight": 58,
+          "finish_time": "2.32.14",
+          "margin": null,
+          "handicap_point": 92,
+          "starting_price": "18,55"
+        },
+        {
+          "finish_position": 16,
+          "horse_name": "HOPE BREEZE",
+          "jockey_name": "ERCAN ÇANKAYA",
+          "weight": 58,
+          "finish_time": "2.32.63",
+          "margin": null,
+          "handicap_point": 80,
+          "starting_price": "52,25"
+        },
+        {
+          "finish_position": 17,
+          "horse_name": "DEJAVU",
+          "jockey_name": "ALİ YILDIZ",
+          "weight": 56,
+          "finish_time": "2.32.69",
+          "margin": null,
+          "handicap_point": 87,
+          "starting_price": "48,55"
+        },
+        {
+          "finish_position": 18,
+          "horse_name": "PETITE LOUVE",
+          "jockey_name": "GÖRKEM ÖZÇELİK",
+          "weight": 56,
+          "finish_time": "2.32.97",
+          "margin": null,
+          "handicap_point": 87,
+          "starting_price": "72,05"
+        },
+        {
+          "finish_position": 19,
+          "horse_name": "MAGIC SELECTRA",
+          "jockey_name": "ERHAN AKTUĞ",
+          "weight": 58,
+          "finish_time": "2.33.41",
+          "margin": null,
+          "handicap_point": 91,
+          "starting_price": "69,65"
+        },
+        {
+          "finish_position": 20,
+          "horse_name": "BROARTS",
+          "jockey_name": "SADETTİN BOYRAZ",
+          "weight": 58,
+          "finish_time": "2.34.46",
+          "margin": null,
+          "handicap_point": 80,
+          "starting_price": "69,85"
+        },
+        {
+          "finish_position": 21,
+          "horse_name": "BRAVE CHAMPİON",
+          "jockey_name": "MEHMET SALİH ÇELİK",
+          "weight": 58,
+          "finish_time": "2.34.80",
+          "margin": null,
+          "handicap_point": 84,
+          "starting_price": "41,85"
+        },
+        {
+          "finish_position": 22,
+          "horse_name": "PUROSANGUE",
+          "jockey_name": "HALİS KARATAŞ",
+          "weight": 58,
+          "finish_time": "2.34.98",
+          "margin": null,
+          "handicap_point": 92,
+          "starting_price": "9,55"
+        }
+      ],
       "factors": {
         "distance": 35,
         "surface": 25,
