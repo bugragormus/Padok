@@ -9,6 +9,7 @@ CREATE TABLE IF NOT EXISTS sources (
 
 CREATE TABLE IF NOT EXISTS horses (
   id INTEGER PRIMARY KEY,
+  source_horse_id TEXT UNIQUE,
   canonical_name TEXT NOT NULL UNIQUE,
   birth_year INTEGER,
   breed TEXT,
@@ -20,12 +21,14 @@ CREATE TABLE IF NOT EXISTS horses (
 
 CREATE TABLE IF NOT EXISTS jockeys (
   id INTEGER PRIMARY KEY,
+  source_jockey_id TEXT UNIQUE,
   canonical_name TEXT NOT NULL UNIQUE,
   active INTEGER NOT NULL DEFAULT 1
 );
 
 CREATE TABLE IF NOT EXISTS trainers (
   id INTEGER PRIMARY KEY,
+  source_trainer_id TEXT UNIQUE,
   canonical_name TEXT NOT NULL UNIQUE,
   active INTEGER NOT NULL DEFAULT 1
 );
@@ -57,6 +60,7 @@ CREATE TABLE IF NOT EXISTS race_entries (
   horse_id INTEGER NOT NULL REFERENCES horses(id),
   jockey_id INTEGER REFERENCES jockeys(id),
   trainer_id INTEGER REFERENCES trainers(id),
+  owner TEXT,
   gate INTEGER,
   weight REAL,
   handicap_point REAL,
@@ -126,3 +130,6 @@ CREATE INDEX IF NOT EXISTS idx_entries_horse ON race_entries(horse_id);
 CREATE INDEX IF NOT EXISTS idx_entries_jockey ON race_entries(jockey_id);
 CREATE INDEX IF NOT EXISTS idx_watchlist_year ON gazi_watchlist(year, status);
 CREATE INDEX IF NOT EXISTS idx_important_races_name_year ON important_race_results(race_name, race_year);
+CREATE UNIQUE INDEX IF NOT EXISTS idx_horses_source_horse_id ON horses(source_horse_id);
+CREATE UNIQUE INDEX IF NOT EXISTS idx_jockeys_source_jockey_id ON jockeys(source_jockey_id);
+CREATE UNIQUE INDEX IF NOT EXISTS idx_trainers_source_trainer_id ON trainers(source_trainer_id);

@@ -3,8 +3,10 @@
     "dev": "python3 -m http.server 5173",
     "fetch:tjk-race-index": "node scripts/fetch-tjk-race-index.mjs",
     "fetch:tjk-named-races": "node scripts/fetch-tjk-named-races.mjs",
+    "fetch:tjk-daily-results": "node scripts/fetch-tjk-daily-results.mjs",
     "import:tjk-race-index": "node scripts/import-tjk-race-index.mjs",
     "import:tjk-named-races": "node scripts/import-tjk-named-races.mjs",
+    "import:tjk-daily-results": "node scripts/import-tjk-daily-results.mjs",
     "export:gazi-route": "node scripts/export-gazi-route-report.mjs",
     "score:gazi-race-similarity": "node scripts/score-gazi-race-similarity.mjs"
   },

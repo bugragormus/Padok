@@ -206,3 +206,18 @@ npm run import:tjk-named-races -- --input data/processed/tjk/named-races
 The named race importer writes to `important_race_results` and updates `races.name` when `source_race_id` matches.
 
 Some TJK data-row endpoints can return `404` when a filtered page has no rows. Fetch scripts treat that as an empty snapshot so `--until-empty` can stop cleanly.
+
+Daily race result snapshots can be fetched and imported with:
+
+```bash
+npm run fetch:tjk-daily-results -- --city-id 5 --city-name Ankara --date 07/06/2025
+npm run import:tjk-daily-results -- --input data/processed/tjk/daily-results/07062025_ankara_5.json
+```
+
+This layer writes horse-level starts into `race_entries` and connects them to `horses`, `jockeys`, and `trainers`. It is the first layer that lets Padok answer questions like:
+
+- Which horses ran in a Gazi prep race?
+- Which jockey rode each horse?
+- What was the horse's finish position, time, weight, margin, odds, and handicap point?
+
+The importer intentionally keeps raw and processed snapshots outside Git. Source code is versioned; runtime data can be refreshed from the official source.

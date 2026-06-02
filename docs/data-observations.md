@@ -41,6 +41,32 @@ After importing `TumOnemliKosular`, 2025 Gazi route names were matched by `sourc
 
 This unlocks a much better product experience: structural similarity can find candidates, while named race recognition can label important context for humans.
 
+## Daily Result Import Findings
+
+The daily result layer was tested with `07/06/2025 Ankara`, which includes the 2025 Mehmet Akif Ersoy Koşusu.
+
+Command used:
+
+```bash
+npm run fetch:tjk-daily-results -- --city-id 5 --city-name Ankara --date 07/06/2025
+npm run import:tjk-daily-results -- --input data/processed/tjk/daily-results/07062025_ankara_5.json
+```
+
+Result:
+
+- 9 races were parsed from the daily result page.
+- 78 horse-level starts were imported into `race_entries`.
+- 78 horses, 27 jockeys, and 48 trainers now exist in the local SQLite runtime database.
+- `source_race_id=217776` connects the imported entries to the named Mehmet Akif Ersoy race.
+
+Mehmet Akif Ersoy sample entries:
+
+- `1`: SPECIAL MAN, jockey VEDAT ABİŞ, 58kg, `2.15.08`, handicap point 91.
+- `2`: ZAMBUR AGA, jockey GÖKHAN KOCAKAYA, 58kg, `2.15.09`, handicap point 88.
+- `3`: GRANDE FLUSSO, jockey MÜSLÜM ÇELİK, 58kg, `2.15.30`, handicap point 85.
+
+This is an important modeling step: Gazi route analysis can now move from race-level similarity to horse-level form and jockey context.
+
 ## Current Limitation
 
 The race index layer does not reliably expose canonical race names such as:
