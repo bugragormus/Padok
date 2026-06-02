@@ -152,6 +152,12 @@ Race index snapshots can now be fetched with:
 npm run fetch:tjk-race-index -- --start 01.06.2025 --end 30.06.2025 --page 1
 ```
 
+Multiple pages can be fetched in one run:
+
+```bash
+npm run fetch:tjk-race-index -- --start 01.03.2025 --end 29.06.2025 --page 1 --pages 10 --until-empty
+```
+
 Useful filters:
 
 - `--city-id <id>`
@@ -175,6 +181,12 @@ npm run import:tjk-race-index -- \
 ```
 
 The default database path is `data/padok.sqlite`. Runtime database files are ignored by Git.
+
+The importer also accepts a directory of processed JSON snapshots:
+
+```bash
+npm run import:tjk-race-index -- --input data/processed/tjk/kosu-sorgulama
+```
 
 Gazi-like races can be scored from the imported SQLite data with:
 

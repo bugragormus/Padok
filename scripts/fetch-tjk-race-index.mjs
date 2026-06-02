@@ -28,9 +28,9 @@ const toSlug = (value) => {
     .toLowerCase();
 };
 
-const buildUrl = (args) => {
+const buildUrl = (args, pageOverride) => {
   const params = new URLSearchParams();
-  const page = getArgValue(args, "--page") ?? "1";
+  const page = pageOverride ?? getArgValue(args, "--page") ?? "1";
   const startDate = getArgValue(args, "--start");
   const endDate = getArgValue(args, "--end");
 
@@ -67,21 +67,20 @@ const buildUrl = (args) => {
   return `${endpoint}?${params.toString()}`;
 };
 
-const buildRunName = (args) => {
+const buildRunName = (args, pageOverride) => {
   const startDate = getArgValue(args, "--start") ?? "latest";
   const endDate = getArgValue(args, "--end") ?? startDate;
-  const page = getArgValue(args, "--page") ?? "1";
+  const page = pageOverride ?? getArgValue(args, "--page") ?? "1";
   return `${toSlug(startDate)}_${toSlug(endDate)}_page-${toSlug(page)}`;
 };
 
-const main = async () => {
-  const args = process.argv.slice(2);
-  const runName = buildRunName(args);
+const fetchPage = async (args, page) => {
+  const runName = buildRunName(args, page);
   const rawDir = join("data", "raw", "tjk", "kosu-sorgulama");
   const processedDir = join("data", "processed", "tjk", "kosu-sorgulama");
   const rawPath = join(rawDir, `${runName}.html`);
   const processedPath = join(processedDir, `${runName}.json`);
-  const url = buildUrl(args);
+  const url = buildUrl(args, page);
 
   await mkdir(rawDir, { recursive: true });
   await mkdir(processedDir, { recursive: true });
@@ -103,7 +102,31 @@ const main = async () => {
   await writeFile(rawPath, html, "utf8");
   await writeFile(processedPath, `${JSON.stringify({ source: url, rowCount: rows.length, rows }, null, 2)}\n`, "utf8");
 
-  console.log(JSON.stringify({ source: url, rawPath, processedPath, rowCount: rows.length }, null, 2));
+  return { page: Number(page), source: url, rawPath, processedPath, rowCount: rows.length };
+};
+
+const main = async () => {
+  const args = process.argv.slice(2);
+  const startPage = Number.parseInt(getArgValue(args, "--page") ?? "1", 10);
+  const pageCount = Number.parseInt(getArgValue(args, "--pages") ?? "1", 10);
+  const untilEmpty = args.includes("--until-empty");
+  const results = [];
+
+  for (let offset = 0; offset < pageCount; offset += 1) {
+    const page = startPage + offset;
+    const result = await fetchPage(args, String(page));
+    results.push(result);
+    console.log(JSON.stringify(result));
+
+    if (untilEmpty && result.rowCount === 0) break;
+  }
+
+  console.log(JSON.stringify({
+    pagesRequested: pageCount,
+    pagesFetched: results.length,
+    totalRows: results.reduce((sum, result) => sum + result.rowCount, 0),
+    results
+  }, null, 2));
 };
 
 main();

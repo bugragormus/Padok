@@ -1,4 +1,4 @@
-import { mkdtemp, readFile, rm, writeFile } from "node:fs/promises";
+import { mkdtemp, readFile, readdir, rm, stat, writeFile } from "node:fs/promises";
 import { tmpdir } from "node:os";
 import { join } from "node:path";
 import { spawnSync } from "node:child_process";
@@ -10,6 +10,13 @@ const getArgValue = (args, name) => {
   const index = args.indexOf(name);
   if (index === -1) return undefined;
   return args[index + 1];
+};
+
+const getRepeatedArgValues = (args, name) => {
+  return args.flatMap((arg, index) => {
+    if (arg !== name) return [];
+    return args[index + 1] ? [args[index + 1]] : [];
+  });
 };
 
 const escapeSql = (value) => {
@@ -129,23 +136,60 @@ const runSqlite = (args) => {
   return result.stdout;
 };
 
+const resolveInputPaths = async (args) => {
+  const directInputs = getRepeatedArgValues(args, "--input");
+  const positionalInputs = args.filter((arg, index) => index === 0 && !arg.startsWith("--"));
+  const inputPaths = [...directInputs, ...positionalInputs];
+
+  if (inputPaths.length === 0) return [];
+
+  const resolved = [];
+  for (const inputPath of inputPaths) {
+    const inputStat = await stat(inputPath);
+    if (!inputStat.isDirectory()) {
+      resolved.push(inputPath);
+      continue;
+    }
+
+    const entries = await readdir(inputPath);
+    resolved.push(
+      ...entries
+        .filter((entry) => entry.endsWith(".json"))
+        .sort()
+        .map((entry) => join(inputPath, entry))
+    );
+  }
+
+  return resolved;
+};
+
 const main = async () => {
   const args = process.argv.slice(2);
-  const inputPath = getArgValue(args, "--input") ?? args[0];
+  const inputPaths = await resolveInputPaths(args);
   const dbPath = getArgValue(args, "--db") ?? "data/padok.sqlite";
 
-  if (!inputPath) {
-    console.error("Usage: node scripts/import-tjk-race-index.mjs --input <processed-json> [--db data/padok.sqlite]");
+  if (inputPaths.length === 0) {
+    console.error("Usage: node scripts/import-tjk-race-index.mjs --input <processed-json-or-directory> [--db data/padok.sqlite]");
     process.exit(1);
   }
 
-  const payload = JSON.parse(await readFile(inputPath, "utf8"));
   const tempDir = await mkdtemp(join(tmpdir(), "padok-import-"));
   const importSqlPath = join(tempDir, "import.sql");
+  let inputRows = 0;
+  let importedFiles = 0;
 
   try {
     runSqlite([dbPath, ".read db/schema.sql"]);
-    await writeFile(importSqlPath, buildSql(payload.rows ?? []), "utf8");
+
+    const rows = [];
+    for (const inputPath of inputPaths) {
+      const payload = JSON.parse(await readFile(inputPath, "utf8"));
+      rows.push(...(payload.rows ?? []));
+      inputRows += payload.rows?.length ?? 0;
+      importedFiles += 1;
+    }
+
+    await writeFile(importSqlPath, buildSql(rows), "utf8");
     runSqlite([dbPath, `.read ${importSqlPath}`]);
 
     const importedCount = runSqlite([
@@ -153,7 +197,7 @@ const main = async () => {
       `SELECT COUNT(*) FROM races WHERE source_id = (SELECT id FROM sources WHERE name = '${sourceName}');`
     ]).trim();
 
-    console.log(JSON.stringify({ dbPath, inputPath, inputRows: payload.rows?.length ?? 0, importedRaceCount: Number(importedCount) }, null, 2));
+    console.log(JSON.stringify({ dbPath, importedFiles, inputRows, importedRaceCount: Number(importedCount) }, null, 2));
   } finally {
     await rm(tempDir, { recursive: true, force: true });
   }

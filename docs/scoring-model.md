@@ -68,3 +68,11 @@ The next improvement is named race recognition:
 - Disi Tay Deneme
 
 Those names are not always present in the first race index layer. We may need detail pages, official important race pages, or program PDFs to attach canonical race names.
+
+The first broader 2025 snapshot already surfaced high-value structural matches:
+
+- 2025-06-07 Ankara, G2, 2200m, cim, 3 yasli Ingilizler.
+- 2025-06-08 Istanbul, G2, 2200m, cim, 3 yasli Ingilizler.
+- 2025-06-08 Istanbul, G1 / Disi, 2100m, cim, 3 yasli Ingilizler.
+
+This suggests the structural score is useful, but canonical naming is still missing.
