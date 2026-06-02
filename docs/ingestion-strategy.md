@@ -166,3 +166,12 @@ The script writes ignored runtime artifacts under:
 
 - `data/raw/tjk/kosu-sorgulama`
 - `data/processed/tjk/kosu-sorgulama`
+
+Parsed race index snapshots can be imported into SQLite with:
+
+```bash
+npm run import:tjk-race-index -- \
+  --input data/processed/tjk/kosu-sorgulama/01062025_30062025_page-1.json
+```
+
+The default database path is `data/padok.sqlite`. Runtime database files are ignored by Git.
