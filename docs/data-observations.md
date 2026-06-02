@@ -28,6 +28,19 @@ The broader sample produced meaningful Gazi-like race candidates:
 
 This is a strong sign that the structural scoring approach is useful. It surfaced the expected Gazi prep profile without hard-coding race names.
 
+## Named Race Recognition Findings
+
+After importing `TumOnemliKosular`, 2025 Gazi route names were matched by `source_race_id`:
+
+- `2025-05-18`: Bİ'TALİH ERKEK TAY DENEME, winner TONBİ, G1, 1600m çim.
+- `2025-05-18`: DİŞİ TAY DENEME, winner AMAZING TOUCH, G1, 1600m çim.
+- `2025-06-07`: MEHMET AKİF ERSOY, winner SPECIAL MAN, G2, 2200m çim.
+- `2025-06-08`: SAİT AKSON, winner HANDSOME KING, G2, 2200m çim.
+- `2025-06-08`: Bİ'TALİH KISRAK, winner BOON NAM, G1, 2100m çim.
+- `2025-06-29`: GAZİ, winner CUTHA, G1, 2400m çim.
+
+This unlocks a much better product experience: structural similarity can find candidates, while named race recognition can label important context for humans.
+
 ## Current Limitation
 
 The race index layer does not reliably expose canonical race names such as:

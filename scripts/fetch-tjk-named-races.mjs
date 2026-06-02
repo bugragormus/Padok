@@ -1,10 +1,9 @@
 import { mkdir, writeFile } from "node:fs/promises";
 import { join } from "node:path";
-import { parseRows } from "./parse-tjk-kosu-sorgulama.mjs";
+import { parseRows } from "./parse-tjk-named-races.mjs";
 
-const endpoint = "https://www.tjk.org/TR/YarisSever/Query/DataRows/KosuSorgulama";
-
-const defaultSort = "Tarih desc, Sehir asc, KosuSirasi asc";
+const endpoint = "https://www.tjk.org/TR/YarisSever/Query/DataRows/TumOnemliKosular";
+const defaultSort = "KOSUTARIHI Desc";
 
 const getArgValue = (args, name) => {
   const index = args.indexOf(name);
@@ -31,29 +30,11 @@ const toSlug = (value) => {
 const buildUrl = (args, pageOverride) => {
   const params = new URLSearchParams();
   const page = pageOverride ?? getArgValue(args, "--page") ?? "1";
-  const startDate = getArgValue(args, "--start");
-  const endDate = getArgValue(args, "--end");
-
   params.set("PageNumber", page);
   params.set("Sort", getArgValue(args, "--sort") ?? defaultSort);
 
-  if (startDate) params.set("QueryParameter_Tarih_Start", startDate);
-  if (endDate) params.set("QueryParameter_Tarih_End", endDate);
-
-  const knownParams = [
-    ["--city-id", "QueryParameter_SehirId"],
-    ["--breed-id", "QueryParameter_IrkId"],
-    ["--surface-id", "QueryParameter_PistId"],
-    ["--distance", "QueryParameter_Mesafe"],
-    ["--race-type-id", "QueryParameter_KosuCinsiId"],
-    ["--group-id", "QueryParameter_GrupId"]
-  ];
-
-  for (const [flag, paramName] of knownParams) {
-    for (const value of getRepeatedArgValues(args, flag)) {
-      params.append(paramName, value);
-    }
-  }
+  const raceCode = getArgValue(args, "--race-code");
+  if (raceCode) params.set("QueryParameter_OnemliKosuKodu", raceCode);
 
   for (const pair of getRepeatedArgValues(args, "--param")) {
     const [key, ...rest] = pair.split("=");
@@ -68,16 +49,15 @@ const buildUrl = (args, pageOverride) => {
 };
 
 const buildRunName = (args, pageOverride) => {
-  const startDate = getArgValue(args, "--start") ?? "latest";
-  const endDate = getArgValue(args, "--end") ?? startDate;
+  const raceCode = getArgValue(args, "--race-code") ?? "all";
   const page = pageOverride ?? getArgValue(args, "--page") ?? "1";
-  return `${toSlug(startDate)}_${toSlug(endDate)}_page-${toSlug(page)}`;
+  return `${toSlug(raceCode)}_page-${toSlug(page)}`;
 };
 
 const fetchPage = async (args, page) => {
   const runName = buildRunName(args, page);
-  const rawDir = join("data", "raw", "tjk", "kosu-sorgulama");
-  const processedDir = join("data", "processed", "tjk", "kosu-sorgulama");
+  const rawDir = join("data", "raw", "tjk", "named-races");
+  const processedDir = join("data", "processed", "tjk", "named-races");
   const rawPath = join(rawDir, `${runName}.html`);
   const processedPath = join(processedDir, `${runName}.json`);
   const url = buildUrl(args, page);
@@ -88,7 +68,7 @@ const fetchPage = async (args, page) => {
   const response = await fetch(url, {
     headers: {
       "accept": "text/html,application/xhtml+xml",
-      "user-agent": "PadokRaceIndexer/0.1"
+      "user-agent": "PadokNamedRaceIndexer/0.1"
     }
   });
 

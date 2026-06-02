@@ -2,7 +2,9 @@
   "scripts": {
     "dev": "python3 -m http.server 5173",
     "fetch:tjk-race-index": "node scripts/fetch-tjk-race-index.mjs",
+    "fetch:tjk-named-races": "node scripts/fetch-tjk-named-races.mjs",
     "import:tjk-race-index": "node scripts/import-tjk-race-index.mjs",
+    "import:tjk-named-races": "node scripts/import-tjk-named-races.mjs",
     "score:gazi-race-similarity": "node scripts/score-gazi-race-similarity.mjs"
   },
   "devDependencies": {}

@@ -31,6 +31,7 @@ Distance and surface are weighted heavily because Gazi is primarily a stamina-on
 
 The script also emits a `signalTier` because one numeric score can hide important nuance:
 
+- `target-race`: Gazi itself
 - `core-prep`: 3 yasli Ingiliz, cim, 2000m+
 - `stamina-proxy`: 3 yasli Ingiliz, 2000m+, non-turf
 - `classic-speed`: 3 yasli Ingiliz, cim, roughly 1600m
@@ -38,6 +39,15 @@ The script also emits a `signalTier` because one numeric score can hide importan
 - `weak-context`: useful context only
 
 This matters because a 1600m turf classic can show class and speed, while a 2100m dirt race can show stamina. Neither should be silently treated as the same kind of evidence.
+
+Named race recognition can override structural tiers for known Gazi-route races:
+
+- GAZI -> `target-race`
+- MEHMET AKIF ERSOY -> `core-prep`
+- SAIT AKSON -> `core-prep`
+- KISRAK -> `core-prep`
+- ERKEK TAY DENEME -> `classic-speed`
+- DISI TAY DENEME -> `classic-speed`
 
 ## Why This Is Separate From Horse Scoring
 
@@ -76,3 +86,5 @@ The first broader 2025 snapshot already surfaced high-value structural matches:
 - 2025-06-08 Istanbul, G1 / Disi, 2100m, cim, 3 yasli Ingilizler.
 
 This suggests the structural score is useful, but canonical naming is still missing.
+
+Canonical naming is now available through the TJK `TumOnemliKosular` layer when the named race has been imported and its `source_race_id` matches a race index record.

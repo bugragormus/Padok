@@ -195,3 +195,14 @@ npm run score:gazi-race-similarity -- --year 2025 --limit 20
 ```
 
 This currently produces an exploratory report instead of persisting scores. That is intentional: similarity weights should be reviewed before they become durable model features.
+
+Named race snapshots can be fetched and imported with:
+
+```bash
+npm run fetch:tjk-named-races -- --page 1 --pages 20 --until-empty
+npm run import:tjk-named-races -- --input data/processed/tjk/named-races
+```
+
+The named race importer writes to `important_race_results` and updates `races.name` when `source_race_id` matches.
+
+Some TJK data-row endpoints can return `404` when a filtered page has no rows. Fetch scripts treat that as an empty snapshot so `--until-empty` can stop cleanly.

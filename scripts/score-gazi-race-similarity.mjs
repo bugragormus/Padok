@@ -54,6 +54,22 @@ const classScore = (raceClass) => {
   return 0;
 };
 
+const normalizeName = (value) => {
+  return String(value ?? "").toLocaleUpperCase("tr-TR");
+};
+
+const classifyNamedPrep = (name) => {
+  const normalized = normalizeName(name);
+  if (!normalized) return null;
+  if (normalized === "GAZİ") return "target-race";
+  if (normalized.includes("MEHMET AKİF ERSOY")) return "core-prep";
+  if (normalized.includes("SAİT AKSON")) return "core-prep";
+  if (normalized.includes("KISRAK")) return "core-prep";
+  if (normalized.includes("ERKEK TAY DENEME")) return "classic-speed";
+  if (normalized.includes("DİŞİ TAY DENEME")) return "classic-speed";
+  return null;
+};
+
 const scoreRace = (race) => {
   const factors = {
     distance: distanceScore(race.distance_m),
@@ -71,6 +87,9 @@ const scoreRace = (race) => {
 };
 
 const classifySignalTier = (race) => {
+  const namedPrep = classifyNamedPrep(race.name);
+  if (namedPrep) return namedPrep;
+
   const isThreeYearOldEnglish = race.breed === "İngiliz" && ageScore(race.age_condition) === 15;
   const isTurf = race.surface === "Çim";
   const distance = Number(race.distance_m);
@@ -92,6 +111,7 @@ const buildExplanation = (race) => {
   if (race.factors.breed === 20) notes.push("İngiliz at koşusu");
   if (race.factors.age === 15) notes.push("3 yaşlı İngiliz profili");
   if (race.factors.class > 0) notes.push("sınıf sinyali var");
+  if (race.name) notes.push(`${race.name} isimli koşusu`);
 
   return notes.join(", ");
 };
@@ -105,6 +125,7 @@ const readRaces = (dbPath, year) => {
       'date', date,
       'venue', venue,
       'race_no', race_no,
+      'name', name,
       'race_class', race_class,
       'age_condition', age_condition,
       'breed', breed,

@@ -76,6 +76,25 @@ CREATE TABLE IF NOT EXISTS race_aliases (
   alias TEXT NOT NULL UNIQUE
 );
 
+CREATE TABLE IF NOT EXISTS important_race_results (
+  id INTEGER PRIMARY KEY,
+  source_id INTEGER NOT NULL REFERENCES sources(id),
+  source_race_id TEXT NOT NULL,
+  race_year INTEGER,
+  race_date TEXT,
+  race_name TEXT NOT NULL,
+  winner_name TEXT,
+  race_class TEXT,
+  jockey_name TEXT,
+  owner_name TEXT,
+  distance_m INTEGER,
+  surface TEXT,
+  winner_time TEXT,
+  prize TEXT,
+  result_href TEXT,
+  UNIQUE(source_id, source_race_id)
+);
+
 CREATE TABLE IF NOT EXISTS gazi_watchlist (
   id INTEGER PRIMARY KEY,
   year INTEGER NOT NULL,
@@ -106,3 +125,4 @@ CREATE INDEX IF NOT EXISTS idx_races_profile ON races(distance_m, surface, breed
 CREATE INDEX IF NOT EXISTS idx_entries_horse ON race_entries(horse_id);
 CREATE INDEX IF NOT EXISTS idx_entries_jockey ON race_entries(jockey_id);
 CREATE INDEX IF NOT EXISTS idx_watchlist_year ON gazi_watchlist(year, status);
+CREATE INDEX IF NOT EXISTS idx_important_races_name_year ON important_race_results(race_name, race_year);
