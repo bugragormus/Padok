@@ -175,3 +175,11 @@ npm run import:tjk-race-index -- \
 ```
 
 The default database path is `data/padok.sqlite`. Runtime database files are ignored by Git.
+
+Gazi-like races can be scored from the imported SQLite data with:
+
+```bash
+npm run score:gazi-race-similarity -- --year 2025 --limit 20
+```
+
+This currently produces an exploratory report instead of persisting scores. That is intentional: similarity weights should be reviewed before they become durable model features.
