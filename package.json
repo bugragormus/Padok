@@ -1,6 +1,7 @@
 {
   "scripts": {
-    "dev": "python3 -m http.server 5173"
+    "dev": "python3 -m http.server 5173",
+    "fetch:tjk-race-index": "node scripts/fetch-tjk-race-index.mjs"
   },
   "devDependencies": {}
 }

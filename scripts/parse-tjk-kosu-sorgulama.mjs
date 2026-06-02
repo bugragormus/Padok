@@ -1,6 +1,7 @@
 import { readFile } from "node:fs/promises";
+import { fileURLToPath } from "node:url";
 
-const columns = [
+export const columns = [
   "date",
   "city",
   "raceNo",
@@ -18,7 +19,7 @@ const columns = [
   "handicapPoint"
 ];
 
-const stripTags = (html) => {
+export const stripTags = (html) => {
   return html
     .replace(/<script[\s\S]*?<\/script>/gi, "")
     .replace(/<style[\s\S]*?<\/style>/gi, "")
@@ -29,18 +30,41 @@ const stripTags = (html) => {
     .trim();
 };
 
-const parseRows = (html) => {
+export const extractHref = (html) => {
+  const match = html.match(/href=["']([^"']+)["']/i);
+  if (!match) return "";
+  return match[1].replace(/&amp;/g, "&");
+};
+
+export const extractRaceId = (href) => {
+  const match = href.match(/#(\d+)/);
+  return match ? match[1] : "";
+};
+
+export const parseRows = (html) => {
   const rows = [...html.matchAll(/<tr\b[^>]*>([\s\S]*?)<\/tr>/gi)];
 
   return rows
     .map(([, rowHtml]) => {
-      const cells = [...rowHtml.matchAll(/<td\b[^>]*>([\s\S]*?)<\/td>/gi)].map(([, cellHtml]) => stripTags(cellHtml));
+      const cellHtmlBlocks = [...rowHtml.matchAll(/<td\b[^>]*>([\s\S]*?)<\/td>/gi)].map(([, cellHtml]) => cellHtml);
+      const cells = cellHtmlBlocks.map((cellHtml) => stripTags(cellHtml));
 
       if (cells.length !== columns.length) return null;
 
-      return Object.fromEntries(columns.map((column, index) => [column, cells[index]]));
+      const resultHref = extractHref(cellHtmlBlocks[0]);
+
+      return {
+        sourceRaceId: extractRaceId(resultHref),
+        resultHref,
+        ...Object.fromEntries(columns.map((column, index) => [column, cells[index]]))
+      };
     })
     .filter(Boolean);
+};
+
+export const parseFile = async (inputPath) => {
+  const html = await readFile(inputPath, "utf8");
+  return parseRows(html);
 };
 
 const main = async () => {
@@ -51,9 +75,10 @@ const main = async () => {
     process.exit(1);
   }
 
-  const html = await readFile(inputPath, "utf8");
-  const rows = parseRows(html);
+  const rows = await parseFile(inputPath);
   console.log(JSON.stringify(rows, null, 2));
 };
 
-main();
+if (process.argv[1] === fileURLToPath(import.meta.url)) {
+  main();
+}

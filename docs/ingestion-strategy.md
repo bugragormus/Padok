@@ -143,3 +143,26 @@ Bir sonraki teknik adim:
 5. Sonraki adimda JSON'u SQLite `races` tablosuna yaz.
 
 Bu bize hem hizli hem ogretici bir yol verir: once TJK'nin veri yapisini gozlemle, sonra normalize et, sonra API'ye bagla.
+
+## 8. Current Fetch Command
+
+Race index snapshots can now be fetched with:
+
+```bash
+npm run fetch:tjk-race-index -- --start 01.06.2025 --end 30.06.2025 --page 1
+```
+
+Useful filters:
+
+- `--city-id <id>`
+- `--breed-id <id>`
+- `--surface-id <id>`
+- `--distance <meters>`
+- `--race-type-id <id>`
+- `--group-id <id>`
+- `--param QueryParameter_Name=value`
+
+The script writes ignored runtime artifacts under:
+
+- `data/raw/tjk/kosu-sorgulama`
+- `data/processed/tjk/kosu-sorgulama`
