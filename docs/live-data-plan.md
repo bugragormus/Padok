@@ -30,8 +30,9 @@ The scheduled workflow runs these steps:
 4. Find Gazi-route races whose dates are complete but whose entries are missing.
 5. Fetch daily results for those dates and venues.
 6. Import horse-level entries.
-7. Export `data/gazi-route-report.json`.
-8. Deploy the static site artifact to GitHub Pages.
+7. Export historical and current-season route reports.
+8. Select the current-season report when it has races; otherwise fall back to the latest useful historical report.
+9. Deploy the static site artifact to GitHub Pages.
 
 The workflow is defined in `.github/workflows/pages.yml`.
 
@@ -56,6 +57,8 @@ The current code handles `completed_missing -> completed_imported` through:
 ```bash
 npm run refresh:gazi-route -- --year 2026 --out data/gazi-route-report.json
 ```
+
+The Pages workflow keeps separate `2025` and `2026` route reports. Until the 2026 route contains official race records, the default live report falls back to the populated 2025 historical route.
 
 The next step is to add a program/declaration ingestion layer for `planned` races. That layer should read future race programs and declarations, then mark races as pending until official results are available.
 
@@ -89,4 +92,3 @@ No paid database or server is needed for this first live version.
 - Future declarations are not imported yet.
 - If TJK changes HTML structure, parser code may need updates.
 - The static app updates only after a scheduled or manual workflow run.
-

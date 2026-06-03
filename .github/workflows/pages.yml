@@ -62,15 +62,25 @@ jobs:
       - name: Import named races
         run: npm run import:tjk-named-races -- --input data/processed/tjk/named-races
 
-      - name: Refresh Gazi route data
-        run: npm run refresh:gazi-route -- --year "$GAZI_YEAR" --out data/gazi-route-report.json
+      - name: Refresh historical Gazi route data
+        run: npm run refresh:gazi-route -- --year 2025 --out data/gazi-route-2025.json
+
+      - name: Refresh current Gazi route data
+        run: npm run refresh:gazi-route -- --year "$GAZI_YEAR" --out data/gazi-route-2026.json
+
+      - name: Select default Gazi route report
+        run: |
+          npm run select:gazi-route -- \
+            --preferred data/gazi-route-2026.json \
+            --fallback data/gazi-route-2025.json \
+            --out data/gazi-route-report.json
 
       - name: Prepare static site
         run: |
           mkdir -p dist/assets dist/data
           cp index.html app.js styles.css .nojekyll dist/
           cp assets/* dist/assets/
-          cp data/gazi-knowledge-base.json data/gazi-route-report.json dist/data/
+          cp data/gazi-knowledge-base.json data/gazi-route-report.json data/gazi-route-2025.json data/gazi-route-2026.json dist/data/
 
       - name: Configure Pages
         uses: actions/configure-pages@v5
