@@ -62,7 +62,19 @@ Ilk ML hedefi "birinciyi bilmek" olmamali. Daha iyi baslangic:
 - Gazi field icindeki her atin hangi route kosularini pas gecmis oldugu.
 - Bir atin route disindan gelmesine ragmen Gazi ilk 3 yapabildigi durumlar.
 
-## 8. Guncel Arastirma Sirasi
+## 8. Veri Ufku
+
+Hedef "bulabildigimiz her yili ayni agirlikla modele koymak" degil. Daha saglikli hedef:
+
+```text
+2020-2026 -> yuksek guvenli modern pencere
+2015-2019 -> ikinci genisletme penceresi
+1927-2014 -> arsiv ve dusuk guvenli tarihsel baglam
+```
+
+Sebep: Eski Gazi verisi degerli olabilir, ama veri formati, yaris programi, pist kosullari, tempo, at popülasyonu ve kampanya pratikleri bugune gore degismis olabilir. Bu nedenle eski yillari toplamak mantikli; fakat model agirligi, feature kapsami ve guven etiketi ayri tutulmali.
+
+## 9. Guncel Arastirma Sirasi
 
 Mevcut route backtest bize kosu seviyesinde sinyal verdi. Siradaki soru at seviyesinde:
 

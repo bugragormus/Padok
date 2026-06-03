@@ -36,6 +36,7 @@ The app currently shows:
 - Pedigree, owner, and jockey coverage.
 - A historical backtest panel for the 2020-2025 Gazi routes.
 - A Gazi route participation matrix showing which Gazi runners did or did not run each tracked prep race.
+- A data horizon panel showing current historical coverage and target year windows.
 - A static candidate panel that is still marked as a prototype.
 
 ## Current Data Coverage
@@ -50,6 +51,7 @@ Committed route report files:
 - `data/gazi-route-2025.json`
 - `data/gazi-backtest-report.json`
 - `data/gazi-participation-report.json`
+- `data/gazi-data-horizon.json`
 
 Current historical backtest sample:
 
@@ -58,6 +60,14 @@ Current historical backtest sample:
 - `18` Gazi top-three slots
 - `16` of those top-three slots were covered by at least one tracked route race
 - Overall route coverage: `89%`
+
+Current data horizon:
+
+- High-confidence window in repo: `2020-2025`
+- Immediate target: `2020-2026`
+- Next expansion target: `2015-2019`
+- Archive research window: `1927-2014`
+- Current tracked route starts: `559`
 
 Important interpretation:
 
@@ -127,6 +137,7 @@ Key scripts:
 - `scripts/export-gazi-route-report.mjs`
 - `scripts/backtest-gazi-route.mjs`
 - `scripts/build-gazi-participation.mjs`
+- `scripts/build-gazi-data-horizon.mjs`
 
 Useful commands:
 
@@ -143,6 +154,7 @@ npm run backtest:gazi-route -- \
   --input data/gazi-route-2025.json \
   --out data/gazi-backtest-report.json
 npm run build:gazi-participation -- --input data/gazi-route-report.json --out data/gazi-participation-report.json
+npm run build:gazi-data-horizon -- --data-dir data --out data/gazi-data-horizon.json
 ```
 
 ## Live Deployment
@@ -163,7 +175,8 @@ The workflow:
 6. Refreshes 2026 current route data.
 7. Builds the historical backtest from committed 2020-2025 route reports and generated 2025 data.
 8. Builds the selected-year Gazi participation matrix.
-9. Deploys the static site to Pages.
+9. Builds the data horizon report.
+10. Deploys the static site to Pages.
 
 No paid hosting or database is currently required.
 
@@ -174,6 +187,7 @@ The UI is useful but still MVP-level.
 Good current pieces:
 
 - Data status is visible.
+- Data horizon is visible.
 - Backtest metrics are visible.
 - Route participation matrix is visible.
 - Route race entries are readable.
@@ -208,7 +222,18 @@ When 2026 Gazi declarations are available:
 - switch from prototype candidate cards to official field cards
 - show missing route races and pending results
 
-### 3. Feature Baseline
+### 3. Historical Data Expansion
+
+Before heavier modeling:
+
+- Complete 2026 once field and result data are available.
+- Add 2019 backward to 2015.
+- Re-run backtest after each added season.
+- Keep older archive years lower-confidence unless horse-level detail is verified.
+
+See `docs/data-horizon.md`.
+
+### 4. Feature Baseline
 
 After the participation matrix:
 
@@ -221,7 +246,7 @@ After the participation matrix:
 
 Keep these scores separate in the UI. Do not hide everything inside one number.
 
-### 4. UX Improvements
+### 5. UX Improvements
 
 - Collapse long race entry lists by default.
 - Add year selector for route and backtest views.

@@ -10,6 +10,7 @@ const state = {
   routeReport: null,
   backtestReport: null,
   participationReport: null,
+  dataHorizon: null,
   query: "",
   year: "all"
 };
@@ -182,6 +183,52 @@ const renderDataStatus = (report) => {
       `;
     }).join("")
     : '<p class="coverage-empty">Henüz eşleşen rota koşusu bulunamadı.</p>';
+};
+
+const horizonTierStatusLabels = {
+  complete: "Tamamlandı",
+  "in-progress": "Sürüyor",
+  planned: "Planlandı",
+  research: "Araştırma"
+};
+
+const renderDataHorizon = (report) => {
+  const summary = report.summary;
+
+  document.querySelector("#data-horizon-summary").textContent = `${summary.currentYearRange} aralığında ${summary.highConfidenceYearCount} yüksek güvenli sezon, ${summary.totalRouteRaceCount} rota koşusu ve ${summary.totalHorseStartCount} at startı var.`;
+
+  const metrics = [
+    ["Mevcut sezon", summary.currentYearCount],
+    ["Yüksek güven", summary.highConfidenceYearCount],
+    ["Birincil hedef", summary.primaryTargetYearRange],
+    ["Hedef doluluk", `%${summary.primaryTargetCoverageRate}`],
+    ["Genişletme", summary.expansionTargetYearRange],
+    ["Genişletme doluluk", `%${summary.expansionTargetCoverageRate}`]
+  ];
+
+  document.querySelector("#data-horizon-metrics").innerHTML = metrics
+    .map(([label, value]) => `
+      <div class="status-metric">
+        <span>${escapeHtml(label)}</span>
+        <strong>${escapeHtml(value)}</strong>
+      </div>
+    `)
+    .join("");
+
+  document.querySelector("#data-horizon-tiers").innerHTML = report.tiers
+    .map((tier) => `
+      <div class="horizon-tier horizon-tier--${escapeHtml(tier.key)}">
+        <div>
+          <strong>${escapeHtml(tier.yearRange)}</strong>
+          <span>${escapeHtml(tier.label)}</span>
+        </div>
+        <p>${escapeHtml(tier.purpose)}</p>
+        <em>${escapeHtml(horizonTierStatusLabels[tier.status] ?? tier.status)}${tier.coveredYears.length ? ` · ${escapeHtml(tier.coveredYears.join(", "))}` : ""}</em>
+      </div>
+    `)
+    .join("");
+
+  document.querySelector("#data-horizon-warning").textContent = report.methodology.warning;
 };
 
 const sampleStateLabels = {
@@ -463,11 +510,12 @@ const bindEvents = () => {
 };
 
 const init = async () => {
-  const [knowledgeResponse, routeResponse, backtestResponse, participationResponse] = await Promise.all([
+  const [knowledgeResponse, routeResponse, backtestResponse, participationResponse, horizonResponse] = await Promise.all([
     fetch("./data/gazi-knowledge-base.json", { cache: "no-store" }),
     fetch("./data/gazi-route-report.json", { cache: "no-store" }).catch(() => null),
     fetch("./data/gazi-backtest-report.json", { cache: "no-store" }).catch(() => null),
-    fetch("./data/gazi-participation-report.json", { cache: "no-store" }).catch(() => null)
+    fetch("./data/gazi-participation-report.json", { cache: "no-store" }).catch(() => null),
+    fetch("./data/gazi-data-horizon.json", { cache: "no-store" }).catch(() => null)
   ]);
 
   state.data = await knowledgeResponse.json();
@@ -484,6 +532,10 @@ const init = async () => {
     state.participationReport = await participationResponse.json();
   }
 
+  if (horizonResponse?.ok) {
+    state.dataHorizon = await horizonResponse.json();
+  }
+
   renderTarget(state.data.targetRace);
   if (state.routeReport?.routeRaces?.length) {
     renderRouteReport(state.routeReport);
@@ -494,6 +546,7 @@ const init = async () => {
   }
   if (state.backtestReport) renderBacktest(state.backtestReport);
   if (state.participationReport) renderParticipation(state.participationReport);
+  if (state.dataHorizon) renderDataHorizon(state.dataHorizon);
   renderYears(state.data.horses);
   renderCandidates();
   bindEvents();

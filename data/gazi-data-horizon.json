@@ -1,0 +1,204 @@
+{
+  "generatedAt": "2026-06-03T22:13:01.786Z",
+  "methodology": {
+    "target": "Gazi historical data horizon",
+    "warning": "Daha eski veri daha fazla örneklem sağlar; fakat pist, program, veri kalitesi ve yarış ekosistemi değiştiği için tüm yıllar aynı ağırlıkla kullanılmamalıdır."
+  },
+  "summary": {
+    "currentYearCount": 6,
+    "currentYearRange": "2020-2025",
+    "highConfidenceYearCount": 6,
+    "highConfidenceYears": [
+      2020,
+      2021,
+      2022,
+      2023,
+      2024,
+      2025
+    ],
+    "primaryTargetYearRange": "2020-2026",
+    "primaryTargetCoverageRate": 86,
+    "expansionTargetYearRange": "2015-2019",
+    "expansionTargetCoverageRate": 0,
+    "totalRouteRaceCount": 36,
+    "totalHorseStartCount": 559
+  },
+  "tiers": [
+    {
+      "key": "primary",
+      "label": "High-confidence modeling window",
+      "yearRange": "2020-2026",
+      "purpose": "Modern Gazi route, horse-level entries, UI and first scoring/backtest work.",
+      "status": "in-progress",
+      "coveredYears": [
+        2020,
+        2021,
+        2022,
+        2023,
+        2024,
+        2025
+      ],
+      "targetYears": [
+        2020,
+        2021,
+        2022,
+        2023,
+        2024,
+        2025,
+        2026
+      ]
+    },
+    {
+      "key": "expansion",
+      "label": "Expansion window",
+      "yearRange": "2015-2019",
+      "purpose": "Increase sample size after the current pipeline is stable.",
+      "status": "planned",
+      "coveredYears": [],
+      "targetYears": [
+        2015,
+        2016,
+        2017,
+        2018,
+        2019
+      ]
+    },
+    {
+      "key": "archive",
+      "label": "Archive research window",
+      "yearRange": "1927-2014",
+      "purpose": "Historical context and lower-confidence enrichment; not equal-weight model training by default.",
+      "status": "research",
+      "coveredYears": [],
+      "targetYears": []
+    }
+  ],
+  "seasons": [
+    {
+      "year": 2020,
+      "sourceFile": "data/gazi-route-2020.json",
+      "routeRaceCount": 6,
+      "prepRaceCount": 5,
+      "completedRaceCount": 6,
+      "coreCoverageRate": 100,
+      "horseLevelCompletenessRate": 100,
+      "gaziRunnerCount": 15,
+      "prepEntryCount": 57,
+      "totalEntryCount": 72,
+      "dataConfidence": "high",
+      "raceNames": [
+        "ERKEK TAY DENEME",
+        "DİŞİ TAY DENEME",
+        "MEHMET AKİF ERSOY",
+        "SAİT AKSON",
+        "KISRAK",
+        "GAZİ"
+      ]
+    },
+    {
+      "year": 2021,
+      "sourceFile": "data/gazi-route-2021.json",
+      "routeRaceCount": 6,
+      "prepRaceCount": 5,
+      "completedRaceCount": 6,
+      "coreCoverageRate": 100,
+      "horseLevelCompletenessRate": 100,
+      "gaziRunnerCount": 22,
+      "prepEntryCount": 69,
+      "totalEntryCount": 91,
+      "dataConfidence": "high",
+      "raceNames": [
+        "DİŞİ TAY DENEME",
+        "ERKEK TAY DENEME",
+        "MEHMET AKİF ERSOY",
+        "SAİT AKSON",
+        "KISRAK",
+        "GAZİ"
+      ]
+    },
+    {
+      "year": 2022,
+      "sourceFile": "data/gazi-route-2022.json",
+      "routeRaceCount": 6,
+      "prepRaceCount": 5,
+      "completedRaceCount": 6,
+      "coreCoverageRate": 100,
+      "horseLevelCompletenessRate": 100,
+      "gaziRunnerCount": 22,
+      "prepEntryCount": 72,
+      "totalEntryCount": 94,
+      "dataConfidence": "high",
+      "raceNames": [
+        "ERKEK TAY DENEME",
+        "DİŞİ TAY DENEME",
+        "MEHMET AKİF ERSOY",
+        "SAİT AKSON",
+        "KISRAK",
+        "GAZİ"
+      ]
+    },
+    {
+      "year": 2023,
+      "sourceFile": "data/gazi-route-2023.json",
+      "routeRaceCount": 6,
+      "prepRaceCount": 5,
+      "completedRaceCount": 6,
+      "coreCoverageRate": 100,
+      "horseLevelCompletenessRate": 100,
+      "gaziRunnerCount": 22,
+      "prepEntryCount": 78,
+      "totalEntryCount": 100,
+      "dataConfidence": "high",
+      "raceNames": [
+        "ERKEK TAY DENEME",
+        "DİŞİ TAY DENEME",
+        "MEHMET AKİF ERSOY",
+        "SAİT AKSON",
+        "KISRAK",
+        "GAZİ"
+      ]
+    },
+    {
+      "year": 2024,
+      "sourceFile": "data/gazi-route-2024.json",
+      "routeRaceCount": 6,
+      "prepRaceCount": 5,
+      "completedRaceCount": 6,
+      "coreCoverageRate": 100,
+      "horseLevelCompletenessRate": 100,
+      "gaziRunnerCount": 22,
+      "prepEntryCount": 77,
+      "totalEntryCount": 99,
+      "dataConfidence": "high",
+      "raceNames": [
+        "ERKEK TAY DENEME",
+        "DİŞİ TAY DENEME",
+        "MEHMET AKİF ERSOY",
+        "SAİT AKSON",
+        "KISRAK",
+        "GAZİ"
+      ]
+    },
+    {
+      "year": 2025,
+      "sourceFile": "data/gazi-route-2025.json",
+      "routeRaceCount": 6,
+      "prepRaceCount": 5,
+      "completedRaceCount": 6,
+      "coreCoverageRate": 100,
+      "horseLevelCompletenessRate": 100,
+      "gaziRunnerCount": 22,
+      "prepEntryCount": 81,
+      "totalEntryCount": 103,
+      "dataConfidence": "high",
+      "raceNames": [
+        "Bİ'TALİH ERKEK TAY DENEME",
+        "DİŞİ TAY DENEME",
+        "MEHMET AKİF ERSOY",
+        "SAİT AKSON",
+        "Bİ'TALİH KISRAK",
+        "GAZİ"
+      ]
+    }
+  ]
+}

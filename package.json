@@ -12,6 +12,7 @@
     "refresh:gazi-route": "node scripts/refresh-gazi-route-data.mjs",
     "select:gazi-route": "node scripts/select-gazi-route-report.mjs",
     "build:gazi-participation": "node scripts/build-gazi-participation.mjs",
+    "build:gazi-data-horizon": "node scripts/build-gazi-data-horizon.mjs",
     "backtest:gazi-route": "node scripts/backtest-gazi-route.mjs",
     "analyze:gazi-context": "node scripts/analyze-gazi-context.mjs",
     "score:gazi-race-similarity": "node scripts/score-gazi-race-similarity.mjs"

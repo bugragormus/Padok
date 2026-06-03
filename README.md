@@ -25,6 +25,7 @@ Uygulama su anda:
 - 2020-2025 Gazi rota raporlarini ve backtest sonucunu repo icinde tutar.
 - Gazi ilk 3 ile rota kosulari arasindaki iliskiyi aciklanabilir metriklerle gosterir.
 - Gazi koşucularının hangi rota koşularına katıldığını veya katılmadığını at bazlı matriste gösterir.
+- Mevcut tarihsel veri kapsamını ve hedef veri ufkunu gösterir.
 - GitHub Pages uzerinde ucretsiz ve statik olarak calisir.
 - GitHub Actions ile testleri calistirir ve canli JSON artefactlarini deploy eder.
 
@@ -67,6 +68,7 @@ Alternatif olarak `index.html` dosyasini dogrudan tarayicida acmak da yeterli.
 ```bash
 npm run refresh:gazi-route -- --year 2025 --out data/gazi-route-report.json
 npm run build:gazi-participation -- --input data/gazi-route-report.json --out data/gazi-participation-report.json
+npm run build:gazi-data-horizon -- --data-dir data --out data/gazi-data-horizon.json
 ```
 
 Bu komut sonucu eksik ama tarihi gecmis Gazi rota kosularini bulur, TJK gunluk sonuc sayfalarini ceker, at bazli entry verilerini import eder ve frontend'in okudugu JSON raporunu yeniden uretir.
@@ -76,6 +78,7 @@ Gelecekteki MCP server plani icin bkz. `docs/mcp-plan.md`.
 Genisletilmis feature ve agirlik stratejisi icin bkz. `docs/feature-strategy.md`.
 Ilk aciklanabilir rota backtest metodolojisi icin bkz. `docs/backtest-method.md`.
 Guncel proje devri ve roadmap icin bkz. `docs/project-status.md`.
+Veri yılı hedefleri ve güven katmanları için bkz. `docs/data-horizon.md`.
 
 ## Mimari Karar
 

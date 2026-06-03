@@ -355,6 +355,70 @@ h2 {
   line-height: 1.55;
 }
 
+.data-horizon {
+  margin-top: 36px;
+  padding-top: 28px;
+  border-top: 1px solid var(--line);
+}
+
+.data-horizon .section-heading {
+  margin-bottom: 18px;
+}
+
+.data-horizon h3 {
+  margin-bottom: 10px;
+  font-size: clamp(1.35rem, 2vw, 1.7rem);
+}
+
+.horizon-tiers {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+  margin-top: 18px;
+}
+
+.horizon-tier {
+  display: grid;
+  gap: 10px;
+  min-height: 170px;
+  padding: 16px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.58);
+}
+
+.horizon-tier div {
+  display: grid;
+  gap: 4px;
+}
+
+.horizon-tier strong {
+  font-size: 1.35rem;
+}
+
+.horizon-tier span,
+.horizon-tier p,
+.horizon-tier em {
+  color: var(--muted);
+  font-size: 0.78rem;
+  line-height: 1.55;
+}
+
+.horizon-tier p {
+  margin: 0;
+}
+
+.horizon-tier em {
+  align-self: end;
+  color: var(--green-2);
+  font-style: normal;
+  font-weight: 900;
+}
+
+.horizon-tier--archive em {
+  color: var(--blue);
+}
+
 .backtest {
   padding: 28px 0;
 }
@@ -860,6 +924,10 @@ footer {
   .backtest-layout {
     grid-template-columns: 1fr;
     gap: 28px;
+  }
+
+  .horizon-tiers {
+    grid-template-columns: 1fr;
   }
 
   .backtest-row {
