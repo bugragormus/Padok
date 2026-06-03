@@ -387,6 +387,11 @@ h2 {
   font-size: 0.74rem;
 }
 
+.race-entry__horse .race-entry__context {
+  color: #7a847d;
+  font-size: 0.7rem;
+}
+
 .race-entry__result {
   text-align: right;
 }

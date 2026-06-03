@@ -9,6 +9,7 @@
     "import:tjk-daily-results": "node scripts/import-tjk-daily-results.mjs",
     "export:gazi-route": "node scripts/export-gazi-route-report.mjs",
     "refresh:gazi-route": "node scripts/refresh-gazi-route-data.mjs",
+    "analyze:gazi-context": "node scripts/analyze-gazi-context.mjs",
     "score:gazi-race-similarity": "node scripts/score-gazi-race-similarity.mjs"
   },
   "devDependencies": {}

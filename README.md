@@ -50,6 +50,8 @@ npm run refresh:gazi-route -- --year 2025 --out data/gazi-route-report.json
 Bu komut sonucu eksik ama tarihi gecmis Gazi rota kosularini bulur, TJK gunluk sonuc sayfalarini ceker, at bazli entry verilerini import eder ve frontend'in okudugu JSON raporunu yeniden uretir.
 
 Canli ve ucretsiz yayin plani icin bkz. `docs/live-data-plan.md`.
+Gelecekteki MCP server plani icin bkz. `docs/mcp-plan.md`.
+Genisletilmis feature ve agirlik stratejisi icin bkz. `docs/feature-strategy.md`.
 
 ## Mimari Karar
 

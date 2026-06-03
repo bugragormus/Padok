@@ -64,6 +64,34 @@ const normalizeHorseName = (value) => {
     .trim();
 };
 
+export const parsePedigree = (value) => {
+  const pedigree = stripTags(value);
+  const [sirePart = "", damLine = ""] = pedigree.split(/\s+-\s+/, 2);
+  const [damPart = "", damsirePart = ""] = damLine.split(/\s+\/\s+/, 2);
+
+  return {
+    sire: sirePart.trim(),
+    dam: damPart.trim(),
+    damsire: damsirePart.trim()
+  };
+};
+
+export const parseHorseAgeSex = (value) => {
+  const text = stripTags(value).toLocaleLowerCase("tr-TR");
+  const age = Number.parseInt(text.match(/\d+/)?.[0] ?? "", 10);
+  const sexCode = text.split(/\s+/).at(-1);
+  const sexLabels = {
+    d: "Dişi",
+    e: "Erkek",
+    k: "Kısrak"
+  };
+
+  return {
+    age: Number.isFinite(age) ? age : null,
+    sex: sexLabels[sexCode] ?? ""
+  };
+};
+
 const extractCell = (rowHtml, classSuffix) => {
   const pattern = new RegExp(`<td[^>]*class=["'][^"']*gunluk-GunlukYarisSonuclari-${classSuffix}[^"']*["'][^>]*>([\\s\\S]*?)<\\/td>`, "i");
   return rowHtml.match(pattern)?.[1] ?? "";
@@ -78,13 +106,18 @@ const parseEntry = (rowHtml) => {
   const jockeyLink = extractFirstAnchor(cells.jockey);
   const ownerLink = extractFirstAnchor(cells.owner);
   const trainerLink = extractFirstAnchor(cells.trainer);
+  const pedigree = parsePedigree(cells.pedigree);
+  const ageSex = parseHorseAgeSex(cells.age);
 
   return {
     finishPosition: stripTags(cells.finishPosition),
     horseId: extractQueryId(horseLink.href, "QueryParameter_AtId"),
     horseName: normalizeHorseName(horseLink.text),
     age: stripTags(cells.age),
+    ageYears: ageSex.age,
+    sex: ageSex.sex,
     pedigree: stripTags(cells.pedigree),
+    ...pedigree,
     weight: stripTags(cells.weight).match(/\d+(?:[,.]\d+)?/)?.[0]?.replace(",", ".") ?? "",
     jockeyId: extractQueryId(jockeyLink.href, "QueryParameter_JokeyId"),
     jockeyName: jockeyLink.title || jockeyLink.text,

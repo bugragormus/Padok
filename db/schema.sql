@@ -16,6 +16,7 @@ CREATE TABLE IF NOT EXISTS horses (
   sex TEXT,
   sire TEXT,
   dam TEXT,
+  damsire TEXT,
   owner TEXT
 );
 
@@ -119,6 +120,9 @@ CREATE TABLE IF NOT EXISTS derived_features (
   course_score REAL,
   form_score REAL,
   jockey_score REAL,
+  trainer_score REAL,
+  pedigree_score REAL,
+  owner_score REAL,
   data_confidence REAL,
   explanation TEXT,
   UNIQUE(horse_id, as_of_date, gazi_year)

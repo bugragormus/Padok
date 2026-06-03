@@ -106,6 +106,10 @@ const renderRaceEntries = (entries = []) => {
           <div class="race-entry__horse">
             <strong>${escapeHtml(entry.horse_name)}</strong>
             <span>${escapeHtml(entry.jockey_name)}</span>
+            <span class="race-entry__context">
+              ${entry.sire ? `Baba: ${escapeHtml(entry.sire)}` : "Baba: Bekleniyor"}
+              ${entry.owner ? ` · Sahip: ${escapeHtml(entry.owner)}` : ""}
+            </span>
           </div>
           <div class="race-entry__result">
             <strong>${escapeHtml(entry.finish_time)}</strong>

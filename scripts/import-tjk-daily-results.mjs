@@ -34,6 +34,12 @@ const toRealSql = (value) => {
   return Number.isFinite(parsed) ? String(parsed) : "NULL";
 };
 
+const toBirthYearSql = (raceDate, ageYears) => {
+  const raceYear = Number.parseInt(String(raceDate ?? "").slice(0, 4), 10);
+  const age = Number.parseInt(String(ageYears ?? ""), 10);
+  return Number.isFinite(raceYear) && Number.isFinite(age) ? String(raceYear - age) : "NULL";
+};
+
 const runSqlite = (args) => {
   const result = spawnSync("sqlite3", args, { encoding: "utf8" });
   if (result.status !== 0) {
@@ -47,7 +53,11 @@ const ensureRuntimeSchema = (dbPath) => {
     ALTER TABLE horses ADD COLUMN source_horse_id TEXT;
     ALTER TABLE jockeys ADD COLUMN source_jockey_id TEXT;
     ALTER TABLE trainers ADD COLUMN source_trainer_id TEXT;
+    ALTER TABLE horses ADD COLUMN damsire TEXT;
     ALTER TABLE race_entries ADD COLUMN owner TEXT;
+    ALTER TABLE derived_features ADD COLUMN trainer_score REAL;
+    ALTER TABLE derived_features ADD COLUMN pedigree_score REAL;
+    ALTER TABLE derived_features ADD COLUMN owner_score REAL;
     CREATE UNIQUE INDEX IF NOT EXISTS idx_horses_source_horse_id ON horses(source_horse_id);
     CREATE UNIQUE INDEX IF NOT EXISTS idx_jockeys_source_jockey_id ON jockeys(source_jockey_id);
     CREATE UNIQUE INDEX IF NOT EXISTS idx_trainers_source_trainer_id ON trainers(source_trainer_id);
@@ -145,20 +155,50 @@ const buildSql = (races) => {
     for (const entry of race.entries ?? []) {
       if (!race.sourceRaceId || !entry.horseName) continue;
 
-      statements.push(`INSERT INTO horses (source_horse_id, canonical_name)
-        VALUES (${escapeSql(entry.horseId)}, ${escapeSql(entry.horseName)})
-        ON CONFLICT(source_horse_id) DO UPDATE SET canonical_name = excluded.canonical_name;`);
+      statements.push(`INSERT INTO horses (
+          source_horse_id,
+          canonical_name,
+          birth_year,
+          sex,
+          sire,
+          dam,
+          damsire,
+          owner
+        )
+        VALUES (
+          ${escapeSql(entry.horseId)},
+          ${escapeSql(entry.horseName)},
+          ${toBirthYearSql(race.date, entry.ageYears)},
+          ${escapeSql(entry.sex)},
+          ${escapeSql(entry.sire)},
+          ${escapeSql(entry.dam)},
+          ${escapeSql(entry.damsire)},
+          ${escapeSql(entry.ownerName)}
+        )
+        ON CONFLICT DO UPDATE SET
+          canonical_name = excluded.canonical_name,
+          source_horse_id = COALESCE(horses.source_horse_id, excluded.source_horse_id),
+          birth_year = COALESCE(horses.birth_year, excluded.birth_year),
+          sex = COALESCE(horses.sex, excluded.sex),
+          sire = COALESCE(horses.sire, excluded.sire),
+          dam = COALESCE(horses.dam, excluded.dam),
+          damsire = COALESCE(horses.damsire, excluded.damsire),
+          owner = COALESCE(excluded.owner, horses.owner);`);
 
       if (entry.jockeyName) {
         statements.push(`INSERT INTO jockeys (source_jockey_id, canonical_name)
           VALUES (${escapeSql(entry.jockeyId)}, ${escapeSql(entry.jockeyName)})
-          ON CONFLICT(source_jockey_id) DO UPDATE SET canonical_name = excluded.canonical_name;`);
+          ON CONFLICT DO UPDATE SET
+            source_jockey_id = COALESCE(jockeys.source_jockey_id, excluded.source_jockey_id),
+            canonical_name = excluded.canonical_name;`);
       }
 
       if (entry.trainerName) {
         statements.push(`INSERT INTO trainers (source_trainer_id, canonical_name)
           VALUES (${escapeSql(entry.trainerId)}, ${escapeSql(entry.trainerName)})
-          ON CONFLICT(source_trainer_id) DO UPDATE SET canonical_name = excluded.canonical_name;`);
+          ON CONFLICT DO UPDATE SET
+            source_trainer_id = COALESCE(trainers.source_trainer_id, excluded.source_trainer_id),
+            canonical_name = excluded.canonical_name;`);
       }
 
       statements.push(`INSERT INTO race_entries (
@@ -178,9 +218,21 @@ const buildSql = (races) => {
 	        )
 	        VALUES (
 	          ${raceIdSql},
-	          (SELECT id FROM horses WHERE source_horse_id = ${escapeSql(entry.horseId)}),
-	          (SELECT id FROM jockeys WHERE source_jockey_id = ${escapeSql(entry.jockeyId)}),
-          (SELECT id FROM trainers WHERE source_trainer_id = ${escapeSql(entry.trainerId)}),
+	          (SELECT id FROM horses
+	            WHERE source_horse_id = ${escapeSql(entry.horseId)}
+	               OR canonical_name = ${escapeSql(entry.horseName)}
+	            ORDER BY CASE WHEN source_horse_id = ${escapeSql(entry.horseId)} THEN 0 ELSE 1 END
+	            LIMIT 1),
+	          (SELECT id FROM jockeys
+	            WHERE source_jockey_id = ${escapeSql(entry.jockeyId)}
+	               OR canonical_name = ${escapeSql(entry.jockeyName)}
+	            ORDER BY CASE WHEN source_jockey_id = ${escapeSql(entry.jockeyId)} THEN 0 ELSE 1 END
+	            LIMIT 1),
+	          (SELECT id FROM trainers
+	            WHERE source_trainer_id = ${escapeSql(entry.trainerId)}
+	               OR canonical_name = ${escapeSql(entry.trainerName)}
+	            ORDER BY CASE WHEN source_trainer_id = ${escapeSql(entry.trainerId)} THEN 0 ELSE 1 END
+	            LIMIT 1),
           ${toIntegerSql(entry.gate)},
           ${toRealSql(entry.weight)},
           ${toRealSql(entry.handicapPoint)},
