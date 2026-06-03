@@ -34,6 +34,8 @@ Ikincil dogrulama ve kullanici dostu gecmis kosu sayfalari icin degerli olabilir
 - Aday karsilastirma: at bazli sinyaller ve son startlar.
 - Kosu haritasi: Gazi'ye yakinlik puaniyla prep kosulari.
 - Veri sagligi: hangi alanlar resmi, hangileri manuel, hangileri eksik.
+- Gecmis dogrulama: route backtest metrikleri.
+- Katilim matrisi: Gazi atlarinin hangi sinyal kosularina katildigi veya katilmadigi.
 
 ## 5. Teknik Yol
 
@@ -57,3 +59,20 @@ Ilk ML hedefi "birinciyi bilmek" olmamali. Daha iyi baslangic:
 - Ilk 3'e girme olasiligi.
 - Adayi ilk 5 sinyal grubuna sokabilme.
 - Prep kosusu sinyalinin Gazi sonucuyla korelasyonu.
+- Gazi field icindeki her atin hangi route kosularini pas gecmis oldugu.
+- Bir atin route disindan gelmesine ragmen Gazi ilk 3 yapabildigi durumlar.
+
+## 8. Guncel Arastirma Sirasi
+
+Mevcut route backtest bize kosu seviyesinde sinyal verdi. Siradaki soru at seviyesinde:
+
+```text
+Gazi field -> her at -> route kosusu katilimlari -> Gazi sonucu
+```
+
+Bu analiz sunu gostermeli:
+
+- Gazi ilk 3 atlari hangi sinyal kosularina katildi?
+- Hangi Gazi ilk 3 atlari takip ettigimiz sinyal kosularindan gecmedi?
+- Mehmet Akif veya Sait Akson gibi kosulara katilmayan ama Gazi'de basarili olan atlar var mi?
+- Katilmama bilgisi kampanya stratejisi mi, veri eksigi mi, yoksa alternatif form hattinin sinyali mi?

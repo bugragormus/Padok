@@ -17,6 +17,10 @@ The backtest reads exported route reports:
 
 ```bash
 npm run backtest:gazi-route -- \
+  --input data/gazi-route-2020.json \
+  --input data/gazi-route-2021.json \
+  --input data/gazi-route-2022.json \
+  --input data/gazi-route-2023.json \
   --input data/gazi-route-2024.json \
   --input data/gazi-route-2025.json \
   --out data/gazi-backtest-report.json
@@ -53,10 +57,27 @@ This measures how strongly the prep race feeds the Gazi field, regardless of fin
 ## Interpretation Rules
 
 - The report measures association, not causality.
-- A high rate from one or two seasons is not a stable signal.
+- A high rate from a small sample is not automatically a stable signal.
 - At least five seasons should be collected before using these rates as model weights.
 - Horse, jockey, trainer, pedigree, and owner features must be calculated only from information available before each historical Gazi date.
 - Future work should compare route-only rankings against richer feature sets using out-of-sample years.
+
+## Participation Caveat
+
+Not every Gazi horse runs in every signal race. Not every signal-race starter later runs in the Gazi.
+
+This matters because a missing prep-race appearance is not automatically bad. A horse may follow a different campaign path, skip a race for timing reasons, or arrive through another form line.
+
+The next product step should make this explicit with a horse-by-race participation matrix:
+
+```text
+horse x route race -> ran / did not run / pending / missing
+```
+
+That matrix should sit next to the current aggregate backtest so the user can see both:
+
+- the race-level historical signal
+- the horse-level route actually taken
 
 ## Current Sample
 

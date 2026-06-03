@@ -4,6 +4,8 @@ Gazi Kosusu odakli at yarisi analiz uygulamasi.
 
 Bu repo su anda bilincli olarak bagimliliksiz bir statik MVP olarak kuruldu. Amac once veri modelini, temel korelasyon mantigini ve arayuz ihtiyacini netlestirmek; TJK ingestion ve SQLite katmani uzerinden giderek daha sonra API ve ML katmanina gecmek.
 
+Yeni chat veya yeni geliştirme oturumu için önce `docs/project-status.md` dosyasını oku. Bu dosya mevcut durum, canlı yayın, veri kapsamı, kritik varsayımlar ve sıradaki işleri özetler.
+
 ## Ilk Hipotez
 
 Gazi Kosusu icin tek bir "tahmin" uretmek yerine once Gazi'ye benzeyen kosulardan gelen sinyalleri yan yana koymak daha saglikli:
@@ -12,6 +14,24 @@ Gazi Kosusu icin tek bir "tahmin" uretmek yerine once Gazi'ye benzeyen kosularda
 - Performans: derece, bitiris sirasi, fark, son 800/600 varsa tempo.
 - Istikrar: son startlarda sira ve handikap puani degisimi.
 - Baglam: jokey, antrenor, pist/hava, kilo, yaris sertligi.
+
+Onemli not: Her Gazi ati her sinyal kosusuna katilmaz; her sinyal kosusu ati da Gazi'ye gitmez. Bu nedenle katilmama bilgisi de analizde gorunur bir sinyal olarak ele alinmalidir.
+
+## Mevcut Durum
+
+Uygulama su anda:
+
+- TJK'den turetilmis 2025 Gazi rota verisini UI'da gosterir.
+- 2020-2025 Gazi rota raporlarini ve backtest sonucunu repo icinde tutar.
+- Gazi ilk 3 ile rota kosulari arasindaki iliskiyi aciklanabilir metriklerle gosterir.
+- GitHub Pages uzerinde ucretsiz ve statik olarak calisir.
+- GitHub Actions ile testleri calistirir ve canli JSON artefactlarini deploy eder.
+
+Canli uygulama:
+
+```text
+https://bugragormus.github.io/Padok/
+```
 
 ## Kaynak Notlari
 
@@ -53,6 +73,7 @@ Canli ve ucretsiz yayin plani icin bkz. `docs/live-data-plan.md`.
 Gelecekteki MCP server plani icin bkz. `docs/mcp-plan.md`.
 Genisletilmis feature ve agirlik stratejisi icin bkz. `docs/feature-strategy.md`.
 Ilk aciklanabilir rota backtest metodolojisi icin bkz. `docs/backtest-method.md`.
+Guncel proje devri ve roadmap icin bkz. `docs/project-status.md`.
 
 ## Mimari Karar
 
@@ -68,9 +89,9 @@ Detayli kararlar icin bkz. `docs/architecture.md`.
 
 ## Sonraki Gelistirme Adimlari
 
-1. TJK `KosuSorgulama` HTML satirlarini parser ile normalize et.
-2. Gazi, Mehmet Akif Ersoy, Sait Akson, Kisrak, Erkek Tay Deneme, Disi Tay Deneme ve diger sinyal kosularini yillara gore indeksle.
-3. Gunluk sonuc sayfalarindan at bazli siralama/derece/fark/jokey/antrenor detaylarini cek.
-4. Aday listesi henuz kesin degilken "aday havuzu", kesinlestikten sonra "Gazi field" moduna gec.
-5. Her at icin "Gazi uyum skoru", "form trendi", "jokey uyumu" ve "veri guveni" hesapla.
-6. Veri seti yeterli olunca baseline ML denemesi yap: once backtest ve ranking modeli, sonra daha karmasik yontemler.
+1. Gazi atlari icin route participation matrix olustur: hangi at hangi sinyal kosusuna katildi veya katilmadi?
+2. At merkezli detay/karşılaştırma ekranı ekle.
+3. 2026 Gazi field/deklare listesini resmi veriden iceri al.
+4. At performansi, jokey, pedigree, sahip ve trainer sinyallerini ayri skor gruplari olarak hesapla.
+5. Skorları gecmis yillarda backtest et; tek bir nihai puana gommeden UI'da ayri ayri goster.
+6. Veri seti yeterince buyuyunce baseline ranking modeli dene.

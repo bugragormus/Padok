@@ -37,6 +37,8 @@ The scheduled workflow runs these steps:
 
 The workflow is defined in `.github/workflows/pages.yml`.
 
+The historical 2020-2025 route reports are committed static JSON files. The workflow refreshes 2025 and 2026 in the temporary runtime database, then rebuilds the backtest report for the static app.
+
 Default live settings:
 
 - `GAZI_YEAR=2026`
@@ -91,5 +93,6 @@ No paid database or server is needed for this first live version.
 
 - GitHub Actions schedules are not guaranteed to run at the exact minute.
 - Future declarations are not imported yet.
+- The app does not yet show a horse-by-race participation matrix.
 - If TJK changes HTML structure, parser code may need updates.
 - The static app updates only after a scheduled or manual workflow run.

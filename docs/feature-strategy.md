@@ -13,6 +13,7 @@ These features must remain explainable and must be calculated only from data ava
 - Class progression.
 - Handicap point trend.
 - Time and margin context.
+- Route participation and route absence.
 
 ### Jockey and Trainer
 
@@ -70,6 +71,7 @@ Recommended safeguards:
 - Store `data_confidence` next to every score.
 - Show feature-group contributions separately in the UI.
 - Measure whether a new feature improves out-of-sample ranking.
+- Distinguish `did not run` from `missing data`.
 
 ## Leakage Risks
 
@@ -79,7 +81,31 @@ Avoid these common mistakes:
 - Using future starts when generating historical predictions.
 - Giving a high score to an owner or sire based on one successful horse.
 - Treating missing data as poor performance.
+- Treating skipped prep races as automatically negative.
 - Reusing the same years for both weight selection and final evaluation.
+
+## Route Participation Feature
+
+The next feature group should capture which route races a horse actually ran in.
+
+For each Gazi candidate:
+
+- `ran_erkek_tay_deneme`
+- `ran_disi_tay_deneme`
+- `ran_mehmet_akif_ersoy`
+- `ran_sait_akson`
+- `ran_kisrak`
+- best finish in route races
+- best route similarity score
+- days since last route race
+
+Important distinction:
+
+```text
+did_not_run != bad_performance
+```
+
+A horse can skip a route race for strategic reasons and still be a strong Gazi horse. The UI should show absence as context, not as a silent penalty.
 
 ## Initial Derived Feature Fields
 

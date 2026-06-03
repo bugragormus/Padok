@@ -231,12 +231,25 @@ Ilk metrikler:
 - Prep kosusu galipleri Gazi'de nasil kosmus?
 - Skor yuksek ama basarisiz atlarda hangi riskler kacirilmis?
 
-## 8. Onumuzdeki Sprint
+## 8. Mevcut Durum
+
+Bu repo artik ilk statik MVP'nin otesine gecti:
+
+- TJK AJAX HTML fragmentleri parse ediliyor.
+- SQLite semasi ve importer scriptleri var.
+- Gunluk sonuc sayfalarindan at bazli `race_entries` verisi alinabiliyor.
+- 2020-2025 Gazi rota raporlari JSON olarak export edildi.
+- `scripts/backtest-gazi-route.mjs` ile aciklanabilir tarihsel route backtest uretiliyor.
+- UI'da data status ve backtest bolumleri var.
+- GitHub Pages workflow'u testleri calistirip static site'i deploy ediyor.
+
+## 9. Onumuzdeki Sprint
 
 Bir sonraki teknik sprint su olmali:
 
-1. Repo icinde SQLite odakli `data` mimarisini hazirla.
-2. TJK kosu sorgulama parserini gercek kayitlarla test et.
-3. `races` ve `race_entries` icin ilk seed dosyasini uret.
-4. UI'da "veri guveni" ve "kaynak" alanlarini goster.
-5. 2025 Gazi yolunu manuel/yari otomatik olarak tamamlayip ilk backtest ekranini kur.
+1. Gazi field ve route participation matrix export et.
+2. UI'da her Gazi ati icin hangi sinyal kosularina katildigini veya katilmadigini goster.
+3. Route entry listelerini collapse/expand hale getir.
+4. At merkezli detay ekranina jokey, sahip ve pedigree bilgisini bagla.
+5. 2026 aday/deklare modunu resmi veriyle besle.
+6. Daha sonra FastAPI veya MCP icin ortak read-only query module tasarla.

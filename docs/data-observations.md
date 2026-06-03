@@ -1,5 +1,38 @@
 # Data Observations
 
+## 2020-2025 Route Backtest Snapshot
+
+Current committed route backtest:
+
+```bash
+npm run backtest:gazi-route -- \
+  --input data/gazi-route-2020.json \
+  --input data/gazi-route-2021.json \
+  --input data/gazi-route-2022.json \
+  --input data/gazi-route-2023.json \
+  --input data/gazi-route-2024.json \
+  --input data/gazi-route-2025.json \
+  --out data/gazi-backtest-report.json
+```
+
+Result:
+
+- 6 seasons: 2020-2025.
+- 30 named prep races.
+- 18 Gazi top-three slots.
+- 16 of those slots were covered by at least one tracked route race.
+- Overall route coverage: 89%.
+
+Early race-level observations:
+
+- Erkek Tay Deneme has the highest Gazi top-three coverage in the current sample.
+- Sait Akson has a stronger prep-top-three and winner signal than some other route races.
+- Kısrak and Dişi Tay Deneme still matter for field context, but their aggregate top-three transfer is weaker in this first sample.
+
+Important caveat:
+
+These are race-level associations. They do not say every Gazi horse must run every route race. The next observation layer should be a horse-by-race participation matrix.
+
 ## 2025 Gazi Window Snapshot
 
 Command used:

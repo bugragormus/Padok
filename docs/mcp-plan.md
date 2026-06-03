@@ -21,6 +21,8 @@ An MCP layer can sit above SQLite and expose stable capabilities without teachin
 Resources are read-only context that an AI client can inspect.
 
 - `padok://gazi-route/2026`
+- `padok://gazi-backtest`
+- `padok://gazi-participation/{year}`
 - `padok://horses/{horseId}`
 - `padok://races/{raceId}`
 - `padok://schema`
@@ -31,6 +33,8 @@ Resources are read-only context that an AI client can inspect.
 Tools are parameterized operations that an AI model can invoke.
 
 - `get_gazi_route(year)`
+- `get_gazi_backtest()`
+- `get_gazi_participation_matrix(year)`
 - `get_horse_profile(horse_id, as_of_date)`
 - `compare_horses(horse_ids, as_of_date)`
 - `find_gazi_candidates(year)`
@@ -75,4 +79,3 @@ That does not block development:
 - Keep refresh operations separate from read-only analysis tools.
 - Do not let clients trigger unbounded TJK fetches.
 - Return source and freshness metadata with analysis results.
-

@@ -67,9 +67,9 @@ How did this horse perform in useful contexts?
 
 We need both, but mixing them too early would hide mistakes. First we score races, then we use high-similarity races as stronger evidence for horse-level features.
 
-## Next Improvement
+## Current Named Race Recognition
 
-The next improvement is named race recognition:
+Named race recognition is now available through the TJK `TumOnemliKosular` layer and daily result imports. It can override structural tiers for these known Gazi-route race families:
 
 - Mehmet Akif Ersoy Kosusu
 - Sait Akson Kosusu
@@ -77,7 +77,7 @@ The next improvement is named race recognition:
 - Erkek Tay Deneme
 - Disi Tay Deneme
 
-Those names are not always present in the first race index layer. We may need detail pages, official important race pages, or program PDFs to attach canonical race names.
+Those names are not always present in the first race index layer. The current system uses official important race rows and daily result imports to attach canonical names and horse-level entries.
 
 The first broader 2025 snapshot already surfaced high-value structural matches:
 
@@ -85,6 +85,14 @@ The first broader 2025 snapshot already surfaced high-value structural matches:
 - 2025-06-08 Istanbul, G2, 2200m, cim, 3 yasli Ingilizler.
 - 2025-06-08 Istanbul, G1 / Disi, 2100m, cim, 3 yasli Ingilizler.
 
-This suggests the structural score is useful, but canonical naming is still missing.
+This suggests the structural score is useful, but structural similarity should not replace canonical named-race context.
 
-Canonical naming is now available through the TJK `TumOnemliKosular` layer when the named race has been imported and its `source_race_id` matches a race index record.
+## Next Improvement
+
+The next scoring improvement is not another race-level score. It is horse-level route participation:
+
+```text
+Gazi horse -> which route races it ran -> which route races it skipped -> Gazi finish
+```
+
+This is needed because a horse can be Gazi-relevant without running in Mehmet Akif Ersoy, Sait Akson, or another tracked route race.
