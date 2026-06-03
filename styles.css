@@ -839,11 +839,83 @@ button.participation-row:hover,
   font-size: 1rem;
 }
 
+.race-entry-preview {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  border-top: 1px solid var(--line);
+  padding-top: 12px;
+}
+
+.race-entry-preview span {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  min-height: 28px;
+  max-width: 100%;
+  padding: 0 9px;
+  border: 1px solid #dfe7df;
+  border-radius: 999px;
+  background: #fbfcfa;
+  color: var(--green-2);
+  font-size: 0.75rem;
+  font-weight: 800;
+}
+
+.race-entry-preview strong {
+  color: var(--gold);
+}
+
+.race-entries-panel {
+  border-top: 1px solid var(--line);
+  padding-top: 12px;
+}
+
+.race-entries-panel summary {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  align-items: center;
+  min-height: 40px;
+  padding: 0 10px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: #fff;
+  cursor: pointer;
+  font-size: 0.82rem;
+  font-weight: 900;
+  list-style: none;
+}
+
+.race-entries-panel summary::-webkit-details-marker {
+  display: none;
+}
+
+.race-entries-panel summary::after {
+  content: "+";
+  display: inline-grid;
+  place-items: center;
+  width: 22px;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: #edf4ef;
+  color: var(--green-2);
+}
+
+.race-entries-panel[open] summary::after {
+  content: "-";
+}
+
+.race-entries-panel summary strong {
+  margin-left: auto;
+  color: var(--muted);
+  font-size: 0.76rem;
+}
+
 .race-entries {
   display: grid;
   gap: 7px;
-  border-top: 1px solid var(--line);
-  padding-top: 12px;
+  padding-top: 8px;
 }
 
 .race-entry {

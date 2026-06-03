@@ -473,29 +473,55 @@ const renderParticipation = (report) => {
   document.querySelector("#participation-warning").textContent = report.methodology.warning;
 };
 
+const renderRaceEntryPreview = (entries = []) => {
+  const previewEntries = entries
+    .filter((entry) => Number.isFinite(entry.finish_position) && entry.finish_position <= 3)
+    .sort((a, b) => a.finish_position - b.finish_position);
+
+  if (!previewEntries.length) return "";
+
+  return `
+    <div class="race-entry-preview" aria-label="İlk 3 önizleme">
+      ${previewEntries.map((entry) => `
+        <span>
+          <strong>${escapeHtml(formatPosition(entry.finish_position))}</strong>
+          ${escapeHtml(entry.horse_name)}
+        </span>
+      `).join("")}
+    </div>
+  `;
+};
+
 const renderRaceEntries = (entries = []) => {
   if (!entries.length) return "";
 
   return `
-    <div class="race-entries" aria-label="Koşu sonuçları">
-      ${entries.map((entry) => `
-        <div class="race-entry">
-          <span class="race-entry__position">${escapeHtml(entry.finish_position)}</span>
-          <div class="race-entry__horse">
-            <strong>${escapeHtml(entry.horse_name)}</strong>
-            <span>${escapeHtml(entry.jockey_name)}</span>
-            <span class="race-entry__context">
-              ${entry.sire ? `Baba: ${escapeHtml(entry.sire)}` : "Baba: Bekleniyor"}
-              ${entry.owner ? ` · Sahip: ${escapeHtml(entry.owner)}` : ""}
-            </span>
+    ${renderRaceEntryPreview(entries)}
+    <details class="race-entries-panel">
+      <summary>
+        <span>Tüm start listesini göster</span>
+        <strong>${entries.length} at</strong>
+      </summary>
+      <div class="race-entries" aria-label="Koşu sonuçları">
+        ${entries.map((entry) => `
+          <div class="race-entry">
+            <span class="race-entry__position">${escapeHtml(entry.finish_position)}</span>
+            <div class="race-entry__horse">
+              <strong>${escapeHtml(entry.horse_name)}</strong>
+              <span>${escapeHtml(entry.jockey_name)}</span>
+              <span class="race-entry__context">
+                ${entry.sire ? `Baba: ${escapeHtml(entry.sire)}` : "Baba: Bekleniyor"}
+                ${entry.owner ? ` · Sahip: ${escapeHtml(entry.owner)}` : ""}
+              </span>
+            </div>
+            <div class="race-entry__result">
+              <strong>${escapeHtml(entry.finish_time)}</strong>
+              <span>HP ${formatText(entry.handicap_point)}</span>
+            </div>
           </div>
-          <div class="race-entry__result">
-            <strong>${escapeHtml(entry.finish_time)}</strong>
-            <span>HP ${formatText(entry.handicap_point)}</span>
-          </div>
-        </div>
-      `).join("")}
-    </div>
+        `).join("")}
+      </div>
+    </details>
   `;
 };
 
