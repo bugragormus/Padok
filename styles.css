@@ -449,6 +449,52 @@ h2 {
   line-height: 1.55;
 }
 
+.season-comparison {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 10px;
+  margin: 0 0 18px;
+}
+
+.season-chip {
+  display: grid;
+  gap: 6px;
+  min-height: 104px;
+  padding: 12px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.58);
+  color: inherit;
+  cursor: pointer;
+  font: inherit;
+  text-align: left;
+}
+
+.season-chip:hover,
+.season-chip--selected {
+  border-color: rgba(36, 95, 70, 0.45);
+  background: #eef6f1;
+}
+
+.season-chip--selected {
+  box-shadow: inset 0 3px 0 var(--green);
+}
+
+.season-chip strong {
+  font-size: 1.2rem;
+}
+
+.season-chip span,
+.season-chip em {
+  color: var(--muted);
+  font-size: 0.76rem;
+  line-height: 1.45;
+}
+
+.season-chip em {
+  font-style: normal;
+}
+
 .backtest-layout {
   display: grid;
   grid-template-columns: minmax(0, 1.35fr) minmax(300px, 0.65fr);

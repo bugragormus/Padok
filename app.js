@@ -15,6 +15,7 @@ const state = {
   analysisYear: null,
   routeReportCache: new Map(),
   participationReportCache: new Map(),
+  participationComparison: [],
   query: "",
   year: "all"
 };
@@ -140,6 +141,40 @@ const renderAnalysisYearControl = () => {
   select.innerHTML = years
     .map((year) => `<option value="${year}" ${year === selectedYear ? "selected" : ""}>${year}</option>`)
     .join("");
+};
+
+const renderParticipationComparison = () => {
+  const container = document.querySelector("#participation-comparison");
+  if (!container) return;
+
+  container.innerHTML = state.participationComparison.length
+    ? state.participationComparison
+      .map((report) => {
+        const summary = report.summary;
+        const isSelected = report.sourceYear === state.analysisYear;
+        return `
+          <button class="season-chip ${isSelected ? "season-chip--selected" : ""}" type="button" data-analysis-year="${escapeHtml(report.sourceYear)}" aria-pressed="${isSelected}">
+            <strong>${escapeHtml(report.sourceYear)}</strong>
+            <span>${escapeHtml(summary.runnersWithPrepStartCount)}/${escapeHtml(summary.gaziRunnerCount)} prep gördü</span>
+            <em>${escapeHtml(summary.runnersWithoutPrepStartCount)} rota dışı · İlk 3 %${escapeHtml(summary.topThreePrepStartRate)}</em>
+          </button>
+        `;
+      })
+      .join("")
+    : '<p class="coverage-empty">Sezon karşılaştırması bekleniyor.</p>';
+};
+
+const loadParticipationComparison = async () => {
+  const years = getAvailableAnalysisYears().sort((a, b) => b - a);
+  const reports = await Promise.all(years.map(async (year) => {
+    if (!state.participationReportCache.has(year)) {
+      state.participationReportCache.set(year, await readJson(`./data/gazi-participation-${year}.json`));
+    }
+    return state.participationReportCache.get(year);
+  }));
+
+  state.participationComparison = reports;
+  renderParticipationComparison();
 };
 
 const summarizeRouteReport = (report) => {
@@ -603,6 +638,7 @@ const loadAnalysisYear = async (year) => {
   state.participationReport = state.participationReportCache.get(numericYear);
 
   renderAnalysisYearControl();
+  renderParticipationComparison();
   renderDataStatus(state.routeReport);
   renderRouteReport(state.routeReport);
   renderParticipation(state.participationReport);
@@ -683,6 +719,12 @@ const bindEvents = () => {
   document.querySelector("#analysis-year-select").addEventListener("change", async (event) => {
     await loadAnalysisYear(event.target.value);
   });
+
+  document.querySelector("#participation-comparison").addEventListener("click", async (event) => {
+    const button = event.target.closest("[data-analysis-year]");
+    if (!button) return;
+    await loadAnalysisYear(button.dataset.analysisYear);
+  });
 };
 
 const init = async () => {
@@ -729,6 +771,7 @@ const init = async () => {
   if (state.participationReport) renderParticipation(state.participationReport);
   if (state.dataHorizon) renderDataHorizon(state.dataHorizon);
   renderAnalysisYearControl();
+  if (state.dataHorizon) await loadParticipationComparison();
   renderYears(state.data.horses);
   renderCandidates();
   bindEvents();
