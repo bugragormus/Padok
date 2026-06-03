@@ -9,6 +9,7 @@ const state = {
   data: null,
   routeReport: null,
   backtestReport: null,
+  participationReport: null,
   query: "",
   year: "all"
 };
@@ -106,6 +107,8 @@ const formatTimestamp = (value) => {
 };
 
 const percentage = (count, total) => total > 0 ? Math.round((count / total) * 100) : 0;
+
+const formatPosition = (value) => Number.isFinite(value) ? `${value}.` : "-";
 
 const summarizeRouteReport = (report) => {
   if (report.summary) return report.summary;
@@ -250,6 +253,94 @@ const renderBacktest = (report) => {
   document.querySelector("#backtest-warning").textContent = report.methodology.warning;
 };
 
+const participationStateLabels = {
+  "field-available": "Gazi koşucuları hazır",
+  "awaiting-gazi-field": "Gazi koşucuları bekleniyor"
+};
+
+const cellLabels = {
+  ran: "Koştu",
+  "not-run": "Yok",
+  pending: "Bekliyor",
+  "missing-race": "Veri yok"
+};
+
+const renderParticipationCell = (cell) => {
+  const status = cell?.status ?? "missing-race";
+  if (status === "ran") {
+    return `
+      <span class="participation-cell participation-cell--ran">
+        <strong>${escapeHtml(formatPosition(cell.finishPosition))}</strong>
+        <small>${escapeHtml(cell.jockeyName ?? "")}</small>
+      </span>
+    `;
+  }
+
+  return `
+    <span class="participation-cell participation-cell--${escapeHtml(status)}">
+      <strong>${escapeHtml(cellLabels[status] ?? status)}</strong>
+      <small>${status === "not-run" ? "Katılmadı" : ""}</small>
+    </span>
+  `;
+};
+
+const renderParticipation = (report) => {
+  const summary = report.summary;
+  const sourceYear = report.sourceYear ?? "Güncel";
+
+  document.querySelector("#participation-summary").textContent = summary.gaziRunnerCount > 0
+    ? `${sourceYear} Gazi koşucularının ${summary.runnersWithPrepStartCount}/${summary.gaziRunnerCount} tanesi izlediğimiz prep rotalarından en az birine katıldı; ${summary.runnersWithoutPrepStartCount} at bu rota koşularında görünmeden Gazi'ye geldi.`
+    : `${sourceYear} sezonunda rota koşuları izleniyor, ancak Gazi koşucu listesi henüz rapora girmedi. Liste geldiğinde bu bölüm otomatik olarak at bazlı matrise dönecek.`;
+
+  const metrics = [
+    ["Durum", participationStateLabels[summary.analysisState] ?? summary.analysisState],
+    ["Gazi atı", summary.gaziRunnerCount],
+    ["Prep gören", summary.runnersWithPrepStartCount],
+    ["Prep görmeyen", summary.runnersWithoutPrepStartCount],
+    ["İlk 3 prep kapsaması", `%${summary.topThreePrepStartRate}`],
+    ["Ortalama prep startı", summary.averagePrepStartCount ?? "-"]
+  ];
+
+  document.querySelector("#participation-metrics").innerHTML = metrics
+    .map(([label, value]) => `
+      <div class="status-metric">
+        <span>${escapeHtml(label)}</span>
+        <strong>${escapeHtml(value)}</strong>
+      </div>
+    `)
+    .join("");
+
+  const prepColumns = report.columns.filter((column) => !column.isTarget);
+  const targetColumn = report.columns.find((column) => column.isTarget);
+  const tableColumns = targetColumn ? [...prepColumns, targetColumn] : prepColumns;
+
+  document.querySelector("#participation-table").innerHTML = report.rows.length
+    ? `
+      <div class="participation-row participation-row--header" style="--race-count: ${tableColumns.length}">
+        <span>At</span>
+        <span>Özet</span>
+        ${tableColumns.map((column) => `<span>${escapeHtml(column.name)}</span>`).join("")}
+      </div>
+      ${report.rows.map((row) => `
+        <div class="participation-row ${Number.isFinite(row.gaziFinishPosition) && row.gaziFinishPosition <= 3 ? "participation-row--podium" : ""}" style="--race-count: ${tableColumns.length}">
+          <div class="participation-horse">
+            <strong>${escapeHtml(row.horseName)}</strong>
+            <span>Gazi ${escapeHtml(formatPosition(row.gaziFinishPosition))} · ${escapeHtml(row.gaziJockeyName ?? "Jokey bekleniyor")}</span>
+            <small>${row.sire ? `Baba: ${escapeHtml(row.sire)}` : "Baba bilgisi bekleniyor"}${row.owner ? ` · Sahip: ${escapeHtml(row.owner)}` : ""}</small>
+          </div>
+          <div class="participation-summary-cell">
+            <strong>${row.prepStartCount} prep startı</strong>
+            <span>${row.bestPrepRaceName ? `En iyi: ${escapeHtml(row.bestPrepRaceName)} ${escapeHtml(formatPosition(row.bestPrepFinishPosition))}` : "Takip edilen prep yok"}</span>
+          </div>
+          ${tableColumns.map((column) => renderParticipationCell(row.cells[column.key])).join("")}
+        </div>
+      `).join("")}
+    `
+    : '<p class="coverage-empty">Gazi koşucu listesi henüz olmadığı için at bazlı katılım matrisi bekleniyor.</p>';
+
+  document.querySelector("#participation-warning").textContent = report.methodology.warning;
+};
+
 const renderRaceEntries = (entries = []) => {
   if (!entries.length) return "";
 
@@ -372,10 +463,11 @@ const bindEvents = () => {
 };
 
 const init = async () => {
-  const [knowledgeResponse, routeResponse, backtestResponse] = await Promise.all([
+  const [knowledgeResponse, routeResponse, backtestResponse, participationResponse] = await Promise.all([
     fetch("./data/gazi-knowledge-base.json", { cache: "no-store" }),
     fetch("./data/gazi-route-report.json", { cache: "no-store" }).catch(() => null),
-    fetch("./data/gazi-backtest-report.json", { cache: "no-store" }).catch(() => null)
+    fetch("./data/gazi-backtest-report.json", { cache: "no-store" }).catch(() => null),
+    fetch("./data/gazi-participation-report.json", { cache: "no-store" }).catch(() => null)
   ]);
 
   state.data = await knowledgeResponse.json();
@@ -388,6 +480,10 @@ const init = async () => {
     state.backtestReport = await backtestResponse.json();
   }
 
+  if (participationResponse?.ok) {
+    state.participationReport = await participationResponse.json();
+  }
+
   renderTarget(state.data.targetRace);
   if (state.routeReport?.routeRaces?.length) {
     renderRouteReport(state.routeReport);
@@ -397,6 +493,7 @@ const init = async () => {
     renderDataStatus(state.routeReport ?? { year: state.data.targetRace.editionFocus, routeRaces: [] });
   }
   if (state.backtestReport) renderBacktest(state.backtestReport);
+  if (state.participationReport) renderParticipation(state.participationReport);
   renderYears(state.data.horses);
   renderCandidates();
   bindEvents();

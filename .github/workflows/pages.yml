@@ -89,12 +89,15 @@ jobs:
             --fallback data/gazi-route-2025.json \
             --out data/gazi-route-report.json
 
+      - name: Build Gazi participation matrix
+        run: npm run build:gazi-participation -- --input data/gazi-route-report.json --out data/gazi-participation-report.json
+
       - name: Prepare static site
         run: |
           mkdir -p dist/assets dist/data
           cp index.html app.js styles.css .nojekyll dist/
           cp assets/* dist/assets/
-          cp data/gazi-knowledge-base.json data/gazi-route-report.json data/gazi-route-2020.json data/gazi-route-2021.json data/gazi-route-2022.json data/gazi-route-2023.json data/gazi-route-2024.json data/gazi-route-2025.json data/gazi-route-2026.json data/gazi-backtest-report.json dist/data/
+          cp data/gazi-knowledge-base.json data/gazi-route-report.json data/gazi-route-2020.json data/gazi-route-2021.json data/gazi-route-2022.json data/gazi-route-2023.json data/gazi-route-2024.json data/gazi-route-2025.json data/gazi-route-2026.json data/gazi-backtest-report.json data/gazi-participation-report.json dist/data/
 
       - name: Configure Pages
         uses: actions/configure-pages@v5

@@ -240,16 +240,17 @@ Bu repo artik ilk statik MVP'nin otesine gecti:
 - Gunluk sonuc sayfalarindan at bazli `race_entries` verisi alinabiliyor.
 - 2020-2025 Gazi rota raporlari JSON olarak export edildi.
 - `scripts/backtest-gazi-route.mjs` ile aciklanabilir tarihsel route backtest uretiliyor.
+- `scripts/build-gazi-participation.mjs` ile Gazi atlari icin horse x route race matrisi uretiliyor.
 - UI'da data status ve backtest bolumleri var.
+- UI'da hangi Gazi atinin hangi prep kosusuna katildigi veya katilmadigi gorunuyor.
 - GitHub Pages workflow'u testleri calistirip static site'i deploy ediyor.
 
 ## 9. Onumuzdeki Sprint
 
 Bir sonraki teknik sprint su olmali:
 
-1. Gazi field ve route participation matrix export et.
-2. UI'da her Gazi ati icin hangi sinyal kosularina katildigini veya katilmadigini goster.
-3. Route entry listelerini collapse/expand hale getir.
-4. At merkezli detay ekranina jokey, sahip ve pedigree bilgisini bagla.
-5. 2026 aday/deklare modunu resmi veriyle besle.
-6. Daha sonra FastAPI veya MCP icin ortak read-only query module tasarla.
+1. At merkezli detay ekranina jokey, sahip ve pedigree bilgisini bagla.
+2. Route entry listelerini collapse/expand hale getir.
+3. 2026 aday/deklare modunu resmi veriyle besle.
+4. Pedigree, sahip, jokey ve form sinyallerini ayri feature gruplari olarak hesapla.
+5. Daha sonra FastAPI veya MCP icin ortak read-only query module tasarla.

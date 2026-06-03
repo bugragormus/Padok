@@ -31,7 +31,27 @@ Early race-level observations:
 
 Important caveat:
 
-These are race-level associations. They do not say every Gazi horse must run every route race. The next observation layer should be a horse-by-race participation matrix.
+These are race-level associations. They do not say every Gazi horse must run every route race. The horse-by-race participation matrix exists to make this visible instead of assuming it away.
+
+## 2025 Route Participation Snapshot
+
+Command used:
+
+```bash
+npm run build:gazi-participation -- --input data/gazi-route-report.json --out data/gazi-participation-report.json
+```
+
+Result:
+
+- 22 Gazi runners.
+- 17 runners had at least one tracked prep start.
+- 5 runners reached Gazi without appearing in the tracked prep route races.
+- The 2025 Gazi top three all had at least one tracked prep start.
+- Average tracked prep starts per Gazi runner: 1.0.
+
+Interpretation:
+
+Participation is a context signal, not a verdict. A horse skipping Mehmet Akif Ersoy, Sait Akson, Kısrak, Erkek Tay Deneme, or Dişi Tay Deneme may still be a serious Gazi factor. The useful question is not only "did it run this race?" but also "which path did it take, and what other evidence explains that path?"
 
 ## 2025 Gazi Window Snapshot
 

@@ -159,10 +159,12 @@ main {
 .overview,
 .data-status,
 .backtest,
+.participation,
 .layout,
 .workspace,
 .method {
   width: min(1180px, 100%);
+  min-width: 0;
   margin: 0 auto;
 }
 
@@ -357,11 +359,21 @@ h2 {
   padding: 28px 0;
 }
 
+.participation {
+  padding: 28px 0;
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+}
+
 .backtest-layout {
   display: grid;
   grid-template-columns: minmax(0, 1.35fr) minmax(300px, 0.65fr);
   gap: 36px;
   margin-top: 28px;
+}
+
+.backtest-layout > div {
+  min-width: 0;
 }
 
 .backtest-layout h3 {
@@ -376,6 +388,9 @@ h2 {
 }
 
 .backtest-table {
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
   overflow-x: auto;
 }
 
@@ -421,6 +436,104 @@ h2 {
 
 .season-row__result {
   text-align: right;
+}
+
+.participation-table {
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+  margin-top: 28px;
+  overflow-x: auto;
+  border-top: 1px solid var(--line);
+}
+
+.participation-row {
+  --race-count: 6;
+  display: grid;
+  grid-template-columns: minmax(250px, 1.25fr) minmax(170px, 0.85fr) repeat(var(--race-count), minmax(112px, 0.6fr));
+  gap: 10px;
+  align-items: stretch;
+  min-width: calc(420px + (var(--race-count) * 122px));
+  padding: 10px 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.participation-row--header {
+  align-items: center;
+  min-height: 36px;
+  color: var(--muted);
+  font-size: 0.72rem;
+  font-weight: 900;
+}
+
+.participation-row--podium {
+  background: linear-gradient(90deg, rgba(244, 211, 126, 0.18), rgba(255, 255, 255, 0));
+}
+
+.participation-horse,
+.participation-summary-cell {
+  display: grid;
+  gap: 4px;
+  min-width: 0;
+  padding: 8px 10px;
+}
+
+.participation-horse strong,
+.participation-summary-cell strong {
+  font-size: 0.9rem;
+}
+
+.participation-horse span,
+.participation-horse small,
+.participation-summary-cell span {
+  overflow: hidden;
+  color: var(--muted);
+  font-size: 0.74rem;
+  line-height: 1.45;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.participation-cell {
+  display: grid;
+  align-content: center;
+  gap: 4px;
+  min-height: 58px;
+  padding: 9px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.68);
+}
+
+.participation-cell strong {
+  font-size: 0.86rem;
+}
+
+.participation-cell small {
+  overflow: hidden;
+  color: var(--muted);
+  font-size: 0.68rem;
+  line-height: 1.35;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.participation-cell--ran {
+  border-color: rgba(36, 95, 70, 0.35);
+  background: #eef6f1;
+  color: var(--green-2);
+}
+
+.participation-cell--not-run {
+  background: #f5f3ed;
+  color: var(--muted);
+}
+
+.participation-cell--pending,
+.participation-cell--missing-race {
+  border-color: rgba(197, 154, 61, 0.4);
+  background: #fff8e8;
+  color: #7b5c12;
 }
 
 .backtest-warning {
