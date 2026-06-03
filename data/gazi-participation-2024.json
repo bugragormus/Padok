@@ -1,0 +1,1468 @@
+{
+  "generatedAt": "2026-06-03T22:26:03.823Z",
+  "sourceYear": 2024,
+  "sourceGeneratedAt": "2026-06-03T12:49:11.539Z",
+  "methodology": {
+    "target": "Gazi field route participation",
+    "routeRaceScope": "Selected named Gazi route races in the same season",
+    "warning": "Katılmama bilgisi kötü performans anlamına gelmez; kampanya tercihi, koşu programı veya veri eksikliği olabilir."
+  },
+  "summary": {
+    "analysisState": "field-available",
+    "gaziRunnerCount": 22,
+    "routeRaceCount": 6,
+    "prepRaceCount": 5,
+    "runnersWithPrepStartCount": 17,
+    "runnersWithoutPrepStartCount": 5,
+    "runnersWithPrepStartRate": 77,
+    "topThreeRunnerCount": 3,
+    "topThreeWithPrepStartCount": 2,
+    "topThreeWithoutPrepStartCount": 1,
+    "topThreePrepStartRate": 67,
+    "averagePrepStartCount": 1.2
+  },
+  "columns": [
+    {
+      "key": "disi-tay-deneme",
+      "name": "Dişi Tay Deneme",
+      "sourceName": "DİŞİ TAY DENEME",
+      "date": "2024-05-19",
+      "venue": "İstanbul",
+      "isTarget": false,
+      "resultState": "complete-results",
+      "participantCount": 16
+    },
+    {
+      "key": "erkek-tay-deneme",
+      "name": "Erkek Tay Deneme",
+      "sourceName": "ERKEK TAY DENEME",
+      "date": "2024-05-19",
+      "venue": "İstanbul",
+      "isTarget": false,
+      "resultState": "complete-results",
+      "participantCount": 14
+    },
+    {
+      "key": "mehmet-akif-ersoy",
+      "name": "Mehmet Akif Ersoy",
+      "sourceName": "MEHMET AKİF ERSOY",
+      "date": "2024-06-08",
+      "venue": "Ankara",
+      "isTarget": false,
+      "resultState": "complete-results",
+      "participantCount": 15
+    },
+    {
+      "key": "kisrak",
+      "name": "Kısrak",
+      "sourceName": "KISRAK",
+      "date": "2024-06-09",
+      "venue": "İstanbul",
+      "isTarget": false,
+      "resultState": "complete-results",
+      "participantCount": 21
+    },
+    {
+      "key": "sait-akson",
+      "name": "Sait Akson",
+      "sourceName": "SAİT AKSON",
+      "date": "2024-06-09",
+      "venue": "İstanbul",
+      "isTarget": false,
+      "resultState": "complete-results",
+      "participantCount": 13
+    },
+    {
+      "key": "gazi",
+      "name": "Gazi",
+      "sourceName": "GAZİ",
+      "date": "2024-06-30",
+      "venue": "İstanbul",
+      "isTarget": true,
+      "resultState": "complete-results",
+      "participantCount": 22
+    }
+  ],
+  "rows": [
+    {
+      "horseName": "DRAGON FLAME",
+      "gaziFinishPosition": 1,
+      "gaziJockeyName": "AKIN SÖZEN",
+      "sire": "TOROK (IRE)",
+      "dam": "HAPPY VALENTINE",
+      "damsire": "THEWAYYOUARE (USA)",
+      "owner": "EMRAH AGUN",
+      "hasPrepStart": true,
+      "prepStartCount": 1,
+      "skippedPrepCount": 4,
+      "pendingPrepCount": 0,
+      "bestPrepRaceKey": "erkek-tay-deneme",
+      "bestPrepRaceName": "Erkek Tay Deneme",
+      "bestPrepFinishPosition": 2,
+      "cells": {
+        "disi-tay-deneme": {
+          "status": "not-run"
+        },
+        "erkek-tay-deneme": {
+          "status": "ran",
+          "finishPosition": 2,
+          "horseName": "DRAGON FLAME",
+          "jockeyName": "AKIN SÖZEN",
+          "sire": "TOROK (IRE)",
+          "dam": "HAPPY VALENTINE",
+          "damsire": "THEWAYYOUARE (USA)",
+          "owner": "EMRAH AGUN",
+          "weight": 58,
+          "finishTime": "1.36.25",
+          "margin": "2 Boy",
+          "handicapPoint": 87,
+          "startingPrice": "8,45"
+        },
+        "mehmet-akif-ersoy": {
+          "status": "not-run"
+        },
+        "kisrak": {
+          "status": "not-run"
+        },
+        "sait-akson": {
+          "status": "not-run"
+        },
+        "gazi": {
+          "status": "ran",
+          "finishPosition": 1,
+          "horseName": "DRAGON FLAME",
+          "jockeyName": "AKIN SÖZEN",
+          "sire": "TOROK (IRE)",
+          "dam": "HAPPY VALENTINE",
+          "damsire": "THEWAYYOUARE (USA)",
+          "owner": "EMRAH AGUN",
+          "weight": 58,
+          "finishTime": "2.28.36",
+          "margin": "3 Boy",
+          "handicapPoint": 101,
+          "startingPrice": "12,30"
+        }
+      }
+    },
+    {
+      "horseName": "ZIZKA",
+      "gaziFinishPosition": 2,
+      "gaziJockeyName": "SELİM KAYA",
+      "sire": "SOMMERABEND (GB)",
+      "dam": "MAMUSELLA (IRE)",
+      "damsire": "INVINCIBLE SPIRIT (IRE)",
+      "owner": "SANEM KAHRAMAN",
+      "hasPrepStart": true,
+      "prepStartCount": 2,
+      "skippedPrepCount": 3,
+      "pendingPrepCount": 0,
+      "bestPrepRaceKey": "sait-akson",
+      "bestPrepRaceName": "Sait Akson",
+      "bestPrepFinishPosition": 3,
+      "cells": {
+        "disi-tay-deneme": {
+          "status": "not-run"
+        },
+        "erkek-tay-deneme": {
+          "status": "ran",
+          "finishPosition": 4,
+          "horseName": "ZIZKA",
+          "jockeyName": "VEDAT ABİŞ",
+          "sire": "SOMMERABEND (GB)",
+          "dam": "MAMUSELLA (IRE)",
+          "damsire": "INVINCIBLE SPIRIT (IRE)",
+          "owner": "SANEM KAHRAMAN",
+          "weight": 58,
+          "finishTime": "1.36.53",
+          "margin": "2,5 Boy",
+          "handicapPoint": 79,
+          "startingPrice": "12,70"
+        },
+        "mehmet-akif-ersoy": {
+          "status": "not-run"
+        },
+        "kisrak": {
+          "status": "not-run"
+        },
+        "sait-akson": {
+          "status": "ran",
+          "finishPosition": 3,
+          "horseName": "ZIZKA",
+          "jockeyName": "VEDAT ABİŞ",
+          "sire": "SOMMERABEND (GB)",
+          "dam": "MAMUSELLA (IRE)",
+          "damsire": "INVINCIBLE SPIRIT (IRE)",
+          "owner": "SANEM KAHRAMAN",
+          "weight": 58,
+          "finishTime": "2.16.20",
+          "margin": "1,5 Boy",
+          "handicapPoint": 92,
+          "startingPrice": "6,30"
+        },
+        "gazi": {
+          "status": "ran",
+          "finishPosition": 2,
+          "horseName": "ZIZKA",
+          "jockeyName": "SELİM KAYA",
+          "sire": "SOMMERABEND (GB)",
+          "dam": "MAMUSELLA (IRE)",
+          "damsire": "INVINCIBLE SPIRIT (IRE)",
+          "owner": "SANEM KAHRAMAN",
+          "weight": 58,
+          "finishTime": "2.28.75",
+          "margin": "1,5 Boy",
+          "handicapPoint": 94,
+          "startingPrice": "22,60"
+        }
+      }
+    },
+    {
+      "horseName": "BORREGO",
+      "gaziFinishPosition": 3,
+      "gaziJockeyName": "MEHMET SALİH ÇELİK",
+      "sire": "MY DEAR SON",
+      "dam": "SEDDIFI",
+      "damsire": "BEKMEZBEY",
+      "owner": "HAYRULLAH DOĞAN",
+      "hasPrepStart": false,
+      "prepStartCount": 0,
+      "skippedPrepCount": 5,
+      "pendingPrepCount": 0,
+      "bestPrepRaceKey": null,
+      "bestPrepRaceName": null,
+      "bestPrepFinishPosition": null,
+      "cells": {
+        "disi-tay-deneme": {
+          "status": "not-run"
+        },
+        "erkek-tay-deneme": {
+          "status": "not-run"
+        },
+        "mehmet-akif-ersoy": {
+          "status": "not-run"
+        },
+        "kisrak": {
+          "status": "not-run"
+        },
+        "sait-akson": {
+          "status": "not-run"
+        },
+        "gazi": {
+          "status": "ran",
+          "finishPosition": 3,
+          "horseName": "BORREGO",
+          "jockeyName": "MEHMET SALİH ÇELİK",
+          "sire": "MY DEAR SON",
+          "dam": "SEDDIFI",
+          "damsire": "BEKMEZBEY",
+          "owner": "HAYRULLAH DOĞAN",
+          "weight": 58,
+          "finishTime": "2.28.93",
+          "margin": "Baş",
+          "handicapPoint": 80,
+          "startingPrice": "99,60"
+        }
+      }
+    },
+    {
+      "horseName": "SON OF COOGER",
+      "gaziFinishPosition": 4,
+      "gaziJockeyName": "AHMET ÇELİK",
+      "sire": "COOGER",
+      "dam": "ŞAHİZER",
+      "damsire": "LION HEART (USA)",
+      "owner": "AYHAN AHRASOĞLU",
+      "hasPrepStart": false,
+      "prepStartCount": 0,
+      "skippedPrepCount": 5,
+      "pendingPrepCount": 0,
+      "bestPrepRaceKey": null,
+      "bestPrepRaceName": null,
+      "bestPrepFinishPosition": null,
+      "cells": {
+        "disi-tay-deneme": {
+          "status": "not-run"
+        },
+        "erkek-tay-deneme": {
+          "status": "not-run"
+        },
+        "mehmet-akif-ersoy": {
+          "status": "not-run"
+        },
+        "kisrak": {
+          "status": "not-run"
+        },
+        "sait-akson": {
+          "status": "not-run"
+        },
+        "gazi": {
+          "status": "ran",
+          "finishPosition": 4,
+          "horseName": "SON OF COOGER",
+          "jockeyName": "AHMET ÇELİK",
+          "sire": "COOGER",
+          "dam": "ŞAHİZER",
+          "damsire": "LION HEART (USA)",
+          "owner": "AYHAN AHRASOĞLU",
+          "weight": 58,
+          "finishTime": "2.28.95",
+          "margin": "2 Boy",
+          "handicapPoint": 99,
+          "startingPrice": "2,95"
+        }
+      }
+    },
+    {
+      "horseName": "WOLF SEYFO",
+      "gaziFinishPosition": 5,
+      "gaziJockeyName": "ERCAN ÇANKAYA",
+      "sire": "NATIVE KHAN (FR)",
+      "dam": "SMARTY ROSE",
+      "damsire": "MOUNTAIN CAT (USA)",
+      "owner": "ZÜLFİKAR HATUNOĞLU",
+      "hasPrepStart": true,
+      "prepStartCount": 2,
+      "skippedPrepCount": 3,
+      "pendingPrepCount": 0,
+      "bestPrepRaceKey": "mehmet-akif-ersoy",
+      "bestPrepRaceName": "Mehmet Akif Ersoy",
+      "bestPrepFinishPosition": 3,
+      "cells": {
+        "disi-tay-deneme": {
+          "status": "not-run"
+        },
+        "erkek-tay-deneme": {
+          "status": "ran",
+          "finishPosition": 5,
+          "horseName": "WOLF SEYFO",
+          "jockeyName": "SELİM KAYA",
+          "sire": "NATIVE KHAN (FR)",
+          "dam": "SMARTY ROSE",
+          "damsire": "MOUNTAIN CAT (USA)",
+          "owner": "ZÜLFİKAR HATUNOĞLU",
+          "weight": 58,
+          "finishTime": "1.36.85",
+          "margin": null,
+          "handicapPoint": 90,
+          "startingPrice": "7,15"
+        },
+        "mehmet-akif-ersoy": {
+          "status": "ran",
+          "finishPosition": 3,
+          "horseName": "WOLF SEYFO",
+          "jockeyName": "SELİM KAYA",
+          "sire": "NATIVE KHAN (FR)",
+          "dam": "SMARTY ROSE",
+          "damsire": "MOUNTAIN CAT (USA)",
+          "owner": "ZÜLFİKAR HATUNOĞLU",
+          "weight": 58,
+          "finishTime": "2.23.70",
+          "margin": "1 Boy",
+          "handicapPoint": 91,
+          "startingPrice": "3,05"
+        },
+        "kisrak": {
+          "status": "not-run"
+        },
+        "sait-akson": {
+          "status": "not-run"
+        },
+        "gazi": {
+          "status": "ran",
+          "finishPosition": 5,
+          "horseName": "WOLF SEYFO",
+          "jockeyName": "ERCAN ÇANKAYA",
+          "sire": "NATIVE KHAN (FR)",
+          "dam": "SMARTY ROSE",
+          "damsire": "MOUNTAIN CAT (USA)",
+          "owner": "ZÜLFİKAR HATUNOĞLU",
+          "weight": 58,
+          "finishTime": "2.29.18",
+          "margin": null,
+          "handicapPoint": 91,
+          "startingPrice": "75,20"
+        }
+      }
+    },
+    {
+      "horseName": "GİZ",
+      "gaziFinishPosition": 6,
+      "gaziJockeyName": "MÜSLÜM ÇELİK",
+      "sire": "RUN AWAY AND HIDE (USA)",
+      "dam": "ŞEKER AYŞE",
+      "damsire": "BARNATO (USA)",
+      "owner": "GÜLİZAR YANIK",
+      "hasPrepStart": true,
+      "prepStartCount": 2,
+      "skippedPrepCount": 3,
+      "pendingPrepCount": 0,
+      "bestPrepRaceKey": "disi-tay-deneme",
+      "bestPrepRaceName": "Dişi Tay Deneme",
+      "bestPrepFinishPosition": 1,
+      "cells": {
+        "disi-tay-deneme": {
+          "status": "ran",
+          "finishPosition": 1,
+          "horseName": "GİZ",
+          "jockeyName": "AYHAN KURŞUN",
+          "sire": "RUN AWAY AND HIDE (USA)",
+          "dam": "ŞEKER AYŞE",
+          "damsire": "BARNATO (USA)",
+          "owner": "GÜLİZAR YANIK",
+          "weight": 58,
+          "finishTime": "1.36.97",
+          "margin": "1,5 Boy",
+          "handicapPoint": 96,
+          "startingPrice": "3,60"
+        },
+        "erkek-tay-deneme": {
+          "status": "not-run"
+        },
+        "mehmet-akif-ersoy": {
+          "status": "not-run"
+        },
+        "kisrak": {
+          "status": "ran",
+          "finishPosition": 6,
+          "horseName": "GİZ",
+          "jockeyName": "AYHAN KURŞUN",
+          "sire": "RUN AWAY AND HIDE (USA)",
+          "dam": "ŞEKER AYŞE",
+          "damsire": "BARNATO (USA)",
+          "owner": "GÜLİZAR YANIK",
+          "weight": 58,
+          "finishTime": "2.09.41",
+          "margin": null,
+          "handicapPoint": 100,
+          "startingPrice": "2,00"
+        },
+        "sait-akson": {
+          "status": "not-run"
+        },
+        "gazi": {
+          "status": "ran",
+          "finishPosition": 6,
+          "horseName": "GİZ",
+          "jockeyName": "MÜSLÜM ÇELİK",
+          "sire": "RUN AWAY AND HIDE (USA)",
+          "dam": "ŞEKER AYŞE",
+          "damsire": "BARNATO (USA)",
+          "owner": "GÜLİZAR YANIK",
+          "weight": 56,
+          "finishTime": "2.29.27",
+          "margin": null,
+          "handicapPoint": 100,
+          "startingPrice": "28,00"
+        }
+      }
+    },
+    {
+      "horseName": "MANGUSTA",
+      "gaziFinishPosition": 7,
+      "gaziJockeyName": "VEDAT ABİŞ",
+      "sire": "NATIVE KHAN (FR)",
+      "dam": "CHANTALLE RUA",
+      "damsire": "MOUNTAIN CAT (USA)",
+      "owner": "MURAT CAVCAV",
+      "hasPrepStart": true,
+      "prepStartCount": 2,
+      "skippedPrepCount": 3,
+      "pendingPrepCount": 0,
+      "bestPrepRaceKey": "kisrak",
+      "bestPrepRaceName": "Kısrak",
+      "bestPrepFinishPosition": 1,
+      "cells": {
+        "disi-tay-deneme": {
+          "status": "ran",
+          "finishPosition": 2,
+          "horseName": "MANGUSTA",
+          "jockeyName": "ÖZCAN YILDIRIM",
+          "sire": "NATIVE KHAN (FR)",
+          "dam": "CHANTALLE RUA",
+          "damsire": "MOUNTAIN CAT (USA)",
+          "owner": "MURAT CAVCAV",
+          "weight": 58,
+          "finishTime": "1.37.16",
+          "margin": "Baş",
+          "handicapPoint": 95,
+          "startingPrice": "3,15"
+        },
+        "erkek-tay-deneme": {
+          "status": "not-run"
+        },
+        "mehmet-akif-ersoy": {
+          "status": "not-run"
+        },
+        "kisrak": {
+          "status": "ran",
+          "finishPosition": 1,
+          "horseName": "MANGUSTA",
+          "jockeyName": "AHMET ÇELİK",
+          "sire": "NATIVE KHAN (FR)",
+          "dam": "CHANTALLE RUA",
+          "damsire": "MOUNTAIN CAT (USA)",
+          "owner": "MURAT CAVCAV",
+          "weight": 58,
+          "finishTime": "2.08.69",
+          "margin": "1,5 Boy",
+          "handicapPoint": 96,
+          "startingPrice": "5,00"
+        },
+        "sait-akson": {
+          "status": "not-run"
+        },
+        "gazi": {
+          "status": "ran",
+          "finishPosition": 7,
+          "horseName": "MANGUSTA",
+          "jockeyName": "VEDAT ABİŞ",
+          "sire": "NATIVE KHAN (FR)",
+          "dam": "CHANTALLE RUA",
+          "damsire": "MOUNTAIN CAT (USA)",
+          "owner": "MURAT CAVCAV",
+          "weight": 56,
+          "finishTime": "2.29.53",
+          "margin": null,
+          "handicapPoint": 100,
+          "startingPrice": "9,00"
+        }
+      }
+    },
+    {
+      "horseName": "SEVERUS SNAPE",
+      "gaziFinishPosition": 8,
+      "gaziJockeyName": "AYHAN KURŞUN",
+      "sire": "TOROK (IRE)",
+      "dam": "HOPPA",
+      "damsire": "DR FONG (USA)",
+      "owner": "BARIŞ YAKUT",
+      "hasPrepStart": true,
+      "prepStartCount": 1,
+      "skippedPrepCount": 4,
+      "pendingPrepCount": 0,
+      "bestPrepRaceKey": "mehmet-akif-ersoy",
+      "bestPrepRaceName": "Mehmet Akif Ersoy",
+      "bestPrepFinishPosition": 1,
+      "cells": {
+        "disi-tay-deneme": {
+          "status": "not-run"
+        },
+        "erkek-tay-deneme": {
+          "status": "not-run"
+        },
+        "mehmet-akif-ersoy": {
+          "status": "ran",
+          "finishPosition": 1,
+          "horseName": "SEVERUS SNAPE",
+          "jockeyName": "AHMET ÇELİK",
+          "sire": "TOROK (IRE)",
+          "dam": "HOPPA",
+          "damsire": "DR FONG (USA)",
+          "owner": "BARIŞ YAKUT",
+          "weight": 58,
+          "finishTime": "2.23.51",
+          "margin": "Yarım Boy",
+          "handicapPoint": 91,
+          "startingPrice": "2,05"
+        },
+        "kisrak": {
+          "status": "not-run"
+        },
+        "sait-akson": {
+          "status": "not-run"
+        },
+        "gazi": {
+          "status": "ran",
+          "finishPosition": 8,
+          "horseName": "SEVERUS SNAPE",
+          "jockeyName": "AYHAN KURŞUN",
+          "sire": "TOROK (IRE)",
+          "dam": "HOPPA",
+          "damsire": "DR FONG (USA)",
+          "owner": "BARIŞ YAKUT",
+          "weight": 58,
+          "finishTime": "2.29.72",
+          "margin": null,
+          "handicapPoint": 101,
+          "startingPrice": "11,50"
+        }
+      }
+    },
+    {
+      "horseName": "BLUE SUNSET",
+      "gaziFinishPosition": 9,
+      "gaziJockeyName": "GÖKHAN KOCAKAYA",
+      "sire": "AIR VICE MARSHAL (USA)",
+      "dam": "VISARNO (USA)",
+      "damsire": "KITTEN'S JOY (USA)",
+      "owner": "DENİZ KURTEL",
+      "hasPrepStart": true,
+      "prepStartCount": 2,
+      "skippedPrepCount": 3,
+      "pendingPrepCount": 0,
+      "bestPrepRaceKey": "sait-akson",
+      "bestPrepRaceName": "Sait Akson",
+      "bestPrepFinishPosition": 2,
+      "cells": {
+        "disi-tay-deneme": {
+          "status": "not-run"
+        },
+        "erkek-tay-deneme": {
+          "status": "ran",
+          "finishPosition": 3,
+          "horseName": "BLUE SUNSET",
+          "jockeyName": "AYHAN KURŞUN",
+          "sire": "AIR VICE MARSHAL (USA)",
+          "dam": "VISARNO (USA)",
+          "damsire": "KITTEN'S JOY (USA)",
+          "owner": "DENİZ KURTEL",
+          "weight": 58,
+          "finishTime": "1.36.52",
+          "margin": "Burun",
+          "handicapPoint": 105,
+          "startingPrice": "2,00"
+        },
+        "mehmet-akif-ersoy": {
+          "status": "not-run"
+        },
+        "kisrak": {
+          "status": "not-run"
+        },
+        "sait-akson": {
+          "status": "ran",
+          "finishPosition": 2,
+          "horseName": "BLUE SUNSET",
+          "jockeyName": "GÖKHAN KOCAKAYA",
+          "sire": "AIR VICE MARSHAL (USA)",
+          "dam": "VISARNO (USA)",
+          "damsire": "KITTEN'S JOY (USA)",
+          "owner": "DENİZ KURTEL",
+          "weight": 58,
+          "finishTime": "2.16.07",
+          "margin": "1 Boy",
+          "handicapPoint": 105,
+          "startingPrice": "4,15"
+        },
+        "gazi": {
+          "status": "ran",
+          "finishPosition": 9,
+          "horseName": "BLUE SUNSET",
+          "jockeyName": "GÖKHAN KOCAKAYA",
+          "sire": "AIR VICE MARSHAL (USA)",
+          "dam": "VISARNO (USA)",
+          "damsire": "KITTEN'S JOY (USA)",
+          "owner": "DENİZ KURTEL",
+          "weight": 58,
+          "finishTime": "2.29.83",
+          "margin": null,
+          "handicapPoint": 105,
+          "startingPrice": "6,15"
+        }
+      }
+    },
+    {
+      "horseName": "MR BAYBARS",
+      "gaziFinishPosition": 10,
+      "gaziJockeyName": "HALİS KARATAŞ",
+      "sire": "MYBOYCHARLIE (IRE)",
+      "dam": "LA CIGALE (USA)",
+      "damsire": "MEDAGLIA D'ORO (USA)",
+      "owner": "DOĞUKAN YAPICI",
+      "hasPrepStart": false,
+      "prepStartCount": 0,
+      "skippedPrepCount": 5,
+      "pendingPrepCount": 0,
+      "bestPrepRaceKey": null,
+      "bestPrepRaceName": null,
+      "bestPrepFinishPosition": null,
+      "cells": {
+        "disi-tay-deneme": {
+          "status": "not-run"
+        },
+        "erkek-tay-deneme": {
+          "status": "not-run"
+        },
+        "mehmet-akif-ersoy": {
+          "status": "not-run"
+        },
+        "kisrak": {
+          "status": "not-run"
+        },
+        "sait-akson": {
+          "status": "not-run"
+        },
+        "gazi": {
+          "status": "ran",
+          "finishPosition": 10,
+          "horseName": "MR BAYBARS",
+          "jockeyName": "HALİS KARATAŞ",
+          "sire": "MYBOYCHARLIE (IRE)",
+          "dam": "LA CIGALE (USA)",
+          "damsire": "MEDAGLIA D'ORO (USA)",
+          "owner": "DOĞUKAN YAPICI",
+          "weight": 58,
+          "finishTime": "2.29.92",
+          "margin": null,
+          "handicapPoint": 84,
+          "startingPrice": "12,95"
+        }
+      }
+    },
+    {
+      "horseName": "TOR GOLD",
+      "gaziFinishPosition": 11,
+      "gaziJockeyName": "MEHMET AKYAVUZ",
+      "sire": "TOROK (IRE)",
+      "dam": "SUZİ GOLD",
+      "damsire": "BANKNOTE (GB)",
+      "owner": "HULUSİ ÇİL",
+      "hasPrepStart": true,
+      "prepStartCount": 2,
+      "skippedPrepCount": 3,
+      "pendingPrepCount": 0,
+      "bestPrepRaceKey": "sait-akson",
+      "bestPrepRaceName": "Sait Akson",
+      "bestPrepFinishPosition": 4,
+      "cells": {
+        "disi-tay-deneme": {
+          "status": "not-run"
+        },
+        "erkek-tay-deneme": {
+          "status": "ran",
+          "finishPosition": 6,
+          "horseName": "TOR GOLD",
+          "jockeyName": "MÜSLÜM ÇELİK",
+          "sire": "TOROK (IRE)",
+          "dam": "SUZİ GOLD",
+          "damsire": "BANKNOTE (GB)",
+          "owner": "HULUSİ ÇİL",
+          "weight": 58,
+          "finishTime": "1.36.92",
+          "margin": null,
+          "handicapPoint": 91,
+          "startingPrice": "4,50"
+        },
+        "mehmet-akif-ersoy": {
+          "status": "not-run"
+        },
+        "kisrak": {
+          "status": "not-run"
+        },
+        "sait-akson": {
+          "status": "ran",
+          "finishPosition": 4,
+          "horseName": "TOR GOLD",
+          "jockeyName": "AHMET ÇELİK",
+          "sire": "TOROK (IRE)",
+          "dam": "SUZİ GOLD",
+          "damsire": "BANKNOTE (GB)",
+          "owner": "HULUSİ ÇİL",
+          "weight": 58,
+          "finishTime": "2.16.41",
+          "margin": "Yarım Boy",
+          "handicapPoint": 91,
+          "startingPrice": "5,20"
+        },
+        "gazi": {
+          "status": "ran",
+          "finishPosition": 11,
+          "horseName": "TOR GOLD",
+          "jockeyName": "MEHMET AKYAVUZ",
+          "sire": "TOROK (IRE)",
+          "dam": "SUZİ GOLD",
+          "damsire": "BANKNOTE (GB)",
+          "owner": "HULUSİ ÇİL",
+          "weight": 58,
+          "finishTime": "2.30.01",
+          "margin": null,
+          "handicapPoint": 92,
+          "startingPrice": "33,15"
+        }
+      }
+    },
+    {
+      "horseName": "FESTIVAL FEVER",
+      "gaziFinishPosition": 12,
+      "gaziJockeyName": "MUSTAFA ÇİÇEK",
+      "sire": "TIZWAY (USA)",
+      "dam": "SO PROBABLE (USA)",
+      "damsire": "STORM CAT (USA)",
+      "owner": "MELİS KURTEL EMİN",
+      "hasPrepStart": true,
+      "prepStartCount": 2,
+      "skippedPrepCount": 3,
+      "pendingPrepCount": 0,
+      "bestPrepRaceKey": "sait-akson",
+      "bestPrepRaceName": "Sait Akson",
+      "bestPrepFinishPosition": 5,
+      "cells": {
+        "disi-tay-deneme": {
+          "status": "not-run"
+        },
+        "erkek-tay-deneme": {
+          "status": "ran",
+          "finishPosition": 7,
+          "horseName": "FESTIVAL FEVER",
+          "jockeyName": "AHMET ÇELİK",
+          "sire": "TIZWAY (USA)",
+          "dam": "SO PROBABLE (USA)",
+          "damsire": "STORM CAT (USA)",
+          "owner": "MELİS KURTEL EMİN",
+          "weight": 58,
+          "finishTime": "1.37.24",
+          "margin": null,
+          "handicapPoint": 98,
+          "startingPrice": "11,35"
+        },
+        "mehmet-akif-ersoy": {
+          "status": "not-run"
+        },
+        "kisrak": {
+          "status": "not-run"
+        },
+        "sait-akson": {
+          "status": "ran",
+          "finishPosition": 5,
+          "horseName": "FESTIVAL FEVER",
+          "jockeyName": "MUSTAFA ÇİÇEK",
+          "sire": "TIZWAY (USA)",
+          "dam": "SO PROBABLE (USA)",
+          "damsire": "STORM CAT (USA)",
+          "owner": "MELİS KURTEL EMİN",
+          "weight": 58,
+          "finishTime": "2.16.48",
+          "margin": null,
+          "handicapPoint": 98,
+          "startingPrice": "10,35"
+        },
+        "gazi": {
+          "status": "ran",
+          "finishPosition": 12,
+          "horseName": "FESTIVAL FEVER",
+          "jockeyName": "MUSTAFA ÇİÇEK",
+          "sire": "TIZWAY (USA)",
+          "dam": "SO PROBABLE (USA)",
+          "damsire": "STORM CAT (USA)",
+          "owner": "MELİS KURTEL EMİN",
+          "weight": 58,
+          "finishTime": "2.30.06",
+          "margin": null,
+          "handicapPoint": 98,
+          "startingPrice": "46,35"
+        }
+      }
+    },
+    {
+      "horseName": "CESUR ALİ",
+      "gaziFinishPosition": 13,
+      "gaziJockeyName": "ALİ YILDIZ",
+      "sire": "TOROK (IRE)",
+      "dam": "ESQUELA",
+      "damsire": "DIVINE LIGHT* (JPN)",
+      "owner": "ŞEYDA ERCAN",
+      "hasPrepStart": true,
+      "prepStartCount": 1,
+      "skippedPrepCount": 4,
+      "pendingPrepCount": 0,
+      "bestPrepRaceKey": "sait-akson",
+      "bestPrepRaceName": "Sait Akson",
+      "bestPrepFinishPosition": 10,
+      "cells": {
+        "disi-tay-deneme": {
+          "status": "not-run"
+        },
+        "erkek-tay-deneme": {
+          "status": "not-run"
+        },
+        "mehmet-akif-ersoy": {
+          "status": "not-run"
+        },
+        "kisrak": {
+          "status": "not-run"
+        },
+        "sait-akson": {
+          "status": "ran",
+          "finishPosition": 10,
+          "horseName": "CESUR ALİ",
+          "jockeyName": "AYHAN KURŞUN",
+          "sire": "TOROK (IRE)",
+          "dam": "ESQUELA",
+          "damsire": "DIVINE LIGHT* (JPN)",
+          "owner": "ŞEYDA ERCAN",
+          "weight": 58,
+          "finishTime": "2.18.72",
+          "margin": null,
+          "handicapPoint": 91,
+          "startingPrice": "10,55"
+        },
+        "gazi": {
+          "status": "ran",
+          "finishPosition": 13,
+          "horseName": "CESUR ALİ",
+          "jockeyName": "ALİ YILDIZ",
+          "sire": "TOROK (IRE)",
+          "dam": "ESQUELA",
+          "damsire": "DIVINE LIGHT* (JPN)",
+          "owner": "ŞEYDA ERCAN",
+          "weight": 58,
+          "finishTime": "2.30.21",
+          "margin": null,
+          "handicapPoint": 91,
+          "startingPrice": "74,50"
+        }
+      }
+    },
+    {
+      "horseName": "IRON SKY",
+      "gaziFinishPosition": 14,
+      "gaziJockeyName": "GÖRKEM ÖZÇELİK",
+      "sire": "MYBOYCHARLIE (IRE)",
+      "dam": "AL JAWHARA",
+      "damsire": "VICTORY GALLOP (CAN)",
+      "owner": "ÜMİT DURUCAN",
+      "hasPrepStart": false,
+      "prepStartCount": 0,
+      "skippedPrepCount": 5,
+      "pendingPrepCount": 0,
+      "bestPrepRaceKey": null,
+      "bestPrepRaceName": null,
+      "bestPrepFinishPosition": null,
+      "cells": {
+        "disi-tay-deneme": {
+          "status": "not-run"
+        },
+        "erkek-tay-deneme": {
+          "status": "not-run"
+        },
+        "mehmet-akif-ersoy": {
+          "status": "not-run"
+        },
+        "kisrak": {
+          "status": "not-run"
+        },
+        "sait-akson": {
+          "status": "not-run"
+        },
+        "gazi": {
+          "status": "ran",
+          "finishPosition": 14,
+          "horseName": "IRON SKY",
+          "jockeyName": "GÖRKEM ÖZÇELİK",
+          "sire": "MYBOYCHARLIE (IRE)",
+          "dam": "AL JAWHARA",
+          "damsire": "VICTORY GALLOP (CAN)",
+          "owner": "ÜMİT DURUCAN",
+          "weight": 58,
+          "finishTime": "2.30.23",
+          "margin": null,
+          "handicapPoint": 76,
+          "startingPrice": "62,20"
+        }
+      }
+    },
+    {
+      "horseName": "MADRAS",
+      "gaziFinishPosition": 15,
+      "gaziJockeyName": "ÖZCAN YILDIRIM",
+      "sire": "HALICARNASSUS (IRE)",
+      "dam": "CİHANNUR",
+      "damsire": "UNACCOUNTED FOR (USA)",
+      "owner": "İHSAN ERTEN",
+      "hasPrepStart": true,
+      "prepStartCount": 2,
+      "skippedPrepCount": 3,
+      "pendingPrepCount": 0,
+      "bestPrepRaceKey": "erkek-tay-deneme",
+      "bestPrepRaceName": "Erkek Tay Deneme",
+      "bestPrepFinishPosition": 1,
+      "cells": {
+        "disi-tay-deneme": {
+          "status": "not-run"
+        },
+        "erkek-tay-deneme": {
+          "status": "ran",
+          "finishPosition": 1,
+          "horseName": "MADRAS",
+          "jockeyName": "ÖZCAN YILDIRIM",
+          "sire": "HALICARNASSUS (IRE)",
+          "dam": "CİHANNUR",
+          "damsire": "UNACCOUNTED FOR (USA)",
+          "owner": "İHSAN ERTEN",
+          "weight": 58,
+          "finishTime": "1.36.21",
+          "margin": "Boyun",
+          "handicapPoint": 92,
+          "startingPrice": "14,60"
+        },
+        "mehmet-akif-ersoy": {
+          "status": "not-run"
+        },
+        "kisrak": {
+          "status": "not-run"
+        },
+        "sait-akson": {
+          "status": "ran",
+          "finishPosition": 1,
+          "horseName": "MADRAS",
+          "jockeyName": "ÖZCAN YILDIRIM",
+          "sire": "HALICARNASSUS (IRE)",
+          "dam": "CİHANNUR",
+          "damsire": "UNACCOUNTED FOR (USA)",
+          "owner": "İHSAN ERTEN",
+          "weight": 58,
+          "finishTime": "2.15.85",
+          "margin": "1,5 Boy",
+          "handicapPoint": 103,
+          "startingPrice": "2,15"
+        },
+        "gazi": {
+          "status": "ran",
+          "finishPosition": 15,
+          "horseName": "MADRAS",
+          "jockeyName": "ÖZCAN YILDIRIM",
+          "sire": "HALICARNASSUS (IRE)",
+          "dam": "CİHANNUR",
+          "damsire": "UNACCOUNTED FOR (USA)",
+          "owner": "İHSAN ERTEN",
+          "weight": 58,
+          "finishTime": "2.30.24",
+          "margin": null,
+          "handicapPoint": 106,
+          "startingPrice": "4,55"
+        }
+      }
+    },
+    {
+      "horseName": "OHRID INCISI",
+      "gaziFinishPosition": 16,
+      "gaziJockeyName": "MERTCAN ÇELİK",
+      "sire": "MYBOYCHARLIE (IRE)",
+      "dam": "KILFARASY (IRE)",
+      "damsire": "GALILEO (IRE)",
+      "owner": "FEDAİ KAHRAMAN",
+      "hasPrepStart": true,
+      "prepStartCount": 2,
+      "skippedPrepCount": 3,
+      "pendingPrepCount": 0,
+      "bestPrepRaceKey": "kisrak",
+      "bestPrepRaceName": "Kısrak",
+      "bestPrepFinishPosition": 4,
+      "cells": {
+        "disi-tay-deneme": {
+          "status": "ran",
+          "finishPosition": 9,
+          "horseName": "OHRID INCISI",
+          "jockeyName": "VEDAT ABİŞ",
+          "sire": "MYBOYCHARLIE (IRE)",
+          "dam": "KILFARASY (IRE)",
+          "damsire": "GALILEO (IRE)",
+          "owner": "FEDAİ KAHRAMAN",
+          "weight": 58,
+          "finishTime": "1.37.81",
+          "margin": null,
+          "handicapPoint": 80,
+          "startingPrice": "5,20"
+        },
+        "erkek-tay-deneme": {
+          "status": "not-run"
+        },
+        "mehmet-akif-ersoy": {
+          "status": "not-run"
+        },
+        "kisrak": {
+          "status": "ran",
+          "finishPosition": 4,
+          "horseName": "OHRID INCISI",
+          "jockeyName": "VEDAT ABİŞ",
+          "sire": "MYBOYCHARLIE (IRE)",
+          "dam": "KILFARASY (IRE)",
+          "damsire": "GALILEO (IRE)",
+          "owner": "FEDAİ KAHRAMAN",
+          "weight": 58,
+          "finishTime": "2.09.14",
+          "margin": "1 Boy",
+          "handicapPoint": 80,
+          "startingPrice": "12,75"
+        },
+        "sait-akson": {
+          "status": "not-run"
+        },
+        "gazi": {
+          "status": "ran",
+          "finishPosition": 16,
+          "horseName": "OHRID INCISI",
+          "jockeyName": "MERTCAN ÇELİK",
+          "sire": "MYBOYCHARLIE (IRE)",
+          "dam": "KILFARASY (IRE)",
+          "damsire": "GALILEO (IRE)",
+          "owner": "FEDAİ KAHRAMAN",
+          "weight": 56,
+          "finishTime": "2.30.27",
+          "margin": null,
+          "handicapPoint": 85,
+          "startingPrice": "22,60"
+        }
+      }
+    },
+    {
+      "horseName": "RIDE THE LIGHTNING",
+      "gaziFinishPosition": 17,
+      "gaziJockeyName": "MEHMET KAYA",
+      "sire": "TOROK (IRE)",
+      "dam": "INVINCIBLE ROCK",
+      "damsire": "DIVINE LIGHT* (JPN)",
+      "owner": "SELİM KAYA",
+      "hasPrepStart": false,
+      "prepStartCount": 0,
+      "skippedPrepCount": 5,
+      "pendingPrepCount": 0,
+      "bestPrepRaceKey": null,
+      "bestPrepRaceName": null,
+      "bestPrepFinishPosition": null,
+      "cells": {
+        "disi-tay-deneme": {
+          "status": "not-run"
+        },
+        "erkek-tay-deneme": {
+          "status": "not-run"
+        },
+        "mehmet-akif-ersoy": {
+          "status": "not-run"
+        },
+        "kisrak": {
+          "status": "not-run"
+        },
+        "sait-akson": {
+          "status": "not-run"
+        },
+        "gazi": {
+          "status": "ran",
+          "finishPosition": 17,
+          "horseName": "RIDE THE LIGHTNING",
+          "jockeyName": "MEHMET KAYA",
+          "sire": "TOROK (IRE)",
+          "dam": "INVINCIBLE ROCK",
+          "damsire": "DIVINE LIGHT* (JPN)",
+          "owner": "SELİM KAYA",
+          "weight": 58,
+          "finishTime": "2.30.37",
+          "margin": null,
+          "handicapPoint": 90,
+          "startingPrice": "35,05"
+        }
+      }
+    },
+    {
+      "horseName": "BOSETTI",
+      "gaziFinishPosition": 18,
+      "gaziJockeyName": "MUHAMMED MİR BİLGİN",
+      "sire": "TOROK (IRE)",
+      "dam": "THE COMPANY",
+      "damsire": "AKINDAYIM (IRE)",
+      "owner": "MUSA ÖZDEMİR",
+      "hasPrepStart": true,
+      "prepStartCount": 1,
+      "skippedPrepCount": 4,
+      "pendingPrepCount": 0,
+      "bestPrepRaceKey": "kisrak",
+      "bestPrepRaceName": "Kısrak",
+      "bestPrepFinishPosition": 5,
+      "cells": {
+        "disi-tay-deneme": {
+          "status": "not-run"
+        },
+        "erkek-tay-deneme": {
+          "status": "not-run"
+        },
+        "mehmet-akif-ersoy": {
+          "status": "not-run"
+        },
+        "kisrak": {
+          "status": "ran",
+          "finishPosition": 5,
+          "horseName": "BOSETTI",
+          "jockeyName": "MEHMET SALİH ÇELİK",
+          "sire": "TOROK (IRE)",
+          "dam": "THE COMPANY",
+          "damsire": "AKINDAYIM (IRE)",
+          "owner": "MUSA ÖZDEMİR",
+          "weight": 58,
+          "finishTime": "2.09.29",
+          "margin": null,
+          "handicapPoint": 59,
+          "startingPrice": "36,05"
+        },
+        "sait-akson": {
+          "status": "not-run"
+        },
+        "gazi": {
+          "status": "ran",
+          "finishPosition": 18,
+          "horseName": "BOSETTI",
+          "jockeyName": "MUHAMMED MİR BİLGİN",
+          "sire": "TOROK (IRE)",
+          "dam": "THE COMPANY",
+          "damsire": "AKINDAYIM (IRE)",
+          "owner": "MUSA ÖZDEMİR",
+          "weight": 56,
+          "finishTime": "2.30.57",
+          "margin": null,
+          "handicapPoint": 74,
+          "startingPrice": "128,75"
+        }
+      }
+    },
+    {
+      "horseName": "COUNTACH",
+      "gaziFinishPosition": 19,
+      "gaziJockeyName": "FERİT YARDIMCI",
+      "sire": "MYBOYCHARLIE (IRE)",
+      "dam": "REAL GIRL",
+      "damsire": "DISTANT RELATIVE (IRE)",
+      "owner": "GÜLİZAR YANIK",
+      "hasPrepStart": true,
+      "prepStartCount": 1,
+      "skippedPrepCount": 4,
+      "pendingPrepCount": 0,
+      "bestPrepRaceKey": "sait-akson",
+      "bestPrepRaceName": "Sait Akson",
+      "bestPrepFinishPosition": 6,
+      "cells": {
+        "disi-tay-deneme": {
+          "status": "not-run"
+        },
+        "erkek-tay-deneme": {
+          "status": "not-run"
+        },
+        "mehmet-akif-ersoy": {
+          "status": "not-run"
+        },
+        "kisrak": {
+          "status": "not-run"
+        },
+        "sait-akson": {
+          "status": "ran",
+          "finishPosition": 6,
+          "horseName": "COUNTACH",
+          "jockeyName": "ERCAN ÇANKAYA",
+          "sire": "MYBOYCHARLIE (IRE)",
+          "dam": "REAL GIRL",
+          "damsire": "DISTANT RELATIVE (IRE)",
+          "owner": "GÜLİZAR YANIK",
+          "weight": 58,
+          "finishTime": "2.16.77",
+          "margin": null,
+          "handicapPoint": 88,
+          "startingPrice": "85,65"
+        },
+        "gazi": {
+          "status": "ran",
+          "finishPosition": 19,
+          "horseName": "COUNTACH",
+          "jockeyName": "FERİT YARDIMCI",
+          "sire": "MYBOYCHARLIE (IRE)",
+          "dam": "REAL GIRL",
+          "damsire": "DISTANT RELATIVE (IRE)",
+          "owner": "GÜLİZAR YANIK",
+          "weight": 58,
+          "finishTime": "2.30.64",
+          "margin": null,
+          "handicapPoint": 88,
+          "startingPrice": "28,00"
+        }
+      }
+    },
+    {
+      "horseName": "CANOTAY",
+      "gaziFinishPosition": 20,
+      "gaziJockeyName": "HIŞMAN ÇİZİK",
+      "sire": "MYBOYCHARLIE (IRE)",
+      "dam": "PETEKCAN",
+      "damsire": "POWERSCOURT (GB)",
+      "owner": "OKTAY SERİCİ",
+      "hasPrepStart": true,
+      "prepStartCount": 1,
+      "skippedPrepCount": 4,
+      "pendingPrepCount": 0,
+      "bestPrepRaceKey": "mehmet-akif-ersoy",
+      "bestPrepRaceName": "Mehmet Akif Ersoy",
+      "bestPrepFinishPosition": 5,
+      "cells": {
+        "disi-tay-deneme": {
+          "status": "not-run"
+        },
+        "erkek-tay-deneme": {
+          "status": "not-run"
+        },
+        "mehmet-akif-ersoy": {
+          "status": "ran",
+          "finishPosition": 5,
+          "horseName": "CANOTAY",
+          "jockeyName": "ÖZCAN YILDIRIM",
+          "sire": "MYBOYCHARLIE (IRE)",
+          "dam": "PETEKCAN",
+          "damsire": "POWERSCOURT (GB)",
+          "owner": "OKTAY SERİCİ",
+          "weight": 58,
+          "finishTime": "2.24.17",
+          "margin": null,
+          "handicapPoint": 68,
+          "startingPrice": "14,20"
+        },
+        "kisrak": {
+          "status": "not-run"
+        },
+        "sait-akson": {
+          "status": "not-run"
+        },
+        "gazi": {
+          "status": "ran",
+          "finishPosition": 20,
+          "horseName": "CANOTAY",
+          "jockeyName": "HIŞMAN ÇİZİK",
+          "sire": "MYBOYCHARLIE (IRE)",
+          "dam": "PETEKCAN",
+          "damsire": "POWERSCOURT (GB)",
+          "owner": "OKTAY SERİCİ",
+          "weight": 58,
+          "finishTime": "2.31.16",
+          "margin": null,
+          "handicapPoint": 70,
+          "startingPrice": "116,55"
+        }
+      }
+    },
+    {
+      "horseName": "LOOK AT THE STAR",
+      "gaziFinishPosition": 21,
+      "gaziJockeyName": "NEVZAT AVCİ",
+      "sire": "DAREDEVIL (USA)",
+      "dam": "AMARELISE",
+      "damsire": "LUXOR",
+      "owner": "BİROL BULUT",
+      "hasPrepStart": true,
+      "prepStartCount": 2,
+      "skippedPrepCount": 3,
+      "pendingPrepCount": 0,
+      "bestPrepRaceKey": "kisrak",
+      "bestPrepRaceName": "Kısrak",
+      "bestPrepFinishPosition": 2,
+      "cells": {
+        "disi-tay-deneme": {
+          "status": "ran",
+          "finishPosition": 12,
+          "horseName": "LOOK AT THE STAR",
+          "jockeyName": "NEVZAT AVCİ",
+          "sire": "DAREDEVIL (USA)",
+          "dam": "AMARELISE",
+          "damsire": "LUXOR",
+          "owner": "BİROL BULUT",
+          "weight": 58,
+          "finishTime": "1.37.90",
+          "margin": null,
+          "handicapPoint": 71,
+          "startingPrice": "18,50"
+        },
+        "erkek-tay-deneme": {
+          "status": "not-run"
+        },
+        "mehmet-akif-ersoy": {
+          "status": "not-run"
+        },
+        "kisrak": {
+          "status": "ran",
+          "finishPosition": 2,
+          "horseName": "LOOK AT THE STAR",
+          "jockeyName": "ONUR YILDIZ",
+          "sire": "DAREDEVIL (USA)",
+          "dam": "AMARELISE",
+          "damsire": "LUXOR",
+          "owner": "BİROL BULUT",
+          "weight": 58,
+          "finishTime": "2.08.90",
+          "margin": "Yarım Boy",
+          "handicapPoint": 71,
+          "startingPrice": "165,95"
+        },
+        "sait-akson": {
+          "status": "not-run"
+        },
+        "gazi": {
+          "status": "ran",
+          "finishPosition": 21,
+          "horseName": "LOOK AT THE STAR",
+          "jockeyName": "NEVZAT AVCİ",
+          "sire": "DAREDEVIL (USA)",
+          "dam": "AMARELISE",
+          "damsire": "LUXOR",
+          "owner": "BİROL BULUT",
+          "weight": 56,
+          "finishTime": "2.31.37",
+          "margin": null,
+          "handicapPoint": 92,
+          "startingPrice": "60,15"
+        }
+      }
+    },
+    {
+      "horseName": "KING DAVUT",
+      "gaziFinishPosition": 22,
+      "gaziJockeyName": "ERHAN AKTUĞ",
+      "sire": "SIDNEY'S CANDY (USA)",
+      "dam": "ALNAWAIBI (USA)",
+      "damsire": "A.P.INDY (USA)",
+      "owner": "HÜSEYİN AKMEŞE",
+      "hasPrepStart": true,
+      "prepStartCount": 1,
+      "skippedPrepCount": 4,
+      "pendingPrepCount": 0,
+      "bestPrepRaceKey": "mehmet-akif-ersoy",
+      "bestPrepRaceName": "Mehmet Akif Ersoy",
+      "bestPrepFinishPosition": 2,
+      "cells": {
+        "disi-tay-deneme": {
+          "status": "not-run"
+        },
+        "erkek-tay-deneme": {
+          "status": "not-run"
+        },
+        "mehmet-akif-ersoy": {
+          "status": "ran",
+          "finishPosition": 2,
+          "horseName": "KING DAVUT",
+          "jockeyName": "ERCAN ÇANKAYA",
+          "sire": "SIDNEY'S CANDY (USA)",
+          "dam": "ALNAWAIBI (USA)",
+          "damsire": "A.P.INDY (USA)",
+          "owner": "HÜSEYİN AKMEŞE",
+          "weight": 58,
+          "finishTime": "2.23.63",
+          "margin": "Yarım Boy",
+          "handicapPoint": 71,
+          "startingPrice": "28,20"
+        },
+        "kisrak": {
+          "status": "not-run"
+        },
+        "sait-akson": {
+          "status": "not-run"
+        },
+        "gazi": {
+          "status": "ran",
+          "finishPosition": 22,
+          "horseName": "KING DAVUT",
+          "jockeyName": "ERHAN AKTUĞ",
+          "sire": "SIDNEY'S CANDY (USA)",
+          "dam": "ALNAWAIBI (USA)",
+          "damsire": "A.P.INDY (USA)",
+          "owner": "HÜSEYİN AKMEŞE",
+          "weight": 58,
+          "finishTime": "2.31.53",
+          "margin": null,
+          "handicapPoint": 90,
+          "startingPrice": "71,20"
+        }
+      }
+    }
+  ]
+}

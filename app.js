@@ -12,6 +12,9 @@ const state = {
   participationReport: null,
   dataHorizon: null,
   selectedParticipationHorse: null,
+  analysisYear: null,
+  routeReportCache: new Map(),
+  participationReportCache: new Map(),
   query: "",
   year: "all"
 };
@@ -111,6 +114,33 @@ const formatTimestamp = (value) => {
 const percentage = (count, total) => total > 0 ? Math.round((count / total) * 100) : 0;
 
 const formatPosition = (value) => Number.isFinite(value) ? `${value}.` : "-";
+
+const readJson = async (path) => {
+  const response = await fetch(path, { cache: "no-store" });
+  if (!response.ok) throw new Error(`Could not load ${path}`);
+  return response.json();
+};
+
+const getAvailableAnalysisYears = () => {
+  const horizonYears = state.dataHorizon?.seasons
+    ?.map((season) => season.year)
+    .filter(Number.isFinite) ?? [];
+  const currentYear = Number.isFinite(state.routeReport?.year) ? [state.routeReport.year] : [];
+  return [...new Set([...horizonYears, ...currentYear])].sort((a, b) => b - a);
+};
+
+const renderAnalysisYearControl = () => {
+  const select = document.querySelector("#analysis-year-select");
+  if (!select) return;
+
+  const years = getAvailableAnalysisYears();
+  const selectedYear = state.analysisYear ?? years[0];
+  state.analysisYear = selectedYear;
+
+  select.innerHTML = years
+    .map((year) => `<option value="${year}" ${year === selectedYear ? "selected" : ""}>${year}</option>`)
+    .join("");
+};
 
 const summarizeRouteReport = (report) => {
   if (report.summary) return report.summary;
@@ -554,6 +584,30 @@ const renderRouteReport = (report) => {
     .join("");
 };
 
+const loadAnalysisYear = async (year) => {
+  const numericYear = Number.parseInt(year, 10);
+  if (!Number.isFinite(numericYear)) return;
+
+  state.analysisYear = numericYear;
+  state.selectedParticipationHorse = null;
+
+  if (!state.routeReportCache.has(numericYear)) {
+    state.routeReportCache.set(numericYear, await readJson(`./data/gazi-route-${numericYear}.json`));
+  }
+
+  if (!state.participationReportCache.has(numericYear)) {
+    state.participationReportCache.set(numericYear, await readJson(`./data/gazi-participation-${numericYear}.json`));
+  }
+
+  state.routeReport = state.routeReportCache.get(numericYear);
+  state.participationReport = state.participationReportCache.get(numericYear);
+
+  renderAnalysisYearControl();
+  renderDataStatus(state.routeReport);
+  renderRouteReport(state.routeReport);
+  renderParticipation(state.participationReport);
+};
+
 const renderYears = (horses) => {
   const years = [...new Set(horses.map((horse) => horse.year))].sort((a, b) => b - a);
   document.querySelector("#year-filter").innerHTML = [
@@ -625,6 +679,10 @@ const bindEvents = () => {
     state.selectedParticipationHorse = row.dataset.horseName;
     renderParticipation(state.participationReport);
   });
+
+  document.querySelector("#analysis-year-select").addEventListener("change", async (event) => {
+    await loadAnalysisYear(event.target.value);
+  });
 };
 
 const init = async () => {
@@ -640,6 +698,8 @@ const init = async () => {
 
   if (routeResponse?.ok) {
     state.routeReport = await routeResponse.json();
+    state.analysisYear = state.routeReport.year;
+    state.routeReportCache.set(state.routeReport.year, state.routeReport);
   }
 
   if (backtestResponse?.ok) {
@@ -648,6 +708,9 @@ const init = async () => {
 
   if (participationResponse?.ok) {
     state.participationReport = await participationResponse.json();
+    if (Number.isFinite(state.participationReport.sourceYear)) {
+      state.participationReportCache.set(state.participationReport.sourceYear, state.participationReport);
+    }
   }
 
   if (horizonResponse?.ok) {
@@ -665,6 +728,7 @@ const init = async () => {
   if (state.backtestReport) renderBacktest(state.backtestReport);
   if (state.participationReport) renderParticipation(state.participationReport);
   if (state.dataHorizon) renderDataHorizon(state.dataHorizon);
+  renderAnalysisYearControl();
   renderYears(state.data.horses);
   renderCandidates();
   bindEvents();
