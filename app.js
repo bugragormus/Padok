@@ -11,6 +11,7 @@ const state = {
   backtestReport: null,
   participationReport: null,
   dataHorizon: null,
+  selectedParticipationHorse: null,
   query: "",
   year: "all"
 };
@@ -331,6 +332,89 @@ const renderParticipationCell = (cell) => {
   `;
 };
 
+const getParticipationRouteStarts = (row, columns) => {
+  return columns
+    .map((column) => ({
+      column,
+      cell: row.cells[column.key]
+    }))
+    .filter(({ cell }) => cell?.status === "ran");
+};
+
+const renderParticipationDetail = (report, tableColumns) => {
+  const selectedRow = report.rows.find((row) => row.horseName === state.selectedParticipationHorse)
+    ?? report.rows[0];
+
+  if (!selectedRow) {
+    document.querySelector("#participation-detail").innerHTML = "";
+    return;
+  }
+
+  state.selectedParticipationHorse = selectedRow.horseName;
+
+  const prepColumns = tableColumns.filter((column) => !column.isTarget);
+  const prepStarts = getParticipationRouteStarts(selectedRow, prepColumns);
+  const allStarts = getParticipationRouteStarts(selectedRow, tableColumns);
+  const jockeyNames = [...new Set(allStarts.map(({ cell }) => cell.jockeyName).filter(Boolean))];
+  const sameJockeyAcrossRoute = jockeyNames.length <= 1;
+  const prepPath = prepStarts.length
+    ? prepStarts.map(({ column, cell }) => `${column.name} ${formatPosition(cell.finishPosition)}`).join(" · ")
+    : "Takip edilen prep rotasında start yok";
+
+  const metrics = [
+    ["Gazi derecesi", formatPosition(selectedRow.gaziFinishPosition)],
+    ["Prep startı", selectedRow.prepStartCount],
+    ["Pas geçilen prep", selectedRow.skippedPrepCount],
+    ["Jokey hattı", sameJockeyAcrossRoute ? "Sabit" : `${jockeyNames.length} jokey`]
+  ];
+
+  document.querySelector("#participation-detail").innerHTML = `
+    <div class="horse-detail">
+      <div class="horse-detail__header">
+        <div>
+          <p class="section-kicker">At detayı</p>
+          <h3>${escapeHtml(selectedRow.horseName)}</h3>
+          <p class="muted">
+            ${escapeHtml(selectedRow.sire ?? "Baba bekleniyor")} / ${escapeHtml(selectedRow.dam ?? "Anne bekleniyor")}
+            ${selectedRow.damsire ? ` · Anne baba: ${escapeHtml(selectedRow.damsire)}` : ""}
+          </p>
+        </div>
+        <div class="horse-detail__owner">
+          <span>Sahip</span>
+          <strong>${escapeHtml(selectedRow.owner ?? "Bekleniyor")}</strong>
+        </div>
+      </div>
+
+      <div class="horse-detail__metrics">
+        ${metrics.map(([label, value]) => `
+          <div>
+            <span>${escapeHtml(label)}</span>
+            <strong>${escapeHtml(value)}</strong>
+          </div>
+        `).join("")}
+      </div>
+
+      <div class="horse-detail__grid">
+        <div>
+          <h4>Rota yolu</h4>
+          <p>${escapeHtml(prepPath)}</p>
+          <span>${selectedRow.bestPrepRaceName ? `En iyi prep: ${escapeHtml(selectedRow.bestPrepRaceName)} ${escapeHtml(formatPosition(selectedRow.bestPrepFinishPosition))}` : "Prep referansı yok"}</span>
+        </div>
+        <div>
+          <h4>Jokey bağlamı</h4>
+          <p>${jockeyNames.length ? escapeHtml(jockeyNames.join(" · ")) : "Jokey bilgisi bekleniyor"}</p>
+          <span>${sameJockeyAcrossRoute ? "Rota boyunca jokey değişimi görünmüyor." : "Rota içinde jokey değişimi var; skor içinde ayrı izlenmeli."}</span>
+        </div>
+        <div>
+          <h4>Veri yorumu</h4>
+          <p>${selectedRow.hasPrepStart ? "Bu at için rota sinyali var." : "Bu at takip edilen prep rotası dışında Gazi'ye gelmiş."}</p>
+          <span>Katılmama bilgisi performans cezası değil, eksik rota sinyalidir.</span>
+        </div>
+      </div>
+    </div>
+  `;
+};
+
 const renderParticipation = (report) => {
   const summary = report.summary;
   const sourceYear = report.sourceYear ?? "Güncel";
@@ -360,6 +444,7 @@ const renderParticipation = (report) => {
   const prepColumns = report.columns.filter((column) => !column.isTarget);
   const targetColumn = report.columns.find((column) => column.isTarget);
   const tableColumns = targetColumn ? [...prepColumns, targetColumn] : prepColumns;
+  renderParticipationDetail(report, tableColumns);
 
   document.querySelector("#participation-table").innerHTML = report.rows.length
     ? `
@@ -369,7 +454,7 @@ const renderParticipation = (report) => {
         ${tableColumns.map((column) => `<span>${escapeHtml(column.name)}</span>`).join("")}
       </div>
       ${report.rows.map((row) => `
-        <div class="participation-row ${Number.isFinite(row.gaziFinishPosition) && row.gaziFinishPosition <= 3 ? "participation-row--podium" : ""}" style="--race-count: ${tableColumns.length}">
+        <button class="participation-row ${Number.isFinite(row.gaziFinishPosition) && row.gaziFinishPosition <= 3 ? "participation-row--podium" : ""} ${row.horseName === state.selectedParticipationHorse ? "participation-row--selected" : ""}" type="button" data-horse-name="${escapeHtml(row.horseName)}" style="--race-count: ${tableColumns.length}" aria-pressed="${row.horseName === state.selectedParticipationHorse}">
           <div class="participation-horse">
             <strong>${escapeHtml(row.horseName)}</strong>
             <span>Gazi ${escapeHtml(formatPosition(row.gaziFinishPosition))} · ${escapeHtml(row.gaziJockeyName ?? "Jokey bekleniyor")}</span>
@@ -380,7 +465,7 @@ const renderParticipation = (report) => {
             <span>${row.bestPrepRaceName ? `En iyi: ${escapeHtml(row.bestPrepRaceName)} ${escapeHtml(formatPosition(row.bestPrepFinishPosition))}` : "Takip edilen prep yok"}</span>
           </div>
           ${tableColumns.map((column) => renderParticipationCell(row.cells[column.key])).join("")}
-        </div>
+        </button>
       `).join("")}
     `
     : '<p class="coverage-empty">Gazi koşucu listesi henüz olmadığı için at bazlı katılım matrisi bekleniyor.</p>';
@@ -506,6 +591,13 @@ const bindEvents = () => {
   document.querySelector("#year-filter").addEventListener("change", (event) => {
     state.year = event.target.value;
     renderCandidates();
+  });
+
+  document.querySelector("#participation-table").addEventListener("click", (event) => {
+    const row = event.target.closest("[data-horse-name]");
+    if (!row || !state.participationReport) return;
+    state.selectedParticipationHorse = row.dataset.horseName;
+    renderParticipation(state.participationReport);
   });
 };
 
