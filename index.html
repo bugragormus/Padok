@@ -13,6 +13,7 @@
       <nav class="topbar" aria-label="Ana navigasyon">
         <a class="brand" href="./index.html">Padok</a>
         <div class="topbar__links">
+          <a href="#data-status">Veri durumu</a>
           <a href="#races">Kosular</a>
           <a href="#candidates">Adaylar</a>
           <a href="#method">Metod</a>
@@ -41,6 +42,44 @@
         <dl class="metric-strip" id="target-metrics"></dl>
       </section>
 
+      <section class="data-status" id="data-status" aria-label="Veri durumu ve analiz aşaması">
+        <div class="section-heading">
+          <p class="section-kicker">Veri durumu</p>
+          <h2>Sistem ne biliyor, neyi henüz bilmiyor?</h2>
+          <p class="muted" id="data-status-summary"></p>
+        </div>
+
+        <div class="status-metrics" id="status-metrics"></div>
+
+        <div class="status-layout">
+          <div>
+            <h3>Koşu kapsamı</h3>
+            <div class="coverage-list" id="coverage-list"></div>
+          </div>
+          <div>
+            <h3>Analiz aşaması</h3>
+            <ol class="analysis-steps">
+              <li class="analysis-step analysis-step--active">
+                <strong>Gerçek veri toplama</strong>
+                <span>TJK koşu, sonuç, at, jokey, soy hattı ve sahip verileri normalize ediliyor.</span>
+              </li>
+              <li class="analysis-step analysis-step--active">
+                <strong>İnsan tarafından okunabilir karşılaştırma</strong>
+                <span>Gazi yolundaki yarışlar ve at performansları aynı ekranda gösteriliyor.</span>
+              </li>
+              <li class="analysis-step">
+                <strong>Geçmiş yıllarla backtest</strong>
+                <span>Pedigree, sahip, jokey ve form sinyallerinin gerçekten işe yarayıp yaramadığı ölçülecek.</span>
+              </li>
+              <li class="analysis-step">
+                <strong>Tahmin ve sıralama modeli</strong>
+                <span>Yalnızca backtest sonrası, açıklanabilir ve veri güveni görünen skorlar üretilecek.</span>
+              </li>
+            </ol>
+          </div>
+        </div>
+      </section>
+
       <section class="layout" id="races">
         <div class="section-heading">
           <p class="section-kicker">Kosu haritasi</p>
@@ -57,7 +96,7 @@
           <p class="section-kicker">Aday panosu</p>
           <h2>Ilk skor, tartisma icin bir pusula.</h2>
           <p class="muted">
-            Bu skor elle girilmis baslangic sinyallerinden uretiliyor. Canli veri eklendiginde ayni mantik otomatik hesaplanacak.
+            Bu bölüm hâlâ elle girilmiş başlangıç sinyallerinden üretilen bir prototiptir; gerçek TJK rota verisi yukarıdaki koşu haritasında gösterilir.
           </p>
         </div>
 

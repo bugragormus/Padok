@@ -95,6 +95,91 @@ const formatDate = (value) => {
   return `${day}.${month}.${year}`;
 };
 
+const formatTimestamp = (value) => {
+  if (!value) return "Bilinmiyor";
+  return new Intl.DateTimeFormat("tr-TR", {
+    dateStyle: "medium",
+    timeStyle: "short",
+    timeZone: "Europe/Istanbul"
+  }).format(new Date(value));
+};
+
+const percentage = (count, total) => total > 0 ? Math.round((count / total) * 100) : 0;
+
+const summarizeRouteReport = (report) => {
+  if (report.summary) return report.summary;
+
+  const routeRaces = report.routeRaces ?? [];
+  const entries = routeRaces.flatMap((race) => race.entries ?? []);
+  const completedRaces = routeRaces.filter((race) => (race.entries?.length ?? 0) > 0);
+
+  return {
+    analysisState: routeRaces.length === 0
+      ? "awaiting-route-data"
+      : completedRaces.length === routeRaces.length
+        ? "complete-results"
+        : "partial-results",
+    raceCount: routeRaces.length,
+    completedRaceCount: completedRaces.length,
+    pendingRaceCount: routeRaces.length - completedRaces.length,
+    entryCount: entries.length,
+    uniqueHorseCount: new Set(entries.map((entry) => entry.horse_name).filter(Boolean)).size,
+    pedigreeCoverage: percentage(entries.filter((entry) => entry.sire && entry.dam && entry.damsire).length, entries.length),
+    ownerCoverage: percentage(entries.filter((entry) => entry.owner).length, entries.length),
+    jockeyCoverage: percentage(entries.filter((entry) => entry.jockey_name).length, entries.length)
+  };
+};
+
+const analysisStateLabels = {
+  "awaiting-route-data": "Rota verisi bekleniyor",
+  "partial-results": "Kısmi sonuçlar",
+  "complete-results": "Sonuçlar tamamlandı"
+};
+
+const renderDataStatus = (report) => {
+  const summary = summarizeRouteReport(report);
+  const statusSummary = document.querySelector("#data-status-summary");
+
+  statusSummary.textContent = `${report.year} Gazi rotası için ${summary.completedRaceCount}/${summary.raceCount} koşunun at bazlı sonucu hazır. Son rapor: ${formatTimestamp(report.generatedAt)}.`;
+
+  const metrics = [
+    ["Rapor yılı", report.year],
+    ["Koşu durumu", analysisStateLabels[summary.analysisState] ?? summary.analysisState],
+    ["At startı", summary.entryCount],
+    ["Tekil at", summary.uniqueHorseCount],
+    ["Soy hattı kapsamı", `%${summary.pedigreeCoverage}`],
+    ["Sahip kapsamı", `%${summary.ownerCoverage}`],
+    ["Jokey kapsamı", `%${summary.jockeyCoverage}`]
+  ];
+
+  document.querySelector("#status-metrics").innerHTML = metrics
+    .map(([label, value]) => `
+      <div class="status-metric">
+        <span>${escapeHtml(label)}</span>
+        <strong>${escapeHtml(value)}</strong>
+      </div>
+    `)
+    .join("");
+
+  const routeRaces = report.routeRaces ?? [];
+  document.querySelector("#coverage-list").innerHTML = routeRaces.length
+    ? routeRaces.map((race) => {
+      const entryCount = race.entries?.length ?? 0;
+      const isComplete = entryCount > 0;
+      return `
+        <div class="coverage-row">
+          <span class="coverage-state ${isComplete ? "coverage-state--complete" : ""}" aria-hidden="true"></span>
+          <div>
+            <strong>${escapeHtml(race.name)}</strong>
+            <span>${formatDate(race.date)} · ${escapeHtml(formatText(race.venue))}</span>
+          </div>
+          <em>${isComplete ? `${entryCount} at` : "Sonuç bekleniyor"}</em>
+        </div>
+      `;
+    }).join("")
+    : '<p class="coverage-empty">Henüz eşleşen rota koşusu bulunamadı.</p>';
+};
+
 const renderRaceEntries = (entries = []) => {
   if (!entries.length) return "";
 
@@ -231,8 +316,10 @@ const init = async () => {
   renderTarget(state.data.targetRace);
   if (state.routeReport?.routeRaces?.length) {
     renderRouteReport(state.routeReport);
+    renderDataStatus(state.routeReport);
   } else {
     renderRaces(state.data.prepRaces);
+    renderDataStatus(state.routeReport ?? { year: state.data.targetRace.editionFocus, routeRaces: [] });
   }
   renderYears(state.data.horses);
   renderCandidates();

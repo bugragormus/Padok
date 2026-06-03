@@ -1,7 +1,18 @@
 {
-  "generatedAt": "2026-06-03T11:53:13.444Z",
+  "generatedAt": "2026-06-03T12:20:54.527Z",
   "dbPath": "data/padok.sqlite",
   "year": 2025,
+  "summary": {
+    "analysisState": "complete-results",
+    "raceCount": 6,
+    "completedRaceCount": 6,
+    "pendingRaceCount": 0,
+    "entryCount": 104,
+    "uniqueHorseCount": 70,
+    "pedigreeCoverage": 100,
+    "ownerCoverage": 100,
+    "jockeyCoverage": 100
+  },
   "routeRaces": [
     {
       "id": 523,

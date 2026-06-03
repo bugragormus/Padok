@@ -100,6 +100,38 @@ const enrichRace = (race) => {
   };
 };
 
+const percentage = (count, total) => {
+  return total > 0 ? Math.round((count / total) * 100) : 0;
+};
+
+const buildSummary = (routeRaces) => {
+  const entries = routeRaces.flatMap((race) => race.entries ?? []);
+  const completedRaces = routeRaces.filter((race) => (race.entries?.length ?? 0) > 0);
+  const uniqueHorses = new Set(entries.map((entry) => entry.horse_name).filter(Boolean));
+  const pedigreeEntries = entries.filter((entry) => entry.sire && entry.dam && entry.damsire);
+  const ownerEntries = entries.filter((entry) => entry.owner);
+  const jockeyEntries = entries.filter((entry) => entry.jockey_name);
+
+  let analysisState = "awaiting-route-data";
+  if (routeRaces.length > 0 && completedRaces.length === routeRaces.length) {
+    analysisState = "complete-results";
+  } else if (completedRaces.length > 0) {
+    analysisState = "partial-results";
+  }
+
+  return {
+    analysisState,
+    raceCount: routeRaces.length,
+    completedRaceCount: completedRaces.length,
+    pendingRaceCount: routeRaces.length - completedRaces.length,
+    entryCount: entries.length,
+    uniqueHorseCount: uniqueHorses.size,
+    pedigreeCoverage: percentage(pedigreeEntries.length, entries.length),
+    ownerCoverage: percentage(ownerEntries.length, entries.length),
+    jockeyCoverage: percentage(jockeyEntries.length, entries.length)
+  };
+};
+
 const main = async () => {
   const args = process.argv.slice(2);
   const dbPath = getArgValue(args, "--db") ?? "data/padok.sqlite";
@@ -113,6 +145,7 @@ const main = async () => {
     generatedAt: new Date().toISOString(),
     dbPath,
     year: Number.parseInt(year, 10),
+    summary: buildSummary(routeRaces),
     routeRaces
   };
 
