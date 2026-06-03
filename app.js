@@ -303,8 +303,8 @@ const bindEvents = () => {
 
 const init = async () => {
   const [knowledgeResponse, routeResponse] = await Promise.all([
-    fetch("./data/gazi-knowledge-base.json"),
-    fetch("./data/gazi-route-report.json").catch(() => null)
+    fetch("./data/gazi-knowledge-base.json", { cache: "no-store" }),
+    fetch("./data/gazi-route-report.json", { cache: "no-store" }).catch(() => null)
   ]);
 
   state.data = await knowledgeResponse.json();
