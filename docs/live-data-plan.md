@@ -31,8 +31,9 @@ The scheduled workflow runs these steps:
 5. Fetch daily results for those dates and venues.
 6. Import horse-level entries.
 7. Export historical and current-season route reports.
-8. Select the current-season report when it has races; otherwise fall back to the latest useful historical report.
-9. Deploy the static site artifact to GitHub Pages.
+8. Build the historical Gazi-route backtest report.
+9. Select the current-season report when it has races; otherwise fall back to the latest useful historical report.
+10. Deploy the static site artifact to GitHub Pages.
 
 The workflow is defined in `.github/workflows/pages.yml`.
 

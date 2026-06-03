@@ -1,5 +1,6 @@
 {
   "scripts": {
+    "test": "node --test",
     "dev": "python3 -m http.server 5173",
     "fetch:tjk-race-index": "node scripts/fetch-tjk-race-index.mjs",
     "fetch:tjk-named-races": "node scripts/fetch-tjk-named-races.mjs",
@@ -10,6 +11,7 @@
     "export:gazi-route": "node scripts/export-gazi-route-report.mjs",
     "refresh:gazi-route": "node scripts/refresh-gazi-route-data.mjs",
     "select:gazi-route": "node scripts/select-gazi-route-report.mjs",
+    "backtest:gazi-route": "node scripts/backtest-gazi-route.mjs",
     "analyze:gazi-context": "node scripts/analyze-gazi-context.mjs",
     "score:gazi-race-similarity": "node scripts/score-gazi-race-similarity.mjs"
   },

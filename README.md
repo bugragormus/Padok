@@ -52,6 +52,7 @@ Bu komut sonucu eksik ama tarihi gecmis Gazi rota kosularini bulur, TJK gunluk s
 Canli ve ucretsiz yayin plani icin bkz. `docs/live-data-plan.md`.
 Gelecekteki MCP server plani icin bkz. `docs/mcp-plan.md`.
 Genisletilmis feature ve agirlik stratejisi icin bkz. `docs/feature-strategy.md`.
+Ilk aciklanabilir rota backtest metodolojisi icin bkz. `docs/backtest-method.md`.
 
 ## Mimari Karar
 

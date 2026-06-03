@@ -8,6 +8,7 @@ const signalLabels = {
 const state = {
   data: null,
   routeReport: null,
+  backtestReport: null,
   query: "",
   year: "all"
 };
@@ -180,6 +181,75 @@ const renderDataStatus = (report) => {
     : '<p class="coverage-empty">Henüz eşleşen rota koşusu bulunamadı.</p>';
 };
 
+const sampleStateLabels = {
+  "early-sample": "Erken örneklem",
+  "usable-sample": "Kullanılabilir örneklem"
+};
+
+const renderBacktest = (report) => {
+  const summary = report.summary;
+  const yearRange = summary.years.length > 1
+    ? `${summary.years[0]}-${summary.years.at(-1)}`
+    : String(summary.years[0] ?? "Bekleniyor");
+
+  document.querySelector("#backtest-summary").textContent = `${yearRange} sezonlarında Gazi ilk 3 sıralamasındaki ${summary.totalGaziTopThreeSlots} yerin ${summary.coveredGaziTopThreeSlots} tanesi, izlediğimiz rota koşularından en az birine katılmıştı.`;
+
+  const metrics = [
+    ["Sezon", summary.seasonCount],
+    ["İncelenen prova", summary.prepRaceCount],
+    ["Rota kapsaması", `%${summary.routeCoverageRate}`],
+    ["Örneklem durumu", sampleStateLabels[summary.sampleState] ?? summary.sampleState]
+  ];
+
+  document.querySelector("#backtest-metrics").innerHTML = metrics
+    .map(([label, value]) => `
+      <div class="status-metric">
+        <span>${escapeHtml(label)}</span>
+        <strong>${escapeHtml(value)}</strong>
+      </div>
+    `)
+    .join("");
+
+  document.querySelector("#backtest-table").innerHTML = `
+    <div class="backtest-row backtest-row--header" aria-hidden="true">
+      <span>Koşu</span>
+      <span>Gazi ilk 3 kapsama</span>
+      <span>Prova ilk 3 isabeti</span>
+      <span>Kazanan Gazi ilk 3</span>
+      <span>Gazi'ye gelen</span>
+    </div>
+    ${report.aggregate.map((race) => `
+      <div class="backtest-row">
+        <div>
+          <strong>${escapeHtml(race.name)}</strong>
+          <span>${race.seasonsObserved} sezon · ${race.participantCount} at</span>
+        </div>
+        <strong>%${race.gaziTopThreeCoverageRate}</strong>
+        <strong>%${race.prepTopThreeHitRate}</strong>
+        <strong>%${race.winnerGaziTopThreeRate}</strong>
+        <strong>%${race.gaziRunnerRate}</strong>
+      </div>
+    `).join("")}
+  `;
+
+  document.querySelector("#season-list").innerHTML = report.seasons
+    .map((season) => `
+      <div class="season-row">
+        <div>
+          <strong>${season.year} Gazi</strong>
+          <span>${formatDate(season.gaziDate)}</span>
+        </div>
+        <div class="season-row__result">
+          <strong>%${season.routeCoverageRate} rota kapsaması</strong>
+          <span>${season.gaziTopThree.map((entry) => `${entry.finishPosition}. ${escapeHtml(entry.horseName)}${entry.seenInRoute ? " · rota" : " · rota dışı"}`).join("<br />")}</span>
+        </div>
+      </div>
+    `)
+    .join("");
+
+  document.querySelector("#backtest-warning").textContent = report.methodology.warning;
+};
+
 const renderRaceEntries = (entries = []) => {
   if (!entries.length) return "";
 
@@ -302,15 +372,20 @@ const bindEvents = () => {
 };
 
 const init = async () => {
-  const [knowledgeResponse, routeResponse] = await Promise.all([
+  const [knowledgeResponse, routeResponse, backtestResponse] = await Promise.all([
     fetch("./data/gazi-knowledge-base.json", { cache: "no-store" }),
-    fetch("./data/gazi-route-report.json", { cache: "no-store" }).catch(() => null)
+    fetch("./data/gazi-route-report.json", { cache: "no-store" }).catch(() => null),
+    fetch("./data/gazi-backtest-report.json", { cache: "no-store" }).catch(() => null)
   ]);
 
   state.data = await knowledgeResponse.json();
 
   if (routeResponse?.ok) {
     state.routeReport = await routeResponse.json();
+  }
+
+  if (backtestResponse?.ok) {
+    state.backtestReport = await backtestResponse.json();
   }
 
   renderTarget(state.data.targetRace);
@@ -321,6 +396,7 @@ const init = async () => {
     renderRaces(state.data.prepRaces);
     renderDataStatus(state.routeReport ?? { year: state.data.targetRace.editionFocus, routeRaces: [] });
   }
+  if (state.backtestReport) renderBacktest(state.backtestReport);
   renderYears(state.data.horses);
   renderCandidates();
   bindEvents();

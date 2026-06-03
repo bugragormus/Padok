@@ -1,0 +1,873 @@
+{
+  "generatedAt": "2026-06-03T13:06:39.878Z",
+  "methodology": {
+    "target": "Gazi ilk 3",
+    "routeRaceScope": "Gazi öncesi isimli rota koşuları",
+    "warning": "Bu rapor ilişkiyi ölçer; nedensellik veya kesin tahmin üretmez."
+  },
+  "summary": {
+    "seasonCount": 6,
+    "years": [
+      2020,
+      2021,
+      2022,
+      2023,
+      2024,
+      2025
+    ],
+    "prepRaceCount": 30,
+    "totalGaziTopThreeSlots": 18,
+    "coveredGaziTopThreeSlots": 16,
+    "routeCoverageRate": 89,
+    "sampleState": "usable-sample"
+  },
+  "aggregate": [
+    {
+      "key": "erkek-tay-deneme",
+      "name": "Erkek Tay Deneme",
+      "seasonsObserved": 6,
+      "participantCount": 89,
+      "gaziRunnerCount": 41,
+      "gaziRunnerRate": 46,
+      "gaziTopThreeCoverageCount": 9,
+      "gaziTopThreeCoverageRate": 50,
+      "prepTopThreeHitCount": 4,
+      "prepTopThreeHitRate": 22,
+      "winnerGaziTopThreeCount": 1,
+      "winnerGaziTopThreeRate": 17,
+      "averageWinnerGaziFinish": 6.6,
+      "sampleConfidence": 1
+    },
+    {
+      "key": "sait-akson",
+      "name": "Sait Akson",
+      "seasonsObserved": 6,
+      "participantCount": 64,
+      "gaziRunnerCount": 37,
+      "gaziRunnerRate": 58,
+      "gaziTopThreeCoverageCount": 8,
+      "gaziTopThreeCoverageRate": 44,
+      "prepTopThreeHitCount": 7,
+      "prepTopThreeHitRate": 39,
+      "winnerGaziTopThreeCount": 4,
+      "winnerGaziTopThreeRate": 67,
+      "averageWinnerGaziFinish": 4.3,
+      "sampleConfidence": 1
+    },
+    {
+      "key": "mehmet-akif-ersoy",
+      "name": "Mehmet Akif Ersoy",
+      "seasonsObserved": 6,
+      "participantCount": 65,
+      "gaziRunnerCount": 27,
+      "gaziRunnerRate": 42,
+      "gaziTopThreeCoverageCount": 4,
+      "gaziTopThreeCoverageRate": 22,
+      "prepTopThreeHitCount": 3,
+      "prepTopThreeHitRate": 17,
+      "winnerGaziTopThreeCount": 2,
+      "winnerGaziTopThreeRate": 33,
+      "averageWinnerGaziFinish": 6.3,
+      "sampleConfidence": 1
+    },
+    {
+      "key": "kisrak",
+      "name": "Kısrak",
+      "seasonsObserved": 6,
+      "participantCount": 115,
+      "gaziRunnerCount": 18,
+      "gaziRunnerRate": 16,
+      "gaziTopThreeCoverageCount": 3,
+      "gaziTopThreeCoverageRate": 17,
+      "prepTopThreeHitCount": 1,
+      "prepTopThreeHitRate": 6,
+      "winnerGaziTopThreeCount": 1,
+      "winnerGaziTopThreeRate": 17,
+      "averageWinnerGaziFinish": 6.2,
+      "sampleConfidence": 1
+    },
+    {
+      "key": "disi-tay-deneme",
+      "name": "Dişi Tay Deneme",
+      "seasonsObserved": 6,
+      "participantCount": 101,
+      "gaziRunnerCount": 14,
+      "gaziRunnerRate": 14,
+      "gaziTopThreeCoverageCount": 2,
+      "gaziTopThreeCoverageRate": 11,
+      "prepTopThreeHitCount": 1,
+      "prepTopThreeHitRate": 6,
+      "winnerGaziTopThreeCount": 1,
+      "winnerGaziTopThreeRate": 17,
+      "averageWinnerGaziFinish": 6.7,
+      "sampleConfidence": 1
+    }
+  ],
+  "seasons": [
+    {
+      "year": 2020,
+      "gaziDate": "2020-08-30",
+      "gaziTopThree": [
+        {
+          "finishPosition": 1,
+          "horseName": "CALL TO VICTORY",
+          "seenInRoute": true
+        },
+        {
+          "finishPosition": 2,
+          "horseName": "LORD OF GAME",
+          "seenInRoute": true
+        },
+        {
+          "finishPosition": 3,
+          "horseName": "KINGSMAN",
+          "seenInRoute": true
+        }
+      ],
+      "routeCoverageCount": 3,
+      "routeCoverageRate": 100,
+      "prepRaces": [
+        {
+          "key": "erkek-tay-deneme",
+          "name": "Erkek Tay Deneme",
+          "sourceName": "ERKEK TAY DENEME",
+          "date": "2020-07-12",
+          "participantCount": 10,
+          "gaziRunnerCount": 5,
+          "gaziTopThreeCoverageCount": 2,
+          "gaziTopThreeCoverageRate": 67,
+          "prepTopThreeHitCount": 1,
+          "prepTopThreeHitRate": 33,
+          "winnerName": "CALL TO VICTORY",
+          "winnerGaziFinish": 1,
+          "bestGaziHorse": "CALL TO VICTORY",
+          "bestGaziFinish": 1,
+          "gaziTopThreeParticipants": [
+            "CALL TO VICTORY",
+            "KINGSMAN"
+          ],
+          "prepTopThreeHits": [
+            "CALL TO VICTORY"
+          ]
+        },
+        {
+          "key": "disi-tay-deneme",
+          "name": "Dişi Tay Deneme",
+          "sourceName": "DİŞİ TAY DENEME",
+          "date": "2020-07-12",
+          "participantCount": 14,
+          "gaziRunnerCount": 1,
+          "gaziTopThreeCoverageCount": 0,
+          "gaziTopThreeCoverageRate": 0,
+          "prepTopThreeHitCount": 0,
+          "prepTopThreeHitRate": 0,
+          "winnerName": "LUNA LOVEGOOD",
+          "winnerGaziFinish": null,
+          "bestGaziHorse": "PRIOR",
+          "bestGaziFinish": 7,
+          "gaziTopThreeParticipants": [],
+          "prepTopThreeHits": []
+        },
+        {
+          "key": "mehmet-akif-ersoy",
+          "name": "Mehmet Akif Ersoy",
+          "sourceName": "MEHMET AKİF ERSOY",
+          "date": "2020-08-01",
+          "participantCount": 8,
+          "gaziRunnerCount": 5,
+          "gaziTopThreeCoverageCount": 2,
+          "gaziTopThreeCoverageRate": 67,
+          "prepTopThreeHitCount": 1,
+          "prepTopThreeHitRate": 33,
+          "winnerName": "POWERMAN",
+          "winnerGaziFinish": 9,
+          "bestGaziHorse": "LORD OF GAME",
+          "bestGaziFinish": 2,
+          "gaziTopThreeParticipants": [
+            "LORD OF GAME",
+            "KINGSMAN"
+          ],
+          "prepTopThreeHits": [
+            "LORD OF GAME"
+          ]
+        },
+        {
+          "key": "sait-akson",
+          "name": "Sait Akson",
+          "sourceName": "SAİT AKSON",
+          "date": "2020-08-02",
+          "participantCount": 9,
+          "gaziRunnerCount": 4,
+          "gaziTopThreeCoverageCount": 1,
+          "gaziTopThreeCoverageRate": 33,
+          "prepTopThreeHitCount": 1,
+          "prepTopThreeHitRate": 33,
+          "winnerName": "CALL TO VICTORY",
+          "winnerGaziFinish": 1,
+          "bestGaziHorse": "CALL TO VICTORY",
+          "bestGaziFinish": 1,
+          "gaziTopThreeParticipants": [
+            "CALL TO VICTORY"
+          ],
+          "prepTopThreeHits": [
+            "CALL TO VICTORY"
+          ]
+        },
+        {
+          "key": "kisrak",
+          "name": "Kısrak",
+          "sourceName": "KISRAK",
+          "date": "2020-08-02",
+          "participantCount": 16,
+          "gaziRunnerCount": 1,
+          "gaziTopThreeCoverageCount": 0,
+          "gaziTopThreeCoverageRate": 0,
+          "prepTopThreeHitCount": 0,
+          "prepTopThreeHitRate": 0,
+          "winnerName": "PRIOR",
+          "winnerGaziFinish": 7,
+          "bestGaziHorse": "PRIOR",
+          "bestGaziFinish": 7,
+          "gaziTopThreeParticipants": [],
+          "prepTopThreeHits": []
+        }
+      ]
+    },
+    {
+      "year": 2021,
+      "gaziDate": "2021-06-26",
+      "gaziTopThree": [
+        {
+          "finishPosition": 1,
+          "horseName": "BURGAS",
+          "seenInRoute": true
+        },
+        {
+          "finishPosition": 2,
+          "horseName": "REAL RUNNER",
+          "seenInRoute": true
+        },
+        {
+          "finishPosition": 3,
+          "horseName": "MEGALOMAN",
+          "seenInRoute": true
+        }
+      ],
+      "routeCoverageCount": 3,
+      "routeCoverageRate": 100,
+      "prepRaces": [
+        {
+          "key": "disi-tay-deneme",
+          "name": "Dişi Tay Deneme",
+          "sourceName": "DİŞİ TAY DENEME",
+          "date": "2021-05-16",
+          "participantCount": 13,
+          "gaziRunnerCount": 1,
+          "gaziTopThreeCoverageCount": 0,
+          "gaziTopThreeCoverageRate": 0,
+          "prepTopThreeHitCount": 0,
+          "prepTopThreeHitRate": 0,
+          "winnerName": "LIGHT OF DARKNESS(9) (USA)",
+          "winnerGaziFinish": null,
+          "bestGaziHorse": "İLLÜZYON",
+          "bestGaziFinish": 4,
+          "gaziTopThreeParticipants": [],
+          "prepTopThreeHits": []
+        },
+        {
+          "key": "erkek-tay-deneme",
+          "name": "Erkek Tay Deneme",
+          "sourceName": "ERKEK TAY DENEME",
+          "date": "2021-05-16",
+          "participantCount": 19,
+          "gaziRunnerCount": 11,
+          "gaziTopThreeCoverageCount": 3,
+          "gaziTopThreeCoverageRate": 100,
+          "prepTopThreeHitCount": 1,
+          "prepTopThreeHitRate": 33,
+          "winnerName": "ANADOLU ASLANI",
+          "winnerGaziFinish": 5,
+          "bestGaziHorse": "BURGAS",
+          "bestGaziFinish": 1,
+          "gaziTopThreeParticipants": [
+            "REAL RUNNER",
+            "BURGAS",
+            "MEGALOMAN"
+          ],
+          "prepTopThreeHits": [
+            "REAL RUNNER"
+          ]
+        },
+        {
+          "key": "mehmet-akif-ersoy",
+          "name": "Mehmet Akif Ersoy",
+          "sourceName": "MEHMET AKİF ERSOY",
+          "date": "2021-06-05",
+          "participantCount": 8,
+          "gaziRunnerCount": 4,
+          "gaziTopThreeCoverageCount": 1,
+          "gaziTopThreeCoverageRate": 33,
+          "prepTopThreeHitCount": 1,
+          "prepTopThreeHitRate": 33,
+          "winnerName": "BURGAS",
+          "winnerGaziFinish": 1,
+          "bestGaziHorse": "BURGAS",
+          "bestGaziFinish": 1,
+          "gaziTopThreeParticipants": [
+            "BURGAS"
+          ],
+          "prepTopThreeHits": [
+            "BURGAS"
+          ]
+        },
+        {
+          "key": "sait-akson",
+          "name": "Sait Akson",
+          "sourceName": "SAİT AKSON",
+          "date": "2021-06-06",
+          "participantCount": 11,
+          "gaziRunnerCount": 7,
+          "gaziTopThreeCoverageCount": 2,
+          "gaziTopThreeCoverageRate": 67,
+          "prepTopThreeHitCount": 2,
+          "prepTopThreeHitRate": 67,
+          "winnerName": "REAL RUNNER",
+          "winnerGaziFinish": 2,
+          "bestGaziHorse": "REAL RUNNER",
+          "bestGaziFinish": 2,
+          "gaziTopThreeParticipants": [
+            "REAL RUNNER",
+            "MEGALOMAN"
+          ],
+          "prepTopThreeHits": [
+            "REAL RUNNER",
+            "MEGALOMAN"
+          ]
+        },
+        {
+          "key": "kisrak",
+          "name": "Kısrak",
+          "sourceName": "KISRAK",
+          "date": "2021-06-06",
+          "participantCount": 18,
+          "gaziRunnerCount": 1,
+          "gaziTopThreeCoverageCount": 0,
+          "gaziTopThreeCoverageRate": 0,
+          "prepTopThreeHitCount": 0,
+          "prepTopThreeHitRate": 0,
+          "winnerName": "İLLÜZYON",
+          "winnerGaziFinish": 4,
+          "bestGaziHorse": "İLLÜZYON",
+          "bestGaziFinish": 4,
+          "gaziTopThreeParticipants": [],
+          "prepTopThreeHits": []
+        }
+      ]
+    },
+    {
+      "year": 2022,
+      "gaziDate": "2022-06-26",
+      "gaziTopThree": [
+        {
+          "finishPosition": 1,
+          "horseName": "SECRET POWER",
+          "seenInRoute": true
+        },
+        {
+          "finishPosition": 2,
+          "horseName": "MUCİZE KIZ",
+          "seenInRoute": true
+        },
+        {
+          "finishPosition": 3,
+          "horseName": "SİGOŞ",
+          "seenInRoute": true
+        }
+      ],
+      "routeCoverageCount": 3,
+      "routeCoverageRate": 100,
+      "prepRaces": [
+        {
+          "key": "erkek-tay-deneme",
+          "name": "Erkek Tay Deneme",
+          "sourceName": "ERKEK TAY DENEME",
+          "date": "2022-05-15",
+          "participantCount": 16,
+          "gaziRunnerCount": 7,
+          "gaziTopThreeCoverageCount": 1,
+          "gaziTopThreeCoverageRate": 33,
+          "prepTopThreeHitCount": 1,
+          "prepTopThreeHitRate": 33,
+          "winnerName": "FINAL DANCE",
+          "winnerGaziFinish": 4,
+          "bestGaziHorse": "SİGOŞ",
+          "bestGaziFinish": 3,
+          "gaziTopThreeParticipants": [
+            "SİGOŞ"
+          ],
+          "prepTopThreeHits": [
+            "SİGOŞ"
+          ]
+        },
+        {
+          "key": "disi-tay-deneme",
+          "name": "Dişi Tay Deneme",
+          "sourceName": "DİŞİ TAY DENEME",
+          "date": "2022-05-15",
+          "participantCount": 21,
+          "gaziRunnerCount": 2,
+          "gaziTopThreeCoverageCount": 1,
+          "gaziTopThreeCoverageRate": 33,
+          "prepTopThreeHitCount": 1,
+          "prepTopThreeHitRate": 33,
+          "winnerName": "SECRET POWER",
+          "winnerGaziFinish": 1,
+          "bestGaziHorse": "SECRET POWER",
+          "bestGaziFinish": 1,
+          "gaziTopThreeParticipants": [
+            "SECRET POWER"
+          ],
+          "prepTopThreeHits": [
+            "SECRET POWER"
+          ]
+        },
+        {
+          "key": "mehmet-akif-ersoy",
+          "name": "Mehmet Akif Ersoy",
+          "sourceName": "MEHMET AKİF ERSOY",
+          "date": "2022-06-04",
+          "participantCount": 9,
+          "gaziRunnerCount": 5,
+          "gaziTopThreeCoverageCount": 0,
+          "gaziTopThreeCoverageRate": 0,
+          "prepTopThreeHitCount": 0,
+          "prepTopThreeHitRate": 0,
+          "winnerName": "RAGE OF THE WIND",
+          "winnerGaziFinish": 11,
+          "bestGaziHorse": "HARDMET",
+          "bestGaziFinish": 7,
+          "gaziTopThreeParticipants": [],
+          "prepTopThreeHits": []
+        },
+        {
+          "key": "sait-akson",
+          "name": "Sait Akson",
+          "sourceName": "SAİT AKSON",
+          "date": "2022-06-05",
+          "participantCount": 8,
+          "gaziRunnerCount": 5,
+          "gaziTopThreeCoverageCount": 1,
+          "gaziTopThreeCoverageRate": 33,
+          "prepTopThreeHitCount": 1,
+          "prepTopThreeHitRate": 33,
+          "winnerName": "FINAL DANCE",
+          "winnerGaziFinish": 4,
+          "bestGaziHorse": "SİGOŞ",
+          "bestGaziFinish": 3,
+          "gaziTopThreeParticipants": [
+            "SİGOŞ"
+          ],
+          "prepTopThreeHits": [
+            "SİGOŞ"
+          ]
+        },
+        {
+          "key": "kisrak",
+          "name": "Kısrak",
+          "sourceName": "KISRAK",
+          "date": "2022-06-05",
+          "participantCount": 18,
+          "gaziRunnerCount": 3,
+          "gaziTopThreeCoverageCount": 2,
+          "gaziTopThreeCoverageRate": 67,
+          "prepTopThreeHitCount": 1,
+          "prepTopThreeHitRate": 33,
+          "winnerName": "SECRET POWER",
+          "winnerGaziFinish": 1,
+          "bestGaziHorse": "SECRET POWER",
+          "bestGaziFinish": 1,
+          "gaziTopThreeParticipants": [
+            "SECRET POWER",
+            "MUCİZE KIZ"
+          ],
+          "prepTopThreeHits": [
+            "SECRET POWER"
+          ]
+        }
+      ]
+    },
+    {
+      "year": 2023,
+      "gaziDate": "2023-06-25",
+      "gaziTopThree": [
+        {
+          "finishPosition": 1,
+          "horseName": "URFA ASLANI",
+          "seenInRoute": false
+        },
+        {
+          "finishPosition": 2,
+          "horseName": "QUALIZTO",
+          "seenInRoute": true
+        },
+        {
+          "finishPosition": 3,
+          "horseName": "CHAİKA",
+          "seenInRoute": true
+        }
+      ],
+      "routeCoverageCount": 2,
+      "routeCoverageRate": 67,
+      "prepRaces": [
+        {
+          "key": "erkek-tay-deneme",
+          "name": "Erkek Tay Deneme",
+          "sourceName": "ERKEK TAY DENEME",
+          "date": "2023-05-15",
+          "participantCount": 16,
+          "gaziRunnerCount": 7,
+          "gaziTopThreeCoverageCount": 0,
+          "gaziTopThreeCoverageRate": 0,
+          "prepTopThreeHitCount": 0,
+          "prepTopThreeHitRate": 0,
+          "winnerName": "EMIL KURJAK",
+          "winnerGaziFinish": null,
+          "bestGaziHorse": "NATIVE POWER(8) (GB)",
+          "bestGaziFinish": 5,
+          "gaziTopThreeParticipants": [],
+          "prepTopThreeHits": []
+        },
+        {
+          "key": "disi-tay-deneme",
+          "name": "Dişi Tay Deneme",
+          "sourceName": "DİŞİ TAY DENEME",
+          "date": "2023-05-15",
+          "participantCount": 17,
+          "gaziRunnerCount": 3,
+          "gaziTopThreeCoverageCount": 1,
+          "gaziTopThreeCoverageRate": 33,
+          "prepTopThreeHitCount": 0,
+          "prepTopThreeHitRate": 0,
+          "winnerName": "GENERAL BRIELLA",
+          "winnerGaziFinish": 13,
+          "bestGaziHorse": "CHAİKA",
+          "bestGaziFinish": 3,
+          "gaziTopThreeParticipants": [
+            "CHAİKA"
+          ],
+          "prepTopThreeHits": []
+        },
+        {
+          "key": "mehmet-akif-ersoy",
+          "name": "Mehmet Akif Ersoy",
+          "sourceName": "MEHMET AKİF ERSOY",
+          "date": "2023-06-03",
+          "participantCount": 16,
+          "gaziRunnerCount": 3,
+          "gaziTopThreeCoverageCount": 0,
+          "gaziTopThreeCoverageRate": 0,
+          "prepTopThreeHitCount": 0,
+          "prepTopThreeHitRate": 0,
+          "winnerName": "HEAD VORKER",
+          "winnerGaziFinish": 6,
+          "bestGaziHorse": "HEAD VORKER",
+          "bestGaziFinish": 6,
+          "gaziTopThreeParticipants": [],
+          "prepTopThreeHits": []
+        },
+        {
+          "key": "sait-akson",
+          "name": "Sait Akson",
+          "sourceName": "SAİT AKSON",
+          "date": "2023-06-04",
+          "participantCount": 9,
+          "gaziRunnerCount": 7,
+          "gaziTopThreeCoverageCount": 1,
+          "gaziTopThreeCoverageRate": 33,
+          "prepTopThreeHitCount": 1,
+          "prepTopThreeHitRate": 33,
+          "winnerName": "QUALIZTO",
+          "winnerGaziFinish": 2,
+          "bestGaziHorse": "QUALIZTO",
+          "bestGaziFinish": 2,
+          "gaziTopThreeParticipants": [
+            "QUALIZTO"
+          ],
+          "prepTopThreeHits": [
+            "QUALIZTO"
+          ]
+        },
+        {
+          "key": "kisrak",
+          "name": "Kısrak",
+          "sourceName": "KISRAK",
+          "date": "2023-06-04",
+          "participantCount": 20,
+          "gaziRunnerCount": 5,
+          "gaziTopThreeCoverageCount": 1,
+          "gaziTopThreeCoverageRate": 33,
+          "prepTopThreeHitCount": 0,
+          "prepTopThreeHitRate": 0,
+          "winnerName": "MOONLIGHT FAIRY",
+          "winnerGaziFinish": 4,
+          "bestGaziHorse": "CHAİKA",
+          "bestGaziFinish": 3,
+          "gaziTopThreeParticipants": [
+            "CHAİKA"
+          ],
+          "prepTopThreeHits": []
+        }
+      ]
+    },
+    {
+      "year": 2024,
+      "gaziDate": "2024-06-30",
+      "gaziTopThree": [
+        {
+          "finishPosition": 1,
+          "horseName": "DRAGON FLAME",
+          "seenInRoute": true
+        },
+        {
+          "finishPosition": 2,
+          "horseName": "ZIZKA",
+          "seenInRoute": true
+        },
+        {
+          "finishPosition": 3,
+          "horseName": "BORREGO",
+          "seenInRoute": false
+        }
+      ],
+      "routeCoverageCount": 2,
+      "routeCoverageRate": 67,
+      "prepRaces": [
+        {
+          "key": "erkek-tay-deneme",
+          "name": "Erkek Tay Deneme",
+          "sourceName": "ERKEK TAY DENEME",
+          "date": "2024-05-19",
+          "participantCount": 14,
+          "gaziRunnerCount": 7,
+          "gaziTopThreeCoverageCount": 2,
+          "gaziTopThreeCoverageRate": 67,
+          "prepTopThreeHitCount": 1,
+          "prepTopThreeHitRate": 33,
+          "winnerName": "MADRAS",
+          "winnerGaziFinish": 15,
+          "bestGaziHorse": "DRAGON FLAME",
+          "bestGaziFinish": 1,
+          "gaziTopThreeParticipants": [
+            "DRAGON FLAME",
+            "ZIZKA"
+          ],
+          "prepTopThreeHits": [
+            "DRAGON FLAME"
+          ]
+        },
+        {
+          "key": "disi-tay-deneme",
+          "name": "Dişi Tay Deneme",
+          "sourceName": "DİŞİ TAY DENEME",
+          "date": "2024-05-19",
+          "participantCount": 16,
+          "gaziRunnerCount": 4,
+          "gaziTopThreeCoverageCount": 0,
+          "gaziTopThreeCoverageRate": 0,
+          "prepTopThreeHitCount": 0,
+          "prepTopThreeHitRate": 0,
+          "winnerName": "GİZ",
+          "winnerGaziFinish": 6,
+          "bestGaziHorse": "GİZ",
+          "bestGaziFinish": 6,
+          "gaziTopThreeParticipants": [],
+          "prepTopThreeHits": []
+        },
+        {
+          "key": "mehmet-akif-ersoy",
+          "name": "Mehmet Akif Ersoy",
+          "sourceName": "MEHMET AKİF ERSOY",
+          "date": "2024-06-08",
+          "participantCount": 14,
+          "gaziRunnerCount": 4,
+          "gaziTopThreeCoverageCount": 0,
+          "gaziTopThreeCoverageRate": 0,
+          "prepTopThreeHitCount": 0,
+          "prepTopThreeHitRate": 0,
+          "winnerName": "SEVERUS SNAPE",
+          "winnerGaziFinish": 8,
+          "bestGaziHorse": "WOLF SEYFO",
+          "bestGaziFinish": 5,
+          "gaziTopThreeParticipants": [],
+          "prepTopThreeHits": []
+        },
+        {
+          "key": "sait-akson",
+          "name": "Sait Akson",
+          "sourceName": "SAİT AKSON",
+          "date": "2024-06-09",
+          "participantCount": 12,
+          "gaziRunnerCount": 7,
+          "gaziTopThreeCoverageCount": 1,
+          "gaziTopThreeCoverageRate": 33,
+          "prepTopThreeHitCount": 1,
+          "prepTopThreeHitRate": 33,
+          "winnerName": "MADRAS",
+          "winnerGaziFinish": 15,
+          "bestGaziHorse": "ZIZKA",
+          "bestGaziFinish": 2,
+          "gaziTopThreeParticipants": [
+            "ZIZKA"
+          ],
+          "prepTopThreeHits": [
+            "ZIZKA"
+          ]
+        },
+        {
+          "key": "kisrak",
+          "name": "Kısrak",
+          "sourceName": "KISRAK",
+          "date": "2024-06-09",
+          "participantCount": 21,
+          "gaziRunnerCount": 5,
+          "gaziTopThreeCoverageCount": 0,
+          "gaziTopThreeCoverageRate": 0,
+          "prepTopThreeHitCount": 0,
+          "prepTopThreeHitRate": 0,
+          "winnerName": "MANGUSTA",
+          "winnerGaziFinish": 7,
+          "bestGaziHorse": "GİZ",
+          "bestGaziFinish": 6,
+          "gaziTopThreeParticipants": [],
+          "prepTopThreeHits": []
+        }
+      ]
+    },
+    {
+      "year": 2025,
+      "gaziDate": "2025-06-29",
+      "gaziTopThree": [
+        {
+          "finishPosition": 1,
+          "horseName": "CUTHA",
+          "seenInRoute": true
+        },
+        {
+          "finishPosition": 2,
+          "horseName": "HANDSOME KING",
+          "seenInRoute": true
+        },
+        {
+          "finishPosition": 3,
+          "horseName": "SPECIAL MAN",
+          "seenInRoute": true
+        }
+      ],
+      "routeCoverageCount": 3,
+      "routeCoverageRate": 100,
+      "prepRaces": [
+        {
+          "key": "erkek-tay-deneme",
+          "name": "Erkek Tay Deneme",
+          "sourceName": "Bİ'TALİH ERKEK TAY DENEME",
+          "date": "2025-05-18",
+          "participantCount": 14,
+          "gaziRunnerCount": 4,
+          "gaziTopThreeCoverageCount": 1,
+          "gaziTopThreeCoverageRate": 33,
+          "prepTopThreeHitCount": 0,
+          "prepTopThreeHitRate": 0,
+          "winnerName": "TONBİ",
+          "winnerGaziFinish": 8,
+          "bestGaziHorse": "SPECIAL MAN",
+          "bestGaziFinish": 3,
+          "gaziTopThreeParticipants": [
+            "SPECIAL MAN"
+          ],
+          "prepTopThreeHits": []
+        },
+        {
+          "key": "disi-tay-deneme",
+          "name": "Dişi Tay Deneme",
+          "sourceName": "DİŞİ TAY DENEME",
+          "date": "2025-05-18",
+          "participantCount": 20,
+          "gaziRunnerCount": 3,
+          "gaziTopThreeCoverageCount": 0,
+          "gaziTopThreeCoverageRate": 0,
+          "prepTopThreeHitCount": 0,
+          "prepTopThreeHitRate": 0,
+          "winnerName": "AMAZING TOUCH",
+          "winnerGaziFinish": null,
+          "bestGaziHorse": "BOON NAM",
+          "bestGaziFinish": 14,
+          "gaziTopThreeParticipants": [],
+          "prepTopThreeHits": []
+        },
+        {
+          "key": "mehmet-akif-ersoy",
+          "name": "Mehmet Akif Ersoy",
+          "sourceName": "MEHMET AKİF ERSOY",
+          "date": "2025-06-07",
+          "participantCount": 10,
+          "gaziRunnerCount": 6,
+          "gaziTopThreeCoverageCount": 1,
+          "gaziTopThreeCoverageRate": 33,
+          "prepTopThreeHitCount": 1,
+          "prepTopThreeHitRate": 33,
+          "winnerName": "SPECIAL MAN",
+          "winnerGaziFinish": 3,
+          "bestGaziHorse": "SPECIAL MAN",
+          "bestGaziFinish": 3,
+          "gaziTopThreeParticipants": [
+            "SPECIAL MAN"
+          ],
+          "prepTopThreeHits": [
+            "SPECIAL MAN"
+          ]
+        },
+        {
+          "key": "sait-akson",
+          "name": "Sait Akson",
+          "sourceName": "SAİT AKSON",
+          "date": "2025-06-08",
+          "participantCount": 15,
+          "gaziRunnerCount": 7,
+          "gaziTopThreeCoverageCount": 2,
+          "gaziTopThreeCoverageRate": 67,
+          "prepTopThreeHitCount": 1,
+          "prepTopThreeHitRate": 33,
+          "winnerName": "HANDSOME KING",
+          "winnerGaziFinish": 2,
+          "bestGaziHorse": "CUTHA",
+          "bestGaziFinish": 1,
+          "gaziTopThreeParticipants": [
+            "HANDSOME KING",
+            "CUTHA"
+          ],
+          "prepTopThreeHits": [
+            "HANDSOME KING"
+          ]
+        },
+        {
+          "key": "kisrak",
+          "name": "Kısrak",
+          "sourceName": "Bİ'TALİH KISRAK",
+          "date": "2025-06-08",
+          "participantCount": 22,
+          "gaziRunnerCount": 3,
+          "gaziTopThreeCoverageCount": 0,
+          "gaziTopThreeCoverageRate": 0,
+          "prepTopThreeHitCount": 0,
+          "prepTopThreeHitRate": 0,
+          "winnerName": "BOON NAM",
+          "winnerGaziFinish": 14,
+          "bestGaziHorse": "BOON NAM",
+          "bestGaziFinish": 14,
+          "gaziTopThreeParticipants": [],
+          "prepTopThreeHits": []
+        }
+      ]
+    }
+  ]
+}

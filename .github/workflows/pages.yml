@@ -39,6 +39,9 @@ jobs:
       - name: Install SQLite
         run: sudo apt-get update && sudo apt-get install -y sqlite3
 
+      - name: Run tests
+        run: npm test
+
       - name: Initialize runtime database
         run: |
           mkdir -p data/raw data/processed
@@ -68,6 +71,17 @@ jobs:
       - name: Refresh current Gazi route data
         run: npm run refresh:gazi-route -- --year "$GAZI_YEAR" --out data/gazi-route-2026.json
 
+      - name: Build historical Gazi route backtest
+        run: |
+          npm run backtest:gazi-route -- \
+            --input data/gazi-route-2020.json \
+            --input data/gazi-route-2021.json \
+            --input data/gazi-route-2022.json \
+            --input data/gazi-route-2023.json \
+            --input data/gazi-route-2024.json \
+            --input data/gazi-route-2025.json \
+            --out data/gazi-backtest-report.json
+
       - name: Select default Gazi route report
         run: |
           npm run select:gazi-route -- \
@@ -80,7 +94,7 @@ jobs:
           mkdir -p dist/assets dist/data
           cp index.html app.js styles.css .nojekyll dist/
           cp assets/* dist/assets/
-          cp data/gazi-knowledge-base.json data/gazi-route-report.json data/gazi-route-2025.json data/gazi-route-2026.json dist/data/
+          cp data/gazi-knowledge-base.json data/gazi-route-report.json data/gazi-route-2020.json data/gazi-route-2021.json data/gazi-route-2022.json data/gazi-route-2023.json data/gazi-route-2024.json data/gazi-route-2025.json data/gazi-route-2026.json data/gazi-backtest-report.json dist/data/
 
       - name: Configure Pages
         uses: actions/configure-pages@v5

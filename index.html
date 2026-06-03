@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Padok | Gazi Kosusu Analiz</title>
-    <link rel="stylesheet" href="./styles.css?v=20260603-data-status" />
+    <link rel="stylesheet" href="./styles.css?v=20260603-backtest" />
   </head>
   <body>
     <header class="hero">
@@ -14,6 +14,7 @@
         <a class="brand" href="./index.html">Padok</a>
         <div class="topbar__links">
           <a href="#data-status">Veri durumu</a>
+          <a href="#backtest">Backtest</a>
           <a href="#races">Kosular</a>
           <a href="#candidates">Adaylar</a>
           <a href="#method">Metod</a>
@@ -67,9 +68,9 @@
                 <strong>İnsan tarafından okunabilir karşılaştırma</strong>
                 <span>Gazi yolundaki yarışlar ve at performansları aynı ekranda gösteriliyor.</span>
               </li>
-              <li class="analysis-step">
-                <strong>Geçmiş yıllarla backtest</strong>
-                <span>Pedigree, sahip, jokey ve form sinyallerinin gerçekten işe yarayıp yaramadığı ölçülecek.</span>
+              <li class="analysis-step analysis-step--active">
+                <strong>Geçmiş yıllarla ilk backtest</strong>
+                <span>Rota koşularının Gazi ilk 3 ile ilişkisi ölçülüyor; örneklem büyüdükçe özellik grupları eklenecek.</span>
               </li>
               <li class="analysis-step">
                 <strong>Tahmin ve sıralama modeli</strong>
@@ -78,6 +79,32 @@
             </ol>
           </div>
         </div>
+      </section>
+
+      <section class="backtest" id="backtest" aria-label="Geçmiş sezon backtest sonuçları">
+        <div class="section-heading">
+          <p class="section-kicker">Geçmiş doğrulama</p>
+          <h2>Hangi prova koşuları Gazi ilk 3’e at taşıyor?</h2>
+          <p class="muted" id="backtest-summary"></p>
+          <p class="backtest-definition">
+            Kapsama, Gazi ilk 3 atlarının ilgili koşuya katılımını; prova ilk 3 isabeti ise o koşunun ilk 3’ünün daha sonra Gazi ilk 3’e girme oranını gösterir.
+          </p>
+        </div>
+
+        <div class="status-metrics" id="backtest-metrics"></div>
+
+        <div class="backtest-layout">
+          <div>
+            <h3>Koşu sinyalleri</h3>
+            <div class="backtest-table" id="backtest-table"></div>
+          </div>
+          <div>
+            <h3>Sezon doğrulaması</h3>
+            <div class="season-list" id="season-list"></div>
+          </div>
+        </div>
+
+        <p class="backtest-warning" id="backtest-warning"></p>
       </section>
 
       <section class="layout" id="races">
@@ -141,6 +168,6 @@
       <span>Bahis onerisi degildir; analiz ve ogrenme amaclidir.</span>
     </footer>
 
-    <script src="./app.js?v=20260603-data-status" type="module"></script>
+    <script src="./app.js?v=20260603-backtest" type="module"></script>
   </body>
 </html>
