@@ -538,17 +538,18 @@ const getProfileTags = (row, tableColumns) => {
   return tags;
 };
 
-const getHistoricalProfileMatches = (selectedRow, selectedReport) => {
-  if (!selectedRow || !state.participationComparison.length) return [];
+const getHistoricalProfileMatches = (selectedRow, selectedReport, comparisonReports = state.participationComparison) => {
+  if (!selectedRow || !comparisonReports.length) return [];
 
   const selectedColumns = getParticipationTableColumns(selectedReport);
   const selectedNoPrep = selectedRow.prepStartCount === 0;
   const selectedPrepWinner = selectedRow.bestPrepFinishPosition === 1;
   const selectedJockeyChange = rowHasJockeyChange(selectedRow, selectedColumns);
   const selectedActivePrep = selectedRow.prepStartCount >= 2;
+  const selectedYear = selectedReport.sourceYear;
 
-  return state.participationComparison
-    .filter((report) => report.sourceYear !== selectedReport.sourceYear)
+  return comparisonReports
+    .filter((report) => Number.isFinite(report.sourceYear) && (!Number.isFinite(selectedYear) || report.sourceYear < selectedYear))
     .flatMap((report) => {
       const tableColumns = getParticipationTableColumns(report);
 
@@ -843,6 +844,92 @@ const getProfileReason = (row, tableColumns, profileSummary) => {
   return "Temel rota profili okunuyor; ayırıcı sinyal sınırlı.";
 };
 
+const buildReadinessValidation = () => {
+  const reports = [...state.participationComparison]
+    .filter((report) => Number.isFinite(report.sourceYear) && (report.rows ?? []).some((row) => Number.isFinite(row.gaziFinishPosition)))
+    .sort((a, b) => a.sourceYear - b.sourceYear);
+
+  const seasons = reports
+    .map((report) => {
+      const previousReports = reports.filter((candidate) => candidate.sourceYear < report.sourceYear);
+      if (!previousReports.length) return null;
+
+      const tableColumns = getParticipationTableColumns(report);
+      const rankedRows = (report.rows ?? [])
+        .map((row) => {
+          const matches = getHistoricalProfileMatches(row, report, previousReports);
+          const profileSummary = summarizeProfileMatches(matches);
+          return {
+            row,
+            readiness: getReadinessAssessment(row, tableColumns, profileSummary)
+          };
+        })
+        .sort((a, b) => b.readiness.score - a.readiness.score || b.readiness.confidence - a.readiness.confidence);
+      const predictedTopThree = rankedRows.slice(0, 3);
+      const actualTopThreeNames = new Set((report.rows ?? [])
+        .filter((row) => Number.isFinite(row.gaziFinishPosition) && row.gaziFinishPosition <= 3)
+        .map((row) => row.horseName));
+      const overlapCount = predictedTopThree.filter(({ row }) => actualTopThreeNames.has(row.horseName)).length;
+      const topPick = predictedTopThree[0] ?? null;
+
+      return {
+        year: report.sourceYear,
+        topPickName: topPick?.row.horseName ?? "-",
+        topPickFinish: topPick?.row.gaziFinishPosition ?? null,
+        topPickHit: Number.isFinite(topPick?.row.gaziFinishPosition) && topPick.row.gaziFinishPosition <= 3,
+        overlapCount,
+        runnerCount: report.summary?.gaziRunnerCount ?? report.rows?.length ?? 0
+      };
+    })
+    .filter(Boolean);
+
+  const topPickHits = seasons.filter((season) => season.topPickHit).length;
+  const averageOverlap = seasons.length
+    ? seasons.reduce((sum, season) => sum + season.overlapCount, 0) / seasons.length
+    : 0;
+
+  return {
+    seasons,
+    topPickHits,
+    averageOverlap: averageOverlap.toFixed(1)
+  };
+};
+
+const renderReadinessValidation = () => {
+  const validation = buildReadinessValidation();
+  if (!validation.seasons.length) return "";
+
+  const recentSeasons = validation.seasons.slice(-3).reverse();
+
+  return `
+    <div class="model-check" aria-label="Readiness model kontrolü">
+      <div>
+        <p class="section-kicker">Model kontrolü</p>
+        <h4>Readiness geçmişte ne yakaladı?</h4>
+        <span>Her sezon yalnızca kendinden önceki sezonlardan öğrenilerek kontrol edilir.</span>
+      </div>
+      <div class="model-check__metrics">
+        <div>
+          <span>Top aday ilk 3</span>
+          <strong>${escapeHtml(validation.topPickHits)}/${escapeHtml(validation.seasons.length)}</strong>
+        </div>
+        <div>
+          <span>Ortalama ilk 3 örtüşme</span>
+          <strong>${escapeHtml(validation.averageOverlap)}/3</strong>
+        </div>
+      </div>
+      <div class="model-check__seasons">
+        ${recentSeasons.map((season) => `
+          <span>
+            <strong>${escapeHtml(season.year)}</strong>
+            ${escapeHtml(season.topPickName)} · Gazi ${escapeHtml(formatPosition(season.topPickFinish))} · ${escapeHtml(season.overlapCount)}/3
+          </span>
+        `).join("")}
+      </div>
+    </div>
+  `;
+};
+
 const renderProfileShortlist = (report, tableColumns) => {
   const rows = report.rows ?? [];
   const profiles = rows
@@ -886,6 +973,7 @@ const renderProfileShortlist = (report, tableColumns) => {
         </div>
         <span>Readiness skoru Gazi sonucunu kullanmaz; prep formu, rota şekli, profil kanıtı ve veri güvenini birleştirir.</span>
       </div>
+      ${renderReadinessValidation()}
       <div class="readiness-board" aria-label="Readiness skor tablosu">
         ${readinessBoard.map(({ row, readiness }) => `
           <button class="readiness-card ${row.horseName === state.selectedParticipationHorse ? "readiness-card--selected" : ""}" type="button" data-horse-name="${escapeHtml(row.horseName)}" aria-pressed="${row.horseName === state.selectedParticipationHorse}">

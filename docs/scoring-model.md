@@ -96,3 +96,23 @@ Gazi horse -> which route races it ran -> which route races it skipped -> Gazi f
 ```
 
 This is needed because a horse can be Gazi-relevant without running in Mehmet Akif Ersoy, Sait Akson, or another tracked route race.
+
+## Horse Readiness Layer
+
+The UI now includes an exploratory horse-level readiness score. This score is not a final betting or result prediction model. It is a decision-support ranking that combines:
+
+- Prep form
+- Route shape
+- Historical profile evidence
+- Jockey continuity
+- Data depth
+
+The score deliberately does not use the selected horse's Gazi finish. When historical seasons are selected, profile matches are limited to seasons earlier than the selected season. This prevents future-data leakage during visual backtesting.
+
+The app also shows a compact model check. For each tested season, the readiness score is recalculated using only earlier seasons as profile evidence. The panel reports:
+
+- How often the top readiness candidate finished in the Gazi top 3
+- Average overlap between the top 3 readiness candidates and the actual Gazi top 3
+- Recent season examples
+
+This is still a small-sample validation, but it makes the model's usefulness and limitations visible instead of hiding them behind a single attractive number.
