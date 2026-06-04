@@ -315,7 +315,10 @@ const renderReadinessArtifact = (report) => {
           const entries = report.rankings?.[key]?.slice(0, 3) ?? [];
           return `
             <div class="artifact-ranking">
-              <strong>${escapeHtml(label)}</strong>
+              <div class="artifact-ranking__header">
+                <strong>${escapeHtml(label)}</strong>
+                ${report.lensSummaries?.[key] ? `<em>Ort. ${escapeHtml(report.lensSummaries[key].averageValue ?? "-")} · Güçlü ${escapeHtml(report.lensSummaries[key].highSignalCount ?? 0)} · İzleme ${escapeHtml(report.lensSummaries[key].watchlistCount ?? 0)}</em>` : ""}
+              </div>
               ${entries.length
                 ? entries.map((entry) => `
                   <span>

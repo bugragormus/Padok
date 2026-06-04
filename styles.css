@@ -384,17 +384,34 @@ h2 {
   background: #fff;
 }
 
-.artifact-ranking > strong {
-  color: var(--green-2);
-  font-size: 0.78rem;
-}
-
+.artifact-ranking__header,
 .artifact-ranking span {
   display: flex;
   justify-content: space-between;
   gap: 10px;
   align-items: baseline;
   min-width: 0;
+}
+
+.artifact-ranking__header strong {
+  flex: 0 0 auto;
+  color: var(--green-2);
+  font-size: 0.78rem;
+}
+
+.artifact-ranking__header em {
+  overflow: hidden;
+  color: var(--muted);
+  font-size: 0.66rem;
+  font-style: normal;
+  font-weight: 800;
+  line-height: 1.25;
+  text-align: right;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.artifact-ranking span {
   color: var(--muted);
   font-size: 0.74rem;
   line-height: 1.25;
