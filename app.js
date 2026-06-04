@@ -1,10 +1,3 @@
-const signalLabels = {
-  classSignal: "Sinif",
-  staminaSignal: "Mesafe",
-  courseSignal: "Pist",
-  recencySignal: "Guncel form"
-};
-
 const state = {
   data: null,
   routeReport: null,
@@ -16,9 +9,7 @@ const state = {
   analysisYear: null,
   routeReportCache: new Map(),
   participationReportCache: new Map(),
-  participationComparison: [],
-  query: "",
-  year: "all"
+  participationComparison: []
 };
 
 const formatText = (value) => value ?? "Bekleniyor";
@@ -27,21 +18,6 @@ const escapeHtml = (value) => String(value ?? "")
   .replace(/</g, "&lt;")
   .replace(/>/g, "&gt;")
   .replace(/"/g, "&quot;");
-
-const computeScore = (signals, weights) => {
-  const weighted = Object.entries(weights).reduce((sum, [key, weight]) => {
-    return sum + (Number(signals[key] ?? 0) * weight);
-  }, 0);
-
-  return Math.round(weighted);
-};
-
-const normalize = (text) => {
-  return String(text)
-    .toLocaleLowerCase("tr-TR")
-    .normalize("NFD")
-    .replace(/[\u0300-\u036f]/g, "");
-};
 
 const renderTarget = (targetRace) => {
   document.querySelector("#target-title").textContent = targetRace.name;
@@ -748,6 +724,59 @@ const renderParticipationInsights = (report, tableColumns) => {
     .join("");
 };
 
+const getProfileAttentionScore = (row, tableColumns, profileSummary) => {
+  const numericAverage = Number.parseFloat(profileSummary.averageFinish);
+  const averageBoost = Number.isFinite(numericAverage) ? Math.max(0, Math.round(32 - (numericAverage * 8))) : 0;
+  const prepWinBoost = row.bestPrepFinishPosition === 1 ? 14 : 0;
+  const noPrepBoost = row.prepStartCount === 0 ? 10 : 0;
+  const jockeyBoost = rowHasJockeyChange(row, tableColumns) ? 8 : 0;
+  const prepVolumeBoost = row.prepStartCount >= 2 ? 6 : 0;
+
+  return (profileSummary.count * 18) + averageBoost + prepWinBoost + noPrepBoost + jockeyBoost + prepVolumeBoost;
+};
+
+const renderProfileShortlist = (report, tableColumns) => {
+  const rows = report.rows ?? [];
+  const shortlist = rows
+    .map((row) => {
+      const historicalMatches = getHistoricalProfileMatches(row, report);
+      const profileSummary = summarizeProfileMatches(historicalMatches);
+      const profileReading = buildProfileReading(row, tableColumns, profileSummary);
+
+      return {
+        row,
+        profileSummary,
+        profileReading,
+        tags: getProfileTags(row, tableColumns),
+        score: getProfileAttentionScore(row, tableColumns, profileSummary)
+      };
+    })
+    .sort((a, b) => b.score - a.score || (a.row.gaziFinishPosition ?? 99) - (b.row.gaziFinishPosition ?? 99))
+    .slice(0, 5);
+
+  document.querySelector("#profile-shortlist").innerHTML = shortlist.length
+    ? `
+      <div class="profile-shortlist__header">
+        <div>
+          <p class="section-kicker">Profil kısa listesi</p>
+          <h3>İncelemeye değer sinyal profilleri</h3>
+        </div>
+        <span>Skor tahmin değil, geçmiş benzerlik yoğunluğudur.</span>
+      </div>
+      <div class="profile-shortlist__grid">
+        ${shortlist.map(({ row, profileSummary, profileReading, tags, score }) => `
+          <button class="shortlist-card ${row.horseName === state.selectedParticipationHorse ? "shortlist-card--selected" : ""}" type="button" data-horse-name="${escapeHtml(row.horseName)}" aria-pressed="${row.horseName === state.selectedParticipationHorse}">
+            <span>${escapeHtml(profileReading.level)}</span>
+            <strong>${escapeHtml(row.horseName)}</strong>
+            <em>${escapeHtml(score)} profil puanı · ${escapeHtml(profileSummary.count)} eşleşme · Ort. ${escapeHtml(profileSummary.averageFinish)}</em>
+            <small>${escapeHtml(tags.join(" · "))}</small>
+          </button>
+        `).join("")}
+      </div>
+    `
+    : "";
+};
+
 const renderParticipationFilters = (rows, tableColumns) => {
   const counts = {
     all: rows.length,
@@ -914,6 +943,7 @@ const renderParticipation = (report) => {
   const tableColumns = getParticipationTableColumns(report);
   renderParticipationFilters(report.rows, tableColumns);
   renderParticipationInsights(report, tableColumns);
+  renderProfileShortlist(report, tableColumns);
 
   const filteredRows = getFilteredParticipationRows(report.rows, tableColumns);
   renderParticipationDetail(report, tableColumns, filteredRows);
@@ -1054,72 +1084,15 @@ const loadAnalysisYear = async (year) => {
   renderParticipation(state.participationReport);
 };
 
-const renderYears = (horses) => {
-  const years = [...new Set(horses.map((horse) => horse.year))].sort((a, b) => b - a);
-  document.querySelector("#year-filter").innerHTML = [
-    `<option value="all">Tum yillar</option>`,
-    ...years.map((year) => `<option value="${year}">${year}</option>`)
-  ].join("");
-};
-
-const renderCandidates = () => {
-  const { horses, scoring } = state.data;
-  const query = normalize(state.query);
-  const filtered = horses
-    .filter((horse) => state.year === "all" || String(horse.year) === state.year)
-    .filter((horse) => normalize(horse.name).includes(query))
-    .map((horse) => ({
-      ...horse,
-      score: computeScore(horse.manualSignals, scoring.weights)
-    }))
-    .sort((a, b) => b.score - a.score);
-
-  document.querySelector("#candidate-grid").innerHTML = filtered
-    .map((horse) => `
-      <article class="candidate-card">
-        <div class="candidate-card__top">
-          <div>
-            <h3>${horse.name}</h3>
-            <p class="muted">${horse.year} · ${horse.profile.age} yasli ${horse.profile.breed} · ${horse.profile.sex}</p>
-          </div>
-          <div class="score" style="--score: ${horse.score}%"><span>${horse.score}</span></div>
-        </div>
-        <div class="bar-list">
-          ${Object.entries(horse.manualSignals).map(([key, value]) => `
-            <div class="bar">
-              <div class="bar__label"><span>${signalLabels[key]}</span><span>${value}</span></div>
-              <div class="bar__track"><div class="bar__fill" style="width: ${value}%"></div></div>
-            </div>
-          `).join("")}
-        </div>
-        <ul class="observation-list">
-          ${horse.observations.map((observation) => `
-            <li>
-              <strong>${observation.race}</strong>
-              ${observation.position ? ` · ${observation.position}.` : ""}
-              ${observation.finishTime ? ` · ${observation.finishTime}` : ""}
-              <br />
-              ${observation.note}
-            </li>
-          `).join("")}
-        </ul>
-      </article>
-    `)
-    .join("");
-};
-
 const bindEvents = () => {
-  document.querySelector("#horse-search").addEventListener("input", (event) => {
-    state.query = event.target.value;
-    renderCandidates();
-  });
-
-  document.querySelector("#year-filter").addEventListener("change", (event) => {
-    state.year = event.target.value;
-    renderCandidates();
-  });
-
   document.querySelector("#participation-table").addEventListener("click", (event) => {
+    const row = event.target.closest("[data-horse-name]");
+    if (!row || !state.participationReport) return;
+    state.selectedParticipationHorse = row.dataset.horseName;
+    renderParticipation(state.participationReport);
+  });
+
+  document.querySelector("#profile-shortlist").addEventListener("click", (event) => {
     const row = event.target.closest("[data-horse-name]");
     if (!row || !state.participationReport) return;
     state.selectedParticipationHorse = row.dataset.horseName;
@@ -1190,8 +1163,6 @@ const init = async () => {
   if (state.dataHorizon) renderDataHorizon(state.dataHorizon);
   renderAnalysisYearControl();
   if (state.dataHorizon) await loadParticipationComparison();
-  renderYears(state.data.horses);
-  renderCandidates();
   bindEvents();
 };
 

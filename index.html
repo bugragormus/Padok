@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Padok | Gazi Kosusu Analiz</title>
-    <link rel="stylesheet" href="./styles.css?v=20260604-profile-reading" />
+    <link rel="stylesheet" href="./styles.css?v=20260604-shortlist-cleanup" />
   </head>
   <body>
     <header class="hero">
@@ -17,8 +17,6 @@
           <a href="#backtest">Backtest</a>
           <a href="#participation">Katılım</a>
           <a href="#races">Kosular</a>
-          <a href="#candidates">Adaylar</a>
-          <a href="#method">Metod</a>
         </div>
       </nav>
       <section class="hero__content">
@@ -28,8 +26,8 @@
           Gazi'ye giden yoldaki prep kosularini, mesafe-pist uyumunu ve at bazli form sinyallerini yan yana koyan karar destek panosu.
         </p>
         <div class="hero__actions">
-          <a class="button button--primary" href="#candidates">Adaylari incele</a>
-          <a class="button button--ghost" href="./docs/research-plan.md">Arastirma planı</a>
+          <a class="button button--primary" href="#participation">At profillerini incele</a>
+          <a class="button button--ghost" href="#backtest">Backtest'i gör</a>
         </div>
       </section>
     </header>
@@ -57,27 +55,6 @@
           <div>
             <h3>Koşu kapsamı</h3>
             <div class="coverage-list" id="coverage-list"></div>
-          </div>
-          <div>
-            <h3>Analiz aşaması</h3>
-            <ol class="analysis-steps">
-              <li class="analysis-step analysis-step--active">
-                <strong>Gerçek veri toplama</strong>
-                <span>TJK koşu, sonuç, at, jokey, soy hattı ve sahip verileri normalize ediliyor.</span>
-              </li>
-              <li class="analysis-step analysis-step--active">
-                <strong>İnsan tarafından okunabilir karşılaştırma</strong>
-                <span>Gazi yolundaki yarışlar ve at performansları aynı ekranda gösteriliyor.</span>
-              </li>
-              <li class="analysis-step analysis-step--active">
-                <strong>Geçmiş yıllarla ilk backtest</strong>
-                <span>Rota koşularının Gazi ilk 3 ile ilişkisi ölçülüyor; örneklem büyüdükçe özellik grupları eklenecek.</span>
-              </li>
-              <li class="analysis-step">
-                <strong>Tahmin ve sıralama modeli</strong>
-                <span>Yalnızca backtest sonrası, açıklanabilir ve veri güveni görünen skorlar üretilecek.</span>
-              </li>
-            </ol>
           </div>
         </div>
 
@@ -140,6 +117,7 @@
 
         <div class="status-metrics" id="participation-metrics"></div>
         <div class="participation-insights" id="participation-insights" aria-label="Katılım içgörüleri"></div>
+        <div class="profile-shortlist" id="profile-shortlist" aria-label="Profil kısa listesi"></div>
         <div id="participation-detail"></div>
         <div class="participation-table" id="participation-table"></div>
         <p class="backtest-warning" id="participation-warning"></p>
@@ -156,56 +134,13 @@
         <div class="race-grid" id="race-grid"></div>
       </section>
 
-      <section class="workspace" id="candidates">
-        <div class="section-heading">
-          <p class="section-kicker">Aday panosu</p>
-          <h2>Ilk skor, tartisma icin bir pusula.</h2>
-          <p class="muted">
-            Bu bölüm hâlâ elle girilmiş başlangıç sinyallerinden üretilen bir prototiptir; gerçek TJK rota verisi yukarıdaki koşu haritasında gösterilir.
-          </p>
-        </div>
-
-        <div class="toolbar" aria-label="Aday filtreleri">
-          <label class="search">
-            <span>At ara</span>
-            <input id="horse-search" type="search" placeholder="Cutha, Special Man..." />
-          </label>
-          <label class="select">
-            <span>Yil</span>
-            <select id="year-filter"></select>
-          </label>
-        </div>
-
-        <div class="candidate-grid" id="candidate-grid"></div>
-      </section>
-
-      <section class="method" id="method">
-        <div class="section-heading">
-          <p class="section-kicker">Ogrenme notu</p>
-          <h2>Bu projede once model degil, veri guvenilirligi kazanir.</h2>
-        </div>
-        <div class="method-grid">
-          <article>
-            <h3>1. Normalize et</h3>
-            <p>Dereceyi saniyeye, pist ve mesafeyi standart kategoriye, kosu adlarini canonical isimlere cevir.</p>
-          </article>
-          <article>
-            <h3>2. Karsilastir</h3>
-            <p>Her kosuyu Gazi profiline uzaklik/yakinlik acisindan puanla; 1600m hiz sinyali ile 2200m stamina sinyalini ayri oku.</p>
-          </article>
-          <article>
-            <h3>3. Backtest yap</h3>
-            <p>Gecmis yillarda prep kosusu skorlarinin Gazi ilk 3 sonucu ile ne kadar ortustugunu test et.</p>
-          </article>
-        </div>
-      </section>
     </main>
 
     <footer>
-      <span>Padok MVP</span>
+      <span>Padok</span>
       <span>Bahis onerisi degildir; analiz ve ogrenme amaclidir.</span>
     </footer>
 
-    <script src="./app.js?v=20260604-profile-reading" type="module"></script>
+    <script src="./app.js?v=20260604-shortlist-cleanup" type="module"></script>
   </body>
 </html>
