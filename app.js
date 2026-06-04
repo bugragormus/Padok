@@ -13,6 +13,7 @@ const state = {
   routeReport: null,
   backtestReport: null,
   participationReport: null,
+  readinessReport: null,
   dataHorizon: null,
   selectedParticipationHorse: null,
   participationFilter: "all",
@@ -239,6 +240,45 @@ const renderDataStatus = (report) => {
       `;
     }).join("")
     : '<p class="coverage-empty">Henüz eşleşen rota koşusu bulunamadı.</p>';
+};
+
+const renderReadinessArtifact = (report) => {
+  const container = document.querySelector("#readiness-artifact");
+  if (!container) return;
+
+  if (!report) {
+    container.innerHTML = "";
+    return;
+  }
+
+  const summary = report.summary ?? {};
+  const metrics = [
+    ["Analiz yılı", report.sourceYear ?? "-"],
+    ["Koşucu", summary.runnerCount ?? 0],
+    ["Ana skor", summary.topScoreHorse ?? "-"],
+    ["Upside", summary.topUpsideHorse ?? "-"],
+    ["Belirsizlik", summary.topUncertaintyHorse ?? "-"]
+  ];
+
+  container.innerHTML = `
+    <article class="artifact-card">
+      <div>
+        <p class="section-kicker">Analiz artifact'i</p>
+        <h3>Readiness JSON hazır</h3>
+        <p>Otomatik pipeline tarafından üretilen skor raporu. UI, API ve ileride MCP yüzeyi aynı analiz çıktısını kullanabilir.</p>
+      </div>
+      <div class="artifact-card__metrics">
+        ${metrics.map(([label, value]) => `
+          <span>
+            <small>${escapeHtml(label)}</small>
+            <strong>${escapeHtml(value)}</strong>
+          </span>
+        `).join("")}
+      </div>
+      <a class="artifact-card__link" href="./data/gazi-readiness-report.json" download>JSON indir</a>
+      <em>Son üretim: ${escapeHtml(formatTimestamp(report.generatedAt))}</em>
+    </article>
+  `;
 };
 
 const horizonTierStatusLabels = {
@@ -1367,11 +1407,12 @@ const bindEvents = () => {
 };
 
 const init = async () => {
-  const [knowledgeResponse, routeResponse, backtestResponse, participationResponse, horizonResponse] = await Promise.all([
+  const [knowledgeResponse, routeResponse, backtestResponse, participationResponse, readinessResponse, horizonResponse] = await Promise.all([
     fetch("./data/gazi-knowledge-base.json", { cache: "no-store" }),
     fetch("./data/gazi-route-report.json", { cache: "no-store" }).catch(() => null),
     fetch("./data/gazi-backtest-report.json", { cache: "no-store" }).catch(() => null),
     fetch("./data/gazi-participation-report.json", { cache: "no-store" }).catch(() => null),
+    fetch("./data/gazi-readiness-report.json", { cache: "no-store" }).catch(() => null),
     fetch("./data/gazi-data-horizon.json", { cache: "no-store" }).catch(() => null)
   ]);
 
@@ -1394,6 +1435,10 @@ const init = async () => {
     }
   }
 
+  if (readinessResponse?.ok) {
+    state.readinessReport = await readinessResponse.json();
+  }
+
   if (horizonResponse?.ok) {
     state.dataHorizon = await horizonResponse.json();
   }
@@ -1408,6 +1453,7 @@ const init = async () => {
   }
   if (state.backtestReport) renderBacktest(state.backtestReport);
   if (state.participationReport) renderParticipation(state.participationReport);
+  renderReadinessArtifact(state.readinessReport);
   if (state.dataHorizon) renderDataHorizon(state.dataHorizon);
   renderAnalysisYearControl();
   if (state.dataHorizon) await loadParticipationComparison();

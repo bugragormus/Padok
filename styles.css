@@ -253,7 +253,10 @@ h2 {
 }
 
 .status-layout {
-  display: block;
+  display: grid;
+  grid-template-columns: minmax(0, 1.15fr) minmax(280px, 0.85fr);
+  gap: 20px;
+  align-items: start;
   margin-top: 28px;
 }
 
@@ -312,6 +315,73 @@ h2 {
 
 .coverage-state--complete {
   background: var(--green);
+}
+
+.artifact-card {
+  display: grid;
+  gap: 14px;
+  padding: 16px;
+  border: 1px solid rgba(36, 95, 70, 0.2);
+  border-radius: 8px;
+  background: #fbfcfa;
+}
+
+.artifact-card h3 {
+  margin: 0 0 8px;
+  font-size: 1rem;
+}
+
+.artifact-card p,
+.artifact-card em {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.78rem;
+  font-style: normal;
+  line-height: 1.5;
+}
+
+.artifact-card__metrics {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 8px;
+}
+
+.artifact-card__metrics span {
+  display: grid;
+  gap: 4px;
+  min-height: 58px;
+  padding: 9px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: #fff;
+}
+
+.artifact-card__metrics small {
+  color: var(--muted);
+  font-size: 0.68rem;
+}
+
+.artifact-card__metrics strong {
+  overflow: hidden;
+  color: var(--green-2);
+  font-size: 0.9rem;
+  line-height: 1.2;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.artifact-card__link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 40px;
+  padding: 0 12px;
+  border: 1px solid rgba(36, 95, 70, 0.34);
+  border-radius: 8px;
+  background: #eef6f1;
+  color: var(--green-2);
+  font-size: 0.82rem;
+  font-weight: 900;
 }
 
 .data-horizon {
@@ -1733,6 +1803,10 @@ footer {
   }
 
   .model-check__metrics {
+    grid-template-columns: 1fr;
+  }
+
+  .artifact-card__metrics {
     grid-template-columns: 1fr;
   }
 
