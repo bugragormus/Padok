@@ -596,6 +596,35 @@ const getHistoricalProfileMatches = (selectedRow, selectedReport) => {
     .slice(0, 4);
 };
 
+const summarizeProfileMatches = (matches) => {
+  if (!matches.length) {
+    return {
+      count: 0,
+      averageFinish: "-",
+      strongestSignal: "Yok",
+      note: "Geçmiş ilk 3 içinde aynı profil sinyaliyle güçlü eşleşme bulunmadı."
+    };
+  }
+
+  const signalCounts = matches
+    .flatMap((match) => match.matchingSignals)
+    .reduce((counts, signal) => {
+      counts.set(signal, (counts.get(signal) ?? 0) + 1);
+      return counts;
+    }, new Map());
+  const strongestSignal = [...signalCounts.entries()]
+    .sort((a, b) => b[1] - a[1] || a[0].localeCompare(b[0], "tr"))[0][0];
+  const averageFinish = matches.reduce((sum, match) => sum + match.gaziFinishPosition, 0) / matches.length;
+  const topTwoCount = matches.filter((match) => match.gaziFinishPosition <= 2).length;
+
+  return {
+    count: matches.length,
+    averageFinish: averageFinish.toFixed(1),
+    strongestSignal,
+    note: `${topTwoCount}/${matches.length} benzer örnek Gazi'de ilk 2 içinde bitirmiş.`
+  };
+};
+
 const renderHistoricalPatterns = () => {
   const container = document.querySelector("#historical-patterns");
   if (!container) return;
@@ -739,6 +768,7 @@ const renderParticipationDetail = (report, tableColumns, rows = report.rows) => 
     : "Takip edilen prep rotasında start yok";
   const profileTags = getProfileTags(selectedRow, tableColumns);
   const historicalMatches = getHistoricalProfileMatches(selectedRow, report);
+  const profileSummary = summarizeProfileMatches(historicalMatches);
 
   const metrics = [
     ["Gazi derecesi", formatPosition(selectedRow.gaziFinishPosition)],
@@ -797,9 +827,17 @@ const renderParticipationDetail = (report, tableColumns, rows = report.rows) => 
           <div class="profile-tags">
             ${profileTags.map((tag) => `<span>${escapeHtml(tag)}</span>`).join("")}
           </div>
+          <p class="profile-note">${escapeHtml(profileSummary.note)}</p>
         </div>
         <div>
-          <h4>Geçmiş ilk 3 benzerleri</h4>
+          <div class="profile-match__header">
+            <h4>Geçmiş ilk 3 benzerleri</h4>
+            <div class="profile-score">
+              <span><strong>${escapeHtml(profileSummary.count)}</strong> eşleşme</span>
+              <span><strong>${escapeHtml(profileSummary.averageFinish)}</strong> ort. sıra</span>
+              <span><strong>${escapeHtml(profileSummary.strongestSignal)}</strong></span>
+            </div>
+          </div>
           ${historicalMatches.length
             ? `<ul>
               ${historicalMatches.map((match) => `
