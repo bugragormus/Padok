@@ -91,6 +91,8 @@ const formatTimestamp = (value) => {
 
 const percentage = (count, total) => total > 0 ? Math.round((count / total) * 100) : 0;
 
+const clamp = (value, min, max) => Math.min(max, Math.max(min, value));
+
 const formatPosition = (value) => Number.isFinite(value) ? `${value}.` : "-";
 
 const readJson = async (path) => {
@@ -750,6 +752,77 @@ const getProfileSignalParts = (row, tableColumns, profileSummary) => {
   return parts.filter((part) => part.value > 0);
 };
 
+const getPrepFormScore = (row) => {
+  if (!row.hasPrepStart) return 8;
+  if (row.bestPrepFinishPosition === 1) return 28;
+  if (row.bestPrepFinishPosition === 2) return 23;
+  if (row.bestPrepFinishPosition === 3) return 19;
+  if (row.bestPrepFinishPosition <= 5) return 13;
+  return 7;
+};
+
+const getReadinessAssessment = (row, tableColumns, profileSummary) => {
+  const hasJockeyChange = rowHasJockeyChange(row, tableColumns);
+  const numericAverage = Number.parseFloat(profileSummary.averageFinish);
+  const profileEvidence = clamp((profileSummary.count * 7) + (Number.isFinite(numericAverage) ? Math.round(12 - (numericAverage * 3)) : 0), 0, 30);
+  const prepForm = getPrepFormScore(row);
+  const routeShape = row.prepStartCount >= 2 ? 18 : row.hasPrepStart ? 13 : 8;
+  const continuity = hasJockeyChange ? 7 : 13;
+  const dataDepth = [
+    row.sire,
+    row.dam,
+    row.owner,
+    row.gaziJockeyName,
+    row.bestPrepRaceName
+  ].filter(Boolean).length * 2;
+  const score = clamp(prepForm + profileEvidence + routeShape + continuity + dataDepth, 0, 100);
+  const confidence = clamp(35 + (row.hasPrepStart ? 20 : 0) + (profileSummary.count * 8) + (row.sire && row.dam ? 10 : 0) + (row.owner ? 5 : 0), 0, 100);
+  const upside = clamp(
+    (row.bestPrepFinishPosition === 1 ? 34 : 0)
+      + (profileSummary.count >= 3 ? 24 : profileSummary.count * 6)
+      + (row.prepStartCount === 0 ? 18 : 0)
+      + (row.prepStartCount >= 2 ? 10 : 0),
+    0,
+    100
+  );
+  const risk = clamp(
+    (row.prepStartCount === 0 ? 26 : 0)
+      + (hasJockeyChange ? 14 : 0)
+      + (profileSummary.count === 0 ? 18 : 0)
+      + (!row.sire || !row.dam ? 8 : 0),
+    0,
+    100
+  );
+  const label = score >= 78 ? "Güçlü aday profili" : score >= 64 ? "Ciddi takip profili" : score >= 50 ? "İzleme listesi" : "Eksik sinyal";
+  const confidenceLabel = confidence >= 76 ? "Yüksek güven" : confidence >= 58 ? "Orta güven" : "Düşük güven";
+  const riskLabel = risk >= 45 ? "Yüksek oynaklık" : risk >= 24 ? "Kontrollü risk" : "Düşük risk";
+  const primaryReason = row.bestPrepFinishPosition === 1
+    ? "Prep galibiyeti kompozit skoru yukarı taşıyor."
+    : row.prepStartCount === 0
+      ? "Rota dışı geldiği için upside var, fakat veri güveni sınırlı."
+      : profileSummary.count >= 3
+        ? "Geçmiş ilk 3 profilleriyle benzerlik yoğunluğu var."
+        : "Temel rota sinyali var; ayırıcı veri henüz sınırlı.";
+
+  return {
+    score,
+    confidence,
+    upside,
+    risk,
+    label,
+    confidenceLabel,
+    riskLabel,
+    primaryReason,
+    parts: [
+      { label: "prep formu", value: prepForm },
+      { label: "profil kanıtı", value: profileEvidence },
+      { label: "rota şekli", value: routeShape },
+      { label: "jokey sürekliliği", value: continuity },
+      { label: "veri derinliği", value: dataDepth }
+    ].filter((part) => part.value > 0)
+  };
+};
+
 const getProfileReason = (row, tableColumns, profileSummary) => {
   if (row.prepStartCount === 0) {
     return "Takip edilen prep rotasında görünmeden Gazi profiline geliyor.";
@@ -784,10 +857,14 @@ const renderProfileShortlist = (report, tableColumns) => {
         profileReading,
         reason: getProfileReason(row, tableColumns, profileSummary),
         signalParts: getProfileSignalParts(row, tableColumns, profileSummary),
+        readiness: getReadinessAssessment(row, tableColumns, profileSummary),
         tags: getProfileTags(row, tableColumns),
         score: getProfileAttentionScore(row, tableColumns, profileSummary)
       };
     });
+  const readinessBoard = [...profiles]
+    .sort((a, b) => b.readiness.score - a.readiness.score || b.readiness.confidence - a.readiness.confidence)
+    .slice(0, 4);
   const shortlist = [...profiles]
     .sort((a, b) => b.score - a.score || (a.row.gaziFinishPosition ?? 99) - (b.row.gaziFinishPosition ?? 99))
     .slice(0, 5);
@@ -804,10 +881,24 @@ const renderProfileShortlist = (report, tableColumns) => {
     ? `
       <div class="profile-shortlist__header">
         <div>
-          <p class="section-kicker">Profil kısa listesi</p>
-          <h3>İncelemeye değer sinyal profilleri</h3>
+          <p class="section-kicker">Tahmin okuması</p>
+          <h3>Aday profilleri nasıl önceliklendiriyoruz?</h3>
         </div>
-        <span>Skor tahmin değil, geçmiş benzerlik yoğunluğudur.</span>
+        <span>Readiness skoru Gazi sonucunu kullanmaz; prep formu, rota şekli, profil kanıtı ve veri güvenini birleştirir.</span>
+      </div>
+      <div class="readiness-board" aria-label="Readiness skor tablosu">
+        ${readinessBoard.map(({ row, readiness }) => `
+          <button class="readiness-card ${row.horseName === state.selectedParticipationHorse ? "readiness-card--selected" : ""}" type="button" data-horse-name="${escapeHtml(row.horseName)}" aria-pressed="${row.horseName === state.selectedParticipationHorse}">
+            <span>${escapeHtml(readiness.label)}</span>
+            <strong>${escapeHtml(row.horseName)}</strong>
+            <div class="readiness-card__score">
+              <b>${escapeHtml(readiness.score)}</b>
+              <small>/100</small>
+            </div>
+            <p>${escapeHtml(readiness.primaryReason)}</p>
+            <em>${escapeHtml(readiness.confidenceLabel)} · ${escapeHtml(readiness.riskLabel)} · Upside ${escapeHtml(readiness.upside)}</em>
+          </button>
+        `).join("")}
       </div>
       ${surpriseRadar.length ? `
         <div class="surprise-radar">
@@ -830,12 +921,19 @@ const renderProfileShortlist = (report, tableColumns) => {
           </div>
         </div>
       ` : ""}
+      <div class="profile-shortlist__header profile-shortlist__header--compact">
+        <div>
+          <p class="section-kicker">Profil kısa listesi</p>
+          <h3>Benzerlik sinyali yüksek atlar</h3>
+        </div>
+        <span>Bu liste geçmiş ilk 3 profillerine benzeyen sinyalleri büyütür.</span>
+      </div>
       <div class="profile-shortlist__grid">
-        ${shortlist.map(({ row, profileSummary, profileReading, tags, score, reason, signalParts }) => `
+        ${shortlist.map(({ row, profileSummary, profileReading, tags, score, reason, signalParts, readiness }) => `
           <button class="shortlist-card ${row.horseName === state.selectedParticipationHorse ? "shortlist-card--selected" : ""}" type="button" data-horse-name="${escapeHtml(row.horseName)}" aria-pressed="${row.horseName === state.selectedParticipationHorse}">
             <span>${escapeHtml(profileReading.level)}</span>
             <strong>${escapeHtml(row.horseName)}</strong>
-            <em>${escapeHtml(score)} profil puanı · ${escapeHtml(profileSummary.count)} eşleşme · Ort. ${escapeHtml(profileSummary.averageFinish)}</em>
+            <em>${escapeHtml(score)} profil puanı · Readiness ${escapeHtml(readiness.score)} · ${escapeHtml(profileSummary.count)} eşleşme</em>
             <p>${escapeHtml(reason)}</p>
             <div class="signal-parts">
               ${signalParts.slice(0, 4).map((part) => `<i>+${escapeHtml(part.value)} ${escapeHtml(part.label)}</i>`).join("")}
@@ -893,8 +991,10 @@ const renderParticipationDetail = (report, tableColumns, rows = report.rows) => 
   const historicalMatches = getHistoricalProfileMatches(selectedRow, report);
   const profileSummary = summarizeProfileMatches(historicalMatches);
   const profileReading = buildProfileReading(selectedRow, tableColumns, profileSummary);
+  const readiness = getReadinessAssessment(selectedRow, tableColumns, profileSummary);
 
   const metrics = [
+    ["Readiness", `${readiness.score}/100`],
     ["Gazi derecesi", formatPosition(selectedRow.gaziFinishPosition)],
     ["Prep startı", selectedRow.prepStartCount],
     ["Pas geçilen prep", selectedRow.skippedPrepCount],
@@ -932,6 +1032,29 @@ const renderParticipationDetail = (report, tableColumns, rows = report.rows) => 
         <strong>${escapeHtml(profileReading.level)}</strong>
         <p>${escapeHtml(profileReading.reason)}</p>
         <em>${escapeHtml(profileReading.caution)}</em>
+      </div>
+
+      <div class="readiness-panel">
+        <div>
+          <span>Readiness skoru</span>
+          <strong>${escapeHtml(readiness.label)} · ${escapeHtml(readiness.score)}/100</strong>
+          <p>${escapeHtml(readiness.primaryReason)}</p>
+        </div>
+        <div class="readiness-bars">
+          ${[
+            ["Güven", readiness.confidence],
+            ["Upside", readiness.upside],
+            ["Risk", readiness.risk]
+          ].map(([label, value]) => `
+            <div class="readiness-bar">
+              <span>${escapeHtml(label)} <strong>${escapeHtml(value)}</strong></span>
+              <i style="--value: ${value}%"></i>
+            </div>
+          `).join("")}
+        </div>
+        <div class="signal-parts">
+          ${readiness.parts.map((part) => `<i>+${escapeHtml(part.value)} ${escapeHtml(part.label)}</i>`).join("")}
+        </div>
       </div>
 
       <div class="horse-detail__grid">
