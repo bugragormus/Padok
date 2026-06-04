@@ -1,0 +1,2686 @@
+{
+  "generatedAt": "2026-06-04T17:06:47.920Z",
+  "sourceYear": 2020,
+  "sourceGeneratedAt": "2026-06-03T22:26:03.450Z",
+  "methodology": {
+    "target": "Gazi horse readiness",
+    "warning": "Readiness skoru karar destek sinyalidir; kesin sonuç tahmini veya bahis önerisi değildir.",
+    "leakageControl": "Profil kanıtı yalnızca analiz sezonundan önceki sezonlardan üretilir."
+  },
+  "summary": {
+    "analysisState": "field-available",
+    "runnerCount": 15,
+    "comparisonSeasonCount": 0,
+    "topScoreHorse": "CALL TO VICTORY",
+    "topUpsideHorse": "CALL TO VICTORY",
+    "topUncertaintyHorse": "SOZOPOL"
+  },
+  "lenses": {
+    "score": {
+      "label": "Ana skor",
+      "description": "En dengeli kompozit okuma"
+    },
+    "upside": {
+      "label": "Upside",
+      "description": "Patlama ihtimali yüksek profiller"
+    },
+    "lowRisk": {
+      "label": "Düşük risk",
+      "description": "Güven ve süreklilik ağırlıklı okuma"
+    },
+    "uncertainty": {
+      "label": "Veri eksiği",
+      "description": "Eksik ama izlenmesi gereken profiller"
+    }
+  },
+  "rankings": {
+    "score": [
+      {
+        "rank": 1,
+        "horseName": "CALL TO VICTORY",
+        "gaziFinishPosition": 1,
+        "lensValue": 69,
+        "badge": "Ciddi takip profili",
+        "reason": "Prep galibiyeti kompozit skoru yukarı taşıyor.",
+        "meta": "Orta güven · Düşük risk · Upside 44",
+        "readiness": {
+          "score": 69,
+          "confidence": 70,
+          "upside": 44,
+          "risk": 18,
+          "label": "Ciddi takip profili",
+          "confidenceLabel": "Orta güven",
+          "riskLabel": "Düşük risk",
+          "primaryReason": "Prep galibiyeti kompozit skoru yukarı taşıyor.",
+          "parts": [
+            {
+              "label": "prep formu",
+              "value": 28
+            },
+            {
+              "label": "rota şekli",
+              "value": 18
+            },
+            {
+              "label": "jokey sürekliliği",
+              "value": 13
+            },
+            {
+              "label": "veri derinliği",
+              "value": 10
+            }
+          ]
+        },
+        "profileSummary": {
+          "count": 0,
+          "averageFinish": "-",
+          "strongestSignal": "Yok",
+          "note": "Geçmiş ilk 3 içinde aynı profil sinyaliyle güçlü eşleşme bulunmadı."
+        },
+        "historicalMatches": []
+      },
+      {
+        "rank": 2,
+        "horseName": "VERNAZZA",
+        "gaziFinishPosition": 5,
+        "lensValue": 64,
+        "badge": "Ciddi takip profili",
+        "reason": "Temel rota sinyali var; ayırıcı veri henüz sınırlı.",
+        "meta": "Orta güven · Düşük risk · Upside 10",
+        "readiness": {
+          "score": 64,
+          "confidence": 70,
+          "upside": 10,
+          "risk": 18,
+          "label": "Ciddi takip profili",
+          "confidenceLabel": "Orta güven",
+          "riskLabel": "Düşük risk",
+          "primaryReason": "Temel rota sinyali var; ayırıcı veri henüz sınırlı.",
+          "parts": [
+            {
+              "label": "prep formu",
+              "value": 23
+            },
+            {
+              "label": "rota şekli",
+              "value": 18
+            },
+            {
+              "label": "jokey sürekliliği",
+              "value": 13
+            },
+            {
+              "label": "veri derinliği",
+              "value": 10
+            }
+          ]
+        },
+        "profileSummary": {
+          "count": 0,
+          "averageFinish": "-",
+          "strongestSignal": "Yok",
+          "note": "Geçmiş ilk 3 içinde aynı profil sinyaliyle güçlü eşleşme bulunmadı."
+        },
+        "historicalMatches": []
+      },
+      {
+        "rank": 3,
+        "horseName": "PRIOR",
+        "gaziFinishPosition": 7,
+        "lensValue": 63,
+        "badge": "İzleme listesi",
+        "reason": "Prep galibiyeti kompozit skoru yukarı taşıyor.",
+        "meta": "Orta güven · Kontrollü risk · Upside 44",
+        "readiness": {
+          "score": 63,
+          "confidence": 70,
+          "upside": 44,
+          "risk": 32,
+          "label": "İzleme listesi",
+          "confidenceLabel": "Orta güven",
+          "riskLabel": "Kontrollü risk",
+          "primaryReason": "Prep galibiyeti kompozit skoru yukarı taşıyor.",
+          "parts": [
+            {
+              "label": "prep formu",
+              "value": 28
+            },
+            {
+              "label": "rota şekli",
+              "value": 18
+            },
+            {
+              "label": "jokey sürekliliği",
+              "value": 7
+            },
+            {
+              "label": "veri derinliği",
+              "value": 10
+            }
+          ]
+        },
+        "profileSummary": {
+          "count": 0,
+          "averageFinish": "-",
+          "strongestSignal": "Yok",
+          "note": "Geçmiş ilk 3 içinde aynı profil sinyaliyle güçlü eşleşme bulunmadı."
+        },
+        "historicalMatches": []
+      },
+      {
+        "rank": 4,
+        "horseName": "LORD OF GAME",
+        "gaziFinishPosition": 2,
+        "lensValue": 59,
+        "badge": "İzleme listesi",
+        "reason": "Temel rota sinyali var; ayırıcı veri henüz sınırlı.",
+        "meta": "Orta güven · Düşük risk · Upside 0",
+        "readiness": {
+          "score": 59,
+          "confidence": 70,
+          "upside": 0,
+          "risk": 18,
+          "label": "İzleme listesi",
+          "confidenceLabel": "Orta güven",
+          "riskLabel": "Düşük risk",
+          "primaryReason": "Temel rota sinyali var; ayırıcı veri henüz sınırlı.",
+          "parts": [
+            {
+              "label": "prep formu",
+              "value": 23
+            },
+            {
+              "label": "rota şekli",
+              "value": 13
+            },
+            {
+              "label": "jokey sürekliliği",
+              "value": 13
+            },
+            {
+              "label": "veri derinliği",
+              "value": 10
+            }
+          ]
+        },
+        "profileSummary": {
+          "count": 0,
+          "averageFinish": "-",
+          "strongestSignal": "Yok",
+          "note": "Geçmiş ilk 3 içinde aynı profil sinyaliyle güçlü eşleşme bulunmadı."
+        },
+        "historicalMatches": []
+      },
+      {
+        "rank": 5,
+        "horseName": "POWERMAN",
+        "gaziFinishPosition": 9,
+        "lensValue": 58,
+        "badge": "İzleme listesi",
+        "reason": "Prep galibiyeti kompozit skoru yukarı taşıyor.",
+        "meta": "Orta güven · Kontrollü risk · Upside 34",
+        "readiness": {
+          "score": 58,
+          "confidence": 70,
+          "upside": 34,
+          "risk": 32,
+          "label": "İzleme listesi",
+          "confidenceLabel": "Orta güven",
+          "riskLabel": "Kontrollü risk",
+          "primaryReason": "Prep galibiyeti kompozit skoru yukarı taşıyor.",
+          "parts": [
+            {
+              "label": "prep formu",
+              "value": 28
+            },
+            {
+              "label": "rota şekli",
+              "value": 13
+            },
+            {
+              "label": "jokey sürekliliği",
+              "value": 7
+            },
+            {
+              "label": "veri derinliği",
+              "value": 10
+            }
+          ]
+        },
+        "profileSummary": {
+          "count": 0,
+          "averageFinish": "-",
+          "strongestSignal": "Yok",
+          "note": "Geçmiş ilk 3 içinde aynı profil sinyaliyle güçlü eşleşme bulunmadı."
+        },
+        "historicalMatches": []
+      },
+      {
+        "rank": 6,
+        "horseName": "KINGSMAN",
+        "gaziFinishPosition": 3,
+        "lensValue": 54,
+        "badge": "İzleme listesi",
+        "reason": "Temel rota sinyali var; ayırıcı veri henüz sınırlı.",
+        "meta": "Orta güven · Düşük risk · Upside 10",
+        "readiness": {
+          "score": 54,
+          "confidence": 70,
+          "upside": 10,
+          "risk": 18,
+          "label": "İzleme listesi",
+          "confidenceLabel": "Orta güven",
+          "riskLabel": "Düşük risk",
+          "primaryReason": "Temel rota sinyali var; ayırıcı veri henüz sınırlı.",
+          "parts": [
+            {
+              "label": "prep formu",
+              "value": 13
+            },
+            {
+              "label": "rota şekli",
+              "value": 18
+            },
+            {
+              "label": "jokey sürekliliği",
+              "value": 13
+            },
+            {
+              "label": "veri derinliği",
+              "value": 10
+            }
+          ]
+        },
+        "profileSummary": {
+          "count": 0,
+          "averageFinish": "-",
+          "strongestSignal": "Yok",
+          "note": "Geçmiş ilk 3 içinde aynı profil sinyaliyle güçlü eşleşme bulunmadı."
+        },
+        "historicalMatches": []
+      },
+      {
+        "rank": 7,
+        "horseName": "FULL THROTTLE",
+        "gaziFinishPosition": 11,
+        "lensValue": 54,
+        "badge": "İzleme listesi",
+        "reason": "Temel rota sinyali var; ayırıcı veri henüz sınırlı.",
+        "meta": "Orta güven · Kontrollü risk · Upside 10",
+        "readiness": {
+          "score": 54,
+          "confidence": 70,
+          "upside": 10,
+          "risk": 32,
+          "label": "İzleme listesi",
+          "confidenceLabel": "Orta güven",
+          "riskLabel": "Kontrollü risk",
+          "primaryReason": "Temel rota sinyali var; ayırıcı veri henüz sınırlı.",
+          "parts": [
+            {
+              "label": "prep formu",
+              "value": 19
+            },
+            {
+              "label": "rota şekli",
+              "value": 18
+            },
+            {
+              "label": "jokey sürekliliği",
+              "value": 7
+            },
+            {
+              "label": "veri derinliği",
+              "value": 10
+            }
+          ]
+        },
+        "profileSummary": {
+          "count": 0,
+          "averageFinish": "-",
+          "strongestSignal": "Yok",
+          "note": "Geçmiş ilk 3 içinde aynı profil sinyaliyle güçlü eşleşme bulunmadı."
+        },
+        "historicalMatches": []
+      },
+      {
+        "rank": 8,
+        "horseName": "COACH",
+        "gaziFinishPosition": 4,
+        "lensValue": 49,
+        "badge": "Eksik sinyal",
+        "reason": "Temel rota sinyali var; ayırıcı veri henüz sınırlı.",
+        "meta": "Orta güven · Düşük risk · Upside 0",
+        "readiness": {
+          "score": 49,
+          "confidence": 70,
+          "upside": 0,
+          "risk": 18,
+          "label": "Eksik sinyal",
+          "confidenceLabel": "Orta güven",
+          "riskLabel": "Düşük risk",
+          "primaryReason": "Temel rota sinyali var; ayırıcı veri henüz sınırlı.",
+          "parts": [
+            {
+              "label": "prep formu",
+              "value": 13
+            },
+            {
+              "label": "rota şekli",
+              "value": 13
+            },
+            {
+              "label": "jokey sürekliliği",
+              "value": 13
+            },
+            {
+              "label": "veri derinliği",
+              "value": 10
+            }
+          ]
+        },
+        "profileSummary": {
+          "count": 0,
+          "averageFinish": "-",
+          "strongestSignal": "Yok",
+          "note": "Geçmiş ilk 3 içinde aynı profil sinyaliyle güçlü eşleşme bulunmadı."
+        },
+        "historicalMatches": []
+      },
+      {
+        "rank": 9,
+        "horseName": "UPPER CUT",
+        "gaziFinishPosition": 6,
+        "lensValue": 43,
+        "badge": "Eksik sinyal",
+        "reason": "Temel rota sinyali var; ayırıcı veri henüz sınırlı.",
+        "meta": "Orta güven · Kontrollü risk · Upside 0",
+        "readiness": {
+          "score": 43,
+          "confidence": 70,
+          "upside": 0,
+          "risk": 32,
+          "label": "Eksik sinyal",
+          "confidenceLabel": "Orta güven",
+          "riskLabel": "Kontrollü risk",
+          "primaryReason": "Temel rota sinyali var; ayırıcı veri henüz sınırlı.",
+          "parts": [
+            {
+              "label": "prep formu",
+              "value": 13
+            },
+            {
+              "label": "rota şekli",
+              "value": 13
+            },
+            {
+              "label": "jokey sürekliliği",
+              "value": 7
+            },
+            {
+              "label": "veri derinliği",
+              "value": 10
+            }
+          ]
+        },
+        "profileSummary": {
+          "count": 0,
+          "averageFinish": "-",
+          "strongestSignal": "Yok",
+          "note": "Geçmiş ilk 3 içinde aynı profil sinyaliyle güçlü eşleşme bulunmadı."
+        },
+        "historicalMatches": []
+      },
+      {
+        "rank": 10,
+        "horseName": "ÇAKALINOĞLU",
+        "gaziFinishPosition": 14,
+        "lensValue": 43,
+        "badge": "Eksik sinyal",
+        "reason": "Temel rota sinyali var; ayırıcı veri henüz sınırlı.",
+        "meta": "Orta güven · Kontrollü risk · Upside 0",
+        "readiness": {
+          "score": 43,
+          "confidence": 70,
+          "upside": 0,
+          "risk": 32,
+          "label": "Eksik sinyal",
+          "confidenceLabel": "Orta güven",
+          "riskLabel": "Kontrollü risk",
+          "primaryReason": "Temel rota sinyali var; ayırıcı veri henüz sınırlı.",
+          "parts": [
+            {
+              "label": "prep formu",
+              "value": 13
+            },
+            {
+              "label": "rota şekli",
+              "value": 13
+            },
+            {
+              "label": "jokey sürekliliği",
+              "value": 7
+            },
+            {
+              "label": "veri derinliği",
+              "value": 10
+            }
+          ]
+        },
+        "profileSummary": {
+          "count": 0,
+          "averageFinish": "-",
+          "strongestSignal": "Yok",
+          "note": "Geçmiş ilk 3 içinde aynı profil sinyaliyle güçlü eşleşme bulunmadı."
+        },
+        "historicalMatches": []
+      },
+      {
+        "rank": 11,
+        "horseName": "ZABUN",
+        "gaziFinishPosition": 10,
+        "lensValue": 37,
+        "badge": "Eksik sinyal",
+        "reason": "Temel rota sinyali var; ayırıcı veri henüz sınırlı.",
+        "meta": "Orta güven · Kontrollü risk · Upside 0",
+        "readiness": {
+          "score": 37,
+          "confidence": 70,
+          "upside": 0,
+          "risk": 32,
+          "label": "Eksik sinyal",
+          "confidenceLabel": "Orta güven",
+          "riskLabel": "Kontrollü risk",
+          "primaryReason": "Temel rota sinyali var; ayırıcı veri henüz sınırlı.",
+          "parts": [
+            {
+              "label": "prep formu",
+              "value": 7
+            },
+            {
+              "label": "rota şekli",
+              "value": 13
+            },
+            {
+              "label": "jokey sürekliliği",
+              "value": 7
+            },
+            {
+              "label": "veri derinliği",
+              "value": 10
+            }
+          ]
+        },
+        "profileSummary": {
+          "count": 0,
+          "averageFinish": "-",
+          "strongestSignal": "Yok",
+          "note": "Geçmiş ilk 3 içinde aynı profil sinyaliyle güçlü eşleşme bulunmadı."
+        },
+        "historicalMatches": []
+      },
+      {
+        "rank": 12,
+        "horseName": "SOZOPOL",
+        "gaziFinishPosition": 8,
+        "lensValue": 37,
+        "badge": "Eksik sinyal",
+        "reason": "Rota dışı geldiği için upside var, fakat veri güveni sınırlı.",
+        "meta": "Düşük güven · Kontrollü risk · Upside 18",
+        "readiness": {
+          "score": 37,
+          "confidence": 50,
+          "upside": 18,
+          "risk": 44,
+          "label": "Eksik sinyal",
+          "confidenceLabel": "Düşük güven",
+          "riskLabel": "Kontrollü risk",
+          "primaryReason": "Rota dışı geldiği için upside var, fakat veri güveni sınırlı.",
+          "parts": [
+            {
+              "label": "prep formu",
+              "value": 8
+            },
+            {
+              "label": "rota şekli",
+              "value": 8
+            },
+            {
+              "label": "jokey sürekliliği",
+              "value": 13
+            },
+            {
+              "label": "veri derinliği",
+              "value": 8
+            }
+          ]
+        },
+        "profileSummary": {
+          "count": 0,
+          "averageFinish": "-",
+          "strongestSignal": "Yok",
+          "note": "Geçmiş ilk 3 içinde aynı profil sinyaliyle güçlü eşleşme bulunmadı."
+        },
+        "historicalMatches": []
+      },
+      {
+        "rank": 13,
+        "horseName": "DEMBE",
+        "gaziFinishPosition": 12,
+        "lensValue": 37,
+        "badge": "Eksik sinyal",
+        "reason": "Rota dışı geldiği için upside var, fakat veri güveni sınırlı.",
+        "meta": "Düşük güven · Kontrollü risk · Upside 18",
+        "readiness": {
+          "score": 37,
+          "confidence": 50,
+          "upside": 18,
+          "risk": 44,
+          "label": "Eksik sinyal",
+          "confidenceLabel": "Düşük güven",
+          "riskLabel": "Kontrollü risk",
+          "primaryReason": "Rota dışı geldiği için upside var, fakat veri güveni sınırlı.",
+          "parts": [
+            {
+              "label": "prep formu",
+              "value": 8
+            },
+            {
+              "label": "rota şekli",
+              "value": 8
+            },
+            {
+              "label": "jokey sürekliliği",
+              "value": 13
+            },
+            {
+              "label": "veri derinliği",
+              "value": 8
+            }
+          ]
+        },
+        "profileSummary": {
+          "count": 0,
+          "averageFinish": "-",
+          "strongestSignal": "Yok",
+          "note": "Geçmiş ilk 3 içinde aynı profil sinyaliyle güçlü eşleşme bulunmadı."
+        },
+        "historicalMatches": []
+      },
+      {
+        "rank": 14,
+        "horseName": "KING MAN GO",
+        "gaziFinishPosition": 13,
+        "lensValue": 37,
+        "badge": "Eksik sinyal",
+        "reason": "Rota dışı geldiği için upside var, fakat veri güveni sınırlı.",
+        "meta": "Düşük güven · Kontrollü risk · Upside 18",
+        "readiness": {
+          "score": 37,
+          "confidence": 50,
+          "upside": 18,
+          "risk": 44,
+          "label": "Eksik sinyal",
+          "confidenceLabel": "Düşük güven",
+          "riskLabel": "Kontrollü risk",
+          "primaryReason": "Rota dışı geldiği için upside var, fakat veri güveni sınırlı.",
+          "parts": [
+            {
+              "label": "prep formu",
+              "value": 8
+            },
+            {
+              "label": "rota şekli",
+              "value": 8
+            },
+            {
+              "label": "jokey sürekliliği",
+              "value": 13
+            },
+            {
+              "label": "veri derinliği",
+              "value": 8
+            }
+          ]
+        },
+        "profileSummary": {
+          "count": 0,
+          "averageFinish": "-",
+          "strongestSignal": "Yok",
+          "note": "Geçmiş ilk 3 içinde aynı profil sinyaliyle güçlü eşleşme bulunmadı."
+        },
+        "historicalMatches": []
+      },
+      {
+        "rank": 15,
+        "horseName": "PREMIUM MOVER",
+        "gaziFinishPosition": 15,
+        "lensValue": 37,
+        "badge": "Eksik sinyal",
+        "reason": "Rota dışı geldiği için upside var, fakat veri güveni sınırlı.",
+        "meta": "Düşük güven · Kontrollü risk · Upside 18",
+        "readiness": {
+          "score": 37,
+          "confidence": 50,
+          "upside": 18,
+          "risk": 44,
+          "label": "Eksik sinyal",
+          "confidenceLabel": "Düşük güven",
+          "riskLabel": "Kontrollü risk",
+          "primaryReason": "Rota dışı geldiği için upside var, fakat veri güveni sınırlı.",
+          "parts": [
+            {
+              "label": "prep formu",
+              "value": 8
+            },
+            {
+              "label": "rota şekli",
+              "value": 8
+            },
+            {
+              "label": "jokey sürekliliği",
+              "value": 13
+            },
+            {
+              "label": "veri derinliği",
+              "value": 8
+            }
+          ]
+        },
+        "profileSummary": {
+          "count": 0,
+          "averageFinish": "-",
+          "strongestSignal": "Yok",
+          "note": "Geçmiş ilk 3 içinde aynı profil sinyaliyle güçlü eşleşme bulunmadı."
+        },
+        "historicalMatches": []
+      }
+    ],
+    "upside": [
+      {
+        "rank": 1,
+        "horseName": "CALL TO VICTORY",
+        "gaziFinishPosition": 1,
+        "lensValue": 44,
+        "badge": "Upside 44",
+        "reason": "Prep galibiyeti bu profilde upside sinyalini yukarı çekiyor.",
+        "meta": "Orta güven · Risk 18 · Readiness 69",
+        "readiness": {
+          "score": 69,
+          "confidence": 70,
+          "upside": 44,
+          "risk": 18,
+          "label": "Ciddi takip profili",
+          "confidenceLabel": "Orta güven",
+          "riskLabel": "Düşük risk",
+          "primaryReason": "Prep galibiyeti kompozit skoru yukarı taşıyor.",
+          "parts": [
+            {
+              "label": "prep formu",
+              "value": 28
+            },
+            {
+              "label": "rota şekli",
+              "value": 18
+            },
+            {
+              "label": "jokey sürekliliği",
+              "value": 13
+            },
+            {
+              "label": "veri derinliği",
+              "value": 10
+            }
+          ]
+        },
+        "profileSummary": {
+          "count": 0,
+          "averageFinish": "-",
+          "strongestSignal": "Yok",
+          "note": "Geçmiş ilk 3 içinde aynı profil sinyaliyle güçlü eşleşme bulunmadı."
+        },
+        "historicalMatches": []
+      },
+      {
+        "rank": 2,
+        "horseName": "PRIOR",
+        "gaziFinishPosition": 7,
+        "lensValue": 44,
+        "badge": "Upside 44",
+        "reason": "Prep galibiyeti bu profilde upside sinyalini yukarı çekiyor.",
+        "meta": "Orta güven · Risk 32 · Readiness 63",
+        "readiness": {
+          "score": 63,
+          "confidence": 70,
+          "upside": 44,
+          "risk": 32,
+          "label": "İzleme listesi",
+          "confidenceLabel": "Orta güven",
+          "riskLabel": "Kontrollü risk",
+          "primaryReason": "Prep galibiyeti kompozit skoru yukarı taşıyor.",
+          "parts": [
+            {
+              "label": "prep formu",
+              "value": 28
+            },
+            {
+              "label": "rota şekli",
+              "value": 18
+            },
+            {
+              "label": "jokey sürekliliği",
+              "value": 7
+            },
+            {
+              "label": "veri derinliği",
+              "value": 10
+            }
+          ]
+        },
+        "profileSummary": {
+          "count": 0,
+          "averageFinish": "-",
+          "strongestSignal": "Yok",
+          "note": "Geçmiş ilk 3 içinde aynı profil sinyaliyle güçlü eşleşme bulunmadı."
+        },
+        "historicalMatches": []
+      },
+      {
+        "rank": 3,
+        "horseName": "POWERMAN",
+        "gaziFinishPosition": 9,
+        "lensValue": 34,
+        "badge": "Upside 34",
+        "reason": "Prep galibiyeti bu profilde upside sinyalini yukarı çekiyor.",
+        "meta": "Orta güven · Risk 32 · Readiness 58",
+        "readiness": {
+          "score": 58,
+          "confidence": 70,
+          "upside": 34,
+          "risk": 32,
+          "label": "İzleme listesi",
+          "confidenceLabel": "Orta güven",
+          "riskLabel": "Kontrollü risk",
+          "primaryReason": "Prep galibiyeti kompozit skoru yukarı taşıyor.",
+          "parts": [
+            {
+              "label": "prep formu",
+              "value": 28
+            },
+            {
+              "label": "rota şekli",
+              "value": 13
+            },
+            {
+              "label": "jokey sürekliliği",
+              "value": 7
+            },
+            {
+              "label": "veri derinliği",
+              "value": 10
+            }
+          ]
+        },
+        "profileSummary": {
+          "count": 0,
+          "averageFinish": "-",
+          "strongestSignal": "Yok",
+          "note": "Geçmiş ilk 3 içinde aynı profil sinyaliyle güçlü eşleşme bulunmadı."
+        },
+        "historicalMatches": []
+      },
+      {
+        "rank": 4,
+        "horseName": "SOZOPOL",
+        "gaziFinishPosition": 8,
+        "lensValue": 18,
+        "badge": "Upside 18",
+        "reason": "Rota dışı profil, düşük görünürlükten gelen sürpriz ihtimali taşıyor.",
+        "meta": "Düşük güven · Risk 44 · Readiness 37",
+        "readiness": {
+          "score": 37,
+          "confidence": 50,
+          "upside": 18,
+          "risk": 44,
+          "label": "Eksik sinyal",
+          "confidenceLabel": "Düşük güven",
+          "riskLabel": "Kontrollü risk",
+          "primaryReason": "Rota dışı geldiği için upside var, fakat veri güveni sınırlı.",
+          "parts": [
+            {
+              "label": "prep formu",
+              "value": 8
+            },
+            {
+              "label": "rota şekli",
+              "value": 8
+            },
+            {
+              "label": "jokey sürekliliği",
+              "value": 13
+            },
+            {
+              "label": "veri derinliği",
+              "value": 8
+            }
+          ]
+        },
+        "profileSummary": {
+          "count": 0,
+          "averageFinish": "-",
+          "strongestSignal": "Yok",
+          "note": "Geçmiş ilk 3 içinde aynı profil sinyaliyle güçlü eşleşme bulunmadı."
+        },
+        "historicalMatches": []
+      },
+      {
+        "rank": 5,
+        "horseName": "DEMBE",
+        "gaziFinishPosition": 12,
+        "lensValue": 18,
+        "badge": "Upside 18",
+        "reason": "Rota dışı profil, düşük görünürlükten gelen sürpriz ihtimali taşıyor.",
+        "meta": "Düşük güven · Risk 44 · Readiness 37",
+        "readiness": {
+          "score": 37,
+          "confidence": 50,
+          "upside": 18,
+          "risk": 44,
+          "label": "Eksik sinyal",
+          "confidenceLabel": "Düşük güven",
+          "riskLabel": "Kontrollü risk",
+          "primaryReason": "Rota dışı geldiği için upside var, fakat veri güveni sınırlı.",
+          "parts": [
+            {
+              "label": "prep formu",
+              "value": 8
+            },
+            {
+              "label": "rota şekli",
+              "value": 8
+            },
+            {
+              "label": "jokey sürekliliği",
+              "value": 13
+            },
+            {
+              "label": "veri derinliği",
+              "value": 8
+            }
+          ]
+        },
+        "profileSummary": {
+          "count": 0,
+          "averageFinish": "-",
+          "strongestSignal": "Yok",
+          "note": "Geçmiş ilk 3 içinde aynı profil sinyaliyle güçlü eşleşme bulunmadı."
+        },
+        "historicalMatches": []
+      },
+      {
+        "rank": 6,
+        "horseName": "KING MAN GO",
+        "gaziFinishPosition": 13,
+        "lensValue": 18,
+        "badge": "Upside 18",
+        "reason": "Rota dışı profil, düşük görünürlükten gelen sürpriz ihtimali taşıyor.",
+        "meta": "Düşük güven · Risk 44 · Readiness 37",
+        "readiness": {
+          "score": 37,
+          "confidence": 50,
+          "upside": 18,
+          "risk": 44,
+          "label": "Eksik sinyal",
+          "confidenceLabel": "Düşük güven",
+          "riskLabel": "Kontrollü risk",
+          "primaryReason": "Rota dışı geldiği için upside var, fakat veri güveni sınırlı.",
+          "parts": [
+            {
+              "label": "prep formu",
+              "value": 8
+            },
+            {
+              "label": "rota şekli",
+              "value": 8
+            },
+            {
+              "label": "jokey sürekliliği",
+              "value": 13
+            },
+            {
+              "label": "veri derinliği",
+              "value": 8
+            }
+          ]
+        },
+        "profileSummary": {
+          "count": 0,
+          "averageFinish": "-",
+          "strongestSignal": "Yok",
+          "note": "Geçmiş ilk 3 içinde aynı profil sinyaliyle güçlü eşleşme bulunmadı."
+        },
+        "historicalMatches": []
+      },
+      {
+        "rank": 7,
+        "horseName": "PREMIUM MOVER",
+        "gaziFinishPosition": 15,
+        "lensValue": 18,
+        "badge": "Upside 18",
+        "reason": "Rota dışı profil, düşük görünürlükten gelen sürpriz ihtimali taşıyor.",
+        "meta": "Düşük güven · Risk 44 · Readiness 37",
+        "readiness": {
+          "score": 37,
+          "confidence": 50,
+          "upside": 18,
+          "risk": 44,
+          "label": "Eksik sinyal",
+          "confidenceLabel": "Düşük güven",
+          "riskLabel": "Kontrollü risk",
+          "primaryReason": "Rota dışı geldiği için upside var, fakat veri güveni sınırlı.",
+          "parts": [
+            {
+              "label": "prep formu",
+              "value": 8
+            },
+            {
+              "label": "rota şekli",
+              "value": 8
+            },
+            {
+              "label": "jokey sürekliliği",
+              "value": 13
+            },
+            {
+              "label": "veri derinliği",
+              "value": 8
+            }
+          ]
+        },
+        "profileSummary": {
+          "count": 0,
+          "averageFinish": "-",
+          "strongestSignal": "Yok",
+          "note": "Geçmiş ilk 3 içinde aynı profil sinyaliyle güçlü eşleşme bulunmadı."
+        },
+        "historicalMatches": []
+      },
+      {
+        "rank": 8,
+        "horseName": "VERNAZZA",
+        "gaziFinishPosition": 5,
+        "lensValue": 10,
+        "badge": "Upside 10",
+        "reason": "Geçmiş profil kanıtı ve rota formu birlikte patlama ihtimali üretiyor.",
+        "meta": "Orta güven · Risk 18 · Readiness 64",
+        "readiness": {
+          "score": 64,
+          "confidence": 70,
+          "upside": 10,
+          "risk": 18,
+          "label": "Ciddi takip profili",
+          "confidenceLabel": "Orta güven",
+          "riskLabel": "Düşük risk",
+          "primaryReason": "Temel rota sinyali var; ayırıcı veri henüz sınırlı.",
+          "parts": [
+            {
+              "label": "prep formu",
+              "value": 23
+            },
+            {
+              "label": "rota şekli",
+              "value": 18
+            },
+            {
+              "label": "jokey sürekliliği",
+              "value": 13
+            },
+            {
+              "label": "veri derinliği",
+              "value": 10
+            }
+          ]
+        },
+        "profileSummary": {
+          "count": 0,
+          "averageFinish": "-",
+          "strongestSignal": "Yok",
+          "note": "Geçmiş ilk 3 içinde aynı profil sinyaliyle güçlü eşleşme bulunmadı."
+        },
+        "historicalMatches": []
+      },
+      {
+        "rank": 9,
+        "horseName": "KINGSMAN",
+        "gaziFinishPosition": 3,
+        "lensValue": 10,
+        "badge": "Upside 10",
+        "reason": "Geçmiş profil kanıtı ve rota formu birlikte patlama ihtimali üretiyor.",
+        "meta": "Orta güven · Risk 18 · Readiness 54",
+        "readiness": {
+          "score": 54,
+          "confidence": 70,
+          "upside": 10,
+          "risk": 18,
+          "label": "İzleme listesi",
+          "confidenceLabel": "Orta güven",
+          "riskLabel": "Düşük risk",
+          "primaryReason": "Temel rota sinyali var; ayırıcı veri henüz sınırlı.",
+          "parts": [
+            {
+              "label": "prep formu",
+              "value": 13
+            },
+            {
+              "label": "rota şekli",
+              "value": 18
+            },
+            {
+              "label": "jokey sürekliliği",
+              "value": 13
+            },
+            {
+              "label": "veri derinliği",
+              "value": 10
+            }
+          ]
+        },
+        "profileSummary": {
+          "count": 0,
+          "averageFinish": "-",
+          "strongestSignal": "Yok",
+          "note": "Geçmiş ilk 3 içinde aynı profil sinyaliyle güçlü eşleşme bulunmadı."
+        },
+        "historicalMatches": []
+      },
+      {
+        "rank": 10,
+        "horseName": "FULL THROTTLE",
+        "gaziFinishPosition": 11,
+        "lensValue": 10,
+        "badge": "Upside 10",
+        "reason": "Geçmiş profil kanıtı ve rota formu birlikte patlama ihtimali üretiyor.",
+        "meta": "Orta güven · Risk 32 · Readiness 54",
+        "readiness": {
+          "score": 54,
+          "confidence": 70,
+          "upside": 10,
+          "risk": 32,
+          "label": "İzleme listesi",
+          "confidenceLabel": "Orta güven",
+          "riskLabel": "Kontrollü risk",
+          "primaryReason": "Temel rota sinyali var; ayırıcı veri henüz sınırlı.",
+          "parts": [
+            {
+              "label": "prep formu",
+              "value": 19
+            },
+            {
+              "label": "rota şekli",
+              "value": 18
+            },
+            {
+              "label": "jokey sürekliliği",
+              "value": 7
+            },
+            {
+              "label": "veri derinliği",
+              "value": 10
+            }
+          ]
+        },
+        "profileSummary": {
+          "count": 0,
+          "averageFinish": "-",
+          "strongestSignal": "Yok",
+          "note": "Geçmiş ilk 3 içinde aynı profil sinyaliyle güçlü eşleşme bulunmadı."
+        },
+        "historicalMatches": []
+      },
+      {
+        "rank": 11,
+        "horseName": "LORD OF GAME",
+        "gaziFinishPosition": 2,
+        "lensValue": 0,
+        "badge": "Upside 0",
+        "reason": "Geçmiş profil kanıtı ve rota formu birlikte patlama ihtimali üretiyor.",
+        "meta": "Orta güven · Risk 18 · Readiness 59",
+        "readiness": {
+          "score": 59,
+          "confidence": 70,
+          "upside": 0,
+          "risk": 18,
+          "label": "İzleme listesi",
+          "confidenceLabel": "Orta güven",
+          "riskLabel": "Düşük risk",
+          "primaryReason": "Temel rota sinyali var; ayırıcı veri henüz sınırlı.",
+          "parts": [
+            {
+              "label": "prep formu",
+              "value": 23
+            },
+            {
+              "label": "rota şekli",
+              "value": 13
+            },
+            {
+              "label": "jokey sürekliliği",
+              "value": 13
+            },
+            {
+              "label": "veri derinliği",
+              "value": 10
+            }
+          ]
+        },
+        "profileSummary": {
+          "count": 0,
+          "averageFinish": "-",
+          "strongestSignal": "Yok",
+          "note": "Geçmiş ilk 3 içinde aynı profil sinyaliyle güçlü eşleşme bulunmadı."
+        },
+        "historicalMatches": []
+      },
+      {
+        "rank": 12,
+        "horseName": "COACH",
+        "gaziFinishPosition": 4,
+        "lensValue": 0,
+        "badge": "Upside 0",
+        "reason": "Geçmiş profil kanıtı ve rota formu birlikte patlama ihtimali üretiyor.",
+        "meta": "Orta güven · Risk 18 · Readiness 49",
+        "readiness": {
+          "score": 49,
+          "confidence": 70,
+          "upside": 0,
+          "risk": 18,
+          "label": "Eksik sinyal",
+          "confidenceLabel": "Orta güven",
+          "riskLabel": "Düşük risk",
+          "primaryReason": "Temel rota sinyali var; ayırıcı veri henüz sınırlı.",
+          "parts": [
+            {
+              "label": "prep formu",
+              "value": 13
+            },
+            {
+              "label": "rota şekli",
+              "value": 13
+            },
+            {
+              "label": "jokey sürekliliği",
+              "value": 13
+            },
+            {
+              "label": "veri derinliği",
+              "value": 10
+            }
+          ]
+        },
+        "profileSummary": {
+          "count": 0,
+          "averageFinish": "-",
+          "strongestSignal": "Yok",
+          "note": "Geçmiş ilk 3 içinde aynı profil sinyaliyle güçlü eşleşme bulunmadı."
+        },
+        "historicalMatches": []
+      },
+      {
+        "rank": 13,
+        "horseName": "UPPER CUT",
+        "gaziFinishPosition": 6,
+        "lensValue": 0,
+        "badge": "Upside 0",
+        "reason": "Geçmiş profil kanıtı ve rota formu birlikte patlama ihtimali üretiyor.",
+        "meta": "Orta güven · Risk 32 · Readiness 43",
+        "readiness": {
+          "score": 43,
+          "confidence": 70,
+          "upside": 0,
+          "risk": 32,
+          "label": "Eksik sinyal",
+          "confidenceLabel": "Orta güven",
+          "riskLabel": "Kontrollü risk",
+          "primaryReason": "Temel rota sinyali var; ayırıcı veri henüz sınırlı.",
+          "parts": [
+            {
+              "label": "prep formu",
+              "value": 13
+            },
+            {
+              "label": "rota şekli",
+              "value": 13
+            },
+            {
+              "label": "jokey sürekliliği",
+              "value": 7
+            },
+            {
+              "label": "veri derinliği",
+              "value": 10
+            }
+          ]
+        },
+        "profileSummary": {
+          "count": 0,
+          "averageFinish": "-",
+          "strongestSignal": "Yok",
+          "note": "Geçmiş ilk 3 içinde aynı profil sinyaliyle güçlü eşleşme bulunmadı."
+        },
+        "historicalMatches": []
+      },
+      {
+        "rank": 14,
+        "horseName": "ÇAKALINOĞLU",
+        "gaziFinishPosition": 14,
+        "lensValue": 0,
+        "badge": "Upside 0",
+        "reason": "Geçmiş profil kanıtı ve rota formu birlikte patlama ihtimali üretiyor.",
+        "meta": "Orta güven · Risk 32 · Readiness 43",
+        "readiness": {
+          "score": 43,
+          "confidence": 70,
+          "upside": 0,
+          "risk": 32,
+          "label": "Eksik sinyal",
+          "confidenceLabel": "Orta güven",
+          "riskLabel": "Kontrollü risk",
+          "primaryReason": "Temel rota sinyali var; ayırıcı veri henüz sınırlı.",
+          "parts": [
+            {
+              "label": "prep formu",
+              "value": 13
+            },
+            {
+              "label": "rota şekli",
+              "value": 13
+            },
+            {
+              "label": "jokey sürekliliği",
+              "value": 7
+            },
+            {
+              "label": "veri derinliği",
+              "value": 10
+            }
+          ]
+        },
+        "profileSummary": {
+          "count": 0,
+          "averageFinish": "-",
+          "strongestSignal": "Yok",
+          "note": "Geçmiş ilk 3 içinde aynı profil sinyaliyle güçlü eşleşme bulunmadı."
+        },
+        "historicalMatches": []
+      },
+      {
+        "rank": 15,
+        "horseName": "ZABUN",
+        "gaziFinishPosition": 10,
+        "lensValue": 0,
+        "badge": "Upside 0",
+        "reason": "Geçmiş profil kanıtı ve rota formu birlikte patlama ihtimali üretiyor.",
+        "meta": "Orta güven · Risk 32 · Readiness 37",
+        "readiness": {
+          "score": 37,
+          "confidence": 70,
+          "upside": 0,
+          "risk": 32,
+          "label": "Eksik sinyal",
+          "confidenceLabel": "Orta güven",
+          "riskLabel": "Kontrollü risk",
+          "primaryReason": "Temel rota sinyali var; ayırıcı veri henüz sınırlı.",
+          "parts": [
+            {
+              "label": "prep formu",
+              "value": 7
+            },
+            {
+              "label": "rota şekli",
+              "value": 13
+            },
+            {
+              "label": "jokey sürekliliği",
+              "value": 7
+            },
+            {
+              "label": "veri derinliği",
+              "value": 10
+            }
+          ]
+        },
+        "profileSummary": {
+          "count": 0,
+          "averageFinish": "-",
+          "strongestSignal": "Yok",
+          "note": "Geçmiş ilk 3 içinde aynı profil sinyaliyle güçlü eşleşme bulunmadı."
+        },
+        "historicalMatches": []
+      }
+    ],
+    "lowRisk": [
+      {
+        "rank": 1,
+        "horseName": "CALL TO VICTORY",
+        "gaziFinishPosition": 1,
+        "lensValue": 52,
+        "badge": "Risk dengesi 52",
+        "reason": "Veri güveni yüksek ve risk göstergeleri sınırlı.",
+        "meta": "Orta güven · Düşük risk · Upside 44",
+        "readiness": {
+          "score": 69,
+          "confidence": 70,
+          "upside": 44,
+          "risk": 18,
+          "label": "Ciddi takip profili",
+          "confidenceLabel": "Orta güven",
+          "riskLabel": "Düşük risk",
+          "primaryReason": "Prep galibiyeti kompozit skoru yukarı taşıyor.",
+          "parts": [
+            {
+              "label": "prep formu",
+              "value": 28
+            },
+            {
+              "label": "rota şekli",
+              "value": 18
+            },
+            {
+              "label": "jokey sürekliliği",
+              "value": 13
+            },
+            {
+              "label": "veri derinliği",
+              "value": 10
+            }
+          ]
+        },
+        "profileSummary": {
+          "count": 0,
+          "averageFinish": "-",
+          "strongestSignal": "Yok",
+          "note": "Geçmiş ilk 3 içinde aynı profil sinyaliyle güçlü eşleşme bulunmadı."
+        },
+        "historicalMatches": []
+      },
+      {
+        "rank": 2,
+        "horseName": "VERNAZZA",
+        "gaziFinishPosition": 5,
+        "lensValue": 52,
+        "badge": "Risk dengesi 52",
+        "reason": "Veri güveni yüksek ve risk göstergeleri sınırlı.",
+        "meta": "Orta güven · Düşük risk · Upside 10",
+        "readiness": {
+          "score": 64,
+          "confidence": 70,
+          "upside": 10,
+          "risk": 18,
+          "label": "Ciddi takip profili",
+          "confidenceLabel": "Orta güven",
+          "riskLabel": "Düşük risk",
+          "primaryReason": "Temel rota sinyali var; ayırıcı veri henüz sınırlı.",
+          "parts": [
+            {
+              "label": "prep formu",
+              "value": 23
+            },
+            {
+              "label": "rota şekli",
+              "value": 18
+            },
+            {
+              "label": "jokey sürekliliği",
+              "value": 13
+            },
+            {
+              "label": "veri derinliği",
+              "value": 10
+            }
+          ]
+        },
+        "profileSummary": {
+          "count": 0,
+          "averageFinish": "-",
+          "strongestSignal": "Yok",
+          "note": "Geçmiş ilk 3 içinde aynı profil sinyaliyle güçlü eşleşme bulunmadı."
+        },
+        "historicalMatches": []
+      },
+      {
+        "rank": 3,
+        "horseName": "LORD OF GAME",
+        "gaziFinishPosition": 2,
+        "lensValue": 52,
+        "badge": "Risk dengesi 52",
+        "reason": "Veri güveni yüksek ve risk göstergeleri sınırlı.",
+        "meta": "Orta güven · Düşük risk · Upside 0",
+        "readiness": {
+          "score": 59,
+          "confidence": 70,
+          "upside": 0,
+          "risk": 18,
+          "label": "İzleme listesi",
+          "confidenceLabel": "Orta güven",
+          "riskLabel": "Düşük risk",
+          "primaryReason": "Temel rota sinyali var; ayırıcı veri henüz sınırlı.",
+          "parts": [
+            {
+              "label": "prep formu",
+              "value": 23
+            },
+            {
+              "label": "rota şekli",
+              "value": 13
+            },
+            {
+              "label": "jokey sürekliliği",
+              "value": 13
+            },
+            {
+              "label": "veri derinliği",
+              "value": 10
+            }
+          ]
+        },
+        "profileSummary": {
+          "count": 0,
+          "averageFinish": "-",
+          "strongestSignal": "Yok",
+          "note": "Geçmiş ilk 3 içinde aynı profil sinyaliyle güçlü eşleşme bulunmadı."
+        },
+        "historicalMatches": []
+      },
+      {
+        "rank": 4,
+        "horseName": "KINGSMAN",
+        "gaziFinishPosition": 3,
+        "lensValue": 52,
+        "badge": "Risk dengesi 52",
+        "reason": "Veri güveni yüksek ve risk göstergeleri sınırlı.",
+        "meta": "Orta güven · Düşük risk · Upside 10",
+        "readiness": {
+          "score": 54,
+          "confidence": 70,
+          "upside": 10,
+          "risk": 18,
+          "label": "İzleme listesi",
+          "confidenceLabel": "Orta güven",
+          "riskLabel": "Düşük risk",
+          "primaryReason": "Temel rota sinyali var; ayırıcı veri henüz sınırlı.",
+          "parts": [
+            {
+              "label": "prep formu",
+              "value": 13
+            },
+            {
+              "label": "rota şekli",
+              "value": 18
+            },
+            {
+              "label": "jokey sürekliliği",
+              "value": 13
+            },
+            {
+              "label": "veri derinliği",
+              "value": 10
+            }
+          ]
+        },
+        "profileSummary": {
+          "count": 0,
+          "averageFinish": "-",
+          "strongestSignal": "Yok",
+          "note": "Geçmiş ilk 3 içinde aynı profil sinyaliyle güçlü eşleşme bulunmadı."
+        },
+        "historicalMatches": []
+      },
+      {
+        "rank": 5,
+        "horseName": "COACH",
+        "gaziFinishPosition": 4,
+        "lensValue": 52,
+        "badge": "Risk dengesi 52",
+        "reason": "Veri güveni yüksek ve risk göstergeleri sınırlı.",
+        "meta": "Orta güven · Düşük risk · Upside 0",
+        "readiness": {
+          "score": 49,
+          "confidence": 70,
+          "upside": 0,
+          "risk": 18,
+          "label": "Eksik sinyal",
+          "confidenceLabel": "Orta güven",
+          "riskLabel": "Düşük risk",
+          "primaryReason": "Temel rota sinyali var; ayırıcı veri henüz sınırlı.",
+          "parts": [
+            {
+              "label": "prep formu",
+              "value": 13
+            },
+            {
+              "label": "rota şekli",
+              "value": 13
+            },
+            {
+              "label": "jokey sürekliliği",
+              "value": 13
+            },
+            {
+              "label": "veri derinliği",
+              "value": 10
+            }
+          ]
+        },
+        "profileSummary": {
+          "count": 0,
+          "averageFinish": "-",
+          "strongestSignal": "Yok",
+          "note": "Geçmiş ilk 3 içinde aynı profil sinyaliyle güçlü eşleşme bulunmadı."
+        },
+        "historicalMatches": []
+      },
+      {
+        "rank": 6,
+        "horseName": "PRIOR",
+        "gaziFinishPosition": 7,
+        "lensValue": 38,
+        "badge": "Risk dengesi 38",
+        "reason": "Güven skoru riskten daha güçlü kaldığı için dengeli aday olarak okunuyor.",
+        "meta": "Orta güven · Kontrollü risk · Upside 44",
+        "readiness": {
+          "score": 63,
+          "confidence": 70,
+          "upside": 44,
+          "risk": 32,
+          "label": "İzleme listesi",
+          "confidenceLabel": "Orta güven",
+          "riskLabel": "Kontrollü risk",
+          "primaryReason": "Prep galibiyeti kompozit skoru yukarı taşıyor.",
+          "parts": [
+            {
+              "label": "prep formu",
+              "value": 28
+            },
+            {
+              "label": "rota şekli",
+              "value": 18
+            },
+            {
+              "label": "jokey sürekliliği",
+              "value": 7
+            },
+            {
+              "label": "veri derinliği",
+              "value": 10
+            }
+          ]
+        },
+        "profileSummary": {
+          "count": 0,
+          "averageFinish": "-",
+          "strongestSignal": "Yok",
+          "note": "Geçmiş ilk 3 içinde aynı profil sinyaliyle güçlü eşleşme bulunmadı."
+        },
+        "historicalMatches": []
+      },
+      {
+        "rank": 7,
+        "horseName": "POWERMAN",
+        "gaziFinishPosition": 9,
+        "lensValue": 38,
+        "badge": "Risk dengesi 38",
+        "reason": "Güven skoru riskten daha güçlü kaldığı için dengeli aday olarak okunuyor.",
+        "meta": "Orta güven · Kontrollü risk · Upside 34",
+        "readiness": {
+          "score": 58,
+          "confidence": 70,
+          "upside": 34,
+          "risk": 32,
+          "label": "İzleme listesi",
+          "confidenceLabel": "Orta güven",
+          "riskLabel": "Kontrollü risk",
+          "primaryReason": "Prep galibiyeti kompozit skoru yukarı taşıyor.",
+          "parts": [
+            {
+              "label": "prep formu",
+              "value": 28
+            },
+            {
+              "label": "rota şekli",
+              "value": 13
+            },
+            {
+              "label": "jokey sürekliliği",
+              "value": 7
+            },
+            {
+              "label": "veri derinliği",
+              "value": 10
+            }
+          ]
+        },
+        "profileSummary": {
+          "count": 0,
+          "averageFinish": "-",
+          "strongestSignal": "Yok",
+          "note": "Geçmiş ilk 3 içinde aynı profil sinyaliyle güçlü eşleşme bulunmadı."
+        },
+        "historicalMatches": []
+      },
+      {
+        "rank": 8,
+        "horseName": "FULL THROTTLE",
+        "gaziFinishPosition": 11,
+        "lensValue": 38,
+        "badge": "Risk dengesi 38",
+        "reason": "Güven skoru riskten daha güçlü kaldığı için dengeli aday olarak okunuyor.",
+        "meta": "Orta güven · Kontrollü risk · Upside 10",
+        "readiness": {
+          "score": 54,
+          "confidence": 70,
+          "upside": 10,
+          "risk": 32,
+          "label": "İzleme listesi",
+          "confidenceLabel": "Orta güven",
+          "riskLabel": "Kontrollü risk",
+          "primaryReason": "Temel rota sinyali var; ayırıcı veri henüz sınırlı.",
+          "parts": [
+            {
+              "label": "prep formu",
+              "value": 19
+            },
+            {
+              "label": "rota şekli",
+              "value": 18
+            },
+            {
+              "label": "jokey sürekliliği",
+              "value": 7
+            },
+            {
+              "label": "veri derinliği",
+              "value": 10
+            }
+          ]
+        },
+        "profileSummary": {
+          "count": 0,
+          "averageFinish": "-",
+          "strongestSignal": "Yok",
+          "note": "Geçmiş ilk 3 içinde aynı profil sinyaliyle güçlü eşleşme bulunmadı."
+        },
+        "historicalMatches": []
+      },
+      {
+        "rank": 9,
+        "horseName": "UPPER CUT",
+        "gaziFinishPosition": 6,
+        "lensValue": 38,
+        "badge": "Risk dengesi 38",
+        "reason": "Güven skoru riskten daha güçlü kaldığı için dengeli aday olarak okunuyor.",
+        "meta": "Orta güven · Kontrollü risk · Upside 0",
+        "readiness": {
+          "score": 43,
+          "confidence": 70,
+          "upside": 0,
+          "risk": 32,
+          "label": "Eksik sinyal",
+          "confidenceLabel": "Orta güven",
+          "riskLabel": "Kontrollü risk",
+          "primaryReason": "Temel rota sinyali var; ayırıcı veri henüz sınırlı.",
+          "parts": [
+            {
+              "label": "prep formu",
+              "value": 13
+            },
+            {
+              "label": "rota şekli",
+              "value": 13
+            },
+            {
+              "label": "jokey sürekliliği",
+              "value": 7
+            },
+            {
+              "label": "veri derinliği",
+              "value": 10
+            }
+          ]
+        },
+        "profileSummary": {
+          "count": 0,
+          "averageFinish": "-",
+          "strongestSignal": "Yok",
+          "note": "Geçmiş ilk 3 içinde aynı profil sinyaliyle güçlü eşleşme bulunmadı."
+        },
+        "historicalMatches": []
+      },
+      {
+        "rank": 10,
+        "horseName": "ÇAKALINOĞLU",
+        "gaziFinishPosition": 14,
+        "lensValue": 38,
+        "badge": "Risk dengesi 38",
+        "reason": "Güven skoru riskten daha güçlü kaldığı için dengeli aday olarak okunuyor.",
+        "meta": "Orta güven · Kontrollü risk · Upside 0",
+        "readiness": {
+          "score": 43,
+          "confidence": 70,
+          "upside": 0,
+          "risk": 32,
+          "label": "Eksik sinyal",
+          "confidenceLabel": "Orta güven",
+          "riskLabel": "Kontrollü risk",
+          "primaryReason": "Temel rota sinyali var; ayırıcı veri henüz sınırlı.",
+          "parts": [
+            {
+              "label": "prep formu",
+              "value": 13
+            },
+            {
+              "label": "rota şekli",
+              "value": 13
+            },
+            {
+              "label": "jokey sürekliliği",
+              "value": 7
+            },
+            {
+              "label": "veri derinliği",
+              "value": 10
+            }
+          ]
+        },
+        "profileSummary": {
+          "count": 0,
+          "averageFinish": "-",
+          "strongestSignal": "Yok",
+          "note": "Geçmiş ilk 3 içinde aynı profil sinyaliyle güçlü eşleşme bulunmadı."
+        },
+        "historicalMatches": []
+      },
+      {
+        "rank": 11,
+        "horseName": "ZABUN",
+        "gaziFinishPosition": 10,
+        "lensValue": 38,
+        "badge": "Risk dengesi 38",
+        "reason": "Güven skoru riskten daha güçlü kaldığı için dengeli aday olarak okunuyor.",
+        "meta": "Orta güven · Kontrollü risk · Upside 0",
+        "readiness": {
+          "score": 37,
+          "confidence": 70,
+          "upside": 0,
+          "risk": 32,
+          "label": "Eksik sinyal",
+          "confidenceLabel": "Orta güven",
+          "riskLabel": "Kontrollü risk",
+          "primaryReason": "Temel rota sinyali var; ayırıcı veri henüz sınırlı.",
+          "parts": [
+            {
+              "label": "prep formu",
+              "value": 7
+            },
+            {
+              "label": "rota şekli",
+              "value": 13
+            },
+            {
+              "label": "jokey sürekliliği",
+              "value": 7
+            },
+            {
+              "label": "veri derinliği",
+              "value": 10
+            }
+          ]
+        },
+        "profileSummary": {
+          "count": 0,
+          "averageFinish": "-",
+          "strongestSignal": "Yok",
+          "note": "Geçmiş ilk 3 içinde aynı profil sinyaliyle güçlü eşleşme bulunmadı."
+        },
+        "historicalMatches": []
+      },
+      {
+        "rank": 12,
+        "horseName": "SOZOPOL",
+        "gaziFinishPosition": 8,
+        "lensValue": 6,
+        "badge": "Risk dengesi 6",
+        "reason": "Güven skoru riskten daha güçlü kaldığı için dengeli aday olarak okunuyor.",
+        "meta": "Düşük güven · Kontrollü risk · Upside 18",
+        "readiness": {
+          "score": 37,
+          "confidence": 50,
+          "upside": 18,
+          "risk": 44,
+          "label": "Eksik sinyal",
+          "confidenceLabel": "Düşük güven",
+          "riskLabel": "Kontrollü risk",
+          "primaryReason": "Rota dışı geldiği için upside var, fakat veri güveni sınırlı.",
+          "parts": [
+            {
+              "label": "prep formu",
+              "value": 8
+            },
+            {
+              "label": "rota şekli",
+              "value": 8
+            },
+            {
+              "label": "jokey sürekliliği",
+              "value": 13
+            },
+            {
+              "label": "veri derinliği",
+              "value": 8
+            }
+          ]
+        },
+        "profileSummary": {
+          "count": 0,
+          "averageFinish": "-",
+          "strongestSignal": "Yok",
+          "note": "Geçmiş ilk 3 içinde aynı profil sinyaliyle güçlü eşleşme bulunmadı."
+        },
+        "historicalMatches": []
+      },
+      {
+        "rank": 13,
+        "horseName": "DEMBE",
+        "gaziFinishPosition": 12,
+        "lensValue": 6,
+        "badge": "Risk dengesi 6",
+        "reason": "Güven skoru riskten daha güçlü kaldığı için dengeli aday olarak okunuyor.",
+        "meta": "Düşük güven · Kontrollü risk · Upside 18",
+        "readiness": {
+          "score": 37,
+          "confidence": 50,
+          "upside": 18,
+          "risk": 44,
+          "label": "Eksik sinyal",
+          "confidenceLabel": "Düşük güven",
+          "riskLabel": "Kontrollü risk",
+          "primaryReason": "Rota dışı geldiği için upside var, fakat veri güveni sınırlı.",
+          "parts": [
+            {
+              "label": "prep formu",
+              "value": 8
+            },
+            {
+              "label": "rota şekli",
+              "value": 8
+            },
+            {
+              "label": "jokey sürekliliği",
+              "value": 13
+            },
+            {
+              "label": "veri derinliği",
+              "value": 8
+            }
+          ]
+        },
+        "profileSummary": {
+          "count": 0,
+          "averageFinish": "-",
+          "strongestSignal": "Yok",
+          "note": "Geçmiş ilk 3 içinde aynı profil sinyaliyle güçlü eşleşme bulunmadı."
+        },
+        "historicalMatches": []
+      },
+      {
+        "rank": 14,
+        "horseName": "KING MAN GO",
+        "gaziFinishPosition": 13,
+        "lensValue": 6,
+        "badge": "Risk dengesi 6",
+        "reason": "Güven skoru riskten daha güçlü kaldığı için dengeli aday olarak okunuyor.",
+        "meta": "Düşük güven · Kontrollü risk · Upside 18",
+        "readiness": {
+          "score": 37,
+          "confidence": 50,
+          "upside": 18,
+          "risk": 44,
+          "label": "Eksik sinyal",
+          "confidenceLabel": "Düşük güven",
+          "riskLabel": "Kontrollü risk",
+          "primaryReason": "Rota dışı geldiği için upside var, fakat veri güveni sınırlı.",
+          "parts": [
+            {
+              "label": "prep formu",
+              "value": 8
+            },
+            {
+              "label": "rota şekli",
+              "value": 8
+            },
+            {
+              "label": "jokey sürekliliği",
+              "value": 13
+            },
+            {
+              "label": "veri derinliği",
+              "value": 8
+            }
+          ]
+        },
+        "profileSummary": {
+          "count": 0,
+          "averageFinish": "-",
+          "strongestSignal": "Yok",
+          "note": "Geçmiş ilk 3 içinde aynı profil sinyaliyle güçlü eşleşme bulunmadı."
+        },
+        "historicalMatches": []
+      },
+      {
+        "rank": 15,
+        "horseName": "PREMIUM MOVER",
+        "gaziFinishPosition": 15,
+        "lensValue": 6,
+        "badge": "Risk dengesi 6",
+        "reason": "Güven skoru riskten daha güçlü kaldığı için dengeli aday olarak okunuyor.",
+        "meta": "Düşük güven · Kontrollü risk · Upside 18",
+        "readiness": {
+          "score": 37,
+          "confidence": 50,
+          "upside": 18,
+          "risk": 44,
+          "label": "Eksik sinyal",
+          "confidenceLabel": "Düşük güven",
+          "riskLabel": "Kontrollü risk",
+          "primaryReason": "Rota dışı geldiği için upside var, fakat veri güveni sınırlı.",
+          "parts": [
+            {
+              "label": "prep formu",
+              "value": 8
+            },
+            {
+              "label": "rota şekli",
+              "value": 8
+            },
+            {
+              "label": "jokey sürekliliği",
+              "value": 13
+            },
+            {
+              "label": "veri derinliği",
+              "value": 8
+            }
+          ]
+        },
+        "profileSummary": {
+          "count": 0,
+          "averageFinish": "-",
+          "strongestSignal": "Yok",
+          "note": "Geçmiş ilk 3 içinde aynı profil sinyaliyle güçlü eşleşme bulunmadı."
+        },
+        "historicalMatches": []
+      }
+    ],
+    "uncertainty": [
+      {
+        "rank": 1,
+        "horseName": "SOZOPOL",
+        "gaziFinishPosition": 8,
+        "lensValue": 55,
+        "badge": "Belirsizlik 55",
+        "reason": "Takip edilen rotada görünmediği için eksik ama izlenmesi gereken profil.",
+        "meta": "Kontrollü risk · Güven 50 · Upside 18",
+        "readiness": {
+          "score": 37,
+          "confidence": 50,
+          "upside": 18,
+          "risk": 44,
+          "label": "Eksik sinyal",
+          "confidenceLabel": "Düşük güven",
+          "riskLabel": "Kontrollü risk",
+          "primaryReason": "Rota dışı geldiği için upside var, fakat veri güveni sınırlı.",
+          "parts": [
+            {
+              "label": "prep formu",
+              "value": 8
+            },
+            {
+              "label": "rota şekli",
+              "value": 8
+            },
+            {
+              "label": "jokey sürekliliği",
+              "value": 13
+            },
+            {
+              "label": "veri derinliği",
+              "value": 8
+            }
+          ]
+        },
+        "profileSummary": {
+          "count": 0,
+          "averageFinish": "-",
+          "strongestSignal": "Yok",
+          "note": "Geçmiş ilk 3 içinde aynı profil sinyaliyle güçlü eşleşme bulunmadı."
+        },
+        "historicalMatches": []
+      },
+      {
+        "rank": 2,
+        "horseName": "DEMBE",
+        "gaziFinishPosition": 12,
+        "lensValue": 55,
+        "badge": "Belirsizlik 55",
+        "reason": "Takip edilen rotada görünmediği için eksik ama izlenmesi gereken profil.",
+        "meta": "Kontrollü risk · Güven 50 · Upside 18",
+        "readiness": {
+          "score": 37,
+          "confidence": 50,
+          "upside": 18,
+          "risk": 44,
+          "label": "Eksik sinyal",
+          "confidenceLabel": "Düşük güven",
+          "riskLabel": "Kontrollü risk",
+          "primaryReason": "Rota dışı geldiği için upside var, fakat veri güveni sınırlı.",
+          "parts": [
+            {
+              "label": "prep formu",
+              "value": 8
+            },
+            {
+              "label": "rota şekli",
+              "value": 8
+            },
+            {
+              "label": "jokey sürekliliği",
+              "value": 13
+            },
+            {
+              "label": "veri derinliği",
+              "value": 8
+            }
+          ]
+        },
+        "profileSummary": {
+          "count": 0,
+          "averageFinish": "-",
+          "strongestSignal": "Yok",
+          "note": "Geçmiş ilk 3 içinde aynı profil sinyaliyle güçlü eşleşme bulunmadı."
+        },
+        "historicalMatches": []
+      },
+      {
+        "rank": 3,
+        "horseName": "KING MAN GO",
+        "gaziFinishPosition": 13,
+        "lensValue": 55,
+        "badge": "Belirsizlik 55",
+        "reason": "Takip edilen rotada görünmediği için eksik ama izlenmesi gereken profil.",
+        "meta": "Kontrollü risk · Güven 50 · Upside 18",
+        "readiness": {
+          "score": 37,
+          "confidence": 50,
+          "upside": 18,
+          "risk": 44,
+          "label": "Eksik sinyal",
+          "confidenceLabel": "Düşük güven",
+          "riskLabel": "Kontrollü risk",
+          "primaryReason": "Rota dışı geldiği için upside var, fakat veri güveni sınırlı.",
+          "parts": [
+            {
+              "label": "prep formu",
+              "value": 8
+            },
+            {
+              "label": "rota şekli",
+              "value": 8
+            },
+            {
+              "label": "jokey sürekliliği",
+              "value": 13
+            },
+            {
+              "label": "veri derinliği",
+              "value": 8
+            }
+          ]
+        },
+        "profileSummary": {
+          "count": 0,
+          "averageFinish": "-",
+          "strongestSignal": "Yok",
+          "note": "Geçmiş ilk 3 içinde aynı profil sinyaliyle güçlü eşleşme bulunmadı."
+        },
+        "historicalMatches": []
+      },
+      {
+        "rank": 4,
+        "horseName": "PREMIUM MOVER",
+        "gaziFinishPosition": 15,
+        "lensValue": 55,
+        "badge": "Belirsizlik 55",
+        "reason": "Takip edilen rotada görünmediği için eksik ama izlenmesi gereken profil.",
+        "meta": "Kontrollü risk · Güven 50 · Upside 18",
+        "readiness": {
+          "score": 37,
+          "confidence": 50,
+          "upside": 18,
+          "risk": 44,
+          "label": "Eksik sinyal",
+          "confidenceLabel": "Düşük güven",
+          "riskLabel": "Kontrollü risk",
+          "primaryReason": "Rota dışı geldiği için upside var, fakat veri güveni sınırlı.",
+          "parts": [
+            {
+              "label": "prep formu",
+              "value": 8
+            },
+            {
+              "label": "rota şekli",
+              "value": 8
+            },
+            {
+              "label": "jokey sürekliliği",
+              "value": 13
+            },
+            {
+              "label": "veri derinliği",
+              "value": 8
+            }
+          ]
+        },
+        "profileSummary": {
+          "count": 0,
+          "averageFinish": "-",
+          "strongestSignal": "Yok",
+          "note": "Geçmiş ilk 3 içinde aynı profil sinyaliyle güçlü eşleşme bulunmadı."
+        },
+        "historicalMatches": []
+      },
+      {
+        "rank": 5,
+        "horseName": "PRIOR",
+        "gaziFinishPosition": 7,
+        "lensValue": 47,
+        "badge": "Belirsizlik 47",
+        "reason": "Upside ve risk birlikte yüksek; karar için daha fazla bağlam gerekiyor.",
+        "meta": "Kontrollü risk · Güven 70 · Upside 44",
+        "readiness": {
+          "score": 63,
+          "confidence": 70,
+          "upside": 44,
+          "risk": 32,
+          "label": "İzleme listesi",
+          "confidenceLabel": "Orta güven",
+          "riskLabel": "Kontrollü risk",
+          "primaryReason": "Prep galibiyeti kompozit skoru yukarı taşıyor.",
+          "parts": [
+            {
+              "label": "prep formu",
+              "value": 28
+            },
+            {
+              "label": "rota şekli",
+              "value": 18
+            },
+            {
+              "label": "jokey sürekliliği",
+              "value": 7
+            },
+            {
+              "label": "veri derinliği",
+              "value": 10
+            }
+          ]
+        },
+        "profileSummary": {
+          "count": 0,
+          "averageFinish": "-",
+          "strongestSignal": "Yok",
+          "note": "Geçmiş ilk 3 içinde aynı profil sinyaliyle güçlü eşleşme bulunmadı."
+        },
+        "historicalMatches": []
+      },
+      {
+        "rank": 6,
+        "horseName": "POWERMAN",
+        "gaziFinishPosition": 9,
+        "lensValue": 42,
+        "badge": "Belirsizlik 42",
+        "reason": "Upside ve risk birlikte yüksek; karar için daha fazla bağlam gerekiyor.",
+        "meta": "Kontrollü risk · Güven 70 · Upside 34",
+        "readiness": {
+          "score": 58,
+          "confidence": 70,
+          "upside": 34,
+          "risk": 32,
+          "label": "İzleme listesi",
+          "confidenceLabel": "Orta güven",
+          "riskLabel": "Kontrollü risk",
+          "primaryReason": "Prep galibiyeti kompozit skoru yukarı taşıyor.",
+          "parts": [
+            {
+              "label": "prep formu",
+              "value": 28
+            },
+            {
+              "label": "rota şekli",
+              "value": 13
+            },
+            {
+              "label": "jokey sürekliliği",
+              "value": 7
+            },
+            {
+              "label": "veri derinliği",
+              "value": 10
+            }
+          ]
+        },
+        "profileSummary": {
+          "count": 0,
+          "averageFinish": "-",
+          "strongestSignal": "Yok",
+          "note": "Geçmiş ilk 3 içinde aynı profil sinyaliyle güçlü eşleşme bulunmadı."
+        },
+        "historicalMatches": []
+      },
+      {
+        "rank": 7,
+        "horseName": "CALL TO VICTORY",
+        "gaziFinishPosition": 1,
+        "lensValue": 38,
+        "badge": "Belirsizlik 38",
+        "reason": "Upside ve risk birlikte yüksek; karar için daha fazla bağlam gerekiyor.",
+        "meta": "Düşük risk · Güven 70 · Upside 44",
+        "readiness": {
+          "score": 69,
+          "confidence": 70,
+          "upside": 44,
+          "risk": 18,
+          "label": "Ciddi takip profili",
+          "confidenceLabel": "Orta güven",
+          "riskLabel": "Düşük risk",
+          "primaryReason": "Prep galibiyeti kompozit skoru yukarı taşıyor.",
+          "parts": [
+            {
+              "label": "prep formu",
+              "value": 28
+            },
+            {
+              "label": "rota şekli",
+              "value": 18
+            },
+            {
+              "label": "jokey sürekliliği",
+              "value": 13
+            },
+            {
+              "label": "veri derinliği",
+              "value": 10
+            }
+          ]
+        },
+        "profileSummary": {
+          "count": 0,
+          "averageFinish": "-",
+          "strongestSignal": "Yok",
+          "note": "Geçmiş ilk 3 içinde aynı profil sinyaliyle güçlü eşleşme bulunmadı."
+        },
+        "historicalMatches": []
+      },
+      {
+        "rank": 8,
+        "horseName": "FULL THROTTLE",
+        "gaziFinishPosition": 11,
+        "lensValue": 30,
+        "badge": "Belirsizlik 30",
+        "reason": "Upside ve risk birlikte yüksek; karar için daha fazla bağlam gerekiyor.",
+        "meta": "Kontrollü risk · Güven 70 · Upside 10",
+        "readiness": {
+          "score": 54,
+          "confidence": 70,
+          "upside": 10,
+          "risk": 32,
+          "label": "İzleme listesi",
+          "confidenceLabel": "Orta güven",
+          "riskLabel": "Kontrollü risk",
+          "primaryReason": "Temel rota sinyali var; ayırıcı veri henüz sınırlı.",
+          "parts": [
+            {
+              "label": "prep formu",
+              "value": 19
+            },
+            {
+              "label": "rota şekli",
+              "value": 18
+            },
+            {
+              "label": "jokey sürekliliği",
+              "value": 7
+            },
+            {
+              "label": "veri derinliği",
+              "value": 10
+            }
+          ]
+        },
+        "profileSummary": {
+          "count": 0,
+          "averageFinish": "-",
+          "strongestSignal": "Yok",
+          "note": "Geçmiş ilk 3 içinde aynı profil sinyaliyle güçlü eşleşme bulunmadı."
+        },
+        "historicalMatches": []
+      },
+      {
+        "rank": 9,
+        "horseName": "UPPER CUT",
+        "gaziFinishPosition": 6,
+        "lensValue": 25,
+        "badge": "Belirsizlik 25",
+        "reason": "Upside ve risk birlikte yüksek; karar için daha fazla bağlam gerekiyor.",
+        "meta": "Kontrollü risk · Güven 70 · Upside 0",
+        "readiness": {
+          "score": 43,
+          "confidence": 70,
+          "upside": 0,
+          "risk": 32,
+          "label": "Eksik sinyal",
+          "confidenceLabel": "Orta güven",
+          "riskLabel": "Kontrollü risk",
+          "primaryReason": "Temel rota sinyali var; ayırıcı veri henüz sınırlı.",
+          "parts": [
+            {
+              "label": "prep formu",
+              "value": 13
+            },
+            {
+              "label": "rota şekli",
+              "value": 13
+            },
+            {
+              "label": "jokey sürekliliği",
+              "value": 7
+            },
+            {
+              "label": "veri derinliği",
+              "value": 10
+            }
+          ]
+        },
+        "profileSummary": {
+          "count": 0,
+          "averageFinish": "-",
+          "strongestSignal": "Yok",
+          "note": "Geçmiş ilk 3 içinde aynı profil sinyaliyle güçlü eşleşme bulunmadı."
+        },
+        "historicalMatches": []
+      },
+      {
+        "rank": 10,
+        "horseName": "ZABUN",
+        "gaziFinishPosition": 10,
+        "lensValue": 25,
+        "badge": "Belirsizlik 25",
+        "reason": "Upside ve risk birlikte yüksek; karar için daha fazla bağlam gerekiyor.",
+        "meta": "Kontrollü risk · Güven 70 · Upside 0",
+        "readiness": {
+          "score": 37,
+          "confidence": 70,
+          "upside": 0,
+          "risk": 32,
+          "label": "Eksik sinyal",
+          "confidenceLabel": "Orta güven",
+          "riskLabel": "Kontrollü risk",
+          "primaryReason": "Temel rota sinyali var; ayırıcı veri henüz sınırlı.",
+          "parts": [
+            {
+              "label": "prep formu",
+              "value": 7
+            },
+            {
+              "label": "rota şekli",
+              "value": 13
+            },
+            {
+              "label": "jokey sürekliliği",
+              "value": 7
+            },
+            {
+              "label": "veri derinliği",
+              "value": 10
+            }
+          ]
+        },
+        "profileSummary": {
+          "count": 0,
+          "averageFinish": "-",
+          "strongestSignal": "Yok",
+          "note": "Geçmiş ilk 3 içinde aynı profil sinyaliyle güçlü eşleşme bulunmadı."
+        },
+        "historicalMatches": []
+      },
+      {
+        "rank": 11,
+        "horseName": "ÇAKALINOĞLU",
+        "gaziFinishPosition": 14,
+        "lensValue": 25,
+        "badge": "Belirsizlik 25",
+        "reason": "Upside ve risk birlikte yüksek; karar için daha fazla bağlam gerekiyor.",
+        "meta": "Kontrollü risk · Güven 70 · Upside 0",
+        "readiness": {
+          "score": 43,
+          "confidence": 70,
+          "upside": 0,
+          "risk": 32,
+          "label": "Eksik sinyal",
+          "confidenceLabel": "Orta güven",
+          "riskLabel": "Kontrollü risk",
+          "primaryReason": "Temel rota sinyali var; ayırıcı veri henüz sınırlı.",
+          "parts": [
+            {
+              "label": "prep formu",
+              "value": 13
+            },
+            {
+              "label": "rota şekli",
+              "value": 13
+            },
+            {
+              "label": "jokey sürekliliği",
+              "value": 7
+            },
+            {
+              "label": "veri derinliği",
+              "value": 10
+            }
+          ]
+        },
+        "profileSummary": {
+          "count": 0,
+          "averageFinish": "-",
+          "strongestSignal": "Yok",
+          "note": "Geçmiş ilk 3 içinde aynı profil sinyaliyle güçlü eşleşme bulunmadı."
+        },
+        "historicalMatches": []
+      },
+      {
+        "rank": 12,
+        "horseName": "KINGSMAN",
+        "gaziFinishPosition": 3,
+        "lensValue": 21,
+        "badge": "Belirsizlik 21",
+        "reason": "Upside ve risk birlikte yüksek; karar için daha fazla bağlam gerekiyor.",
+        "meta": "Düşük risk · Güven 70 · Upside 10",
+        "readiness": {
+          "score": 54,
+          "confidence": 70,
+          "upside": 10,
+          "risk": 18,
+          "label": "İzleme listesi",
+          "confidenceLabel": "Orta güven",
+          "riskLabel": "Düşük risk",
+          "primaryReason": "Temel rota sinyali var; ayırıcı veri henüz sınırlı.",
+          "parts": [
+            {
+              "label": "prep formu",
+              "value": 13
+            },
+            {
+              "label": "rota şekli",
+              "value": 18
+            },
+            {
+              "label": "jokey sürekliliği",
+              "value": 13
+            },
+            {
+              "label": "veri derinliği",
+              "value": 10
+            }
+          ]
+        },
+        "profileSummary": {
+          "count": 0,
+          "averageFinish": "-",
+          "strongestSignal": "Yok",
+          "note": "Geçmiş ilk 3 içinde aynı profil sinyaliyle güçlü eşleşme bulunmadı."
+        },
+        "historicalMatches": []
+      },
+      {
+        "rank": 13,
+        "horseName": "VERNAZZA",
+        "gaziFinishPosition": 5,
+        "lensValue": 21,
+        "badge": "Belirsizlik 21",
+        "reason": "Upside ve risk birlikte yüksek; karar için daha fazla bağlam gerekiyor.",
+        "meta": "Düşük risk · Güven 70 · Upside 10",
+        "readiness": {
+          "score": 64,
+          "confidence": 70,
+          "upside": 10,
+          "risk": 18,
+          "label": "Ciddi takip profili",
+          "confidenceLabel": "Orta güven",
+          "riskLabel": "Düşük risk",
+          "primaryReason": "Temel rota sinyali var; ayırıcı veri henüz sınırlı.",
+          "parts": [
+            {
+              "label": "prep formu",
+              "value": 23
+            },
+            {
+              "label": "rota şekli",
+              "value": 18
+            },
+            {
+              "label": "jokey sürekliliği",
+              "value": 13
+            },
+            {
+              "label": "veri derinliği",
+              "value": 10
+            }
+          ]
+        },
+        "profileSummary": {
+          "count": 0,
+          "averageFinish": "-",
+          "strongestSignal": "Yok",
+          "note": "Geçmiş ilk 3 içinde aynı profil sinyaliyle güçlü eşleşme bulunmadı."
+        },
+        "historicalMatches": []
+      },
+      {
+        "rank": 14,
+        "horseName": "LORD OF GAME",
+        "gaziFinishPosition": 2,
+        "lensValue": 16,
+        "badge": "Belirsizlik 16",
+        "reason": "Upside ve risk birlikte yüksek; karar için daha fazla bağlam gerekiyor.",
+        "meta": "Düşük risk · Güven 70 · Upside 0",
+        "readiness": {
+          "score": 59,
+          "confidence": 70,
+          "upside": 0,
+          "risk": 18,
+          "label": "İzleme listesi",
+          "confidenceLabel": "Orta güven",
+          "riskLabel": "Düşük risk",
+          "primaryReason": "Temel rota sinyali var; ayırıcı veri henüz sınırlı.",
+          "parts": [
+            {
+              "label": "prep formu",
+              "value": 23
+            },
+            {
+              "label": "rota şekli",
+              "value": 13
+            },
+            {
+              "label": "jokey sürekliliği",
+              "value": 13
+            },
+            {
+              "label": "veri derinliği",
+              "value": 10
+            }
+          ]
+        },
+        "profileSummary": {
+          "count": 0,
+          "averageFinish": "-",
+          "strongestSignal": "Yok",
+          "note": "Geçmiş ilk 3 içinde aynı profil sinyaliyle güçlü eşleşme bulunmadı."
+        },
+        "historicalMatches": []
+      },
+      {
+        "rank": 15,
+        "horseName": "COACH",
+        "gaziFinishPosition": 4,
+        "lensValue": 16,
+        "badge": "Belirsizlik 16",
+        "reason": "Upside ve risk birlikte yüksek; karar için daha fazla bağlam gerekiyor.",
+        "meta": "Düşük risk · Güven 70 · Upside 0",
+        "readiness": {
+          "score": 49,
+          "confidence": 70,
+          "upside": 0,
+          "risk": 18,
+          "label": "Eksik sinyal",
+          "confidenceLabel": "Orta güven",
+          "riskLabel": "Düşük risk",
+          "primaryReason": "Temel rota sinyali var; ayırıcı veri henüz sınırlı.",
+          "parts": [
+            {
+              "label": "prep formu",
+              "value": 13
+            },
+            {
+              "label": "rota şekli",
+              "value": 13
+            },
+            {
+              "label": "jokey sürekliliği",
+              "value": 13
+            },
+            {
+              "label": "veri derinliği",
+              "value": 10
+            }
+          ]
+        },
+        "profileSummary": {
+          "count": 0,
+          "averageFinish": "-",
+          "strongestSignal": "Yok",
+          "note": "Geçmiş ilk 3 içinde aynı profil sinyaliyle güçlü eşleşme bulunmadı."
+        },
+        "historicalMatches": []
+      }
+    ]
+  }
+}

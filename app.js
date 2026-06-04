@@ -21,6 +21,7 @@ const state = {
   analysisYear: null,
   routeReportCache: new Map(),
   participationReportCache: new Map(),
+  readinessReportCache: new Map(),
   participationComparison: []
 };
 
@@ -111,6 +112,14 @@ const readJson = async (path) => {
   return response.json();
 };
 
+const readOptionalJson = async (path) => {
+  try {
+    return await readJson(path);
+  } catch {
+    return null;
+  }
+};
+
 const getAvailableAnalysisYears = () => {
   const horizonYears = state.dataHorizon?.seasons
     ?.map((season) => season.year)
@@ -166,6 +175,27 @@ const loadParticipationComparison = async () => {
   renderParticipationComparison();
   renderHistoricalPatterns();
   if (state.participationReport) renderParticipation(state.participationReport);
+};
+
+const loadReadinessReport = async (year) => {
+  if (!Number.isFinite(year)) return null;
+  if (state.readinessReportCache.has(year)) return state.readinessReportCache.get(year);
+
+  const yearlyPath = `./data/gazi-readiness-${year}.json`;
+  const yearlyReport = await readOptionalJson(yearlyPath);
+  if (yearlyReport) {
+    const report = { ...yearlyReport, artifactPath: yearlyPath };
+    state.readinessReportCache.set(year, report);
+    return report;
+  }
+
+  if (state.readinessReport?.sourceYear === year) {
+    state.readinessReportCache.set(year, state.readinessReport);
+    return state.readinessReport;
+  }
+
+  state.readinessReportCache.set(year, null);
+  return null;
 };
 
 const summarizeRouteReport = (report) => {
@@ -275,7 +305,7 @@ const renderReadinessArtifact = (report) => {
           </span>
         `).join("")}
       </div>
-      <a class="artifact-card__link" href="./data/gazi-readiness-report.json" download>JSON indir</a>
+      <a class="artifact-card__link" href="${escapeHtml(report.artifactPath ?? "./data/gazi-readiness-report.json")}" download>JSON indir</a>
       <em>Son üretim: ${escapeHtml(formatTimestamp(report.generatedAt))}</em>
     </article>
   `;
@@ -1356,11 +1386,13 @@ const loadAnalysisYear = async (year) => {
 
   state.routeReport = state.routeReportCache.get(numericYear);
   state.participationReport = state.participationReportCache.get(numericYear);
+  state.readinessReport = await loadReadinessReport(numericYear);
 
   renderAnalysisYearControl();
   renderParticipationComparison();
   renderHistoricalPatterns();
   renderDataStatus(state.routeReport);
+  renderReadinessArtifact(state.readinessReport);
   renderRouteReport(state.routeReport);
   renderParticipation(state.participationReport);
 };
@@ -1436,7 +1468,11 @@ const init = async () => {
   }
 
   if (readinessResponse?.ok) {
-    state.readinessReport = await readinessResponse.json();
+    const report = await readinessResponse.json();
+    state.readinessReport = { ...report, artifactPath: "./data/gazi-readiness-report.json" };
+    if (Number.isFinite(state.readinessReport.sourceYear)) {
+      state.readinessReportCache.set(state.readinessReport.sourceYear, state.readinessReport);
+    }
   }
 
   if (horizonResponse?.ok) {
