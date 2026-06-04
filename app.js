@@ -282,9 +282,11 @@ const renderReadinessArtifact = (report) => {
   }
 
   const summary = report.summary ?? {};
+  const quality = report.quality ?? {};
   const metrics = [
     ["Analiz yılı", report.sourceYear ?? "-"],
     ["Koşucu", summary.runnerCount ?? 0],
+    ["Uyarı", quality.warningCount ?? 0],
     ["Ana skor", summary.topScoreHorse ?? "-"],
     ["Upside", summary.topUpsideHorse ?? "-"],
     ["Belirsizlik", summary.topUncertaintyHorse ?? "-"]
@@ -310,6 +312,15 @@ const renderReadinessArtifact = (report) => {
           </span>
         `).join("")}
       </div>
+      ${quality.warnings?.length ? `
+        <div class="artifact-quality" aria-label="Readiness veri kalite uyarıları">
+          ${quality.warnings.slice(0, 3).map((warning) => `<span>${escapeHtml(warning)}</span>`).join("")}
+        </div>
+      ` : `
+        <div class="artifact-quality artifact-quality--clean" aria-label="Readiness veri kalite durumu">
+          <span>Artifact kalite kontrolünde kritik uyarı yok.</span>
+        </div>
+      `}
       <div class="artifact-rankings" aria-label="Readiness artifact ilk 3 listeleri">
         ${rankingLenses.map(([key, label]) => {
           const entries = report.rankings?.[key]?.slice(0, 3) ?? [];

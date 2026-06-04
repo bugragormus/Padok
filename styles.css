@@ -370,6 +370,31 @@ h2 {
   white-space: nowrap;
 }
 
+.artifact-quality {
+  display: grid;
+  gap: 6px;
+  padding: 10px;
+  border: 1px solid rgba(197, 154, 61, 0.34);
+  border-radius: 8px;
+  background: #fff8e8;
+}
+
+.artifact-quality span {
+  color: #6f5a26;
+  font-size: 0.74rem;
+  font-weight: 800;
+  line-height: 1.35;
+}
+
+.artifact-quality--clean {
+  border-color: rgba(36, 95, 70, 0.2);
+  background: #eef6f1;
+}
+
+.artifact-quality--clean span {
+  color: var(--green-2);
+}
+
 .artifact-rankings {
   display: grid;
   gap: 8px;

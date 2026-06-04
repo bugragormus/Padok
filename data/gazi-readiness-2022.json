@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-06-04T17:16:41.947Z",
+  "generatedAt": "2026-06-04T17:21:55.595Z",
   "sourceYear": 2022,
   "sourceGeneratedAt": "2026-06-03T22:26:03.637Z",
   "methodology": {
@@ -14,6 +14,16 @@
     "topScoreHorse": "SECRET POWER",
     "topUpsideHorse": "SECRET POWER",
     "topUncertaintyHorse": "ROYAL BABY"
+  },
+  "quality": {
+    "runnerCount": 22,
+    "comparisonSeasonCount": 2,
+    "missingPedigreeCount": 0,
+    "missingOwnerCount": 0,
+    "prepSignalCount": 15,
+    "historicalEvidenceCount": 12,
+    "warningCount": 0,
+    "warnings": []
   },
   "lenses": {
     "score": {

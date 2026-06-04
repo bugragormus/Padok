@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-06-04T17:16:41.764Z",
+  "generatedAt": "2026-06-04T17:21:55.412Z",
   "sourceYear": 2020,
   "sourceGeneratedAt": "2026-06-03T22:26:03.450Z",
   "methodology": {
@@ -14,6 +14,19 @@
     "topScoreHorse": "CALL TO VICTORY",
     "topUpsideHorse": "CALL TO VICTORY",
     "topUncertaintyHorse": "SOZOPOL"
+  },
+  "quality": {
+    "runnerCount": 15,
+    "comparisonSeasonCount": 0,
+    "missingPedigreeCount": 0,
+    "missingOwnerCount": 0,
+    "prepSignalCount": 11,
+    "historicalEvidenceCount": 0,
+    "warningCount": 2,
+    "warnings": [
+      "Profil karşılaştırması için geçmiş sezon sayısı düşük.",
+      "Geçmiş ilk 3 profil kanıtı henüz oluşmadı."
+    ]
   },
   "lenses": {
     "score": {

@@ -54,6 +54,9 @@ test("buildReadinessReport emits lens rankings for a participation report", () =
   assert.deepEqual(payload.lensSummaries.score.topThree, ["PREP WINNER", "ROUTE OUTSIDER"]);
   assert.equal(payload.lensSummaries.score.watchlistCount, 1);
   assert.equal(payload.lensSummaries.uncertainty.topHorse, "ROUTE OUTSIDER");
+  assert.equal(payload.quality.runnerCount, 2);
+  assert.equal(payload.quality.prepSignalCount, 1);
+  assert.equal(payload.quality.warningCount, 2);
   assert.ok(payload.rankings.uncertainty[0].lensValue > 0);
 });
 
@@ -74,5 +77,6 @@ test("buildReadinessReport only uses earlier seasons as profile evidence", () =>
   const matches = payload.rankings.score[0].historicalMatches;
 
   assert.equal(payload.summary.comparisonSeasonCount, 1);
+  assert.equal(payload.quality.comparisonSeasonCount, 1);
   assert.deepEqual(matches.map((match) => match.year), [2023]);
 });

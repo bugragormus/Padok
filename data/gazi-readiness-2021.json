@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-06-04T17:16:41.858Z",
+  "generatedAt": "2026-06-04T17:21:55.507Z",
   "sourceYear": 2021,
   "sourceGeneratedAt": "2026-06-03T22:26:03.543Z",
   "methodology": {
@@ -14,6 +14,18 @@
     "topScoreHorse": "REAL RUNNER",
     "topUpsideHorse": "REAL RUNNER",
     "topUncertaintyHorse": "TURGUTLU EFESİ"
+  },
+  "quality": {
+    "runnerCount": 22,
+    "comparisonSeasonCount": 1,
+    "missingPedigreeCount": 0,
+    "missingOwnerCount": 0,
+    "prepSignalCount": 15,
+    "historicalEvidenceCount": 9,
+    "warningCount": 1,
+    "warnings": [
+      "Profil karşılaştırması için geçmiş sezon sayısı düşük."
+    ]
   },
   "lenses": {
     "score": {

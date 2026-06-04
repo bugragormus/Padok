@@ -128,6 +128,34 @@ const summarizeLens = (entries) => {
   };
 };
 
+const buildQualitySummary = (profiles, participationReport, comparisonReports) => {
+  const runnerCount = profiles.length;
+  const comparisonSeasonCount = comparisonReports.filter((report) => Number.isFinite(report.sourceYear) && report.sourceYear < participationReport.sourceYear).length;
+  const missingPedigreeCount = profiles.filter(({ row }) => !row.sire || !row.dam).length;
+  const missingOwnerCount = profiles.filter(({ row }) => !row.owner).length;
+  const prepSignalCount = profiles.filter(({ row }) => row.prepStartCount > 0).length;
+  const historicalEvidenceCount = profiles.filter(({ profileSummary }) => profileSummary.count > 0).length;
+  const warnings = [
+    runnerCount === 0 ? "Gazi koşucu listesi henüz readiness raporuna girmedi." : null,
+    comparisonSeasonCount < 2 ? "Profil karşılaştırması için geçmiş sezon sayısı düşük." : null,
+    missingPedigreeCount > 0 ? `${missingPedigreeCount} at için anne/baba bilgisi eksik.` : null,
+    missingOwnerCount > 0 ? `${missingOwnerCount} at için sahip bilgisi eksik.` : null,
+    runnerCount > 0 && prepSignalCount === 0 ? "Hiçbir at için takip edilen prep rotası sinyali yok." : null,
+    runnerCount > 0 && historicalEvidenceCount === 0 ? "Geçmiş ilk 3 profil kanıtı henüz oluşmadı." : null
+  ].filter(Boolean);
+
+  return {
+    runnerCount,
+    comparisonSeasonCount,
+    missingPedigreeCount,
+    missingOwnerCount,
+    prepSignalCount,
+    historicalEvidenceCount,
+    warningCount: warnings.length,
+    warnings
+  };
+};
+
 export const buildReadinessReport = (participationReport, options = {}) => {
   const comparisonReports = options.comparisonReports ?? [];
   const tableColumns = participationReport.columns ?? [];
@@ -154,6 +182,7 @@ export const buildReadinessReport = (participationReport, options = {}) => {
   const lensSummaries = Object.fromEntries(Object.entries(rankings).map(([lens, entries]) => {
     return [lens, summarizeLens(entries)];
   }));
+  const quality = buildQualitySummary(profiles, participationReport, comparisonReports);
 
   return {
     generatedAt: new Date().toISOString(),
@@ -172,6 +201,7 @@ export const buildReadinessReport = (participationReport, options = {}) => {
       topUpsideHorse: rankings.upside?.[0]?.horseName ?? null,
       topUncertaintyHorse: rankings.uncertainty?.[0]?.horseName ?? null
     },
+    quality,
     lenses: readinessLensLabels,
     lensSummaries,
     rankings
