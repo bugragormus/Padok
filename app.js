@@ -625,6 +625,29 @@ const summarizeProfileMatches = (matches) => {
   };
 };
 
+const buildProfileReading = (row, tableColumns, profileSummary) => {
+  const hasJockeyChange = rowHasJockeyChange(row, tableColumns);
+  const hasPrepWin = row.bestPrepFinishPosition === 1;
+  const hasNoPrep = row.prepStartCount === 0;
+  const numericAverage = Number.parseFloat(profileSummary.averageFinish);
+  const strongContext = profileSummary.count >= 4 && Number.isFinite(numericAverage) && numericAverage <= 2.2;
+  const mediumContext = profileSummary.count >= 2;
+  const level = strongContext ? "Güçlü bağlam" : mediumContext ? "Orta bağlam" : "Zayıf bağlam";
+  const primaryReason = hasNoPrep
+    ? "Klasik rota dışında geldiği için geçmiş rota dışı ilk 3 örnekleriyle okunmalı."
+    : hasPrepWin
+      ? "Prep galibiyeti geçmişte Gazi ilk 3'e taşınabilen net bir rota sinyali üretmiş."
+      : hasJockeyChange
+        ? "Jokey değişimi olan geçmiş ilk 3 örnekleri bu profil için ana karşılaştırma alanı."
+        : "Prep rotasında görünmesi olumlu bağlam verir, ancak tek başına ayırıcı sinyal değildir.";
+
+  return {
+    level,
+    reason: primaryReason,
+    caution: "Bu okuma sonuç tahmini değil; seçili atın profilini geçmiş ilk 3 örnekleriyle kıyaslar."
+  };
+};
+
 const renderHistoricalPatterns = () => {
   const container = document.querySelector("#historical-patterns");
   if (!container) return;
@@ -769,6 +792,7 @@ const renderParticipationDetail = (report, tableColumns, rows = report.rows) => 
   const profileTags = getProfileTags(selectedRow, tableColumns);
   const historicalMatches = getHistoricalProfileMatches(selectedRow, report);
   const profileSummary = summarizeProfileMatches(historicalMatches);
+  const profileReading = buildProfileReading(selectedRow, tableColumns, profileSummary);
 
   const metrics = [
     ["Gazi derecesi", formatPosition(selectedRow.gaziFinishPosition)],
@@ -801,6 +825,13 @@ const renderParticipationDetail = (report, tableColumns, rows = report.rows) => 
             <strong>${escapeHtml(value)}</strong>
           </div>
         `).join("")}
+      </div>
+
+      <div class="profile-reading">
+        <span>Profil okuması</span>
+        <strong>${escapeHtml(profileReading.level)}</strong>
+        <p>${escapeHtml(profileReading.reason)}</p>
+        <em>${escapeHtml(profileReading.caution)}</em>
       </div>
 
       <div class="horse-detail__grid">

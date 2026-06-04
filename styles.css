@@ -763,6 +763,38 @@ h2 {
   font-size: 1.05rem;
 }
 
+.profile-reading {
+  display: grid;
+  gap: 8px;
+  padding: 14px;
+  border: 1px solid rgba(36, 95, 70, 0.24);
+  border-radius: 8px;
+  background: #eef6f1;
+}
+
+.profile-reading span {
+  color: var(--muted);
+  font-size: 0.74rem;
+  font-weight: 800;
+}
+
+.profile-reading strong {
+  color: var(--green-2);
+  font-size: 1.08rem;
+}
+
+.profile-reading p,
+.profile-reading em {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.8rem;
+  line-height: 1.55;
+}
+
+.profile-reading em {
+  font-style: normal;
+}
+
 .horse-detail__grid {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
