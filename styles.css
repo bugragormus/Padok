@@ -690,6 +690,62 @@ h2 {
   gap: 10px;
 }
 
+.surprise-radar {
+  display: grid;
+  grid-template-columns: minmax(170px, 0.42fr) minmax(0, 1fr);
+  gap: 12px;
+  align-items: stretch;
+  padding: 12px;
+  border: 1px solid rgba(197, 154, 61, 0.34);
+  border-radius: 8px;
+  background: #fff8e8;
+}
+
+.surprise-radar h4 {
+  margin: 0;
+  font-size: 1rem;
+  line-height: 1.25;
+}
+
+.surprise-radar__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+  gap: 8px;
+}
+
+.radar-card {
+  display: grid;
+  align-content: start;
+  gap: 5px;
+  min-height: 86px;
+  padding: 10px;
+  border: 1px solid rgba(197, 154, 61, 0.36);
+  border-radius: 8px;
+  background: #fff;
+  color: inherit;
+  cursor: pointer;
+  font: inherit;
+  text-align: left;
+}
+
+.radar-card:hover,
+.radar-card--selected {
+  border-color: rgba(36, 95, 70, 0.4);
+  background: #eef6f1;
+}
+
+.radar-card strong {
+  font-size: 0.9rem;
+}
+
+.radar-card span,
+.radar-card em {
+  color: var(--muted);
+  font-size: 0.72rem;
+  font-style: normal;
+  line-height: 1.4;
+}
+
 .shortlist-card {
   display: grid;
   align-content: start;
@@ -1383,6 +1439,10 @@ footer {
   .profile-shortlist__header span {
     max-width: none;
     text-align: left;
+  }
+
+  .surprise-radar {
+    grid-template-columns: 1fr;
   }
 
   .horse-detail__header {

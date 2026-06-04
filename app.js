@@ -737,7 +737,7 @@ const getProfileAttentionScore = (row, tableColumns, profileSummary) => {
 
 const renderProfileShortlist = (report, tableColumns) => {
   const rows = report.rows ?? [];
-  const shortlist = rows
+  const profiles = rows
     .map((row) => {
       const historicalMatches = getHistoricalProfileMatches(row, report);
       const profileSummary = summarizeProfileMatches(historicalMatches);
@@ -750,9 +750,18 @@ const renderProfileShortlist = (report, tableColumns) => {
         tags: getProfileTags(row, tableColumns),
         score: getProfileAttentionScore(row, tableColumns, profileSummary)
       };
-    })
+    });
+  const shortlist = [...profiles]
     .sort((a, b) => b.score - a.score || (a.row.gaziFinishPosition ?? 99) - (b.row.gaziFinishPosition ?? 99))
     .slice(0, 5);
+  const surpriseRadar = [...profiles]
+    .filter(({ row }) => row.prepStartCount === 0 || rowHasJockeyChange(row, tableColumns))
+    .sort((a, b) => {
+      const aSurprise = (a.row.prepStartCount === 0 ? 34 : 0) + (rowHasJockeyChange(a.row, tableColumns) ? 12 : 0);
+      const bSurprise = (b.row.prepStartCount === 0 ? 34 : 0) + (rowHasJockeyChange(b.row, tableColumns) ? 12 : 0);
+      return (b.score + bSurprise) - (a.score + aSurprise);
+    })
+    .slice(0, 3);
 
   document.querySelector("#profile-shortlist").innerHTML = shortlist.length
     ? `
@@ -763,6 +772,23 @@ const renderProfileShortlist = (report, tableColumns) => {
         </div>
         <span>Skor tahmin değil, geçmiş benzerlik yoğunluğudur.</span>
       </div>
+      ${surpriseRadar.length ? `
+        <div class="surprise-radar">
+          <div>
+            <p class="section-kicker">Sürpriz radarı</p>
+            <h4>Klasik rota dışındaki dikkat profilleri</h4>
+          </div>
+          <div class="surprise-radar__grid">
+            ${surpriseRadar.map(({ row, profileSummary, tags }) => `
+              <button class="radar-card ${row.horseName === state.selectedParticipationHorse ? "radar-card--selected" : ""}" type="button" data-horse-name="${escapeHtml(row.horseName)}" aria-pressed="${row.horseName === state.selectedParticipationHorse}">
+                <strong>${escapeHtml(row.horseName)}</strong>
+                <span>${escapeHtml(tags.join(" · "))}</span>
+                <em>${escapeHtml(profileSummary.count)} geçmiş benzer · Ort. ${escapeHtml(profileSummary.averageFinish)}</em>
+              </button>
+            `).join("")}
+          </div>
+        </div>
+      ` : ""}
       <div class="profile-shortlist__grid">
         ${shortlist.map(({ row, profileSummary, profileReading, tags, score }) => `
           <button class="shortlist-card ${row.horseName === state.selectedParticipationHorse ? "shortlist-card--selected" : ""}" type="button" data-horse-name="${escapeHtml(row.horseName)}" aria-pressed="${row.horseName === state.selectedParticipationHorse}">
