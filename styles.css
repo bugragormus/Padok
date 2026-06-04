@@ -717,7 +717,7 @@ h2 {
   display: grid;
   align-content: start;
   gap: 5px;
-  min-height: 116px;
+  min-height: 138px;
   padding: 10px;
   border: 1px solid rgba(197, 154, 61, 0.36);
   border-radius: 8px;
@@ -747,11 +747,28 @@ h2 {
   line-height: 1.4;
 }
 
+.signal-parts {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+}
+
+.signal-parts i {
+  padding: 4px 6px;
+  border-radius: 999px;
+  background: #edf4ef;
+  color: var(--green-2);
+  font-size: 0.66rem;
+  font-style: normal;
+  font-weight: 800;
+  line-height: 1.15;
+}
+
 .shortlist-card {
   display: grid;
   align-content: start;
   gap: 7px;
-  min-height: 166px;
+  min-height: 188px;
   padding: 13px;
   border: 1px solid var(--line);
   border-radius: 8px;

@@ -735,6 +735,21 @@ const getProfileAttentionScore = (row, tableColumns, profileSummary) => {
   return (profileSummary.count * 18) + averageBoost + prepWinBoost + noPrepBoost + jockeyBoost + prepVolumeBoost;
 };
 
+const getProfileSignalParts = (row, tableColumns, profileSummary) => {
+  const numericAverage = Number.parseFloat(profileSummary.averageFinish);
+  const averageBoost = Number.isFinite(numericAverage) ? Math.max(0, Math.round(32 - (numericAverage * 8))) : 0;
+  const parts = [
+    { label: "geçmiş", value: profileSummary.count * 18 },
+    { label: "ortalama", value: averageBoost },
+    { label: "prep galibi", value: row.bestPrepFinishPosition === 1 ? 14 : 0 },
+    { label: "rota dışı", value: row.prepStartCount === 0 ? 10 : 0 },
+    { label: "jokey", value: rowHasJockeyChange(row, tableColumns) ? 8 : 0 },
+    { label: "yoğun prep", value: row.prepStartCount >= 2 ? 6 : 0 }
+  ];
+
+  return parts.filter((part) => part.value > 0);
+};
+
 const getProfileReason = (row, tableColumns, profileSummary) => {
   if (row.prepStartCount === 0) {
     return "Takip edilen prep rotasında görünmeden Gazi profiline geliyor.";
@@ -768,6 +783,7 @@ const renderProfileShortlist = (report, tableColumns) => {
         profileSummary,
         profileReading,
         reason: getProfileReason(row, tableColumns, profileSummary),
+        signalParts: getProfileSignalParts(row, tableColumns, profileSummary),
         tags: getProfileTags(row, tableColumns),
         score: getProfileAttentionScore(row, tableColumns, profileSummary)
       };
@@ -800,24 +816,30 @@ const renderProfileShortlist = (report, tableColumns) => {
             <h4>Klasik rota dışındaki dikkat profilleri</h4>
           </div>
           <div class="surprise-radar__grid">
-            ${surpriseRadar.map(({ row, profileSummary, tags, reason }) => `
+            ${surpriseRadar.map(({ row, profileSummary, tags, reason, signalParts }) => `
               <button class="radar-card ${row.horseName === state.selectedParticipationHorse ? "radar-card--selected" : ""}" type="button" data-horse-name="${escapeHtml(row.horseName)}" aria-pressed="${row.horseName === state.selectedParticipationHorse}">
                 <strong>${escapeHtml(row.horseName)}</strong>
                 <span>${escapeHtml(tags.join(" · "))}</span>
                 <em>${escapeHtml(profileSummary.count)} geçmiş benzer · Ort. ${escapeHtml(profileSummary.averageFinish)}</em>
                 <small>${escapeHtml(reason)}</small>
+                <div class="signal-parts">
+                  ${signalParts.slice(0, 3).map((part) => `<i>+${escapeHtml(part.value)} ${escapeHtml(part.label)}</i>`).join("")}
+                </div>
               </button>
             `).join("")}
           </div>
         </div>
       ` : ""}
       <div class="profile-shortlist__grid">
-        ${shortlist.map(({ row, profileSummary, profileReading, tags, score, reason }) => `
+        ${shortlist.map(({ row, profileSummary, profileReading, tags, score, reason, signalParts }) => `
           <button class="shortlist-card ${row.horseName === state.selectedParticipationHorse ? "shortlist-card--selected" : ""}" type="button" data-horse-name="${escapeHtml(row.horseName)}" aria-pressed="${row.horseName === state.selectedParticipationHorse}">
             <span>${escapeHtml(profileReading.level)}</span>
             <strong>${escapeHtml(row.horseName)}</strong>
             <em>${escapeHtml(score)} profil puanı · ${escapeHtml(profileSummary.count)} eşleşme · Ort. ${escapeHtml(profileSummary.averageFinish)}</em>
             <p>${escapeHtml(reason)}</p>
+            <div class="signal-parts">
+              ${signalParts.slice(0, 4).map((part) => `<i>+${escapeHtml(part.value)} ${escapeHtml(part.label)}</i>`).join("")}
+            </div>
             <small>${escapeHtml(tags.join(" · "))}</small>
           </button>
         `).join("")}
