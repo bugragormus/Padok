@@ -6,6 +6,7 @@ const state = {
   dataHorizon: null,
   selectedParticipationHorse: null,
   participationFilter: "all",
+  readinessLens: "score",
   analysisYear: null,
   routeReportCache: new Map(),
   participationReportCache: new Map(),
@@ -844,6 +845,67 @@ const getProfileReason = (row, tableColumns, profileSummary) => {
   return "Temel rota profili okunuyor; ayırıcı sinyal sınırlı.";
 };
 
+const readinessLensLabels = {
+  score: {
+    label: "Ana skor",
+    description: "En dengeli kompozit okuma"
+  },
+  upside: {
+    label: "Upside",
+    description: "Patlama ihtimali yüksek profiller"
+  },
+  lowRisk: {
+    label: "Düşük risk",
+    description: "Güven ve süreklilik ağırlıklı okuma"
+  },
+  uncertainty: {
+    label: "Veri eksiği",
+    description: "Eksik ama izlenmesi gereken profiller"
+  }
+};
+
+const sortReadinessProfiles = (profiles, lens = state.readinessLens) => {
+  const sortedProfiles = [...profiles];
+
+  if (lens === "upside") {
+    return sortedProfiles.sort((a, b) => b.readiness.upside - a.readiness.upside || b.readiness.score - a.readiness.score);
+  }
+
+  if (lens === "lowRisk") {
+    return sortedProfiles.sort((a, b) => {
+      const aValue = a.readiness.confidence - a.readiness.risk;
+      const bValue = b.readiness.confidence - b.readiness.risk;
+      return bValue - aValue || b.readiness.score - a.readiness.score;
+    });
+  }
+
+  if (lens === "uncertainty") {
+    return sortedProfiles.sort((a, b) => {
+      const aValue = a.readiness.upside + a.readiness.risk - a.readiness.confidence;
+      const bValue = b.readiness.upside + b.readiness.risk - b.readiness.confidence;
+      return bValue - aValue || b.readiness.upside - a.readiness.upside;
+    });
+  }
+
+  return sortedProfiles.sort((a, b) => b.readiness.score - a.readiness.score || b.readiness.confidence - a.readiness.confidence);
+};
+
+const renderReadinessLensControls = () => {
+  return `
+    <div class="readiness-lenses" aria-label="Readiness analiz mercekleri">
+      ${Object.entries(readinessLensLabels).map(([key, lens]) => {
+        const isSelected = state.readinessLens === key;
+        return `
+          <button class="lens-chip ${isSelected ? "lens-chip--selected" : ""}" type="button" data-readiness-lens="${escapeHtml(key)}" aria-pressed="${isSelected}">
+            <strong>${escapeHtml(lens.label)}</strong>
+            <span>${escapeHtml(lens.description)}</span>
+          </button>
+        `;
+      }).join("")}
+    </div>
+  `;
+};
+
 const buildReadinessValidation = () => {
   const reports = [...state.participationComparison]
     .filter((report) => Number.isFinite(report.sourceYear) && (report.rows ?? []).some((row) => Number.isFinite(row.gaziFinishPosition)))
@@ -949,9 +1011,7 @@ const renderProfileShortlist = (report, tableColumns) => {
         score: getProfileAttentionScore(row, tableColumns, profileSummary)
       };
     });
-  const readinessBoard = [...profiles]
-    .sort((a, b) => b.readiness.score - a.readiness.score || b.readiness.confidence - a.readiness.confidence)
-    .slice(0, 4);
+  const readinessBoard = sortReadinessProfiles(profiles).slice(0, 4);
   const shortlist = [...profiles]
     .sort((a, b) => b.score - a.score || (a.row.gaziFinishPosition ?? 99) - (b.row.gaziFinishPosition ?? 99))
     .slice(0, 5);
@@ -974,6 +1034,7 @@ const renderProfileShortlist = (report, tableColumns) => {
         <span>Readiness skoru Gazi sonucunu kullanmaz; prep formu, rota şekli, profil kanıtı ve veri güvenini birleştirir.</span>
       </div>
       ${renderReadinessValidation()}
+      ${renderReadinessLensControls()}
       <div class="readiness-board" aria-label="Readiness skor tablosu">
         ${readinessBoard.map(({ row, readiness }) => `
           <button class="readiness-card ${row.horseName === state.selectedParticipationHorse ? "readiness-card--selected" : ""}" type="button" data-horse-name="${escapeHtml(row.horseName)}" aria-pressed="${row.horseName === state.selectedParticipationHorse}">
@@ -1375,6 +1436,13 @@ const bindEvents = () => {
   });
 
   document.querySelector("#profile-shortlist").addEventListener("click", (event) => {
+    const lensButton = event.target.closest("[data-readiness-lens]");
+    if (lensButton && state.participationReport) {
+      state.readinessLens = lensButton.dataset.readinessLens;
+      renderParticipation(state.participationReport);
+      return;
+    }
+
     const row = event.target.closest("[data-horse-name]");
     if (!row || !state.participationReport) return;
     state.selectedParticipationHorse = row.dataset.horseName;
