@@ -176,6 +176,7 @@ const loadParticipationComparison = async () => {
 
   state.participationComparison = reports;
   renderParticipationComparison();
+  renderHistoricalPatterns();
 };
 
 const summarizeRouteReport = (report) => {
@@ -448,6 +449,107 @@ const formatHorseNames = (rows, limit = 3) => {
     : names.join(", ");
 };
 
+const getParticipationTableColumns = (report) => {
+  const prepColumns = report.columns.filter((column) => !column.isTarget);
+  const targetColumn = report.columns.find((column) => column.isTarget);
+
+  return targetColumn ? [...prepColumns, targetColumn] : prepColumns;
+};
+
+const summarizeParticipationPattern = (report) => {
+  const rows = report.rows ?? [];
+  const tableColumns = getParticipationTableColumns(report);
+  const podiumRows = rows
+    .filter((row) => Number.isFinite(row.gaziFinishPosition) && row.gaziFinishPosition <= 3)
+    .sort((a, b) => a.gaziFinishPosition - b.gaziFinishPosition);
+  const noPrepPodiumRows = podiumRows.filter((row) => row.prepStartCount === 0);
+  const prepWinnerPodiumRows = podiumRows.filter((row) => row.bestPrepFinishPosition === 1);
+  const jockeyChangePodiumRows = podiumRows.filter((row) => rowHasJockeyChange(row, tableColumns));
+
+  return {
+    year: report.sourceYear,
+    runnerCount: rows.length,
+    topThreePrepStartRate: report.summary.topThreePrepStartRate ?? 0,
+    noPrepPodiumRows,
+    prepWinnerPodiumRows,
+    jockeyChangePodiumRows
+  };
+};
+
+const buildHistoricalPatterns = (reports) => {
+  const seasons = reports
+    .map(summarizeParticipationPattern)
+    .filter((season) => season.runnerCount > 0)
+    .sort((a, b) => b.year - a.year);
+
+  if (!seasons.length) {
+    return [
+      {
+        label: "Tarihsel örneklem",
+        value: "Bekleniyor",
+        text: "Gazi koşucu listesi olan sezonlar geldikçe tekrar eden rota patternleri burada birikecek."
+      }
+    ];
+  }
+
+  const noPrepPodiumSeasons = seasons.filter((season) => season.noPrepPodiumRows.length > 0);
+  const prepWinnerPodiumSeasons = seasons.filter((season) => season.prepWinnerPodiumRows.length > 0);
+  const jockeyChangePodiumSeasons = seasons.filter((season) => season.jockeyChangePodiumRows.length > 0);
+  const fullCoverageSeasons = seasons.filter((season) => season.topThreePrepStartRate === 100);
+  const averageTopThreeCoverage = Math.round(
+    seasons.reduce((sum, season) => sum + season.topThreePrepStartRate, 0) / seasons.length
+  );
+
+  return [
+    {
+      label: "Tarihsel örneklem",
+      value: `${seasons.length} sezon`,
+      text: `${seasons.at(-1).year}-${seasons[0].year} arasında Gazi koşucu matrisi bulunan sezonlar okunuyor.`
+    },
+    {
+      label: "Rota dışı ilk 3",
+      value: `${noPrepPodiumSeasons.length} sezon`,
+      text: noPrepPodiumSeasons.length
+        ? `Örnekler: ${noPrepPodiumSeasons.map((season) => `${season.year} ${formatHorseNames(season.noPrepPodiumRows, 1)}`).slice(0, 3).join("; ")}.`
+        : "İlk 3 tamamen izlenen prep rotasından gelmiş görünüyor."
+    },
+    {
+      label: "Prep galibi etkisi",
+      value: `${prepWinnerPodiumSeasons.length} sezon`,
+      text: prepWinnerPodiumSeasons.length
+        ? `Prep kazanıp Gazi ilk 3 yapan sezonlar: ${prepWinnerPodiumSeasons.map((season) => season.year).join(", ")}.`
+        : "Prep galibiyeti örneklemde Gazi ilk 3'e taşınmamış."
+    },
+    {
+      label: "İlk 3 kapsaması",
+      value: `%${averageTopThreeCoverage}`,
+      text: `${fullCoverageSeasons.length} sezonda Gazi ilk 3'ün tamamı izlenen prep rotasında en az bir kez göründü.`
+    },
+    {
+      label: "Jokey değişimi",
+      value: `${jockeyChangePodiumSeasons.length} sezon`,
+      text: jockeyChangePodiumSeasons.length
+        ? `İlk 3 içinde jokey değişimi görülen sezonlar: ${jockeyChangePodiumSeasons.map((season) => season.year).join(", ")}.`
+        : "İlk 3 içinde rota boyunca jokey değişimi yakalanmadı."
+    }
+  ];
+};
+
+const renderHistoricalPatterns = () => {
+  const container = document.querySelector("#historical-patterns");
+  if (!container) return;
+
+  container.innerHTML = buildHistoricalPatterns(state.participationComparison)
+    .map((pattern) => `
+      <article class="pattern-card">
+        <span>${escapeHtml(pattern.label)}</span>
+        <strong>${escapeHtml(pattern.value)}</strong>
+        <p>${escapeHtml(pattern.text)}</p>
+      </article>
+    `)
+    .join("");
+};
+
 const buildParticipationInsights = (report, tableColumns) => {
   const rows = report.rows ?? [];
   const prepColumns = tableColumns.filter((column) => !column.isTarget);
@@ -655,9 +757,7 @@ const renderParticipation = (report) => {
     `)
     .join("");
 
-  const prepColumns = report.columns.filter((column) => !column.isTarget);
-  const targetColumn = report.columns.find((column) => column.isTarget);
-  const tableColumns = targetColumn ? [...prepColumns, targetColumn] : prepColumns;
+  const tableColumns = getParticipationTableColumns(report);
   renderParticipationFilters(report.rows, tableColumns);
   renderParticipationInsights(report, tableColumns);
 
@@ -794,6 +894,7 @@ const loadAnalysisYear = async (year) => {
 
   renderAnalysisYearControl();
   renderParticipationComparison();
+  renderHistoricalPatterns();
   renderDataStatus(state.routeReport);
   renderRouteReport(state.routeReport);
   renderParticipation(state.participationReport);
