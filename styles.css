@@ -370,6 +370,54 @@ h2 {
   white-space: nowrap;
 }
 
+.artifact-rankings {
+  display: grid;
+  gap: 8px;
+}
+
+.artifact-ranking {
+  display: grid;
+  gap: 6px;
+  padding: 10px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: #fff;
+}
+
+.artifact-ranking > strong {
+  color: var(--green-2);
+  font-size: 0.78rem;
+}
+
+.artifact-ranking span {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  align-items: baseline;
+  min-width: 0;
+  color: var(--muted);
+  font-size: 0.74rem;
+  line-height: 1.25;
+}
+
+.artifact-ranking b {
+  overflow: hidden;
+  color: var(--ink);
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.artifact-ranking small {
+  flex: 0 0 auto;
+  color: var(--muted);
+  font-size: 0.68rem;
+  font-weight: 800;
+}
+
+.artifact-ranking em {
+  font-size: 0.74rem;
+}
+
 .artifact-card__link {
   display: inline-flex;
   align-items: center;

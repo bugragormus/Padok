@@ -289,6 +289,11 @@ const renderReadinessArtifact = (report) => {
     ["Upside", summary.topUpsideHorse ?? "-"],
     ["Belirsizlik", summary.topUncertaintyHorse ?? "-"]
   ];
+  const rankingLenses = [
+    ["score", "Ana skor"],
+    ["upside", "Upside"],
+    ["uncertainty", "Belirsizlik"]
+  ];
 
   container.innerHTML = `
     <article class="artifact-card">
@@ -304,6 +309,24 @@ const renderReadinessArtifact = (report) => {
             <strong>${escapeHtml(value)}</strong>
           </span>
         `).join("")}
+      </div>
+      <div class="artifact-rankings" aria-label="Readiness artifact ilk 3 listeleri">
+        ${rankingLenses.map(([key, label]) => {
+          const entries = report.rankings?.[key]?.slice(0, 3) ?? [];
+          return `
+            <div class="artifact-ranking">
+              <strong>${escapeHtml(label)}</strong>
+              ${entries.length
+                ? entries.map((entry) => `
+                  <span>
+                    <b>${escapeHtml(entry.rank)}. ${escapeHtml(entry.horseName)}</b>
+                    <small>${escapeHtml(entry.lensValue)}/100</small>
+                  </span>
+                `).join("")
+                : '<em>Liste bekleniyor</em>'}
+            </div>
+          `;
+        }).join("")}
       </div>
       <a class="artifact-card__link" href="${escapeHtml(report.artifactPath ?? "./data/gazi-readiness-report.json")}" download>JSON indir</a>
       <em>Son üretim: ${escapeHtml(formatTimestamp(report.generatedAt))}</em>
