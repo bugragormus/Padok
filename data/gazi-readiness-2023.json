@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-06-04T17:06:48.202Z",
+  "generatedAt": "2026-06-04T17:16:42.044Z",
   "sourceYear": 2023,
   "sourceGeneratedAt": "2026-06-03T22:26:03.730Z",
   "methodology": {
@@ -31,6 +31,52 @@
     "uncertainty": {
       "label": "Veri eksiği",
       "description": "Eksik ama izlenmesi gereken profiller"
+    }
+  },
+  "lensSummaries": {
+    "score": {
+      "topHorse": "GENERAL BRIELLA",
+      "topThree": [
+        "GENERAL BRIELLA",
+        "QUALIZTO",
+        "COSMIC KID"
+      ],
+      "averageValue": 67,
+      "highSignalCount": 13,
+      "watchlistCount": 15
+    },
+    "upside": {
+      "topHorse": "GENERAL BRIELLA",
+      "topThree": [
+        "GENERAL BRIELLA",
+        "QUALIZTO",
+        "MOONLIGHT FAIRY"
+      ],
+      "averageValue": 27.5,
+      "highSignalCount": 0,
+      "watchlistCount": 4
+    },
+    "lowRisk": {
+      "topHorse": "GENERAL BRIELLA",
+      "topThree": [
+        "GENERAL BRIELLA",
+        "QUALIZTO",
+        "COSMIC KID"
+      ],
+      "averageValue": 63.2,
+      "highSignalCount": 14,
+      "watchlistCount": 17
+    },
+    "uncertainty": {
+      "topHorse": "URFA ASLANI",
+      "topThree": [
+        "URFA ASLANI",
+        "THE RAPTOR",
+        "TURDEMİRKIR"
+      ],
+      "averageValue": 31.4,
+      "highSignalCount": 0,
+      "watchlistCount": 5
     }
   },
   "rankings": {

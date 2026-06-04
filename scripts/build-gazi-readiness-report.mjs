@@ -109,6 +109,25 @@ const toRankingEntry = ({ row, readiness, profileSummary, historicalMatches }, l
   };
 };
 
+const average = (values) => {
+  const numericValues = values.filter(Number.isFinite);
+  if (!numericValues.length) return null;
+  return Math.round((numericValues.reduce((sum, value) => sum + value, 0) / numericValues.length) * 10) / 10;
+};
+
+const summarizeLens = (entries) => {
+  const topThree = entries.slice(0, 3);
+  const values = entries.map((entry) => entry.lensValue);
+
+  return {
+    topHorse: entries[0]?.horseName ?? null,
+    topThree: topThree.map((entry) => entry.horseName),
+    averageValue: average(values),
+    highSignalCount: entries.filter((entry) => Number.isFinite(entry.lensValue) && entry.lensValue >= 70).length,
+    watchlistCount: entries.filter((entry) => Number.isFinite(entry.lensValue) && entry.lensValue >= 50).length
+  };
+};
+
 export const buildReadinessReport = (participationReport, options = {}) => {
   const comparisonReports = options.comparisonReports ?? [];
   const tableColumns = participationReport.columns ?? [];
@@ -132,6 +151,9 @@ export const buildReadinessReport = (participationReport, options = {}) => {
       sortReadinessProfiles(profiles, lens).map((profile, index) => toRankingEntry(profile, lens, index))
     ];
   }));
+  const lensSummaries = Object.fromEntries(Object.entries(rankings).map(([lens, entries]) => {
+    return [lens, summarizeLens(entries)];
+  }));
 
   return {
     generatedAt: new Date().toISOString(),
@@ -151,6 +173,7 @@ export const buildReadinessReport = (participationReport, options = {}) => {
       topUncertaintyHorse: rankings.uncertainty?.[0]?.horseName ?? null
     },
     lenses: readinessLensLabels,
+    lensSummaries,
     rankings
   };
 };

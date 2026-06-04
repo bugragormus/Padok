@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-06-04T17:06:48.015Z",
+  "generatedAt": "2026-06-04T17:16:41.858Z",
   "sourceYear": 2021,
   "sourceGeneratedAt": "2026-06-03T22:26:03.543Z",
   "methodology": {
@@ -31,6 +31,52 @@
     "uncertainty": {
       "label": "Veri eksiği",
       "description": "Eksik ama izlenmesi gereken profiller"
+    }
+  },
+  "lensSummaries": {
+    "score": {
+      "topHorse": "REAL RUNNER",
+      "topThree": [
+        "REAL RUNNER",
+        "ANADOLU ASLANI",
+        "MEGALOMAN"
+      ],
+      "averageValue": 55.8,
+      "highSignalCount": 7,
+      "watchlistCount": 11
+    },
+    "upside": {
+      "topHorse": "REAL RUNNER",
+      "topThree": [
+        "REAL RUNNER",
+        "ANADOLU ASLANI",
+        "BURGAS"
+      ],
+      "averageValue": 20.9,
+      "highSignalCount": 0,
+      "watchlistCount": 4
+    },
+    "lowRisk": {
+      "topHorse": "REAL RUNNER",
+      "topThree": [
+        "REAL RUNNER",
+        "ANADOLU ASLANI",
+        "MEGALOMAN"
+      ],
+      "averageValue": 45.5,
+      "highSignalCount": 9,
+      "watchlistCount": 10
+    },
+    "uncertainty": {
+      "topHorse": "TURGUTLU EFESİ",
+      "topThree": [
+        "TURGUTLU EFESİ",
+        "SKYLINE",
+        "JUST UNIQUE"
+      ],
+      "averageValue": 33.3,
+      "highSignalCount": 0,
+      "watchlistCount": 7
     }
   },
   "rankings": {

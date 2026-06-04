@@ -50,6 +50,10 @@ test("buildReadinessReport emits lens rankings for a participation report", () =
   assert.equal(payload.rankings.upside.length, 2);
   assert.equal(payload.rankings.uncertainty.length, 2);
   assert.equal(payload.rankings.score[0].horseName, "PREP WINNER");
+  assert.equal(payload.lensSummaries.score.topHorse, "PREP WINNER");
+  assert.deepEqual(payload.lensSummaries.score.topThree, ["PREP WINNER", "ROUTE OUTSIDER"]);
+  assert.equal(payload.lensSummaries.score.watchlistCount, 1);
+  assert.equal(payload.lensSummaries.uncertainty.topHorse, "ROUTE OUTSIDER");
   assert.ok(payload.rankings.uncertainty[0].lensValue > 0);
 });
 

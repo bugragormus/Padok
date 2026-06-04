@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-06-04T17:06:48.392Z",
+  "generatedAt": "2026-06-04T17:16:42.236Z",
   "sourceYear": 2025,
   "sourceGeneratedAt": "2026-06-03T22:26:03.918Z",
   "methodology": {
@@ -31,6 +31,52 @@
     "uncertainty": {
       "label": "Veri eksiği",
       "description": "Eksik ama izlenmesi gereken profiller"
+    }
+  },
+  "lensSummaries": {
+    "score": {
+      "topHorse": "SPECIAL MAN",
+      "topThree": [
+        "SPECIAL MAN",
+        "BOON NAM",
+        "HANDSOME KING"
+      ],
+      "averageValue": 72.2,
+      "highSignalCount": 12,
+      "watchlistCount": 22
+    },
+    "upside": {
+      "topHorse": "SPECIAL MAN",
+      "topThree": [
+        "SPECIAL MAN",
+        "BOON NAM",
+        "HANDSOME KING"
+      ],
+      "averageValue": 31,
+      "highSignalCount": 0,
+      "watchlistCount": 4
+    },
+    "lowRisk": {
+      "topHorse": "SPECIAL MAN",
+      "topThree": [
+        "SPECIAL MAN",
+        "BOON NAM",
+        "HANDSOME KING"
+      ],
+      "averageValue": 73.5,
+      "highSignalCount": 14,
+      "watchlistCount": 17
+    },
+    "uncertainty": {
+      "topHorse": "TONBİ",
+      "topThree": [
+        "TONBİ",
+        "DATABASE",
+        "MAGIC WEAPON"
+      ],
+      "averageValue": 27.7,
+      "highSignalCount": 0,
+      "watchlistCount": 0
     }
   },
   "rankings": {

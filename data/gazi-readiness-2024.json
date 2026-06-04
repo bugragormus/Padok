@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-06-04T17:06:48.298Z",
+  "generatedAt": "2026-06-04T17:16:42.138Z",
   "sourceYear": 2024,
   "sourceGeneratedAt": "2026-06-03T22:26:03.823Z",
   "methodology": {
@@ -31,6 +31,52 @@
     "uncertainty": {
       "label": "Veri eksiği",
       "description": "Eksik ama izlenmesi gereken profiller"
+    }
+  },
+  "lensSummaries": {
+    "score": {
+      "topHorse": "MADRAS",
+      "topThree": [
+        "MADRAS",
+        "GİZ",
+        "MANGUSTA"
+      ],
+      "averageValue": 73.8,
+      "highSignalCount": 14,
+      "watchlistCount": 22
+    },
+    "upside": {
+      "topHorse": "MADRAS",
+      "topThree": [
+        "MADRAS",
+        "GİZ",
+        "MANGUSTA"
+      ],
+      "averageValue": 33.6,
+      "highSignalCount": 0,
+      "watchlistCount": 4
+    },
+    "lowRisk": {
+      "topHorse": "MADRAS",
+      "topThree": [
+        "MADRAS",
+        "GİZ",
+        "MANGUSTA"
+      ],
+      "averageValue": 71.5,
+      "highSignalCount": 16,
+      "watchlistCount": 17
+    },
+    "uncertainty": {
+      "topHorse": "GİZ",
+      "topThree": [
+        "GİZ",
+        "MANGUSTA",
+        "BORREGO"
+      ],
+      "averageValue": 30.7,
+      "highSignalCount": 0,
+      "watchlistCount": 0
     }
   },
   "rankings": {

@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-06-04T17:06:47.920Z",
+  "generatedAt": "2026-06-04T17:16:41.764Z",
   "sourceYear": 2020,
   "sourceGeneratedAt": "2026-06-03T22:26:03.450Z",
   "methodology": {
@@ -31,6 +31,52 @@
     "uncertainty": {
       "label": "Veri eksiği",
       "description": "Eksik ama izlenmesi gereken profiller"
+    }
+  },
+  "lensSummaries": {
+    "score": {
+      "topHorse": "CALL TO VICTORY",
+      "topThree": [
+        "CALL TO VICTORY",
+        "VERNAZZA",
+        "PRIOR"
+      ],
+      "averageValue": 49.4,
+      "highSignalCount": 0,
+      "watchlistCount": 7
+    },
+    "upside": {
+      "topHorse": "CALL TO VICTORY",
+      "topThree": [
+        "CALL TO VICTORY",
+        "PRIOR",
+        "POWERMAN"
+      ],
+      "averageValue": 14.9,
+      "highSignalCount": 0,
+      "watchlistCount": 0
+    },
+    "lowRisk": {
+      "topHorse": "CALL TO VICTORY",
+      "topThree": [
+        "CALL TO VICTORY",
+        "VERNAZZA",
+        "LORD OF GAME"
+      ],
+      "averageValue": 34.1,
+      "highSignalCount": 0,
+      "watchlistCount": 5
+    },
+    "uncertainty": {
+      "topHorse": "SOZOPOL",
+      "topThree": [
+        "SOZOPOL",
+        "DEMBE",
+        "KING MAN GO"
+      ],
+      "averageValue": 35.1,
+      "highSignalCount": 0,
+      "watchlistCount": 4
     }
   },
   "rankings": {

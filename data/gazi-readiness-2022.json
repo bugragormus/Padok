@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-06-04T17:06:48.107Z",
+  "generatedAt": "2026-06-04T17:16:41.947Z",
   "sourceYear": 2022,
   "sourceGeneratedAt": "2026-06-03T22:26:03.637Z",
   "methodology": {
@@ -31,6 +31,52 @@
     "uncertainty": {
       "label": "Veri eksiği",
       "description": "Eksik ama izlenmesi gereken profiller"
+    }
+  },
+  "lensSummaries": {
+    "score": {
+      "topHorse": "SECRET POWER",
+      "topThree": [
+        "SECRET POWER",
+        "FINAL DANCE",
+        "SİGOŞ"
+      ],
+      "averageValue": 62,
+      "highSignalCount": 8,
+      "watchlistCount": 13
+    },
+    "upside": {
+      "topHorse": "SECRET POWER",
+      "topThree": [
+        "SECRET POWER",
+        "FINAL DANCE",
+        "RAGE OF THE WIND"
+      ],
+      "averageValue": 23.4,
+      "highSignalCount": 0,
+      "watchlistCount": 3
+    },
+    "lowRisk": {
+      "topHorse": "SECRET POWER",
+      "topThree": [
+        "SECRET POWER",
+        "FINAL DANCE",
+        "SİGOŞ"
+      ],
+      "averageValue": 54.2,
+      "highSignalCount": 8,
+      "watchlistCount": 15
+    },
+    "uncertainty": {
+      "topHorse": "ROYAL BABY",
+      "topThree": [
+        "ROYAL BABY",
+        "MAXIMUS BOY",
+        "CHEEKY SON"
+      ],
+      "averageValue": 32.1,
+      "highSignalCount": 0,
+      "watchlistCount": 7
     }
   },
   "rankings": {
