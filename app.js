@@ -437,6 +437,102 @@ const getFilteredParticipationRows = (rows, tableColumns) => {
   return rows;
 };
 
+const formatHorseNames = (rows, limit = 3) => {
+  if (!rows.length) return "Yok";
+
+  const names = rows.slice(0, limit).map((row) => row.horseName);
+  const remainingCount = rows.length - names.length;
+
+  return remainingCount > 0
+    ? `${names.join(", ")} +${remainingCount}`
+    : names.join(", ");
+};
+
+const buildParticipationInsights = (report, tableColumns) => {
+  const rows = report.rows ?? [];
+  const prepColumns = tableColumns.filter((column) => !column.isTarget);
+  const summary = report.summary;
+  const podiumRows = rows
+    .filter((row) => Number.isFinite(row.gaziFinishPosition) && row.gaziFinishPosition <= 3)
+    .sort((a, b) => a.gaziFinishPosition - b.gaziFinishPosition);
+  const noPrepRows = rows.filter((row) => row.prepStartCount === 0);
+  const noPrepPodiumRows = podiumRows.filter((row) => row.prepStartCount === 0);
+  const jockeyChangeRows = rows.filter((row) => rowHasJockeyChange(row, tableColumns));
+  const prepWinnerPodiumRows = podiumRows.filter((row) => row.bestPrepFinishPosition === 1);
+  const routeStarterPodiumRows = podiumRows.filter((row) => row.prepStartCount > 0);
+  const maxPrepStartCount = Math.max(0, ...rows.map((row) => row.prepStartCount ?? 0));
+  const mostActivePrepRows = rows
+    .filter((row) => row.prepStartCount === maxPrepStartCount && maxPrepStartCount > 0)
+    .sort((a, b) => (a.gaziFinishPosition ?? 99) - (b.gaziFinishPosition ?? 99));
+  const liveContext = summary.analysisState === "awaiting-gazi-field";
+
+  if (!rows.length) {
+    return [
+      {
+        label: "Canlı takip",
+        value: `${report.sourceYear} sezonu izleniyor`,
+        text: "Gazi koşucu listesi gelince aynı yapı otomatik olarak at bazlı matrise dönecek."
+      },
+      {
+        label: "Rota durumu",
+        value: `${prepColumns.length} sinyal koşusu`,
+        text: "Sonuçlanan rota koşuları aday havuzunu erken okumak için kullanılacak."
+      },
+      {
+        label: "Analiz sınırı",
+        value: "Gazi bekleniyor",
+        text: "Gazi sonucu olmadan başarı korelasyonu kurulmaz; sadece aday ve rota sinyali okunur."
+      }
+    ];
+  }
+
+  return [
+    {
+      label: "Rota kapsaması",
+      value: `${summary.runnersWithPrepStartCount}/${summary.gaziRunnerCount} at`,
+      text: `Gazi ilk 3 içinden ${routeStarterPodiumRows.length}/${podiumRows.length || 3} at izlenen prep rotasında göründü.`
+    },
+    {
+      label: "Rota dışı başarı",
+      value: `${noPrepRows.length} at`,
+      text: noPrepPodiumRows.length
+        ? `İlk 3 içinde rota dışı gelenler: ${formatHorseNames(noPrepPodiumRows)}.`
+        : "İlk 3 içinde rota dışı gelen at yok; bu sezon klasik rota daha açıklayıcı."
+    },
+    {
+      label: "Prep kazanıp gelen",
+      value: `${prepWinnerPodiumRows.length} ilk 3 atı`,
+      text: prepWinnerPodiumRows.length
+        ? `Prep kazanıp Gazi ilk 3'e girenler: ${formatHorseNames(prepWinnerPodiumRows)}.`
+        : "Prep kazanmak bu sezon Gazi ilk 3 için doğrudan işaret üretmedi."
+    },
+    {
+      label: "Jokey hareketi",
+      value: `${jockeyChangeRows.length} at`,
+      text: `Rota boyunca jokey değişimi görünenler ayrı izlenmeli. En yoğun prep yolu: ${formatHorseNames(mostActivePrepRows, 2)} (${maxPrepStartCount} start).`
+    },
+    {
+      label: liveContext ? "Canlı akış" : "Analiz notu",
+      value: liveContext ? "Bekleyen veri" : "Eksik sinyal",
+      text: liveContext
+        ? "Koşular tamamlandıkça sonuçlar matrise eklenir; Gazi listesi geldiğinde at bazlı okuma başlar."
+        : "Katılmama bilgisi performans cezası değil; sadece bu rota setinde gözlem yok anlamına gelir."
+    }
+  ];
+};
+
+const renderParticipationInsights = (report, tableColumns) => {
+  document.querySelector("#participation-insights").innerHTML = buildParticipationInsights(report, tableColumns)
+    .map((insight) => `
+      <article class="insight-card">
+        <span>${escapeHtml(insight.label)}</span>
+        <strong>${escapeHtml(insight.value)}</strong>
+        <p>${escapeHtml(insight.text)}</p>
+      </article>
+    `)
+    .join("");
+};
+
 const renderParticipationFilters = (rows, tableColumns) => {
   const counts = {
     all: rows.length,
@@ -563,6 +659,7 @@ const renderParticipation = (report) => {
   const targetColumn = report.columns.find((column) => column.isTarget);
   const tableColumns = targetColumn ? [...prepColumns, targetColumn] : prepColumns;
   renderParticipationFilters(report.rows, tableColumns);
+  renderParticipationInsights(report, tableColumns);
 
   const filteredRows = getFilteredParticipationRows(report.rows, tableColumns);
   renderParticipationDetail(report, tableColumns, filteredRows);
