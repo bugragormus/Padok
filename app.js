@@ -881,13 +881,65 @@ const sortReadinessProfiles = (profiles, lens = state.readinessLens) => {
 
   if (lens === "uncertainty") {
     return sortedProfiles.sort((a, b) => {
-      const aValue = a.readiness.upside + a.readiness.risk - a.readiness.confidence;
-      const bValue = b.readiness.upside + b.readiness.risk - b.readiness.confidence;
+      const aValue = getReadinessLensValue(a.readiness, lens);
+      const bValue = getReadinessLensValue(b.readiness, lens);
       return bValue - aValue || b.readiness.upside - a.readiness.upside;
     });
   }
 
   return sortedProfiles.sort((a, b) => b.readiness.score - a.readiness.score || b.readiness.confidence - a.readiness.confidence);
+};
+
+const getReadinessLensValue = (readiness, lens = state.readinessLens) => {
+  if (lens === "upside") return readiness.upside;
+  if (lens === "lowRisk") return clamp(readiness.confidence - readiness.risk, 0, 100);
+  if (lens === "uncertainty") {
+    return clamp(Math.round((readiness.risk * 0.7) + (readiness.upside * 0.5) + (Math.max(0, 75 - readiness.confidence) * 0.6)), 0, 100);
+  }
+  return readiness.score;
+};
+
+const getReadinessLensBadge = (readiness, lens = state.readinessLens) => {
+  if (lens === "upside") return `Upside ${readiness.upside}`;
+  if (lens === "lowRisk") return `Risk dengesi ${getReadinessLensValue(readiness, lens)}`;
+  if (lens === "uncertainty") return `Belirsizlik ${getReadinessLensValue(readiness, lens)}`;
+  return readiness.label;
+};
+
+const getReadinessLensReason = (row, readiness, lens = state.readinessLens) => {
+  if (lens === "upside") {
+    if (row.bestPrepFinishPosition === 1) return "Prep galibiyeti bu profilde upside sinyalini yukarı çekiyor.";
+    if (row.prepStartCount === 0) return "Rota dışı profil, düşük görünürlükten gelen sürpriz ihtimali taşıyor.";
+    return "Geçmiş profil kanıtı ve rota formu birlikte patlama ihtimali üretiyor.";
+  }
+
+  if (lens === "lowRisk") {
+    if (readiness.risk <= 20) return "Veri güveni yüksek ve risk göstergeleri sınırlı.";
+    return "Güven skoru riskten daha güçlü kaldığı için dengeli aday olarak okunuyor.";
+  }
+
+  if (lens === "uncertainty") {
+    if (row.prepStartCount === 0) return "Takip edilen rotada görünmediği için eksik ama izlenmesi gereken profil.";
+    return "Upside ve risk birlikte yüksek; karar için daha fazla bağlam gerekiyor.";
+  }
+
+  return readiness.primaryReason;
+};
+
+const getReadinessLensMeta = (readiness, lens = state.readinessLens) => {
+  if (lens === "upside") {
+    return `${readiness.confidenceLabel} · Risk ${readiness.risk} · Readiness ${readiness.score}`;
+  }
+
+  if (lens === "lowRisk") {
+    return `${readiness.confidenceLabel} · ${readiness.riskLabel} · Upside ${readiness.upside}`;
+  }
+
+  if (lens === "uncertainty") {
+    return `${readiness.riskLabel} · Güven ${readiness.confidence} · Upside ${readiness.upside}`;
+  }
+
+  return `${readiness.confidenceLabel} · ${readiness.riskLabel} · Upside ${readiness.upside}`;
 };
 
 const renderReadinessLensControls = () => {
@@ -1038,14 +1090,14 @@ const renderProfileShortlist = (report, tableColumns) => {
       <div class="readiness-board" aria-label="Readiness skor tablosu">
         ${readinessBoard.map(({ row, readiness }) => `
           <button class="readiness-card ${row.horseName === state.selectedParticipationHorse ? "readiness-card--selected" : ""}" type="button" data-horse-name="${escapeHtml(row.horseName)}" aria-pressed="${row.horseName === state.selectedParticipationHorse}">
-            <span>${escapeHtml(readiness.label)}</span>
+            <span>${escapeHtml(getReadinessLensBadge(readiness))}</span>
             <strong>${escapeHtml(row.horseName)}</strong>
             <div class="readiness-card__score">
-              <b>${escapeHtml(readiness.score)}</b>
+              <b>${escapeHtml(getReadinessLensValue(readiness))}</b>
               <small>/100</small>
             </div>
-            <p>${escapeHtml(readiness.primaryReason)}</p>
-            <em>${escapeHtml(readiness.confidenceLabel)} · ${escapeHtml(readiness.riskLabel)} · Upside ${escapeHtml(readiness.upside)}</em>
+            <p>${escapeHtml(getReadinessLensReason(row, readiness))}</p>
+            <em>${escapeHtml(getReadinessLensMeta(readiness))}</em>
           </button>
         `).join("")}
       </div>
