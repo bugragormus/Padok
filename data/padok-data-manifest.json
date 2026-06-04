@@ -1,0 +1,267 @@
+{
+  "generatedAt": "2026-06-04T17:25:25.523Z",
+  "summary": {
+    "yearRange": "2020-2025",
+    "yearCount": 6,
+    "routeReportCount": 6,
+    "participationReportCount": 6,
+    "readinessReportCount": 6
+  },
+  "defaultReports": {
+    "route": "data/gazi-route-report.json",
+    "participation": "data/gazi-participation-report.json",
+    "readiness": "data/gazi-readiness-report.json",
+    "backtest": "data/gazi-backtest-report.json",
+    "horizon": "data/gazi-data-horizon.json"
+  },
+  "years": [
+    2020,
+    2021,
+    2022,
+    2023,
+    2024,
+    2025
+  ],
+  "reports": {
+    "route": [
+      {
+        "year": 2020,
+        "type": "route",
+        "path": "data/gazi-route-2020.json",
+        "generatedAt": "2026-06-03T13:04:07.777Z",
+        "sourceGeneratedAt": null,
+        "summary": {
+          "analysisState": "complete-results",
+          "runnerCount": null,
+          "routeRaceCount": 6,
+          "warningCount": null
+        }
+      },
+      {
+        "year": 2021,
+        "type": "route",
+        "path": "data/gazi-route-2021.json",
+        "generatedAt": "2026-06-03T13:04:45.719Z",
+        "sourceGeneratedAt": null,
+        "summary": {
+          "analysisState": "complete-results",
+          "runnerCount": null,
+          "routeRaceCount": 6,
+          "warningCount": null
+        }
+      },
+      {
+        "year": 2022,
+        "type": "route",
+        "path": "data/gazi-route-2022.json",
+        "generatedAt": "2026-06-03T13:05:40.886Z",
+        "sourceGeneratedAt": null,
+        "summary": {
+          "analysisState": "complete-results",
+          "runnerCount": null,
+          "routeRaceCount": 6,
+          "warningCount": null
+        }
+      },
+      {
+        "year": 2023,
+        "type": "route",
+        "path": "data/gazi-route-2023.json",
+        "generatedAt": "2026-06-03T13:06:16.400Z",
+        "sourceGeneratedAt": null,
+        "summary": {
+          "analysisState": "complete-results",
+          "runnerCount": null,
+          "routeRaceCount": 6,
+          "warningCount": null
+        }
+      },
+      {
+        "year": 2024,
+        "type": "route",
+        "path": "data/gazi-route-2024.json",
+        "generatedAt": "2026-06-03T12:49:11.539Z",
+        "sourceGeneratedAt": null,
+        "summary": {
+          "analysisState": "complete-results",
+          "runnerCount": null,
+          "routeRaceCount": 6,
+          "warningCount": null
+        }
+      },
+      {
+        "year": 2025,
+        "type": "route",
+        "path": "data/gazi-route-2025.json",
+        "generatedAt": "2026-06-03T12:51:05.365Z",
+        "sourceGeneratedAt": null,
+        "summary": {
+          "analysisState": "complete-results",
+          "runnerCount": null,
+          "routeRaceCount": 6,
+          "warningCount": null
+        }
+      }
+    ],
+    "participation": [
+      {
+        "year": 2020,
+        "type": "participation",
+        "path": "data/gazi-participation-2020.json",
+        "generatedAt": "2026-06-03T22:26:03.450Z",
+        "sourceGeneratedAt": "2026-06-03T13:04:07.777Z",
+        "summary": {
+          "analysisState": "field-available",
+          "runnerCount": 15,
+          "routeRaceCount": 6,
+          "warningCount": null
+        }
+      },
+      {
+        "year": 2021,
+        "type": "participation",
+        "path": "data/gazi-participation-2021.json",
+        "generatedAt": "2026-06-03T22:26:03.543Z",
+        "sourceGeneratedAt": "2026-06-03T13:04:45.719Z",
+        "summary": {
+          "analysisState": "field-available",
+          "runnerCount": 22,
+          "routeRaceCount": 6,
+          "warningCount": null
+        }
+      },
+      {
+        "year": 2022,
+        "type": "participation",
+        "path": "data/gazi-participation-2022.json",
+        "generatedAt": "2026-06-03T22:26:03.637Z",
+        "sourceGeneratedAt": "2026-06-03T13:05:40.886Z",
+        "summary": {
+          "analysisState": "field-available",
+          "runnerCount": 22,
+          "routeRaceCount": 6,
+          "warningCount": null
+        }
+      },
+      {
+        "year": 2023,
+        "type": "participation",
+        "path": "data/gazi-participation-2023.json",
+        "generatedAt": "2026-06-03T22:26:03.730Z",
+        "sourceGeneratedAt": "2026-06-03T13:06:16.400Z",
+        "summary": {
+          "analysisState": "field-available",
+          "runnerCount": 22,
+          "routeRaceCount": 6,
+          "warningCount": null
+        }
+      },
+      {
+        "year": 2024,
+        "type": "participation",
+        "path": "data/gazi-participation-2024.json",
+        "generatedAt": "2026-06-03T22:26:03.823Z",
+        "sourceGeneratedAt": "2026-06-03T12:49:11.539Z",
+        "summary": {
+          "analysisState": "field-available",
+          "runnerCount": 22,
+          "routeRaceCount": 6,
+          "warningCount": null
+        }
+      },
+      {
+        "year": 2025,
+        "type": "participation",
+        "path": "data/gazi-participation-2025.json",
+        "generatedAt": "2026-06-03T22:26:03.918Z",
+        "sourceGeneratedAt": "2026-06-03T12:51:05.365Z",
+        "summary": {
+          "analysisState": "field-available",
+          "runnerCount": 22,
+          "routeRaceCount": 6,
+          "warningCount": null
+        }
+      }
+    ],
+    "readiness": [
+      {
+        "year": 2020,
+        "type": "readiness",
+        "path": "data/gazi-readiness-2020.json",
+        "generatedAt": "2026-06-04T17:21:55.412Z",
+        "sourceGeneratedAt": "2026-06-03T22:26:03.450Z",
+        "summary": {
+          "analysisState": "field-available",
+          "runnerCount": 15,
+          "routeRaceCount": null,
+          "warningCount": 2
+        }
+      },
+      {
+        "year": 2021,
+        "type": "readiness",
+        "path": "data/gazi-readiness-2021.json",
+        "generatedAt": "2026-06-04T17:21:55.507Z",
+        "sourceGeneratedAt": "2026-06-03T22:26:03.543Z",
+        "summary": {
+          "analysisState": "field-available",
+          "runnerCount": 22,
+          "routeRaceCount": null,
+          "warningCount": 1
+        }
+      },
+      {
+        "year": 2022,
+        "type": "readiness",
+        "path": "data/gazi-readiness-2022.json",
+        "generatedAt": "2026-06-04T17:21:55.595Z",
+        "sourceGeneratedAt": "2026-06-03T22:26:03.637Z",
+        "summary": {
+          "analysisState": "field-available",
+          "runnerCount": 22,
+          "routeRaceCount": null,
+          "warningCount": 0
+        }
+      },
+      {
+        "year": 2023,
+        "type": "readiness",
+        "path": "data/gazi-readiness-2023.json",
+        "generatedAt": "2026-06-04T17:21:55.687Z",
+        "sourceGeneratedAt": "2026-06-03T22:26:03.730Z",
+        "summary": {
+          "analysisState": "field-available",
+          "runnerCount": 22,
+          "routeRaceCount": null,
+          "warningCount": 0
+        }
+      },
+      {
+        "year": 2024,
+        "type": "readiness",
+        "path": "data/gazi-readiness-2024.json",
+        "generatedAt": "2026-06-04T17:21:55.788Z",
+        "sourceGeneratedAt": "2026-06-03T22:26:03.823Z",
+        "summary": {
+          "analysisState": "field-available",
+          "runnerCount": 22,
+          "routeRaceCount": null,
+          "warningCount": 0
+        }
+      },
+      {
+        "year": 2025,
+        "type": "readiness",
+        "path": "data/gazi-readiness-2025.json",
+        "generatedAt": "2026-06-04T17:21:55.884Z",
+        "sourceGeneratedAt": "2026-06-03T22:26:03.918Z",
+        "summary": {
+          "analysisState": "field-available",
+          "runnerCount": 22,
+          "routeRaceCount": null,
+          "warningCount": 0
+        }
+      }
+    ]
+  }
+}

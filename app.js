@@ -14,6 +14,7 @@ const state = {
   backtestReport: null,
   participationReport: null,
   readinessReport: null,
+  dataManifest: null,
   dataHorizon: null,
   selectedParticipationHorse: null,
   participationFilter: "all",
@@ -344,6 +345,44 @@ const renderReadinessArtifact = (report) => {
       </div>
       <a class="artifact-card__link" href="${escapeHtml(report.artifactPath ?? "./data/gazi-readiness-report.json")}" download>JSON indir</a>
       <em>Son üretim: ${escapeHtml(formatTimestamp(report.generatedAt))}</em>
+    </article>
+  `;
+};
+
+const renderDataManifest = (manifest) => {
+  const container = document.querySelector("#data-manifest");
+  if (!container) return;
+
+  if (!manifest) {
+    container.innerHTML = "";
+    return;
+  }
+
+  const metrics = [
+    ["Yıl aralığı", manifest.summary?.yearRange ?? "-"],
+    ["Sezon", manifest.summary?.yearCount ?? 0],
+    ["Rota JSON", manifest.summary?.routeReportCount ?? 0],
+    ["Katılım JSON", manifest.summary?.participationReportCount ?? 0],
+    ["Readiness JSON", manifest.summary?.readinessReportCount ?? 0]
+  ];
+
+  container.innerHTML = `
+    <article class="manifest-card">
+      <div>
+        <p class="section-kicker">Veri kataloğu</p>
+        <h3>Artifact manifest</h3>
+        <p>Canlı siteye taşınan veri dosyalarının keşif indeksi. API/MCP tarafında ilk okunacak katalog budur.</p>
+      </div>
+      <div class="manifest-card__metrics">
+        ${metrics.map(([label, value]) => `
+          <span>
+            <small>${escapeHtml(label)}</small>
+            <strong>${escapeHtml(value)}</strong>
+          </span>
+        `).join("")}
+      </div>
+      <a class="artifact-card__link" href="./data/padok-data-manifest.json" download>Manifest indir</a>
+      <em>Son üretim: ${escapeHtml(formatTimestamp(manifest.generatedAt))}</em>
     </article>
   `;
 };
@@ -1528,12 +1567,13 @@ const bindEvents = () => {
 };
 
 const init = async () => {
-  const [knowledgeResponse, routeResponse, backtestResponse, participationResponse, readinessResponse, horizonResponse] = await Promise.all([
+  const [knowledgeResponse, routeResponse, backtestResponse, participationResponse, readinessResponse, manifestResponse, horizonResponse] = await Promise.all([
     fetch("./data/gazi-knowledge-base.json", { cache: "no-store" }),
     fetch("./data/gazi-route-report.json", { cache: "no-store" }).catch(() => null),
     fetch("./data/gazi-backtest-report.json", { cache: "no-store" }).catch(() => null),
     fetch("./data/gazi-participation-report.json", { cache: "no-store" }).catch(() => null),
     fetch("./data/gazi-readiness-report.json", { cache: "no-store" }).catch(() => null),
+    fetch("./data/padok-data-manifest.json", { cache: "no-store" }).catch(() => null),
     fetch("./data/gazi-data-horizon.json", { cache: "no-store" }).catch(() => null)
   ]);
 
@@ -1564,6 +1604,10 @@ const init = async () => {
     }
   }
 
+  if (manifestResponse?.ok) {
+    state.dataManifest = await manifestResponse.json();
+  }
+
   if (horizonResponse?.ok) {
     state.dataHorizon = await horizonResponse.json();
   }
@@ -1579,6 +1623,7 @@ const init = async () => {
   if (state.backtestReport) renderBacktest(state.backtestReport);
   if (state.participationReport) renderParticipation(state.participationReport);
   renderReadinessArtifact(state.readinessReport);
+  renderDataManifest(state.dataManifest);
   if (state.dataHorizon) renderDataHorizon(state.dataHorizon);
   renderAnalysisYearControl();
   if (state.dataHorizon) await loadParticipationComparison();

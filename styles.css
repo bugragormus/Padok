@@ -474,6 +474,58 @@ h2 {
   font-weight: 900;
 }
 
+.manifest-card {
+  display: grid;
+  grid-template-columns: minmax(220px, 0.9fr) minmax(0, 1.4fr) auto;
+  gap: 14px;
+  align-items: stretch;
+  margin-top: 20px;
+  padding: 14px;
+  border: 1px solid rgba(36, 95, 70, 0.18);
+  border-radius: 8px;
+  background: #fbfcfa;
+}
+
+.manifest-card h3 {
+  margin: 0 0 8px;
+  font-size: 1rem;
+}
+
+.manifest-card p,
+.manifest-card em {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.76rem;
+  font-style: normal;
+  line-height: 1.45;
+}
+
+.manifest-card__metrics {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 8px;
+}
+
+.manifest-card__metrics span {
+  display: grid;
+  gap: 4px;
+  min-height: 58px;
+  padding: 9px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: #fff;
+}
+
+.manifest-card__metrics small {
+  color: var(--muted);
+  font-size: 0.68rem;
+}
+
+.manifest-card__metrics strong {
+  color: var(--green-2);
+  font-size: 0.9rem;
+}
+
 .data-horizon {
   margin-top: 36px;
   padding-top: 28px;
@@ -1961,6 +2013,11 @@ footer {
   }
 
   .artifact-card__metrics {
+    grid-template-columns: 1fr;
+  }
+
+  .manifest-card,
+  .manifest-card__metrics {
     grid-template-columns: 1fr;
   }
 
