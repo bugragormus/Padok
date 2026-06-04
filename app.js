@@ -177,6 +177,7 @@ const loadParticipationComparison = async () => {
   state.participationComparison = reports;
   renderParticipationComparison();
   renderHistoricalPatterns();
+  if (state.participationReport) renderParticipation(state.participationReport);
 };
 
 const summarizeRouteReport = (report) => {
@@ -535,6 +536,66 @@ const buildHistoricalPatterns = (reports) => {
   ];
 };
 
+const getProfileTags = (row, tableColumns) => {
+  const tags = [];
+
+  if (row.prepStartCount === 0) {
+    tags.push("Rota dışı");
+  } else {
+    tags.push("Prep gördü");
+  }
+
+  if (row.bestPrepFinishPosition === 1) {
+    tags.push("Prep galibi");
+  }
+
+  if (rowHasJockeyChange(row, tableColumns)) {
+    tags.push("Jokey değişti");
+  }
+
+  if (row.prepStartCount >= 2) {
+    tags.push("Yoğun prep");
+  }
+
+  return tags;
+};
+
+const getHistoricalProfileMatches = (selectedRow, selectedReport) => {
+  if (!selectedRow || !state.participationComparison.length) return [];
+
+  const selectedColumns = getParticipationTableColumns(selectedReport);
+  const selectedNoPrep = selectedRow.prepStartCount === 0;
+  const selectedPrepWinner = selectedRow.bestPrepFinishPosition === 1;
+  const selectedJockeyChange = rowHasJockeyChange(selectedRow, selectedColumns);
+  const selectedActivePrep = selectedRow.prepStartCount >= 2;
+
+  return state.participationComparison
+    .filter((report) => report.sourceYear !== selectedReport.sourceYear)
+    .flatMap((report) => {
+      const tableColumns = getParticipationTableColumns(report);
+
+      return (report.rows ?? [])
+        .filter((row) => Number.isFinite(row.gaziFinishPosition) && row.gaziFinishPosition <= 3)
+        .map((row) => {
+          const matchingSignals = [
+            selectedNoPrep && row.prepStartCount === 0 ? "rota dışı" : null,
+            selectedPrepWinner && row.bestPrepFinishPosition === 1 ? "prep galibi" : null,
+            selectedJockeyChange && rowHasJockeyChange(row, tableColumns) ? "jokey değişimi" : null,
+            selectedActivePrep && row.prepStartCount >= 2 ? "yoğun prep" : null
+          ].filter(Boolean);
+
+          return {
+            ...row,
+            year: report.sourceYear,
+            matchingSignals
+          };
+        });
+    })
+    .filter((row) => row.matchingSignals.length > 0)
+    .sort((a, b) => b.matchingSignals.length - a.matchingSignals.length || a.gaziFinishPosition - b.gaziFinishPosition || b.year - a.year)
+    .slice(0, 4);
+};
+
 const renderHistoricalPatterns = () => {
   const container = document.querySelector("#historical-patterns");
   if (!container) return;
@@ -676,6 +737,8 @@ const renderParticipationDetail = (report, tableColumns, rows = report.rows) => 
   const prepPath = prepStarts.length
     ? prepStarts.map(({ column, cell }) => `${column.name} ${formatPosition(cell.finishPosition)}`).join(" · ")
     : "Takip edilen prep rotasında start yok";
+  const profileTags = getProfileTags(selectedRow, tableColumns);
+  const historicalMatches = getHistoricalProfileMatches(selectedRow, report);
 
   const metrics = [
     ["Gazi derecesi", formatPosition(selectedRow.gaziFinishPosition)],
@@ -725,6 +788,28 @@ const renderParticipationDetail = (report, tableColumns, rows = report.rows) => 
           <h4>Veri yorumu</h4>
           <p>${selectedRow.hasPrepStart ? "Bu at için rota sinyali var." : "Bu at takip edilen prep rotası dışında Gazi'ye gelmiş."}</p>
           <span>Katılmama bilgisi performans cezası değil, eksik rota sinyalidir.</span>
+        </div>
+      </div>
+
+      <div class="profile-match">
+        <div>
+          <h4>Profil etiketi</h4>
+          <div class="profile-tags">
+            ${profileTags.map((tag) => `<span>${escapeHtml(tag)}</span>`).join("")}
+          </div>
+        </div>
+        <div>
+          <h4>Geçmiş ilk 3 benzerleri</h4>
+          ${historicalMatches.length
+            ? `<ul>
+              ${historicalMatches.map((match) => `
+                <li>
+                  <strong>${escapeHtml(match.year)} · ${escapeHtml(match.horseName)} · Gazi ${escapeHtml(formatPosition(match.gaziFinishPosition))}</strong>
+                  <span>${escapeHtml(match.matchingSignals.join(", "))}</span>
+                </li>
+              `).join("")}
+            </ul>`
+            : '<p class="muted">Bu profil için geçmiş ilk 3 içinde güçlü eşleşme yok.</p>'}
         </div>
       </div>
     </div>
