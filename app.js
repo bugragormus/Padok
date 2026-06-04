@@ -334,6 +334,56 @@ const renderReadinessArtifact = (report) => {
   `;
 };
 
+const getArtifactLensRows = (horseName) => {
+  if (!state.readinessReport?.rankings || !horseName) return [];
+
+  return [
+    ["score", "Ana skor"],
+    ["upside", "Upside"],
+    ["lowRisk", "Düşük risk"],
+    ["uncertainty", "Belirsizlik"]
+  ].map(([key, label]) => {
+    const entry = state.readinessReport.rankings[key]?.find((ranking) => ranking.horseName === horseName);
+    return entry
+      ? {
+        label,
+        rank: entry.rank,
+        value: entry.lensValue,
+        badge: entry.badge
+      }
+      : {
+        label,
+        rank: "-",
+        value: "-",
+        badge: "Artifact içinde yok"
+      };
+  });
+};
+
+const renderArtifactLensPanel = (horseName) => {
+  const lensRows = getArtifactLensRows(horseName);
+  if (!lensRows.length) return "";
+
+  return `
+    <div class="artifact-lens-panel">
+      <div>
+        <span>Artifact sırası</span>
+        <strong>${escapeHtml(state.readinessReport?.sourceYear ?? "-")} readiness raporu</strong>
+        <p>Bu atın otomatik üretilen JSON raporundaki lens sıralamaları.</p>
+      </div>
+      <div class="artifact-lens-panel__grid">
+        ${lensRows.map((row) => `
+          <span>
+            <small>${escapeHtml(row.label)}</small>
+            <strong>${escapeHtml(row.rank)}.</strong>
+            <em>${escapeHtml(row.value)}/100 · ${escapeHtml(row.badge)}</em>
+          </span>
+        `).join("")}
+      </div>
+    </div>
+  `;
+};
+
 const horizonTierStatusLabels = {
   complete: "Tamamlandı",
   "in-progress": "Sürüyor",
@@ -1196,6 +1246,8 @@ const renderParticipationDetail = (report, tableColumns, rows = report.rows) => 
           ${readiness.parts.map((part) => `<i>+${escapeHtml(part.value)} ${escapeHtml(part.label)}</i>`).join("")}
         </div>
       </div>
+
+      ${renderArtifactLensPanel(selectedRow.horseName)}
 
       <div class="horse-detail__grid">
         <div>
