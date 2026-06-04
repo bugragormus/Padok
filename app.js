@@ -1,3 +1,13 @@
+import {
+  getReadinessAssessment as buildReadinessAssessment,
+  getReadinessLensBadge,
+  getReadinessLensMeta,
+  getReadinessLensReason,
+  getReadinessLensValue,
+  readinessLensLabels,
+  sortReadinessProfiles
+} from "./scripts/readiness-model.mjs";
+
 const state = {
   data: null,
   routeReport: null,
@@ -91,8 +101,6 @@ const formatTimestamp = (value) => {
 };
 
 const percentage = (count, total) => total > 0 ? Math.round((count / total) * 100) : 0;
-
-const clamp = (value, min, max) => Math.min(max, Math.max(min, value));
 
 const formatPosition = (value) => Number.isFinite(value) ? `${value}.` : "-";
 
@@ -754,75 +762,10 @@ const getProfileSignalParts = (row, tableColumns, profileSummary) => {
   return parts.filter((part) => part.value > 0);
 };
 
-const getPrepFormScore = (row) => {
-  if (!row.hasPrepStart) return 8;
-  if (row.bestPrepFinishPosition === 1) return 28;
-  if (row.bestPrepFinishPosition === 2) return 23;
-  if (row.bestPrepFinishPosition === 3) return 19;
-  if (row.bestPrepFinishPosition <= 5) return 13;
-  return 7;
-};
-
 const getReadinessAssessment = (row, tableColumns, profileSummary) => {
-  const hasJockeyChange = rowHasJockeyChange(row, tableColumns);
-  const numericAverage = Number.parseFloat(profileSummary.averageFinish);
-  const profileEvidence = clamp((profileSummary.count * 7) + (Number.isFinite(numericAverage) ? Math.round(12 - (numericAverage * 3)) : 0), 0, 30);
-  const prepForm = getPrepFormScore(row);
-  const routeShape = row.prepStartCount >= 2 ? 18 : row.hasPrepStart ? 13 : 8;
-  const continuity = hasJockeyChange ? 7 : 13;
-  const dataDepth = [
-    row.sire,
-    row.dam,
-    row.owner,
-    row.gaziJockeyName,
-    row.bestPrepRaceName
-  ].filter(Boolean).length * 2;
-  const score = clamp(prepForm + profileEvidence + routeShape + continuity + dataDepth, 0, 100);
-  const confidence = clamp(35 + (row.hasPrepStart ? 20 : 0) + (profileSummary.count * 8) + (row.sire && row.dam ? 10 : 0) + (row.owner ? 5 : 0), 0, 100);
-  const upside = clamp(
-    (row.bestPrepFinishPosition === 1 ? 34 : 0)
-      + (profileSummary.count >= 3 ? 24 : profileSummary.count * 6)
-      + (row.prepStartCount === 0 ? 18 : 0)
-      + (row.prepStartCount >= 2 ? 10 : 0),
-    0,
-    100
-  );
-  const risk = clamp(
-    (row.prepStartCount === 0 ? 26 : 0)
-      + (hasJockeyChange ? 14 : 0)
-      + (profileSummary.count === 0 ? 18 : 0)
-      + (!row.sire || !row.dam ? 8 : 0),
-    0,
-    100
-  );
-  const label = score >= 78 ? "Güçlü aday profili" : score >= 64 ? "Ciddi takip profili" : score >= 50 ? "İzleme listesi" : "Eksik sinyal";
-  const confidenceLabel = confidence >= 76 ? "Yüksek güven" : confidence >= 58 ? "Orta güven" : "Düşük güven";
-  const riskLabel = risk >= 45 ? "Yüksek oynaklık" : risk >= 24 ? "Kontrollü risk" : "Düşük risk";
-  const primaryReason = row.bestPrepFinishPosition === 1
-    ? "Prep galibiyeti kompozit skoru yukarı taşıyor."
-    : row.prepStartCount === 0
-      ? "Rota dışı geldiği için upside var, fakat veri güveni sınırlı."
-      : profileSummary.count >= 3
-        ? "Geçmiş ilk 3 profilleriyle benzerlik yoğunluğu var."
-        : "Temel rota sinyali var; ayırıcı veri henüz sınırlı.";
-
-  return {
-    score,
-    confidence,
-    upside,
-    risk,
-    label,
-    confidenceLabel,
-    riskLabel,
-    primaryReason,
-    parts: [
-      { label: "prep formu", value: prepForm },
-      { label: "profil kanıtı", value: profileEvidence },
-      { label: "rota şekli", value: routeShape },
-      { label: "jokey sürekliliği", value: continuity },
-      { label: "veri derinliği", value: dataDepth }
-    ].filter((part) => part.value > 0)
-  };
+  return buildReadinessAssessment(row, profileSummary, {
+    hasJockeyChange: rowHasJockeyChange(row, tableColumns)
+  });
 };
 
 const getProfileReason = (row, tableColumns, profileSummary) => {
@@ -843,103 +786,6 @@ const getProfileReason = (row, tableColumns, profileSummary) => {
   }
 
   return "Temel rota profili okunuyor; ayırıcı sinyal sınırlı.";
-};
-
-const readinessLensLabels = {
-  score: {
-    label: "Ana skor",
-    description: "En dengeli kompozit okuma"
-  },
-  upside: {
-    label: "Upside",
-    description: "Patlama ihtimali yüksek profiller"
-  },
-  lowRisk: {
-    label: "Düşük risk",
-    description: "Güven ve süreklilik ağırlıklı okuma"
-  },
-  uncertainty: {
-    label: "Veri eksiği",
-    description: "Eksik ama izlenmesi gereken profiller"
-  }
-};
-
-const sortReadinessProfiles = (profiles, lens = state.readinessLens) => {
-  const sortedProfiles = [...profiles];
-
-  if (lens === "upside") {
-    return sortedProfiles.sort((a, b) => b.readiness.upside - a.readiness.upside || b.readiness.score - a.readiness.score);
-  }
-
-  if (lens === "lowRisk") {
-    return sortedProfiles.sort((a, b) => {
-      const aValue = a.readiness.confidence - a.readiness.risk;
-      const bValue = b.readiness.confidence - b.readiness.risk;
-      return bValue - aValue || b.readiness.score - a.readiness.score;
-    });
-  }
-
-  if (lens === "uncertainty") {
-    return sortedProfiles.sort((a, b) => {
-      const aValue = getReadinessLensValue(a.readiness, lens);
-      const bValue = getReadinessLensValue(b.readiness, lens);
-      return bValue - aValue || b.readiness.upside - a.readiness.upside;
-    });
-  }
-
-  return sortedProfiles.sort((a, b) => b.readiness.score - a.readiness.score || b.readiness.confidence - a.readiness.confidence);
-};
-
-const getReadinessLensValue = (readiness, lens = state.readinessLens) => {
-  if (lens === "upside") return readiness.upside;
-  if (lens === "lowRisk") return clamp(readiness.confidence - readiness.risk, 0, 100);
-  if (lens === "uncertainty") {
-    return clamp(Math.round((readiness.risk * 0.7) + (readiness.upside * 0.5) + (Math.max(0, 75 - readiness.confidence) * 0.6)), 0, 100);
-  }
-  return readiness.score;
-};
-
-const getReadinessLensBadge = (readiness, lens = state.readinessLens) => {
-  if (lens === "upside") return `Upside ${readiness.upside}`;
-  if (lens === "lowRisk") return `Risk dengesi ${getReadinessLensValue(readiness, lens)}`;
-  if (lens === "uncertainty") return `Belirsizlik ${getReadinessLensValue(readiness, lens)}`;
-  return readiness.label;
-};
-
-const getReadinessLensReason = (row, readiness, lens = state.readinessLens) => {
-  if (lens === "upside") {
-    if (row.bestPrepFinishPosition === 1) return "Prep galibiyeti bu profilde upside sinyalini yukarı çekiyor.";
-    if (row.prepStartCount === 0) return "Rota dışı profil, düşük görünürlükten gelen sürpriz ihtimali taşıyor.";
-    return "Geçmiş profil kanıtı ve rota formu birlikte patlama ihtimali üretiyor.";
-  }
-
-  if (lens === "lowRisk") {
-    if (readiness.risk <= 20) return "Veri güveni yüksek ve risk göstergeleri sınırlı.";
-    return "Güven skoru riskten daha güçlü kaldığı için dengeli aday olarak okunuyor.";
-  }
-
-  if (lens === "uncertainty") {
-    if (row.prepStartCount === 0) return "Takip edilen rotada görünmediği için eksik ama izlenmesi gereken profil.";
-    return "Upside ve risk birlikte yüksek; karar için daha fazla bağlam gerekiyor.";
-  }
-
-  return readiness.primaryReason;
-};
-
-const getReadinessLensMeta = (readiness, lens = state.readinessLens) => {
-  if (lens === "upside") {
-    return `${readiness.confidenceLabel} · Risk ${readiness.risk} · Readiness ${readiness.score}`;
-  }
-
-  if (lens === "lowRisk") {
-    return `${readiness.confidenceLabel} · ${readiness.riskLabel} · Upside ${readiness.upside}`;
-  }
-
-  if (lens === "uncertainty") {
-    return `${readiness.riskLabel} · Güven ${readiness.confidence} · Upside ${readiness.upside}`;
-  }
-
-  return `${readiness.confidenceLabel} · ${readiness.riskLabel} · Upside ${readiness.upside}`;
 };
 
 const renderReadinessLensControls = () => {
@@ -1063,7 +909,7 @@ const renderProfileShortlist = (report, tableColumns) => {
         score: getProfileAttentionScore(row, tableColumns, profileSummary)
       };
     });
-  const readinessBoard = sortReadinessProfiles(profiles).slice(0, 4);
+  const readinessBoard = sortReadinessProfiles(profiles, state.readinessLens).slice(0, 4);
   const shortlist = [...profiles]
     .sort((a, b) => b.score - a.score || (a.row.gaziFinishPosition ?? 99) - (b.row.gaziFinishPosition ?? 99))
     .slice(0, 5);
@@ -1090,14 +936,14 @@ const renderProfileShortlist = (report, tableColumns) => {
       <div class="readiness-board" aria-label="Readiness skor tablosu">
         ${readinessBoard.map(({ row, readiness }) => `
           <button class="readiness-card ${row.horseName === state.selectedParticipationHorse ? "readiness-card--selected" : ""}" type="button" data-horse-name="${escapeHtml(row.horseName)}" aria-pressed="${row.horseName === state.selectedParticipationHorse}">
-            <span>${escapeHtml(getReadinessLensBadge(readiness))}</span>
+            <span>${escapeHtml(getReadinessLensBadge(readiness, state.readinessLens))}</span>
             <strong>${escapeHtml(row.horseName)}</strong>
             <div class="readiness-card__score">
-              <b>${escapeHtml(getReadinessLensValue(readiness))}</b>
+              <b>${escapeHtml(getReadinessLensValue(readiness, state.readinessLens))}</b>
               <small>/100</small>
             </div>
-            <p>${escapeHtml(getReadinessLensReason(row, readiness))}</p>
-            <em>${escapeHtml(getReadinessLensMeta(readiness))}</em>
+            <p>${escapeHtml(getReadinessLensReason(row, readiness, state.readinessLens))}</p>
+            <em>${escapeHtml(getReadinessLensMeta(readiness, state.readinessLens))}</em>
           </button>
         `).join("")}
       </div>
