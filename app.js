@@ -12,6 +12,7 @@ const state = {
   participationReport: null,
   dataHorizon: null,
   selectedParticipationHorse: null,
+  participationFilter: "all",
   analysisYear: null,
   routeReportCache: new Map(),
   participationReportCache: new Map(),
@@ -371,6 +372,13 @@ const participationStateLabels = {
   "awaiting-gazi-field": "Gazi koşucuları bekleniyor"
 };
 
+const participationFilterLabels = {
+  all: "Tüm atlar",
+  noPrep: "Rota dışı",
+  podium: "Gazi ilk 3",
+  jockeyChange: "Jokey değişen"
+};
+
 const cellLabels = {
   ran: "Koştu",
   "not-run": "Yok",
@@ -406,9 +414,54 @@ const getParticipationRouteStarts = (row, columns) => {
     .filter(({ cell }) => cell?.status === "ran");
 };
 
-const renderParticipationDetail = (report, tableColumns) => {
-  const selectedRow = report.rows.find((row) => row.horseName === state.selectedParticipationHorse)
-    ?? report.rows[0];
+const rowHasJockeyChange = (row, columns) => {
+  const starts = getParticipationRouteStarts(row, columns);
+  const jockeyNames = new Set(starts.map(({ cell }) => cell.jockeyName).filter(Boolean));
+
+  return jockeyNames.size > 1;
+};
+
+const getFilteredParticipationRows = (rows, tableColumns) => {
+  if (state.participationFilter === "noPrep") {
+    return rows.filter((row) => row.prepStartCount === 0);
+  }
+
+  if (state.participationFilter === "podium") {
+    return rows.filter((row) => Number.isFinite(row.gaziFinishPosition) && row.gaziFinishPosition <= 3);
+  }
+
+  if (state.participationFilter === "jockeyChange") {
+    return rows.filter((row) => rowHasJockeyChange(row, tableColumns));
+  }
+
+  return rows;
+};
+
+const renderParticipationFilters = (rows, tableColumns) => {
+  const counts = {
+    all: rows.length,
+    noPrep: rows.filter((row) => row.prepStartCount === 0).length,
+    podium: rows.filter((row) => Number.isFinite(row.gaziFinishPosition) && row.gaziFinishPosition <= 3).length,
+    jockeyChange: rows.filter((row) => rowHasJockeyChange(row, tableColumns)).length
+  };
+
+  document.querySelector("#participation-filters").innerHTML = Object.entries(participationFilterLabels)
+    .map(([key, label]) => {
+      const isSelected = state.participationFilter === key;
+
+      return `
+        <button class="filter-chip ${isSelected ? "filter-chip--selected" : ""}" type="button" data-participation-filter="${escapeHtml(key)}" aria-pressed="${isSelected}">
+          <span>${escapeHtml(label)}</span>
+          <strong>${escapeHtml(counts[key])}</strong>
+        </button>
+      `;
+    })
+    .join("");
+};
+
+const renderParticipationDetail = (report, tableColumns, rows = report.rows) => {
+  const selectedRow = rows.find((row) => row.horseName === state.selectedParticipationHorse)
+    ?? rows[0];
 
   if (!selectedRow) {
     document.querySelector("#participation-detail").innerHTML = "";
@@ -509,16 +562,19 @@ const renderParticipation = (report) => {
   const prepColumns = report.columns.filter((column) => !column.isTarget);
   const targetColumn = report.columns.find((column) => column.isTarget);
   const tableColumns = targetColumn ? [...prepColumns, targetColumn] : prepColumns;
-  renderParticipationDetail(report, tableColumns);
+  renderParticipationFilters(report.rows, tableColumns);
 
-  document.querySelector("#participation-table").innerHTML = report.rows.length
+  const filteredRows = getFilteredParticipationRows(report.rows, tableColumns);
+  renderParticipationDetail(report, tableColumns, filteredRows);
+
+  document.querySelector("#participation-table").innerHTML = filteredRows.length
     ? `
       <div class="participation-row participation-row--header" style="--race-count: ${tableColumns.length}">
         <span>At</span>
         <span>Özet</span>
         ${tableColumns.map((column) => `<span>${escapeHtml(column.name)}</span>`).join("")}
       </div>
-      ${report.rows.map((row) => `
+      ${filteredRows.map((row) => `
         <button class="participation-row ${Number.isFinite(row.gaziFinishPosition) && row.gaziFinishPosition <= 3 ? "participation-row--podium" : ""} ${row.horseName === state.selectedParticipationHorse ? "participation-row--selected" : ""}" type="button" data-horse-name="${escapeHtml(row.horseName)}" style="--race-count: ${tableColumns.length}" aria-pressed="${row.horseName === state.selectedParticipationHorse}">
           <div class="participation-horse">
             <strong>${escapeHtml(row.horseName)}</strong>
@@ -533,7 +589,9 @@ const renderParticipation = (report) => {
         </button>
       `).join("")}
     `
-    : '<p class="coverage-empty">Gazi koşucu listesi henüz olmadığı için at bazlı katılım matrisi bekleniyor.</p>';
+    : report.rows.length
+      ? '<p class="coverage-empty">Bu filtreyle eşleşen at yok.</p>'
+      : '<p class="coverage-empty">Gazi koşucu listesi henüz olmadığı için at bazlı katılım matrisi bekleniyor.</p>';
 
   document.querySelector("#participation-warning").textContent = report.methodology.warning;
 };
@@ -724,6 +782,14 @@ const bindEvents = () => {
     const button = event.target.closest("[data-analysis-year]");
     if (!button) return;
     await loadAnalysisYear(button.dataset.analysisYear);
+  });
+
+  document.querySelector("#participation-filters").addEventListener("click", (event) => {
+    const button = event.target.closest("[data-participation-filter]");
+    if (!button || !state.participationReport) return;
+    state.participationFilter = button.dataset.participationFilter;
+    state.selectedParticipationHorse = null;
+    renderParticipation(state.participationReport);
   });
 };
 
