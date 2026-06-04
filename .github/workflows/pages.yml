@@ -100,6 +100,18 @@ jobs:
             npm run build:gazi-participation -- --input "$report" --out "data/gazi-participation-${year}.json"
           done
 
+      - name: Build Gazi readiness report
+        run: |
+          npm run build:gazi-readiness -- \
+            --input data/gazi-participation-report.json \
+            --comparison data/gazi-participation-2020.json \
+            --comparison data/gazi-participation-2021.json \
+            --comparison data/gazi-participation-2022.json \
+            --comparison data/gazi-participation-2023.json \
+            --comparison data/gazi-participation-2024.json \
+            --comparison data/gazi-participation-2025.json \
+            --out data/gazi-readiness-report.json
+
       - name: Build Gazi data horizon
         run: npm run build:gazi-data-horizon -- --data-dir data --out data/gazi-data-horizon.json
 
@@ -108,7 +120,7 @@ jobs:
           mkdir -p dist/assets dist/data
           cp index.html app.js styles.css .nojekyll dist/
           cp assets/* dist/assets/
-          cp data/gazi-knowledge-base.json data/gazi-route-report.json data/gazi-route-2020.json data/gazi-route-2021.json data/gazi-route-2022.json data/gazi-route-2023.json data/gazi-route-2024.json data/gazi-route-2025.json data/gazi-route-2026.json data/gazi-backtest-report.json data/gazi-participation-report.json data/gazi-participation-*.json data/gazi-data-horizon.json dist/data/
+          cp data/gazi-knowledge-base.json data/gazi-route-report.json data/gazi-route-2020.json data/gazi-route-2021.json data/gazi-route-2022.json data/gazi-route-2023.json data/gazi-route-2024.json data/gazi-route-2025.json data/gazi-route-2026.json data/gazi-backtest-report.json data/gazi-participation-report.json data/gazi-participation-*.json data/gazi-readiness-report.json data/gazi-data-horizon.json dist/data/
 
       - name: Configure Pages
         uses: actions/configure-pages@v5

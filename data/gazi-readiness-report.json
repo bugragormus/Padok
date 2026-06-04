@@ -1,0 +1,6482 @@
+{
+  "generatedAt": "2026-06-04T16:58:28.836Z",
+  "sourceYear": 2025,
+  "sourceGeneratedAt": "2026-06-03T22:02:59.577Z",
+  "methodology": {
+    "target": "Gazi horse readiness",
+    "warning": "Readiness skoru karar destek sinyalidir; kesin sonuç tahmini veya bahis önerisi değildir.",
+    "leakageControl": "Profil kanıtı yalnızca analiz sezonundan önceki sezonlardan üretilir."
+  },
+  "summary": {
+    "analysisState": "field-available",
+    "runnerCount": 22,
+    "comparisonSeasonCount": 5,
+    "topScoreHorse": "SPECIAL MAN",
+    "topUpsideHorse": "SPECIAL MAN",
+    "topUncertaintyHorse": "TONBİ"
+  },
+  "lenses": {
+    "score": {
+      "label": "Ana skor",
+      "description": "En dengeli kompozit okuma"
+    },
+    "upside": {
+      "label": "Upside",
+      "description": "Patlama ihtimali yüksek profiller"
+    },
+    "lowRisk": {
+      "label": "Düşük risk",
+      "description": "Güven ve süreklilik ağırlıklı okuma"
+    },
+    "uncertainty": {
+      "label": "Veri eksiği",
+      "description": "Eksik ama izlenmesi gereken profiller"
+    }
+  },
+  "rankings": {
+    "score": [
+      {
+        "rank": 1,
+        "horseName": "SPECIAL MAN",
+        "gaziFinishPosition": 3,
+        "lensValue": 99,
+        "badge": "Güçlü aday profili",
+        "reason": "Prep galibiyeti kompozit skoru yukarı taşıyor.",
+        "meta": "Yüksek güven · Düşük risk · Upside 68",
+        "readiness": {
+          "score": 99,
+          "confidence": 100,
+          "upside": 68,
+          "risk": 0,
+          "label": "Güçlü aday profili",
+          "confidenceLabel": "Yüksek güven",
+          "riskLabel": "Düşük risk",
+          "primaryReason": "Prep galibiyeti kompozit skoru yukarı taşıyor.",
+          "parts": [
+            {
+              "label": "prep formu",
+              "value": 28
+            },
+            {
+              "label": "profil kanıtı",
+              "value": 30
+            },
+            {
+              "label": "rota şekli",
+              "value": 18
+            },
+            {
+              "label": "jokey sürekliliği",
+              "value": 13
+            },
+            {
+              "label": "veri derinliği",
+              "value": 10
+            }
+          ]
+        },
+        "profileSummary": {
+          "count": 4,
+          "averageFinish": "1.3",
+          "strongestSignal": "prep galibi",
+          "note": "4/4 benzer örnek Gazi'de ilk 2 içinde bitirmiş."
+        },
+        "historicalMatches": [
+          {
+            "horseName": "SECRET POWER",
+            "year": 2022,
+            "gaziFinishPosition": 1,
+            "matchingSignals": [
+              "prep galibi",
+              "yoğun prep"
+            ]
+          },
+          {
+            "horseName": "BURGAS",
+            "year": 2021,
+            "gaziFinishPosition": 1,
+            "matchingSignals": [
+              "prep galibi",
+              "yoğun prep"
+            ]
+          },
+          {
+            "horseName": "CALL TO VICTORY",
+            "year": 2020,
+            "gaziFinishPosition": 1,
+            "matchingSignals": [
+              "prep galibi",
+              "yoğun prep"
+            ]
+          },
+          {
+            "horseName": "REAL RUNNER",
+            "year": 2021,
+            "gaziFinishPosition": 2,
+            "matchingSignals": [
+              "prep galibi",
+              "yoğun prep"
+            ]
+          }
+        ]
+      },
+      {
+        "rank": 2,
+        "horseName": "BOON NAM",
+        "gaziFinishPosition": 14,
+        "lensValue": 99,
+        "badge": "Güçlü aday profili",
+        "reason": "Prep galibiyeti kompozit skoru yukarı taşıyor.",
+        "meta": "Yüksek güven · Düşük risk · Upside 68",
+        "readiness": {
+          "score": 99,
+          "confidence": 100,
+          "upside": 68,
+          "risk": 0,
+          "label": "Güçlü aday profili",
+          "confidenceLabel": "Yüksek güven",
+          "riskLabel": "Düşük risk",
+          "primaryReason": "Prep galibiyeti kompozit skoru yukarı taşıyor.",
+          "parts": [
+            {
+              "label": "prep formu",
+              "value": 28
+            },
+            {
+              "label": "profil kanıtı",
+              "value": 30
+            },
+            {
+              "label": "rota şekli",
+              "value": 18
+            },
+            {
+              "label": "jokey sürekliliği",
+              "value": 13
+            },
+            {
+              "label": "veri derinliği",
+              "value": 10
+            }
+          ]
+        },
+        "profileSummary": {
+          "count": 4,
+          "averageFinish": "1.3",
+          "strongestSignal": "prep galibi",
+          "note": "4/4 benzer örnek Gazi'de ilk 2 içinde bitirmiş."
+        },
+        "historicalMatches": [
+          {
+            "horseName": "SECRET POWER",
+            "year": 2022,
+            "gaziFinishPosition": 1,
+            "matchingSignals": [
+              "prep galibi",
+              "yoğun prep"
+            ]
+          },
+          {
+            "horseName": "BURGAS",
+            "year": 2021,
+            "gaziFinishPosition": 1,
+            "matchingSignals": [
+              "prep galibi",
+              "yoğun prep"
+            ]
+          },
+          {
+            "horseName": "CALL TO VICTORY",
+            "year": 2020,
+            "gaziFinishPosition": 1,
+            "matchingSignals": [
+              "prep galibi",
+              "yoğun prep"
+            ]
+          },
+          {
+            "horseName": "REAL RUNNER",
+            "year": 2021,
+            "gaziFinishPosition": 2,
+            "matchingSignals": [
+              "prep galibi",
+              "yoğun prep"
+            ]
+          }
+        ]
+      },
+      {
+        "rank": 3,
+        "horseName": "HANDSOME KING",
+        "gaziFinishPosition": 2,
+        "lensValue": 94,
+        "badge": "Güçlü aday profili",
+        "reason": "Prep galibiyeti kompozit skoru yukarı taşıyor.",
+        "meta": "Yüksek güven · Düşük risk · Upside 58",
+        "readiness": {
+          "score": 94,
+          "confidence": 100,
+          "upside": 58,
+          "risk": 0,
+          "label": "Güçlü aday profili",
+          "confidenceLabel": "Yüksek güven",
+          "riskLabel": "Düşük risk",
+          "primaryReason": "Prep galibiyeti kompozit skoru yukarı taşıyor.",
+          "parts": [
+            {
+              "label": "prep formu",
+              "value": 28
+            },
+            {
+              "label": "profil kanıtı",
+              "value": 30
+            },
+            {
+              "label": "rota şekli",
+              "value": 13
+            },
+            {
+              "label": "jokey sürekliliği",
+              "value": 13
+            },
+            {
+              "label": "veri derinliği",
+              "value": 10
+            }
+          ]
+        },
+        "profileSummary": {
+          "count": 4,
+          "averageFinish": "1.3",
+          "strongestSignal": "prep galibi",
+          "note": "4/4 benzer örnek Gazi'de ilk 2 içinde bitirmiş."
+        },
+        "historicalMatches": [
+          {
+            "horseName": "SECRET POWER",
+            "year": 2022,
+            "gaziFinishPosition": 1,
+            "matchingSignals": [
+              "prep galibi"
+            ]
+          },
+          {
+            "horseName": "BURGAS",
+            "year": 2021,
+            "gaziFinishPosition": 1,
+            "matchingSignals": [
+              "prep galibi"
+            ]
+          },
+          {
+            "horseName": "CALL TO VICTORY",
+            "year": 2020,
+            "gaziFinishPosition": 1,
+            "matchingSignals": [
+              "prep galibi"
+            ]
+          },
+          {
+            "horseName": "QUALIZTO",
+            "year": 2023,
+            "gaziFinishPosition": 2,
+            "matchingSignals": [
+              "prep galibi"
+            ]
+          }
+        ]
+      },
+      {
+        "rank": 4,
+        "horseName": "TONBİ",
+        "gaziFinishPosition": 8,
+        "lensValue": 88,
+        "badge": "Güçlü aday profili",
+        "reason": "Prep galibiyeti kompozit skoru yukarı taşıyor.",
+        "meta": "Yüksek güven · Düşük risk · Upside 58",
+        "readiness": {
+          "score": 88,
+          "confidence": 100,
+          "upside": 58,
+          "risk": 14,
+          "label": "Güçlü aday profili",
+          "confidenceLabel": "Yüksek güven",
+          "riskLabel": "Düşük risk",
+          "primaryReason": "Prep galibiyeti kompozit skoru yukarı taşıyor.",
+          "parts": [
+            {
+              "label": "prep formu",
+              "value": 28
+            },
+            {
+              "label": "profil kanıtı",
+              "value": 30
+            },
+            {
+              "label": "rota şekli",
+              "value": 13
+            },
+            {
+              "label": "jokey sürekliliği",
+              "value": 7
+            },
+            {
+              "label": "veri derinliği",
+              "value": 10
+            }
+          ]
+        },
+        "profileSummary": {
+          "count": 4,
+          "averageFinish": "1.3",
+          "strongestSignal": "prep galibi",
+          "note": "4/4 benzer örnek Gazi'de ilk 2 içinde bitirmiş."
+        },
+        "historicalMatches": [
+          {
+            "horseName": "BURGAS",
+            "year": 2021,
+            "gaziFinishPosition": 1,
+            "matchingSignals": [
+              "prep galibi",
+              "jokey değişimi"
+            ]
+          },
+          {
+            "horseName": "SECRET POWER",
+            "year": 2022,
+            "gaziFinishPosition": 1,
+            "matchingSignals": [
+              "prep galibi"
+            ]
+          },
+          {
+            "horseName": "CALL TO VICTORY",
+            "year": 2020,
+            "gaziFinishPosition": 1,
+            "matchingSignals": [
+              "prep galibi"
+            ]
+          },
+          {
+            "horseName": "ZIZKA",
+            "year": 2024,
+            "gaziFinishPosition": 2,
+            "matchingSignals": [
+              "jokey değişimi"
+            ]
+          }
+        ]
+      },
+      {
+        "rank": 5,
+        "horseName": "DEJAVU",
+        "gaziFinishPosition": 17,
+        "lensValue": 84,
+        "badge": "Güçlü aday profili",
+        "reason": "Geçmiş ilk 3 profilleriyle benzerlik yoğunluğu var.",
+        "meta": "Yüksek güven · Düşük risk · Upside 34",
+        "readiness": {
+          "score": 84,
+          "confidence": 100,
+          "upside": 34,
+          "risk": 0,
+          "label": "Güçlü aday profili",
+          "confidenceLabel": "Yüksek güven",
+          "riskLabel": "Düşük risk",
+          "primaryReason": "Geçmiş ilk 3 profilleriyle benzerlik yoğunluğu var.",
+          "parts": [
+            {
+              "label": "prep formu",
+              "value": 13
+            },
+            {
+              "label": "profil kanıtı",
+              "value": 30
+            },
+            {
+              "label": "rota şekli",
+              "value": 18
+            },
+            {
+              "label": "jokey sürekliliği",
+              "value": 13
+            },
+            {
+              "label": "veri derinliği",
+              "value": 10
+            }
+          ]
+        },
+        "profileSummary": {
+          "count": 4,
+          "averageFinish": "1.3",
+          "strongestSignal": "yoğun prep",
+          "note": "4/4 benzer örnek Gazi'de ilk 2 içinde bitirmiş."
+        },
+        "historicalMatches": [
+          {
+            "horseName": "SECRET POWER",
+            "year": 2022,
+            "gaziFinishPosition": 1,
+            "matchingSignals": [
+              "yoğun prep"
+            ]
+          },
+          {
+            "horseName": "BURGAS",
+            "year": 2021,
+            "gaziFinishPosition": 1,
+            "matchingSignals": [
+              "yoğun prep"
+            ]
+          },
+          {
+            "horseName": "CALL TO VICTORY",
+            "year": 2020,
+            "gaziFinishPosition": 1,
+            "matchingSignals": [
+              "yoğun prep"
+            ]
+          },
+          {
+            "horseName": "ZIZKA",
+            "year": 2024,
+            "gaziFinishPosition": 2,
+            "matchingSignals": [
+              "yoğun prep"
+            ]
+          }
+        ]
+      },
+      {
+        "rank": 6,
+        "horseName": "PETITE LOUVE",
+        "gaziFinishPosition": 18,
+        "lensValue": 84,
+        "badge": "Güçlü aday profili",
+        "reason": "Geçmiş ilk 3 profilleriyle benzerlik yoğunluğu var.",
+        "meta": "Yüksek güven · Düşük risk · Upside 34",
+        "readiness": {
+          "score": 84,
+          "confidence": 100,
+          "upside": 34,
+          "risk": 14,
+          "label": "Güçlü aday profili",
+          "confidenceLabel": "Yüksek güven",
+          "riskLabel": "Düşük risk",
+          "primaryReason": "Geçmiş ilk 3 profilleriyle benzerlik yoğunluğu var.",
+          "parts": [
+            {
+              "label": "prep formu",
+              "value": 19
+            },
+            {
+              "label": "profil kanıtı",
+              "value": 30
+            },
+            {
+              "label": "rota şekli",
+              "value": 18
+            },
+            {
+              "label": "jokey sürekliliği",
+              "value": 7
+            },
+            {
+              "label": "veri derinliği",
+              "value": 10
+            }
+          ]
+        },
+        "profileSummary": {
+          "count": 4,
+          "averageFinish": "1.8",
+          "strongestSignal": "yoğun prep",
+          "note": "3/4 benzer örnek Gazi'de ilk 2 içinde bitirmiş."
+        },
+        "historicalMatches": [
+          {
+            "horseName": "BURGAS",
+            "year": 2021,
+            "gaziFinishPosition": 1,
+            "matchingSignals": [
+              "jokey değişimi",
+              "yoğun prep"
+            ]
+          },
+          {
+            "horseName": "ZIZKA",
+            "year": 2024,
+            "gaziFinishPosition": 2,
+            "matchingSignals": [
+              "jokey değişimi",
+              "yoğun prep"
+            ]
+          },
+          {
+            "horseName": "CHAİKA",
+            "year": 2023,
+            "gaziFinishPosition": 3,
+            "matchingSignals": [
+              "jokey değişimi",
+              "yoğun prep"
+            ]
+          },
+          {
+            "horseName": "SECRET POWER",
+            "year": 2022,
+            "gaziFinishPosition": 1,
+            "matchingSignals": [
+              "yoğun prep"
+            ]
+          }
+        ]
+      },
+      {
+        "rank": 7,
+        "horseName": "PUROSANGUE",
+        "gaziFinishPosition": 22,
+        "lensValue": 79,
+        "badge": "Güçlü aday profili",
+        "reason": "Geçmiş ilk 3 profilleriyle benzerlik yoğunluğu var.",
+        "meta": "Yüksek güven · Düşük risk · Upside 24",
+        "readiness": {
+          "score": 79,
+          "confidence": 100,
+          "upside": 24,
+          "risk": 14,
+          "label": "Güçlü aday profili",
+          "confidenceLabel": "Yüksek güven",
+          "riskLabel": "Düşük risk",
+          "primaryReason": "Geçmiş ilk 3 profilleriyle benzerlik yoğunluğu var.",
+          "parts": [
+            {
+              "label": "prep formu",
+              "value": 19
+            },
+            {
+              "label": "profil kanıtı",
+              "value": 30
+            },
+            {
+              "label": "rota şekli",
+              "value": 13
+            },
+            {
+              "label": "jokey sürekliliği",
+              "value": 7
+            },
+            {
+              "label": "veri derinliği",
+              "value": 10
+            }
+          ]
+        },
+        "profileSummary": {
+          "count": 4,
+          "averageFinish": "2.0",
+          "strongestSignal": "jokey değişimi",
+          "note": "3/4 benzer örnek Gazi'de ilk 2 içinde bitirmiş."
+        },
+        "historicalMatches": [
+          {
+            "horseName": "BURGAS",
+            "year": 2021,
+            "gaziFinishPosition": 1,
+            "matchingSignals": [
+              "jokey değişimi"
+            ]
+          },
+          {
+            "horseName": "ZIZKA",
+            "year": 2024,
+            "gaziFinishPosition": 2,
+            "matchingSignals": [
+              "jokey değişimi"
+            ]
+          },
+          {
+            "horseName": "MUCİZE KIZ",
+            "year": 2022,
+            "gaziFinishPosition": 2,
+            "matchingSignals": [
+              "jokey değişimi"
+            ]
+          },
+          {
+            "horseName": "CHAİKA",
+            "year": 2023,
+            "gaziFinishPosition": 3,
+            "matchingSignals": [
+              "jokey değişimi"
+            ]
+          }
+        ]
+      },
+      {
+        "rank": 8,
+        "horseName": "BRAIN BROOSTER",
+        "gaziFinishPosition": 5,
+        "lensValue": 78,
+        "badge": "Güçlü aday profili",
+        "reason": "Geçmiş ilk 3 profilleriyle benzerlik yoğunluğu var.",
+        "meta": "Yüksek güven · Düşük risk · Upside 34",
+        "readiness": {
+          "score": 78,
+          "confidence": 100,
+          "upside": 34,
+          "risk": 14,
+          "label": "Güçlü aday profili",
+          "confidenceLabel": "Yüksek güven",
+          "riskLabel": "Düşük risk",
+          "primaryReason": "Geçmiş ilk 3 profilleriyle benzerlik yoğunluğu var.",
+          "parts": [
+            {
+              "label": "prep formu",
+              "value": 13
+            },
+            {
+              "label": "profil kanıtı",
+              "value": 30
+            },
+            {
+              "label": "rota şekli",
+              "value": 18
+            },
+            {
+              "label": "jokey sürekliliği",
+              "value": 7
+            },
+            {
+              "label": "veri derinliği",
+              "value": 10
+            }
+          ]
+        },
+        "profileSummary": {
+          "count": 4,
+          "averageFinish": "1.8",
+          "strongestSignal": "yoğun prep",
+          "note": "3/4 benzer örnek Gazi'de ilk 2 içinde bitirmiş."
+        },
+        "historicalMatches": [
+          {
+            "horseName": "BURGAS",
+            "year": 2021,
+            "gaziFinishPosition": 1,
+            "matchingSignals": [
+              "jokey değişimi",
+              "yoğun prep"
+            ]
+          },
+          {
+            "horseName": "ZIZKA",
+            "year": 2024,
+            "gaziFinishPosition": 2,
+            "matchingSignals": [
+              "jokey değişimi",
+              "yoğun prep"
+            ]
+          },
+          {
+            "horseName": "CHAİKA",
+            "year": 2023,
+            "gaziFinishPosition": 3,
+            "matchingSignals": [
+              "jokey değişimi",
+              "yoğun prep"
+            ]
+          },
+          {
+            "horseName": "SECRET POWER",
+            "year": 2022,
+            "gaziFinishPosition": 1,
+            "matchingSignals": [
+              "yoğun prep"
+            ]
+          }
+        ]
+      },
+      {
+        "rank": 9,
+        "horseName": "CUTHA",
+        "gaziFinishPosition": 1,
+        "lensValue": 73,
+        "badge": "Ciddi takip profili",
+        "reason": "Geçmiş ilk 3 profilleriyle benzerlik yoğunluğu var.",
+        "meta": "Yüksek güven · Düşük risk · Upside 24",
+        "readiness": {
+          "score": 73,
+          "confidence": 100,
+          "upside": 24,
+          "risk": 14,
+          "label": "Ciddi takip profili",
+          "confidenceLabel": "Yüksek güven",
+          "riskLabel": "Düşük risk",
+          "primaryReason": "Geçmiş ilk 3 profilleriyle benzerlik yoğunluğu var.",
+          "parts": [
+            {
+              "label": "prep formu",
+              "value": 13
+            },
+            {
+              "label": "profil kanıtı",
+              "value": 30
+            },
+            {
+              "label": "rota şekli",
+              "value": 13
+            },
+            {
+              "label": "jokey sürekliliği",
+              "value": 7
+            },
+            {
+              "label": "veri derinliği",
+              "value": 10
+            }
+          ]
+        },
+        "profileSummary": {
+          "count": 4,
+          "averageFinish": "2.0",
+          "strongestSignal": "jokey değişimi",
+          "note": "3/4 benzer örnek Gazi'de ilk 2 içinde bitirmiş."
+        },
+        "historicalMatches": [
+          {
+            "horseName": "BURGAS",
+            "year": 2021,
+            "gaziFinishPosition": 1,
+            "matchingSignals": [
+              "jokey değişimi"
+            ]
+          },
+          {
+            "horseName": "ZIZKA",
+            "year": 2024,
+            "gaziFinishPosition": 2,
+            "matchingSignals": [
+              "jokey değişimi"
+            ]
+          },
+          {
+            "horseName": "MUCİZE KIZ",
+            "year": 2022,
+            "gaziFinishPosition": 2,
+            "matchingSignals": [
+              "jokey değişimi"
+            ]
+          },
+          {
+            "horseName": "CHAİKA",
+            "year": 2023,
+            "gaziFinishPosition": 3,
+            "matchingSignals": [
+              "jokey değişimi"
+            ]
+          }
+        ]
+      },
+      {
+        "rank": 10,
+        "horseName": "BELGRATHAN",
+        "gaziFinishPosition": 4,
+        "lensValue": 73,
+        "badge": "Ciddi takip profili",
+        "reason": "Geçmiş ilk 3 profilleriyle benzerlik yoğunluğu var.",
+        "meta": "Yüksek güven · Düşük risk · Upside 24",
+        "readiness": {
+          "score": 73,
+          "confidence": 100,
+          "upside": 24,
+          "risk": 14,
+          "label": "Ciddi takip profili",
+          "confidenceLabel": "Yüksek güven",
+          "riskLabel": "Düşük risk",
+          "primaryReason": "Geçmiş ilk 3 profilleriyle benzerlik yoğunluğu var.",
+          "parts": [
+            {
+              "label": "prep formu",
+              "value": 13
+            },
+            {
+              "label": "profil kanıtı",
+              "value": 30
+            },
+            {
+              "label": "rota şekli",
+              "value": 13
+            },
+            {
+              "label": "jokey sürekliliği",
+              "value": 7
+            },
+            {
+              "label": "veri derinliği",
+              "value": 10
+            }
+          ]
+        },
+        "profileSummary": {
+          "count": 4,
+          "averageFinish": "2.0",
+          "strongestSignal": "jokey değişimi",
+          "note": "3/4 benzer örnek Gazi'de ilk 2 içinde bitirmiş."
+        },
+        "historicalMatches": [
+          {
+            "horseName": "BURGAS",
+            "year": 2021,
+            "gaziFinishPosition": 1,
+            "matchingSignals": [
+              "jokey değişimi"
+            ]
+          },
+          {
+            "horseName": "ZIZKA",
+            "year": 2024,
+            "gaziFinishPosition": 2,
+            "matchingSignals": [
+              "jokey değişimi"
+            ]
+          },
+          {
+            "horseName": "MUCİZE KIZ",
+            "year": 2022,
+            "gaziFinishPosition": 2,
+            "matchingSignals": [
+              "jokey değişimi"
+            ]
+          },
+          {
+            "horseName": "CHAİKA",
+            "year": 2023,
+            "gaziFinishPosition": 3,
+            "matchingSignals": [
+              "jokey değişimi"
+            ]
+          }
+        ]
+      },
+      {
+        "rank": 11,
+        "horseName": "TULUMAR",
+        "gaziFinishPosition": 12,
+        "lensValue": 73,
+        "badge": "Ciddi takip profili",
+        "reason": "Geçmiş ilk 3 profilleriyle benzerlik yoğunluğu var.",
+        "meta": "Yüksek güven · Düşük risk · Upside 24",
+        "readiness": {
+          "score": 73,
+          "confidence": 100,
+          "upside": 24,
+          "risk": 14,
+          "label": "Ciddi takip profili",
+          "confidenceLabel": "Yüksek güven",
+          "riskLabel": "Düşük risk",
+          "primaryReason": "Geçmiş ilk 3 profilleriyle benzerlik yoğunluğu var.",
+          "parts": [
+            {
+              "label": "prep formu",
+              "value": 13
+            },
+            {
+              "label": "profil kanıtı",
+              "value": 30
+            },
+            {
+              "label": "rota şekli",
+              "value": 13
+            },
+            {
+              "label": "jokey sürekliliği",
+              "value": 7
+            },
+            {
+              "label": "veri derinliği",
+              "value": 10
+            }
+          ]
+        },
+        "profileSummary": {
+          "count": 4,
+          "averageFinish": "2.0",
+          "strongestSignal": "jokey değişimi",
+          "note": "3/4 benzer örnek Gazi'de ilk 2 içinde bitirmiş."
+        },
+        "historicalMatches": [
+          {
+            "horseName": "BURGAS",
+            "year": 2021,
+            "gaziFinishPosition": 1,
+            "matchingSignals": [
+              "jokey değişimi"
+            ]
+          },
+          {
+            "horseName": "ZIZKA",
+            "year": 2024,
+            "gaziFinishPosition": 2,
+            "matchingSignals": [
+              "jokey değişimi"
+            ]
+          },
+          {
+            "horseName": "MUCİZE KIZ",
+            "year": 2022,
+            "gaziFinishPosition": 2,
+            "matchingSignals": [
+              "jokey değişimi"
+            ]
+          },
+          {
+            "horseName": "CHAİKA",
+            "year": 2023,
+            "gaziFinishPosition": 3,
+            "matchingSignals": [
+              "jokey değişimi"
+            ]
+          }
+        ]
+      },
+      {
+        "rank": 12,
+        "horseName": "MAGIC SELECTRA",
+        "gaziFinishPosition": 19,
+        "lensValue": 72,
+        "badge": "Ciddi takip profili",
+        "reason": "Geçmiş ilk 3 profilleriyle benzerlik yoğunluğu var.",
+        "meta": "Yüksek güven · Düşük risk · Upside 34",
+        "readiness": {
+          "score": 72,
+          "confidence": 100,
+          "upside": 34,
+          "risk": 14,
+          "label": "Ciddi takip profili",
+          "confidenceLabel": "Yüksek güven",
+          "riskLabel": "Düşük risk",
+          "primaryReason": "Geçmiş ilk 3 profilleriyle benzerlik yoğunluğu var.",
+          "parts": [
+            {
+              "label": "prep formu",
+              "value": 7
+            },
+            {
+              "label": "profil kanıtı",
+              "value": 30
+            },
+            {
+              "label": "rota şekli",
+              "value": 18
+            },
+            {
+              "label": "jokey sürekliliği",
+              "value": 7
+            },
+            {
+              "label": "veri derinliği",
+              "value": 10
+            }
+          ]
+        },
+        "profileSummary": {
+          "count": 4,
+          "averageFinish": "1.8",
+          "strongestSignal": "yoğun prep",
+          "note": "3/4 benzer örnek Gazi'de ilk 2 içinde bitirmiş."
+        },
+        "historicalMatches": [
+          {
+            "horseName": "BURGAS",
+            "year": 2021,
+            "gaziFinishPosition": 1,
+            "matchingSignals": [
+              "jokey değişimi",
+              "yoğun prep"
+            ]
+          },
+          {
+            "horseName": "ZIZKA",
+            "year": 2024,
+            "gaziFinishPosition": 2,
+            "matchingSignals": [
+              "jokey değişimi",
+              "yoğun prep"
+            ]
+          },
+          {
+            "horseName": "CHAİKA",
+            "year": 2023,
+            "gaziFinishPosition": 3,
+            "matchingSignals": [
+              "jokey değişimi",
+              "yoğun prep"
+            ]
+          },
+          {
+            "horseName": "SECRET POWER",
+            "year": 2022,
+            "gaziFinishPosition": 1,
+            "matchingSignals": [
+              "yoğun prep"
+            ]
+          }
+        ]
+      },
+      {
+        "rank": 13,
+        "horseName": "ALBAYRAK",
+        "gaziFinishPosition": 11,
+        "lensValue": 67,
+        "badge": "Ciddi takip profili",
+        "reason": "Geçmiş ilk 3 profilleriyle benzerlik yoğunluğu var.",
+        "meta": "Yüksek güven · Düşük risk · Upside 24",
+        "readiness": {
+          "score": 67,
+          "confidence": 100,
+          "upside": 24,
+          "risk": 14,
+          "label": "Ciddi takip profili",
+          "confidenceLabel": "Yüksek güven",
+          "riskLabel": "Düşük risk",
+          "primaryReason": "Geçmiş ilk 3 profilleriyle benzerlik yoğunluğu var.",
+          "parts": [
+            {
+              "label": "prep formu",
+              "value": 7
+            },
+            {
+              "label": "profil kanıtı",
+              "value": 30
+            },
+            {
+              "label": "rota şekli",
+              "value": 13
+            },
+            {
+              "label": "jokey sürekliliği",
+              "value": 7
+            },
+            {
+              "label": "veri derinliği",
+              "value": 10
+            }
+          ]
+        },
+        "profileSummary": {
+          "count": 4,
+          "averageFinish": "2.0",
+          "strongestSignal": "jokey değişimi",
+          "note": "3/4 benzer örnek Gazi'de ilk 2 içinde bitirmiş."
+        },
+        "historicalMatches": [
+          {
+            "horseName": "BURGAS",
+            "year": 2021,
+            "gaziFinishPosition": 1,
+            "matchingSignals": [
+              "jokey değişimi"
+            ]
+          },
+          {
+            "horseName": "ZIZKA",
+            "year": 2024,
+            "gaziFinishPosition": 2,
+            "matchingSignals": [
+              "jokey değişimi"
+            ]
+          },
+          {
+            "horseName": "MUCİZE KIZ",
+            "year": 2022,
+            "gaziFinishPosition": 2,
+            "matchingSignals": [
+              "jokey değişimi"
+            ]
+          },
+          {
+            "horseName": "CHAİKA",
+            "year": 2023,
+            "gaziFinishPosition": 3,
+            "matchingSignals": [
+              "jokey değişimi"
+            ]
+          }
+        ]
+      },
+      {
+        "rank": 14,
+        "horseName": "BROARTS",
+        "gaziFinishPosition": 20,
+        "lensValue": 67,
+        "badge": "Ciddi takip profili",
+        "reason": "Geçmiş ilk 3 profilleriyle benzerlik yoğunluğu var.",
+        "meta": "Yüksek güven · Düşük risk · Upside 24",
+        "readiness": {
+          "score": 67,
+          "confidence": 100,
+          "upside": 24,
+          "risk": 14,
+          "label": "Ciddi takip profili",
+          "confidenceLabel": "Yüksek güven",
+          "riskLabel": "Düşük risk",
+          "primaryReason": "Geçmiş ilk 3 profilleriyle benzerlik yoğunluğu var.",
+          "parts": [
+            {
+              "label": "prep formu",
+              "value": 7
+            },
+            {
+              "label": "profil kanıtı",
+              "value": 30
+            },
+            {
+              "label": "rota şekli",
+              "value": 13
+            },
+            {
+              "label": "jokey sürekliliği",
+              "value": 7
+            },
+            {
+              "label": "veri derinliği",
+              "value": 10
+            }
+          ]
+        },
+        "profileSummary": {
+          "count": 4,
+          "averageFinish": "2.0",
+          "strongestSignal": "jokey değişimi",
+          "note": "3/4 benzer örnek Gazi'de ilk 2 içinde bitirmiş."
+        },
+        "historicalMatches": [
+          {
+            "horseName": "BURGAS",
+            "year": 2021,
+            "gaziFinishPosition": 1,
+            "matchingSignals": [
+              "jokey değişimi"
+            ]
+          },
+          {
+            "horseName": "ZIZKA",
+            "year": 2024,
+            "gaziFinishPosition": 2,
+            "matchingSignals": [
+              "jokey değişimi"
+            ]
+          },
+          {
+            "horseName": "MUCİZE KIZ",
+            "year": 2022,
+            "gaziFinishPosition": 2,
+            "matchingSignals": [
+              "jokey değişimi"
+            ]
+          },
+          {
+            "horseName": "CHAİKA",
+            "year": 2023,
+            "gaziFinishPosition": 3,
+            "matchingSignals": [
+              "jokey değişimi"
+            ]
+          }
+        ]
+      },
+      {
+        "rank": 15,
+        "horseName": "ZAMBUR AGA",
+        "gaziFinishPosition": 10,
+        "lensValue": 59,
+        "badge": "İzleme listesi",
+        "reason": "Temel rota sinyali var; ayırıcı veri henüz sınırlı.",
+        "meta": "Orta güven · Düşük risk · Upside 0",
+        "readiness": {
+          "score": 59,
+          "confidence": 70,
+          "upside": 0,
+          "risk": 18,
+          "label": "İzleme listesi",
+          "confidenceLabel": "Orta güven",
+          "riskLabel": "Düşük risk",
+          "primaryReason": "Temel rota sinyali var; ayırıcı veri henüz sınırlı.",
+          "parts": [
+            {
+              "label": "prep formu",
+              "value": 23
+            },
+            {
+              "label": "rota şekli",
+              "value": 13
+            },
+            {
+              "label": "jokey sürekliliği",
+              "value": 13
+            },
+            {
+              "label": "veri derinliği",
+              "value": 10
+            }
+          ]
+        },
+        "profileSummary": {
+          "count": 0,
+          "averageFinish": "-",
+          "strongestSignal": "Yok",
+          "note": "Geçmiş ilk 3 içinde aynı profil sinyaliyle güçlü eşleşme bulunmadı."
+        },
+        "historicalMatches": []
+      },
+      {
+        "rank": 16,
+        "horseName": "LOST KING",
+        "gaziFinishPosition": 15,
+        "lensValue": 59,
+        "badge": "İzleme listesi",
+        "reason": "Temel rota sinyali var; ayırıcı veri henüz sınırlı.",
+        "meta": "Orta güven · Düşük risk · Upside 0",
+        "readiness": {
+          "score": 59,
+          "confidence": 70,
+          "upside": 0,
+          "risk": 18,
+          "label": "İzleme listesi",
+          "confidenceLabel": "Orta güven",
+          "riskLabel": "Düşük risk",
+          "primaryReason": "Temel rota sinyali var; ayırıcı veri henüz sınırlı.",
+          "parts": [
+            {
+              "label": "prep formu",
+              "value": 23
+            },
+            {
+              "label": "rota şekli",
+              "value": 13
+            },
+            {
+              "label": "jokey sürekliliği",
+              "value": 13
+            },
+            {
+              "label": "veri derinliği",
+              "value": 10
+            }
+          ]
+        },
+        "profileSummary": {
+          "count": 0,
+          "averageFinish": "-",
+          "strongestSignal": "Yok",
+          "note": "Geçmiş ilk 3 içinde aynı profil sinyaliyle güçlü eşleşme bulunmadı."
+        },
+        "historicalMatches": []
+      },
+      {
+        "rank": 17,
+        "horseName": "DATABASE",
+        "gaziFinishPosition": 6,
+        "lensValue": 57,
+        "badge": "İzleme listesi",
+        "reason": "Rota dışı geldiği için upside var, fakat veri güveni sınırlı.",
+        "meta": "Orta güven · Kontrollü risk · Upside 30",
+        "readiness": {
+          "score": 57,
+          "confidence": 66,
+          "upside": 30,
+          "risk": 26,
+          "label": "İzleme listesi",
+          "confidenceLabel": "Orta güven",
+          "riskLabel": "Kontrollü risk",
+          "primaryReason": "Rota dışı geldiği için upside var, fakat veri güveni sınırlı.",
+          "parts": [
+            {
+              "label": "prep formu",
+              "value": 8
+            },
+            {
+              "label": "profil kanıtı",
+              "value": 20
+            },
+            {
+              "label": "rota şekli",
+              "value": 8
+            },
+            {
+              "label": "jokey sürekliliği",
+              "value": 13
+            },
+            {
+              "label": "veri derinliği",
+              "value": 8
+            }
+          ]
+        },
+        "profileSummary": {
+          "count": 2,
+          "averageFinish": "2.0",
+          "strongestSignal": "rota dışı",
+          "note": "1/2 benzer örnek Gazi'de ilk 2 içinde bitirmiş."
+        },
+        "historicalMatches": [
+          {
+            "horseName": "URFA ASLANI",
+            "year": 2023,
+            "gaziFinishPosition": 1,
+            "matchingSignals": [
+              "rota dışı"
+            ]
+          },
+          {
+            "horseName": "BORREGO",
+            "year": 2024,
+            "gaziFinishPosition": 3,
+            "matchingSignals": [
+              "rota dışı"
+            ]
+          }
+        ]
+      },
+      {
+        "rank": 18,
+        "horseName": "MAGIC WEAPON",
+        "gaziFinishPosition": 7,
+        "lensValue": 57,
+        "badge": "İzleme listesi",
+        "reason": "Rota dışı geldiği için upside var, fakat veri güveni sınırlı.",
+        "meta": "Orta güven · Kontrollü risk · Upside 30",
+        "readiness": {
+          "score": 57,
+          "confidence": 66,
+          "upside": 30,
+          "risk": 26,
+          "label": "İzleme listesi",
+          "confidenceLabel": "Orta güven",
+          "riskLabel": "Kontrollü risk",
+          "primaryReason": "Rota dışı geldiği için upside var, fakat veri güveni sınırlı.",
+          "parts": [
+            {
+              "label": "prep formu",
+              "value": 8
+            },
+            {
+              "label": "profil kanıtı",
+              "value": 20
+            },
+            {
+              "label": "rota şekli",
+              "value": 8
+            },
+            {
+              "label": "jokey sürekliliği",
+              "value": 13
+            },
+            {
+              "label": "veri derinliği",
+              "value": 8
+            }
+          ]
+        },
+        "profileSummary": {
+          "count": 2,
+          "averageFinish": "2.0",
+          "strongestSignal": "rota dışı",
+          "note": "1/2 benzer örnek Gazi'de ilk 2 içinde bitirmiş."
+        },
+        "historicalMatches": [
+          {
+            "horseName": "URFA ASLANI",
+            "year": 2023,
+            "gaziFinishPosition": 1,
+            "matchingSignals": [
+              "rota dışı"
+            ]
+          },
+          {
+            "horseName": "BORREGO",
+            "year": 2024,
+            "gaziFinishPosition": 3,
+            "matchingSignals": [
+              "rota dışı"
+            ]
+          }
+        ]
+      },
+      {
+        "rank": 19,
+        "horseName": "PATRICK STAR",
+        "gaziFinishPosition": 9,
+        "lensValue": 57,
+        "badge": "İzleme listesi",
+        "reason": "Rota dışı geldiği için upside var, fakat veri güveni sınırlı.",
+        "meta": "Orta güven · Kontrollü risk · Upside 30",
+        "readiness": {
+          "score": 57,
+          "confidence": 66,
+          "upside": 30,
+          "risk": 26,
+          "label": "İzleme listesi",
+          "confidenceLabel": "Orta güven",
+          "riskLabel": "Kontrollü risk",
+          "primaryReason": "Rota dışı geldiği için upside var, fakat veri güveni sınırlı.",
+          "parts": [
+            {
+              "label": "prep formu",
+              "value": 8
+            },
+            {
+              "label": "profil kanıtı",
+              "value": 20
+            },
+            {
+              "label": "rota şekli",
+              "value": 8
+            },
+            {
+              "label": "jokey sürekliliği",
+              "value": 13
+            },
+            {
+              "label": "veri derinliği",
+              "value": 8
+            }
+          ]
+        },
+        "profileSummary": {
+          "count": 2,
+          "averageFinish": "2.0",
+          "strongestSignal": "rota dışı",
+          "note": "1/2 benzer örnek Gazi'de ilk 2 içinde bitirmiş."
+        },
+        "historicalMatches": [
+          {
+            "horseName": "URFA ASLANI",
+            "year": 2023,
+            "gaziFinishPosition": 1,
+            "matchingSignals": [
+              "rota dışı"
+            ]
+          },
+          {
+            "horseName": "BORREGO",
+            "year": 2024,
+            "gaziFinishPosition": 3,
+            "matchingSignals": [
+              "rota dışı"
+            ]
+          }
+        ]
+      },
+      {
+        "rank": 20,
+        "horseName": "HOPE BREEZE",
+        "gaziFinishPosition": 16,
+        "lensValue": 57,
+        "badge": "İzleme listesi",
+        "reason": "Rota dışı geldiği için upside var, fakat veri güveni sınırlı.",
+        "meta": "Orta güven · Kontrollü risk · Upside 30",
+        "readiness": {
+          "score": 57,
+          "confidence": 66,
+          "upside": 30,
+          "risk": 26,
+          "label": "İzleme listesi",
+          "confidenceLabel": "Orta güven",
+          "riskLabel": "Kontrollü risk",
+          "primaryReason": "Rota dışı geldiği için upside var, fakat veri güveni sınırlı.",
+          "parts": [
+            {
+              "label": "prep formu",
+              "value": 8
+            },
+            {
+              "label": "profil kanıtı",
+              "value": 20
+            },
+            {
+              "label": "rota şekli",
+              "value": 8
+            },
+            {
+              "label": "jokey sürekliliği",
+              "value": 13
+            },
+            {
+              "label": "veri derinliği",
+              "value": 8
+            }
+          ]
+        },
+        "profileSummary": {
+          "count": 2,
+          "averageFinish": "2.0",
+          "strongestSignal": "rota dışı",
+          "note": "1/2 benzer örnek Gazi'de ilk 2 içinde bitirmiş."
+        },
+        "historicalMatches": [
+          {
+            "horseName": "URFA ASLANI",
+            "year": 2023,
+            "gaziFinishPosition": 1,
+            "matchingSignals": [
+              "rota dışı"
+            ]
+          },
+          {
+            "horseName": "BORREGO",
+            "year": 2024,
+            "gaziFinishPosition": 3,
+            "matchingSignals": [
+              "rota dışı"
+            ]
+          }
+        ]
+      },
+      {
+        "rank": 21,
+        "horseName": "BRAVE CHAMPİON",
+        "gaziFinishPosition": 21,
+        "lensValue": 57,
+        "badge": "İzleme listesi",
+        "reason": "Rota dışı geldiği için upside var, fakat veri güveni sınırlı.",
+        "meta": "Orta güven · Kontrollü risk · Upside 30",
+        "readiness": {
+          "score": 57,
+          "confidence": 66,
+          "upside": 30,
+          "risk": 26,
+          "label": "İzleme listesi",
+          "confidenceLabel": "Orta güven",
+          "riskLabel": "Kontrollü risk",
+          "primaryReason": "Rota dışı geldiği için upside var, fakat veri güveni sınırlı.",
+          "parts": [
+            {
+              "label": "prep formu",
+              "value": 8
+            },
+            {
+              "label": "profil kanıtı",
+              "value": 20
+            },
+            {
+              "label": "rota şekli",
+              "value": 8
+            },
+            {
+              "label": "jokey sürekliliği",
+              "value": 13
+            },
+            {
+              "label": "veri derinliği",
+              "value": 8
+            }
+          ]
+        },
+        "profileSummary": {
+          "count": 2,
+          "averageFinish": "2.0",
+          "strongestSignal": "rota dışı",
+          "note": "1/2 benzer örnek Gazi'de ilk 2 içinde bitirmiş."
+        },
+        "historicalMatches": [
+          {
+            "horseName": "URFA ASLANI",
+            "year": 2023,
+            "gaziFinishPosition": 1,
+            "matchingSignals": [
+              "rota dışı"
+            ]
+          },
+          {
+            "horseName": "BORREGO",
+            "year": 2024,
+            "gaziFinishPosition": 3,
+            "matchingSignals": [
+              "rota dışı"
+            ]
+          }
+        ]
+      },
+      {
+        "rank": 22,
+        "horseName": "GRANDE FLUSSO",
+        "gaziFinishPosition": 13,
+        "lensValue": 55,
+        "badge": "İzleme listesi",
+        "reason": "Temel rota sinyali var; ayırıcı veri henüz sınırlı.",
+        "meta": "Orta güven · Düşük risk · Upside 0",
+        "readiness": {
+          "score": 55,
+          "confidence": 70,
+          "upside": 0,
+          "risk": 18,
+          "label": "İzleme listesi",
+          "confidenceLabel": "Orta güven",
+          "riskLabel": "Düşük risk",
+          "primaryReason": "Temel rota sinyali var; ayırıcı veri henüz sınırlı.",
+          "parts": [
+            {
+              "label": "prep formu",
+              "value": 19
+            },
+            {
+              "label": "rota şekli",
+              "value": 13
+            },
+            {
+              "label": "jokey sürekliliği",
+              "value": 13
+            },
+            {
+              "label": "veri derinliği",
+              "value": 10
+            }
+          ]
+        },
+        "profileSummary": {
+          "count": 0,
+          "averageFinish": "-",
+          "strongestSignal": "Yok",
+          "note": "Geçmiş ilk 3 içinde aynı profil sinyaliyle güçlü eşleşme bulunmadı."
+        },
+        "historicalMatches": []
+      }
+    ],
+    "upside": [
+      {
+        "rank": 1,
+        "horseName": "SPECIAL MAN",
+        "gaziFinishPosition": 3,
+        "lensValue": 68,
+        "badge": "Upside 68",
+        "reason": "Prep galibiyeti bu profilde upside sinyalini yukarı çekiyor.",
+        "meta": "Yüksek güven · Risk 0 · Readiness 99",
+        "readiness": {
+          "score": 99,
+          "confidence": 100,
+          "upside": 68,
+          "risk": 0,
+          "label": "Güçlü aday profili",
+          "confidenceLabel": "Yüksek güven",
+          "riskLabel": "Düşük risk",
+          "primaryReason": "Prep galibiyeti kompozit skoru yukarı taşıyor.",
+          "parts": [
+            {
+              "label": "prep formu",
+              "value": 28
+            },
+            {
+              "label": "profil kanıtı",
+              "value": 30
+            },
+            {
+              "label": "rota şekli",
+              "value": 18
+            },
+            {
+              "label": "jokey sürekliliği",
+              "value": 13
+            },
+            {
+              "label": "veri derinliği",
+              "value": 10
+            }
+          ]
+        },
+        "profileSummary": {
+          "count": 4,
+          "averageFinish": "1.3",
+          "strongestSignal": "prep galibi",
+          "note": "4/4 benzer örnek Gazi'de ilk 2 içinde bitirmiş."
+        },
+        "historicalMatches": [
+          {
+            "horseName": "SECRET POWER",
+            "year": 2022,
+            "gaziFinishPosition": 1,
+            "matchingSignals": [
+              "prep galibi",
+              "yoğun prep"
+            ]
+          },
+          {
+            "horseName": "BURGAS",
+            "year": 2021,
+            "gaziFinishPosition": 1,
+            "matchingSignals": [
+              "prep galibi",
+              "yoğun prep"
+            ]
+          },
+          {
+            "horseName": "CALL TO VICTORY",
+            "year": 2020,
+            "gaziFinishPosition": 1,
+            "matchingSignals": [
+              "prep galibi",
+              "yoğun prep"
+            ]
+          },
+          {
+            "horseName": "REAL RUNNER",
+            "year": 2021,
+            "gaziFinishPosition": 2,
+            "matchingSignals": [
+              "prep galibi",
+              "yoğun prep"
+            ]
+          }
+        ]
+      },
+      {
+        "rank": 2,
+        "horseName": "BOON NAM",
+        "gaziFinishPosition": 14,
+        "lensValue": 68,
+        "badge": "Upside 68",
+        "reason": "Prep galibiyeti bu profilde upside sinyalini yukarı çekiyor.",
+        "meta": "Yüksek güven · Risk 0 · Readiness 99",
+        "readiness": {
+          "score": 99,
+          "confidence": 100,
+          "upside": 68,
+          "risk": 0,
+          "label": "Güçlü aday profili",
+          "confidenceLabel": "Yüksek güven",
+          "riskLabel": "Düşük risk",
+          "primaryReason": "Prep galibiyeti kompozit skoru yukarı taşıyor.",
+          "parts": [
+            {
+              "label": "prep formu",
+              "value": 28
+            },
+            {
+              "label": "profil kanıtı",
+              "value": 30
+            },
+            {
+              "label": "rota şekli",
+              "value": 18
+            },
+            {
+              "label": "jokey sürekliliği",
+              "value": 13
+            },
+            {
+              "label": "veri derinliği",
+              "value": 10
+            }
+          ]
+        },
+        "profileSummary": {
+          "count": 4,
+          "averageFinish": "1.3",
+          "strongestSignal": "prep galibi",
+          "note": "4/4 benzer örnek Gazi'de ilk 2 içinde bitirmiş."
+        },
+        "historicalMatches": [
+          {
+            "horseName": "SECRET POWER",
+            "year": 2022,
+            "gaziFinishPosition": 1,
+            "matchingSignals": [
+              "prep galibi",
+              "yoğun prep"
+            ]
+          },
+          {
+            "horseName": "BURGAS",
+            "year": 2021,
+            "gaziFinishPosition": 1,
+            "matchingSignals": [
+              "prep galibi",
+              "yoğun prep"
+            ]
+          },
+          {
+            "horseName": "CALL TO VICTORY",
+            "year": 2020,
+            "gaziFinishPosition": 1,
+            "matchingSignals": [
+              "prep galibi",
+              "yoğun prep"
+            ]
+          },
+          {
+            "horseName": "REAL RUNNER",
+            "year": 2021,
+            "gaziFinishPosition": 2,
+            "matchingSignals": [
+              "prep galibi",
+              "yoğun prep"
+            ]
+          }
+        ]
+      },
+      {
+        "rank": 3,
+        "horseName": "HANDSOME KING",
+        "gaziFinishPosition": 2,
+        "lensValue": 58,
+        "badge": "Upside 58",
+        "reason": "Prep galibiyeti bu profilde upside sinyalini yukarı çekiyor.",
+        "meta": "Yüksek güven · Risk 0 · Readiness 94",
+        "readiness": {
+          "score": 94,
+          "confidence": 100,
+          "upside": 58,
+          "risk": 0,
+          "label": "Güçlü aday profili",
+          "confidenceLabel": "Yüksek güven",
+          "riskLabel": "Düşük risk",
+          "primaryReason": "Prep galibiyeti kompozit skoru yukarı taşıyor.",
+          "parts": [
+            {
+              "label": "prep formu",
+              "value": 28
+            },
+            {
+              "label": "profil kanıtı",
+              "value": 30
+            },
+            {
+              "label": "rota şekli",
+              "value": 13
+            },
+            {
+              "label": "jokey sürekliliği",
+              "value": 13
+            },
+            {
+              "label": "veri derinliği",
+              "value": 10
+            }
+          ]
+        },
+        "profileSummary": {
+          "count": 4,
+          "averageFinish": "1.3",
+          "strongestSignal": "prep galibi",
+          "note": "4/4 benzer örnek Gazi'de ilk 2 içinde bitirmiş."
+        },
+        "historicalMatches": [
+          {
+            "horseName": "SECRET POWER",
+            "year": 2022,
+            "gaziFinishPosition": 1,
+            "matchingSignals": [
+              "prep galibi"
+            ]
+          },
+          {
+            "horseName": "BURGAS",
+            "year": 2021,
+            "gaziFinishPosition": 1,
+            "matchingSignals": [
+              "prep galibi"
+            ]
+          },
+          {
+            "horseName": "CALL TO VICTORY",
+            "year": 2020,
+            "gaziFinishPosition": 1,
+            "matchingSignals": [
+              "prep galibi"
+            ]
+          },
+          {
+            "horseName": "QUALIZTO",
+            "year": 2023,
+            "gaziFinishPosition": 2,
+            "matchingSignals": [
+              "prep galibi"
+            ]
+          }
+        ]
+      },
+      {
+        "rank": 4,
+        "horseName": "TONBİ",
+        "gaziFinishPosition": 8,
+        "lensValue": 58,
+        "badge": "Upside 58",
+        "reason": "Prep galibiyeti bu profilde upside sinyalini yukarı çekiyor.",
+        "meta": "Yüksek güven · Risk 14 · Readiness 88",
+        "readiness": {
+          "score": 88,
+          "confidence": 100,
+          "upside": 58,
+          "risk": 14,
+          "label": "Güçlü aday profili",
+          "confidenceLabel": "Yüksek güven",
+          "riskLabel": "Düşük risk",
+          "primaryReason": "Prep galibiyeti kompozit skoru yukarı taşıyor.",
+          "parts": [
+            {
+              "label": "prep formu",
+              "value": 28
+            },
+            {
+              "label": "profil kanıtı",
+              "value": 30
+            },
+            {
+              "label": "rota şekli",
+              "value": 13
+            },
+            {
+              "label": "jokey sürekliliği",
+              "value": 7
+            },
+            {
+              "label": "veri derinliği",
+              "value": 10
+            }
+          ]
+        },
+        "profileSummary": {
+          "count": 4,
+          "averageFinish": "1.3",
+          "strongestSignal": "prep galibi",
+          "note": "4/4 benzer örnek Gazi'de ilk 2 içinde bitirmiş."
+        },
+        "historicalMatches": [
+          {
+            "horseName": "BURGAS",
+            "year": 2021,
+            "gaziFinishPosition": 1,
+            "matchingSignals": [
+              "prep galibi",
+              "jokey değişimi"
+            ]
+          },
+          {
+            "horseName": "SECRET POWER",
+            "year": 2022,
+            "gaziFinishPosition": 1,
+            "matchingSignals": [
+              "prep galibi"
+            ]
+          },
+          {
+            "horseName": "CALL TO VICTORY",
+            "year": 2020,
+            "gaziFinishPosition": 1,
+            "matchingSignals": [
+              "prep galibi"
+            ]
+          },
+          {
+            "horseName": "ZIZKA",
+            "year": 2024,
+            "gaziFinishPosition": 2,
+            "matchingSignals": [
+              "jokey değişimi"
+            ]
+          }
+        ]
+      },
+      {
+        "rank": 5,
+        "horseName": "DEJAVU",
+        "gaziFinishPosition": 17,
+        "lensValue": 34,
+        "badge": "Upside 34",
+        "reason": "Geçmiş profil kanıtı ve rota formu birlikte patlama ihtimali üretiyor.",
+        "meta": "Yüksek güven · Risk 0 · Readiness 84",
+        "readiness": {
+          "score": 84,
+          "confidence": 100,
+          "upside": 34,
+          "risk": 0,
+          "label": "Güçlü aday profili",
+          "confidenceLabel": "Yüksek güven",
+          "riskLabel": "Düşük risk",
+          "primaryReason": "Geçmiş ilk 3 profilleriyle benzerlik yoğunluğu var.",
+          "parts": [
+            {
+              "label": "prep formu",
+              "value": 13
+            },
+            {
+              "label": "profil kanıtı",
+              "value": 30
+            },
+            {
+              "label": "rota şekli",
+              "value": 18
+            },
+            {
+              "label": "jokey sürekliliği",
+              "value": 13
+            },
+            {
+              "label": "veri derinliği",
+              "value": 10
+            }
+          ]
+        },
+        "profileSummary": {
+          "count": 4,
+          "averageFinish": "1.3",
+          "strongestSignal": "yoğun prep",
+          "note": "4/4 benzer örnek Gazi'de ilk 2 içinde bitirmiş."
+        },
+        "historicalMatches": [
+          {
+            "horseName": "SECRET POWER",
+            "year": 2022,
+            "gaziFinishPosition": 1,
+            "matchingSignals": [
+              "yoğun prep"
+            ]
+          },
+          {
+            "horseName": "BURGAS",
+            "year": 2021,
+            "gaziFinishPosition": 1,
+            "matchingSignals": [
+              "yoğun prep"
+            ]
+          },
+          {
+            "horseName": "CALL TO VICTORY",
+            "year": 2020,
+            "gaziFinishPosition": 1,
+            "matchingSignals": [
+              "yoğun prep"
+            ]
+          },
+          {
+            "horseName": "ZIZKA",
+            "year": 2024,
+            "gaziFinishPosition": 2,
+            "matchingSignals": [
+              "yoğun prep"
+            ]
+          }
+        ]
+      },
+      {
+        "rank": 6,
+        "horseName": "PETITE LOUVE",
+        "gaziFinishPosition": 18,
+        "lensValue": 34,
+        "badge": "Upside 34",
+        "reason": "Geçmiş profil kanıtı ve rota formu birlikte patlama ihtimali üretiyor.",
+        "meta": "Yüksek güven · Risk 14 · Readiness 84",
+        "readiness": {
+          "score": 84,
+          "confidence": 100,
+          "upside": 34,
+          "risk": 14,
+          "label": "Güçlü aday profili",
+          "confidenceLabel": "Yüksek güven",
+          "riskLabel": "Düşük risk",
+          "primaryReason": "Geçmiş ilk 3 profilleriyle benzerlik yoğunluğu var.",
+          "parts": [
+            {
+              "label": "prep formu",
+              "value": 19
+            },
+            {
+              "label": "profil kanıtı",
+              "value": 30
+            },
+            {
+              "label": "rota şekli",
+              "value": 18
+            },
+            {
+              "label": "jokey sürekliliği",
+              "value": 7
+            },
+            {
+              "label": "veri derinliği",
+              "value": 10
+            }
+          ]
+        },
+        "profileSummary": {
+          "count": 4,
+          "averageFinish": "1.8",
+          "strongestSignal": "yoğun prep",
+          "note": "3/4 benzer örnek Gazi'de ilk 2 içinde bitirmiş."
+        },
+        "historicalMatches": [
+          {
+            "horseName": "BURGAS",
+            "year": 2021,
+            "gaziFinishPosition": 1,
+            "matchingSignals": [
+              "jokey değişimi",
+              "yoğun prep"
+            ]
+          },
+          {
+            "horseName": "ZIZKA",
+            "year": 2024,
+            "gaziFinishPosition": 2,
+            "matchingSignals": [
+              "jokey değişimi",
+              "yoğun prep"
+            ]
+          },
+          {
+            "horseName": "CHAİKA",
+            "year": 2023,
+            "gaziFinishPosition": 3,
+            "matchingSignals": [
+              "jokey değişimi",
+              "yoğun prep"
+            ]
+          },
+          {
+            "horseName": "SECRET POWER",
+            "year": 2022,
+            "gaziFinishPosition": 1,
+            "matchingSignals": [
+              "yoğun prep"
+            ]
+          }
+        ]
+      },
+      {
+        "rank": 7,
+        "horseName": "BRAIN BROOSTER",
+        "gaziFinishPosition": 5,
+        "lensValue": 34,
+        "badge": "Upside 34",
+        "reason": "Geçmiş profil kanıtı ve rota formu birlikte patlama ihtimali üretiyor.",
+        "meta": "Yüksek güven · Risk 14 · Readiness 78",
+        "readiness": {
+          "score": 78,
+          "confidence": 100,
+          "upside": 34,
+          "risk": 14,
+          "label": "Güçlü aday profili",
+          "confidenceLabel": "Yüksek güven",
+          "riskLabel": "Düşük risk",
+          "primaryReason": "Geçmiş ilk 3 profilleriyle benzerlik yoğunluğu var.",
+          "parts": [
+            {
+              "label": "prep formu",
+              "value": 13
+            },
+            {
+              "label": "profil kanıtı",
+              "value": 30
+            },
+            {
+              "label": "rota şekli",
+              "value": 18
+            },
+            {
+              "label": "jokey sürekliliği",
+              "value": 7
+            },
+            {
+              "label": "veri derinliği",
+              "value": 10
+            }
+          ]
+        },
+        "profileSummary": {
+          "count": 4,
+          "averageFinish": "1.8",
+          "strongestSignal": "yoğun prep",
+          "note": "3/4 benzer örnek Gazi'de ilk 2 içinde bitirmiş."
+        },
+        "historicalMatches": [
+          {
+            "horseName": "BURGAS",
+            "year": 2021,
+            "gaziFinishPosition": 1,
+            "matchingSignals": [
+              "jokey değişimi",
+              "yoğun prep"
+            ]
+          },
+          {
+            "horseName": "ZIZKA",
+            "year": 2024,
+            "gaziFinishPosition": 2,
+            "matchingSignals": [
+              "jokey değişimi",
+              "yoğun prep"
+            ]
+          },
+          {
+            "horseName": "CHAİKA",
+            "year": 2023,
+            "gaziFinishPosition": 3,
+            "matchingSignals": [
+              "jokey değişimi",
+              "yoğun prep"
+            ]
+          },
+          {
+            "horseName": "SECRET POWER",
+            "year": 2022,
+            "gaziFinishPosition": 1,
+            "matchingSignals": [
+              "yoğun prep"
+            ]
+          }
+        ]
+      },
+      {
+        "rank": 8,
+        "horseName": "MAGIC SELECTRA",
+        "gaziFinishPosition": 19,
+        "lensValue": 34,
+        "badge": "Upside 34",
+        "reason": "Geçmiş profil kanıtı ve rota formu birlikte patlama ihtimali üretiyor.",
+        "meta": "Yüksek güven · Risk 14 · Readiness 72",
+        "readiness": {
+          "score": 72,
+          "confidence": 100,
+          "upside": 34,
+          "risk": 14,
+          "label": "Ciddi takip profili",
+          "confidenceLabel": "Yüksek güven",
+          "riskLabel": "Düşük risk",
+          "primaryReason": "Geçmiş ilk 3 profilleriyle benzerlik yoğunluğu var.",
+          "parts": [
+            {
+              "label": "prep formu",
+              "value": 7
+            },
+            {
+              "label": "profil kanıtı",
+              "value": 30
+            },
+            {
+              "label": "rota şekli",
+              "value": 18
+            },
+            {
+              "label": "jokey sürekliliği",
+              "value": 7
+            },
+            {
+              "label": "veri derinliği",
+              "value": 10
+            }
+          ]
+        },
+        "profileSummary": {
+          "count": 4,
+          "averageFinish": "1.8",
+          "strongestSignal": "yoğun prep",
+          "note": "3/4 benzer örnek Gazi'de ilk 2 içinde bitirmiş."
+        },
+        "historicalMatches": [
+          {
+            "horseName": "BURGAS",
+            "year": 2021,
+            "gaziFinishPosition": 1,
+            "matchingSignals": [
+              "jokey değişimi",
+              "yoğun prep"
+            ]
+          },
+          {
+            "horseName": "ZIZKA",
+            "year": 2024,
+            "gaziFinishPosition": 2,
+            "matchingSignals": [
+              "jokey değişimi",
+              "yoğun prep"
+            ]
+          },
+          {
+            "horseName": "CHAİKA",
+            "year": 2023,
+            "gaziFinishPosition": 3,
+            "matchingSignals": [
+              "jokey değişimi",
+              "yoğun prep"
+            ]
+          },
+          {
+            "horseName": "SECRET POWER",
+            "year": 2022,
+            "gaziFinishPosition": 1,
+            "matchingSignals": [
+              "yoğun prep"
+            ]
+          }
+        ]
+      },
+      {
+        "rank": 9,
+        "horseName": "DATABASE",
+        "gaziFinishPosition": 6,
+        "lensValue": 30,
+        "badge": "Upside 30",
+        "reason": "Rota dışı profil, düşük görünürlükten gelen sürpriz ihtimali taşıyor.",
+        "meta": "Orta güven · Risk 26 · Readiness 57",
+        "readiness": {
+          "score": 57,
+          "confidence": 66,
+          "upside": 30,
+          "risk": 26,
+          "label": "İzleme listesi",
+          "confidenceLabel": "Orta güven",
+          "riskLabel": "Kontrollü risk",
+          "primaryReason": "Rota dışı geldiği için upside var, fakat veri güveni sınırlı.",
+          "parts": [
+            {
+              "label": "prep formu",
+              "value": 8
+            },
+            {
+              "label": "profil kanıtı",
+              "value": 20
+            },
+            {
+              "label": "rota şekli",
+              "value": 8
+            },
+            {
+              "label": "jokey sürekliliği",
+              "value": 13
+            },
+            {
+              "label": "veri derinliği",
+              "value": 8
+            }
+          ]
+        },
+        "profileSummary": {
+          "count": 2,
+          "averageFinish": "2.0",
+          "strongestSignal": "rota dışı",
+          "note": "1/2 benzer örnek Gazi'de ilk 2 içinde bitirmiş."
+        },
+        "historicalMatches": [
+          {
+            "horseName": "URFA ASLANI",
+            "year": 2023,
+            "gaziFinishPosition": 1,
+            "matchingSignals": [
+              "rota dışı"
+            ]
+          },
+          {
+            "horseName": "BORREGO",
+            "year": 2024,
+            "gaziFinishPosition": 3,
+            "matchingSignals": [
+              "rota dışı"
+            ]
+          }
+        ]
+      },
+      {
+        "rank": 10,
+        "horseName": "MAGIC WEAPON",
+        "gaziFinishPosition": 7,
+        "lensValue": 30,
+        "badge": "Upside 30",
+        "reason": "Rota dışı profil, düşük görünürlükten gelen sürpriz ihtimali taşıyor.",
+        "meta": "Orta güven · Risk 26 · Readiness 57",
+        "readiness": {
+          "score": 57,
+          "confidence": 66,
+          "upside": 30,
+          "risk": 26,
+          "label": "İzleme listesi",
+          "confidenceLabel": "Orta güven",
+          "riskLabel": "Kontrollü risk",
+          "primaryReason": "Rota dışı geldiği için upside var, fakat veri güveni sınırlı.",
+          "parts": [
+            {
+              "label": "prep formu",
+              "value": 8
+            },
+            {
+              "label": "profil kanıtı",
+              "value": 20
+            },
+            {
+              "label": "rota şekli",
+              "value": 8
+            },
+            {
+              "label": "jokey sürekliliği",
+              "value": 13
+            },
+            {
+              "label": "veri derinliği",
+              "value": 8
+            }
+          ]
+        },
+        "profileSummary": {
+          "count": 2,
+          "averageFinish": "2.0",
+          "strongestSignal": "rota dışı",
+          "note": "1/2 benzer örnek Gazi'de ilk 2 içinde bitirmiş."
+        },
+        "historicalMatches": [
+          {
+            "horseName": "URFA ASLANI",
+            "year": 2023,
+            "gaziFinishPosition": 1,
+            "matchingSignals": [
+              "rota dışı"
+            ]
+          },
+          {
+            "horseName": "BORREGO",
+            "year": 2024,
+            "gaziFinishPosition": 3,
+            "matchingSignals": [
+              "rota dışı"
+            ]
+          }
+        ]
+      },
+      {
+        "rank": 11,
+        "horseName": "PATRICK STAR",
+        "gaziFinishPosition": 9,
+        "lensValue": 30,
+        "badge": "Upside 30",
+        "reason": "Rota dışı profil, düşük görünürlükten gelen sürpriz ihtimali taşıyor.",
+        "meta": "Orta güven · Risk 26 · Readiness 57",
+        "readiness": {
+          "score": 57,
+          "confidence": 66,
+          "upside": 30,
+          "risk": 26,
+          "label": "İzleme listesi",
+          "confidenceLabel": "Orta güven",
+          "riskLabel": "Kontrollü risk",
+          "primaryReason": "Rota dışı geldiği için upside var, fakat veri güveni sınırlı.",
+          "parts": [
+            {
+              "label": "prep formu",
+              "value": 8
+            },
+            {
+              "label": "profil kanıtı",
+              "value": 20
+            },
+            {
+              "label": "rota şekli",
+              "value": 8
+            },
+            {
+              "label": "jokey sürekliliği",
+              "value": 13
+            },
+            {
+              "label": "veri derinliği",
+              "value": 8
+            }
+          ]
+        },
+        "profileSummary": {
+          "count": 2,
+          "averageFinish": "2.0",
+          "strongestSignal": "rota dışı",
+          "note": "1/2 benzer örnek Gazi'de ilk 2 içinde bitirmiş."
+        },
+        "historicalMatches": [
+          {
+            "horseName": "URFA ASLANI",
+            "year": 2023,
+            "gaziFinishPosition": 1,
+            "matchingSignals": [
+              "rota dışı"
+            ]
+          },
+          {
+            "horseName": "BORREGO",
+            "year": 2024,
+            "gaziFinishPosition": 3,
+            "matchingSignals": [
+              "rota dışı"
+            ]
+          }
+        ]
+      },
+      {
+        "rank": 12,
+        "horseName": "HOPE BREEZE",
+        "gaziFinishPosition": 16,
+        "lensValue": 30,
+        "badge": "Upside 30",
+        "reason": "Rota dışı profil, düşük görünürlükten gelen sürpriz ihtimali taşıyor.",
+        "meta": "Orta güven · Risk 26 · Readiness 57",
+        "readiness": {
+          "score": 57,
+          "confidence": 66,
+          "upside": 30,
+          "risk": 26,
+          "label": "İzleme listesi",
+          "confidenceLabel": "Orta güven",
+          "riskLabel": "Kontrollü risk",
+          "primaryReason": "Rota dışı geldiği için upside var, fakat veri güveni sınırlı.",
+          "parts": [
+            {
+              "label": "prep formu",
+              "value": 8
+            },
+            {
+              "label": "profil kanıtı",
+              "value": 20
+            },
+            {
+              "label": "rota şekli",
+              "value": 8
+            },
+            {
+              "label": "jokey sürekliliği",
+              "value": 13
+            },
+            {
+              "label": "veri derinliği",
+              "value": 8
+            }
+          ]
+        },
+        "profileSummary": {
+          "count": 2,
+          "averageFinish": "2.0",
+          "strongestSignal": "rota dışı",
+          "note": "1/2 benzer örnek Gazi'de ilk 2 içinde bitirmiş."
+        },
+        "historicalMatches": [
+          {
+            "horseName": "URFA ASLANI",
+            "year": 2023,
+            "gaziFinishPosition": 1,
+            "matchingSignals": [
+              "rota dışı"
+            ]
+          },
+          {
+            "horseName": "BORREGO",
+            "year": 2024,
+            "gaziFinishPosition": 3,
+            "matchingSignals": [
+              "rota dışı"
+            ]
+          }
+        ]
+      },
+      {
+        "rank": 13,
+        "horseName": "BRAVE CHAMPİON",
+        "gaziFinishPosition": 21,
+        "lensValue": 30,
+        "badge": "Upside 30",
+        "reason": "Rota dışı profil, düşük görünürlükten gelen sürpriz ihtimali taşıyor.",
+        "meta": "Orta güven · Risk 26 · Readiness 57",
+        "readiness": {
+          "score": 57,
+          "confidence": 66,
+          "upside": 30,
+          "risk": 26,
+          "label": "İzleme listesi",
+          "confidenceLabel": "Orta güven",
+          "riskLabel": "Kontrollü risk",
+          "primaryReason": "Rota dışı geldiği için upside var, fakat veri güveni sınırlı.",
+          "parts": [
+            {
+              "label": "prep formu",
+              "value": 8
+            },
+            {
+              "label": "profil kanıtı",
+              "value": 20
+            },
+            {
+              "label": "rota şekli",
+              "value": 8
+            },
+            {
+              "label": "jokey sürekliliği",
+              "value": 13
+            },
+            {
+              "label": "veri derinliği",
+              "value": 8
+            }
+          ]
+        },
+        "profileSummary": {
+          "count": 2,
+          "averageFinish": "2.0",
+          "strongestSignal": "rota dışı",
+          "note": "1/2 benzer örnek Gazi'de ilk 2 içinde bitirmiş."
+        },
+        "historicalMatches": [
+          {
+            "horseName": "URFA ASLANI",
+            "year": 2023,
+            "gaziFinishPosition": 1,
+            "matchingSignals": [
+              "rota dışı"
+            ]
+          },
+          {
+            "horseName": "BORREGO",
+            "year": 2024,
+            "gaziFinishPosition": 3,
+            "matchingSignals": [
+              "rota dışı"
+            ]
+          }
+        ]
+      },
+      {
+        "rank": 14,
+        "horseName": "PUROSANGUE",
+        "gaziFinishPosition": 22,
+        "lensValue": 24,
+        "badge": "Upside 24",
+        "reason": "Geçmiş profil kanıtı ve rota formu birlikte patlama ihtimali üretiyor.",
+        "meta": "Yüksek güven · Risk 14 · Readiness 79",
+        "readiness": {
+          "score": 79,
+          "confidence": 100,
+          "upside": 24,
+          "risk": 14,
+          "label": "Güçlü aday profili",
+          "confidenceLabel": "Yüksek güven",
+          "riskLabel": "Düşük risk",
+          "primaryReason": "Geçmiş ilk 3 profilleriyle benzerlik yoğunluğu var.",
+          "parts": [
+            {
+              "label": "prep formu",
+              "value": 19
+            },
+            {
+              "label": "profil kanıtı",
+              "value": 30
+            },
+            {
+              "label": "rota şekli",
+              "value": 13
+            },
+            {
+              "label": "jokey sürekliliği",
+              "value": 7
+            },
+            {
+              "label": "veri derinliği",
+              "value": 10
+            }
+          ]
+        },
+        "profileSummary": {
+          "count": 4,
+          "averageFinish": "2.0",
+          "strongestSignal": "jokey değişimi",
+          "note": "3/4 benzer örnek Gazi'de ilk 2 içinde bitirmiş."
+        },
+        "historicalMatches": [
+          {
+            "horseName": "BURGAS",
+            "year": 2021,
+            "gaziFinishPosition": 1,
+            "matchingSignals": [
+              "jokey değişimi"
+            ]
+          },
+          {
+            "horseName": "ZIZKA",
+            "year": 2024,
+            "gaziFinishPosition": 2,
+            "matchingSignals": [
+              "jokey değişimi"
+            ]
+          },
+          {
+            "horseName": "MUCİZE KIZ",
+            "year": 2022,
+            "gaziFinishPosition": 2,
+            "matchingSignals": [
+              "jokey değişimi"
+            ]
+          },
+          {
+            "horseName": "CHAİKA",
+            "year": 2023,
+            "gaziFinishPosition": 3,
+            "matchingSignals": [
+              "jokey değişimi"
+            ]
+          }
+        ]
+      },
+      {
+        "rank": 15,
+        "horseName": "CUTHA",
+        "gaziFinishPosition": 1,
+        "lensValue": 24,
+        "badge": "Upside 24",
+        "reason": "Geçmiş profil kanıtı ve rota formu birlikte patlama ihtimali üretiyor.",
+        "meta": "Yüksek güven · Risk 14 · Readiness 73",
+        "readiness": {
+          "score": 73,
+          "confidence": 100,
+          "upside": 24,
+          "risk": 14,
+          "label": "Ciddi takip profili",
+          "confidenceLabel": "Yüksek güven",
+          "riskLabel": "Düşük risk",
+          "primaryReason": "Geçmiş ilk 3 profilleriyle benzerlik yoğunluğu var.",
+          "parts": [
+            {
+              "label": "prep formu",
+              "value": 13
+            },
+            {
+              "label": "profil kanıtı",
+              "value": 30
+            },
+            {
+              "label": "rota şekli",
+              "value": 13
+            },
+            {
+              "label": "jokey sürekliliği",
+              "value": 7
+            },
+            {
+              "label": "veri derinliği",
+              "value": 10
+            }
+          ]
+        },
+        "profileSummary": {
+          "count": 4,
+          "averageFinish": "2.0",
+          "strongestSignal": "jokey değişimi",
+          "note": "3/4 benzer örnek Gazi'de ilk 2 içinde bitirmiş."
+        },
+        "historicalMatches": [
+          {
+            "horseName": "BURGAS",
+            "year": 2021,
+            "gaziFinishPosition": 1,
+            "matchingSignals": [
+              "jokey değişimi"
+            ]
+          },
+          {
+            "horseName": "ZIZKA",
+            "year": 2024,
+            "gaziFinishPosition": 2,
+            "matchingSignals": [
+              "jokey değişimi"
+            ]
+          },
+          {
+            "horseName": "MUCİZE KIZ",
+            "year": 2022,
+            "gaziFinishPosition": 2,
+            "matchingSignals": [
+              "jokey değişimi"
+            ]
+          },
+          {
+            "horseName": "CHAİKA",
+            "year": 2023,
+            "gaziFinishPosition": 3,
+            "matchingSignals": [
+              "jokey değişimi"
+            ]
+          }
+        ]
+      },
+      {
+        "rank": 16,
+        "horseName": "BELGRATHAN",
+        "gaziFinishPosition": 4,
+        "lensValue": 24,
+        "badge": "Upside 24",
+        "reason": "Geçmiş profil kanıtı ve rota formu birlikte patlama ihtimali üretiyor.",
+        "meta": "Yüksek güven · Risk 14 · Readiness 73",
+        "readiness": {
+          "score": 73,
+          "confidence": 100,
+          "upside": 24,
+          "risk": 14,
+          "label": "Ciddi takip profili",
+          "confidenceLabel": "Yüksek güven",
+          "riskLabel": "Düşük risk",
+          "primaryReason": "Geçmiş ilk 3 profilleriyle benzerlik yoğunluğu var.",
+          "parts": [
+            {
+              "label": "prep formu",
+              "value": 13
+            },
+            {
+              "label": "profil kanıtı",
+              "value": 30
+            },
+            {
+              "label": "rota şekli",
+              "value": 13
+            },
+            {
+              "label": "jokey sürekliliği",
+              "value": 7
+            },
+            {
+              "label": "veri derinliği",
+              "value": 10
+            }
+          ]
+        },
+        "profileSummary": {
+          "count": 4,
+          "averageFinish": "2.0",
+          "strongestSignal": "jokey değişimi",
+          "note": "3/4 benzer örnek Gazi'de ilk 2 içinde bitirmiş."
+        },
+        "historicalMatches": [
+          {
+            "horseName": "BURGAS",
+            "year": 2021,
+            "gaziFinishPosition": 1,
+            "matchingSignals": [
+              "jokey değişimi"
+            ]
+          },
+          {
+            "horseName": "ZIZKA",
+            "year": 2024,
+            "gaziFinishPosition": 2,
+            "matchingSignals": [
+              "jokey değişimi"
+            ]
+          },
+          {
+            "horseName": "MUCİZE KIZ",
+            "year": 2022,
+            "gaziFinishPosition": 2,
+            "matchingSignals": [
+              "jokey değişimi"
+            ]
+          },
+          {
+            "horseName": "CHAİKA",
+            "year": 2023,
+            "gaziFinishPosition": 3,
+            "matchingSignals": [
+              "jokey değişimi"
+            ]
+          }
+        ]
+      },
+      {
+        "rank": 17,
+        "horseName": "TULUMAR",
+        "gaziFinishPosition": 12,
+        "lensValue": 24,
+        "badge": "Upside 24",
+        "reason": "Geçmiş profil kanıtı ve rota formu birlikte patlama ihtimali üretiyor.",
+        "meta": "Yüksek güven · Risk 14 · Readiness 73",
+        "readiness": {
+          "score": 73,
+          "confidence": 100,
+          "upside": 24,
+          "risk": 14,
+          "label": "Ciddi takip profili",
+          "confidenceLabel": "Yüksek güven",
+          "riskLabel": "Düşük risk",
+          "primaryReason": "Geçmiş ilk 3 profilleriyle benzerlik yoğunluğu var.",
+          "parts": [
+            {
+              "label": "prep formu",
+              "value": 13
+            },
+            {
+              "label": "profil kanıtı",
+              "value": 30
+            },
+            {
+              "label": "rota şekli",
+              "value": 13
+            },
+            {
+              "label": "jokey sürekliliği",
+              "value": 7
+            },
+            {
+              "label": "veri derinliği",
+              "value": 10
+            }
+          ]
+        },
+        "profileSummary": {
+          "count": 4,
+          "averageFinish": "2.0",
+          "strongestSignal": "jokey değişimi",
+          "note": "3/4 benzer örnek Gazi'de ilk 2 içinde bitirmiş."
+        },
+        "historicalMatches": [
+          {
+            "horseName": "BURGAS",
+            "year": 2021,
+            "gaziFinishPosition": 1,
+            "matchingSignals": [
+              "jokey değişimi"
+            ]
+          },
+          {
+            "horseName": "ZIZKA",
+            "year": 2024,
+            "gaziFinishPosition": 2,
+            "matchingSignals": [
+              "jokey değişimi"
+            ]
+          },
+          {
+            "horseName": "MUCİZE KIZ",
+            "year": 2022,
+            "gaziFinishPosition": 2,
+            "matchingSignals": [
+              "jokey değişimi"
+            ]
+          },
+          {
+            "horseName": "CHAİKA",
+            "year": 2023,
+            "gaziFinishPosition": 3,
+            "matchingSignals": [
+              "jokey değişimi"
+            ]
+          }
+        ]
+      },
+      {
+        "rank": 18,
+        "horseName": "ALBAYRAK",
+        "gaziFinishPosition": 11,
+        "lensValue": 24,
+        "badge": "Upside 24",
+        "reason": "Geçmiş profil kanıtı ve rota formu birlikte patlama ihtimali üretiyor.",
+        "meta": "Yüksek güven · Risk 14 · Readiness 67",
+        "readiness": {
+          "score": 67,
+          "confidence": 100,
+          "upside": 24,
+          "risk": 14,
+          "label": "Ciddi takip profili",
+          "confidenceLabel": "Yüksek güven",
+          "riskLabel": "Düşük risk",
+          "primaryReason": "Geçmiş ilk 3 profilleriyle benzerlik yoğunluğu var.",
+          "parts": [
+            {
+              "label": "prep formu",
+              "value": 7
+            },
+            {
+              "label": "profil kanıtı",
+              "value": 30
+            },
+            {
+              "label": "rota şekli",
+              "value": 13
+            },
+            {
+              "label": "jokey sürekliliği",
+              "value": 7
+            },
+            {
+              "label": "veri derinliği",
+              "value": 10
+            }
+          ]
+        },
+        "profileSummary": {
+          "count": 4,
+          "averageFinish": "2.0",
+          "strongestSignal": "jokey değişimi",
+          "note": "3/4 benzer örnek Gazi'de ilk 2 içinde bitirmiş."
+        },
+        "historicalMatches": [
+          {
+            "horseName": "BURGAS",
+            "year": 2021,
+            "gaziFinishPosition": 1,
+            "matchingSignals": [
+              "jokey değişimi"
+            ]
+          },
+          {
+            "horseName": "ZIZKA",
+            "year": 2024,
+            "gaziFinishPosition": 2,
+            "matchingSignals": [
+              "jokey değişimi"
+            ]
+          },
+          {
+            "horseName": "MUCİZE KIZ",
+            "year": 2022,
+            "gaziFinishPosition": 2,
+            "matchingSignals": [
+              "jokey değişimi"
+            ]
+          },
+          {
+            "horseName": "CHAİKA",
+            "year": 2023,
+            "gaziFinishPosition": 3,
+            "matchingSignals": [
+              "jokey değişimi"
+            ]
+          }
+        ]
+      },
+      {
+        "rank": 19,
+        "horseName": "BROARTS",
+        "gaziFinishPosition": 20,
+        "lensValue": 24,
+        "badge": "Upside 24",
+        "reason": "Geçmiş profil kanıtı ve rota formu birlikte patlama ihtimali üretiyor.",
+        "meta": "Yüksek güven · Risk 14 · Readiness 67",
+        "readiness": {
+          "score": 67,
+          "confidence": 100,
+          "upside": 24,
+          "risk": 14,
+          "label": "Ciddi takip profili",
+          "confidenceLabel": "Yüksek güven",
+          "riskLabel": "Düşük risk",
+          "primaryReason": "Geçmiş ilk 3 profilleriyle benzerlik yoğunluğu var.",
+          "parts": [
+            {
+              "label": "prep formu",
+              "value": 7
+            },
+            {
+              "label": "profil kanıtı",
+              "value": 30
+            },
+            {
+              "label": "rota şekli",
+              "value": 13
+            },
+            {
+              "label": "jokey sürekliliği",
+              "value": 7
+            },
+            {
+              "label": "veri derinliği",
+              "value": 10
+            }
+          ]
+        },
+        "profileSummary": {
+          "count": 4,
+          "averageFinish": "2.0",
+          "strongestSignal": "jokey değişimi",
+          "note": "3/4 benzer örnek Gazi'de ilk 2 içinde bitirmiş."
+        },
+        "historicalMatches": [
+          {
+            "horseName": "BURGAS",
+            "year": 2021,
+            "gaziFinishPosition": 1,
+            "matchingSignals": [
+              "jokey değişimi"
+            ]
+          },
+          {
+            "horseName": "ZIZKA",
+            "year": 2024,
+            "gaziFinishPosition": 2,
+            "matchingSignals": [
+              "jokey değişimi"
+            ]
+          },
+          {
+            "horseName": "MUCİZE KIZ",
+            "year": 2022,
+            "gaziFinishPosition": 2,
+            "matchingSignals": [
+              "jokey değişimi"
+            ]
+          },
+          {
+            "horseName": "CHAİKA",
+            "year": 2023,
+            "gaziFinishPosition": 3,
+            "matchingSignals": [
+              "jokey değişimi"
+            ]
+          }
+        ]
+      },
+      {
+        "rank": 20,
+        "horseName": "ZAMBUR AGA",
+        "gaziFinishPosition": 10,
+        "lensValue": 0,
+        "badge": "Upside 0",
+        "reason": "Geçmiş profil kanıtı ve rota formu birlikte patlama ihtimali üretiyor.",
+        "meta": "Orta güven · Risk 18 · Readiness 59",
+        "readiness": {
+          "score": 59,
+          "confidence": 70,
+          "upside": 0,
+          "risk": 18,
+          "label": "İzleme listesi",
+          "confidenceLabel": "Orta güven",
+          "riskLabel": "Düşük risk",
+          "primaryReason": "Temel rota sinyali var; ayırıcı veri henüz sınırlı.",
+          "parts": [
+            {
+              "label": "prep formu",
+              "value": 23
+            },
+            {
+              "label": "rota şekli",
+              "value": 13
+            },
+            {
+              "label": "jokey sürekliliği",
+              "value": 13
+            },
+            {
+              "label": "veri derinliği",
+              "value": 10
+            }
+          ]
+        },
+        "profileSummary": {
+          "count": 0,
+          "averageFinish": "-",
+          "strongestSignal": "Yok",
+          "note": "Geçmiş ilk 3 içinde aynı profil sinyaliyle güçlü eşleşme bulunmadı."
+        },
+        "historicalMatches": []
+      },
+      {
+        "rank": 21,
+        "horseName": "LOST KING",
+        "gaziFinishPosition": 15,
+        "lensValue": 0,
+        "badge": "Upside 0",
+        "reason": "Geçmiş profil kanıtı ve rota formu birlikte patlama ihtimali üretiyor.",
+        "meta": "Orta güven · Risk 18 · Readiness 59",
+        "readiness": {
+          "score": 59,
+          "confidence": 70,
+          "upside": 0,
+          "risk": 18,
+          "label": "İzleme listesi",
+          "confidenceLabel": "Orta güven",
+          "riskLabel": "Düşük risk",
+          "primaryReason": "Temel rota sinyali var; ayırıcı veri henüz sınırlı.",
+          "parts": [
+            {
+              "label": "prep formu",
+              "value": 23
+            },
+            {
+              "label": "rota şekli",
+              "value": 13
+            },
+            {
+              "label": "jokey sürekliliği",
+              "value": 13
+            },
+            {
+              "label": "veri derinliği",
+              "value": 10
+            }
+          ]
+        },
+        "profileSummary": {
+          "count": 0,
+          "averageFinish": "-",
+          "strongestSignal": "Yok",
+          "note": "Geçmiş ilk 3 içinde aynı profil sinyaliyle güçlü eşleşme bulunmadı."
+        },
+        "historicalMatches": []
+      },
+      {
+        "rank": 22,
+        "horseName": "GRANDE FLUSSO",
+        "gaziFinishPosition": 13,
+        "lensValue": 0,
+        "badge": "Upside 0",
+        "reason": "Geçmiş profil kanıtı ve rota formu birlikte patlama ihtimali üretiyor.",
+        "meta": "Orta güven · Risk 18 · Readiness 55",
+        "readiness": {
+          "score": 55,
+          "confidence": 70,
+          "upside": 0,
+          "risk": 18,
+          "label": "İzleme listesi",
+          "confidenceLabel": "Orta güven",
+          "riskLabel": "Düşük risk",
+          "primaryReason": "Temel rota sinyali var; ayırıcı veri henüz sınırlı.",
+          "parts": [
+            {
+              "label": "prep formu",
+              "value": 19
+            },
+            {
+              "label": "rota şekli",
+              "value": 13
+            },
+            {
+              "label": "jokey sürekliliği",
+              "value": 13
+            },
+            {
+              "label": "veri derinliği",
+              "value": 10
+            }
+          ]
+        },
+        "profileSummary": {
+          "count": 0,
+          "averageFinish": "-",
+          "strongestSignal": "Yok",
+          "note": "Geçmiş ilk 3 içinde aynı profil sinyaliyle güçlü eşleşme bulunmadı."
+        },
+        "historicalMatches": []
+      }
+    ],
+    "lowRisk": [
+      {
+        "rank": 1,
+        "horseName": "SPECIAL MAN",
+        "gaziFinishPosition": 3,
+        "lensValue": 100,
+        "badge": "Risk dengesi 100",
+        "reason": "Veri güveni yüksek ve risk göstergeleri sınırlı.",
+        "meta": "Yüksek güven · Düşük risk · Upside 68",
+        "readiness": {
+          "score": 99,
+          "confidence": 100,
+          "upside": 68,
+          "risk": 0,
+          "label": "Güçlü aday profili",
+          "confidenceLabel": "Yüksek güven",
+          "riskLabel": "Düşük risk",
+          "primaryReason": "Prep galibiyeti kompozit skoru yukarı taşıyor.",
+          "parts": [
+            {
+              "label": "prep formu",
+              "value": 28
+            },
+            {
+              "label": "profil kanıtı",
+              "value": 30
+            },
+            {
+              "label": "rota şekli",
+              "value": 18
+            },
+            {
+              "label": "jokey sürekliliği",
+              "value": 13
+            },
+            {
+              "label": "veri derinliği",
+              "value": 10
+            }
+          ]
+        },
+        "profileSummary": {
+          "count": 4,
+          "averageFinish": "1.3",
+          "strongestSignal": "prep galibi",
+          "note": "4/4 benzer örnek Gazi'de ilk 2 içinde bitirmiş."
+        },
+        "historicalMatches": [
+          {
+            "horseName": "SECRET POWER",
+            "year": 2022,
+            "gaziFinishPosition": 1,
+            "matchingSignals": [
+              "prep galibi",
+              "yoğun prep"
+            ]
+          },
+          {
+            "horseName": "BURGAS",
+            "year": 2021,
+            "gaziFinishPosition": 1,
+            "matchingSignals": [
+              "prep galibi",
+              "yoğun prep"
+            ]
+          },
+          {
+            "horseName": "CALL TO VICTORY",
+            "year": 2020,
+            "gaziFinishPosition": 1,
+            "matchingSignals": [
+              "prep galibi",
+              "yoğun prep"
+            ]
+          },
+          {
+            "horseName": "REAL RUNNER",
+            "year": 2021,
+            "gaziFinishPosition": 2,
+            "matchingSignals": [
+              "prep galibi",
+              "yoğun prep"
+            ]
+          }
+        ]
+      },
+      {
+        "rank": 2,
+        "horseName": "BOON NAM",
+        "gaziFinishPosition": 14,
+        "lensValue": 100,
+        "badge": "Risk dengesi 100",
+        "reason": "Veri güveni yüksek ve risk göstergeleri sınırlı.",
+        "meta": "Yüksek güven · Düşük risk · Upside 68",
+        "readiness": {
+          "score": 99,
+          "confidence": 100,
+          "upside": 68,
+          "risk": 0,
+          "label": "Güçlü aday profili",
+          "confidenceLabel": "Yüksek güven",
+          "riskLabel": "Düşük risk",
+          "primaryReason": "Prep galibiyeti kompozit skoru yukarı taşıyor.",
+          "parts": [
+            {
+              "label": "prep formu",
+              "value": 28
+            },
+            {
+              "label": "profil kanıtı",
+              "value": 30
+            },
+            {
+              "label": "rota şekli",
+              "value": 18
+            },
+            {
+              "label": "jokey sürekliliği",
+              "value": 13
+            },
+            {
+              "label": "veri derinliği",
+              "value": 10
+            }
+          ]
+        },
+        "profileSummary": {
+          "count": 4,
+          "averageFinish": "1.3",
+          "strongestSignal": "prep galibi",
+          "note": "4/4 benzer örnek Gazi'de ilk 2 içinde bitirmiş."
+        },
+        "historicalMatches": [
+          {
+            "horseName": "SECRET POWER",
+            "year": 2022,
+            "gaziFinishPosition": 1,
+            "matchingSignals": [
+              "prep galibi",
+              "yoğun prep"
+            ]
+          },
+          {
+            "horseName": "BURGAS",
+            "year": 2021,
+            "gaziFinishPosition": 1,
+            "matchingSignals": [
+              "prep galibi",
+              "yoğun prep"
+            ]
+          },
+          {
+            "horseName": "CALL TO VICTORY",
+            "year": 2020,
+            "gaziFinishPosition": 1,
+            "matchingSignals": [
+              "prep galibi",
+              "yoğun prep"
+            ]
+          },
+          {
+            "horseName": "REAL RUNNER",
+            "year": 2021,
+            "gaziFinishPosition": 2,
+            "matchingSignals": [
+              "prep galibi",
+              "yoğun prep"
+            ]
+          }
+        ]
+      },
+      {
+        "rank": 3,
+        "horseName": "HANDSOME KING",
+        "gaziFinishPosition": 2,
+        "lensValue": 100,
+        "badge": "Risk dengesi 100",
+        "reason": "Veri güveni yüksek ve risk göstergeleri sınırlı.",
+        "meta": "Yüksek güven · Düşük risk · Upside 58",
+        "readiness": {
+          "score": 94,
+          "confidence": 100,
+          "upside": 58,
+          "risk": 0,
+          "label": "Güçlü aday profili",
+          "confidenceLabel": "Yüksek güven",
+          "riskLabel": "Düşük risk",
+          "primaryReason": "Prep galibiyeti kompozit skoru yukarı taşıyor.",
+          "parts": [
+            {
+              "label": "prep formu",
+              "value": 28
+            },
+            {
+              "label": "profil kanıtı",
+              "value": 30
+            },
+            {
+              "label": "rota şekli",
+              "value": 13
+            },
+            {
+              "label": "jokey sürekliliği",
+              "value": 13
+            },
+            {
+              "label": "veri derinliği",
+              "value": 10
+            }
+          ]
+        },
+        "profileSummary": {
+          "count": 4,
+          "averageFinish": "1.3",
+          "strongestSignal": "prep galibi",
+          "note": "4/4 benzer örnek Gazi'de ilk 2 içinde bitirmiş."
+        },
+        "historicalMatches": [
+          {
+            "horseName": "SECRET POWER",
+            "year": 2022,
+            "gaziFinishPosition": 1,
+            "matchingSignals": [
+              "prep galibi"
+            ]
+          },
+          {
+            "horseName": "BURGAS",
+            "year": 2021,
+            "gaziFinishPosition": 1,
+            "matchingSignals": [
+              "prep galibi"
+            ]
+          },
+          {
+            "horseName": "CALL TO VICTORY",
+            "year": 2020,
+            "gaziFinishPosition": 1,
+            "matchingSignals": [
+              "prep galibi"
+            ]
+          },
+          {
+            "horseName": "QUALIZTO",
+            "year": 2023,
+            "gaziFinishPosition": 2,
+            "matchingSignals": [
+              "prep galibi"
+            ]
+          }
+        ]
+      },
+      {
+        "rank": 4,
+        "horseName": "DEJAVU",
+        "gaziFinishPosition": 17,
+        "lensValue": 100,
+        "badge": "Risk dengesi 100",
+        "reason": "Veri güveni yüksek ve risk göstergeleri sınırlı.",
+        "meta": "Yüksek güven · Düşük risk · Upside 34",
+        "readiness": {
+          "score": 84,
+          "confidence": 100,
+          "upside": 34,
+          "risk": 0,
+          "label": "Güçlü aday profili",
+          "confidenceLabel": "Yüksek güven",
+          "riskLabel": "Düşük risk",
+          "primaryReason": "Geçmiş ilk 3 profilleriyle benzerlik yoğunluğu var.",
+          "parts": [
+            {
+              "label": "prep formu",
+              "value": 13
+            },
+            {
+              "label": "profil kanıtı",
+              "value": 30
+            },
+            {
+              "label": "rota şekli",
+              "value": 18
+            },
+            {
+              "label": "jokey sürekliliği",
+              "value": 13
+            },
+            {
+              "label": "veri derinliği",
+              "value": 10
+            }
+          ]
+        },
+        "profileSummary": {
+          "count": 4,
+          "averageFinish": "1.3",
+          "strongestSignal": "yoğun prep",
+          "note": "4/4 benzer örnek Gazi'de ilk 2 içinde bitirmiş."
+        },
+        "historicalMatches": [
+          {
+            "horseName": "SECRET POWER",
+            "year": 2022,
+            "gaziFinishPosition": 1,
+            "matchingSignals": [
+              "yoğun prep"
+            ]
+          },
+          {
+            "horseName": "BURGAS",
+            "year": 2021,
+            "gaziFinishPosition": 1,
+            "matchingSignals": [
+              "yoğun prep"
+            ]
+          },
+          {
+            "horseName": "CALL TO VICTORY",
+            "year": 2020,
+            "gaziFinishPosition": 1,
+            "matchingSignals": [
+              "yoğun prep"
+            ]
+          },
+          {
+            "horseName": "ZIZKA",
+            "year": 2024,
+            "gaziFinishPosition": 2,
+            "matchingSignals": [
+              "yoğun prep"
+            ]
+          }
+        ]
+      },
+      {
+        "rank": 5,
+        "horseName": "TONBİ",
+        "gaziFinishPosition": 8,
+        "lensValue": 86,
+        "badge": "Risk dengesi 86",
+        "reason": "Veri güveni yüksek ve risk göstergeleri sınırlı.",
+        "meta": "Yüksek güven · Düşük risk · Upside 58",
+        "readiness": {
+          "score": 88,
+          "confidence": 100,
+          "upside": 58,
+          "risk": 14,
+          "label": "Güçlü aday profili",
+          "confidenceLabel": "Yüksek güven",
+          "riskLabel": "Düşük risk",
+          "primaryReason": "Prep galibiyeti kompozit skoru yukarı taşıyor.",
+          "parts": [
+            {
+              "label": "prep formu",
+              "value": 28
+            },
+            {
+              "label": "profil kanıtı",
+              "value": 30
+            },
+            {
+              "label": "rota şekli",
+              "value": 13
+            },
+            {
+              "label": "jokey sürekliliği",
+              "value": 7
+            },
+            {
+              "label": "veri derinliği",
+              "value": 10
+            }
+          ]
+        },
+        "profileSummary": {
+          "count": 4,
+          "averageFinish": "1.3",
+          "strongestSignal": "prep galibi",
+          "note": "4/4 benzer örnek Gazi'de ilk 2 içinde bitirmiş."
+        },
+        "historicalMatches": [
+          {
+            "horseName": "BURGAS",
+            "year": 2021,
+            "gaziFinishPosition": 1,
+            "matchingSignals": [
+              "prep galibi",
+              "jokey değişimi"
+            ]
+          },
+          {
+            "horseName": "SECRET POWER",
+            "year": 2022,
+            "gaziFinishPosition": 1,
+            "matchingSignals": [
+              "prep galibi"
+            ]
+          },
+          {
+            "horseName": "CALL TO VICTORY",
+            "year": 2020,
+            "gaziFinishPosition": 1,
+            "matchingSignals": [
+              "prep galibi"
+            ]
+          },
+          {
+            "horseName": "ZIZKA",
+            "year": 2024,
+            "gaziFinishPosition": 2,
+            "matchingSignals": [
+              "jokey değişimi"
+            ]
+          }
+        ]
+      },
+      {
+        "rank": 6,
+        "horseName": "PETITE LOUVE",
+        "gaziFinishPosition": 18,
+        "lensValue": 86,
+        "badge": "Risk dengesi 86",
+        "reason": "Veri güveni yüksek ve risk göstergeleri sınırlı.",
+        "meta": "Yüksek güven · Düşük risk · Upside 34",
+        "readiness": {
+          "score": 84,
+          "confidence": 100,
+          "upside": 34,
+          "risk": 14,
+          "label": "Güçlü aday profili",
+          "confidenceLabel": "Yüksek güven",
+          "riskLabel": "Düşük risk",
+          "primaryReason": "Geçmiş ilk 3 profilleriyle benzerlik yoğunluğu var.",
+          "parts": [
+            {
+              "label": "prep formu",
+              "value": 19
+            },
+            {
+              "label": "profil kanıtı",
+              "value": 30
+            },
+            {
+              "label": "rota şekli",
+              "value": 18
+            },
+            {
+              "label": "jokey sürekliliği",
+              "value": 7
+            },
+            {
+              "label": "veri derinliği",
+              "value": 10
+            }
+          ]
+        },
+        "profileSummary": {
+          "count": 4,
+          "averageFinish": "1.8",
+          "strongestSignal": "yoğun prep",
+          "note": "3/4 benzer örnek Gazi'de ilk 2 içinde bitirmiş."
+        },
+        "historicalMatches": [
+          {
+            "horseName": "BURGAS",
+            "year": 2021,
+            "gaziFinishPosition": 1,
+            "matchingSignals": [
+              "jokey değişimi",
+              "yoğun prep"
+            ]
+          },
+          {
+            "horseName": "ZIZKA",
+            "year": 2024,
+            "gaziFinishPosition": 2,
+            "matchingSignals": [
+              "jokey değişimi",
+              "yoğun prep"
+            ]
+          },
+          {
+            "horseName": "CHAİKA",
+            "year": 2023,
+            "gaziFinishPosition": 3,
+            "matchingSignals": [
+              "jokey değişimi",
+              "yoğun prep"
+            ]
+          },
+          {
+            "horseName": "SECRET POWER",
+            "year": 2022,
+            "gaziFinishPosition": 1,
+            "matchingSignals": [
+              "yoğun prep"
+            ]
+          }
+        ]
+      },
+      {
+        "rank": 7,
+        "horseName": "PUROSANGUE",
+        "gaziFinishPosition": 22,
+        "lensValue": 86,
+        "badge": "Risk dengesi 86",
+        "reason": "Veri güveni yüksek ve risk göstergeleri sınırlı.",
+        "meta": "Yüksek güven · Düşük risk · Upside 24",
+        "readiness": {
+          "score": 79,
+          "confidence": 100,
+          "upside": 24,
+          "risk": 14,
+          "label": "Güçlü aday profili",
+          "confidenceLabel": "Yüksek güven",
+          "riskLabel": "Düşük risk",
+          "primaryReason": "Geçmiş ilk 3 profilleriyle benzerlik yoğunluğu var.",
+          "parts": [
+            {
+              "label": "prep formu",
+              "value": 19
+            },
+            {
+              "label": "profil kanıtı",
+              "value": 30
+            },
+            {
+              "label": "rota şekli",
+              "value": 13
+            },
+            {
+              "label": "jokey sürekliliği",
+              "value": 7
+            },
+            {
+              "label": "veri derinliği",
+              "value": 10
+            }
+          ]
+        },
+        "profileSummary": {
+          "count": 4,
+          "averageFinish": "2.0",
+          "strongestSignal": "jokey değişimi",
+          "note": "3/4 benzer örnek Gazi'de ilk 2 içinde bitirmiş."
+        },
+        "historicalMatches": [
+          {
+            "horseName": "BURGAS",
+            "year": 2021,
+            "gaziFinishPosition": 1,
+            "matchingSignals": [
+              "jokey değişimi"
+            ]
+          },
+          {
+            "horseName": "ZIZKA",
+            "year": 2024,
+            "gaziFinishPosition": 2,
+            "matchingSignals": [
+              "jokey değişimi"
+            ]
+          },
+          {
+            "horseName": "MUCİZE KIZ",
+            "year": 2022,
+            "gaziFinishPosition": 2,
+            "matchingSignals": [
+              "jokey değişimi"
+            ]
+          },
+          {
+            "horseName": "CHAİKA",
+            "year": 2023,
+            "gaziFinishPosition": 3,
+            "matchingSignals": [
+              "jokey değişimi"
+            ]
+          }
+        ]
+      },
+      {
+        "rank": 8,
+        "horseName": "BRAIN BROOSTER",
+        "gaziFinishPosition": 5,
+        "lensValue": 86,
+        "badge": "Risk dengesi 86",
+        "reason": "Veri güveni yüksek ve risk göstergeleri sınırlı.",
+        "meta": "Yüksek güven · Düşük risk · Upside 34",
+        "readiness": {
+          "score": 78,
+          "confidence": 100,
+          "upside": 34,
+          "risk": 14,
+          "label": "Güçlü aday profili",
+          "confidenceLabel": "Yüksek güven",
+          "riskLabel": "Düşük risk",
+          "primaryReason": "Geçmiş ilk 3 profilleriyle benzerlik yoğunluğu var.",
+          "parts": [
+            {
+              "label": "prep formu",
+              "value": 13
+            },
+            {
+              "label": "profil kanıtı",
+              "value": 30
+            },
+            {
+              "label": "rota şekli",
+              "value": 18
+            },
+            {
+              "label": "jokey sürekliliği",
+              "value": 7
+            },
+            {
+              "label": "veri derinliği",
+              "value": 10
+            }
+          ]
+        },
+        "profileSummary": {
+          "count": 4,
+          "averageFinish": "1.8",
+          "strongestSignal": "yoğun prep",
+          "note": "3/4 benzer örnek Gazi'de ilk 2 içinde bitirmiş."
+        },
+        "historicalMatches": [
+          {
+            "horseName": "BURGAS",
+            "year": 2021,
+            "gaziFinishPosition": 1,
+            "matchingSignals": [
+              "jokey değişimi",
+              "yoğun prep"
+            ]
+          },
+          {
+            "horseName": "ZIZKA",
+            "year": 2024,
+            "gaziFinishPosition": 2,
+            "matchingSignals": [
+              "jokey değişimi",
+              "yoğun prep"
+            ]
+          },
+          {
+            "horseName": "CHAİKA",
+            "year": 2023,
+            "gaziFinishPosition": 3,
+            "matchingSignals": [
+              "jokey değişimi",
+              "yoğun prep"
+            ]
+          },
+          {
+            "horseName": "SECRET POWER",
+            "year": 2022,
+            "gaziFinishPosition": 1,
+            "matchingSignals": [
+              "yoğun prep"
+            ]
+          }
+        ]
+      },
+      {
+        "rank": 9,
+        "horseName": "CUTHA",
+        "gaziFinishPosition": 1,
+        "lensValue": 86,
+        "badge": "Risk dengesi 86",
+        "reason": "Veri güveni yüksek ve risk göstergeleri sınırlı.",
+        "meta": "Yüksek güven · Düşük risk · Upside 24",
+        "readiness": {
+          "score": 73,
+          "confidence": 100,
+          "upside": 24,
+          "risk": 14,
+          "label": "Ciddi takip profili",
+          "confidenceLabel": "Yüksek güven",
+          "riskLabel": "Düşük risk",
+          "primaryReason": "Geçmiş ilk 3 profilleriyle benzerlik yoğunluğu var.",
+          "parts": [
+            {
+              "label": "prep formu",
+              "value": 13
+            },
+            {
+              "label": "profil kanıtı",
+              "value": 30
+            },
+            {
+              "label": "rota şekli",
+              "value": 13
+            },
+            {
+              "label": "jokey sürekliliği",
+              "value": 7
+            },
+            {
+              "label": "veri derinliği",
+              "value": 10
+            }
+          ]
+        },
+        "profileSummary": {
+          "count": 4,
+          "averageFinish": "2.0",
+          "strongestSignal": "jokey değişimi",
+          "note": "3/4 benzer örnek Gazi'de ilk 2 içinde bitirmiş."
+        },
+        "historicalMatches": [
+          {
+            "horseName": "BURGAS",
+            "year": 2021,
+            "gaziFinishPosition": 1,
+            "matchingSignals": [
+              "jokey değişimi"
+            ]
+          },
+          {
+            "horseName": "ZIZKA",
+            "year": 2024,
+            "gaziFinishPosition": 2,
+            "matchingSignals": [
+              "jokey değişimi"
+            ]
+          },
+          {
+            "horseName": "MUCİZE KIZ",
+            "year": 2022,
+            "gaziFinishPosition": 2,
+            "matchingSignals": [
+              "jokey değişimi"
+            ]
+          },
+          {
+            "horseName": "CHAİKA",
+            "year": 2023,
+            "gaziFinishPosition": 3,
+            "matchingSignals": [
+              "jokey değişimi"
+            ]
+          }
+        ]
+      },
+      {
+        "rank": 10,
+        "horseName": "BELGRATHAN",
+        "gaziFinishPosition": 4,
+        "lensValue": 86,
+        "badge": "Risk dengesi 86",
+        "reason": "Veri güveni yüksek ve risk göstergeleri sınırlı.",
+        "meta": "Yüksek güven · Düşük risk · Upside 24",
+        "readiness": {
+          "score": 73,
+          "confidence": 100,
+          "upside": 24,
+          "risk": 14,
+          "label": "Ciddi takip profili",
+          "confidenceLabel": "Yüksek güven",
+          "riskLabel": "Düşük risk",
+          "primaryReason": "Geçmiş ilk 3 profilleriyle benzerlik yoğunluğu var.",
+          "parts": [
+            {
+              "label": "prep formu",
+              "value": 13
+            },
+            {
+              "label": "profil kanıtı",
+              "value": 30
+            },
+            {
+              "label": "rota şekli",
+              "value": 13
+            },
+            {
+              "label": "jokey sürekliliği",
+              "value": 7
+            },
+            {
+              "label": "veri derinliği",
+              "value": 10
+            }
+          ]
+        },
+        "profileSummary": {
+          "count": 4,
+          "averageFinish": "2.0",
+          "strongestSignal": "jokey değişimi",
+          "note": "3/4 benzer örnek Gazi'de ilk 2 içinde bitirmiş."
+        },
+        "historicalMatches": [
+          {
+            "horseName": "BURGAS",
+            "year": 2021,
+            "gaziFinishPosition": 1,
+            "matchingSignals": [
+              "jokey değişimi"
+            ]
+          },
+          {
+            "horseName": "ZIZKA",
+            "year": 2024,
+            "gaziFinishPosition": 2,
+            "matchingSignals": [
+              "jokey değişimi"
+            ]
+          },
+          {
+            "horseName": "MUCİZE KIZ",
+            "year": 2022,
+            "gaziFinishPosition": 2,
+            "matchingSignals": [
+              "jokey değişimi"
+            ]
+          },
+          {
+            "horseName": "CHAİKA",
+            "year": 2023,
+            "gaziFinishPosition": 3,
+            "matchingSignals": [
+              "jokey değişimi"
+            ]
+          }
+        ]
+      },
+      {
+        "rank": 11,
+        "horseName": "TULUMAR",
+        "gaziFinishPosition": 12,
+        "lensValue": 86,
+        "badge": "Risk dengesi 86",
+        "reason": "Veri güveni yüksek ve risk göstergeleri sınırlı.",
+        "meta": "Yüksek güven · Düşük risk · Upside 24",
+        "readiness": {
+          "score": 73,
+          "confidence": 100,
+          "upside": 24,
+          "risk": 14,
+          "label": "Ciddi takip profili",
+          "confidenceLabel": "Yüksek güven",
+          "riskLabel": "Düşük risk",
+          "primaryReason": "Geçmiş ilk 3 profilleriyle benzerlik yoğunluğu var.",
+          "parts": [
+            {
+              "label": "prep formu",
+              "value": 13
+            },
+            {
+              "label": "profil kanıtı",
+              "value": 30
+            },
+            {
+              "label": "rota şekli",
+              "value": 13
+            },
+            {
+              "label": "jokey sürekliliği",
+              "value": 7
+            },
+            {
+              "label": "veri derinliği",
+              "value": 10
+            }
+          ]
+        },
+        "profileSummary": {
+          "count": 4,
+          "averageFinish": "2.0",
+          "strongestSignal": "jokey değişimi",
+          "note": "3/4 benzer örnek Gazi'de ilk 2 içinde bitirmiş."
+        },
+        "historicalMatches": [
+          {
+            "horseName": "BURGAS",
+            "year": 2021,
+            "gaziFinishPosition": 1,
+            "matchingSignals": [
+              "jokey değişimi"
+            ]
+          },
+          {
+            "horseName": "ZIZKA",
+            "year": 2024,
+            "gaziFinishPosition": 2,
+            "matchingSignals": [
+              "jokey değişimi"
+            ]
+          },
+          {
+            "horseName": "MUCİZE KIZ",
+            "year": 2022,
+            "gaziFinishPosition": 2,
+            "matchingSignals": [
+              "jokey değişimi"
+            ]
+          },
+          {
+            "horseName": "CHAİKA",
+            "year": 2023,
+            "gaziFinishPosition": 3,
+            "matchingSignals": [
+              "jokey değişimi"
+            ]
+          }
+        ]
+      },
+      {
+        "rank": 12,
+        "horseName": "MAGIC SELECTRA",
+        "gaziFinishPosition": 19,
+        "lensValue": 86,
+        "badge": "Risk dengesi 86",
+        "reason": "Veri güveni yüksek ve risk göstergeleri sınırlı.",
+        "meta": "Yüksek güven · Düşük risk · Upside 34",
+        "readiness": {
+          "score": 72,
+          "confidence": 100,
+          "upside": 34,
+          "risk": 14,
+          "label": "Ciddi takip profili",
+          "confidenceLabel": "Yüksek güven",
+          "riskLabel": "Düşük risk",
+          "primaryReason": "Geçmiş ilk 3 profilleriyle benzerlik yoğunluğu var.",
+          "parts": [
+            {
+              "label": "prep formu",
+              "value": 7
+            },
+            {
+              "label": "profil kanıtı",
+              "value": 30
+            },
+            {
+              "label": "rota şekli",
+              "value": 18
+            },
+            {
+              "label": "jokey sürekliliği",
+              "value": 7
+            },
+            {
+              "label": "veri derinliği",
+              "value": 10
+            }
+          ]
+        },
+        "profileSummary": {
+          "count": 4,
+          "averageFinish": "1.8",
+          "strongestSignal": "yoğun prep",
+          "note": "3/4 benzer örnek Gazi'de ilk 2 içinde bitirmiş."
+        },
+        "historicalMatches": [
+          {
+            "horseName": "BURGAS",
+            "year": 2021,
+            "gaziFinishPosition": 1,
+            "matchingSignals": [
+              "jokey değişimi",
+              "yoğun prep"
+            ]
+          },
+          {
+            "horseName": "ZIZKA",
+            "year": 2024,
+            "gaziFinishPosition": 2,
+            "matchingSignals": [
+              "jokey değişimi",
+              "yoğun prep"
+            ]
+          },
+          {
+            "horseName": "CHAİKA",
+            "year": 2023,
+            "gaziFinishPosition": 3,
+            "matchingSignals": [
+              "jokey değişimi",
+              "yoğun prep"
+            ]
+          },
+          {
+            "horseName": "SECRET POWER",
+            "year": 2022,
+            "gaziFinishPosition": 1,
+            "matchingSignals": [
+              "yoğun prep"
+            ]
+          }
+        ]
+      },
+      {
+        "rank": 13,
+        "horseName": "ALBAYRAK",
+        "gaziFinishPosition": 11,
+        "lensValue": 86,
+        "badge": "Risk dengesi 86",
+        "reason": "Veri güveni yüksek ve risk göstergeleri sınırlı.",
+        "meta": "Yüksek güven · Düşük risk · Upside 24",
+        "readiness": {
+          "score": 67,
+          "confidence": 100,
+          "upside": 24,
+          "risk": 14,
+          "label": "Ciddi takip profili",
+          "confidenceLabel": "Yüksek güven",
+          "riskLabel": "Düşük risk",
+          "primaryReason": "Geçmiş ilk 3 profilleriyle benzerlik yoğunluğu var.",
+          "parts": [
+            {
+              "label": "prep formu",
+              "value": 7
+            },
+            {
+              "label": "profil kanıtı",
+              "value": 30
+            },
+            {
+              "label": "rota şekli",
+              "value": 13
+            },
+            {
+              "label": "jokey sürekliliği",
+              "value": 7
+            },
+            {
+              "label": "veri derinliği",
+              "value": 10
+            }
+          ]
+        },
+        "profileSummary": {
+          "count": 4,
+          "averageFinish": "2.0",
+          "strongestSignal": "jokey değişimi",
+          "note": "3/4 benzer örnek Gazi'de ilk 2 içinde bitirmiş."
+        },
+        "historicalMatches": [
+          {
+            "horseName": "BURGAS",
+            "year": 2021,
+            "gaziFinishPosition": 1,
+            "matchingSignals": [
+              "jokey değişimi"
+            ]
+          },
+          {
+            "horseName": "ZIZKA",
+            "year": 2024,
+            "gaziFinishPosition": 2,
+            "matchingSignals": [
+              "jokey değişimi"
+            ]
+          },
+          {
+            "horseName": "MUCİZE KIZ",
+            "year": 2022,
+            "gaziFinishPosition": 2,
+            "matchingSignals": [
+              "jokey değişimi"
+            ]
+          },
+          {
+            "horseName": "CHAİKA",
+            "year": 2023,
+            "gaziFinishPosition": 3,
+            "matchingSignals": [
+              "jokey değişimi"
+            ]
+          }
+        ]
+      },
+      {
+        "rank": 14,
+        "horseName": "BROARTS",
+        "gaziFinishPosition": 20,
+        "lensValue": 86,
+        "badge": "Risk dengesi 86",
+        "reason": "Veri güveni yüksek ve risk göstergeleri sınırlı.",
+        "meta": "Yüksek güven · Düşük risk · Upside 24",
+        "readiness": {
+          "score": 67,
+          "confidence": 100,
+          "upside": 24,
+          "risk": 14,
+          "label": "Ciddi takip profili",
+          "confidenceLabel": "Yüksek güven",
+          "riskLabel": "Düşük risk",
+          "primaryReason": "Geçmiş ilk 3 profilleriyle benzerlik yoğunluğu var.",
+          "parts": [
+            {
+              "label": "prep formu",
+              "value": 7
+            },
+            {
+              "label": "profil kanıtı",
+              "value": 30
+            },
+            {
+              "label": "rota şekli",
+              "value": 13
+            },
+            {
+              "label": "jokey sürekliliği",
+              "value": 7
+            },
+            {
+              "label": "veri derinliği",
+              "value": 10
+            }
+          ]
+        },
+        "profileSummary": {
+          "count": 4,
+          "averageFinish": "2.0",
+          "strongestSignal": "jokey değişimi",
+          "note": "3/4 benzer örnek Gazi'de ilk 2 içinde bitirmiş."
+        },
+        "historicalMatches": [
+          {
+            "horseName": "BURGAS",
+            "year": 2021,
+            "gaziFinishPosition": 1,
+            "matchingSignals": [
+              "jokey değişimi"
+            ]
+          },
+          {
+            "horseName": "ZIZKA",
+            "year": 2024,
+            "gaziFinishPosition": 2,
+            "matchingSignals": [
+              "jokey değişimi"
+            ]
+          },
+          {
+            "horseName": "MUCİZE KIZ",
+            "year": 2022,
+            "gaziFinishPosition": 2,
+            "matchingSignals": [
+              "jokey değişimi"
+            ]
+          },
+          {
+            "horseName": "CHAİKA",
+            "year": 2023,
+            "gaziFinishPosition": 3,
+            "matchingSignals": [
+              "jokey değişimi"
+            ]
+          }
+        ]
+      },
+      {
+        "rank": 15,
+        "horseName": "ZAMBUR AGA",
+        "gaziFinishPosition": 10,
+        "lensValue": 52,
+        "badge": "Risk dengesi 52",
+        "reason": "Veri güveni yüksek ve risk göstergeleri sınırlı.",
+        "meta": "Orta güven · Düşük risk · Upside 0",
+        "readiness": {
+          "score": 59,
+          "confidence": 70,
+          "upside": 0,
+          "risk": 18,
+          "label": "İzleme listesi",
+          "confidenceLabel": "Orta güven",
+          "riskLabel": "Düşük risk",
+          "primaryReason": "Temel rota sinyali var; ayırıcı veri henüz sınırlı.",
+          "parts": [
+            {
+              "label": "prep formu",
+              "value": 23
+            },
+            {
+              "label": "rota şekli",
+              "value": 13
+            },
+            {
+              "label": "jokey sürekliliği",
+              "value": 13
+            },
+            {
+              "label": "veri derinliği",
+              "value": 10
+            }
+          ]
+        },
+        "profileSummary": {
+          "count": 0,
+          "averageFinish": "-",
+          "strongestSignal": "Yok",
+          "note": "Geçmiş ilk 3 içinde aynı profil sinyaliyle güçlü eşleşme bulunmadı."
+        },
+        "historicalMatches": []
+      },
+      {
+        "rank": 16,
+        "horseName": "LOST KING",
+        "gaziFinishPosition": 15,
+        "lensValue": 52,
+        "badge": "Risk dengesi 52",
+        "reason": "Veri güveni yüksek ve risk göstergeleri sınırlı.",
+        "meta": "Orta güven · Düşük risk · Upside 0",
+        "readiness": {
+          "score": 59,
+          "confidence": 70,
+          "upside": 0,
+          "risk": 18,
+          "label": "İzleme listesi",
+          "confidenceLabel": "Orta güven",
+          "riskLabel": "Düşük risk",
+          "primaryReason": "Temel rota sinyali var; ayırıcı veri henüz sınırlı.",
+          "parts": [
+            {
+              "label": "prep formu",
+              "value": 23
+            },
+            {
+              "label": "rota şekli",
+              "value": 13
+            },
+            {
+              "label": "jokey sürekliliği",
+              "value": 13
+            },
+            {
+              "label": "veri derinliği",
+              "value": 10
+            }
+          ]
+        },
+        "profileSummary": {
+          "count": 0,
+          "averageFinish": "-",
+          "strongestSignal": "Yok",
+          "note": "Geçmiş ilk 3 içinde aynı profil sinyaliyle güçlü eşleşme bulunmadı."
+        },
+        "historicalMatches": []
+      },
+      {
+        "rank": 17,
+        "horseName": "GRANDE FLUSSO",
+        "gaziFinishPosition": 13,
+        "lensValue": 52,
+        "badge": "Risk dengesi 52",
+        "reason": "Veri güveni yüksek ve risk göstergeleri sınırlı.",
+        "meta": "Orta güven · Düşük risk · Upside 0",
+        "readiness": {
+          "score": 55,
+          "confidence": 70,
+          "upside": 0,
+          "risk": 18,
+          "label": "İzleme listesi",
+          "confidenceLabel": "Orta güven",
+          "riskLabel": "Düşük risk",
+          "primaryReason": "Temel rota sinyali var; ayırıcı veri henüz sınırlı.",
+          "parts": [
+            {
+              "label": "prep formu",
+              "value": 19
+            },
+            {
+              "label": "rota şekli",
+              "value": 13
+            },
+            {
+              "label": "jokey sürekliliği",
+              "value": 13
+            },
+            {
+              "label": "veri derinliği",
+              "value": 10
+            }
+          ]
+        },
+        "profileSummary": {
+          "count": 0,
+          "averageFinish": "-",
+          "strongestSignal": "Yok",
+          "note": "Geçmiş ilk 3 içinde aynı profil sinyaliyle güçlü eşleşme bulunmadı."
+        },
+        "historicalMatches": []
+      },
+      {
+        "rank": 18,
+        "horseName": "DATABASE",
+        "gaziFinishPosition": 6,
+        "lensValue": 40,
+        "badge": "Risk dengesi 40",
+        "reason": "Güven skoru riskten daha güçlü kaldığı için dengeli aday olarak okunuyor.",
+        "meta": "Orta güven · Kontrollü risk · Upside 30",
+        "readiness": {
+          "score": 57,
+          "confidence": 66,
+          "upside": 30,
+          "risk": 26,
+          "label": "İzleme listesi",
+          "confidenceLabel": "Orta güven",
+          "riskLabel": "Kontrollü risk",
+          "primaryReason": "Rota dışı geldiği için upside var, fakat veri güveni sınırlı.",
+          "parts": [
+            {
+              "label": "prep formu",
+              "value": 8
+            },
+            {
+              "label": "profil kanıtı",
+              "value": 20
+            },
+            {
+              "label": "rota şekli",
+              "value": 8
+            },
+            {
+              "label": "jokey sürekliliği",
+              "value": 13
+            },
+            {
+              "label": "veri derinliği",
+              "value": 8
+            }
+          ]
+        },
+        "profileSummary": {
+          "count": 2,
+          "averageFinish": "2.0",
+          "strongestSignal": "rota dışı",
+          "note": "1/2 benzer örnek Gazi'de ilk 2 içinde bitirmiş."
+        },
+        "historicalMatches": [
+          {
+            "horseName": "URFA ASLANI",
+            "year": 2023,
+            "gaziFinishPosition": 1,
+            "matchingSignals": [
+              "rota dışı"
+            ]
+          },
+          {
+            "horseName": "BORREGO",
+            "year": 2024,
+            "gaziFinishPosition": 3,
+            "matchingSignals": [
+              "rota dışı"
+            ]
+          }
+        ]
+      },
+      {
+        "rank": 19,
+        "horseName": "MAGIC WEAPON",
+        "gaziFinishPosition": 7,
+        "lensValue": 40,
+        "badge": "Risk dengesi 40",
+        "reason": "Güven skoru riskten daha güçlü kaldığı için dengeli aday olarak okunuyor.",
+        "meta": "Orta güven · Kontrollü risk · Upside 30",
+        "readiness": {
+          "score": 57,
+          "confidence": 66,
+          "upside": 30,
+          "risk": 26,
+          "label": "İzleme listesi",
+          "confidenceLabel": "Orta güven",
+          "riskLabel": "Kontrollü risk",
+          "primaryReason": "Rota dışı geldiği için upside var, fakat veri güveni sınırlı.",
+          "parts": [
+            {
+              "label": "prep formu",
+              "value": 8
+            },
+            {
+              "label": "profil kanıtı",
+              "value": 20
+            },
+            {
+              "label": "rota şekli",
+              "value": 8
+            },
+            {
+              "label": "jokey sürekliliği",
+              "value": 13
+            },
+            {
+              "label": "veri derinliği",
+              "value": 8
+            }
+          ]
+        },
+        "profileSummary": {
+          "count": 2,
+          "averageFinish": "2.0",
+          "strongestSignal": "rota dışı",
+          "note": "1/2 benzer örnek Gazi'de ilk 2 içinde bitirmiş."
+        },
+        "historicalMatches": [
+          {
+            "horseName": "URFA ASLANI",
+            "year": 2023,
+            "gaziFinishPosition": 1,
+            "matchingSignals": [
+              "rota dışı"
+            ]
+          },
+          {
+            "horseName": "BORREGO",
+            "year": 2024,
+            "gaziFinishPosition": 3,
+            "matchingSignals": [
+              "rota dışı"
+            ]
+          }
+        ]
+      },
+      {
+        "rank": 20,
+        "horseName": "PATRICK STAR",
+        "gaziFinishPosition": 9,
+        "lensValue": 40,
+        "badge": "Risk dengesi 40",
+        "reason": "Güven skoru riskten daha güçlü kaldığı için dengeli aday olarak okunuyor.",
+        "meta": "Orta güven · Kontrollü risk · Upside 30",
+        "readiness": {
+          "score": 57,
+          "confidence": 66,
+          "upside": 30,
+          "risk": 26,
+          "label": "İzleme listesi",
+          "confidenceLabel": "Orta güven",
+          "riskLabel": "Kontrollü risk",
+          "primaryReason": "Rota dışı geldiği için upside var, fakat veri güveni sınırlı.",
+          "parts": [
+            {
+              "label": "prep formu",
+              "value": 8
+            },
+            {
+              "label": "profil kanıtı",
+              "value": 20
+            },
+            {
+              "label": "rota şekli",
+              "value": 8
+            },
+            {
+              "label": "jokey sürekliliği",
+              "value": 13
+            },
+            {
+              "label": "veri derinliği",
+              "value": 8
+            }
+          ]
+        },
+        "profileSummary": {
+          "count": 2,
+          "averageFinish": "2.0",
+          "strongestSignal": "rota dışı",
+          "note": "1/2 benzer örnek Gazi'de ilk 2 içinde bitirmiş."
+        },
+        "historicalMatches": [
+          {
+            "horseName": "URFA ASLANI",
+            "year": 2023,
+            "gaziFinishPosition": 1,
+            "matchingSignals": [
+              "rota dışı"
+            ]
+          },
+          {
+            "horseName": "BORREGO",
+            "year": 2024,
+            "gaziFinishPosition": 3,
+            "matchingSignals": [
+              "rota dışı"
+            ]
+          }
+        ]
+      },
+      {
+        "rank": 21,
+        "horseName": "HOPE BREEZE",
+        "gaziFinishPosition": 16,
+        "lensValue": 40,
+        "badge": "Risk dengesi 40",
+        "reason": "Güven skoru riskten daha güçlü kaldığı için dengeli aday olarak okunuyor.",
+        "meta": "Orta güven · Kontrollü risk · Upside 30",
+        "readiness": {
+          "score": 57,
+          "confidence": 66,
+          "upside": 30,
+          "risk": 26,
+          "label": "İzleme listesi",
+          "confidenceLabel": "Orta güven",
+          "riskLabel": "Kontrollü risk",
+          "primaryReason": "Rota dışı geldiği için upside var, fakat veri güveni sınırlı.",
+          "parts": [
+            {
+              "label": "prep formu",
+              "value": 8
+            },
+            {
+              "label": "profil kanıtı",
+              "value": 20
+            },
+            {
+              "label": "rota şekli",
+              "value": 8
+            },
+            {
+              "label": "jokey sürekliliği",
+              "value": 13
+            },
+            {
+              "label": "veri derinliği",
+              "value": 8
+            }
+          ]
+        },
+        "profileSummary": {
+          "count": 2,
+          "averageFinish": "2.0",
+          "strongestSignal": "rota dışı",
+          "note": "1/2 benzer örnek Gazi'de ilk 2 içinde bitirmiş."
+        },
+        "historicalMatches": [
+          {
+            "horseName": "URFA ASLANI",
+            "year": 2023,
+            "gaziFinishPosition": 1,
+            "matchingSignals": [
+              "rota dışı"
+            ]
+          },
+          {
+            "horseName": "BORREGO",
+            "year": 2024,
+            "gaziFinishPosition": 3,
+            "matchingSignals": [
+              "rota dışı"
+            ]
+          }
+        ]
+      },
+      {
+        "rank": 22,
+        "horseName": "BRAVE CHAMPİON",
+        "gaziFinishPosition": 21,
+        "lensValue": 40,
+        "badge": "Risk dengesi 40",
+        "reason": "Güven skoru riskten daha güçlü kaldığı için dengeli aday olarak okunuyor.",
+        "meta": "Orta güven · Kontrollü risk · Upside 30",
+        "readiness": {
+          "score": 57,
+          "confidence": 66,
+          "upside": 30,
+          "risk": 26,
+          "label": "İzleme listesi",
+          "confidenceLabel": "Orta güven",
+          "riskLabel": "Kontrollü risk",
+          "primaryReason": "Rota dışı geldiği için upside var, fakat veri güveni sınırlı.",
+          "parts": [
+            {
+              "label": "prep formu",
+              "value": 8
+            },
+            {
+              "label": "profil kanıtı",
+              "value": 20
+            },
+            {
+              "label": "rota şekli",
+              "value": 8
+            },
+            {
+              "label": "jokey sürekliliği",
+              "value": 13
+            },
+            {
+              "label": "veri derinliği",
+              "value": 8
+            }
+          ]
+        },
+        "profileSummary": {
+          "count": 2,
+          "averageFinish": "2.0",
+          "strongestSignal": "rota dışı",
+          "note": "1/2 benzer örnek Gazi'de ilk 2 içinde bitirmiş."
+        },
+        "historicalMatches": [
+          {
+            "horseName": "URFA ASLANI",
+            "year": 2023,
+            "gaziFinishPosition": 1,
+            "matchingSignals": [
+              "rota dışı"
+            ]
+          },
+          {
+            "horseName": "BORREGO",
+            "year": 2024,
+            "gaziFinishPosition": 3,
+            "matchingSignals": [
+              "rota dışı"
+            ]
+          }
+        ]
+      }
+    ],
+    "uncertainty": [
+      {
+        "rank": 1,
+        "horseName": "TONBİ",
+        "gaziFinishPosition": 8,
+        "lensValue": 39,
+        "badge": "Belirsizlik 39",
+        "reason": "Upside ve risk birlikte yüksek; karar için daha fazla bağlam gerekiyor.",
+        "meta": "Düşük risk · Güven 100 · Upside 58",
+        "readiness": {
+          "score": 88,
+          "confidence": 100,
+          "upside": 58,
+          "risk": 14,
+          "label": "Güçlü aday profili",
+          "confidenceLabel": "Yüksek güven",
+          "riskLabel": "Düşük risk",
+          "primaryReason": "Prep galibiyeti kompozit skoru yukarı taşıyor.",
+          "parts": [
+            {
+              "label": "prep formu",
+              "value": 28
+            },
+            {
+              "label": "profil kanıtı",
+              "value": 30
+            },
+            {
+              "label": "rota şekli",
+              "value": 13
+            },
+            {
+              "label": "jokey sürekliliği",
+              "value": 7
+            },
+            {
+              "label": "veri derinliği",
+              "value": 10
+            }
+          ]
+        },
+        "profileSummary": {
+          "count": 4,
+          "averageFinish": "1.3",
+          "strongestSignal": "prep galibi",
+          "note": "4/4 benzer örnek Gazi'de ilk 2 içinde bitirmiş."
+        },
+        "historicalMatches": [
+          {
+            "horseName": "BURGAS",
+            "year": 2021,
+            "gaziFinishPosition": 1,
+            "matchingSignals": [
+              "prep galibi",
+              "jokey değişimi"
+            ]
+          },
+          {
+            "horseName": "SECRET POWER",
+            "year": 2022,
+            "gaziFinishPosition": 1,
+            "matchingSignals": [
+              "prep galibi"
+            ]
+          },
+          {
+            "horseName": "CALL TO VICTORY",
+            "year": 2020,
+            "gaziFinishPosition": 1,
+            "matchingSignals": [
+              "prep galibi"
+            ]
+          },
+          {
+            "horseName": "ZIZKA",
+            "year": 2024,
+            "gaziFinishPosition": 2,
+            "matchingSignals": [
+              "jokey değişimi"
+            ]
+          }
+        ]
+      },
+      {
+        "rank": 2,
+        "horseName": "DATABASE",
+        "gaziFinishPosition": 6,
+        "lensValue": 39,
+        "badge": "Belirsizlik 39",
+        "reason": "Takip edilen rotada görünmediği için eksik ama izlenmesi gereken profil.",
+        "meta": "Kontrollü risk · Güven 66 · Upside 30",
+        "readiness": {
+          "score": 57,
+          "confidence": 66,
+          "upside": 30,
+          "risk": 26,
+          "label": "İzleme listesi",
+          "confidenceLabel": "Orta güven",
+          "riskLabel": "Kontrollü risk",
+          "primaryReason": "Rota dışı geldiği için upside var, fakat veri güveni sınırlı.",
+          "parts": [
+            {
+              "label": "prep formu",
+              "value": 8
+            },
+            {
+              "label": "profil kanıtı",
+              "value": 20
+            },
+            {
+              "label": "rota şekli",
+              "value": 8
+            },
+            {
+              "label": "jokey sürekliliği",
+              "value": 13
+            },
+            {
+              "label": "veri derinliği",
+              "value": 8
+            }
+          ]
+        },
+        "profileSummary": {
+          "count": 2,
+          "averageFinish": "2.0",
+          "strongestSignal": "rota dışı",
+          "note": "1/2 benzer örnek Gazi'de ilk 2 içinde bitirmiş."
+        },
+        "historicalMatches": [
+          {
+            "horseName": "URFA ASLANI",
+            "year": 2023,
+            "gaziFinishPosition": 1,
+            "matchingSignals": [
+              "rota dışı"
+            ]
+          },
+          {
+            "horseName": "BORREGO",
+            "year": 2024,
+            "gaziFinishPosition": 3,
+            "matchingSignals": [
+              "rota dışı"
+            ]
+          }
+        ]
+      },
+      {
+        "rank": 3,
+        "horseName": "MAGIC WEAPON",
+        "gaziFinishPosition": 7,
+        "lensValue": 39,
+        "badge": "Belirsizlik 39",
+        "reason": "Takip edilen rotada görünmediği için eksik ama izlenmesi gereken profil.",
+        "meta": "Kontrollü risk · Güven 66 · Upside 30",
+        "readiness": {
+          "score": 57,
+          "confidence": 66,
+          "upside": 30,
+          "risk": 26,
+          "label": "İzleme listesi",
+          "confidenceLabel": "Orta güven",
+          "riskLabel": "Kontrollü risk",
+          "primaryReason": "Rota dışı geldiği için upside var, fakat veri güveni sınırlı.",
+          "parts": [
+            {
+              "label": "prep formu",
+              "value": 8
+            },
+            {
+              "label": "profil kanıtı",
+              "value": 20
+            },
+            {
+              "label": "rota şekli",
+              "value": 8
+            },
+            {
+              "label": "jokey sürekliliği",
+              "value": 13
+            },
+            {
+              "label": "veri derinliği",
+              "value": 8
+            }
+          ]
+        },
+        "profileSummary": {
+          "count": 2,
+          "averageFinish": "2.0",
+          "strongestSignal": "rota dışı",
+          "note": "1/2 benzer örnek Gazi'de ilk 2 içinde bitirmiş."
+        },
+        "historicalMatches": [
+          {
+            "horseName": "URFA ASLANI",
+            "year": 2023,
+            "gaziFinishPosition": 1,
+            "matchingSignals": [
+              "rota dışı"
+            ]
+          },
+          {
+            "horseName": "BORREGO",
+            "year": 2024,
+            "gaziFinishPosition": 3,
+            "matchingSignals": [
+              "rota dışı"
+            ]
+          }
+        ]
+      },
+      {
+        "rank": 4,
+        "horseName": "PATRICK STAR",
+        "gaziFinishPosition": 9,
+        "lensValue": 39,
+        "badge": "Belirsizlik 39",
+        "reason": "Takip edilen rotada görünmediği için eksik ama izlenmesi gereken profil.",
+        "meta": "Kontrollü risk · Güven 66 · Upside 30",
+        "readiness": {
+          "score": 57,
+          "confidence": 66,
+          "upside": 30,
+          "risk": 26,
+          "label": "İzleme listesi",
+          "confidenceLabel": "Orta güven",
+          "riskLabel": "Kontrollü risk",
+          "primaryReason": "Rota dışı geldiği için upside var, fakat veri güveni sınırlı.",
+          "parts": [
+            {
+              "label": "prep formu",
+              "value": 8
+            },
+            {
+              "label": "profil kanıtı",
+              "value": 20
+            },
+            {
+              "label": "rota şekli",
+              "value": 8
+            },
+            {
+              "label": "jokey sürekliliği",
+              "value": 13
+            },
+            {
+              "label": "veri derinliği",
+              "value": 8
+            }
+          ]
+        },
+        "profileSummary": {
+          "count": 2,
+          "averageFinish": "2.0",
+          "strongestSignal": "rota dışı",
+          "note": "1/2 benzer örnek Gazi'de ilk 2 içinde bitirmiş."
+        },
+        "historicalMatches": [
+          {
+            "horseName": "URFA ASLANI",
+            "year": 2023,
+            "gaziFinishPosition": 1,
+            "matchingSignals": [
+              "rota dışı"
+            ]
+          },
+          {
+            "horseName": "BORREGO",
+            "year": 2024,
+            "gaziFinishPosition": 3,
+            "matchingSignals": [
+              "rota dışı"
+            ]
+          }
+        ]
+      },
+      {
+        "rank": 5,
+        "horseName": "HOPE BREEZE",
+        "gaziFinishPosition": 16,
+        "lensValue": 39,
+        "badge": "Belirsizlik 39",
+        "reason": "Takip edilen rotada görünmediği için eksik ama izlenmesi gereken profil.",
+        "meta": "Kontrollü risk · Güven 66 · Upside 30",
+        "readiness": {
+          "score": 57,
+          "confidence": 66,
+          "upside": 30,
+          "risk": 26,
+          "label": "İzleme listesi",
+          "confidenceLabel": "Orta güven",
+          "riskLabel": "Kontrollü risk",
+          "primaryReason": "Rota dışı geldiği için upside var, fakat veri güveni sınırlı.",
+          "parts": [
+            {
+              "label": "prep formu",
+              "value": 8
+            },
+            {
+              "label": "profil kanıtı",
+              "value": 20
+            },
+            {
+              "label": "rota şekli",
+              "value": 8
+            },
+            {
+              "label": "jokey sürekliliği",
+              "value": 13
+            },
+            {
+              "label": "veri derinliği",
+              "value": 8
+            }
+          ]
+        },
+        "profileSummary": {
+          "count": 2,
+          "averageFinish": "2.0",
+          "strongestSignal": "rota dışı",
+          "note": "1/2 benzer örnek Gazi'de ilk 2 içinde bitirmiş."
+        },
+        "historicalMatches": [
+          {
+            "horseName": "URFA ASLANI",
+            "year": 2023,
+            "gaziFinishPosition": 1,
+            "matchingSignals": [
+              "rota dışı"
+            ]
+          },
+          {
+            "horseName": "BORREGO",
+            "year": 2024,
+            "gaziFinishPosition": 3,
+            "matchingSignals": [
+              "rota dışı"
+            ]
+          }
+        ]
+      },
+      {
+        "rank": 6,
+        "horseName": "BRAVE CHAMPİON",
+        "gaziFinishPosition": 21,
+        "lensValue": 39,
+        "badge": "Belirsizlik 39",
+        "reason": "Takip edilen rotada görünmediği için eksik ama izlenmesi gereken profil.",
+        "meta": "Kontrollü risk · Güven 66 · Upside 30",
+        "readiness": {
+          "score": 57,
+          "confidence": 66,
+          "upside": 30,
+          "risk": 26,
+          "label": "İzleme listesi",
+          "confidenceLabel": "Orta güven",
+          "riskLabel": "Kontrollü risk",
+          "primaryReason": "Rota dışı geldiği için upside var, fakat veri güveni sınırlı.",
+          "parts": [
+            {
+              "label": "prep formu",
+              "value": 8
+            },
+            {
+              "label": "profil kanıtı",
+              "value": 20
+            },
+            {
+              "label": "rota şekli",
+              "value": 8
+            },
+            {
+              "label": "jokey sürekliliği",
+              "value": 13
+            },
+            {
+              "label": "veri derinliği",
+              "value": 8
+            }
+          ]
+        },
+        "profileSummary": {
+          "count": 2,
+          "averageFinish": "2.0",
+          "strongestSignal": "rota dışı",
+          "note": "1/2 benzer örnek Gazi'de ilk 2 içinde bitirmiş."
+        },
+        "historicalMatches": [
+          {
+            "horseName": "URFA ASLANI",
+            "year": 2023,
+            "gaziFinishPosition": 1,
+            "matchingSignals": [
+              "rota dışı"
+            ]
+          },
+          {
+            "horseName": "BORREGO",
+            "year": 2024,
+            "gaziFinishPosition": 3,
+            "matchingSignals": [
+              "rota dışı"
+            ]
+          }
+        ]
+      },
+      {
+        "rank": 7,
+        "horseName": "SPECIAL MAN",
+        "gaziFinishPosition": 3,
+        "lensValue": 34,
+        "badge": "Belirsizlik 34",
+        "reason": "Upside ve risk birlikte yüksek; karar için daha fazla bağlam gerekiyor.",
+        "meta": "Düşük risk · Güven 100 · Upside 68",
+        "readiness": {
+          "score": 99,
+          "confidence": 100,
+          "upside": 68,
+          "risk": 0,
+          "label": "Güçlü aday profili",
+          "confidenceLabel": "Yüksek güven",
+          "riskLabel": "Düşük risk",
+          "primaryReason": "Prep galibiyeti kompozit skoru yukarı taşıyor.",
+          "parts": [
+            {
+              "label": "prep formu",
+              "value": 28
+            },
+            {
+              "label": "profil kanıtı",
+              "value": 30
+            },
+            {
+              "label": "rota şekli",
+              "value": 18
+            },
+            {
+              "label": "jokey sürekliliği",
+              "value": 13
+            },
+            {
+              "label": "veri derinliği",
+              "value": 10
+            }
+          ]
+        },
+        "profileSummary": {
+          "count": 4,
+          "averageFinish": "1.3",
+          "strongestSignal": "prep galibi",
+          "note": "4/4 benzer örnek Gazi'de ilk 2 içinde bitirmiş."
+        },
+        "historicalMatches": [
+          {
+            "horseName": "SECRET POWER",
+            "year": 2022,
+            "gaziFinishPosition": 1,
+            "matchingSignals": [
+              "prep galibi",
+              "yoğun prep"
+            ]
+          },
+          {
+            "horseName": "BURGAS",
+            "year": 2021,
+            "gaziFinishPosition": 1,
+            "matchingSignals": [
+              "prep galibi",
+              "yoğun prep"
+            ]
+          },
+          {
+            "horseName": "CALL TO VICTORY",
+            "year": 2020,
+            "gaziFinishPosition": 1,
+            "matchingSignals": [
+              "prep galibi",
+              "yoğun prep"
+            ]
+          },
+          {
+            "horseName": "REAL RUNNER",
+            "year": 2021,
+            "gaziFinishPosition": 2,
+            "matchingSignals": [
+              "prep galibi",
+              "yoğun prep"
+            ]
+          }
+        ]
+      },
+      {
+        "rank": 8,
+        "horseName": "BOON NAM",
+        "gaziFinishPosition": 14,
+        "lensValue": 34,
+        "badge": "Belirsizlik 34",
+        "reason": "Upside ve risk birlikte yüksek; karar için daha fazla bağlam gerekiyor.",
+        "meta": "Düşük risk · Güven 100 · Upside 68",
+        "readiness": {
+          "score": 99,
+          "confidence": 100,
+          "upside": 68,
+          "risk": 0,
+          "label": "Güçlü aday profili",
+          "confidenceLabel": "Yüksek güven",
+          "riskLabel": "Düşük risk",
+          "primaryReason": "Prep galibiyeti kompozit skoru yukarı taşıyor.",
+          "parts": [
+            {
+              "label": "prep formu",
+              "value": 28
+            },
+            {
+              "label": "profil kanıtı",
+              "value": 30
+            },
+            {
+              "label": "rota şekli",
+              "value": 18
+            },
+            {
+              "label": "jokey sürekliliği",
+              "value": 13
+            },
+            {
+              "label": "veri derinliği",
+              "value": 10
+            }
+          ]
+        },
+        "profileSummary": {
+          "count": 4,
+          "averageFinish": "1.3",
+          "strongestSignal": "prep galibi",
+          "note": "4/4 benzer örnek Gazi'de ilk 2 içinde bitirmiş."
+        },
+        "historicalMatches": [
+          {
+            "horseName": "SECRET POWER",
+            "year": 2022,
+            "gaziFinishPosition": 1,
+            "matchingSignals": [
+              "prep galibi",
+              "yoğun prep"
+            ]
+          },
+          {
+            "horseName": "BURGAS",
+            "year": 2021,
+            "gaziFinishPosition": 1,
+            "matchingSignals": [
+              "prep galibi",
+              "yoğun prep"
+            ]
+          },
+          {
+            "horseName": "CALL TO VICTORY",
+            "year": 2020,
+            "gaziFinishPosition": 1,
+            "matchingSignals": [
+              "prep galibi",
+              "yoğun prep"
+            ]
+          },
+          {
+            "horseName": "REAL RUNNER",
+            "year": 2021,
+            "gaziFinishPosition": 2,
+            "matchingSignals": [
+              "prep galibi",
+              "yoğun prep"
+            ]
+          }
+        ]
+      },
+      {
+        "rank": 9,
+        "horseName": "HANDSOME KING",
+        "gaziFinishPosition": 2,
+        "lensValue": 29,
+        "badge": "Belirsizlik 29",
+        "reason": "Upside ve risk birlikte yüksek; karar için daha fazla bağlam gerekiyor.",
+        "meta": "Düşük risk · Güven 100 · Upside 58",
+        "readiness": {
+          "score": 94,
+          "confidence": 100,
+          "upside": 58,
+          "risk": 0,
+          "label": "Güçlü aday profili",
+          "confidenceLabel": "Yüksek güven",
+          "riskLabel": "Düşük risk",
+          "primaryReason": "Prep galibiyeti kompozit skoru yukarı taşıyor.",
+          "parts": [
+            {
+              "label": "prep formu",
+              "value": 28
+            },
+            {
+              "label": "profil kanıtı",
+              "value": 30
+            },
+            {
+              "label": "rota şekli",
+              "value": 13
+            },
+            {
+              "label": "jokey sürekliliği",
+              "value": 13
+            },
+            {
+              "label": "veri derinliği",
+              "value": 10
+            }
+          ]
+        },
+        "profileSummary": {
+          "count": 4,
+          "averageFinish": "1.3",
+          "strongestSignal": "prep galibi",
+          "note": "4/4 benzer örnek Gazi'de ilk 2 içinde bitirmiş."
+        },
+        "historicalMatches": [
+          {
+            "horseName": "SECRET POWER",
+            "year": 2022,
+            "gaziFinishPosition": 1,
+            "matchingSignals": [
+              "prep galibi"
+            ]
+          },
+          {
+            "horseName": "BURGAS",
+            "year": 2021,
+            "gaziFinishPosition": 1,
+            "matchingSignals": [
+              "prep galibi"
+            ]
+          },
+          {
+            "horseName": "CALL TO VICTORY",
+            "year": 2020,
+            "gaziFinishPosition": 1,
+            "matchingSignals": [
+              "prep galibi"
+            ]
+          },
+          {
+            "horseName": "QUALIZTO",
+            "year": 2023,
+            "gaziFinishPosition": 2,
+            "matchingSignals": [
+              "prep galibi"
+            ]
+          }
+        ]
+      },
+      {
+        "rank": 10,
+        "horseName": "BRAIN BROOSTER",
+        "gaziFinishPosition": 5,
+        "lensValue": 27,
+        "badge": "Belirsizlik 27",
+        "reason": "Upside ve risk birlikte yüksek; karar için daha fazla bağlam gerekiyor.",
+        "meta": "Düşük risk · Güven 100 · Upside 34",
+        "readiness": {
+          "score": 78,
+          "confidence": 100,
+          "upside": 34,
+          "risk": 14,
+          "label": "Güçlü aday profili",
+          "confidenceLabel": "Yüksek güven",
+          "riskLabel": "Düşük risk",
+          "primaryReason": "Geçmiş ilk 3 profilleriyle benzerlik yoğunluğu var.",
+          "parts": [
+            {
+              "label": "prep formu",
+              "value": 13
+            },
+            {
+              "label": "profil kanıtı",
+              "value": 30
+            },
+            {
+              "label": "rota şekli",
+              "value": 18
+            },
+            {
+              "label": "jokey sürekliliği",
+              "value": 7
+            },
+            {
+              "label": "veri derinliği",
+              "value": 10
+            }
+          ]
+        },
+        "profileSummary": {
+          "count": 4,
+          "averageFinish": "1.8",
+          "strongestSignal": "yoğun prep",
+          "note": "3/4 benzer örnek Gazi'de ilk 2 içinde bitirmiş."
+        },
+        "historicalMatches": [
+          {
+            "horseName": "BURGAS",
+            "year": 2021,
+            "gaziFinishPosition": 1,
+            "matchingSignals": [
+              "jokey değişimi",
+              "yoğun prep"
+            ]
+          },
+          {
+            "horseName": "ZIZKA",
+            "year": 2024,
+            "gaziFinishPosition": 2,
+            "matchingSignals": [
+              "jokey değişimi",
+              "yoğun prep"
+            ]
+          },
+          {
+            "horseName": "CHAİKA",
+            "year": 2023,
+            "gaziFinishPosition": 3,
+            "matchingSignals": [
+              "jokey değişimi",
+              "yoğun prep"
+            ]
+          },
+          {
+            "horseName": "SECRET POWER",
+            "year": 2022,
+            "gaziFinishPosition": 1,
+            "matchingSignals": [
+              "yoğun prep"
+            ]
+          }
+        ]
+      },
+      {
+        "rank": 11,
+        "horseName": "PETITE LOUVE",
+        "gaziFinishPosition": 18,
+        "lensValue": 27,
+        "badge": "Belirsizlik 27",
+        "reason": "Upside ve risk birlikte yüksek; karar için daha fazla bağlam gerekiyor.",
+        "meta": "Düşük risk · Güven 100 · Upside 34",
+        "readiness": {
+          "score": 84,
+          "confidence": 100,
+          "upside": 34,
+          "risk": 14,
+          "label": "Güçlü aday profili",
+          "confidenceLabel": "Yüksek güven",
+          "riskLabel": "Düşük risk",
+          "primaryReason": "Geçmiş ilk 3 profilleriyle benzerlik yoğunluğu var.",
+          "parts": [
+            {
+              "label": "prep formu",
+              "value": 19
+            },
+            {
+              "label": "profil kanıtı",
+              "value": 30
+            },
+            {
+              "label": "rota şekli",
+              "value": 18
+            },
+            {
+              "label": "jokey sürekliliği",
+              "value": 7
+            },
+            {
+              "label": "veri derinliği",
+              "value": 10
+            }
+          ]
+        },
+        "profileSummary": {
+          "count": 4,
+          "averageFinish": "1.8",
+          "strongestSignal": "yoğun prep",
+          "note": "3/4 benzer örnek Gazi'de ilk 2 içinde bitirmiş."
+        },
+        "historicalMatches": [
+          {
+            "horseName": "BURGAS",
+            "year": 2021,
+            "gaziFinishPosition": 1,
+            "matchingSignals": [
+              "jokey değişimi",
+              "yoğun prep"
+            ]
+          },
+          {
+            "horseName": "ZIZKA",
+            "year": 2024,
+            "gaziFinishPosition": 2,
+            "matchingSignals": [
+              "jokey değişimi",
+              "yoğun prep"
+            ]
+          },
+          {
+            "horseName": "CHAİKA",
+            "year": 2023,
+            "gaziFinishPosition": 3,
+            "matchingSignals": [
+              "jokey değişimi",
+              "yoğun prep"
+            ]
+          },
+          {
+            "horseName": "SECRET POWER",
+            "year": 2022,
+            "gaziFinishPosition": 1,
+            "matchingSignals": [
+              "yoğun prep"
+            ]
+          }
+        ]
+      },
+      {
+        "rank": 12,
+        "horseName": "MAGIC SELECTRA",
+        "gaziFinishPosition": 19,
+        "lensValue": 27,
+        "badge": "Belirsizlik 27",
+        "reason": "Upside ve risk birlikte yüksek; karar için daha fazla bağlam gerekiyor.",
+        "meta": "Düşük risk · Güven 100 · Upside 34",
+        "readiness": {
+          "score": 72,
+          "confidence": 100,
+          "upside": 34,
+          "risk": 14,
+          "label": "Ciddi takip profili",
+          "confidenceLabel": "Yüksek güven",
+          "riskLabel": "Düşük risk",
+          "primaryReason": "Geçmiş ilk 3 profilleriyle benzerlik yoğunluğu var.",
+          "parts": [
+            {
+              "label": "prep formu",
+              "value": 7
+            },
+            {
+              "label": "profil kanıtı",
+              "value": 30
+            },
+            {
+              "label": "rota şekli",
+              "value": 18
+            },
+            {
+              "label": "jokey sürekliliği",
+              "value": 7
+            },
+            {
+              "label": "veri derinliği",
+              "value": 10
+            }
+          ]
+        },
+        "profileSummary": {
+          "count": 4,
+          "averageFinish": "1.8",
+          "strongestSignal": "yoğun prep",
+          "note": "3/4 benzer örnek Gazi'de ilk 2 içinde bitirmiş."
+        },
+        "historicalMatches": [
+          {
+            "horseName": "BURGAS",
+            "year": 2021,
+            "gaziFinishPosition": 1,
+            "matchingSignals": [
+              "jokey değişimi",
+              "yoğun prep"
+            ]
+          },
+          {
+            "horseName": "ZIZKA",
+            "year": 2024,
+            "gaziFinishPosition": 2,
+            "matchingSignals": [
+              "jokey değişimi",
+              "yoğun prep"
+            ]
+          },
+          {
+            "horseName": "CHAİKA",
+            "year": 2023,
+            "gaziFinishPosition": 3,
+            "matchingSignals": [
+              "jokey değişimi",
+              "yoğun prep"
+            ]
+          },
+          {
+            "horseName": "SECRET POWER",
+            "year": 2022,
+            "gaziFinishPosition": 1,
+            "matchingSignals": [
+              "yoğun prep"
+            ]
+          }
+        ]
+      },
+      {
+        "rank": 13,
+        "horseName": "CUTHA",
+        "gaziFinishPosition": 1,
+        "lensValue": 22,
+        "badge": "Belirsizlik 22",
+        "reason": "Upside ve risk birlikte yüksek; karar için daha fazla bağlam gerekiyor.",
+        "meta": "Düşük risk · Güven 100 · Upside 24",
+        "readiness": {
+          "score": 73,
+          "confidence": 100,
+          "upside": 24,
+          "risk": 14,
+          "label": "Ciddi takip profili",
+          "confidenceLabel": "Yüksek güven",
+          "riskLabel": "Düşük risk",
+          "primaryReason": "Geçmiş ilk 3 profilleriyle benzerlik yoğunluğu var.",
+          "parts": [
+            {
+              "label": "prep formu",
+              "value": 13
+            },
+            {
+              "label": "profil kanıtı",
+              "value": 30
+            },
+            {
+              "label": "rota şekli",
+              "value": 13
+            },
+            {
+              "label": "jokey sürekliliği",
+              "value": 7
+            },
+            {
+              "label": "veri derinliği",
+              "value": 10
+            }
+          ]
+        },
+        "profileSummary": {
+          "count": 4,
+          "averageFinish": "2.0",
+          "strongestSignal": "jokey değişimi",
+          "note": "3/4 benzer örnek Gazi'de ilk 2 içinde bitirmiş."
+        },
+        "historicalMatches": [
+          {
+            "horseName": "BURGAS",
+            "year": 2021,
+            "gaziFinishPosition": 1,
+            "matchingSignals": [
+              "jokey değişimi"
+            ]
+          },
+          {
+            "horseName": "ZIZKA",
+            "year": 2024,
+            "gaziFinishPosition": 2,
+            "matchingSignals": [
+              "jokey değişimi"
+            ]
+          },
+          {
+            "horseName": "MUCİZE KIZ",
+            "year": 2022,
+            "gaziFinishPosition": 2,
+            "matchingSignals": [
+              "jokey değişimi"
+            ]
+          },
+          {
+            "horseName": "CHAİKA",
+            "year": 2023,
+            "gaziFinishPosition": 3,
+            "matchingSignals": [
+              "jokey değişimi"
+            ]
+          }
+        ]
+      },
+      {
+        "rank": 14,
+        "horseName": "BELGRATHAN",
+        "gaziFinishPosition": 4,
+        "lensValue": 22,
+        "badge": "Belirsizlik 22",
+        "reason": "Upside ve risk birlikte yüksek; karar için daha fazla bağlam gerekiyor.",
+        "meta": "Düşük risk · Güven 100 · Upside 24",
+        "readiness": {
+          "score": 73,
+          "confidence": 100,
+          "upside": 24,
+          "risk": 14,
+          "label": "Ciddi takip profili",
+          "confidenceLabel": "Yüksek güven",
+          "riskLabel": "Düşük risk",
+          "primaryReason": "Geçmiş ilk 3 profilleriyle benzerlik yoğunluğu var.",
+          "parts": [
+            {
+              "label": "prep formu",
+              "value": 13
+            },
+            {
+              "label": "profil kanıtı",
+              "value": 30
+            },
+            {
+              "label": "rota şekli",
+              "value": 13
+            },
+            {
+              "label": "jokey sürekliliği",
+              "value": 7
+            },
+            {
+              "label": "veri derinliği",
+              "value": 10
+            }
+          ]
+        },
+        "profileSummary": {
+          "count": 4,
+          "averageFinish": "2.0",
+          "strongestSignal": "jokey değişimi",
+          "note": "3/4 benzer örnek Gazi'de ilk 2 içinde bitirmiş."
+        },
+        "historicalMatches": [
+          {
+            "horseName": "BURGAS",
+            "year": 2021,
+            "gaziFinishPosition": 1,
+            "matchingSignals": [
+              "jokey değişimi"
+            ]
+          },
+          {
+            "horseName": "ZIZKA",
+            "year": 2024,
+            "gaziFinishPosition": 2,
+            "matchingSignals": [
+              "jokey değişimi"
+            ]
+          },
+          {
+            "horseName": "MUCİZE KIZ",
+            "year": 2022,
+            "gaziFinishPosition": 2,
+            "matchingSignals": [
+              "jokey değişimi"
+            ]
+          },
+          {
+            "horseName": "CHAİKA",
+            "year": 2023,
+            "gaziFinishPosition": 3,
+            "matchingSignals": [
+              "jokey değişimi"
+            ]
+          }
+        ]
+      },
+      {
+        "rank": 15,
+        "horseName": "ALBAYRAK",
+        "gaziFinishPosition": 11,
+        "lensValue": 22,
+        "badge": "Belirsizlik 22",
+        "reason": "Upside ve risk birlikte yüksek; karar için daha fazla bağlam gerekiyor.",
+        "meta": "Düşük risk · Güven 100 · Upside 24",
+        "readiness": {
+          "score": 67,
+          "confidence": 100,
+          "upside": 24,
+          "risk": 14,
+          "label": "Ciddi takip profili",
+          "confidenceLabel": "Yüksek güven",
+          "riskLabel": "Düşük risk",
+          "primaryReason": "Geçmiş ilk 3 profilleriyle benzerlik yoğunluğu var.",
+          "parts": [
+            {
+              "label": "prep formu",
+              "value": 7
+            },
+            {
+              "label": "profil kanıtı",
+              "value": 30
+            },
+            {
+              "label": "rota şekli",
+              "value": 13
+            },
+            {
+              "label": "jokey sürekliliği",
+              "value": 7
+            },
+            {
+              "label": "veri derinliği",
+              "value": 10
+            }
+          ]
+        },
+        "profileSummary": {
+          "count": 4,
+          "averageFinish": "2.0",
+          "strongestSignal": "jokey değişimi",
+          "note": "3/4 benzer örnek Gazi'de ilk 2 içinde bitirmiş."
+        },
+        "historicalMatches": [
+          {
+            "horseName": "BURGAS",
+            "year": 2021,
+            "gaziFinishPosition": 1,
+            "matchingSignals": [
+              "jokey değişimi"
+            ]
+          },
+          {
+            "horseName": "ZIZKA",
+            "year": 2024,
+            "gaziFinishPosition": 2,
+            "matchingSignals": [
+              "jokey değişimi"
+            ]
+          },
+          {
+            "horseName": "MUCİZE KIZ",
+            "year": 2022,
+            "gaziFinishPosition": 2,
+            "matchingSignals": [
+              "jokey değişimi"
+            ]
+          },
+          {
+            "horseName": "CHAİKA",
+            "year": 2023,
+            "gaziFinishPosition": 3,
+            "matchingSignals": [
+              "jokey değişimi"
+            ]
+          }
+        ]
+      },
+      {
+        "rank": 16,
+        "horseName": "TULUMAR",
+        "gaziFinishPosition": 12,
+        "lensValue": 22,
+        "badge": "Belirsizlik 22",
+        "reason": "Upside ve risk birlikte yüksek; karar için daha fazla bağlam gerekiyor.",
+        "meta": "Düşük risk · Güven 100 · Upside 24",
+        "readiness": {
+          "score": 73,
+          "confidence": 100,
+          "upside": 24,
+          "risk": 14,
+          "label": "Ciddi takip profili",
+          "confidenceLabel": "Yüksek güven",
+          "riskLabel": "Düşük risk",
+          "primaryReason": "Geçmiş ilk 3 profilleriyle benzerlik yoğunluğu var.",
+          "parts": [
+            {
+              "label": "prep formu",
+              "value": 13
+            },
+            {
+              "label": "profil kanıtı",
+              "value": 30
+            },
+            {
+              "label": "rota şekli",
+              "value": 13
+            },
+            {
+              "label": "jokey sürekliliği",
+              "value": 7
+            },
+            {
+              "label": "veri derinliği",
+              "value": 10
+            }
+          ]
+        },
+        "profileSummary": {
+          "count": 4,
+          "averageFinish": "2.0",
+          "strongestSignal": "jokey değişimi",
+          "note": "3/4 benzer örnek Gazi'de ilk 2 içinde bitirmiş."
+        },
+        "historicalMatches": [
+          {
+            "horseName": "BURGAS",
+            "year": 2021,
+            "gaziFinishPosition": 1,
+            "matchingSignals": [
+              "jokey değişimi"
+            ]
+          },
+          {
+            "horseName": "ZIZKA",
+            "year": 2024,
+            "gaziFinishPosition": 2,
+            "matchingSignals": [
+              "jokey değişimi"
+            ]
+          },
+          {
+            "horseName": "MUCİZE KIZ",
+            "year": 2022,
+            "gaziFinishPosition": 2,
+            "matchingSignals": [
+              "jokey değişimi"
+            ]
+          },
+          {
+            "horseName": "CHAİKA",
+            "year": 2023,
+            "gaziFinishPosition": 3,
+            "matchingSignals": [
+              "jokey değişimi"
+            ]
+          }
+        ]
+      },
+      {
+        "rank": 17,
+        "horseName": "BROARTS",
+        "gaziFinishPosition": 20,
+        "lensValue": 22,
+        "badge": "Belirsizlik 22",
+        "reason": "Upside ve risk birlikte yüksek; karar için daha fazla bağlam gerekiyor.",
+        "meta": "Düşük risk · Güven 100 · Upside 24",
+        "readiness": {
+          "score": 67,
+          "confidence": 100,
+          "upside": 24,
+          "risk": 14,
+          "label": "Ciddi takip profili",
+          "confidenceLabel": "Yüksek güven",
+          "riskLabel": "Düşük risk",
+          "primaryReason": "Geçmiş ilk 3 profilleriyle benzerlik yoğunluğu var.",
+          "parts": [
+            {
+              "label": "prep formu",
+              "value": 7
+            },
+            {
+              "label": "profil kanıtı",
+              "value": 30
+            },
+            {
+              "label": "rota şekli",
+              "value": 13
+            },
+            {
+              "label": "jokey sürekliliği",
+              "value": 7
+            },
+            {
+              "label": "veri derinliği",
+              "value": 10
+            }
+          ]
+        },
+        "profileSummary": {
+          "count": 4,
+          "averageFinish": "2.0",
+          "strongestSignal": "jokey değişimi",
+          "note": "3/4 benzer örnek Gazi'de ilk 2 içinde bitirmiş."
+        },
+        "historicalMatches": [
+          {
+            "horseName": "BURGAS",
+            "year": 2021,
+            "gaziFinishPosition": 1,
+            "matchingSignals": [
+              "jokey değişimi"
+            ]
+          },
+          {
+            "horseName": "ZIZKA",
+            "year": 2024,
+            "gaziFinishPosition": 2,
+            "matchingSignals": [
+              "jokey değişimi"
+            ]
+          },
+          {
+            "horseName": "MUCİZE KIZ",
+            "year": 2022,
+            "gaziFinishPosition": 2,
+            "matchingSignals": [
+              "jokey değişimi"
+            ]
+          },
+          {
+            "horseName": "CHAİKA",
+            "year": 2023,
+            "gaziFinishPosition": 3,
+            "matchingSignals": [
+              "jokey değişimi"
+            ]
+          }
+        ]
+      },
+      {
+        "rank": 18,
+        "horseName": "PUROSANGUE",
+        "gaziFinishPosition": 22,
+        "lensValue": 22,
+        "badge": "Belirsizlik 22",
+        "reason": "Upside ve risk birlikte yüksek; karar için daha fazla bağlam gerekiyor.",
+        "meta": "Düşük risk · Güven 100 · Upside 24",
+        "readiness": {
+          "score": 79,
+          "confidence": 100,
+          "upside": 24,
+          "risk": 14,
+          "label": "Güçlü aday profili",
+          "confidenceLabel": "Yüksek güven",
+          "riskLabel": "Düşük risk",
+          "primaryReason": "Geçmiş ilk 3 profilleriyle benzerlik yoğunluğu var.",
+          "parts": [
+            {
+              "label": "prep formu",
+              "value": 19
+            },
+            {
+              "label": "profil kanıtı",
+              "value": 30
+            },
+            {
+              "label": "rota şekli",
+              "value": 13
+            },
+            {
+              "label": "jokey sürekliliği",
+              "value": 7
+            },
+            {
+              "label": "veri derinliği",
+              "value": 10
+            }
+          ]
+        },
+        "profileSummary": {
+          "count": 4,
+          "averageFinish": "2.0",
+          "strongestSignal": "jokey değişimi",
+          "note": "3/4 benzer örnek Gazi'de ilk 2 içinde bitirmiş."
+        },
+        "historicalMatches": [
+          {
+            "horseName": "BURGAS",
+            "year": 2021,
+            "gaziFinishPosition": 1,
+            "matchingSignals": [
+              "jokey değişimi"
+            ]
+          },
+          {
+            "horseName": "ZIZKA",
+            "year": 2024,
+            "gaziFinishPosition": 2,
+            "matchingSignals": [
+              "jokey değişimi"
+            ]
+          },
+          {
+            "horseName": "MUCİZE KIZ",
+            "year": 2022,
+            "gaziFinishPosition": 2,
+            "matchingSignals": [
+              "jokey değişimi"
+            ]
+          },
+          {
+            "horseName": "CHAİKA",
+            "year": 2023,
+            "gaziFinishPosition": 3,
+            "matchingSignals": [
+              "jokey değişimi"
+            ]
+          }
+        ]
+      },
+      {
+        "rank": 19,
+        "horseName": "DEJAVU",
+        "gaziFinishPosition": 17,
+        "lensValue": 17,
+        "badge": "Belirsizlik 17",
+        "reason": "Upside ve risk birlikte yüksek; karar için daha fazla bağlam gerekiyor.",
+        "meta": "Düşük risk · Güven 100 · Upside 34",
+        "readiness": {
+          "score": 84,
+          "confidence": 100,
+          "upside": 34,
+          "risk": 0,
+          "label": "Güçlü aday profili",
+          "confidenceLabel": "Yüksek güven",
+          "riskLabel": "Düşük risk",
+          "primaryReason": "Geçmiş ilk 3 profilleriyle benzerlik yoğunluğu var.",
+          "parts": [
+            {
+              "label": "prep formu",
+              "value": 13
+            },
+            {
+              "label": "profil kanıtı",
+              "value": 30
+            },
+            {
+              "label": "rota şekli",
+              "value": 18
+            },
+            {
+              "label": "jokey sürekliliği",
+              "value": 13
+            },
+            {
+              "label": "veri derinliği",
+              "value": 10
+            }
+          ]
+        },
+        "profileSummary": {
+          "count": 4,
+          "averageFinish": "1.3",
+          "strongestSignal": "yoğun prep",
+          "note": "4/4 benzer örnek Gazi'de ilk 2 içinde bitirmiş."
+        },
+        "historicalMatches": [
+          {
+            "horseName": "SECRET POWER",
+            "year": 2022,
+            "gaziFinishPosition": 1,
+            "matchingSignals": [
+              "yoğun prep"
+            ]
+          },
+          {
+            "horseName": "BURGAS",
+            "year": 2021,
+            "gaziFinishPosition": 1,
+            "matchingSignals": [
+              "yoğun prep"
+            ]
+          },
+          {
+            "horseName": "CALL TO VICTORY",
+            "year": 2020,
+            "gaziFinishPosition": 1,
+            "matchingSignals": [
+              "yoğun prep"
+            ]
+          },
+          {
+            "horseName": "ZIZKA",
+            "year": 2024,
+            "gaziFinishPosition": 2,
+            "matchingSignals": [
+              "yoğun prep"
+            ]
+          }
+        ]
+      },
+      {
+        "rank": 20,
+        "horseName": "ZAMBUR AGA",
+        "gaziFinishPosition": 10,
+        "lensValue": 16,
+        "badge": "Belirsizlik 16",
+        "reason": "Upside ve risk birlikte yüksek; karar için daha fazla bağlam gerekiyor.",
+        "meta": "Düşük risk · Güven 70 · Upside 0",
+        "readiness": {
+          "score": 59,
+          "confidence": 70,
+          "upside": 0,
+          "risk": 18,
+          "label": "İzleme listesi",
+          "confidenceLabel": "Orta güven",
+          "riskLabel": "Düşük risk",
+          "primaryReason": "Temel rota sinyali var; ayırıcı veri henüz sınırlı.",
+          "parts": [
+            {
+              "label": "prep formu",
+              "value": 23
+            },
+            {
+              "label": "rota şekli",
+              "value": 13
+            },
+            {
+              "label": "jokey sürekliliği",
+              "value": 13
+            },
+            {
+              "label": "veri derinliği",
+              "value": 10
+            }
+          ]
+        },
+        "profileSummary": {
+          "count": 0,
+          "averageFinish": "-",
+          "strongestSignal": "Yok",
+          "note": "Geçmiş ilk 3 içinde aynı profil sinyaliyle güçlü eşleşme bulunmadı."
+        },
+        "historicalMatches": []
+      },
+      {
+        "rank": 21,
+        "horseName": "GRANDE FLUSSO",
+        "gaziFinishPosition": 13,
+        "lensValue": 16,
+        "badge": "Belirsizlik 16",
+        "reason": "Upside ve risk birlikte yüksek; karar için daha fazla bağlam gerekiyor.",
+        "meta": "Düşük risk · Güven 70 · Upside 0",
+        "readiness": {
+          "score": 55,
+          "confidence": 70,
+          "upside": 0,
+          "risk": 18,
+          "label": "İzleme listesi",
+          "confidenceLabel": "Orta güven",
+          "riskLabel": "Düşük risk",
+          "primaryReason": "Temel rota sinyali var; ayırıcı veri henüz sınırlı.",
+          "parts": [
+            {
+              "label": "prep formu",
+              "value": 19
+            },
+            {
+              "label": "rota şekli",
+              "value": 13
+            },
+            {
+              "label": "jokey sürekliliği",
+              "value": 13
+            },
+            {
+              "label": "veri derinliği",
+              "value": 10
+            }
+          ]
+        },
+        "profileSummary": {
+          "count": 0,
+          "averageFinish": "-",
+          "strongestSignal": "Yok",
+          "note": "Geçmiş ilk 3 içinde aynı profil sinyaliyle güçlü eşleşme bulunmadı."
+        },
+        "historicalMatches": []
+      },
+      {
+        "rank": 22,
+        "horseName": "LOST KING",
+        "gaziFinishPosition": 15,
+        "lensValue": 16,
+        "badge": "Belirsizlik 16",
+        "reason": "Upside ve risk birlikte yüksek; karar için daha fazla bağlam gerekiyor.",
+        "meta": "Düşük risk · Güven 70 · Upside 0",
+        "readiness": {
+          "score": 59,
+          "confidence": 70,
+          "upside": 0,
+          "risk": 18,
+          "label": "İzleme listesi",
+          "confidenceLabel": "Orta güven",
+          "riskLabel": "Düşük risk",
+          "primaryReason": "Temel rota sinyali var; ayırıcı veri henüz sınırlı.",
+          "parts": [
+            {
+              "label": "prep formu",
+              "value": 23
+            },
+            {
+              "label": "rota şekli",
+              "value": 13
+            },
+            {
+              "label": "jokey sürekliliği",
+              "value": 13
+            },
+            {
+              "label": "veri derinliği",
+              "value": 10
+            }
+          ]
+        },
+        "profileSummary": {
+          "count": 0,
+          "averageFinish": "-",
+          "strongestSignal": "Yok",
+          "note": "Geçmiş ilk 3 içinde aynı profil sinyaliyle güçlü eşleşme bulunmadı."
+        },
+        "historicalMatches": []
+      }
+    ]
+  }
+}
