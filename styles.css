@@ -717,7 +717,7 @@ h2 {
   display: grid;
   align-content: start;
   gap: 5px;
-  min-height: 86px;
+  min-height: 116px;
   padding: 10px;
   border: 1px solid rgba(197, 154, 61, 0.36);
   border-radius: 8px;
@@ -739,7 +739,8 @@ h2 {
 }
 
 .radar-card span,
-.radar-card em {
+.radar-card em,
+.radar-card small {
   color: var(--muted);
   font-size: 0.72rem;
   font-style: normal;
@@ -750,7 +751,7 @@ h2 {
   display: grid;
   align-content: start;
   gap: 7px;
-  min-height: 142px;
+  min-height: 166px;
   padding: 13px;
   border: 1px solid var(--line);
   border-radius: 8px;
@@ -773,11 +774,16 @@ h2 {
 
 .shortlist-card span,
 .shortlist-card em,
-.shortlist-card small {
+.shortlist-card small,
+.shortlist-card p {
   color: var(--muted);
   font-size: 0.74rem;
   font-style: normal;
   line-height: 1.45;
+}
+
+.shortlist-card p {
+  margin: 0;
 }
 
 .shortlist-card strong {
