@@ -741,6 +741,118 @@ h2 {
   line-height: 1.55;
 }
 
+.gazi-radar {
+  display: grid;
+  gap: 12px;
+  margin: 0 0 18px;
+  padding: 16px;
+  border: 1px solid rgba(36, 95, 70, 0.2);
+  border-radius: 8px;
+  background: #fbfcfa;
+}
+
+.gazi-radar:empty {
+  display: none;
+}
+
+.gazi-radar__header {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  align-items: end;
+}
+
+.gazi-radar__header h3 {
+  margin: 0;
+  font-size: 1.25rem;
+}
+
+.gazi-radar__header span,
+.gazi-radar__note {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.76rem;
+  line-height: 1.45;
+}
+
+.gazi-radar__header span {
+  max-width: 420px;
+  text-align: right;
+}
+
+.gazi-radar__grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.gazi-radar-card {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 8px 10px;
+  min-height: 188px;
+  padding: 14px;
+  border: 1px solid rgba(36, 95, 70, 0.22);
+  border-radius: 8px;
+  background: #fff;
+  color: inherit;
+  cursor: pointer;
+  font: inherit;
+  text-align: left;
+}
+
+.gazi-radar-card:hover,
+.gazi-radar-card--selected {
+  border-color: rgba(36, 95, 70, 0.48);
+  background: #eef6f1;
+}
+
+.gazi-radar-card--selected {
+  box-shadow: inset 0 3px 0 var(--green);
+}
+
+.gazi-radar-card span,
+.gazi-radar-card p,
+.gazi-radar-card em {
+  grid-column: 1;
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.72rem;
+  font-style: normal;
+  line-height: 1.45;
+}
+
+.gazi-radar-card strong {
+  grid-column: 1;
+  color: var(--ink);
+  font-size: 1rem;
+  line-height: 1.2;
+}
+
+.gazi-radar-card__score {
+  grid-row: 1 / span 2;
+  grid-column: 2;
+  display: grid;
+  place-items: center;
+  min-width: 58px;
+  min-height: 58px;
+  padding: 8px;
+  border: 1px solid rgba(36, 95, 70, 0.24);
+  border-radius: 8px;
+  background: #fbfcfa;
+  color: var(--green-2);
+}
+
+.gazi-radar-card__score b {
+  font-size: 1.25rem;
+  line-height: 1;
+}
+
+.gazi-radar-card__score small {
+  color: var(--muted);
+  font-size: 0.64rem;
+}
+
 .backtest-layout {
   display: grid;
   grid-template-columns: minmax(0, 1.35fr) minmax(300px, 0.65fr);
@@ -2415,6 +2527,19 @@ footer {
 
   .surprise-radar {
     grid-template-columns: 1fr;
+  }
+
+  .gazi-radar__header {
+    display: grid;
+  }
+
+  .gazi-radar__header span {
+    max-width: none;
+    text-align: left;
+  }
+
+  .gazi-radar__grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
   .route-visibility-summary {

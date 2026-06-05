@@ -1299,13 +1299,15 @@ const renderReadinessValidation = () => {
   `;
 };
 
-const renderProfileShortlist = (report, tableColumns) => {
-  const rows = report.rows ?? [];
-  const profiles = rows
+const buildParticipationProfiles = (report, tableColumns) => {
+  const prepColumns = tableColumns.filter((column) => !column.isTarget);
+
+  return (report.rows ?? [])
     .map((row) => {
       const historicalMatches = getHistoricalProfileMatches(row, report);
       const profileSummary = summarizeProfileMatches(historicalMatches);
       const profileReading = buildProfileReading(row, tableColumns, profileSummary);
+      const readiness = getReadinessAssessment(row, tableColumns, profileSummary);
 
       return {
         row,
@@ -1313,11 +1315,102 @@ const renderProfileShortlist = (report, tableColumns) => {
         profileReading,
         reason: getProfileReason(row, tableColumns, profileSummary),
         signalParts: getProfileSignalParts(row, tableColumns, profileSummary),
-        readiness: getReadinessAssessment(row, tableColumns, profileSummary),
+        readiness,
+        routeVisibility: getRouteVisibility(row, prepColumns),
         tags: getProfileTags(row, tableColumns),
         score: getProfileAttentionScore(row, tableColumns, profileSummary)
       };
     });
+};
+
+const renderGaziRadar = (report, tableColumns) => {
+  const container = document.querySelector("#gazi-radar");
+  if (!container) return;
+
+  const profiles = buildParticipationProfiles(report, tableColumns);
+  if (!profiles.length) {
+    container.innerHTML = "";
+    return;
+  }
+
+  const usedHorseNames = new Set();
+  const takeDistinctProfile = (rankedProfiles) => {
+    const profile = rankedProfiles.find((candidate) => !usedHorseNames.has(candidate.row.horseName)) ?? rankedProfiles[0];
+    if (profile) usedHorseNames.add(profile.row.horseName);
+    return profile;
+  };
+
+  const radarCards = [
+    {
+      key: "leader",
+      title: "Model lideri",
+      note: "En dengeli kompozit aday",
+      profile: takeDistinctProfile(sortReadinessProfiles(profiles, "score")),
+      value: (profile) => profile.readiness.score,
+      meta: (profile) => profile.readiness.label
+    },
+    {
+      key: "upside",
+      title: "Sürpriz/upside",
+      note: "Patlama ihtimali yüksek profil",
+      profile: takeDistinctProfile(sortReadinessProfiles(profiles, "upside")),
+      value: (profile) => profile.readiness.upside,
+      meta: (profile) => profile.routeVisibility.label
+    },
+    {
+      key: "safe",
+      title: "Düşük risk",
+      note: "Güven/risk dengesi güçlü",
+      profile: takeDistinctProfile(sortReadinessProfiles(profiles, "lowRisk")),
+      value: (profile) => getReadinessLensValue(profile.readiness, "lowRisk"),
+      meta: (profile) => profile.readiness.confidenceLabel
+    },
+    {
+      key: "watch",
+      title: "Veri eksiği",
+      note: "Eksik ama izlenmesi gereken",
+      profile: takeDistinctProfile(sortReadinessProfiles(profiles, "uncertainty")),
+      value: (profile) => getReadinessLensValue(profile.readiness, "uncertainty"),
+      meta: (profile) => profile.readiness.riskLabel
+    }
+  ].filter((card) => card.profile);
+
+  const leader = radarCards[0]?.profile;
+  const averageReadiness = averageRounded(profiles.map((profile) => profile.readiness.score));
+  const highSignalCount = profiles.filter((profile) => profile.readiness.score >= 70).length;
+
+  container.innerHTML = `
+    <div class="gazi-radar__header">
+      <div>
+        <p class="section-kicker">Gazi Radar</p>
+        <h3>İlk bakış tahmin panosu</h3>
+      </div>
+      <span>${escapeHtml(report.sourceYear ?? "Güncel")} · ${escapeHtml(profiles.length)} at · Ort. readiness ${escapeHtml(averageReadiness ?? "-")} · Güçlü sinyal ${escapeHtml(highSignalCount)}</span>
+    </div>
+    <div class="gazi-radar__grid">
+      ${radarCards.map((card) => {
+        const profile = card.profile;
+
+        return `
+          <button class="gazi-radar-card ${profile.row.horseName === state.selectedParticipationHorse ? "gazi-radar-card--selected" : ""}" type="button" data-horse-name="${escapeHtml(profile.row.horseName)}" aria-pressed="${profile.row.horseName === state.selectedParticipationHorse}">
+            <span>${escapeHtml(card.title)}</span>
+            <strong>${escapeHtml(profile.row.horseName)}</strong>
+            <div class="gazi-radar-card__score">
+              <b>${escapeHtml(card.value(profile))}</b>
+              <small>/100</small>
+            </div>
+            <p>${escapeHtml(profile.reason)}</p>
+            <em>${escapeHtml(card.note)} · ${escapeHtml(card.meta(profile))}</em>
+          </button>
+        `;
+      }).join("")}
+    </div>
+    ${leader ? `<p class="gazi-radar__note">Radar lideri ${escapeHtml(leader.row.horseName)}; bu okuma kesin tahmin değil, veri destekli önceliklendirme panosudur.</p>` : ""}
+  `;
+};
+
+const renderProfileShortlist = (report, tableColumns) => {
+  const profiles = buildParticipationProfiles(report, tableColumns);
   const readinessBoard = sortReadinessProfiles(profiles, state.readinessLens).slice(0, 4);
   const shortlist = [...profiles]
     .sort((a, b) => b.score - a.score || (a.row.gaziFinishPosition ?? 99) - (b.row.gaziFinishPosition ?? 99))
@@ -1727,6 +1820,7 @@ const renderParticipation = (report) => {
   renderParticipationFilters(report.rows, tableColumns);
   renderRouteVisibilitySummary(report, tableColumns);
   renderParticipationInsights(report, tableColumns);
+  renderGaziRadar(report, tableColumns);
   renderProfileShortlist(report, tableColumns);
 
   const filteredRows = getFilteredParticipationRows(report.rows, tableColumns);
@@ -1890,6 +1984,13 @@ const bindEvents = () => {
       return;
     }
 
+    const row = event.target.closest("[data-horse-name]");
+    if (!row || !state.participationReport) return;
+    state.selectedParticipationHorse = row.dataset.horseName;
+    renderParticipation(state.participationReport);
+  });
+
+  document.querySelector("#gazi-radar").addEventListener("click", (event) => {
     const row = event.target.closest("[data-horse-name]");
     if (!row || !state.participationReport) return;
     state.selectedParticipationHorse = row.dataset.horseName;
