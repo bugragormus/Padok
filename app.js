@@ -8,7 +8,7 @@ import {
   sortReadinessProfiles
 } from "./scripts/readiness-model.mjs";
 
-const APP_DATA_VERSION = "20260606-decision-flow";
+const APP_DATA_VERSION = "20260606-horse-profile";
 
 const state = {
   data: null,
@@ -1239,6 +1239,79 @@ const getProfileReason = (row, tableColumns, profileSummary) => {
   return "Temel rota profili okunuyor; ayırıcı sinyal sınırlı.";
 };
 
+const getArtifactCandidate = (horseName, sourceYear) => {
+  if (state.candidateComparison?.sourceYear !== sourceYear) return null;
+
+  return state.candidateComparison?.candidates?.find((candidate) => candidate.horseName === horseName) ?? null;
+};
+
+const buildHorseDecisionSummary = ({ row, tableColumns, profileSummary, readiness, routeVisibility, artifactCandidate }) => {
+  const strengths = artifactCandidate?.strengths ?? getCandidateStrengths({
+    row,
+    readiness,
+    routeVisibility,
+    profileSummary
+  }, tableColumns);
+  const cautions = artifactCandidate?.cautions ?? getCandidateCautions({
+    row,
+    readiness,
+    routeVisibility,
+    profileSummary
+  }, tableColumns);
+  const role = artifactCandidate?.calibratedReadiness?.rank === 1
+    ? "Çekirdek lider"
+    : readiness.upside >= 60
+      ? "Upside adayı"
+      : readiness.risk >= 35
+        ? "Riskli takip"
+        : routeVisibility.ranCount === 0
+          ? "Rota dışı profil"
+          : "Karar adayı";
+  const confidenceLabel = readiness.confidence >= 75
+    ? "Yüksek veri güveni"
+    : readiness.confidence >= 55
+      ? "Orta veri güveni"
+      : "Sınırlı veri güveni";
+  const nextStep = cautions.length
+    ? `Önce "${cautions[0]}" uyarısını kontrol et.`
+    : strengths.length
+      ? `Önce "${strengths[0]}" sinyalinin ne kadar tekrarlanabilir olduğuna bak.`
+      : "Önce rota ve readiness parçalarını birlikte oku.";
+
+  return {
+    role,
+    confidenceLabel,
+    headline: artifactCandidate?.verdict ?? getProfileReason(row, tableColumns, profileSummary),
+    strengths: strengths.slice(0, 4),
+    cautions: cautions.slice(0, 4),
+    nextStep
+  };
+};
+
+const renderHorseDecisionSummary = (summary) => `
+  <div class="horse-decision-summary" aria-label="At karar özeti">
+    <div class="horse-decision-summary__lead">
+      <span>${escapeHtml(summary.role)}</span>
+      <strong>${escapeHtml(summary.headline)}</strong>
+      <em>${escapeHtml(summary.confidenceLabel)} · ${escapeHtml(summary.nextStep)}</em>
+    </div>
+    <div class="horse-decision-summary__lists">
+      <div>
+        <small>Güçlü taraf</small>
+        ${summary.strengths.length
+          ? summary.strengths.map((item) => `<i>${escapeHtml(item)}</i>`).join("")
+          : "<i>Net güçlü sinyal yok</i>"}
+      </div>
+      <div>
+        <small>Dikkat</small>
+        ${summary.cautions.length
+          ? summary.cautions.map((item) => `<i>${escapeHtml(item)}</i>`).join("")
+          : "<i>Belirgin uyarı yok</i>"}
+      </div>
+    </div>
+  </div>
+`;
+
 const renderReadinessLensControls = () => {
   return `
     <div class="readiness-lenses" aria-label="Readiness analiz mercekleri">
@@ -1905,6 +1978,15 @@ const renderParticipationDetail = (report, tableColumns, rows = report.rows) => 
   const profileReading = buildProfileReading(selectedRow, tableColumns, profileSummary);
   const readiness = getReadinessAssessment(selectedRow, tableColumns, profileSummary);
   const routeVisibility = getRouteVisibility(selectedRow, prepColumns);
+  const artifactCandidate = getArtifactCandidate(selectedRow.horseName, report.sourceYear);
+  const decisionSummary = buildHorseDecisionSummary({
+    row: selectedRow,
+    tableColumns,
+    profileSummary,
+    readiness,
+    routeVisibility,
+    artifactCandidate
+  });
 
   const metrics = [
     ["Readiness", `${readiness.score}/100`],
@@ -1939,6 +2021,8 @@ const renderParticipationDetail = (report, tableColumns, rows = report.rows) => 
           </div>
         `).join("")}
       </div>
+
+      ${renderHorseDecisionSummary(decisionSummary)}
 
       <div class="profile-reading">
         <span>Profil okuması</span>
