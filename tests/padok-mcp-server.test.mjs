@@ -15,6 +15,7 @@ test("Padok MCP server exposes static API artifacts as resources", async () => {
 
   assert.ok(resources.some((resource) => resource.uri === "padok://endpoint/readiness-report"));
   assert.ok(resources.some((resource) => resource.uri === "padok://endpoint/decision-brief"));
+  assert.ok(resources.some((resource) => resource.uri === "padok://endpoint/candidate-comparison"));
   assert.ok(resources.some((resource) => resource.uri === "padok://endpoint/model-backtest"));
 
   const readiness = await readEndpointResource(apiIndex, "padok://endpoint/readiness-report");
@@ -64,6 +65,7 @@ test("Padok MCP tools return model summary and top candidates", async () => {
 
   assert.ok(tools.some((tool) => tool.name === "padok.model_summary"));
   assert.ok(tools.some((tool) => tool.name === "padok.decision_brief"));
+  assert.ok(tools.some((tool) => tool.name === "padok.candidate_comparison"));
   assert.ok(tools.some((tool) => tool.name === "padok.top_candidates"));
   assert.ok(tools.some((tool) => tool.name === "padok.horse_profile"));
 
@@ -77,6 +79,15 @@ test("Padok MCP tools return model summary and top candidates", async () => {
   const brief = JSON.parse(briefResult.content[0].text);
 
   assert.ok(brief.picks.scoreLeader.horseName);
+
+  const comparisonResult = await callPadokTool(apiIndex, "padok.candidate_comparison", {
+    limit: 2
+  });
+  const comparison = JSON.parse(comparisonResult.content[0].text);
+
+  assert.equal(comparison.candidates.length, 2);
+  assert.ok(comparison.summary.strongestHorse);
+  assert.ok(comparison.candidates[0].strengths.length > 0);
 
   const candidatesResult = await callPadokTool(apiIndex, "padok.top_candidates", {
     lens: "score",

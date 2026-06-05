@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-06-05T13:43:35.228Z",
+  "generatedAt": "2026-06-05T16:50:49.590Z",
   "name": "Padok Static API",
   "version": "0.1.0",
   "description": "GitHub Pages üzerinden yayınlanan Padok veri ve analiz artifact katalogu.",
@@ -10,7 +10,8 @@
     "readinessReportCount": 6,
     "modelBacktestSeasonCount": 6,
     "modelTopPickPodiumRate": 67,
-    "modelWinnerTopThreeRate": 50
+    "modelWinnerTopThreeRate": 50,
+    "candidateComparisonCount": 4
   },
   "endpoints": [
     {
@@ -74,6 +75,17 @@
       ]
     },
     {
+      "id": "candidate-comparison",
+      "path": "data/gazi-candidate-comparison.json",
+      "description": "Öne çıkan Gazi adaylarının readiness, rota, jokey, soy hattı, sahip, güçlü taraf ve dikkat sinyali karşılaştırması.",
+      "freshness": "Decision brief ve readiness sonrası yeniden üretilir.",
+      "schema": [
+        "summary",
+        "candidates",
+        "methodology"
+      ]
+    },
+    {
       "id": "model-backtest",
       "path": "data/gazi-model-backtest.json",
       "description": "Readiness modelinin tamamlanmış sezonlardaki performansı ve sürpriz sonuç açıklamaları.",
@@ -111,6 +123,7 @@
     "recommendedResources": [
       "manifest",
       "decision-brief",
+      "candidate-comparison",
       "readiness-report",
       "model-backtest",
       "participation-report"

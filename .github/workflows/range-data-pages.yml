@@ -72,6 +72,7 @@ jobs:
       - name: Build API index
         run: |
           npm run build:gazi-decision-brief -- --out data/gazi-decision-brief.json
+          npm run build:gazi-candidate-comparison -- --out data/gazi-candidate-comparison.json
           npm run build:api-index -- --out data/padok-api-index.json
 
       - name: Prepare static site
@@ -80,7 +81,7 @@ jobs:
           cp index.html app.js styles.css .nojekyll dist/
           cp assets/* dist/assets/
           cp scripts/readiness-model.mjs dist/scripts/
-          cp data/gazi-knowledge-base.json data/gazi-route-report.json data/gazi-route-*.json data/gazi-backtest-report.json data/gazi-model-backtest.json data/gazi-decision-brief.json data/gazi-participation-report.json data/gazi-participation-*.json data/gazi-readiness-report.json data/gazi-readiness-*.json data/gazi-data-horizon.json data/padok-data-manifest.json data/padok-api-index.json data/gazi-range-refresh-log.json dist/data/
+          cp data/gazi-knowledge-base.json data/gazi-route-report.json data/gazi-route-*.json data/gazi-backtest-report.json data/gazi-model-backtest.json data/gazi-decision-brief.json data/gazi-candidate-comparison.json data/gazi-participation-report.json data/gazi-participation-*.json data/gazi-readiness-report.json data/gazi-readiness-*.json data/gazi-data-horizon.json data/padok-data-manifest.json data/padok-api-index.json data/gazi-range-refresh-log.json dist/data/
 
       - name: Configure Pages
         uses: actions/configure-pages@v5

@@ -23,7 +23,7 @@ const endpoint = ({ id, path, description, freshness, schema }) => ({
   schema
 });
 
-export const buildApiIndex = ({ manifest, modelBacktest }) => {
+export const buildApiIndex = ({ manifest, modelBacktest, candidateComparison }) => {
   const defaultReports = manifest?.defaultReports ?? {};
 
   return {
@@ -38,7 +38,8 @@ export const buildApiIndex = ({ manifest, modelBacktest }) => {
       readinessReportCount: manifest?.summary?.readinessReportCount ?? null,
       modelBacktestSeasonCount: modelBacktest?.summary?.seasonCount ?? null,
       modelTopPickPodiumRate: modelBacktest?.summary?.topPickPodiumRate ?? null,
-      modelWinnerTopThreeRate: modelBacktest?.summary?.winnerTopThreeRate ?? null
+      modelWinnerTopThreeRate: modelBacktest?.summary?.winnerTopThreeRate ?? null,
+      candidateComparisonCount: candidateComparison?.summary?.candidateCount ?? null
     },
     endpoints: [
       endpoint({
@@ -77,6 +78,13 @@ export const buildApiIndex = ({ manifest, modelBacktest }) => {
         schema: ["state", "headline", "picks", "modelPerformance", "calibration", "decisionNotes"]
       }),
       endpoint({
+        id: "candidate-comparison",
+        path: defaultReports.candidateComparison ?? "data/gazi-candidate-comparison.json",
+        description: "Öne çıkan Gazi adaylarının readiness, rota, jokey, soy hattı, sahip, güçlü taraf ve dikkat sinyali karşılaştırması.",
+        freshness: "Decision brief ve readiness sonrası yeniden üretilir.",
+        schema: ["summary", "candidates", "methodology"]
+      }),
+      endpoint({
         id: "model-backtest",
         path: defaultReports.modelBacktest ?? "data/gazi-model-backtest.json",
         description: "Readiness modelinin tamamlanmış sezonlardaki performansı ve sürpriz sonuç açıklamaları.",
@@ -102,6 +110,7 @@ export const buildApiIndex = ({ manifest, modelBacktest }) => {
       recommendedResources: [
         "manifest",
         "decision-brief",
+        "candidate-comparison",
         "readiness-report",
         "model-backtest",
         "participation-report"
@@ -115,10 +124,12 @@ const main = async () => {
   const args = process.argv.slice(2);
   const manifestPath = getArgValue(args, "--manifest") ?? "data/padok-data-manifest.json";
   const modelBacktestPath = getArgValue(args, "--model-backtest") ?? "data/gazi-model-backtest.json";
+  const candidateComparisonPath = getArgValue(args, "--candidate-comparison") ?? "data/gazi-candidate-comparison.json";
   const outPath = getArgValue(args, "--out") ?? "data/padok-api-index.json";
   const payload = buildApiIndex({
     manifest: await readOptionalJson(manifestPath),
-    modelBacktest: await readOptionalJson(modelBacktestPath)
+    modelBacktest: await readOptionalJson(modelBacktestPath),
+    candidateComparison: await readOptionalJson(candidateComparisonPath)
   });
 
   await mkdir(dirname(outPath), { recursive: true });
@@ -126,7 +137,8 @@ const main = async () => {
   console.log(JSON.stringify({
     outPath,
     endpointCount: payload.endpoints.length,
-    modelBacktestSeasonCount: payload.summary.modelBacktestSeasonCount
+    modelBacktestSeasonCount: payload.summary.modelBacktestSeasonCount,
+    candidateComparisonCount: payload.summary.candidateComparisonCount
   }, null, 2));
 };
 

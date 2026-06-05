@@ -8,7 +8,7 @@ import {
   sortReadinessProfiles
 } from "./scripts/readiness-model.mjs";
 
-const APP_DATA_VERSION = "20260605-candidate-compare";
+const APP_DATA_VERSION = "20260605-candidate-artifact";
 
 const state = {
   data: null,
@@ -16,6 +16,7 @@ const state = {
   backtestReport: null,
   modelBacktest: null,
   decisionBrief: null,
+  candidateComparison: null,
   participationReport: null,
   readinessReport: null,
   dataHorizon: null,
@@ -1405,6 +1406,12 @@ const getCandidateComparisonProfiles = (profiles, sourceYear) => {
   return [...decisionProfiles, ...modelProfiles].slice(0, 5);
 };
 
+const getCandidateComparisonArtifact = (sourceYear) => {
+  if (state.candidateComparison?.sourceYear !== sourceYear) return null;
+  if (!state.candidateComparison?.candidates?.length) return null;
+  return state.candidateComparison;
+};
+
 const getCandidateStrengths = (profile, tableColumns) => {
   const strengths = [];
 
@@ -1440,7 +1447,8 @@ const renderCandidateComparison = (report, tableColumns, profiles) => {
   const container = document.querySelector("#candidate-comparison");
   if (!container) return;
 
-  const candidates = getCandidateComparisonProfiles(profiles, report.sourceYear);
+  const artifact = getCandidateComparisonArtifact(report.sourceYear);
+  const candidates = artifact?.candidates ?? getCandidateComparisonProfiles(profiles, report.sourceYear);
   if (!candidates.length) {
     container.innerHTML = "";
     return;
@@ -1451,25 +1459,30 @@ const renderCandidateComparison = (report, tableColumns, profiles) => {
       <div class="candidate-comparison__header">
         <div>
           <p class="section-kicker">Aday karşılaştırması</p>
-          <h3>Öne çıkan profilleri yan yana oku</h3>
+          <h3>${escapeHtml(artifact?.summary?.headline ?? "Öne çıkan profilleri yan yana oku")}</h3>
         </div>
         <span>Skor, rota, jokey, soy ve sahip sinyalleri birlikte değerlendirilir.</span>
       </div>
       <div class="candidate-comparison__grid">
-        ${candidates.map((profile) => {
-          const strengths = getCandidateStrengths(profile, tableColumns);
-          const cautions = getCandidateCautions(profile, tableColumns);
+        ${candidates.map((candidate) => {
+          const profile = candidate.row ? candidate : profiles.find((item) => item.row.horseName === candidate.horseName);
+          const horseName = candidate.horseName ?? profile?.row?.horseName;
+          const readiness = candidate.readiness ?? profile?.readiness ?? {};
+          const route = candidate.route ?? profile?.routeVisibility ?? {};
+          const strengths = candidate.strengths ?? getCandidateStrengths(profile, tableColumns);
+          const cautions = candidate.cautions ?? getCandidateCautions(profile, tableColumns);
+          const reason = candidate.verdict ?? candidate.reason ?? profile?.reason ?? "-";
 
           return `
-            <button class="candidate-card ${profile.row.horseName === state.selectedParticipationHorse ? "candidate-card--selected" : ""}" type="button" data-horse-name="${escapeHtml(profile.row.horseName)}" aria-pressed="${profile.row.horseName === state.selectedParticipationHorse}">
-              <span>${escapeHtml(profile.readiness.label)}</span>
-              <strong>${escapeHtml(profile.row.horseName)}</strong>
+            <button class="candidate-card ${horseName === state.selectedParticipationHorse ? "candidate-card--selected" : ""}" type="button" data-horse-name="${escapeHtml(horseName)}" aria-pressed="${horseName === state.selectedParticipationHorse}">
+              <span>${escapeHtml(readiness.label ?? "İzleme profili")}</span>
+              <strong>${escapeHtml(horseName)}</strong>
               <div class="candidate-card__metrics">
                 ${[
-                  ["Readiness", profile.readiness.score],
-                  ["Upside", profile.readiness.upside],
-                  ["Risk", profile.readiness.risk],
-                  ["Rota", profile.routeVisibility.score]
+                  ["Readiness", readiness.score ?? "-"],
+                  ["Upside", readiness.upside ?? "-"],
+                  ["Risk", readiness.risk ?? "-"],
+                  ["Rota", route.score ?? "-"]
                 ].map(([label, value]) => `
                   <small>
                     ${escapeHtml(label)}
@@ -1477,7 +1490,7 @@ const renderCandidateComparison = (report, tableColumns, profiles) => {
                   </small>
                 `).join("")}
               </div>
-              <p>${escapeHtml(profile.reason)}</p>
+              <p>${escapeHtml(reason)}</p>
               <div class="candidate-card__lists">
                 <div>
                   <em>Güçlü taraf</em>
@@ -2162,12 +2175,13 @@ const renderFatalError = (error) => {
 };
 
 const init = async () => {
-  const [knowledge, routeReport, backtestReport, modelBacktest, decisionBrief, participationReport, readinessReport, horizon] = await Promise.all([
+  const [knowledge, routeReport, backtestReport, modelBacktest, decisionBrief, candidateComparison, participationReport, readinessReport, horizon] = await Promise.all([
     readJson("./data/gazi-knowledge-base.json"),
     readOptionalJson("./data/gazi-route-report.json"),
     readOptionalJson("./data/gazi-backtest-report.json"),
     readOptionalJson("./data/gazi-model-backtest.json"),
     readOptionalJson("./data/gazi-decision-brief.json"),
+    readOptionalJson("./data/gazi-candidate-comparison.json"),
     readOptionalJson("./data/gazi-participation-report.json"),
     readOptionalJson("./data/gazi-readiness-report.json"),
     readOptionalJson("./data/gazi-data-horizon.json")
@@ -2191,6 +2205,10 @@ const init = async () => {
 
   if (decisionBrief) {
     state.decisionBrief = decisionBrief;
+  }
+
+  if (candidateComparison) {
+    state.candidateComparison = candidateComparison;
   }
 
   if (participationReport) {

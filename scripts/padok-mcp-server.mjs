@@ -75,6 +75,22 @@ export const buildToolList = () => [
     }
   },
   {
+    name: "padok.candidate_comparison",
+    description: "Return the current side-by-side Gazi candidate comparison with strengths, cautions, route, actor, and readiness signals.",
+    inputSchema: {
+      type: "object",
+      properties: {
+        limit: {
+          type: "integer",
+          minimum: 1,
+          maximum: 20,
+          default: 6
+        }
+      },
+      additionalProperties: false
+    }
+  },
+  {
     name: "padok.model_summary",
     description: "Return readiness model backtest summary, blind spots, and recent surprise reviews.",
     inputSchema: {
@@ -125,6 +141,16 @@ const normalizeName = (value) => String(value ?? "").trim().toLocaleUpperCase("t
 export const callPadokTool = async (apiIndex, name, args = {}) => {
   if (name === "padok.decision_brief") {
     return asContent(await readEndpointJson(apiIndex, "decision-brief"));
+  }
+
+  if (name === "padok.candidate_comparison") {
+    const comparison = await readEndpointJson(apiIndex, "candidate-comparison");
+    const limit = clampLimit(args.limit, 6);
+
+    return asContent({
+      ...comparison,
+      candidates: (comparison.candidates ?? []).slice(0, limit)
+    });
   }
 
   if (name === "padok.model_summary") {
