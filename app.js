@@ -8,7 +8,7 @@ import {
   sortReadinessProfiles
 } from "./scripts/readiness-model.mjs";
 
-const APP_DATA_VERSION = "20260605-decision-brief-ui";
+const APP_DATA_VERSION = "20260605-candidate-compare";
 
 const state = {
   data: null,
@@ -18,7 +18,6 @@ const state = {
   decisionBrief: null,
   participationReport: null,
   readinessReport: null,
-  dataManifest: null,
   dataHorizon: null,
   selectedParticipationHorse: null,
   participationFilter: "all",
@@ -241,16 +240,15 @@ const renderDataStatus = (report) => {
   const summary = summarizeRouteReport(report);
   const statusSummary = document.querySelector("#data-status-summary");
 
-  statusSummary.textContent = `${report.year} Gazi rotası için ${summary.completedRaceCount}/${summary.raceCount} koşunun at bazlı sonucu hazır. Son rapor: ${formatTimestamp(report.generatedAt)}.`;
+  statusSummary.textContent = `${report.year} Gazi rotasında ${summary.completedRaceCount}/${summary.raceCount} koşunun sonucu hazır. Tamamlanan koşular aday profillerini, bekleyen koşular ise canlı takip alanını besler.`;
 
   const metrics = [
-    ["Rapor yılı", report.year],
-    ["Koşu durumu", analysisStateLabels[summary.analysisState] ?? summary.analysisState],
+    ["Sezon", report.year],
+    ["Durum", analysisStateLabels[summary.analysisState] ?? summary.analysisState],
     ["At startı", summary.entryCount],
     ["Tekil at", summary.uniqueHorseCount],
-    ["Soy hattı kapsamı", `%${summary.pedigreeCoverage}`],
-    ["Sahip kapsamı", `%${summary.ownerCoverage}`],
-    ["Jokey kapsamı", `%${summary.jockeyCoverage}`]
+    ["Soy hattı", `%${summary.pedigreeCoverage}`],
+    ["Jokey bilgisi", `%${summary.jockeyCoverage}`]
   ];
 
   document.querySelector("#status-metrics").innerHTML = metrics
@@ -279,117 +277,6 @@ const renderDataStatus = (report) => {
       `;
     }).join("")
     : '<p class="coverage-empty">Henüz eşleşen rota koşusu bulunamadı.</p>';
-};
-
-const renderReadinessArtifact = (report) => {
-  const container = document.querySelector("#readiness-artifact");
-  if (!container) return;
-
-  if (!report) {
-    container.innerHTML = "";
-    return;
-  }
-
-  const summary = report.summary ?? {};
-  const quality = report.quality ?? {};
-  const calibration = report.calibration ?? null;
-  const metrics = [
-    ["Analiz yılı", report.sourceYear ?? "-"],
-    ["Koşucu", summary.runnerCount ?? 0],
-    ["Uyarı", quality.warningCount ?? 0],
-    ["Ana skor", summary.topScoreHorse ?? "-"],
-    ["Upside", summary.topUpsideHorse ?? "-"],
-    ["Belirsizlik", summary.topUncertaintyHorse ?? "-"]
-  ];
-  const rankingLenses = [
-    ["score", "Ana skor"],
-    ["upside", "Upside"],
-    ["uncertainty", "Belirsizlik"]
-  ];
-
-  container.innerHTML = `
-    <article class="artifact-card">
-      <div>
-        <p class="section-kicker">Analiz artifact'i</p>
-        <h3>Readiness JSON hazır</h3>
-        <p>Otomatik pipeline tarafından üretilen skor raporu. UI, API ve ileride MCP yüzeyi aynı analiz çıktısını kullanabilir.</p>
-      </div>
-      <div class="artifact-card__metrics">
-        ${metrics.map(([label, value]) => `
-          <span>
-            <small>${escapeHtml(label)}</small>
-            <strong>${escapeHtml(value)}</strong>
-          </span>
-        `).join("")}
-      </div>
-      ${quality.warnings?.length ? `
-        <div class="artifact-quality" aria-label="Readiness veri kalite uyarıları">
-          ${quality.warnings.slice(0, 3).map((warning) => `<span>${escapeHtml(warning)}</span>`).join("")}
-        </div>
-      ` : `
-        <div class="artifact-quality artifact-quality--clean" aria-label="Readiness veri kalite durumu">
-          <span>Artifact kalite kontrolünde kritik uyarı yok.</span>
-        </div>
-      `}
-      ${calibration?.state === "completed" ? `
-        <div class="artifact-calibration" aria-label="Readiness kalibrasyon özeti">
-          <div>
-            <small>Model kalibrasyonu</small>
-            <strong>Kazanan ${escapeHtml(calibration.winnerName ?? "-")} ana skorda ${escapeHtml(calibration.winnerScoreRank ?? "-")}. sıradaydı</strong>
-            <p>${escapeHtml(calibration.lesson ?? "Tamamlanan sezon model kalibrasyonu için kullanılıyor.")}</p>
-          </div>
-          <div class="artifact-calibration__metrics">
-            <span>
-              <small>Model lideri</small>
-              <b>${escapeHtml(calibration.topScoreHorse ?? "-")}</b>
-            </span>
-            <span>
-              <small>Lider sonucu</small>
-              <b>${escapeHtml(formatPosition(calibration.topScoreFinish))}</b>
-            </span>
-            <span>
-              <small>Kazanan farkı</small>
-              <b>${escapeHtml(calibration.winnerGap ?? 0)}</b>
-            </span>
-          </div>
-          ${calibration.missReasons?.length ? `
-            <div class="artifact-calibration__reasons">
-              ${calibration.missReasons.slice(0, 3).map((reason) => `<span>${escapeHtml(reason)}</span>`).join("")}
-            </div>
-          ` : ""}
-        </div>
-      ` : calibration?.state ? `
-        <div class="artifact-calibration artifact-calibration--pending" aria-label="Readiness kalibrasyon bekleme durumu">
-          <small>Model kalibrasyonu</small>
-          <strong>Gazi sonucu bekleniyor</strong>
-          <p>${escapeHtml(calibration.note ?? "Sonuç tamamlandığında kazanan farkı ve kaçırılan sinyaller hesaplanacak.")}</p>
-        </div>
-      ` : ""}
-      <div class="artifact-rankings" aria-label="Readiness artifact ilk 3 listeleri">
-        ${rankingLenses.map(([key, label]) => {
-          const entries = report.rankings?.[key]?.slice(0, 3) ?? [];
-          return `
-            <div class="artifact-ranking">
-              <div class="artifact-ranking__header">
-                <strong>${escapeHtml(label)}</strong>
-                ${report.lensSummaries?.[key] ? `<em>Ort. ${escapeHtml(report.lensSummaries[key].averageValue ?? "-")} · Güçlü ${escapeHtml(report.lensSummaries[key].highSignalCount ?? 0)} · İzleme ${escapeHtml(report.lensSummaries[key].watchlistCount ?? 0)}</em>` : ""}
-              </div>
-              ${entries.length
-                ? entries.map((entry) => `
-                  <span>
-                    <b>${escapeHtml(entry.rank)}. ${escapeHtml(entry.horseName)}</b>
-                    <small>${escapeHtml(entry.lensValue)}/100</small>
-                  </span>
-                `).join("")
-                : '<em>Liste bekleniyor</em>'}
-            </div>
-          `;
-        }).join("")}
-      </div>
-      <a class="artifact-card__link" href="${escapeHtml(report.artifactPath ?? "./data/gazi-readiness-report.json")}" download>JSON indir</a>
-      <em>Son üretim: ${escapeHtml(formatTimestamp(report.generatedAt))}</em>
-    </article>
-  `;
 };
 
 const decisionPickLabels = {
@@ -424,7 +311,6 @@ const renderDecisionBrief = (brief) => {
           <p class="section-kicker">Karar özeti</p>
           <h3>${escapeHtml(brief.headline ?? "Karar özeti hazırlanıyor.")}</h3>
         </div>
-        <a href="./data/gazi-decision-brief.json" download>JSON</a>
       </div>
       <div class="decision-brief-card__metrics">
         ${metrics.map(([label, value]) => `
@@ -434,7 +320,7 @@ const renderDecisionBrief = (brief) => {
           </span>
         `).join("")}
       </div>
-      <div class="decision-picks" aria-label="Decision brief aday rolleri">
+      <div class="decision-picks" aria-label="Aday rolleri">
         ${picks.map(([key, pick]) => `
           <button class="decision-pick" type="button" data-decision-horse="${escapeHtml(pick.horseName)}">
             <span>${escapeHtml(decisionPickLabels[key] ?? key)}</span>
@@ -449,61 +335,6 @@ const renderDecisionBrief = (brief) => {
           ${brief.decisionNotes.slice(0, 3).map((note) => `<span>${escapeHtml(note)}</span>`).join("")}
         </div>
       ` : ""}
-    </article>
-  `;
-};
-
-const renderDataManifest = (manifest) => {
-  const container = document.querySelector("#data-manifest");
-  if (!container) return;
-
-  if (!manifest) {
-    container.innerHTML = "";
-    return;
-  }
-
-  const metrics = [
-    ["Yıl aralığı", manifest.summary?.yearRange ?? "-"],
-    ["Sezon", manifest.summary?.yearCount ?? 0],
-    ["Rota JSON", manifest.summary?.routeReportCount ?? 0],
-    ["Katılım JSON", manifest.summary?.participationReportCount ?? 0],
-    ["Readiness JSON", manifest.summary?.readinessReportCount ?? 0]
-  ];
-  const readinessHealth = manifest.reports?.readiness ?? [];
-
-  container.innerHTML = `
-    <article class="manifest-card">
-      <div>
-        <p class="section-kicker">Veri kataloğu</p>
-        <h3>Artifact manifest</h3>
-        <p>Canlı siteye taşınan veri dosyalarının keşif indeksi. API/MCP tarafında ilk okunacak katalog budur.</p>
-      </div>
-      <div class="manifest-card__metrics">
-        ${metrics.map(([label, value]) => `
-          <span>
-            <small>${escapeHtml(label)}</small>
-            <strong>${escapeHtml(value)}</strong>
-          </span>
-        `).join("")}
-      </div>
-      ${readinessHealth.length ? `
-        <div class="manifest-health" aria-label="Yıllık readiness kalite durumu">
-          ${readinessHealth.map((entry) => {
-            const warningCount = entry.summary?.warningCount ?? 0;
-            const healthLabel = warningCount ? `${warningCount} uyarı` : "temiz";
-            const healthClass = warningCount ? "manifest-year-chip--warn" : "manifest-year-chip--clean";
-
-            return `
-              <a class="manifest-year-chip ${healthClass}" href="./${escapeHtml(entry.path)}" download>
-                <strong>${escapeHtml(entry.year)}</strong>
-                <span>${escapeHtml(healthLabel)}</span>
-              </a>
-            `;
-          }).join("")}
-        </div>
-      ` : ""}
-      <a class="artifact-card__link" href="./data/padok-data-manifest.json" download>Manifest indir</a>
-      <em>Son üretim: ${escapeHtml(formatTimestamp(manifest.generatedAt))}</em>
     </article>
   `;
 };
@@ -530,7 +361,7 @@ const getArtifactLensRows = (horseName) => {
         label,
         rank: "-",
         value: "-",
-        badge: "Artifact içinde yok",
+        badge: "Model listesinde yok",
         actorContext: null
       };
   });
@@ -546,9 +377,9 @@ const renderArtifactLensPanel = (horseName) => {
   return `
     <div class="artifact-lens-panel">
       <div>
-        <span>Artifact sırası</span>
-        <strong>${escapeHtml(state.readinessReport?.sourceYear ?? "-")} readiness raporu</strong>
-        <p>Bu atın otomatik üretilen JSON raporundaki lens sıralamaları.</p>
+        <span>Model sırası</span>
+        <strong>${escapeHtml(state.readinessReport?.sourceYear ?? "-")} analiz mercekleri</strong>
+        <p>Bu atın ana skor, upside, düşük risk ve belirsizlik merceklerindeki yeri.</p>
       </div>
       <div class="artifact-lens-panel__grid">
         ${lensRows.map((row) => `
@@ -578,52 +409,6 @@ const renderArtifactLensPanel = (horseName) => {
       ` : ""}
     </div>
   `;
-};
-
-const horizonTierStatusLabels = {
-  complete: "Tamamlandı",
-  "in-progress": "Sürüyor",
-  planned: "Planlandı",
-  research: "Araştırma"
-};
-
-const renderDataHorizon = (report) => {
-  const summary = report.summary;
-
-  document.querySelector("#data-horizon-summary").textContent = `${summary.currentYearRange} aralığında ${summary.highConfidenceYearCount} yüksek güvenli sezon, ${summary.totalRouteRaceCount} rota koşusu ve ${summary.totalHorseStartCount} at startı var.`;
-
-  const metrics = [
-    ["Mevcut sezon", summary.currentYearCount],
-    ["Yüksek güven", summary.highConfidenceYearCount],
-    ["Birincil hedef", summary.primaryTargetYearRange],
-    ["Hedef doluluk", `%${summary.primaryTargetCoverageRate}`],
-    ["Genişletme", summary.expansionTargetYearRange],
-    ["Genişletme doluluk", `%${summary.expansionTargetCoverageRate}`]
-  ];
-
-  document.querySelector("#data-horizon-metrics").innerHTML = metrics
-    .map(([label, value]) => `
-      <div class="status-metric">
-        <span>${escapeHtml(label)}</span>
-        <strong>${escapeHtml(value)}</strong>
-      </div>
-    `)
-    .join("");
-
-  document.querySelector("#data-horizon-tiers").innerHTML = report.tiers
-    .map((tier) => `
-      <div class="horizon-tier horizon-tier--${escapeHtml(tier.key)}">
-        <div>
-          <strong>${escapeHtml(tier.yearRange)}</strong>
-          <span>${escapeHtml(tier.label)}</span>
-        </div>
-        <p>${escapeHtml(tier.purpose)}</p>
-        <em>${escapeHtml(horizonTierStatusLabels[tier.status] ?? tier.status)}${tier.coveredYears.length ? ` · ${escapeHtml(tier.coveredYears.join(", "))}` : ""}</em>
-      </div>
-    `)
-    .join("");
-
-  document.querySelector("#data-horizon-warning").textContent = report.methodology.warning;
 };
 
 const sampleStateLabels = {
@@ -709,11 +494,11 @@ const renderModelBacktest = (report) => {
   const blindSpots = (report.blindSpots ?? []).slice(0, 4);
 
   container.innerHTML = `
-    <div class="model-check model-check--artifact" aria-label="Readiness model backtest artifact">
+    <div class="model-check model-check--artifact" aria-label="Readiness model backtest">
       <div>
         <p class="section-kicker">Model backtest</p>
         <h4>Readiness tahmini geçmişte ne kadar yakaladı?</h4>
-        <span>${escapeHtml(summary.yearRange ?? "-")} sezonları · ${escapeHtml(summary.seasonCount)} tamamlanmış Gazi · leakage kontrollü artifact</span>
+        <span>${escapeHtml(summary.yearRange ?? "-")} sezonları · ${escapeHtml(summary.seasonCount)} tamamlanmış Gazi · sonuç bilgisi tahmine karıştırılmadan kontrol edildi</span>
       </div>
       <div class="model-check__metrics">
         <div>
@@ -1589,6 +1374,128 @@ const renderGaziRadar = (report, tableColumns) => {
   `;
 };
 
+const getDecisionBriefHorseNames = (sourceYear) => {
+  if (state.decisionBrief?.sourceYear !== sourceYear) return [];
+
+  return Object.values(state.decisionBrief.picks ?? {})
+    .map((pick) => pick?.horseName)
+    .filter(Boolean);
+};
+
+const getCandidateComparisonProfiles = (profiles, sourceYear) => {
+  const selectedNames = new Set();
+  const addProfile = (profile) => {
+    if (!profile || selectedNames.has(profile.row.horseName)) return null;
+    selectedNames.add(profile.row.horseName);
+    return profile;
+  };
+
+  const decisionProfiles = getDecisionBriefHorseNames(sourceYear)
+    .map((horseName) => profiles.find((profile) => profile.row.horseName === horseName))
+    .map(addProfile)
+    .filter(Boolean);
+
+  const modelProfiles = [
+    sortReadinessProfiles(profiles, "score")[0],
+    sortReadinessProfiles(profiles, "upside")[0],
+    sortReadinessProfiles(profiles, "lowRisk")[0],
+    sortReadinessProfiles(profiles, "uncertainty")[0]
+  ].map(addProfile).filter(Boolean);
+
+  return [...decisionProfiles, ...modelProfiles].slice(0, 5);
+};
+
+const getCandidateStrengths = (profile, tableColumns) => {
+  const strengths = [];
+
+  if (profile.readiness.score >= 75) strengths.push("Yüksek readiness");
+  if (profile.readiness.upside >= 60) strengths.push("Upside var");
+  if (profile.readiness.confidence >= 70) strengths.push("Veri güveni iyi");
+  if (profile.row.bestPrepFinishPosition === 1) strengths.push("Prep galibi");
+  if (profile.profileSummary.count >= 3) strengths.push("Geçmiş benzerlik");
+  if (profile.routeVisibility.ranCount >= 2) strengths.push("Geniş rota görünürlüğü");
+  if (profile.row.sire) strengths.push("Soy hattı okunuyor");
+  if (profile.row.owner) strengths.push("Sahip bilgisi var");
+  if (rowHasJockeyChange(profile.row, tableColumns)) strengths.push("Jokey hareketi izleniyor");
+
+  return strengths.slice(0, 4);
+};
+
+const getCandidateCautions = (profile, tableColumns) => {
+  const cautions = [];
+
+  if (profile.row.prepStartCount === 0) cautions.push("İzlenen rotada start yok");
+  if (profile.routeVisibility.ranCount === 1) cautions.push("Tek koşu sinyali");
+  if (profile.readiness.risk >= 30) cautions.push("Risk göstergesi yüksek");
+  if (profile.readiness.confidence < 60) cautions.push("Veri güveni sınırlı");
+  if (!profile.row.sire || !profile.row.dam) cautions.push("Soy hattı eksik");
+  if (!profile.row.owner) cautions.push("Sahip bilgisi eksik");
+  if (rowHasJockeyChange(profile.row, tableColumns)) cautions.push("Jokey sürekliliği kırılmış");
+  if (!Number.isFinite(profile.row.gaziFinishPosition) && profile.row.prepStartCount === 0) cautions.push("Sonuç bekleyen kapalı profil");
+
+  return cautions.slice(0, 4);
+};
+
+const renderCandidateComparison = (report, tableColumns, profiles) => {
+  const container = document.querySelector("#candidate-comparison");
+  if (!container) return;
+
+  const candidates = getCandidateComparisonProfiles(profiles, report.sourceYear);
+  if (!candidates.length) {
+    container.innerHTML = "";
+    return;
+  }
+
+  container.innerHTML = `
+    <section class="candidate-comparison__panel" aria-label="Adayları karşılaştır">
+      <div class="candidate-comparison__header">
+        <div>
+          <p class="section-kicker">Aday karşılaştırması</p>
+          <h3>Öne çıkan profilleri yan yana oku</h3>
+        </div>
+        <span>Skor, rota, jokey, soy ve sahip sinyalleri birlikte değerlendirilir.</span>
+      </div>
+      <div class="candidate-comparison__grid">
+        ${candidates.map((profile) => {
+          const strengths = getCandidateStrengths(profile, tableColumns);
+          const cautions = getCandidateCautions(profile, tableColumns);
+
+          return `
+            <button class="candidate-card ${profile.row.horseName === state.selectedParticipationHorse ? "candidate-card--selected" : ""}" type="button" data-horse-name="${escapeHtml(profile.row.horseName)}" aria-pressed="${profile.row.horseName === state.selectedParticipationHorse}">
+              <span>${escapeHtml(profile.readiness.label)}</span>
+              <strong>${escapeHtml(profile.row.horseName)}</strong>
+              <div class="candidate-card__metrics">
+                ${[
+                  ["Readiness", profile.readiness.score],
+                  ["Upside", profile.readiness.upside],
+                  ["Risk", profile.readiness.risk],
+                  ["Rota", profile.routeVisibility.score]
+                ].map(([label, value]) => `
+                  <small>
+                    ${escapeHtml(label)}
+                    <b>${escapeHtml(value)}</b>
+                  </small>
+                `).join("")}
+              </div>
+              <p>${escapeHtml(profile.reason)}</p>
+              <div class="candidate-card__lists">
+                <div>
+                  <em>Güçlü taraf</em>
+                  ${strengths.length ? strengths.map((item) => `<i>${escapeHtml(item)}</i>`).join("") : "<i>Net üstün sinyal yok</i>"}
+                </div>
+                <div>
+                  <em>Dikkat</em>
+                  ${cautions.length ? cautions.map((item) => `<i>${escapeHtml(item)}</i>`).join("") : "<i>Belirgin uyarı yok</i>"}
+                </div>
+              </div>
+            </button>
+          `;
+        }).join("")}
+      </div>
+    </section>
+  `;
+};
+
 const renderProfileShortlist = (report, tableColumns) => {
   const profiles = buildParticipationProfiles(report, tableColumns);
   const readinessBoard = sortReadinessProfiles(profiles, state.readinessLens).slice(0, 4);
@@ -2001,6 +1908,7 @@ const renderParticipation = (report) => {
   renderRouteVisibilitySummary(report, tableColumns);
   renderParticipationInsights(report, tableColumns);
   renderGaziRadar(report, tableColumns);
+  renderCandidateComparison(report, tableColumns, buildParticipationProfiles(report, tableColumns));
   renderProfileShortlist(report, tableColumns);
 
   const filteredRows = getFilteredParticipationRows(report.rows, tableColumns);
@@ -2143,7 +2051,6 @@ const loadAnalysisYear = async (year) => {
   renderParticipationComparison();
   renderHistoricalPatterns();
   renderDataStatus(state.routeReport);
-  renderReadinessArtifact(state.readinessReport);
   renderRouteReport(state.routeReport);
   renderParticipation(state.participationReport);
 };
@@ -2179,6 +2086,13 @@ const bindEvents = () => {
   });
 
   document.querySelector("#gazi-radar").addEventListener("click", (event) => {
+    const row = event.target.closest("[data-horse-name]");
+    if (!row || !state.participationReport) return;
+    state.selectedParticipationHorse = row.dataset.horseName;
+    renderParticipation(state.participationReport);
+  });
+
+  document.querySelector("#candidate-comparison").addEventListener("click", (event) => {
     const row = event.target.closest("[data-horse-name]");
     if (!row || !state.participationReport) return;
     state.selectedParticipationHorse = row.dataset.horseName;
@@ -2233,7 +2147,7 @@ const renderFatalError = (error) => {
 
   const summary = document.querySelector("#data-status-summary");
   if (summary) {
-    summary.textContent = "Canlı veri yüklenirken hata oluştu. Sayfayı yenileyin; devam ederse GitHub Pages artifact ve JSON yolları kontrol edilmeli.";
+    summary.textContent = "Canlı veri yüklenirken hata oluştu. Sayfayı yenileyin; sorun devam ederse veri bağlantıları kontrol edilmeli.";
   }
 
   const main = document.querySelector("main");
@@ -2248,7 +2162,7 @@ const renderFatalError = (error) => {
 };
 
 const init = async () => {
-  const [knowledge, routeReport, backtestReport, modelBacktest, decisionBrief, participationReport, readinessReport, manifest, horizon] = await Promise.all([
+  const [knowledge, routeReport, backtestReport, modelBacktest, decisionBrief, participationReport, readinessReport, horizon] = await Promise.all([
     readJson("./data/gazi-knowledge-base.json"),
     readOptionalJson("./data/gazi-route-report.json"),
     readOptionalJson("./data/gazi-backtest-report.json"),
@@ -2256,7 +2170,6 @@ const init = async () => {
     readOptionalJson("./data/gazi-decision-brief.json"),
     readOptionalJson("./data/gazi-participation-report.json"),
     readOptionalJson("./data/gazi-readiness-report.json"),
-    readOptionalJson("./data/padok-data-manifest.json"),
     readOptionalJson("./data/gazi-data-horizon.json")
   ]);
 
@@ -2294,10 +2207,6 @@ const init = async () => {
     }
   }
 
-  if (manifest) {
-    state.dataManifest = manifest;
-  }
-
   if (horizon) {
     state.dataHorizon = horizon;
   }
@@ -2314,9 +2223,6 @@ const init = async () => {
   renderModelBacktest(state.modelBacktest);
   renderDecisionBrief(state.decisionBrief);
   if (state.participationReport) renderParticipation(state.participationReport);
-  renderReadinessArtifact(state.readinessReport);
-  renderDataManifest(state.dataManifest);
-  if (state.dataHorizon) renderDataHorizon(state.dataHorizon);
   renderAnalysisYearControl();
   if (state.dataHorizon) await loadParticipationComparison();
   bindEvents();

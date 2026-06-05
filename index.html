@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Padok | Gazi Kosusu Analiz</title>
-    <link rel="stylesheet" href="./styles.css?v=20260605-decision-brief-ui" />
+    <link rel="stylesheet" href="./styles.css?v=20260605-candidate-compare" />
   </head>
   <body>
     <header class="hero">
@@ -13,7 +13,7 @@
       <nav class="topbar" aria-label="Ana navigasyon">
         <a class="brand" href="./index.html">Padok</a>
         <div class="topbar__links">
-          <a href="#data-status">Veri durumu</a>
+          <a href="#data-status">Özet</a>
           <a href="#backtest">Backtest</a>
           <a href="#participation">Katılım</a>
           <a href="#races">Kosular</a>
@@ -42,10 +42,10 @@
         <dl class="metric-strip" id="target-metrics"></dl>
       </section>
 
-      <section class="data-status" id="data-status" aria-label="Veri durumu ve analiz aşaması">
+      <section class="data-status" id="data-status" aria-label="Analiz özeti">
         <div class="section-heading">
-          <p class="section-kicker">Veri durumu</p>
-          <h2>Sistem ne biliyor, neyi henüz bilmiyor?</h2>
+          <p class="section-kicker">Analiz özeti</p>
+          <h2>Gazi yolunda hangi sinyaller öne çıkıyor?</h2>
           <p class="muted" id="data-status-summary"></p>
         </div>
 
@@ -54,22 +54,9 @@
 
         <div class="status-layout">
           <div>
-            <h3>Koşu kapsamı</h3>
+            <h3>İzlenen koşular</h3>
             <div class="coverage-list" id="coverage-list"></div>
           </div>
-          <div id="readiness-artifact"></div>
-        </div>
-        <div id="data-manifest"></div>
-
-        <div class="data-horizon" aria-label="Veri ufku ve yıl kapsamı">
-          <div class="section-heading">
-            <p class="section-kicker">Veri ufku</p>
-            <h3>Kaç yıllık veriyle düşünüyoruz?</h3>
-            <p class="muted" id="data-horizon-summary"></p>
-          </div>
-          <div class="status-metrics" id="data-horizon-metrics"></div>
-          <div class="horizon-tiers" id="data-horizon-tiers"></div>
-          <p class="backtest-warning" id="data-horizon-warning"></p>
         </div>
       </section>
 
@@ -118,6 +105,7 @@
         <div class="season-comparison" id="participation-comparison" aria-label="Sezon karşılaştırması"></div>
         <div class="historical-patterns" id="historical-patterns" aria-label="Tarihsel rota patternleri"></div>
         <div class="gazi-radar" id="gazi-radar" aria-label="Gazi radar tahmin panosu"></div>
+        <div class="candidate-comparison" id="candidate-comparison" aria-label="Aday karşılaştırması"></div>
         <div class="participation-filters" id="participation-filters" aria-label="Katılım filtreleri"></div>
         <div class="active-filter-bar" id="active-filter-bar" aria-label="Aktif filtreler"></div>
         <div class="filtered-group-summary" id="filtered-group-summary" aria-label="Filtreli grup özeti"></div>
@@ -149,6 +137,6 @@
       <span>Bahis onerisi degildir; analiz ve ogrenme amaclidir.</span>
     </footer>
 
-    <script src="./app.js?v=20260605-decision-brief-ui" type="module"></script>
+    <script src="./app.js?v=20260605-candidate-compare" type="module"></script>
   </body>
 </html>
