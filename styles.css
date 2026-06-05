@@ -173,6 +173,29 @@ main {
   align-items: end;
 }
 
+.runtime-error {
+  display: grid;
+  gap: 8px;
+  width: min(1180px, 100%);
+  min-width: 0;
+  margin: 0 auto;
+  padding: 14px 16px;
+  border: 1px solid rgba(169, 61, 61, 0.24);
+  border-radius: 8px;
+  background: #fff4f2;
+  color: #7a2d2d;
+}
+
+.runtime-error strong {
+  font-size: 0.92rem;
+}
+
+.runtime-error p {
+  margin: 0;
+  font-size: 0.8rem;
+  line-height: 1.45;
+}
+
 .section-kicker {
   color: var(--green);
 }

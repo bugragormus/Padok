@@ -8,6 +8,8 @@ import {
   sortReadinessProfiles
 } from "./scripts/readiness-model.mjs";
 
+const APP_DATA_VERSION = "20260605-live-data";
+
 const state = {
   data: null,
   routeReport: null,
@@ -108,16 +110,19 @@ const percentage = (count, total) => total > 0 ? Math.round((count / total) * 10
 
 const formatPosition = (value) => Number.isFinite(value) ? `${value}.` : "-";
 
+const toVersionedPath = (path) => `${path}${path.includes("?") ? "&" : "?"}v=${APP_DATA_VERSION}`;
+
 const readJson = async (path) => {
-  const response = await fetch(path, { cache: "no-store" });
-  if (!response.ok) throw new Error(`Could not load ${path}`);
+  const response = await fetch(toVersionedPath(path), { cache: "no-store" });
+  if (!response.ok) throw new Error(`Could not load ${path} (${response.status})`);
   return response.json();
 };
 
 const readOptionalJson = async (path) => {
   try {
     return await readJson(path);
-  } catch {
+  } catch (error) {
+    console.warn(error);
     return null;
   }
 };
@@ -2075,50 +2080,68 @@ const bindEvents = () => {
   });
 };
 
+const renderFatalError = (error) => {
+  console.error(error);
+
+  const summary = document.querySelector("#data-status-summary");
+  if (summary) {
+    summary.textContent = "Canlı veri yüklenirken hata oluştu. Sayfayı yenileyin; devam ederse GitHub Pages artifact ve JSON yolları kontrol edilmeli.";
+  }
+
+  const main = document.querySelector("main");
+  if (!main) return;
+
+  main.insertAdjacentHTML("afterbegin", `
+    <section class="runtime-error" aria-label="Canlı veri yükleme hatası">
+      <strong>Veri yüklenemedi</strong>
+      <p>${escapeHtml(error?.message ?? "Bilinmeyen canlı veri hatası.")}</p>
+    </section>
+  `);
+};
+
 const init = async () => {
-  const [knowledgeResponse, routeResponse, backtestResponse, participationResponse, readinessResponse, manifestResponse, horizonResponse] = await Promise.all([
-    fetch("./data/gazi-knowledge-base.json", { cache: "no-store" }),
-    fetch("./data/gazi-route-report.json", { cache: "no-store" }).catch(() => null),
-    fetch("./data/gazi-backtest-report.json", { cache: "no-store" }).catch(() => null),
-    fetch("./data/gazi-participation-report.json", { cache: "no-store" }).catch(() => null),
-    fetch("./data/gazi-readiness-report.json", { cache: "no-store" }).catch(() => null),
-    fetch("./data/padok-data-manifest.json", { cache: "no-store" }).catch(() => null),
-    fetch("./data/gazi-data-horizon.json", { cache: "no-store" }).catch(() => null)
+  const [knowledge, routeReport, backtestReport, participationReport, readinessReport, manifest, horizon] = await Promise.all([
+    readJson("./data/gazi-knowledge-base.json"),
+    readOptionalJson("./data/gazi-route-report.json"),
+    readOptionalJson("./data/gazi-backtest-report.json"),
+    readOptionalJson("./data/gazi-participation-report.json"),
+    readOptionalJson("./data/gazi-readiness-report.json"),
+    readOptionalJson("./data/padok-data-manifest.json"),
+    readOptionalJson("./data/gazi-data-horizon.json")
   ]);
 
-  state.data = await knowledgeResponse.json();
+  state.data = knowledge;
 
-  if (routeResponse?.ok) {
-    state.routeReport = await routeResponse.json();
+  if (routeReport) {
+    state.routeReport = routeReport;
     state.analysisYear = state.routeReport.year;
     state.routeReportCache.set(state.routeReport.year, state.routeReport);
   }
 
-  if (backtestResponse?.ok) {
-    state.backtestReport = await backtestResponse.json();
+  if (backtestReport) {
+    state.backtestReport = backtestReport;
   }
 
-  if (participationResponse?.ok) {
-    state.participationReport = await participationResponse.json();
+  if (participationReport) {
+    state.participationReport = participationReport;
     if (Number.isFinite(state.participationReport.sourceYear)) {
       state.participationReportCache.set(state.participationReport.sourceYear, state.participationReport);
     }
   }
 
-  if (readinessResponse?.ok) {
-    const report = await readinessResponse.json();
-    state.readinessReport = { ...report, artifactPath: "./data/gazi-readiness-report.json" };
+  if (readinessReport) {
+    state.readinessReport = { ...readinessReport, artifactPath: "./data/gazi-readiness-report.json" };
     if (Number.isFinite(state.readinessReport.sourceYear)) {
       state.readinessReportCache.set(state.readinessReport.sourceYear, state.readinessReport);
     }
   }
 
-  if (manifestResponse?.ok) {
-    state.dataManifest = await manifestResponse.json();
+  if (manifest) {
+    state.dataManifest = manifest;
   }
 
-  if (horizonResponse?.ok) {
-    state.dataHorizon = await horizonResponse.json();
+  if (horizon) {
+    state.dataHorizon = horizon;
   }
 
   renderTarget(state.data.targetRace);
@@ -2139,4 +2162,4 @@ const init = async () => {
   bindEvents();
 };
 
-init();
+init().catch(renderFatalError);
