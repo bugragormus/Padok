@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-06-05T16:52:44.657Z",
+  "generatedAt": "2026-06-05T17:10:21.972Z",
   "sourceYear": 2025,
   "summary": {
     "candidateCount": 4,
@@ -7,6 +7,8 @@
     "upsideHorse": "BOON NAM",
     "riskWatchHorse": "TONBİ",
     "routeBlindCount": 0,
+    "calibratedLeaderHorse": "SPECIAL MAN",
+    "calibratedLeaderChanged": false,
     "headline": "SPECIAL MAN karşılaştırmada en dengeli profil; BOON NAM upside tarafında ayrıca izlenmeli."
   },
   "candidates": [
@@ -19,6 +21,14 @@
         "upside": 68,
         "risk": 0,
         "label": "Güçlü aday profili"
+      },
+      "calibratedReadiness": {
+        "rank": 1,
+        "rankDelta": 0,
+        "score": 96,
+        "scoreDelta": -4,
+        "originalRank": 1,
+        "originalScore": 100
       },
       "route": {
         "label": "Geniş rota görünürlüğü",
@@ -127,6 +137,14 @@
         "risk": 0,
         "label": "Güçlü aday profili"
       },
+      "calibratedReadiness": {
+        "rank": 2,
+        "rankDelta": 0,
+        "score": 95,
+        "scoreDelta": -4,
+        "originalRank": 2,
+        "originalScore": 99
+      },
       "route": {
         "label": "Geniş rota görünürlüğü",
         "score": 40,
@@ -234,6 +252,14 @@
         "risk": 0,
         "label": "Güçlü aday profili"
       },
+      "calibratedReadiness": {
+        "rank": 3,
+        "rankDelta": 0,
+        "score": 91,
+        "scoreDelta": -4,
+        "originalRank": 3,
+        "originalScore": 95
+      },
       "route": {
         "label": "Tek koşu sinyali",
         "score": 20,
@@ -339,6 +365,14 @@
         "risk": 14,
         "label": "Güçlü aday profili"
       },
+      "calibratedReadiness": {
+        "rank": 4,
+        "rankDelta": 0,
+        "score": 87,
+        "scoreDelta": -4,
+        "originalRank": 4,
+        "originalScore": 91
+      },
       "route": {
         "label": "Tek koşu sinyali",
         "score": 20,
@@ -437,8 +471,111 @@
       ]
     }
   ],
+  "calibratedRanking": [
+    {
+      "horseName": "SPECIAL MAN",
+      "gaziFinishPosition": 3,
+      "originalRank": 1,
+      "originalScore": 100,
+      "calibratedScore": 96,
+      "calibratedRank": 1,
+      "rankDelta": 0,
+      "scoreDelta": -4
+    },
+    {
+      "horseName": "BOON NAM",
+      "gaziFinishPosition": 14,
+      "originalRank": 2,
+      "originalScore": 99,
+      "calibratedScore": 95,
+      "calibratedRank": 2,
+      "rankDelta": 0,
+      "scoreDelta": -4
+    },
+    {
+      "horseName": "HANDSOME KING",
+      "gaziFinishPosition": 2,
+      "originalRank": 3,
+      "originalScore": 95,
+      "calibratedScore": 91,
+      "calibratedRank": 3,
+      "rankDelta": 0,
+      "scoreDelta": -4
+    },
+    {
+      "horseName": "TONBİ",
+      "gaziFinishPosition": 8,
+      "originalRank": 4,
+      "originalScore": 91,
+      "calibratedScore": 87,
+      "calibratedRank": 4,
+      "rankDelta": 0,
+      "scoreDelta": -4
+    },
+    {
+      "horseName": "DEJAVU",
+      "gaziFinishPosition": 17,
+      "originalRank": 5,
+      "originalScore": 85,
+      "calibratedScore": 82.1,
+      "calibratedRank": 5,
+      "rankDelta": 0,
+      "scoreDelta": -2.9
+    },
+    {
+      "horseName": "PETITE LOUVE",
+      "gaziFinishPosition": 18,
+      "originalRank": 6,
+      "originalScore": 84,
+      "calibratedScore": 80.6,
+      "calibratedRank": 6,
+      "rankDelta": 0,
+      "scoreDelta": -3.4
+    },
+    {
+      "horseName": "BRAIN BROOSTER",
+      "gaziFinishPosition": 5,
+      "originalRank": 7,
+      "originalScore": 79,
+      "calibratedScore": 76.1,
+      "calibratedRank": 7,
+      "rankDelta": 0,
+      "scoreDelta": -2.9
+    },
+    {
+      "horseName": "PUROSANGUE",
+      "gaziFinishPosition": 22,
+      "originalRank": 8,
+      "originalScore": 79,
+      "calibratedScore": 75.6,
+      "calibratedRank": 8,
+      "rankDelta": 0,
+      "scoreDelta": -3.4
+    },
+    {
+      "horseName": "CUTHA",
+      "gaziFinishPosition": 1,
+      "originalRank": 9,
+      "originalScore": 76,
+      "calibratedScore": 73.1,
+      "calibratedRank": 9,
+      "rankDelta": 0,
+      "scoreDelta": -2.9
+    },
+    {
+      "horseName": "BELGRATHAN",
+      "gaziFinishPosition": 4,
+      "originalRank": 10,
+      "originalScore": 73,
+      "calibratedScore": 70.1,
+      "calibratedRank": 10,
+      "rankDelta": 0,
+      "scoreDelta": -2.9
+    }
+  ],
   "methodology": {
     "note": "Aday karşılaştırması readiness sıralamaları, katılım matrisi, rota görünürlüğü, jokey, soy hattı ve sahip bilgisini birlikte okur.",
+    "calibration": "Kalibre skorlar signal calibration ağırlık önerilerinin mevcut skor parçalarına oransal uygulanmasıyla üretilir; gerçek model değişikliği değildir.",
     "disclaimer": "Karar destek çıktısıdır; kesin sonuç tahmini veya bahis önerisi değildir."
   }
 }

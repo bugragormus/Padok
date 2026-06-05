@@ -9,6 +9,14 @@ const getArgValue = (args, name) => {
 
 const readJson = async (path) => JSON.parse(await readFile(path, "utf8"));
 
+const readOptionalJson = async (path) => {
+  try {
+    return JSON.parse(await readFile(path, "utf8"));
+  } catch {
+    return null;
+  }
+};
+
 const normalizeName = (value) => String(value ?? "").trim().toLocaleUpperCase("tr-TR");
 
 const firstByLens = (readiness, lens) => readiness.rankings?.[lens]?.[0] ?? null;
@@ -58,6 +66,38 @@ const comparisonHorseNames = ({ readiness, decisionBrief }) => {
   decisionHorseNames(decisionBrief).forEach(add);
   ["score", "upside", "lowRisk", "uncertainty"].forEach((lens) => add(firstByLens(readiness, lens)?.horseName));
   return names.slice(0, 6);
+};
+
+const calibratedScore = (entry, signalCalibration) => {
+  const recommendations = signalCalibration?.weightRecommendations?.recommendations ?? [];
+  const parts = Object.fromEntries((entry?.readiness?.parts ?? []).map((part) => [part.label, part.value]));
+  const delta = recommendations.reduce((sum, recommendation) => {
+    if (!Number.isFinite(recommendation.currentMax) || recommendation.currentMax <= 0) return sum;
+    const partValue = parts[recommendation.label] ?? 0;
+    return sum + (recommendation.suggestedDelta * (partValue / recommendation.currentMax));
+  }, 0);
+
+  return Math.min(100, Math.max(0, Math.round(((entry?.readiness?.score ?? entry?.lensValue ?? 0) + delta) * 10) / 10));
+};
+
+const calibratedRankings = (readiness, signalCalibration) => {
+  if (!signalCalibration?.weightRecommendations?.recommendations?.length) return [];
+
+  return (readiness.rankings?.score ?? [])
+    .map((entry) => ({
+      horseName: entry.horseName,
+      gaziFinishPosition: entry.gaziFinishPosition,
+      originalRank: entry.rank,
+      originalScore: entry.readiness?.score ?? entry.lensValue,
+      calibratedScore: calibratedScore(entry, signalCalibration)
+    }))
+    .sort((a, b) => b.calibratedScore - a.calibratedScore || b.originalScore - a.originalScore || a.originalRank - b.originalRank)
+    .map((entry, index) => ({
+      ...entry,
+      calibratedRank: index + 1,
+      rankDelta: entry.originalRank - (index + 1),
+      scoreDelta: Math.round((entry.calibratedScore - entry.originalScore) * 10) / 10
+    }));
 };
 
 const strengthSignals = ({ entry, row }) => {
@@ -117,13 +157,14 @@ const comparisonVerdict = ({ entry, row, strengths, cautions }) => {
   return "Destekleyici sinyalleri olan izleme profili.";
 };
 
-const formatCandidate = ({ readiness, participation, horseName }) => {
+const formatCandidate = ({ readiness, participation, horseName, calibratedEntriesByName }) => {
   const { scoreEntry, lensRows } = rankEntryByHorse(readiness, horseName);
   const row = rowByHorse(participation, horseName);
   if (!scoreEntry) return null;
 
   const strengths = strengthSignals({ entry: scoreEntry, row });
   const cautions = cautionSignals({ entry: scoreEntry, row });
+  const calibratedEntry = calibratedEntriesByName.get(normalizeName(scoreEntry.horseName));
 
   return {
     horseName: scoreEntry.horseName,
@@ -135,6 +176,16 @@ const formatCandidate = ({ readiness, participation, horseName }) => {
       risk: scoreEntry.readiness?.risk ?? null,
       label: scoreEntry.readiness?.label ?? scoreEntry.badge ?? null
     },
+    calibratedReadiness: calibratedEntry
+      ? {
+        rank: calibratedEntry.calibratedRank,
+        rankDelta: calibratedEntry.rankDelta,
+        score: calibratedEntry.calibratedScore,
+        scoreDelta: calibratedEntry.scoreDelta,
+        originalRank: calibratedEntry.originalRank,
+        originalScore: calibratedEntry.originalScore
+      }
+      : null,
     route: {
       label: row?.routeVisibility?.label ?? null,
       score: row?.routeVisibility?.score ?? null,
@@ -166,8 +217,9 @@ const formatCandidate = ({ readiness, participation, horseName }) => {
   };
 };
 
-const buildSummary = (candidates) => {
+const buildSummary = (candidates, calibratedRanking = []) => {
   const strongest = [...candidates].sort((a, b) => (b.readiness.score ?? 0) - (a.readiness.score ?? 0))[0] ?? null;
+  const calibratedLeader = calibratedRanking[0] ?? null;
   const upside = [...candidates]
     .filter((candidate) => candidate.horseName !== strongest?.horseName)
     .sort((a, b) => (b.readiness.upside ?? 0) - (a.readiness.upside ?? 0))[0] ?? strongest;
@@ -180,24 +232,32 @@ const buildSummary = (candidates) => {
     upsideHorse: upside?.horseName ?? null,
     riskWatchHorse: riskWatch?.horseName ?? null,
     routeBlindCount,
+    calibratedLeaderHorse: calibratedLeader?.horseName ?? null,
+    calibratedLeaderChanged: Boolean(calibratedLeader?.horseName && strongest?.horseName && calibratedLeader.horseName !== strongest.horseName),
     headline: strongest
       ? `${strongest.horseName} karşılaştırmada en dengeli profil; ${upside?.horseName ?? strongest.horseName} upside tarafında ayrıca izlenmeli.`
       : "Karşılaştırma için aday profili bekleniyor."
   };
 };
 
-export const buildCandidateComparison = ({ readiness, participation, decisionBrief }) => {
+export const buildCandidateComparison = ({ readiness, participation, decisionBrief, signalCalibration = null }) => {
+  const calibratedRanking = calibratedRankings(readiness, signalCalibration);
+  const calibratedEntriesByName = new Map(calibratedRanking.map((entry) => [normalizeName(entry.horseName), entry]));
   const candidates = comparisonHorseNames({ readiness, decisionBrief })
-    .map((horseName) => formatCandidate({ readiness, participation, horseName }))
+    .map((horseName) => formatCandidate({ readiness, participation, horseName, calibratedEntriesByName }))
     .filter(Boolean);
 
   return {
     generatedAt: new Date().toISOString(),
     sourceYear: readiness.sourceYear ?? participation?.sourceYear ?? null,
-    summary: buildSummary(candidates),
+    summary: buildSummary(candidates, calibratedRanking),
     candidates,
+    calibratedRanking: calibratedRanking.slice(0, 10),
     methodology: {
       note: "Aday karşılaştırması readiness sıralamaları, katılım matrisi, rota görünürlüğü, jokey, soy hattı ve sahip bilgisini birlikte okur.",
+      calibration: signalCalibration
+        ? "Kalibre skorlar signal calibration ağırlık önerilerinin mevcut skor parçalarına oransal uygulanmasıyla üretilir; gerçek model değişikliği değildir."
+        : "Kalibre skor için signal calibration raporu bekleniyor.",
       disclaimer: "Karar destek çıktısıdır; kesin sonuç tahmini veya bahis önerisi değildir."
     }
   };
@@ -208,11 +268,13 @@ const main = async () => {
   const readinessPath = getArgValue(args, "--readiness") ?? "data/gazi-readiness-report.json";
   const participationPath = getArgValue(args, "--participation") ?? "data/gazi-participation-report.json";
   const decisionBriefPath = getArgValue(args, "--decision-brief") ?? "data/gazi-decision-brief.json";
+  const signalCalibrationPath = getArgValue(args, "--signal-calibration") ?? "data/gazi-signal-calibration.json";
   const outPath = getArgValue(args, "--out") ?? "data/gazi-candidate-comparison.json";
   const payload = buildCandidateComparison({
     readiness: await readJson(readinessPath),
     participation: await readJson(participationPath),
-    decisionBrief: await readJson(decisionBriefPath)
+    decisionBrief: await readJson(decisionBriefPath),
+    signalCalibration: await readOptionalJson(signalCalibrationPath)
   });
 
   await mkdir(dirname(outPath), { recursive: true });
@@ -221,7 +283,8 @@ const main = async () => {
     outPath,
     sourceYear: payload.sourceYear,
     candidateCount: payload.summary.candidateCount,
-    strongestHorse: payload.summary.strongestHorse
+    strongestHorse: payload.summary.strongestHorse,
+    calibratedLeaderHorse: payload.summary.calibratedLeaderHorse
   }, null, 2));
 };
 

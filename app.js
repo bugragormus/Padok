@@ -1524,6 +1524,7 @@ const renderCandidateComparison = (report, tableColumns, profiles) => {
 
   const artifact = getCandidateComparisonArtifact(report.sourceYear);
   const candidates = artifact?.candidates ?? getCandidateComparisonProfiles(profiles, report.sourceYear);
+  const calibratedRanking = artifact?.calibratedRanking?.slice(0, 4) ?? [];
   if (!candidates.length) {
     container.innerHTML = "";
     return;
@@ -1555,9 +1556,9 @@ const renderCandidateComparison = (report, tableColumns, profiles) => {
               <div class="candidate-card__metrics">
                 ${[
                   ["Readiness", readiness.score ?? "-"],
+                  ["Kalibre", candidate.calibratedReadiness?.score ?? "-"],
                   ["Upside", readiness.upside ?? "-"],
-                  ["Risk", readiness.risk ?? "-"],
-                  ["Rota", route.score ?? "-"]
+                  ["Risk", readiness.risk ?? "-"]
                 ].map(([label, value]) => `
                   <small>
                     ${escapeHtml(label)}
@@ -1565,6 +1566,9 @@ const renderCandidateComparison = (report, tableColumns, profiles) => {
                   </small>
                 `).join("")}
               </div>
+              ${candidate.calibratedReadiness ? `
+                <em class="candidate-card__calibration">Kalibre sıra ${escapeHtml(candidate.calibratedReadiness.rank)} · ${escapeHtml(candidate.calibratedReadiness.scoreDelta > 0 ? `+${candidate.calibratedReadiness.scoreDelta}` : candidate.calibratedReadiness.scoreDelta)} puan</em>
+              ` : ""}
               <p>${escapeHtml(reason)}</p>
               <div class="candidate-card__lists">
                 <div>
@@ -1580,6 +1584,17 @@ const renderCandidateComparison = (report, tableColumns, profiles) => {
           `;
         }).join("")}
       </div>
+      ${calibratedRanking.length ? `
+        <div class="candidate-comparison__calibrated" aria-label="Kalibre aday sıralaması">
+          ${calibratedRanking.map((entry) => `
+            <button type="button" data-horse-name="${escapeHtml(entry.horseName)}">
+              <small>${escapeHtml(entry.calibratedRank)}.</small>
+              <strong>${escapeHtml(entry.horseName)}</strong>
+              <em>${escapeHtml(entry.calibratedScore)} · ${escapeHtml(entry.rankDelta > 0 ? `+${entry.rankDelta}` : entry.rankDelta)} sıra</em>
+            </button>
+          `).join("")}
+        </div>
+      ` : ""}
     </section>
   `;
 };
