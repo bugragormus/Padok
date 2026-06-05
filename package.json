@@ -18,6 +18,7 @@
     "build:gazi-decision-brief": "node scripts/build-gazi-decision-brief.mjs",
     "build:gazi-candidate-comparison": "node scripts/build-gazi-candidate-comparison.mjs",
     "build:gazi-signal-calibration": "node scripts/build-gazi-signal-calibration.mjs",
+    "build:gazi-race-day-watchlist": "node scripts/build-gazi-race-day-watchlist.mjs",
     "build:gazi-data-horizon": "node scripts/build-gazi-data-horizon.mjs",
     "build:data-manifest": "node scripts/build-data-manifest.mjs",
     "build:api-index": "node scripts/build-padok-api-index.mjs",

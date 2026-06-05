@@ -185,6 +185,11 @@ const main = async () => {
   });
 
   log.steps.push({
+    step: "build-race-day-watchlist",
+    result: runNpmScript("build:gazi-race-day-watchlist", ["--out", "data/gazi-race-day-watchlist.json"])
+  });
+
+  log.steps.push({
     step: "build-api-index",
     result: runNpmScript("build:api-index", ["--out", "data/padok-api-index.json"])
   });

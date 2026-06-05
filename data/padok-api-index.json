@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-06-05T17:10:33.461Z",
+  "generatedAt": "2026-06-05T17:19:37.421Z",
   "name": "Padok Static API",
   "version": "0.1.0",
   "description": "GitHub Pages üzerinden yayınlanan Padok veri ve analiz artifact katalogu.",
@@ -12,7 +12,8 @@
     "modelTopPickPodiumRate": 67,
     "modelWinnerTopThreeRate": 50,
     "candidateComparisonCount": 4,
-    "signalCalibrationSeasonCount": 6
+    "signalCalibrationSeasonCount": 6,
+    "raceDayCoreCount": 4
   },
   "endpoints": [
     {
@@ -102,6 +103,21 @@
       ]
     },
     {
+      "id": "race-day-watchlist",
+      "path": "data/gazi-race-day-watchlist.json",
+      "description": "Kalibre adayları yarış günü takip gruplarına ayıran çekirdek aday, upside, risk bayrağı ve veri checklist raporu.",
+      "freshness": "Candidate comparison ve signal calibration sonrası yeniden üretilir.",
+      "schema": [
+        "summary",
+        "headline",
+        "coreContenders",
+        "upsideWatch",
+        "riskFlags",
+        "dataChecklist",
+        "methodology"
+      ]
+    },
+    {
       "id": "model-backtest",
       "path": "data/gazi-model-backtest.json",
       "description": "Readiness modelinin tamamlanmış sezonlardaki performansı ve sürpriz sonuç açıklamaları.",
@@ -141,6 +157,7 @@
       "decision-brief",
       "candidate-comparison",
       "signal-calibration",
+      "race-day-watchlist",
       "readiness-report",
       "model-backtest",
       "participation-report"

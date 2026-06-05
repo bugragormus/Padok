@@ -14,6 +14,7 @@ test("buildApiIndex exposes static API endpoints for app and MCP consumers", () 
         readiness: "data/gazi-readiness-report.json",
         decisionBrief: "data/gazi-decision-brief.json",
         candidateComparison: "data/gazi-candidate-comparison.json",
+        raceDayWatchlist: "data/gazi-race-day-watchlist.json",
         signalCalibration: "data/gazi-signal-calibration.json",
         modelBacktest: "data/gazi-model-backtest.json"
       }
@@ -34,6 +35,11 @@ test("buildApiIndex exposes static API endpoints for app and MCP consumers", () 
       summary: {
         completedSeasonCount: 6
       }
+    },
+    raceDayWatchlist: {
+      summary: {
+        coreCount: 4
+      }
     }
   });
 
@@ -41,10 +47,12 @@ test("buildApiIndex exposes static API endpoints for app and MCP consumers", () 
   assert.equal(payload.summary.modelTopPickPodiumRate, 67);
   assert.equal(payload.summary.candidateComparisonCount, 4);
   assert.equal(payload.summary.signalCalibrationSeasonCount, 6);
+  assert.equal(payload.summary.raceDayCoreCount, 4);
   assert.ok(payload.endpoints.some((endpoint) => endpoint.id === "readiness-report"));
   assert.ok(payload.endpoints.some((endpoint) => endpoint.id === "decision-brief"));
   assert.ok(payload.endpoints.some((endpoint) => endpoint.id === "candidate-comparison"));
   assert.ok(payload.endpoints.some((endpoint) => endpoint.id === "signal-calibration"));
+  assert.ok(payload.endpoints.some((endpoint) => endpoint.id === "race-day-watchlist"));
   assert.ok(payload.endpoints.some((endpoint) => endpoint.id === "model-backtest"));
-  assert.deepEqual(payload.mcpBridge.recommendedResources.slice(0, 4), ["manifest", "decision-brief", "candidate-comparison", "signal-calibration"]);
+  assert.deepEqual(payload.mcpBridge.recommendedResources.slice(0, 5), ["manifest", "decision-brief", "candidate-comparison", "signal-calibration", "race-day-watchlist"]);
 });

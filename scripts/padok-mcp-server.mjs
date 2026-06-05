@@ -107,6 +107,15 @@ export const buildToolList = () => [
     }
   },
   {
+    name: "padok.race_day_watchlist",
+    description: "Return race-day Gazi watchlist groups: core contenders, upside watch, risk flags, and data checklist.",
+    inputSchema: {
+      type: "object",
+      properties: {},
+      additionalProperties: false
+    }
+  },
+  {
     name: "padok.model_summary",
     description: "Return readiness model backtest summary, blind spots, and recent surprise reviews.",
     inputSchema: {
@@ -178,6 +187,10 @@ export const callPadokTool = async (apiIndex, name, args = {}) => {
       signals: (calibration.signals ?? []).slice(0, limit),
       missDiagnostics: (calibration.missDiagnostics ?? []).slice(0, limit)
     });
+  }
+
+  if (name === "padok.race_day_watchlist") {
+    return asContent(await readEndpointJson(apiIndex, "race-day-watchlist"));
   }
 
   if (name === "padok.model_summary") {

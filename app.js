@@ -18,6 +18,7 @@ const state = {
   signalCalibration: null,
   decisionBrief: null,
   candidateComparison: null,
+  raceDayWatchlist: null,
   participationReport: null,
   readinessReport: null,
   dataHorizon: null,
@@ -1599,6 +1600,52 @@ const renderCandidateComparison = (report, tableColumns, profiles) => {
   `;
 };
 
+const renderRaceDayWatchlist = (watchlist) => {
+  const container = document.querySelector("#race-day-watchlist");
+  if (!container) return;
+
+  if (!watchlist?.coreContenders?.length || watchlist.sourceYear !== state.participationReport?.sourceYear) {
+    container.innerHTML = "";
+    return;
+  }
+
+  const riskFlags = watchlist.riskFlags ?? [];
+  const checklist = watchlist.dataChecklist ?? [];
+
+  container.innerHTML = `
+    <section class="race-day-watchlist__panel" aria-label="Yarış günü takip listesi">
+      <div class="race-day-watchlist__header">
+        <div>
+          <p class="section-kicker">Yarış günü takip listesi</p>
+          <h3>${escapeHtml(watchlist.headline)}</h3>
+        </div>
+        <span>${escapeHtml(watchlist.sourceYear ?? "-")} · ${escapeHtml(watchlist.summary.coreCount)} çekirdek · ${escapeHtml(watchlist.summary.riskFlagCount)} uyarı</span>
+      </div>
+      <div class="race-day-watchlist__grid">
+        ${watchlist.coreContenders.slice(0, 4).map((item) => `
+          <button class="watch-card" type="button" data-horse-name="${escapeHtml(item.horseName)}">
+            <span>${escapeHtml(item.role)}</span>
+            <strong>${escapeHtml(item.horseName)}</strong>
+            <em>Kalibre ${escapeHtml(item.calibratedScore ?? "-")} · Sıra ${escapeHtml(item.calibratedRank ?? "-")}</em>
+            <p>${escapeHtml(item.reason)}</p>
+          </button>
+        `).join("")}
+      </div>
+      ${riskFlags.length || checklist.length ? `
+        <div class="race-day-watchlist__notes">
+          ${riskFlags.slice(0, 3).map((flag) => `
+            <button type="button" data-horse-name="${escapeHtml(flag.horseName)}">
+              <strong>${escapeHtml(flag.horseName)}</strong>
+              <span>${escapeHtml(flag.flags.join(" · "))}</span>
+            </button>
+          `).join("")}
+          ${checklist.slice(0, 2).map((note) => `<p>${escapeHtml(note)}</p>`).join("")}
+        </div>
+      ` : ""}
+    </section>
+  `;
+};
+
 const renderProfileShortlist = (report, tableColumns) => {
   const profiles = buildParticipationProfiles(report, tableColumns);
   const readinessBoard = sortReadinessProfiles(profiles, state.readinessLens).slice(0, 4);
@@ -2155,6 +2202,7 @@ const loadAnalysisYear = async (year) => {
   renderHistoricalPatterns();
   renderDataStatus(state.routeReport);
   renderRouteReport(state.routeReport);
+  renderRaceDayWatchlist(state.raceDayWatchlist);
   renderParticipation(state.participationReport);
 };
 
@@ -2196,6 +2244,13 @@ const bindEvents = () => {
   });
 
   document.querySelector("#candidate-comparison").addEventListener("click", (event) => {
+    const row = event.target.closest("[data-horse-name]");
+    if (!row || !state.participationReport) return;
+    state.selectedParticipationHorse = row.dataset.horseName;
+    renderParticipation(state.participationReport);
+  });
+
+  document.querySelector("#race-day-watchlist").addEventListener("click", (event) => {
     const row = event.target.closest("[data-horse-name]");
     if (!row || !state.participationReport) return;
     state.selectedParticipationHorse = row.dataset.horseName;
@@ -2265,7 +2320,7 @@ const renderFatalError = (error) => {
 };
 
 const init = async () => {
-  const [knowledge, routeReport, backtestReport, modelBacktest, signalCalibration, decisionBrief, candidateComparison, participationReport, readinessReport, horizon] = await Promise.all([
+  const [knowledge, routeReport, backtestReport, modelBacktest, signalCalibration, decisionBrief, candidateComparison, raceDayWatchlist, participationReport, readinessReport, horizon] = await Promise.all([
     readJson("./data/gazi-knowledge-base.json"),
     readOptionalJson("./data/gazi-route-report.json"),
     readOptionalJson("./data/gazi-backtest-report.json"),
@@ -2273,6 +2328,7 @@ const init = async () => {
     readOptionalJson("./data/gazi-signal-calibration.json"),
     readOptionalJson("./data/gazi-decision-brief.json"),
     readOptionalJson("./data/gazi-candidate-comparison.json"),
+    readOptionalJson("./data/gazi-race-day-watchlist.json"),
     readOptionalJson("./data/gazi-participation-report.json"),
     readOptionalJson("./data/gazi-readiness-report.json"),
     readOptionalJson("./data/gazi-data-horizon.json")
@@ -2306,6 +2362,10 @@ const init = async () => {
     state.candidateComparison = candidateComparison;
   }
 
+  if (raceDayWatchlist) {
+    state.raceDayWatchlist = raceDayWatchlist;
+  }
+
   if (participationReport) {
     state.participationReport = participationReport;
     if (Number.isFinite(state.participationReport.sourceYear)) {
@@ -2336,6 +2396,7 @@ const init = async () => {
   renderModelBacktest(state.modelBacktest);
   renderSignalCalibration(state.signalCalibration);
   renderDecisionBrief(state.decisionBrief);
+  renderRaceDayWatchlist(state.raceDayWatchlist);
   if (state.participationReport) renderParticipation(state.participationReport);
   renderAnalysisYearControl();
   if (state.dataHorizon) await loadParticipationComparison();

@@ -1,0 +1,196 @@
+{
+  "generatedAt": "2026-06-05T17:20:47.235Z",
+  "sourceYear": 2025,
+  "headline": "SPECIAL MAN çekirdek listenin başında; BOON NAM upside tarafında ayrıca izlenmeli.",
+  "summary": {
+    "coreCount": 4,
+    "upsideCount": 4,
+    "riskFlagCount": 2,
+    "calibratedLeaderHorse": "SPECIAL MAN",
+    "strongestHorse": "SPECIAL MAN"
+  },
+  "coreContenders": [
+    {
+      "horseName": "SPECIAL MAN",
+      "role": "Ana lider",
+      "reason": "Kalibre sıralamada en dengeli aday.",
+      "readinessScore": 100,
+      "calibratedScore": 96,
+      "calibratedRank": 1,
+      "routeLabel": "Geniş rota görünürlüğü",
+      "bestPrep": "Mehmet Akif Ersoy 1.",
+      "strengths": [
+        "Yüksek readiness",
+        "Upside potansiyeli",
+        "Veri güveni yüksek",
+        "Prep galibiyeti",
+        "Aktör geçmişi katkısı"
+      ],
+      "cautions": []
+    },
+    {
+      "horseName": "BOON NAM",
+      "role": "Çekirdek aday",
+      "reason": "Kalibre sıralamada üst grupta kalıyor.",
+      "readinessScore": 99,
+      "calibratedScore": 95,
+      "calibratedRank": 2,
+      "routeLabel": "Geniş rota görünürlüğü",
+      "bestPrep": "Kısrak 1.",
+      "strengths": [
+        "Yüksek readiness",
+        "Upside potansiyeli",
+        "Veri güveni yüksek",
+        "Prep galibiyeti",
+        "Geçmiş benzerlik"
+      ],
+      "cautions": []
+    },
+    {
+      "horseName": "HANDSOME KING",
+      "role": "Çekirdek aday",
+      "reason": "Kalibre sıralamada üst grupta kalıyor.",
+      "readinessScore": 95,
+      "calibratedScore": 91,
+      "calibratedRank": 3,
+      "routeLabel": "Tek koşu sinyali",
+      "bestPrep": "Sait Akson 1.",
+      "strengths": [
+        "Yüksek readiness",
+        "Veri güveni yüksek",
+        "Prep galibiyeti",
+        "Aktör geçmişi katkısı",
+        "Geçmiş benzerlik"
+      ],
+      "cautions": [
+        "Tek koşu sinyali"
+      ]
+    },
+    {
+      "horseName": "TONBİ",
+      "role": "Çekirdek aday",
+      "reason": "Kalibre sıralamada üst grupta kalıyor.",
+      "readinessScore": 91,
+      "calibratedScore": 87,
+      "calibratedRank": 4,
+      "routeLabel": "Tek koşu sinyali",
+      "bestPrep": "Erkek Tay Deneme 1.",
+      "strengths": [
+        "Yüksek readiness",
+        "Veri güveni yüksek",
+        "Prep galibiyeti",
+        "Aktör geçmişi katkısı",
+        "Geçmiş benzerlik"
+      ],
+      "cautions": [
+        "Tek koşu sinyali",
+        "Jokey sürekliliği kırılmış"
+      ]
+    }
+  ],
+  "upsideWatch": [
+    {
+      "horseName": "SPECIAL MAN",
+      "role": "Upside / dikkat",
+      "reason": "Upside puanı üst grupta.",
+      "readinessScore": 100,
+      "calibratedScore": 96,
+      "calibratedRank": 1,
+      "routeLabel": "Geniş rota görünürlüğü",
+      "bestPrep": "Mehmet Akif Ersoy 1.",
+      "strengths": [
+        "Yüksek readiness",
+        "Upside potansiyeli",
+        "Veri güveni yüksek",
+        "Prep galibiyeti",
+        "Aktör geçmişi katkısı"
+      ],
+      "cautions": []
+    },
+    {
+      "horseName": "BOON NAM",
+      "role": "Upside / dikkat",
+      "reason": "Upside puanı üst grupta.",
+      "readinessScore": 99,
+      "calibratedScore": 95,
+      "calibratedRank": 2,
+      "routeLabel": "Geniş rota görünürlüğü",
+      "bestPrep": "Kısrak 1.",
+      "strengths": [
+        "Yüksek readiness",
+        "Upside potansiyeli",
+        "Veri güveni yüksek",
+        "Prep galibiyeti",
+        "Geçmiş benzerlik"
+      ],
+      "cautions": []
+    },
+    {
+      "horseName": "HANDSOME KING",
+      "role": "Upside / dikkat",
+      "reason": "Potansiyel var ama uyarı sinyalleriyle birlikte okunmalı.",
+      "readinessScore": 95,
+      "calibratedScore": 91,
+      "calibratedRank": 3,
+      "routeLabel": "Tek koşu sinyali",
+      "bestPrep": "Sait Akson 1.",
+      "strengths": [
+        "Yüksek readiness",
+        "Veri güveni yüksek",
+        "Prep galibiyeti",
+        "Aktör geçmişi katkısı",
+        "Geçmiş benzerlik"
+      ],
+      "cautions": [
+        "Tek koşu sinyali"
+      ]
+    },
+    {
+      "horseName": "TONBİ",
+      "role": "Upside / dikkat",
+      "reason": "Potansiyel var ama uyarı sinyalleriyle birlikte okunmalı.",
+      "readinessScore": 91,
+      "calibratedScore": 87,
+      "calibratedRank": 4,
+      "routeLabel": "Tek koşu sinyali",
+      "bestPrep": "Erkek Tay Deneme 1.",
+      "strengths": [
+        "Yüksek readiness",
+        "Veri güveni yüksek",
+        "Prep galibiyeti",
+        "Aktör geçmişi katkısı",
+        "Geçmiş benzerlik"
+      ],
+      "cautions": [
+        "Tek koşu sinyali",
+        "Jokey sürekliliği kırılmış"
+      ]
+    }
+  ],
+  "riskFlags": [
+    {
+      "horseName": "HANDSOME KING",
+      "flags": [
+        "Tek koşu sinyali"
+      ],
+      "note": "Ana aday grubunda güçlü ve dengeli profil."
+    },
+    {
+      "horseName": "TONBİ",
+      "flags": [
+        "Tek koşu sinyali",
+        "Jokey sürekliliği kırılmış"
+      ],
+      "note": "Ana aday grubunda güçlü ve dengeli profil."
+    }
+  ],
+  "dataChecklist": [
+    "5 at izlenen prep rotasında görünmedi; rota dışı profiller ayrıca okunmalı.",
+    "2 sinyal için azaltma önerisi var; kalibre sıralama bu temkinli okumayı gösterir.",
+    "Ağırlık önerileri gerçek model değişikliği değil; what-if simülasyonu ile birlikte okunmalı."
+  ],
+  "methodology": {
+    "note": "Race day watchlist, aday karşılaştırması ve sinyal kalibrasyonunu son kullanıcı karar akışına uygun gruplara ayırır.",
+    "disclaimer": "Karar destek çıktısıdır; kesin sonuç tahmini veya bahis önerisi değildir."
+  }
+}
