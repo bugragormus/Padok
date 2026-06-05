@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-06-05T00:53:12.489Z",
+  "generatedAt": "2026-06-05T11:28:30.125Z",
   "methodology": {
     "target": "Readiness model backtest",
     "warning": "Bu metrikler karar destek doğrulamasıdır; bahis önerisi veya kesin sonuç tahmini değildir.",
@@ -16,7 +16,11 @@
     "winnerTopThreeRate": 50,
     "averageWinnerScoreRank": 8.3,
     "averageWinnerGap": 7.3,
-    "averageTopThreeOverlap": 1.3
+    "averageTopThreeOverlap": 1.3,
+    "surpriseCounts": {
+      "low": 3,
+      "high": 3
+    }
   },
   "blindSpots": [
     {
@@ -95,7 +99,14 @@
       "winnerScoreRank": 1,
       "winnerGap": 0,
       "winnerInTopThree": true,
-      "missReasons": []
+      "missReasons": [],
+      "surpriseReview": {
+        "level": "low",
+        "label": "Model açısından beklenen sonuç",
+        "score": 16,
+        "explanation": "Kazanan modelin ana skor üst grubundaydı; sonuç veri okumasıyla uyumlu.",
+        "reasons": []
+      }
     },
     {
       "year": 2021,
@@ -134,7 +145,17 @@
       "missReasons": [
         "Kazanan Gazi'ye jokey değişimiyle geldi; mevcut skor sürekliliği daha yüksek puanlıyor.",
         "Model lideri REAL RUNNER oldu; ana skor görünür prep performansını öne aldı."
-      ]
+      ],
+      "surpriseReview": {
+        "level": "low",
+        "label": "Model açısından beklenen sonuç",
+        "score": 38,
+        "explanation": "Kazanan modelin ana skor üst grubundaydı; sonuç veri okumasıyla uyumlu.",
+        "reasons": [
+          "Kazanan Gazi'ye jokey değişimiyle geldi; mevcut skor sürekliliği daha yüksek puanlıyor.",
+          "Model lideri REAL RUNNER oldu; ana skor görünür prep performansını öne aldı."
+        ]
+      }
     },
     {
       "year": 2022,
@@ -170,7 +191,14 @@
       "winnerScoreRank": 1,
       "winnerGap": 0,
       "winnerInTopThree": true,
-      "missReasons": []
+      "missReasons": [],
+      "surpriseReview": {
+        "level": "low",
+        "label": "Model açısından beklenen sonuç",
+        "score": 8,
+        "explanation": "Kazanan modelin ana skor üst grubundaydı; sonuç veri okumasıyla uyumlu.",
+        "reasons": []
+      }
     },
     {
       "year": 2023,
@@ -210,7 +238,18 @@
         "Kazanan takip edilen prep rotalarında hiç görünmedi.",
         "Kazananın upside metriği düşük kaldı; geç gelişen form sıçraması ayrıca modellenmeli.",
         "Model lideri GENERAL BRIELLA oldu; ana skor görünür prep performansını öne aldı."
-      ]
+      ],
+      "surpriseReview": {
+        "level": "high",
+        "label": "Model açısından yüksek sürpriz",
+        "score": 100,
+        "explanation": "Kazanan modelin ana skor üst grubunun dışında kaldı; sonuç sonrası kör nokta analizi gerekiyor.",
+        "reasons": [
+          "Kazanan takip edilen prep rotalarında hiç görünmedi.",
+          "Kazananın upside metriği düşük kaldı; geç gelişen form sıçraması ayrıca modellenmeli.",
+          "Model lideri GENERAL BRIELLA oldu; ana skor görünür prep performansını öne aldı."
+        ]
+      }
     },
     {
       "year": 2024,
@@ -251,7 +290,19 @@
         "Kazanan yalnızca tek takip koşusunda göründü; model geniş rota görünürlüğünü daha çok ödüllendirdi.",
         "Kazananın upside metriği düşük kaldı; geç gelişen form sıçraması ayrıca modellenmeli.",
         "Model lideri MADRAS oldu; ana skor görünür prep performansını öne aldı."
-      ]
+      ],
+      "surpriseReview": {
+        "level": "high",
+        "label": "Model açısından yüksek sürpriz",
+        "score": 100,
+        "explanation": "Kazanan modelin ana skor üst grubunun dışında kaldı; sonuç sonrası kör nokta analizi gerekiyor.",
+        "reasons": [
+          "Kazanan prep galibi değildi; en iyi takip derecesi Erkek Tay Deneme 2. sıra.",
+          "Kazanan yalnızca tek takip koşusunda göründü; model geniş rota görünürlüğünü daha çok ödüllendirdi.",
+          "Kazananın upside metriği düşük kaldı; geç gelişen form sıçraması ayrıca modellenmeli.",
+          "Model lideri MADRAS oldu; ana skor görünür prep performansını öne aldı."
+        ]
+      }
     },
     {
       "year": 2025,
@@ -293,7 +344,20 @@
         "Kazanan Gazi'ye jokey değişimiyle geldi; mevcut skor sürekliliği daha yüksek puanlıyor.",
         "Kazananın upside metriği düşük kaldı; geç gelişen form sıçraması ayrıca modellenmeli.",
         "Model lideri SPECIAL MAN oldu; ana skor görünür prep performansını öne aldı."
-      ]
+      ],
+      "surpriseReview": {
+        "level": "high",
+        "label": "Model açısından yüksek sürpriz",
+        "score": 74,
+        "explanation": "Kazanan modelin ana skor üst grubunun dışında kaldı; sonuç sonrası kör nokta analizi gerekiyor.",
+        "reasons": [
+          "Kazanan prep galibi değildi; en iyi takip derecesi Sait Akson 4. sıra.",
+          "Kazanan yalnızca tek takip koşusunda göründü; model geniş rota görünürlüğünü daha çok ödüllendirdi.",
+          "Kazanan Gazi'ye jokey değişimiyle geldi; mevcut skor sürekliliği daha yüksek puanlıyor.",
+          "Kazananın upside metriği düşük kaldı; geç gelişen form sıçraması ayrıca modellenmeli.",
+          "Model lideri SPECIAL MAN oldu; ana skor görünür prep performansını öne aldı."
+        ]
+      }
     }
   ]
 }

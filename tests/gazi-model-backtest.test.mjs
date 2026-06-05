@@ -54,5 +54,9 @@ test("buildModelBacktest summarizes readiness calibration across seasons", () =>
   assert.equal(payload.summary.winnerTopThreeRate, 50);
   assert.equal(payload.summary.averageWinnerScoreRank, 2.5);
   assert.equal(payload.summary.averageTopThreeOverlap, 2);
+  assert.equal(payload.summary.surpriseCounts.low, 1);
+  assert.equal(payload.summary.surpriseCounts.medium, 1);
+  assert.equal(payload.seasons[0].surpriseReview.level, "low");
+  assert.equal(payload.seasons[1].surpriseReview.label, "Model açısından orta sürpriz");
   assert.deepEqual(payload.blindSpots.map((entry) => entry.reason), ["Jokey değişimi", "Tek koşu sinyali"]);
 });

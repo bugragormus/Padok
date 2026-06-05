@@ -31,6 +31,35 @@ const countByReason = (seasons) => {
     .sort((a, b) => b.count - a.count || a.reason.localeCompare(b.reason, "tr"));
 };
 
+const buildSurpriseReview = ({ winnerScoreRank, winnerGap, topPickWon, topPickPodium, topThreeOverlap, missReasons }) => {
+  const score = Math.min(100, Math.max(0, Math.round(
+    ((winnerGap ?? 0) * 6)
+      + (topPickWon ? 0 : 18)
+      + (topPickPodium ? 0 : 12)
+      + (Math.max(0, 3 - (topThreeOverlap ?? 0)) * 8)
+  )));
+  const level = winnerScoreRank <= 3
+    ? "low"
+    : score >= 70
+      ? "high"
+      : "medium";
+  const label = {
+    low: "Model açısından beklenen sonuç",
+    medium: "Model açısından orta sürpriz",
+    high: "Model açısından yüksek sürpriz"
+  }[level];
+
+  return {
+    level,
+    label,
+    score,
+    explanation: level === "low"
+      ? "Kazanan modelin ana skor üst grubundaydı; sonuç veri okumasıyla uyumlu."
+      : "Kazanan modelin ana skor üst grubunun dışında kaldı; sonuç sonrası kör nokta analizi gerekiyor.",
+    reasons: missReasons ?? []
+  };
+};
+
 const buildSeasonBacktest = (report) => {
   const calibration = report.calibration;
   if (calibration?.state !== "completed") return null;
@@ -40,7 +69,7 @@ const buildSeasonBacktest = (report) => {
   const topThreeOverlap = topScoreEntries.filter((entry) => Number.isFinite(entry.gaziFinishPosition) && entry.gaziFinishPosition <= 3).length;
   const winnerInTopThree = Number.isFinite(calibration.winnerScoreRank) && calibration.winnerScoreRank <= 3;
 
-  return {
+  const season = {
     year: report.sourceYear,
     runnerCount: report.summary?.runnerCount ?? null,
     topPickName: topPick?.horseName ?? calibration.topScoreHorse ?? null,
@@ -62,6 +91,11 @@ const buildSeasonBacktest = (report) => {
     winnerInTopThree,
     missReasons: calibration.missReasons ?? []
   };
+
+  return {
+    ...season,
+    surpriseReview: buildSurpriseReview(season)
+  };
 };
 
 export const buildModelBacktest = (readinessReports) => {
@@ -72,6 +106,11 @@ export const buildModelBacktest = (readinessReports) => {
   const topPickPodiumCount = seasons.filter((season) => season.topPickPodium).length;
   const topPickWinCount = seasons.filter((season) => season.topPickWon).length;
   const winnerTopThreeCount = seasons.filter((season) => season.winnerInTopThree).length;
+  const surpriseCounts = seasons.reduce((counts, season) => {
+    const level = season.surpriseReview?.level ?? "unknown";
+    counts[level] = (counts[level] ?? 0) + 1;
+    return counts;
+  }, {});
 
   return {
     generatedAt: new Date().toISOString(),
@@ -91,7 +130,8 @@ export const buildModelBacktest = (readinessReports) => {
       winnerTopThreeRate: percentage(winnerTopThreeCount, seasons.length),
       averageWinnerScoreRank: average(seasons.map((season) => season.winnerScoreRank)),
       averageWinnerGap: average(seasons.map((season) => season.winnerGap)),
-      averageTopThreeOverlap: average(seasons.map((season) => season.topThreeOverlap))
+      averageTopThreeOverlap: average(seasons.map((season) => season.topThreeOverlap)),
+      surpriseCounts
     },
     blindSpots: countByReason(seasons),
     seasons

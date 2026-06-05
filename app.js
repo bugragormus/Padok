@@ -8,7 +8,7 @@ import {
   sortReadinessProfiles
 } from "./scripts/readiness-model.mjs";
 
-const APP_DATA_VERSION = "20260605-model-backtest";
+const APP_DATA_VERSION = "20260605-surprise-review";
 
 const state = {
   data: null,
@@ -675,7 +675,7 @@ const renderModelBacktest = (report) => {
         ${recentSeasons.map((season) => `
           <span>
             <strong>${escapeHtml(season.year)}</strong>
-            ${escapeHtml(season.topPickName ?? "-")} · Gazi ${escapeHtml(formatPosition(season.topPickFinish))} · Kazanan sıra ${escapeHtml(season.winnerScoreRank ?? "-")}
+            ${escapeHtml(season.topPickName ?? "-")} · Gazi ${escapeHtml(formatPosition(season.topPickFinish))} · Kazanan sıra ${escapeHtml(season.winnerScoreRank ?? "-")} · ${escapeHtml(season.surpriseReview?.label ?? "Sürpriz ölçümü yok")}
           </span>
         `).join("")}
       </div>
