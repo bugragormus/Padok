@@ -91,6 +91,22 @@ export const buildToolList = () => [
     }
   },
   {
+    name: "padok.signal_calibration",
+    description: "Return readiness signal calibration with feature separations, metric summaries, and miss diagnostics.",
+    inputSchema: {
+      type: "object",
+      properties: {
+        limit: {
+          type: "integer",
+          minimum: 1,
+          maximum: 20,
+          default: 8
+        }
+      },
+      additionalProperties: false
+    }
+  },
+  {
     name: "padok.model_summary",
     description: "Return readiness model backtest summary, blind spots, and recent surprise reviews.",
     inputSchema: {
@@ -150,6 +166,17 @@ export const callPadokTool = async (apiIndex, name, args = {}) => {
     return asContent({
       ...comparison,
       candidates: (comparison.candidates ?? []).slice(0, limit)
+    });
+  }
+
+  if (name === "padok.signal_calibration") {
+    const calibration = await readEndpointJson(apiIndex, "signal-calibration");
+    const limit = clampLimit(args.limit, 8);
+
+    return asContent({
+      ...calibration,
+      signals: (calibration.signals ?? []).slice(0, limit),
+      missDiagnostics: (calibration.missDiagnostics ?? []).slice(0, limit)
     });
   }
 

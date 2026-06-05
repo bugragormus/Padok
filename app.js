@@ -8,13 +8,14 @@ import {
   sortReadinessProfiles
 } from "./scripts/readiness-model.mjs";
 
-const APP_DATA_VERSION = "20260605-candidate-artifact";
+const APP_DATA_VERSION = "20260605-signal-calibration";
 
 const state = {
   data: null,
   routeReport: null,
   backtestReport: null,
   modelBacktest: null,
+  signalCalibration: null,
   decisionBrief: null,
   candidateComparison: null,
   participationReport: null,
@@ -530,6 +531,51 @@ const renderModelBacktest = (report) => {
       ${blindSpots.length ? `
         <div class="model-check__blindspots">
           ${blindSpots.map((entry) => `<span>${escapeHtml(entry.count)} sezon · ${escapeHtml(entry.reason)}</span>`).join("")}
+        </div>
+      ` : ""}
+    </div>
+  `;
+};
+
+const renderSignalCalibration = (report) => {
+  const container = document.querySelector("#signal-calibration");
+  if (!container) return;
+
+  if (!report?.summary?.completedSeasonCount) {
+    container.innerHTML = "";
+    return;
+  }
+
+  const signals = (report.signals ?? []).slice(0, 4);
+  const missDiagnostics = (report.missDiagnostics ?? []).slice(0, 3);
+
+  container.innerHTML = `
+    <div class="signal-calibration" aria-label="Model sinyal kalibrasyonu">
+      <div class="signal-calibration__header">
+        <div>
+          <p class="section-kicker">Model sinyalleri</p>
+          <h4>Hangi sinyaller geçmişte daha ayırıcı?</h4>
+        </div>
+        <span>${escapeHtml(report.summary.yearRange ?? "-")} · ${escapeHtml(report.summary.completedSeasonCount)} sezon · ${escapeHtml(report.summary.runnerCount)} koşucu</span>
+      </div>
+      <div class="signal-calibration__grid">
+        ${signals.map((signal) => `
+          <article class="signal-card">
+            <span>${escapeHtml(signal.label)}</span>
+            <strong>${escapeHtml(signal.separation ?? "-")}</strong>
+            <p>${escapeHtml(signal.interpretation)}</p>
+            <em>Podyum ort. ${escapeHtml(signal.podiumAverage ?? "-")} · Diğerleri ${escapeHtml(signal.nonPodiumAverage ?? "-")}</em>
+          </article>
+        `).join("")}
+      </div>
+      ${missDiagnostics.length ? `
+        <div class="signal-calibration__misses">
+          ${missDiagnostics.map((miss) => `
+            <span>
+              <strong>${escapeHtml(miss.year)} · ${escapeHtml(miss.winnerName)}</strong>
+              <em>Kazanan ana skorda ${escapeHtml(miss.winnerScoreRank)}. sıradaydı; en büyük fark ${escapeHtml(miss.largestGaps?.[0]?.label ?? "-")} sinyalinde.</em>
+            </span>
+          `).join("")}
         </div>
       ` : ""}
     </div>
@@ -2175,11 +2221,12 @@ const renderFatalError = (error) => {
 };
 
 const init = async () => {
-  const [knowledge, routeReport, backtestReport, modelBacktest, decisionBrief, candidateComparison, participationReport, readinessReport, horizon] = await Promise.all([
+  const [knowledge, routeReport, backtestReport, modelBacktest, signalCalibration, decisionBrief, candidateComparison, participationReport, readinessReport, horizon] = await Promise.all([
     readJson("./data/gazi-knowledge-base.json"),
     readOptionalJson("./data/gazi-route-report.json"),
     readOptionalJson("./data/gazi-backtest-report.json"),
     readOptionalJson("./data/gazi-model-backtest.json"),
+    readOptionalJson("./data/gazi-signal-calibration.json"),
     readOptionalJson("./data/gazi-decision-brief.json"),
     readOptionalJson("./data/gazi-candidate-comparison.json"),
     readOptionalJson("./data/gazi-participation-report.json"),
@@ -2201,6 +2248,10 @@ const init = async () => {
 
   if (modelBacktest) {
     state.modelBacktest = modelBacktest;
+  }
+
+  if (signalCalibration) {
+    state.signalCalibration = signalCalibration;
   }
 
   if (decisionBrief) {
@@ -2239,6 +2290,7 @@ const init = async () => {
   }
   if (state.backtestReport) renderBacktest(state.backtestReport);
   renderModelBacktest(state.modelBacktest);
+  renderSignalCalibration(state.signalCalibration);
   renderDecisionBrief(state.decisionBrief);
   if (state.participationReport) renderParticipation(state.participationReport);
   renderAnalysisYearControl();

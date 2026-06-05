@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-06-05T16:50:49.590Z",
+  "generatedAt": "2026-06-05T17:01:50.394Z",
   "name": "Padok Static API",
   "version": "0.1.0",
   "description": "GitHub Pages üzerinden yayınlanan Padok veri ve analiz artifact katalogu.",
@@ -11,7 +11,8 @@
     "modelBacktestSeasonCount": 6,
     "modelTopPickPodiumRate": 67,
     "modelWinnerTopThreeRate": 50,
-    "candidateComparisonCount": 4
+    "candidateComparisonCount": 4,
+    "signalCalibrationSeasonCount": 6
   },
   "endpoints": [
     {
@@ -86,6 +87,19 @@
       ]
     },
     {
+      "id": "signal-calibration",
+      "path": "data/gazi-signal-calibration.json",
+      "description": "Readiness parça puanlarının geçmiş Gazi podyum/kazanan ayrımı ve model kaçırma davranışı üzerindeki kalibrasyon özeti.",
+      "freshness": "Yıllık readiness raporları ve model backtest sonrası yeniden üretilir.",
+      "schema": [
+        "summary",
+        "signals",
+        "metrics",
+        "missDiagnostics",
+        "methodology"
+      ]
+    },
+    {
       "id": "model-backtest",
       "path": "data/gazi-model-backtest.json",
       "description": "Readiness modelinin tamamlanmış sezonlardaki performansı ve sürpriz sonuç açıklamaları.",
@@ -124,6 +138,7 @@
       "manifest",
       "decision-brief",
       "candidate-comparison",
+      "signal-calibration",
       "readiness-report",
       "model-backtest",
       "participation-report"

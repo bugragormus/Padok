@@ -1,0 +1,242 @@
+{
+  "generatedAt": "2026-06-05T17:01:45.620Z",
+  "summary": {
+    "completedSeasonCount": 6,
+    "runnerCount": 125,
+    "podiumRunnerCount": 18,
+    "yearRange": "2020-2025",
+    "strongestPositiveSignal": "prep formu"
+  },
+  "signals": [
+    {
+      "label": "prep formu",
+      "podiumAverage": 20.8,
+      "nonPodiumAverage": 14.6,
+      "winnerAverage": 21.3,
+      "separation": 6.2,
+      "podiumPresenceRate": 100,
+      "overallPresenceRate": 100,
+      "interpretation": "Podyum profillerinde daha güçlü görünüyor."
+    },
+    {
+      "label": "profil kanıtı",
+      "podiumAverage": 18.4,
+      "nonPodiumAverage": 15.1,
+      "winnerAverage": 13.3,
+      "separation": 3.3,
+      "podiumPresenceRate": 72,
+      "overallPresenceRate": 60,
+      "interpretation": "Podyum profillerinde daha güçlü görünüyor."
+    },
+    {
+      "label": "rota şekli",
+      "podiumAverage": 15.2,
+      "nonPodiumAverage": 13.2,
+      "winnerAverage": 14.7,
+      "separation": 2,
+      "podiumPresenceRate": 100,
+      "overallPresenceRate": 100,
+      "interpretation": "Podyum ayrımı sınırlı."
+    },
+    {
+      "label": "jokey sürekliliği",
+      "podiumAverage": 11.3,
+      "nonPodiumAverage": 10,
+      "winnerAverage": 11,
+      "separation": 1.3,
+      "podiumPresenceRate": 100,
+      "overallPresenceRate": 100,
+      "interpretation": "Podyum ayrımı sınırlı."
+    },
+    {
+      "label": "aktör geçmişi",
+      "podiumAverage": 1.5,
+      "nonPodiumAverage": 1,
+      "winnerAverage": 1.8,
+      "separation": 0.5,
+      "podiumPresenceRate": 50,
+      "overallPresenceRate": 45,
+      "interpretation": "Podyum ayrımı sınırlı."
+    },
+    {
+      "label": "veri derinliği",
+      "podiumAverage": 9.8,
+      "nonPodiumAverage": 9.4,
+      "winnerAverage": 9.7,
+      "separation": 0.4,
+      "podiumPresenceRate": 100,
+      "overallPresenceRate": 100,
+      "interpretation": "Podyum ayrımı sınırlı."
+    }
+  ],
+  "metrics": [
+    {
+      "metric": "score",
+      "podiumAverage": 77.1,
+      "nonPodiumAverage": 63.2,
+      "winnerAverage": 71.7,
+      "separation": 13.9,
+      "interpretation": "Daha yüksek değer modelin adayı öne alma eğilimini artırır."
+    },
+    {
+      "metric": "confidence",
+      "podiumAverage": 85.2,
+      "nonPodiumAverage": 78.5,
+      "winnerAverage": 80.2,
+      "separation": 6.7,
+      "interpretation": "Daha yüksek değer modelin adayı öne alma eğilimini artırır."
+    },
+    {
+      "metric": "upside",
+      "podiumAverage": 34.1,
+      "nonPodiumAverage": 24.4,
+      "winnerAverage": 35,
+      "separation": 9.7,
+      "interpretation": "Daha yüksek değer modelin adayı öne alma eğilimini artırır."
+    },
+    {
+      "metric": "risk",
+      "podiumAverage": 11.8,
+      "nonPodiumAverage": 22.2,
+      "winnerAverage": 18,
+      "separation": -10.4,
+      "interpretation": "Risk yüksekse model bu profili daha oynak okur."
+    }
+  ],
+  "missDiagnostics": [
+    {
+      "year": 2021,
+      "winnerName": "BURGAS",
+      "winnerScoreRank": 3,
+      "leaderName": "REAL RUNNER",
+      "leaderFinish": 2,
+      "largestGaps": [
+        {
+          "label": "jokey sürekliliği",
+          "winner": 7,
+          "leader": 13,
+          "gap": 6
+        },
+        {
+          "label": "aktör geçmişi",
+          "winner": 5,
+          "leader": 6,
+          "gap": 1
+        },
+        {
+          "label": "prep formu",
+          "winner": 28,
+          "leader": 28,
+          "gap": 0
+        }
+      ],
+      "missReasons": [
+        "Kazanan Gazi'ye jokey değişimiyle geldi; mevcut skor sürekliliği daha yüksek puanlıyor.",
+        "Model lideri REAL RUNNER oldu; ana skor görünür prep performansını öne aldı."
+      ]
+    },
+    {
+      "year": 2023,
+      "winnerName": "URFA ASLANI",
+      "winnerScoreRank": 19,
+      "leaderName": "GENERAL BRIELLA",
+      "leaderFinish": 13,
+      "largestGaps": [
+        {
+          "label": "profil kanıtı",
+          "winner": 0,
+          "leader": 30,
+          "gap": 30
+        },
+        {
+          "label": "prep formu",
+          "winner": 8,
+          "leader": 28,
+          "gap": 20
+        },
+        {
+          "label": "rota şekli",
+          "winner": 8,
+          "leader": 18,
+          "gap": 10
+        }
+      ],
+      "missReasons": [
+        "Kazanan takip edilen prep rotalarında hiç görünmedi.",
+        "Kazananın upside metriği düşük kaldı; geç gelişen form sıçraması ayrıca modellenmeli.",
+        "Model lideri GENERAL BRIELLA oldu; ana skor görünür prep performansını öne aldı."
+      ]
+    },
+    {
+      "year": 2024,
+      "winnerName": "DRAGON FLAME",
+      "winnerScoreRank": 17,
+      "leaderName": "MADRAS",
+      "leaderFinish": 15,
+      "largestGaps": [
+        {
+          "label": "profil kanıtı",
+          "winner": 0,
+          "leader": 30,
+          "gap": 30
+        },
+        {
+          "label": "prep formu",
+          "winner": 23,
+          "leader": 28,
+          "gap": 5
+        },
+        {
+          "label": "rota şekli",
+          "winner": 13,
+          "leader": 18,
+          "gap": 5
+        }
+      ],
+      "missReasons": [
+        "Kazanan prep galibi değildi; en iyi takip derecesi Erkek Tay Deneme 2. sıra.",
+        "Kazanan yalnızca tek takip koşusunda göründü; model geniş rota görünürlüğünü daha çok ödüllendirdi.",
+        "Kazananın upside metriği düşük kaldı; geç gelişen form sıçraması ayrıca modellenmeli.",
+        "Model lideri MADRAS oldu; ana skor görünür prep performansını öne aldı."
+      ]
+    },
+    {
+      "year": 2025,
+      "winnerName": "CUTHA",
+      "winnerScoreRank": 9,
+      "leaderName": "SPECIAL MAN",
+      "leaderFinish": 3,
+      "largestGaps": [
+        {
+          "label": "prep formu",
+          "winner": 13,
+          "leader": 28,
+          "gap": 15
+        },
+        {
+          "label": "jokey sürekliliği",
+          "winner": 7,
+          "leader": 13,
+          "gap": 6
+        },
+        {
+          "label": "rota şekli",
+          "winner": 13,
+          "leader": 18,
+          "gap": 5
+        }
+      ],
+      "missReasons": [
+        "Kazanan prep galibi değildi; en iyi takip derecesi Sait Akson 4. sıra.",
+        "Kazanan yalnızca tek takip koşusunda göründü; model geniş rota görünürlüğünü daha çok ödüllendirdi.",
+        "Kazanan Gazi'ye jokey değişimiyle geldi; mevcut skor sürekliliği daha yüksek puanlıyor.",
+        "Kazananın upside metriği düşük kaldı; geç gelişen form sıçraması ayrıca modellenmeli.",
+        "Model lideri SPECIAL MAN oldu; ana skor görünür prep performansını öne aldı."
+      ]
+    }
+  ],
+  "methodology": {
+    "note": "Signal calibration, tamamlanmış sezonlarda readiness parça puanlarının Gazi podyumu ve kazanan profilleriyle ilişkisini özetler.",
+    "limitation": "Örneklem küçük olduğu için bu rapor otomatik ağırlık değiştirmez; ağırlık kararları için yön gösterir."
+  }
+}

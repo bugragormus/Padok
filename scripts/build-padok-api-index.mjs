@@ -23,7 +23,7 @@ const endpoint = ({ id, path, description, freshness, schema }) => ({
   schema
 });
 
-export const buildApiIndex = ({ manifest, modelBacktest, candidateComparison }) => {
+export const buildApiIndex = ({ manifest, modelBacktest, candidateComparison, signalCalibration }) => {
   const defaultReports = manifest?.defaultReports ?? {};
 
   return {
@@ -39,7 +39,8 @@ export const buildApiIndex = ({ manifest, modelBacktest, candidateComparison }) 
       modelBacktestSeasonCount: modelBacktest?.summary?.seasonCount ?? null,
       modelTopPickPodiumRate: modelBacktest?.summary?.topPickPodiumRate ?? null,
       modelWinnerTopThreeRate: modelBacktest?.summary?.winnerTopThreeRate ?? null,
-      candidateComparisonCount: candidateComparison?.summary?.candidateCount ?? null
+      candidateComparisonCount: candidateComparison?.summary?.candidateCount ?? null,
+      signalCalibrationSeasonCount: signalCalibration?.summary?.completedSeasonCount ?? null
     },
     endpoints: [
       endpoint({
@@ -85,6 +86,13 @@ export const buildApiIndex = ({ manifest, modelBacktest, candidateComparison }) 
         schema: ["summary", "candidates", "methodology"]
       }),
       endpoint({
+        id: "signal-calibration",
+        path: defaultReports.signalCalibration ?? "data/gazi-signal-calibration.json",
+        description: "Readiness parça puanlarının geçmiş Gazi podyum/kazanan ayrımı ve model kaçırma davranışı üzerindeki kalibrasyon özeti.",
+        freshness: "Yıllık readiness raporları ve model backtest sonrası yeniden üretilir.",
+        schema: ["summary", "signals", "metrics", "missDiagnostics", "methodology"]
+      }),
+      endpoint({
         id: "model-backtest",
         path: defaultReports.modelBacktest ?? "data/gazi-model-backtest.json",
         description: "Readiness modelinin tamamlanmış sezonlardaki performansı ve sürpriz sonuç açıklamaları.",
@@ -111,6 +119,7 @@ export const buildApiIndex = ({ manifest, modelBacktest, candidateComparison }) 
         "manifest",
         "decision-brief",
         "candidate-comparison",
+        "signal-calibration",
         "readiness-report",
         "model-backtest",
         "participation-report"
@@ -125,11 +134,13 @@ const main = async () => {
   const manifestPath = getArgValue(args, "--manifest") ?? "data/padok-data-manifest.json";
   const modelBacktestPath = getArgValue(args, "--model-backtest") ?? "data/gazi-model-backtest.json";
   const candidateComparisonPath = getArgValue(args, "--candidate-comparison") ?? "data/gazi-candidate-comparison.json";
+  const signalCalibrationPath = getArgValue(args, "--signal-calibration") ?? "data/gazi-signal-calibration.json";
   const outPath = getArgValue(args, "--out") ?? "data/padok-api-index.json";
   const payload = buildApiIndex({
     manifest: await readOptionalJson(manifestPath),
     modelBacktest: await readOptionalJson(modelBacktestPath),
-    candidateComparison: await readOptionalJson(candidateComparisonPath)
+    candidateComparison: await readOptionalJson(candidateComparisonPath),
+    signalCalibration: await readOptionalJson(signalCalibrationPath)
   });
 
   await mkdir(dirname(outPath), { recursive: true });
@@ -138,7 +149,8 @@ const main = async () => {
     outPath,
     endpointCount: payload.endpoints.length,
     modelBacktestSeasonCount: payload.summary.modelBacktestSeasonCount,
-    candidateComparisonCount: payload.summary.candidateComparisonCount
+    candidateComparisonCount: payload.summary.candidateComparisonCount,
+    signalCalibrationSeasonCount: payload.summary.signalCalibrationSeasonCount
   }, null, 2));
 };
 

@@ -160,6 +160,11 @@ const main = async () => {
   });
 
   log.steps.push({
+    step: "build-signal-calibration",
+    result: runNpmScript("build:gazi-signal-calibration", [...readinessInputs, "--out", "data/gazi-signal-calibration.json"])
+  });
+
+  log.steps.push({
     step: "build-data-horizon",
     result: runNpmScript("build:gazi-data-horizon", ["--data-dir", "data", "--out", "data/gazi-data-horizon.json"])
   });
@@ -172,6 +177,11 @@ const main = async () => {
   log.steps.push({
     step: "build-decision-brief",
     result: runNpmScript("build:gazi-decision-brief", ["--out", "data/gazi-decision-brief.json"])
+  });
+
+  log.steps.push({
+    step: "build-candidate-comparison",
+    result: runNpmScript("build:gazi-candidate-comparison", ["--out", "data/gazi-candidate-comparison.json"])
   });
 
   log.steps.push({

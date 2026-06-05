@@ -1755,6 +1755,100 @@ h2 {
   font-weight: 800;
 }
 
+.signal-calibration {
+  display: grid;
+  gap: 14px;
+  margin-top: 18px;
+  padding: 16px;
+  border: 1px solid rgba(32, 55, 49, 0.16);
+  border-radius: 8px;
+  background: #fff;
+}
+
+.signal-calibration__header {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  align-items: end;
+}
+
+.signal-calibration__header h4 {
+  margin: 0;
+  color: var(--ink);
+  font-size: 1.1rem;
+}
+
+.signal-calibration__header span {
+  max-width: 360px;
+  color: var(--muted);
+  font-size: 0.76rem;
+  line-height: 1.45;
+  text-align: right;
+}
+
+.signal-calibration__grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.signal-card {
+  display: grid;
+  align-content: start;
+  gap: 8px;
+  min-height: 150px;
+  padding: 12px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: #fbfcfa;
+}
+
+.signal-card span,
+.signal-card p,
+.signal-card em {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.72rem;
+  font-style: normal;
+  line-height: 1.45;
+}
+
+.signal-card span {
+  font-weight: 850;
+}
+
+.signal-card strong {
+  color: var(--green-2);
+  font-size: 1.3rem;
+  line-height: 1;
+}
+
+.signal-calibration__misses {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 8px;
+}
+
+.signal-calibration__misses span {
+  display: grid;
+  gap: 5px;
+  padding: 10px;
+  border-radius: 8px;
+  background: rgba(197, 154, 61, 0.12);
+}
+
+.signal-calibration__misses strong {
+  color: var(--ink);
+  font-size: 0.82rem;
+}
+
+.signal-calibration__misses em {
+  color: var(--muted);
+  font-size: 0.72rem;
+  font-style: normal;
+  line-height: 1.45;
+}
+
 .readiness-card {
   display: grid;
   grid-template-columns: minmax(0, 1fr) auto;
@@ -2952,6 +3046,20 @@ footer {
 
   .model-check__blindspots {
     grid-template-columns: 1fr;
+  }
+
+  .signal-calibration__header {
+    display: grid;
+  }
+
+  .signal-calibration__header span {
+    max-width: none;
+    text-align: left;
+  }
+
+  .signal-calibration__grid,
+  .signal-calibration__misses {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
   .artifact-card__metrics {
