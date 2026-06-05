@@ -1424,6 +1424,41 @@ const renderParticipationFilters = (rows, tableColumns) => {
     .join("");
 };
 
+const getActiveParticipationFilters = () => {
+  const filters = [];
+
+  if (state.participationFilter !== "all") {
+    filters.push(["Liste", participationFilterLabels[state.participationFilter] ?? state.participationFilter]);
+  }
+
+  if (state.routeVisibilityFilter !== "all") {
+    filters.push(["Rota", state.routeVisibilityFilter]);
+  }
+
+  return filters;
+};
+
+const renderActiveFilterBar = (filteredRows, totalRows) => {
+  const container = document.querySelector("#active-filter-bar");
+  if (!container) return;
+
+  const filters = getActiveParticipationFilters();
+  if (!filters.length) {
+    container.innerHTML = "";
+    return;
+  }
+
+  container.innerHTML = `
+    <div class="active-filter-bar__content">
+      <span>${escapeHtml(filteredRows.length)}/${escapeHtml(totalRows)} at gösteriliyor</span>
+      ${filters.map(([label, value]) => `
+        <strong>${escapeHtml(label)}: ${escapeHtml(value)}</strong>
+      `).join("")}
+    </div>
+    <button class="active-filter-bar__clear" type="button" data-clear-participation-filters>Filtreleri temizle</button>
+  `;
+};
+
 const renderParticipationDetail = (report, tableColumns, rows = report.rows) => {
   const selectedRow = rows.find((row) => row.horseName === state.selectedParticipationHorse)
     ?? rows[0];
@@ -1604,6 +1639,7 @@ const renderParticipation = (report) => {
   renderProfileShortlist(report, tableColumns);
 
   const filteredRows = getFilteredParticipationRows(report.rows, tableColumns);
+  renderActiveFilterBar(filteredRows, report.rows.length);
   renderParticipationDetail(report, tableColumns, filteredRows);
 
   document.querySelector("#participation-table").innerHTML = filteredRows.length
@@ -1790,6 +1826,15 @@ const bindEvents = () => {
     const button = event.target.closest("[data-route-visibility-filter]");
     if (!button || !state.participationReport) return;
     state.routeVisibilityFilter = button.dataset.routeVisibilityFilter;
+    state.selectedParticipationHorse = null;
+    renderParticipation(state.participationReport);
+  });
+
+  document.querySelector("#active-filter-bar").addEventListener("click", (event) => {
+    const button = event.target.closest("[data-clear-participation-filters]");
+    if (!button || !state.participationReport) return;
+    state.participationFilter = "all";
+    state.routeVisibilityFilter = "all";
     state.selectedParticipationHorse = null;
     renderParticipation(state.participationReport);
   });

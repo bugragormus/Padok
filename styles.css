@@ -871,6 +871,65 @@ h2 {
   text-align: center;
 }
 
+.active-filter-bar {
+  min-height: 0;
+  margin: 0 0 18px;
+}
+
+.active-filter-bar:empty {
+  display: none;
+}
+
+.active-filter-bar,
+.active-filter-bar__content {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  align-items: center;
+}
+
+.active-filter-bar__content {
+  flex: 1 1 260px;
+}
+
+.active-filter-bar__content span,
+.active-filter-bar__content strong {
+  display: inline-flex;
+  align-items: center;
+  min-height: 32px;
+  padding: 6px 9px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: #fbfcfa;
+  color: var(--muted);
+  font-size: 0.74rem;
+  line-height: 1.2;
+}
+
+.active-filter-bar__content strong {
+  border-color: rgba(36, 95, 70, 0.24);
+  background: #eef6f1;
+  color: var(--green-2);
+}
+
+.active-filter-bar__clear {
+  min-height: 32px;
+  padding: 6px 10px;
+  border: 1px solid rgba(197, 154, 61, 0.36);
+  border-radius: 8px;
+  background: #fff8e8;
+  color: var(--ink);
+  cursor: pointer;
+  font: inherit;
+  font-size: 0.74rem;
+  font-weight: 850;
+}
+
+.active-filter-bar__clear:hover {
+  border-color: rgba(36, 95, 70, 0.38);
+  background: #eef6f1;
+}
+
 .participation-insights {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
