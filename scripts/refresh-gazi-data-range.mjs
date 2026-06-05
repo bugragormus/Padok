@@ -170,6 +170,11 @@ const main = async () => {
   });
 
   log.steps.push({
+    step: "build-decision-brief",
+    result: runNpmScript("build:gazi-decision-brief", ["--out", "data/gazi-decision-brief.json"])
+  });
+
+  log.steps.push({
     step: "build-api-index",
     result: runNpmScript("build:api-index", ["--out", "data/padok-api-index.json"])
   });

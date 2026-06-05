@@ -69,6 +69,7 @@ export const buildDataManifest = async (dataDir = "data") => {
       route: "data/gazi-route-report.json",
       participation: "data/gazi-participation-report.json",
       readiness: "data/gazi-readiness-report.json",
+      decisionBrief: "data/gazi-decision-brief.json",
       backtest: "data/gazi-backtest-report.json",
       modelBacktest: "data/gazi-model-backtest.json",
       horizon: "data/gazi-data-horizon.json",

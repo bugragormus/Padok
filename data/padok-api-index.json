@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-06-05T12:27:11.167Z",
+  "generatedAt": "2026-06-05T13:43:35.228Z",
   "name": "Padok Static API",
   "version": "0.1.0",
   "description": "GitHub Pages üzerinden yayınlanan Padok veri ve analiz artifact katalogu.",
@@ -60,6 +60,20 @@
       ]
     },
     {
+      "id": "decision-brief",
+      "path": "data/gazi-decision-brief.json",
+      "description": "Güncel Gazi karar destek özeti, ayrıştırılmış aday rolleri, model performansı ve aksiyon notları.",
+      "freshness": "Readiness ve model backtest sonrası yeniden üretilir.",
+      "schema": [
+        "state",
+        "headline",
+        "picks",
+        "modelPerformance",
+        "calibration",
+        "decisionNotes"
+      ]
+    },
+    {
       "id": "model-backtest",
       "path": "data/gazi-model-backtest.json",
       "description": "Readiness modelinin tamamlanmış sezonlardaki performansı ve sürpriz sonuç açıklamaları.",
@@ -96,6 +110,7 @@
   "mcpBridge": {
     "recommendedResources": [
       "manifest",
+      "decision-brief",
       "readiness-report",
       "model-backtest",
       "participation-report"

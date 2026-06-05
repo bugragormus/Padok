@@ -15,6 +15,7 @@
     "build:gazi-participation": "node scripts/build-gazi-participation.mjs",
     "build:gazi-readiness": "node scripts/build-gazi-readiness-report.mjs",
     "build:gazi-model-backtest": "node scripts/build-gazi-model-backtest.mjs",
+    "build:gazi-decision-brief": "node scripts/build-gazi-decision-brief.mjs",
     "build:gazi-data-horizon": "node scripts/build-gazi-data-horizon.mjs",
     "build:data-manifest": "node scripts/build-data-manifest.mjs",
     "build:api-index": "node scripts/build-padok-api-index.mjs",

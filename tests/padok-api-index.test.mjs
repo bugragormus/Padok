@@ -12,6 +12,7 @@ test("buildApiIndex exposes static API endpoints for app and MCP consumers", () 
       },
       defaultReports: {
         readiness: "data/gazi-readiness-report.json",
+        decisionBrief: "data/gazi-decision-brief.json",
         modelBacktest: "data/gazi-model-backtest.json"
       }
     },
@@ -27,6 +28,7 @@ test("buildApiIndex exposes static API endpoints for app and MCP consumers", () 
   assert.equal(payload.summary.yearRange, "2020-2025");
   assert.equal(payload.summary.modelTopPickPodiumRate, 67);
   assert.ok(payload.endpoints.some((endpoint) => endpoint.id === "readiness-report"));
+  assert.ok(payload.endpoints.some((endpoint) => endpoint.id === "decision-brief"));
   assert.ok(payload.endpoints.some((endpoint) => endpoint.id === "model-backtest"));
-  assert.deepEqual(payload.mcpBridge.recommendedResources.slice(0, 2), ["manifest", "readiness-report"]);
+  assert.deepEqual(payload.mcpBridge.recommendedResources.slice(0, 2), ["manifest", "decision-brief"]);
 });

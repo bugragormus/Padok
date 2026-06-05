@@ -14,6 +14,7 @@ test("Padok MCP server exposes static API artifacts as resources", async () => {
   const resources = buildResourceList(apiIndex);
 
   assert.ok(resources.some((resource) => resource.uri === "padok://endpoint/readiness-report"));
+  assert.ok(resources.some((resource) => resource.uri === "padok://endpoint/decision-brief"));
   assert.ok(resources.some((resource) => resource.uri === "padok://endpoint/model-backtest"));
 
   const readiness = await readEndpointResource(apiIndex, "padok://endpoint/readiness-report");
@@ -62,6 +63,7 @@ test("Padok MCP tools return model summary and top candidates", async () => {
   const tools = buildToolList();
 
   assert.ok(tools.some((tool) => tool.name === "padok.model_summary"));
+  assert.ok(tools.some((tool) => tool.name === "padok.decision_brief"));
   assert.ok(tools.some((tool) => tool.name === "padok.top_candidates"));
   assert.ok(tools.some((tool) => tool.name === "padok.horse_profile"));
 
@@ -70,6 +72,11 @@ test("Padok MCP tools return model summary and top candidates", async () => {
 
   assert.equal(summary.summary.seasonCount, 6);
   assert.ok(summary.blindSpots.length > 0);
+
+  const briefResult = await callPadokTool(apiIndex, "padok.decision_brief");
+  const brief = JSON.parse(briefResult.content[0].text);
+
+  assert.ok(brief.picks.scoreLeader.horseName);
 
   const candidatesResult = await callPadokTool(apiIndex, "padok.top_candidates", {
     lens: "score",

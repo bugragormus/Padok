@@ -36,6 +36,7 @@ test("buildDataManifest indexes yearly route participation and readiness artifac
   assert.deepEqual(manifest.years, [2024]);
   assert.equal(manifest.reports.readiness[0].summary.warningCount, 0);
   assert.equal(manifest.defaultReports.readiness, "data/gazi-readiness-report.json");
+  assert.equal(manifest.defaultReports.decisionBrief, "data/gazi-decision-brief.json");
   assert.equal(manifest.defaultReports.modelBacktest, "data/gazi-model-backtest.json");
   assert.equal(manifest.defaultReports.apiIndex, "data/padok-api-index.json");
 });

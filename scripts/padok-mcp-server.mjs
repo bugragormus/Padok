@@ -66,6 +66,15 @@ const clampLimit = (value, fallback = 5) => {
 
 export const buildToolList = () => [
   {
+    name: "padok.decision_brief",
+    description: "Return the current Gazi decision brief with picks, model performance, calibration, and next actions.",
+    inputSchema: {
+      type: "object",
+      properties: {},
+      additionalProperties: false
+    }
+  },
+  {
     name: "padok.model_summary",
     description: "Return readiness model backtest summary, blind spots, and recent surprise reviews.",
     inputSchema: {
@@ -114,6 +123,10 @@ export const buildToolList = () => [
 const normalizeName = (value) => String(value ?? "").trim().toLocaleUpperCase("tr-TR");
 
 export const callPadokTool = async (apiIndex, name, args = {}) => {
+  if (name === "padok.decision_brief") {
+    return asContent(await readEndpointJson(apiIndex, "decision-brief"));
+  }
+
   if (name === "padok.model_summary") {
     const modelBacktest = await readEndpointJson(apiIndex, "model-backtest");
 

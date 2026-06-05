@@ -70,6 +70,13 @@ export const buildApiIndex = ({ manifest, modelBacktest }) => {
         schema: ["summary", "quality", "calibration", "lensSummaries", "rankings"]
       }),
       endpoint({
+        id: "decision-brief",
+        path: defaultReports.decisionBrief ?? "data/gazi-decision-brief.json",
+        description: "Güncel Gazi karar destek özeti, ayrıştırılmış aday rolleri, model performansı ve aksiyon notları.",
+        freshness: "Readiness ve model backtest sonrası yeniden üretilir.",
+        schema: ["state", "headline", "picks", "modelPerformance", "calibration", "decisionNotes"]
+      }),
+      endpoint({
         id: "model-backtest",
         path: defaultReports.modelBacktest ?? "data/gazi-model-backtest.json",
         description: "Readiness modelinin tamamlanmış sezonlardaki performansı ve sürpriz sonuç açıklamaları.",
@@ -94,6 +101,7 @@ export const buildApiIndex = ({ manifest, modelBacktest }) => {
     mcpBridge: {
       recommendedResources: [
         "manifest",
+        "decision-brief",
         "readiness-report",
         "model-backtest",
         "participation-report"
