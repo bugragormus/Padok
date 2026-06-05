@@ -7,3 +7,4 @@ data/raw/tjk/
 *.db
 *.sqlite
 *.sqlite3
+.DS_Store
