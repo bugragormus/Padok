@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-06-03T22:26:03.450Z",
+  "generatedAt": "2026-06-05T00:04:00.746Z",
   "sourceYear": 2020,
   "sourceGeneratedAt": "2026-06-03T13:04:07.777Z",
   "methodology": {
@@ -99,6 +99,58 @@
       "bestPrepRaceKey": "erkek-tay-deneme",
       "bestPrepRaceName": "Erkek Tay Deneme",
       "bestPrepFinishPosition": 1,
+      "prepRaceStates": [
+        {
+          "raceKey": "disi-tay-deneme",
+          "raceName": "Dişi Tay Deneme",
+          "date": "2020-07-12",
+          "status": "not-run",
+          "finishPosition": null,
+          "jockeyName": null,
+          "handicapPoint": null,
+          "startingPrice": null
+        },
+        {
+          "raceKey": "erkek-tay-deneme",
+          "raceName": "Erkek Tay Deneme",
+          "date": "2020-07-12",
+          "status": "ran",
+          "finishPosition": 1,
+          "jockeyName": "AHMET ÇELİK",
+          "handicapPoint": 110,
+          "startingPrice": "1,95"
+        },
+        {
+          "raceKey": "mehmet-akif-ersoy",
+          "raceName": "Mehmet Akif Ersoy",
+          "date": "2020-08-01",
+          "status": "not-run",
+          "finishPosition": null,
+          "jockeyName": null,
+          "handicapPoint": null,
+          "startingPrice": null
+        },
+        {
+          "raceKey": "kisrak",
+          "raceName": "Kısrak",
+          "date": "2020-08-02",
+          "status": "not-run",
+          "finishPosition": null,
+          "jockeyName": null,
+          "handicapPoint": null,
+          "startingPrice": null
+        },
+        {
+          "raceKey": "sait-akson",
+          "raceName": "Sait Akson",
+          "date": "2020-08-02",
+          "status": "ran",
+          "finishPosition": 1,
+          "jockeyName": "AHMET ÇELİK",
+          "handicapPoint": 112,
+          "startingPrice": "1,55"
+        }
+      ],
       "cells": {
         "disi-tay-deneme": {
           "status": "not-run"
@@ -171,6 +223,58 @@
       "bestPrepRaceKey": "mehmet-akif-ersoy",
       "bestPrepRaceName": "Mehmet Akif Ersoy",
       "bestPrepFinishPosition": 2,
+      "prepRaceStates": [
+        {
+          "raceKey": "disi-tay-deneme",
+          "raceName": "Dişi Tay Deneme",
+          "date": "2020-07-12",
+          "status": "not-run",
+          "finishPosition": null,
+          "jockeyName": null,
+          "handicapPoint": null,
+          "startingPrice": null
+        },
+        {
+          "raceKey": "erkek-tay-deneme",
+          "raceName": "Erkek Tay Deneme",
+          "date": "2020-07-12",
+          "status": "not-run",
+          "finishPosition": null,
+          "jockeyName": null,
+          "handicapPoint": null,
+          "startingPrice": null
+        },
+        {
+          "raceKey": "mehmet-akif-ersoy",
+          "raceName": "Mehmet Akif Ersoy",
+          "date": "2020-08-01",
+          "status": "ran",
+          "finishPosition": 2,
+          "jockeyName": "GÖKHAN KOCAKAYA",
+          "handicapPoint": 86,
+          "startingPrice": "5,85"
+        },
+        {
+          "raceKey": "kisrak",
+          "raceName": "Kısrak",
+          "date": "2020-08-02",
+          "status": "not-run",
+          "finishPosition": null,
+          "jockeyName": null,
+          "handicapPoint": null,
+          "startingPrice": null
+        },
+        {
+          "raceKey": "sait-akson",
+          "raceName": "Sait Akson",
+          "date": "2020-08-02",
+          "status": "not-run",
+          "finishPosition": null,
+          "jockeyName": null,
+          "handicapPoint": null,
+          "startingPrice": null
+        }
+      ],
       "cells": {
         "disi-tay-deneme": {
           "status": "not-run"
@@ -231,6 +335,58 @@
       "bestPrepRaceKey": "erkek-tay-deneme",
       "bestPrepRaceName": "Erkek Tay Deneme",
       "bestPrepFinishPosition": 5,
+      "prepRaceStates": [
+        {
+          "raceKey": "disi-tay-deneme",
+          "raceName": "Dişi Tay Deneme",
+          "date": "2020-07-12",
+          "status": "not-run",
+          "finishPosition": null,
+          "jockeyName": null,
+          "handicapPoint": null,
+          "startingPrice": null
+        },
+        {
+          "raceKey": "erkek-tay-deneme",
+          "raceName": "Erkek Tay Deneme",
+          "date": "2020-07-12",
+          "status": "ran",
+          "finishPosition": 5,
+          "jockeyName": "HIŞMAN ÇİZİK",
+          "handicapPoint": 101,
+          "startingPrice": "3,25"
+        },
+        {
+          "raceKey": "mehmet-akif-ersoy",
+          "raceName": "Mehmet Akif Ersoy",
+          "date": "2020-08-01",
+          "status": "ran",
+          "finishPosition": 6,
+          "jockeyName": "HIŞMAN ÇİZİK",
+          "handicapPoint": 101,
+          "startingPrice": "1,65"
+        },
+        {
+          "raceKey": "kisrak",
+          "raceName": "Kısrak",
+          "date": "2020-08-02",
+          "status": "not-run",
+          "finishPosition": null,
+          "jockeyName": null,
+          "handicapPoint": null,
+          "startingPrice": null
+        },
+        {
+          "raceKey": "sait-akson",
+          "raceName": "Sait Akson",
+          "date": "2020-08-02",
+          "status": "not-run",
+          "finishPosition": null,
+          "jockeyName": null,
+          "handicapPoint": null,
+          "startingPrice": null
+        }
+      ],
       "cells": {
         "disi-tay-deneme": {
           "status": "not-run"
@@ -303,6 +459,58 @@
       "bestPrepRaceKey": "mehmet-akif-ersoy",
       "bestPrepRaceName": "Mehmet Akif Ersoy",
       "bestPrepFinishPosition": 5,
+      "prepRaceStates": [
+        {
+          "raceKey": "disi-tay-deneme",
+          "raceName": "Dişi Tay Deneme",
+          "date": "2020-07-12",
+          "status": "not-run",
+          "finishPosition": null,
+          "jockeyName": null,
+          "handicapPoint": null,
+          "startingPrice": null
+        },
+        {
+          "raceKey": "erkek-tay-deneme",
+          "raceName": "Erkek Tay Deneme",
+          "date": "2020-07-12",
+          "status": "not-run",
+          "finishPosition": null,
+          "jockeyName": null,
+          "handicapPoint": null,
+          "startingPrice": null
+        },
+        {
+          "raceKey": "mehmet-akif-ersoy",
+          "raceName": "Mehmet Akif Ersoy",
+          "date": "2020-08-01",
+          "status": "ran",
+          "finishPosition": 5,
+          "jockeyName": "AYHAN KURŞUN",
+          "handicapPoint": 79,
+          "startingPrice": "13,20"
+        },
+        {
+          "raceKey": "kisrak",
+          "raceName": "Kısrak",
+          "date": "2020-08-02",
+          "status": "not-run",
+          "finishPosition": null,
+          "jockeyName": null,
+          "handicapPoint": null,
+          "startingPrice": null
+        },
+        {
+          "raceKey": "sait-akson",
+          "raceName": "Sait Akson",
+          "date": "2020-08-02",
+          "status": "not-run",
+          "finishPosition": null,
+          "jockeyName": null,
+          "handicapPoint": null,
+          "startingPrice": null
+        }
+      ],
       "cells": {
         "disi-tay-deneme": {
           "status": "not-run"
@@ -363,6 +571,58 @@
       "bestPrepRaceKey": "erkek-tay-deneme",
       "bestPrepRaceName": "Erkek Tay Deneme",
       "bestPrepFinishPosition": 2,
+      "prepRaceStates": [
+        {
+          "raceKey": "disi-tay-deneme",
+          "raceName": "Dişi Tay Deneme",
+          "date": "2020-07-12",
+          "status": "not-run",
+          "finishPosition": null,
+          "jockeyName": null,
+          "handicapPoint": null,
+          "startingPrice": null
+        },
+        {
+          "raceKey": "erkek-tay-deneme",
+          "raceName": "Erkek Tay Deneme",
+          "date": "2020-07-12",
+          "status": "ran",
+          "finishPosition": 2,
+          "jockeyName": "HALİS KARATAŞ",
+          "handicapPoint": 76,
+          "startingPrice": "3,45"
+        },
+        {
+          "raceKey": "mehmet-akif-ersoy",
+          "raceName": "Mehmet Akif Ersoy",
+          "date": "2020-08-01",
+          "status": "not-run",
+          "finishPosition": null,
+          "jockeyName": null,
+          "handicapPoint": null,
+          "startingPrice": null
+        },
+        {
+          "raceKey": "kisrak",
+          "raceName": "Kısrak",
+          "date": "2020-08-02",
+          "status": "not-run",
+          "finishPosition": null,
+          "jockeyName": null,
+          "handicapPoint": null,
+          "startingPrice": null
+        },
+        {
+          "raceKey": "sait-akson",
+          "raceName": "Sait Akson",
+          "date": "2020-08-02",
+          "status": "ran",
+          "finishPosition": 2,
+          "jockeyName": "HALİS KARATAŞ",
+          "handicapPoint": 99,
+          "startingPrice": "2,70"
+        }
+      ],
       "cells": {
         "disi-tay-deneme": {
           "status": "not-run"
@@ -435,6 +695,58 @@
       "bestPrepRaceKey": "mehmet-akif-ersoy",
       "bestPrepRaceName": "Mehmet Akif Ersoy",
       "bestPrepFinishPosition": 4,
+      "prepRaceStates": [
+        {
+          "raceKey": "disi-tay-deneme",
+          "raceName": "Dişi Tay Deneme",
+          "date": "2020-07-12",
+          "status": "not-run",
+          "finishPosition": null,
+          "jockeyName": null,
+          "handicapPoint": null,
+          "startingPrice": null
+        },
+        {
+          "raceKey": "erkek-tay-deneme",
+          "raceName": "Erkek Tay Deneme",
+          "date": "2020-07-12",
+          "status": "not-run",
+          "finishPosition": null,
+          "jockeyName": null,
+          "handicapPoint": null,
+          "startingPrice": null
+        },
+        {
+          "raceKey": "mehmet-akif-ersoy",
+          "raceName": "Mehmet Akif Ersoy",
+          "date": "2020-08-01",
+          "status": "ran",
+          "finishPosition": 4,
+          "jockeyName": "AHMET ÇELİK",
+          "handicapPoint": 86,
+          "startingPrice": "3,25"
+        },
+        {
+          "raceKey": "kisrak",
+          "raceName": "Kısrak",
+          "date": "2020-08-02",
+          "status": "not-run",
+          "finishPosition": null,
+          "jockeyName": null,
+          "handicapPoint": null,
+          "startingPrice": null
+        },
+        {
+          "raceKey": "sait-akson",
+          "raceName": "Sait Akson",
+          "date": "2020-08-02",
+          "status": "not-run",
+          "finishPosition": null,
+          "jockeyName": null,
+          "handicapPoint": null,
+          "startingPrice": null
+        }
+      ],
       "cells": {
         "disi-tay-deneme": {
           "status": "not-run"
@@ -495,6 +807,58 @@
       "bestPrepRaceKey": "kisrak",
       "bestPrepRaceName": "Kısrak",
       "bestPrepFinishPosition": 1,
+      "prepRaceStates": [
+        {
+          "raceKey": "disi-tay-deneme",
+          "raceName": "Dişi Tay Deneme",
+          "date": "2020-07-12",
+          "status": "ran",
+          "finishPosition": 7,
+          "jockeyName": "MÜSLÜM ÇELİK",
+          "handicapPoint": 97,
+          "startingPrice": "4,30"
+        },
+        {
+          "raceKey": "erkek-tay-deneme",
+          "raceName": "Erkek Tay Deneme",
+          "date": "2020-07-12",
+          "status": "not-run",
+          "finishPosition": null,
+          "jockeyName": null,
+          "handicapPoint": null,
+          "startingPrice": null
+        },
+        {
+          "raceKey": "mehmet-akif-ersoy",
+          "raceName": "Mehmet Akif Ersoy",
+          "date": "2020-08-01",
+          "status": "not-run",
+          "finishPosition": null,
+          "jockeyName": null,
+          "handicapPoint": null,
+          "startingPrice": null
+        },
+        {
+          "raceKey": "kisrak",
+          "raceName": "Kısrak",
+          "date": "2020-08-02",
+          "status": "ran",
+          "finishPosition": 1,
+          "jockeyName": "AHMET ÇELİK",
+          "handicapPoint": 97,
+          "startingPrice": "8,50"
+        },
+        {
+          "raceKey": "sait-akson",
+          "raceName": "Sait Akson",
+          "date": "2020-08-02",
+          "status": "not-run",
+          "finishPosition": null,
+          "jockeyName": null,
+          "handicapPoint": null,
+          "startingPrice": null
+        }
+      ],
       "cells": {
         "disi-tay-deneme": {
           "status": "ran",
@@ -567,6 +931,58 @@
       "bestPrepRaceKey": null,
       "bestPrepRaceName": null,
       "bestPrepFinishPosition": null,
+      "prepRaceStates": [
+        {
+          "raceKey": "disi-tay-deneme",
+          "raceName": "Dişi Tay Deneme",
+          "date": "2020-07-12",
+          "status": "not-run",
+          "finishPosition": null,
+          "jockeyName": null,
+          "handicapPoint": null,
+          "startingPrice": null
+        },
+        {
+          "raceKey": "erkek-tay-deneme",
+          "raceName": "Erkek Tay Deneme",
+          "date": "2020-07-12",
+          "status": "not-run",
+          "finishPosition": null,
+          "jockeyName": null,
+          "handicapPoint": null,
+          "startingPrice": null
+        },
+        {
+          "raceKey": "mehmet-akif-ersoy",
+          "raceName": "Mehmet Akif Ersoy",
+          "date": "2020-08-01",
+          "status": "not-run",
+          "finishPosition": null,
+          "jockeyName": null,
+          "handicapPoint": null,
+          "startingPrice": null
+        },
+        {
+          "raceKey": "kisrak",
+          "raceName": "Kısrak",
+          "date": "2020-08-02",
+          "status": "not-run",
+          "finishPosition": null,
+          "jockeyName": null,
+          "handicapPoint": null,
+          "startingPrice": null
+        },
+        {
+          "raceKey": "sait-akson",
+          "raceName": "Sait Akson",
+          "date": "2020-08-02",
+          "status": "not-run",
+          "finishPosition": null,
+          "jockeyName": null,
+          "handicapPoint": null,
+          "startingPrice": null
+        }
+      ],
       "cells": {
         "disi-tay-deneme": {
           "status": "not-run"
@@ -615,6 +1031,58 @@
       "bestPrepRaceKey": "mehmet-akif-ersoy",
       "bestPrepRaceName": "Mehmet Akif Ersoy",
       "bestPrepFinishPosition": 1,
+      "prepRaceStates": [
+        {
+          "raceKey": "disi-tay-deneme",
+          "raceName": "Dişi Tay Deneme",
+          "date": "2020-07-12",
+          "status": "not-run",
+          "finishPosition": null,
+          "jockeyName": null,
+          "handicapPoint": null,
+          "startingPrice": null
+        },
+        {
+          "raceKey": "erkek-tay-deneme",
+          "raceName": "Erkek Tay Deneme",
+          "date": "2020-07-12",
+          "status": "not-run",
+          "finishPosition": null,
+          "jockeyName": null,
+          "handicapPoint": null,
+          "startingPrice": null
+        },
+        {
+          "raceKey": "mehmet-akif-ersoy",
+          "raceName": "Mehmet Akif Ersoy",
+          "date": "2020-08-01",
+          "status": "ran",
+          "finishPosition": 1,
+          "jockeyName": "HALİS KARATAŞ",
+          "handicapPoint": 58,
+          "startingPrice": "8,90"
+        },
+        {
+          "raceKey": "kisrak",
+          "raceName": "Kısrak",
+          "date": "2020-08-02",
+          "status": "not-run",
+          "finishPosition": null,
+          "jockeyName": null,
+          "handicapPoint": null,
+          "startingPrice": null
+        },
+        {
+          "raceKey": "sait-akson",
+          "raceName": "Sait Akson",
+          "date": "2020-08-02",
+          "status": "not-run",
+          "finishPosition": null,
+          "jockeyName": null,
+          "handicapPoint": null,
+          "startingPrice": null
+        }
+      ],
       "cells": {
         "disi-tay-deneme": {
           "status": "not-run"
@@ -675,6 +1143,58 @@
       "bestPrepRaceKey": "erkek-tay-deneme",
       "bestPrepRaceName": "Erkek Tay Deneme",
       "bestPrepFinishPosition": 6,
+      "prepRaceStates": [
+        {
+          "raceKey": "disi-tay-deneme",
+          "raceName": "Dişi Tay Deneme",
+          "date": "2020-07-12",
+          "status": "not-run",
+          "finishPosition": null,
+          "jockeyName": null,
+          "handicapPoint": null,
+          "startingPrice": null
+        },
+        {
+          "raceKey": "erkek-tay-deneme",
+          "raceName": "Erkek Tay Deneme",
+          "date": "2020-07-12",
+          "status": "ran",
+          "finishPosition": 6,
+          "jockeyName": "ÖZCAN YILDIRIM",
+          "handicapPoint": 75,
+          "startingPrice": "29,70"
+        },
+        {
+          "raceKey": "mehmet-akif-ersoy",
+          "raceName": "Mehmet Akif Ersoy",
+          "date": "2020-08-01",
+          "status": "not-run",
+          "finishPosition": null,
+          "jockeyName": null,
+          "handicapPoint": null,
+          "startingPrice": null
+        },
+        {
+          "raceKey": "kisrak",
+          "raceName": "Kısrak",
+          "date": "2020-08-02",
+          "status": "not-run",
+          "finishPosition": null,
+          "jockeyName": null,
+          "handicapPoint": null,
+          "startingPrice": null
+        },
+        {
+          "raceKey": "sait-akson",
+          "raceName": "Sait Akson",
+          "date": "2020-08-02",
+          "status": "not-run",
+          "finishPosition": null,
+          "jockeyName": null,
+          "handicapPoint": null,
+          "startingPrice": null
+        }
+      ],
       "cells": {
         "disi-tay-deneme": {
           "status": "not-run"
@@ -735,6 +1255,58 @@
       "bestPrepRaceKey": "erkek-tay-deneme",
       "bestPrepRaceName": "Erkek Tay Deneme",
       "bestPrepFinishPosition": 3,
+      "prepRaceStates": [
+        {
+          "raceKey": "disi-tay-deneme",
+          "raceName": "Dişi Tay Deneme",
+          "date": "2020-07-12",
+          "status": "not-run",
+          "finishPosition": null,
+          "jockeyName": null,
+          "handicapPoint": null,
+          "startingPrice": null
+        },
+        {
+          "raceKey": "erkek-tay-deneme",
+          "raceName": "Erkek Tay Deneme",
+          "date": "2020-07-12",
+          "status": "ran",
+          "finishPosition": 3,
+          "jockeyName": "GÖKHAN KOCAKAYA",
+          "handicapPoint": 91,
+          "startingPrice": "13,50"
+        },
+        {
+          "raceKey": "mehmet-akif-ersoy",
+          "raceName": "Mehmet Akif Ersoy",
+          "date": "2020-08-01",
+          "status": "not-run",
+          "finishPosition": null,
+          "jockeyName": null,
+          "handicapPoint": null,
+          "startingPrice": null
+        },
+        {
+          "raceKey": "kisrak",
+          "raceName": "Kısrak",
+          "date": "2020-08-02",
+          "status": "not-run",
+          "finishPosition": null,
+          "jockeyName": null,
+          "handicapPoint": null,
+          "startingPrice": null
+        },
+        {
+          "raceKey": "sait-akson",
+          "raceName": "Sait Akson",
+          "date": "2020-08-02",
+          "status": "ran",
+          "finishPosition": 3,
+          "jockeyName": "GÖKHAN KOCAKAYA",
+          "handicapPoint": 94,
+          "startingPrice": "9,85"
+        }
+      ],
       "cells": {
         "disi-tay-deneme": {
           "status": "not-run"
@@ -807,6 +1379,58 @@
       "bestPrepRaceKey": null,
       "bestPrepRaceName": null,
       "bestPrepFinishPosition": null,
+      "prepRaceStates": [
+        {
+          "raceKey": "disi-tay-deneme",
+          "raceName": "Dişi Tay Deneme",
+          "date": "2020-07-12",
+          "status": "not-run",
+          "finishPosition": null,
+          "jockeyName": null,
+          "handicapPoint": null,
+          "startingPrice": null
+        },
+        {
+          "raceKey": "erkek-tay-deneme",
+          "raceName": "Erkek Tay Deneme",
+          "date": "2020-07-12",
+          "status": "not-run",
+          "finishPosition": null,
+          "jockeyName": null,
+          "handicapPoint": null,
+          "startingPrice": null
+        },
+        {
+          "raceKey": "mehmet-akif-ersoy",
+          "raceName": "Mehmet Akif Ersoy",
+          "date": "2020-08-01",
+          "status": "not-run",
+          "finishPosition": null,
+          "jockeyName": null,
+          "handicapPoint": null,
+          "startingPrice": null
+        },
+        {
+          "raceKey": "kisrak",
+          "raceName": "Kısrak",
+          "date": "2020-08-02",
+          "status": "not-run",
+          "finishPosition": null,
+          "jockeyName": null,
+          "handicapPoint": null,
+          "startingPrice": null
+        },
+        {
+          "raceKey": "sait-akson",
+          "raceName": "Sait Akson",
+          "date": "2020-08-02",
+          "status": "not-run",
+          "finishPosition": null,
+          "jockeyName": null,
+          "handicapPoint": null,
+          "startingPrice": null
+        }
+      ],
       "cells": {
         "disi-tay-deneme": {
           "status": "not-run"
@@ -855,6 +1479,58 @@
       "bestPrepRaceKey": null,
       "bestPrepRaceName": null,
       "bestPrepFinishPosition": null,
+      "prepRaceStates": [
+        {
+          "raceKey": "disi-tay-deneme",
+          "raceName": "Dişi Tay Deneme",
+          "date": "2020-07-12",
+          "status": "not-run",
+          "finishPosition": null,
+          "jockeyName": null,
+          "handicapPoint": null,
+          "startingPrice": null
+        },
+        {
+          "raceKey": "erkek-tay-deneme",
+          "raceName": "Erkek Tay Deneme",
+          "date": "2020-07-12",
+          "status": "not-run",
+          "finishPosition": null,
+          "jockeyName": null,
+          "handicapPoint": null,
+          "startingPrice": null
+        },
+        {
+          "raceKey": "mehmet-akif-ersoy",
+          "raceName": "Mehmet Akif Ersoy",
+          "date": "2020-08-01",
+          "status": "not-run",
+          "finishPosition": null,
+          "jockeyName": null,
+          "handicapPoint": null,
+          "startingPrice": null
+        },
+        {
+          "raceKey": "kisrak",
+          "raceName": "Kısrak",
+          "date": "2020-08-02",
+          "status": "not-run",
+          "finishPosition": null,
+          "jockeyName": null,
+          "handicapPoint": null,
+          "startingPrice": null
+        },
+        {
+          "raceKey": "sait-akson",
+          "raceName": "Sait Akson",
+          "date": "2020-08-02",
+          "status": "not-run",
+          "finishPosition": null,
+          "jockeyName": null,
+          "handicapPoint": null,
+          "startingPrice": null
+        }
+      ],
       "cells": {
         "disi-tay-deneme": {
           "status": "not-run"
@@ -903,6 +1579,58 @@
       "bestPrepRaceKey": "sait-akson",
       "bestPrepRaceName": "Sait Akson",
       "bestPrepFinishPosition": 4,
+      "prepRaceStates": [
+        {
+          "raceKey": "disi-tay-deneme",
+          "raceName": "Dişi Tay Deneme",
+          "date": "2020-07-12",
+          "status": "not-run",
+          "finishPosition": null,
+          "jockeyName": null,
+          "handicapPoint": null,
+          "startingPrice": null
+        },
+        {
+          "raceKey": "erkek-tay-deneme",
+          "raceName": "Erkek Tay Deneme",
+          "date": "2020-07-12",
+          "status": "not-run",
+          "finishPosition": null,
+          "jockeyName": null,
+          "handicapPoint": null,
+          "startingPrice": null
+        },
+        {
+          "raceKey": "mehmet-akif-ersoy",
+          "raceName": "Mehmet Akif Ersoy",
+          "date": "2020-08-01",
+          "status": "not-run",
+          "finishPosition": null,
+          "jockeyName": null,
+          "handicapPoint": null,
+          "startingPrice": null
+        },
+        {
+          "raceKey": "kisrak",
+          "raceName": "Kısrak",
+          "date": "2020-08-02",
+          "status": "not-run",
+          "finishPosition": null,
+          "jockeyName": null,
+          "handicapPoint": null,
+          "startingPrice": null
+        },
+        {
+          "raceKey": "sait-akson",
+          "raceName": "Sait Akson",
+          "date": "2020-08-02",
+          "status": "ran",
+          "finishPosition": 4,
+          "jockeyName": "ÖZCAN YILDIRIM",
+          "handicapPoint": 79,
+          "startingPrice": "7,15"
+        }
+      ],
       "cells": {
         "disi-tay-deneme": {
           "status": "not-run"
@@ -963,6 +1691,58 @@
       "bestPrepRaceKey": null,
       "bestPrepRaceName": null,
       "bestPrepFinishPosition": null,
+      "prepRaceStates": [
+        {
+          "raceKey": "disi-tay-deneme",
+          "raceName": "Dişi Tay Deneme",
+          "date": "2020-07-12",
+          "status": "not-run",
+          "finishPosition": null,
+          "jockeyName": null,
+          "handicapPoint": null,
+          "startingPrice": null
+        },
+        {
+          "raceKey": "erkek-tay-deneme",
+          "raceName": "Erkek Tay Deneme",
+          "date": "2020-07-12",
+          "status": "not-run",
+          "finishPosition": null,
+          "jockeyName": null,
+          "handicapPoint": null,
+          "startingPrice": null
+        },
+        {
+          "raceKey": "mehmet-akif-ersoy",
+          "raceName": "Mehmet Akif Ersoy",
+          "date": "2020-08-01",
+          "status": "not-run",
+          "finishPosition": null,
+          "jockeyName": null,
+          "handicapPoint": null,
+          "startingPrice": null
+        },
+        {
+          "raceKey": "kisrak",
+          "raceName": "Kısrak",
+          "date": "2020-08-02",
+          "status": "not-run",
+          "finishPosition": null,
+          "jockeyName": null,
+          "handicapPoint": null,
+          "startingPrice": null
+        },
+        {
+          "raceKey": "sait-akson",
+          "raceName": "Sait Akson",
+          "date": "2020-08-02",
+          "status": "not-run",
+          "finishPosition": null,
+          "jockeyName": null,
+          "handicapPoint": null,
+          "startingPrice": null
+        }
+      ],
       "cells": {
         "disi-tay-deneme": {
           "status": "not-run"

@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-06-04T17:25:25.523Z",
+  "generatedAt": "2026-06-05T00:04:00.761Z",
   "summary": {
     "yearRange": "2020-2025",
     "yearCount": 6,
@@ -108,7 +108,7 @@
         "year": 2020,
         "type": "participation",
         "path": "data/gazi-participation-2020.json",
-        "generatedAt": "2026-06-03T22:26:03.450Z",
+        "generatedAt": "2026-06-05T00:04:00.746Z",
         "sourceGeneratedAt": "2026-06-03T13:04:07.777Z",
         "summary": {
           "analysisState": "field-available",
@@ -121,7 +121,7 @@
         "year": 2021,
         "type": "participation",
         "path": "data/gazi-participation-2021.json",
-        "generatedAt": "2026-06-03T22:26:03.543Z",
+        "generatedAt": "2026-06-05T00:04:00.748Z",
         "sourceGeneratedAt": "2026-06-03T13:04:45.719Z",
         "summary": {
           "analysisState": "field-available",
@@ -134,7 +134,7 @@
         "year": 2022,
         "type": "participation",
         "path": "data/gazi-participation-2022.json",
-        "generatedAt": "2026-06-03T22:26:03.637Z",
+        "generatedAt": "2026-06-05T00:04:00.749Z",
         "sourceGeneratedAt": "2026-06-03T13:05:40.886Z",
         "summary": {
           "analysisState": "field-available",
@@ -147,7 +147,7 @@
         "year": 2023,
         "type": "participation",
         "path": "data/gazi-participation-2023.json",
-        "generatedAt": "2026-06-03T22:26:03.730Z",
+        "generatedAt": "2026-06-05T00:04:00.750Z",
         "sourceGeneratedAt": "2026-06-03T13:06:16.400Z",
         "summary": {
           "analysisState": "field-available",
@@ -160,7 +160,7 @@
         "year": 2024,
         "type": "participation",
         "path": "data/gazi-participation-2024.json",
-        "generatedAt": "2026-06-03T22:26:03.823Z",
+        "generatedAt": "2026-06-05T00:04:00.751Z",
         "sourceGeneratedAt": "2026-06-03T12:49:11.539Z",
         "summary": {
           "analysisState": "field-available",
@@ -173,7 +173,7 @@
         "year": 2025,
         "type": "participation",
         "path": "data/gazi-participation-2025.json",
-        "generatedAt": "2026-06-03T22:26:03.918Z",
+        "generatedAt": "2026-06-05T00:04:00.752Z",
         "sourceGeneratedAt": "2026-06-03T12:51:05.365Z",
         "summary": {
           "analysisState": "field-available",

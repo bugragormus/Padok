@@ -57,6 +57,10 @@ test("buildParticipationReport marks Gazi runners that skipped tracked prep race
   assert.equal(alpha.bestPrepRaceName, "Mehmet Akif Ersoy");
   assert.equal(alpha.cells["mehmet-akif-ersoy"].status, "ran");
   assert.equal(alpha.cells["sait-akson"].finishPosition, 2);
+  assert.deepEqual(alpha.prepRaceStates.map((race) => [race.raceKey, race.status, race.finishPosition]), [
+    ["mehmet-akif-ersoy", "ran", 1],
+    ["sait-akson", "ran", 2]
+  ]);
 
   const omega = report.rows.find((row) => row.horseName === "OMEGA");
   assert.equal(omega.hasPrepStart, false);
@@ -65,6 +69,10 @@ test("buildParticipationReport marks Gazi runners that skipped tracked prep race
   assert.equal(omega.cells["mehmet-akif-ersoy"].status, "not-run");
   assert.equal(omega.cells["sait-akson"].status, "not-run");
   assert.equal(omega.cells.gazi.status, "ran");
+  assert.deepEqual(omega.prepRaceStates.map((race) => [race.raceKey, race.status]), [
+    ["mehmet-akif-ersoy", "not-run"],
+    ["sait-akson", "not-run"]
+  ]);
 });
 
 test("buildParticipationReport handles seasons before the Gazi field is known", () => {

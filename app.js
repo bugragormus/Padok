@@ -616,6 +616,74 @@ const getParticipationRouteStarts = (row, columns) => {
     .filter(({ cell }) => cell?.status === "ran");
 };
 
+const getPrepRaceStates = (row, prepColumns) => {
+  if (row.prepRaceStates?.length) return row.prepRaceStates;
+
+  return prepColumns.map((column) => {
+    const cell = row.cells[column.key] ?? { status: "missing-race" };
+
+    return {
+      raceKey: column.key,
+      raceName: column.name,
+      date: column.date,
+      status: cell.status,
+      finishPosition: cell.finishPosition ?? null,
+      jockeyName: cell.jockeyName ?? null,
+      handicapPoint: cell.handicapPoint ?? null,
+      startingPrice: cell.startingPrice ?? null
+    };
+  });
+};
+
+const getPrepRaceStateMeta = (race) => {
+  if (race.status === "ran") {
+    return {
+      label: formatPosition(race.finishPosition),
+      note: race.jockeyName ? race.jockeyName : "Jokey bekleniyor"
+    };
+  }
+
+  if (race.status === "not-run") {
+    return {
+      label: "Katılmadı",
+      note: "Rota sinyali yok"
+    };
+  }
+
+  if (race.status === "pending") {
+    return {
+      label: "Bekliyor",
+      note: "Sonuç bekleniyor"
+    };
+  }
+
+  return {
+    label: "Veri yok",
+    note: "Kaynak bekleniyor"
+  };
+};
+
+const renderPrepSignalStrip = (row, prepColumns) => {
+  const prepStates = getPrepRaceStates(row, prepColumns);
+  if (!prepStates.length) return "";
+
+  return `
+    <div class="prep-signal-strip" aria-label="Hazırlık koşusu sinyal durumu">
+      ${prepStates.map((race) => {
+        const meta = getPrepRaceStateMeta(race);
+
+        return `
+          <span class="prep-signal prep-signal--${escapeHtml(race.status)}">
+            <small>${escapeHtml(race.raceName)}</small>
+            <strong>${escapeHtml(meta.label)}</strong>
+            <em>${escapeHtml(meta.note)}</em>
+          </span>
+        `;
+      }).join("")}
+    </div>
+  `;
+};
+
 const rowHasJockeyChange = (row, columns) => {
   const starts = getParticipationRouteStarts(row, columns);
   const jockeyNames = new Set(starts.map(({ cell }) => cell.jockeyName).filter(Boolean));
@@ -1293,6 +1361,8 @@ const renderParticipationDetail = (report, tableColumns, rows = report.rows) => 
         <p>${escapeHtml(profileReading.reason)}</p>
         <em>${escapeHtml(profileReading.caution)}</em>
       </div>
+
+      ${renderPrepSignalStrip(selectedRow, prepColumns)}
 
       <div class="readiness-panel">
         <div>

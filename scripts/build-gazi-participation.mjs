@@ -116,6 +116,25 @@ const findBestPrep = (cells, columns) => {
     .sort((a, b) => a.finishPosition - b.finishPosition)[0] ?? null;
 };
 
+const buildPrepRaceStates = (cells, columns) => {
+  return columns
+    .filter((column) => !column.isTarget)
+    .map((column) => {
+      const cell = cells[column.key] ?? { status: "missing-race" };
+
+      return {
+        raceKey: column.key,
+        raceName: column.name,
+        date: column.date,
+        status: cell.status,
+        finishPosition: cell.finishPosition ?? null,
+        jockeyName: cell.jockeyName ?? null,
+        handicapPoint: cell.handicapPoint ?? null,
+        startingPrice: cell.startingPrice ?? null
+      };
+    });
+};
+
 export const buildParticipationReport = (routeReport) => {
   const routeRaces = routeReport.routeRaces ?? [];
   const columns = buildColumns(routeRaces);
@@ -141,6 +160,7 @@ export const buildParticipationReport = (routeReport) => {
     const skippedPrepCount = prepCells.filter((cell) => cell.status === "not-run").length;
     const pendingPrepCount = prepCells.filter((cell) => cell.status === "pending").length;
     const bestPrep = findBestPrep(cells, columns);
+    const prepRaceStates = buildPrepRaceStates(cells, columns);
 
     return {
       horseName: gaziEntry.horse_name,
@@ -157,6 +177,7 @@ export const buildParticipationReport = (routeReport) => {
       bestPrepRaceKey: bestPrep?.raceKey ?? null,
       bestPrepRaceName: bestPrep?.raceName ?? null,
       bestPrepFinishPosition: bestPrep?.finishPosition ?? null,
+      prepRaceStates,
       cells
     };
   });

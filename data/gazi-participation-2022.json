@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-06-03T22:26:03.637Z",
+  "generatedAt": "2026-06-05T00:04:00.749Z",
   "sourceYear": 2022,
   "sourceGeneratedAt": "2026-06-03T13:05:40.886Z",
   "methodology": {
@@ -99,6 +99,58 @@
       "bestPrepRaceKey": "disi-tay-deneme",
       "bestPrepRaceName": "Dişi Tay Deneme",
       "bestPrepFinishPosition": 1,
+      "prepRaceStates": [
+        {
+          "raceKey": "disi-tay-deneme",
+          "raceName": "Dişi Tay Deneme",
+          "date": "2022-05-15",
+          "status": "ran",
+          "finishPosition": 1,
+          "jockeyName": "ÖZCAN YILDIRIM",
+          "handicapPoint": 73,
+          "startingPrice": "4,50"
+        },
+        {
+          "raceKey": "erkek-tay-deneme",
+          "raceName": "Erkek Tay Deneme",
+          "date": "2022-05-15",
+          "status": "not-run",
+          "finishPosition": null,
+          "jockeyName": null,
+          "handicapPoint": null,
+          "startingPrice": null
+        },
+        {
+          "raceKey": "mehmet-akif-ersoy",
+          "raceName": "Mehmet Akif Ersoy",
+          "date": "2022-06-04",
+          "status": "not-run",
+          "finishPosition": null,
+          "jockeyName": null,
+          "handicapPoint": null,
+          "startingPrice": null
+        },
+        {
+          "raceKey": "kisrak",
+          "raceName": "Kısrak",
+          "date": "2022-06-05",
+          "status": "ran",
+          "finishPosition": 1,
+          "jockeyName": "ÖZCAN YILDIRIM",
+          "handicapPoint": 102,
+          "startingPrice": "2,40"
+        },
+        {
+          "raceKey": "sait-akson",
+          "raceName": "Sait Akson",
+          "date": "2022-06-05",
+          "status": "not-run",
+          "finishPosition": null,
+          "jockeyName": null,
+          "handicapPoint": null,
+          "startingPrice": null
+        }
+      ],
       "cells": {
         "disi-tay-deneme": {
           "status": "ran",
@@ -171,6 +223,58 @@
       "bestPrepRaceKey": "kisrak",
       "bestPrepRaceName": "Kısrak",
       "bestPrepFinishPosition": 4,
+      "prepRaceStates": [
+        {
+          "raceKey": "disi-tay-deneme",
+          "raceName": "Dişi Tay Deneme",
+          "date": "2022-05-15",
+          "status": "not-run",
+          "finishPosition": null,
+          "jockeyName": null,
+          "handicapPoint": null,
+          "startingPrice": null
+        },
+        {
+          "raceKey": "erkek-tay-deneme",
+          "raceName": "Erkek Tay Deneme",
+          "date": "2022-05-15",
+          "status": "not-run",
+          "finishPosition": null,
+          "jockeyName": null,
+          "handicapPoint": null,
+          "startingPrice": null
+        },
+        {
+          "raceKey": "mehmet-akif-ersoy",
+          "raceName": "Mehmet Akif Ersoy",
+          "date": "2022-06-04",
+          "status": "not-run",
+          "finishPosition": null,
+          "jockeyName": null,
+          "handicapPoint": null,
+          "startingPrice": null
+        },
+        {
+          "raceKey": "kisrak",
+          "raceName": "Kısrak",
+          "date": "2022-06-05",
+          "status": "ran",
+          "finishPosition": 4,
+          "jockeyName": "AHMET ÇELİK",
+          "handicapPoint": 91,
+          "startingPrice": "3,70"
+        },
+        {
+          "raceKey": "sait-akson",
+          "raceName": "Sait Akson",
+          "date": "2022-06-05",
+          "status": "not-run",
+          "finishPosition": null,
+          "jockeyName": null,
+          "handicapPoint": null,
+          "startingPrice": null
+        }
+      ],
       "cells": {
         "disi-tay-deneme": {
           "status": "not-run"
@@ -231,6 +335,58 @@
       "bestPrepRaceKey": "erkek-tay-deneme",
       "bestPrepRaceName": "Erkek Tay Deneme",
       "bestPrepFinishPosition": 2,
+      "prepRaceStates": [
+        {
+          "raceKey": "disi-tay-deneme",
+          "raceName": "Dişi Tay Deneme",
+          "date": "2022-05-15",
+          "status": "not-run",
+          "finishPosition": null,
+          "jockeyName": null,
+          "handicapPoint": null,
+          "startingPrice": null
+        },
+        {
+          "raceKey": "erkek-tay-deneme",
+          "raceName": "Erkek Tay Deneme",
+          "date": "2022-05-15",
+          "status": "ran",
+          "finishPosition": 2,
+          "jockeyName": "GÖKHAN KOCAKAYA",
+          "handicapPoint": 103,
+          "startingPrice": "2,40"
+        },
+        {
+          "raceKey": "mehmet-akif-ersoy",
+          "raceName": "Mehmet Akif Ersoy",
+          "date": "2022-06-04",
+          "status": "not-run",
+          "finishPosition": null,
+          "jockeyName": null,
+          "handicapPoint": null,
+          "startingPrice": null
+        },
+        {
+          "raceKey": "kisrak",
+          "raceName": "Kısrak",
+          "date": "2022-06-05",
+          "status": "not-run",
+          "finishPosition": null,
+          "jockeyName": null,
+          "handicapPoint": null,
+          "startingPrice": null
+        },
+        {
+          "raceKey": "sait-akson",
+          "raceName": "Sait Akson",
+          "date": "2022-06-05",
+          "status": "ran",
+          "finishPosition": 3,
+          "jockeyName": "GÖKHAN KOCAKAYA",
+          "handicapPoint": 104,
+          "startingPrice": "4,10"
+        }
+      ],
       "cells": {
         "disi-tay-deneme": {
           "status": "not-run"
@@ -303,6 +459,58 @@
       "bestPrepRaceKey": "erkek-tay-deneme",
       "bestPrepRaceName": "Erkek Tay Deneme",
       "bestPrepFinishPosition": 1,
+      "prepRaceStates": [
+        {
+          "raceKey": "disi-tay-deneme",
+          "raceName": "Dişi Tay Deneme",
+          "date": "2022-05-15",
+          "status": "not-run",
+          "finishPosition": null,
+          "jockeyName": null,
+          "handicapPoint": null,
+          "startingPrice": null
+        },
+        {
+          "raceKey": "erkek-tay-deneme",
+          "raceName": "Erkek Tay Deneme",
+          "date": "2022-05-15",
+          "status": "ran",
+          "finishPosition": 1,
+          "jockeyName": "HALİS KARATAŞ",
+          "handicapPoint": 100,
+          "startingPrice": "1,75"
+        },
+        {
+          "raceKey": "mehmet-akif-ersoy",
+          "raceName": "Mehmet Akif Ersoy",
+          "date": "2022-06-04",
+          "status": "not-run",
+          "finishPosition": null,
+          "jockeyName": null,
+          "handicapPoint": null,
+          "startingPrice": null
+        },
+        {
+          "raceKey": "kisrak",
+          "raceName": "Kısrak",
+          "date": "2022-06-05",
+          "status": "not-run",
+          "finishPosition": null,
+          "jockeyName": null,
+          "handicapPoint": null,
+          "startingPrice": null
+        },
+        {
+          "raceKey": "sait-akson",
+          "raceName": "Sait Akson",
+          "date": "2022-06-05",
+          "status": "ran",
+          "finishPosition": 1,
+          "jockeyName": "HALİS KARATAŞ",
+          "handicapPoint": 106,
+          "startingPrice": "1,15"
+        }
+      ],
       "cells": {
         "disi-tay-deneme": {
           "status": "not-run"
@@ -375,6 +583,58 @@
       "bestPrepRaceKey": null,
       "bestPrepRaceName": null,
       "bestPrepFinishPosition": null,
+      "prepRaceStates": [
+        {
+          "raceKey": "disi-tay-deneme",
+          "raceName": "Dişi Tay Deneme",
+          "date": "2022-05-15",
+          "status": "not-run",
+          "finishPosition": null,
+          "jockeyName": null,
+          "handicapPoint": null,
+          "startingPrice": null
+        },
+        {
+          "raceKey": "erkek-tay-deneme",
+          "raceName": "Erkek Tay Deneme",
+          "date": "2022-05-15",
+          "status": "not-run",
+          "finishPosition": null,
+          "jockeyName": null,
+          "handicapPoint": null,
+          "startingPrice": null
+        },
+        {
+          "raceKey": "mehmet-akif-ersoy",
+          "raceName": "Mehmet Akif Ersoy",
+          "date": "2022-06-04",
+          "status": "not-run",
+          "finishPosition": null,
+          "jockeyName": null,
+          "handicapPoint": null,
+          "startingPrice": null
+        },
+        {
+          "raceKey": "kisrak",
+          "raceName": "Kısrak",
+          "date": "2022-06-05",
+          "status": "not-run",
+          "finishPosition": null,
+          "jockeyName": null,
+          "handicapPoint": null,
+          "startingPrice": null
+        },
+        {
+          "raceKey": "sait-akson",
+          "raceName": "Sait Akson",
+          "date": "2022-06-05",
+          "status": "not-run",
+          "finishPosition": null,
+          "jockeyName": null,
+          "handicapPoint": null,
+          "startingPrice": null
+        }
+      ],
       "cells": {
         "disi-tay-deneme": {
           "status": "not-run"
@@ -423,6 +683,58 @@
       "bestPrepRaceKey": "kisrak",
       "bestPrepRaceName": "Kısrak",
       "bestPrepFinishPosition": 2,
+      "prepRaceStates": [
+        {
+          "raceKey": "disi-tay-deneme",
+          "raceName": "Dişi Tay Deneme",
+          "date": "2022-05-15",
+          "status": "ran",
+          "finishPosition": 6,
+          "jockeyName": "HIŞMAN ÇİZİK",
+          "handicapPoint": 74,
+          "startingPrice": "12,50"
+        },
+        {
+          "raceKey": "erkek-tay-deneme",
+          "raceName": "Erkek Tay Deneme",
+          "date": "2022-05-15",
+          "status": "not-run",
+          "finishPosition": null,
+          "jockeyName": null,
+          "handicapPoint": null,
+          "startingPrice": null
+        },
+        {
+          "raceKey": "mehmet-akif-ersoy",
+          "raceName": "Mehmet Akif Ersoy",
+          "date": "2022-06-04",
+          "status": "not-run",
+          "finishPosition": null,
+          "jockeyName": null,
+          "handicapPoint": null,
+          "startingPrice": null
+        },
+        {
+          "raceKey": "kisrak",
+          "raceName": "Kısrak",
+          "date": "2022-06-05",
+          "status": "ran",
+          "finishPosition": 2,
+          "jockeyName": "MUSTAFA ÇİÇEK",
+          "handicapPoint": 74,
+          "startingPrice": "47,75"
+        },
+        {
+          "raceKey": "sait-akson",
+          "raceName": "Sait Akson",
+          "date": "2022-06-05",
+          "status": "not-run",
+          "finishPosition": null,
+          "jockeyName": null,
+          "handicapPoint": null,
+          "startingPrice": null
+        }
+      ],
       "cells": {
         "disi-tay-deneme": {
           "status": "ran",
@@ -495,6 +807,58 @@
       "bestPrepRaceKey": "mehmet-akif-ersoy",
       "bestPrepRaceName": "Mehmet Akif Ersoy",
       "bestPrepFinishPosition": 3,
+      "prepRaceStates": [
+        {
+          "raceKey": "disi-tay-deneme",
+          "raceName": "Dişi Tay Deneme",
+          "date": "2022-05-15",
+          "status": "not-run",
+          "finishPosition": null,
+          "jockeyName": null,
+          "handicapPoint": null,
+          "startingPrice": null
+        },
+        {
+          "raceKey": "erkek-tay-deneme",
+          "raceName": "Erkek Tay Deneme",
+          "date": "2022-05-15",
+          "status": "ran",
+          "finishPosition": 6,
+          "jockeyName": "ÖZCAN YILDIRIM",
+          "handicapPoint": 68,
+          "startingPrice": "12,30"
+        },
+        {
+          "raceKey": "mehmet-akif-ersoy",
+          "raceName": "Mehmet Akif Ersoy",
+          "date": "2022-06-04",
+          "status": "ran",
+          "finishPosition": 3,
+          "jockeyName": "AHMET ÇELİK",
+          "handicapPoint": 69,
+          "startingPrice": "11,15"
+        },
+        {
+          "raceKey": "kisrak",
+          "raceName": "Kısrak",
+          "date": "2022-06-05",
+          "status": "not-run",
+          "finishPosition": null,
+          "jockeyName": null,
+          "handicapPoint": null,
+          "startingPrice": null
+        },
+        {
+          "raceKey": "sait-akson",
+          "raceName": "Sait Akson",
+          "date": "2022-06-05",
+          "status": "not-run",
+          "finishPosition": null,
+          "jockeyName": null,
+          "handicapPoint": null,
+          "startingPrice": null
+        }
+      ],
       "cells": {
         "disi-tay-deneme": {
           "status": "not-run"
@@ -567,6 +931,58 @@
       "bestPrepRaceKey": "erkek-tay-deneme",
       "bestPrepRaceName": "Erkek Tay Deneme",
       "bestPrepFinishPosition": 3,
+      "prepRaceStates": [
+        {
+          "raceKey": "disi-tay-deneme",
+          "raceName": "Dişi Tay Deneme",
+          "date": "2022-05-15",
+          "status": "not-run",
+          "finishPosition": null,
+          "jockeyName": null,
+          "handicapPoint": null,
+          "startingPrice": null
+        },
+        {
+          "raceKey": "erkek-tay-deneme",
+          "raceName": "Erkek Tay Deneme",
+          "date": "2022-05-15",
+          "status": "ran",
+          "finishPosition": 3,
+          "jockeyName": "AKIN SÖZEN",
+          "handicapPoint": 95,
+          "startingPrice": "1,75"
+        },
+        {
+          "raceKey": "mehmet-akif-ersoy",
+          "raceName": "Mehmet Akif Ersoy",
+          "date": "2022-06-04",
+          "status": "not-run",
+          "finishPosition": null,
+          "jockeyName": null,
+          "handicapPoint": null,
+          "startingPrice": null
+        },
+        {
+          "raceKey": "kisrak",
+          "raceName": "Kısrak",
+          "date": "2022-06-05",
+          "status": "not-run",
+          "finishPosition": null,
+          "jockeyName": null,
+          "handicapPoint": null,
+          "startingPrice": null
+        },
+        {
+          "raceKey": "sait-akson",
+          "raceName": "Sait Akson",
+          "date": "2022-06-05",
+          "status": "ran",
+          "finishPosition": 5,
+          "jockeyName": "AKIN SÖZEN",
+          "handicapPoint": 98,
+          "startingPrice": "1,15"
+        }
+      ],
       "cells": {
         "disi-tay-deneme": {
           "status": "not-run"
@@ -639,6 +1055,58 @@
       "bestPrepRaceKey": null,
       "bestPrepRaceName": null,
       "bestPrepFinishPosition": null,
+      "prepRaceStates": [
+        {
+          "raceKey": "disi-tay-deneme",
+          "raceName": "Dişi Tay Deneme",
+          "date": "2022-05-15",
+          "status": "not-run",
+          "finishPosition": null,
+          "jockeyName": null,
+          "handicapPoint": null,
+          "startingPrice": null
+        },
+        {
+          "raceKey": "erkek-tay-deneme",
+          "raceName": "Erkek Tay Deneme",
+          "date": "2022-05-15",
+          "status": "not-run",
+          "finishPosition": null,
+          "jockeyName": null,
+          "handicapPoint": null,
+          "startingPrice": null
+        },
+        {
+          "raceKey": "mehmet-akif-ersoy",
+          "raceName": "Mehmet Akif Ersoy",
+          "date": "2022-06-04",
+          "status": "not-run",
+          "finishPosition": null,
+          "jockeyName": null,
+          "handicapPoint": null,
+          "startingPrice": null
+        },
+        {
+          "raceKey": "kisrak",
+          "raceName": "Kısrak",
+          "date": "2022-06-05",
+          "status": "not-run",
+          "finishPosition": null,
+          "jockeyName": null,
+          "handicapPoint": null,
+          "startingPrice": null
+        },
+        {
+          "raceKey": "sait-akson",
+          "raceName": "Sait Akson",
+          "date": "2022-06-05",
+          "status": "not-run",
+          "finishPosition": null,
+          "jockeyName": null,
+          "handicapPoint": null,
+          "startingPrice": null
+        }
+      ],
       "cells": {
         "disi-tay-deneme": {
           "status": "not-run"
@@ -687,6 +1155,58 @@
       "bestPrepRaceKey": "mehmet-akif-ersoy",
       "bestPrepRaceName": "Mehmet Akif Ersoy",
       "bestPrepFinishPosition": 7,
+      "prepRaceStates": [
+        {
+          "raceKey": "disi-tay-deneme",
+          "raceName": "Dişi Tay Deneme",
+          "date": "2022-05-15",
+          "status": "not-run",
+          "finishPosition": null,
+          "jockeyName": null,
+          "handicapPoint": null,
+          "startingPrice": null
+        },
+        {
+          "raceKey": "erkek-tay-deneme",
+          "raceName": "Erkek Tay Deneme",
+          "date": "2022-05-15",
+          "status": "not-run",
+          "finishPosition": null,
+          "jockeyName": null,
+          "handicapPoint": null,
+          "startingPrice": null
+        },
+        {
+          "raceKey": "mehmet-akif-ersoy",
+          "raceName": "Mehmet Akif Ersoy",
+          "date": "2022-06-04",
+          "status": "ran",
+          "finishPosition": 7,
+          "jockeyName": "VEDAT ABİŞ",
+          "handicapPoint": 74,
+          "startingPrice": "21,65"
+        },
+        {
+          "raceKey": "kisrak",
+          "raceName": "Kısrak",
+          "date": "2022-06-05",
+          "status": "not-run",
+          "finishPosition": null,
+          "jockeyName": null,
+          "handicapPoint": null,
+          "startingPrice": null
+        },
+        {
+          "raceKey": "sait-akson",
+          "raceName": "Sait Akson",
+          "date": "2022-06-05",
+          "status": "not-run",
+          "finishPosition": null,
+          "jockeyName": null,
+          "handicapPoint": null,
+          "startingPrice": null
+        }
+      ],
       "cells": {
         "disi-tay-deneme": {
           "status": "not-run"
@@ -747,6 +1267,58 @@
       "bestPrepRaceKey": "mehmet-akif-ersoy",
       "bestPrepRaceName": "Mehmet Akif Ersoy",
       "bestPrepFinishPosition": 1,
+      "prepRaceStates": [
+        {
+          "raceKey": "disi-tay-deneme",
+          "raceName": "Dişi Tay Deneme",
+          "date": "2022-05-15",
+          "status": "not-run",
+          "finishPosition": null,
+          "jockeyName": null,
+          "handicapPoint": null,
+          "startingPrice": null
+        },
+        {
+          "raceKey": "erkek-tay-deneme",
+          "raceName": "Erkek Tay Deneme",
+          "date": "2022-05-15",
+          "status": "not-run",
+          "finishPosition": null,
+          "jockeyName": null,
+          "handicapPoint": null,
+          "startingPrice": null
+        },
+        {
+          "raceKey": "mehmet-akif-ersoy",
+          "raceName": "Mehmet Akif Ersoy",
+          "date": "2022-06-04",
+          "status": "ran",
+          "finishPosition": 1,
+          "jockeyName": "GÖKHAN KOCAKAYA",
+          "handicapPoint": 79,
+          "startingPrice": "6,45"
+        },
+        {
+          "raceKey": "kisrak",
+          "raceName": "Kısrak",
+          "date": "2022-06-05",
+          "status": "not-run",
+          "finishPosition": null,
+          "jockeyName": null,
+          "handicapPoint": null,
+          "startingPrice": null
+        },
+        {
+          "raceKey": "sait-akson",
+          "raceName": "Sait Akson",
+          "date": "2022-06-05",
+          "status": "not-run",
+          "finishPosition": null,
+          "jockeyName": null,
+          "handicapPoint": null,
+          "startingPrice": null
+        }
+      ],
       "cells": {
         "disi-tay-deneme": {
           "status": "not-run"
@@ -807,6 +1379,58 @@
       "bestPrepRaceKey": "erkek-tay-deneme",
       "bestPrepRaceName": "Erkek Tay Deneme",
       "bestPrepFinishPosition": 4,
+      "prepRaceStates": [
+        {
+          "raceKey": "disi-tay-deneme",
+          "raceName": "Dişi Tay Deneme",
+          "date": "2022-05-15",
+          "status": "not-run",
+          "finishPosition": null,
+          "jockeyName": null,
+          "handicapPoint": null,
+          "startingPrice": null
+        },
+        {
+          "raceKey": "erkek-tay-deneme",
+          "raceName": "Erkek Tay Deneme",
+          "date": "2022-05-15",
+          "status": "ran",
+          "finishPosition": 4,
+          "jockeyName": "HIŞMAN ÇİZİK",
+          "handicapPoint": 90,
+          "startingPrice": "20,80"
+        },
+        {
+          "raceKey": "mehmet-akif-ersoy",
+          "raceName": "Mehmet Akif Ersoy",
+          "date": "2022-06-04",
+          "status": "not-run",
+          "finishPosition": null,
+          "jockeyName": null,
+          "handicapPoint": null,
+          "startingPrice": null
+        },
+        {
+          "raceKey": "kisrak",
+          "raceName": "Kısrak",
+          "date": "2022-06-05",
+          "status": "not-run",
+          "finishPosition": null,
+          "jockeyName": null,
+          "handicapPoint": null,
+          "startingPrice": null
+        },
+        {
+          "raceKey": "sait-akson",
+          "raceName": "Sait Akson",
+          "date": "2022-06-05",
+          "status": "not-run",
+          "finishPosition": null,
+          "jockeyName": null,
+          "handicapPoint": null,
+          "startingPrice": null
+        }
+      ],
       "cells": {
         "disi-tay-deneme": {
           "status": "not-run"
@@ -867,6 +1491,58 @@
       "bestPrepRaceKey": "sait-akson",
       "bestPrepRaceName": "Sait Akson",
       "bestPrepFinishPosition": 2,
+      "prepRaceStates": [
+        {
+          "raceKey": "disi-tay-deneme",
+          "raceName": "Dişi Tay Deneme",
+          "date": "2022-05-15",
+          "status": "not-run",
+          "finishPosition": null,
+          "jockeyName": null,
+          "handicapPoint": null,
+          "startingPrice": null
+        },
+        {
+          "raceKey": "erkek-tay-deneme",
+          "raceName": "Erkek Tay Deneme",
+          "date": "2022-05-15",
+          "status": "not-run",
+          "finishPosition": null,
+          "jockeyName": null,
+          "handicapPoint": null,
+          "startingPrice": null
+        },
+        {
+          "raceKey": "mehmet-akif-ersoy",
+          "raceName": "Mehmet Akif Ersoy",
+          "date": "2022-06-04",
+          "status": "not-run",
+          "finishPosition": null,
+          "jockeyName": null,
+          "handicapPoint": null,
+          "startingPrice": null
+        },
+        {
+          "raceKey": "kisrak",
+          "raceName": "Kısrak",
+          "date": "2022-06-05",
+          "status": "not-run",
+          "finishPosition": null,
+          "jockeyName": null,
+          "handicapPoint": null,
+          "startingPrice": null
+        },
+        {
+          "raceKey": "sait-akson",
+          "raceName": "Sait Akson",
+          "date": "2022-06-05",
+          "status": "ran",
+          "finishPosition": 2,
+          "jockeyName": "AHMET ÇELİK",
+          "handicapPoint": 93,
+          "startingPrice": "3,85"
+        }
+      ],
       "cells": {
         "disi-tay-deneme": {
           "status": "not-run"
@@ -927,6 +1603,58 @@
       "bestPrepRaceKey": null,
       "bestPrepRaceName": null,
       "bestPrepFinishPosition": null,
+      "prepRaceStates": [
+        {
+          "raceKey": "disi-tay-deneme",
+          "raceName": "Dişi Tay Deneme",
+          "date": "2022-05-15",
+          "status": "not-run",
+          "finishPosition": null,
+          "jockeyName": null,
+          "handicapPoint": null,
+          "startingPrice": null
+        },
+        {
+          "raceKey": "erkek-tay-deneme",
+          "raceName": "Erkek Tay Deneme",
+          "date": "2022-05-15",
+          "status": "not-run",
+          "finishPosition": null,
+          "jockeyName": null,
+          "handicapPoint": null,
+          "startingPrice": null
+        },
+        {
+          "raceKey": "mehmet-akif-ersoy",
+          "raceName": "Mehmet Akif Ersoy",
+          "date": "2022-06-04",
+          "status": "not-run",
+          "finishPosition": null,
+          "jockeyName": null,
+          "handicapPoint": null,
+          "startingPrice": null
+        },
+        {
+          "raceKey": "kisrak",
+          "raceName": "Kısrak",
+          "date": "2022-06-05",
+          "status": "not-run",
+          "finishPosition": null,
+          "jockeyName": null,
+          "handicapPoint": null,
+          "startingPrice": null
+        },
+        {
+          "raceKey": "sait-akson",
+          "raceName": "Sait Akson",
+          "date": "2022-06-05",
+          "status": "not-run",
+          "finishPosition": null,
+          "jockeyName": null,
+          "handicapPoint": null,
+          "startingPrice": null
+        }
+      ],
       "cells": {
         "disi-tay-deneme": {
           "status": "not-run"
@@ -975,6 +1703,58 @@
       "bestPrepRaceKey": "mehmet-akif-ersoy",
       "bestPrepRaceName": "Mehmet Akif Ersoy",
       "bestPrepFinishPosition": 2,
+      "prepRaceStates": [
+        {
+          "raceKey": "disi-tay-deneme",
+          "raceName": "Dişi Tay Deneme",
+          "date": "2022-05-15",
+          "status": "not-run",
+          "finishPosition": null,
+          "jockeyName": null,
+          "handicapPoint": null,
+          "startingPrice": null
+        },
+        {
+          "raceKey": "erkek-tay-deneme",
+          "raceName": "Erkek Tay Deneme",
+          "date": "2022-05-15",
+          "status": "not-run",
+          "finishPosition": null,
+          "jockeyName": null,
+          "handicapPoint": null,
+          "startingPrice": null
+        },
+        {
+          "raceKey": "mehmet-akif-ersoy",
+          "raceName": "Mehmet Akif Ersoy",
+          "date": "2022-06-04",
+          "status": "ran",
+          "finishPosition": 2,
+          "jockeyName": "HALİS KARATAŞ",
+          "handicapPoint": 75,
+          "startingPrice": "5,00"
+        },
+        {
+          "raceKey": "kisrak",
+          "raceName": "Kısrak",
+          "date": "2022-06-05",
+          "status": "not-run",
+          "finishPosition": null,
+          "jockeyName": null,
+          "handicapPoint": null,
+          "startingPrice": null
+        },
+        {
+          "raceKey": "sait-akson",
+          "raceName": "Sait Akson",
+          "date": "2022-06-05",
+          "status": "not-run",
+          "finishPosition": null,
+          "jockeyName": null,
+          "handicapPoint": null,
+          "startingPrice": null
+        }
+      ],
       "cells": {
         "disi-tay-deneme": {
           "status": "not-run"
@@ -1035,6 +1815,58 @@
       "bestPrepRaceKey": null,
       "bestPrepRaceName": null,
       "bestPrepFinishPosition": null,
+      "prepRaceStates": [
+        {
+          "raceKey": "disi-tay-deneme",
+          "raceName": "Dişi Tay Deneme",
+          "date": "2022-05-15",
+          "status": "not-run",
+          "finishPosition": null,
+          "jockeyName": null,
+          "handicapPoint": null,
+          "startingPrice": null
+        },
+        {
+          "raceKey": "erkek-tay-deneme",
+          "raceName": "Erkek Tay Deneme",
+          "date": "2022-05-15",
+          "status": "not-run",
+          "finishPosition": null,
+          "jockeyName": null,
+          "handicapPoint": null,
+          "startingPrice": null
+        },
+        {
+          "raceKey": "mehmet-akif-ersoy",
+          "raceName": "Mehmet Akif Ersoy",
+          "date": "2022-06-04",
+          "status": "not-run",
+          "finishPosition": null,
+          "jockeyName": null,
+          "handicapPoint": null,
+          "startingPrice": null
+        },
+        {
+          "raceKey": "kisrak",
+          "raceName": "Kısrak",
+          "date": "2022-06-05",
+          "status": "not-run",
+          "finishPosition": null,
+          "jockeyName": null,
+          "handicapPoint": null,
+          "startingPrice": null
+        },
+        {
+          "raceKey": "sait-akson",
+          "raceName": "Sait Akson",
+          "date": "2022-06-05",
+          "status": "not-run",
+          "finishPosition": null,
+          "jockeyName": null,
+          "handicapPoint": null,
+          "startingPrice": null
+        }
+      ],
       "cells": {
         "disi-tay-deneme": {
           "status": "not-run"
@@ -1083,6 +1915,58 @@
       "bestPrepRaceKey": "mehmet-akif-ersoy",
       "bestPrepRaceName": "Mehmet Akif Ersoy",
       "bestPrepFinishPosition": 4,
+      "prepRaceStates": [
+        {
+          "raceKey": "disi-tay-deneme",
+          "raceName": "Dişi Tay Deneme",
+          "date": "2022-05-15",
+          "status": "not-run",
+          "finishPosition": null,
+          "jockeyName": null,
+          "handicapPoint": null,
+          "startingPrice": null
+        },
+        {
+          "raceKey": "erkek-tay-deneme",
+          "raceName": "Erkek Tay Deneme",
+          "date": "2022-05-15",
+          "status": "not-run",
+          "finishPosition": null,
+          "jockeyName": null,
+          "handicapPoint": null,
+          "startingPrice": null
+        },
+        {
+          "raceKey": "mehmet-akif-ersoy",
+          "raceName": "Mehmet Akif Ersoy",
+          "date": "2022-06-04",
+          "status": "ran",
+          "finishPosition": 4,
+          "jockeyName": "AYHAN KURŞUN",
+          "handicapPoint": 90,
+          "startingPrice": "6,85"
+        },
+        {
+          "raceKey": "kisrak",
+          "raceName": "Kısrak",
+          "date": "2022-06-05",
+          "status": "not-run",
+          "finishPosition": null,
+          "jockeyName": null,
+          "handicapPoint": null,
+          "startingPrice": null
+        },
+        {
+          "raceKey": "sait-akson",
+          "raceName": "Sait Akson",
+          "date": "2022-06-05",
+          "status": "not-run",
+          "finishPosition": null,
+          "jockeyName": null,
+          "handicapPoint": null,
+          "startingPrice": null
+        }
+      ],
       "cells": {
         "disi-tay-deneme": {
           "status": "not-run"
@@ -1143,6 +2027,58 @@
       "bestPrepRaceKey": null,
       "bestPrepRaceName": null,
       "bestPrepFinishPosition": null,
+      "prepRaceStates": [
+        {
+          "raceKey": "disi-tay-deneme",
+          "raceName": "Dişi Tay Deneme",
+          "date": "2022-05-15",
+          "status": "not-run",
+          "finishPosition": null,
+          "jockeyName": null,
+          "handicapPoint": null,
+          "startingPrice": null
+        },
+        {
+          "raceKey": "erkek-tay-deneme",
+          "raceName": "Erkek Tay Deneme",
+          "date": "2022-05-15",
+          "status": "not-run",
+          "finishPosition": null,
+          "jockeyName": null,
+          "handicapPoint": null,
+          "startingPrice": null
+        },
+        {
+          "raceKey": "mehmet-akif-ersoy",
+          "raceName": "Mehmet Akif Ersoy",
+          "date": "2022-06-04",
+          "status": "not-run",
+          "finishPosition": null,
+          "jockeyName": null,
+          "handicapPoint": null,
+          "startingPrice": null
+        },
+        {
+          "raceKey": "kisrak",
+          "raceName": "Kısrak",
+          "date": "2022-06-05",
+          "status": "not-run",
+          "finishPosition": null,
+          "jockeyName": null,
+          "handicapPoint": null,
+          "startingPrice": null
+        },
+        {
+          "raceKey": "sait-akson",
+          "raceName": "Sait Akson",
+          "date": "2022-06-05",
+          "status": "not-run",
+          "finishPosition": null,
+          "jockeyName": null,
+          "handicapPoint": null,
+          "startingPrice": null
+        }
+      ],
       "cells": {
         "disi-tay-deneme": {
           "status": "not-run"
@@ -1191,6 +2127,58 @@
       "bestPrepRaceKey": null,
       "bestPrepRaceName": null,
       "bestPrepFinishPosition": null,
+      "prepRaceStates": [
+        {
+          "raceKey": "disi-tay-deneme",
+          "raceName": "Dişi Tay Deneme",
+          "date": "2022-05-15",
+          "status": "not-run",
+          "finishPosition": null,
+          "jockeyName": null,
+          "handicapPoint": null,
+          "startingPrice": null
+        },
+        {
+          "raceKey": "erkek-tay-deneme",
+          "raceName": "Erkek Tay Deneme",
+          "date": "2022-05-15",
+          "status": "not-run",
+          "finishPosition": null,
+          "jockeyName": null,
+          "handicapPoint": null,
+          "startingPrice": null
+        },
+        {
+          "raceKey": "mehmet-akif-ersoy",
+          "raceName": "Mehmet Akif Ersoy",
+          "date": "2022-06-04",
+          "status": "not-run",
+          "finishPosition": null,
+          "jockeyName": null,
+          "handicapPoint": null,
+          "startingPrice": null
+        },
+        {
+          "raceKey": "kisrak",
+          "raceName": "Kısrak",
+          "date": "2022-06-05",
+          "status": "not-run",
+          "finishPosition": null,
+          "jockeyName": null,
+          "handicapPoint": null,
+          "startingPrice": null
+        },
+        {
+          "raceKey": "sait-akson",
+          "raceName": "Sait Akson",
+          "date": "2022-06-05",
+          "status": "not-run",
+          "finishPosition": null,
+          "jockeyName": null,
+          "handicapPoint": null,
+          "startingPrice": null
+        }
+      ],
       "cells": {
         "disi-tay-deneme": {
           "status": "not-run"
@@ -1239,6 +2227,58 @@
       "bestPrepRaceKey": null,
       "bestPrepRaceName": null,
       "bestPrepFinishPosition": null,
+      "prepRaceStates": [
+        {
+          "raceKey": "disi-tay-deneme",
+          "raceName": "Dişi Tay Deneme",
+          "date": "2022-05-15",
+          "status": "not-run",
+          "finishPosition": null,
+          "jockeyName": null,
+          "handicapPoint": null,
+          "startingPrice": null
+        },
+        {
+          "raceKey": "erkek-tay-deneme",
+          "raceName": "Erkek Tay Deneme",
+          "date": "2022-05-15",
+          "status": "not-run",
+          "finishPosition": null,
+          "jockeyName": null,
+          "handicapPoint": null,
+          "startingPrice": null
+        },
+        {
+          "raceKey": "mehmet-akif-ersoy",
+          "raceName": "Mehmet Akif Ersoy",
+          "date": "2022-06-04",
+          "status": "not-run",
+          "finishPosition": null,
+          "jockeyName": null,
+          "handicapPoint": null,
+          "startingPrice": null
+        },
+        {
+          "raceKey": "kisrak",
+          "raceName": "Kısrak",
+          "date": "2022-06-05",
+          "status": "not-run",
+          "finishPosition": null,
+          "jockeyName": null,
+          "handicapPoint": null,
+          "startingPrice": null
+        },
+        {
+          "raceKey": "sait-akson",
+          "raceName": "Sait Akson",
+          "date": "2022-06-05",
+          "status": "not-run",
+          "finishPosition": null,
+          "jockeyName": null,
+          "handicapPoint": null,
+          "startingPrice": null
+        }
+      ],
       "cells": {
         "disi-tay-deneme": {
           "status": "not-run"
@@ -1287,6 +2327,58 @@
       "bestPrepRaceKey": "sait-akson",
       "bestPrepRaceName": "Sait Akson",
       "bestPrepFinishPosition": 6,
+      "prepRaceStates": [
+        {
+          "raceKey": "disi-tay-deneme",
+          "raceName": "Dişi Tay Deneme",
+          "date": "2022-05-15",
+          "status": "not-run",
+          "finishPosition": null,
+          "jockeyName": null,
+          "handicapPoint": null,
+          "startingPrice": null
+        },
+        {
+          "raceKey": "erkek-tay-deneme",
+          "raceName": "Erkek Tay Deneme",
+          "date": "2022-05-15",
+          "status": "ran",
+          "finishPosition": 15,
+          "jockeyName": "GÖKHAN GÖKÇE",
+          "handicapPoint": 84,
+          "startingPrice": "65,60"
+        },
+        {
+          "raceKey": "mehmet-akif-ersoy",
+          "raceName": "Mehmet Akif Ersoy",
+          "date": "2022-06-04",
+          "status": "not-run",
+          "finishPosition": null,
+          "jockeyName": null,
+          "handicapPoint": null,
+          "startingPrice": null
+        },
+        {
+          "raceKey": "kisrak",
+          "raceName": "Kısrak",
+          "date": "2022-06-05",
+          "status": "not-run",
+          "finishPosition": null,
+          "jockeyName": null,
+          "handicapPoint": null,
+          "startingPrice": null
+        },
+        {
+          "raceKey": "sait-akson",
+          "raceName": "Sait Akson",
+          "date": "2022-06-05",
+          "status": "ran",
+          "finishPosition": 6,
+          "jockeyName": "GÖKHAN GÖKÇE",
+          "handicapPoint": 84,
+          "startingPrice": "82,85"
+        }
+      ],
       "cells": {
         "disi-tay-deneme": {
           "status": "not-run"
@@ -1359,6 +2451,58 @@
       "bestPrepRaceKey": "erkek-tay-deneme",
       "bestPrepRaceName": "Erkek Tay Deneme",
       "bestPrepFinishPosition": 7,
+      "prepRaceStates": [
+        {
+          "raceKey": "disi-tay-deneme",
+          "raceName": "Dişi Tay Deneme",
+          "date": "2022-05-15",
+          "status": "not-run",
+          "finishPosition": null,
+          "jockeyName": null,
+          "handicapPoint": null,
+          "startingPrice": null
+        },
+        {
+          "raceKey": "erkek-tay-deneme",
+          "raceName": "Erkek Tay Deneme",
+          "date": "2022-05-15",
+          "status": "ran",
+          "finishPosition": 7,
+          "jockeyName": "AHMET ÇELİK",
+          "handicapPoint": 76,
+          "startingPrice": "10,40"
+        },
+        {
+          "raceKey": "mehmet-akif-ersoy",
+          "raceName": "Mehmet Akif Ersoy",
+          "date": "2022-06-04",
+          "status": "not-run",
+          "finishPosition": null,
+          "jockeyName": null,
+          "handicapPoint": null,
+          "startingPrice": null
+        },
+        {
+          "raceKey": "kisrak",
+          "raceName": "Kısrak",
+          "date": "2022-06-05",
+          "status": "not-run",
+          "finishPosition": null,
+          "jockeyName": null,
+          "handicapPoint": null,
+          "startingPrice": null
+        },
+        {
+          "raceKey": "sait-akson",
+          "raceName": "Sait Akson",
+          "date": "2022-06-05",
+          "status": "not-run",
+          "finishPosition": null,
+          "jockeyName": null,
+          "handicapPoint": null,
+          "startingPrice": null
+        }
+      ],
       "cells": {
         "disi-tay-deneme": {
           "status": "not-run"
