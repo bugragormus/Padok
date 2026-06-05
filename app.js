@@ -18,6 +18,7 @@ const state = {
   dataHorizon: null,
   selectedParticipationHorse: null,
   participationFilter: "all",
+  routeVisibilityFilter: "all",
   readinessLens: "score",
   analysisYear: null,
   routeReportCache: new Map(),
@@ -761,21 +762,22 @@ const renderRouteVisibilitySummary = (report, tableColumns) => {
   const dominantRate = Math.round((dominant[1] / total) * 100);
 
   container.innerHTML = `
-    <article class="route-visibility-summary__intro">
+    <button class="route-visibility-summary__intro ${state.routeVisibilityFilter === "all" ? "route-visibility-summary__intro--selected" : ""}" type="button" data-route-visibility-filter="all" aria-pressed="${state.routeVisibilityFilter === "all"}">
       <span>Alan kompozisyonu</span>
       <strong>${escapeHtml(dominant[0])}</strong>
       <p>${escapeHtml(`${dominant[1]}/${total} at bu grupta. Bu sezonun baskın rota okuması %${dominantRate} ağırlıkla burada.`)}</p>
-    </article>
+    </button>
     <div class="route-visibility-summary__grid">
       ${rows.map(([label, count]) => {
         const rate = Math.round((count / total) * 100);
+        const isSelected = state.routeVisibilityFilter === label;
 
         return `
-          <span>
+          <button class="route-visibility-summary__chip ${isSelected ? "route-visibility-summary__chip--selected" : ""}" type="button" data-route-visibility-filter="${escapeHtml(label)}" aria-pressed="${isSelected}">
             <small>${escapeHtml(label)}</small>
             <strong>${escapeHtml(count)} at</strong>
             <em>%${escapeHtml(rate)}</em>
-          </span>
+          </button>
         `;
       }).join("")}
     </div>
@@ -811,19 +813,26 @@ const rowHasJockeyChange = (row, columns) => {
 };
 
 const getFilteredParticipationRows = (rows, tableColumns) => {
+  const prepColumns = tableColumns.filter((column) => !column.isTarget);
+  const applyRouteVisibilityFilter = (filteredRows) => {
+    if (state.routeVisibilityFilter === "all") return filteredRows;
+
+    return filteredRows.filter((row) => getRouteVisibility(row, prepColumns).label === state.routeVisibilityFilter);
+  };
+
   if (state.participationFilter === "noPrep") {
-    return rows.filter((row) => row.prepStartCount === 0);
+    return applyRouteVisibilityFilter(rows.filter((row) => row.prepStartCount === 0));
   }
 
   if (state.participationFilter === "podium") {
-    return rows.filter((row) => Number.isFinite(row.gaziFinishPosition) && row.gaziFinishPosition <= 3);
+    return applyRouteVisibilityFilter(rows.filter((row) => Number.isFinite(row.gaziFinishPosition) && row.gaziFinishPosition <= 3));
   }
 
   if (state.participationFilter === "jockeyChange") {
-    return rows.filter((row) => rowHasJockeyChange(row, tableColumns));
+    return applyRouteVisibilityFilter(rows.filter((row) => rowHasJockeyChange(row, tableColumns)));
   }
 
-  return rows;
+  return applyRouteVisibilityFilter(rows);
 };
 
 const formatHorseNames = (rows, limit = 3) => {
@@ -1614,6 +1623,7 @@ const renderParticipation = (report) => {
           <div class="participation-summary-cell">
             <strong>${row.prepStartCount} prep startı</strong>
             <span>${row.bestPrepRaceName ? `En iyi: ${escapeHtml(row.bestPrepRaceName)} ${escapeHtml(formatPosition(row.bestPrepFinishPosition))}` : "Takip edilen prep yok"}</span>
+            <small>${escapeHtml(getRouteVisibility(row, tableColumns.filter((column) => !column.isTarget)).label)}</small>
           </div>
           ${tableColumns.map((column) => renderParticipationCell(row.cells[column.key])).join("")}
         </button>
@@ -1713,6 +1723,7 @@ const loadAnalysisYear = async (year) => {
 
   state.analysisYear = numericYear;
   state.selectedParticipationHorse = null;
+  state.routeVisibilityFilter = "all";
 
   if (!state.routeReportCache.has(numericYear)) {
     state.routeReportCache.set(numericYear, await readJson(`./data/gazi-route-${numericYear}.json`));
@@ -1771,6 +1782,14 @@ const bindEvents = () => {
     const button = event.target.closest("[data-participation-filter]");
     if (!button || !state.participationReport) return;
     state.participationFilter = button.dataset.participationFilter;
+    state.selectedParticipationHorse = null;
+    renderParticipation(state.participationReport);
+  });
+
+  document.querySelector("#route-visibility-summary").addEventListener("click", (event) => {
+    const button = event.target.closest("[data-route-visibility-filter]");
+    if (!button || !state.participationReport) return;
+    state.routeVisibilityFilter = button.dataset.routeVisibilityFilter;
     state.selectedParticipationHorse = null;
     renderParticipation(state.participationReport);
   });
