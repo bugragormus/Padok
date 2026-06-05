@@ -8,7 +8,7 @@ import {
   sortReadinessProfiles
 } from "./scripts/readiness-model.mjs";
 
-const APP_DATA_VERSION = "20260605-signal-calibration";
+const APP_DATA_VERSION = "20260606-decision-flow";
 
 const state = {
   data: null,

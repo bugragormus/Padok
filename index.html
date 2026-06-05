@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Padok | Gazi Kosusu Analiz</title>
-    <link rel="stylesheet" href="./styles.css?v=20260605-signal-calibration" />
+    <link rel="stylesheet" href="./styles.css?v=20260606-decision-flow" />
   </head>
   <body>
     <header class="hero">
@@ -13,21 +13,21 @@
       <nav class="topbar" aria-label="Ana navigasyon">
         <a class="brand" href="./index.html">Padok</a>
         <div class="topbar__links">
-          <a href="#data-status">Özet</a>
-          <a href="#backtest">Backtest</a>
-          <a href="#participation">Katılım</a>
-          <a href="#races">Kosular</a>
+          <a href="#decision">Karar</a>
+          <a href="#participation">Adaylar</a>
+          <a href="#backtest">Doğrulama</a>
+          <a href="#data-status">Veri</a>
         </div>
       </nav>
       <section class="hero__content">
         <p class="eyebrow">Gazi Kosusu odakli yaris analizi</p>
-        <h1>Veriyi tek ekranda topla, sezgiyi daha iyi kalibre et.</h1>
+        <h1>Gazi yolunu sade bir karar ekranında oku.</h1>
         <p class="hero__copy">
-          Gazi'ye giden yoldaki prep kosularini, mesafe-pist uyumunu ve at bazli form sinyallerini yan yana koyan karar destek panosu.
+          Prep koşuları, aday profilleri, riskler ve veri güveni tek akışta toplanır; detaylar ihtiyaç duyduğunda açılır.
         </p>
         <div class="hero__actions">
-          <a class="button button--primary" href="#participation">At profillerini incele</a>
-          <a class="button button--ghost" href="#backtest">Backtest'i gör</a>
+          <a class="button button--primary" href="#decision">Karar ekranına git</a>
+          <a class="button button--ghost" href="#participation">Atları incele</a>
         </div>
       </section>
     </header>
@@ -42,22 +42,52 @@
         <dl class="metric-strip" id="target-metrics"></dl>
       </section>
 
-      <section class="data-status" id="data-status" aria-label="Analiz özeti">
+      <section class="decision-dashboard" id="decision" aria-label="Gazi karar ekranı">
         <div class="section-heading">
-          <p class="section-kicker">Analiz özeti</p>
-          <h2>Gazi yolunda hangi sinyaller öne çıkıyor?</h2>
-          <p class="muted" id="data-status-summary"></p>
+          <p class="section-kicker">Karar ekranı</p>
+          <h2>Önce adayları, sonra gerekçeyi oku.</h2>
+          <p class="muted">
+            Bu bölüm son kullanıcı için ana akıştır: öne çıkan adaylar, yarış günü takip listesi, karşılaştırma ve radar aynı yerde toplanır.
+          </p>
         </div>
 
-        <div class="status-metrics" id="status-metrics"></div>
         <div id="decision-brief"></div>
+        <div class="race-day-watchlist" id="race-day-watchlist" aria-label="Yarış günü takip listesi"></div>
+        <div class="candidate-comparison" id="candidate-comparison" aria-label="Aday karşılaştırması"></div>
+        <div class="gazi-radar" id="gazi-radar" aria-label="Gazi radar tahmin panosu"></div>
+      </section>
 
-        <div class="status-layout">
-          <div>
-            <h3>İzlenen koşular</h3>
-            <div class="coverage-list" id="coverage-list"></div>
-          </div>
+      <section class="participation" id="participation" aria-label="Gazi aday ve katılım ekranı">
+        <div class="section-heading">
+          <p class="section-kicker">Adaylar</p>
+          <h2>At profiline gir, sinyali parçalarına ayır.</h2>
+          <p class="muted" id="participation-summary"></p>
         </div>
+
+        <div class="analysis-toolbar" aria-label="Analiz sezonu">
+          <label class="select">
+            <span>Analiz sezonu</span>
+            <select id="analysis-year-select"></select>
+          </label>
+          <p>Sezon değişince aday profilleri, rota görünürlüğü ve koşu haritası birlikte güncellenir.</p>
+        </div>
+
+        <div class="profile-shortlist" id="profile-shortlist" aria-label="Profil kısa listesi"></div>
+        <div id="participation-detail"></div>
+
+        <details class="analysis-disclosure">
+          <summary>Katılım matrisi ve filtreler</summary>
+          <div class="season-comparison" id="participation-comparison" aria-label="Sezon karşılaştırması"></div>
+          <div class="historical-patterns" id="historical-patterns" aria-label="Tarihsel rota patternleri"></div>
+          <div class="participation-filters" id="participation-filters" aria-label="Katılım filtreleri"></div>
+          <div class="active-filter-bar" id="active-filter-bar" aria-label="Aktif filtreler"></div>
+          <div class="filtered-group-summary" id="filtered-group-summary" aria-label="Filtreli grup özeti"></div>
+          <div class="status-metrics" id="participation-metrics"></div>
+          <div class="route-visibility-summary" id="route-visibility-summary" aria-label="Rota görünürlüğü dağılımı"></div>
+          <div class="participation-insights" id="participation-insights" aria-label="Katılım içgörüleri"></div>
+          <div class="participation-table" id="participation-table"></div>
+          <p class="backtest-warning" id="participation-warning"></p>
+        </details>
       </section>
 
       <section class="backtest" id="backtest" aria-label="Geçmiş sezon backtest sonuçları">
@@ -88,37 +118,20 @@
         <p class="backtest-warning" id="backtest-warning"></p>
       </section>
 
-      <section class="participation" id="participation" aria-label="Gazi rota katılım matrisi">
+      <section class="data-status" id="data-status" aria-label="Veri durumu">
         <div class="section-heading">
-          <p class="section-kicker">Katılım matrisi</p>
-          <h2>Gazi atları hangi rota koşularından geldi?</h2>
-          <p class="muted" id="participation-summary"></p>
+          <p class="section-kicker">Veri durumu</p>
+          <h2>Hangi resmi koşular sistemde?</h2>
+          <p class="muted" id="data-status-summary"></p>
         </div>
 
-        <div class="analysis-toolbar" aria-label="Analiz sezonu">
-          <label class="select">
-            <span>Analiz sezonu</span>
-            <select id="analysis-year-select"></select>
-          </label>
-          <p>Seçilen sezon katılım matrisini, veri durumunu ve koşu haritasını birlikte günceller.</p>
+        <div class="status-metrics" id="status-metrics"></div>
+        <div class="status-layout">
+          <div>
+            <h3>İzlenen koşular</h3>
+            <div class="coverage-list" id="coverage-list"></div>
+          </div>
         </div>
-
-        <div class="season-comparison" id="participation-comparison" aria-label="Sezon karşılaştırması"></div>
-        <div class="historical-patterns" id="historical-patterns" aria-label="Tarihsel rota patternleri"></div>
-        <div class="gazi-radar" id="gazi-radar" aria-label="Gazi radar tahmin panosu"></div>
-        <div class="candidate-comparison" id="candidate-comparison" aria-label="Aday karşılaştırması"></div>
-        <div class="race-day-watchlist" id="race-day-watchlist" aria-label="Yarış günü takip listesi"></div>
-        <div class="participation-filters" id="participation-filters" aria-label="Katılım filtreleri"></div>
-        <div class="active-filter-bar" id="active-filter-bar" aria-label="Aktif filtreler"></div>
-        <div class="filtered-group-summary" id="filtered-group-summary" aria-label="Filtreli grup özeti"></div>
-
-        <div class="status-metrics" id="participation-metrics"></div>
-        <div class="route-visibility-summary" id="route-visibility-summary" aria-label="Rota görünürlüğü dağılımı"></div>
-        <div class="participation-insights" id="participation-insights" aria-label="Katılım içgörüleri"></div>
-        <div class="profile-shortlist" id="profile-shortlist" aria-label="Profil kısa listesi"></div>
-        <div id="participation-detail"></div>
-        <div class="participation-table" id="participation-table"></div>
-        <p class="backtest-warning" id="participation-warning"></p>
       </section>
 
       <section class="layout" id="races">
@@ -139,6 +152,6 @@
       <span>Bahis onerisi degildir; analiz ve ogrenme amaclidir.</span>
     </footer>
 
-    <script src="./app.js?v=20260605-signal-calibration" type="module"></script>
+    <script src="./app.js?v=20260606-decision-flow" type="module"></script>
   </body>
 </html>

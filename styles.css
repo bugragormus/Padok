@@ -30,7 +30,7 @@ a {
 }
 
 .hero {
-  min-height: 94svh;
+  min-height: 68svh;
   position: relative;
   display: grid;
   align-items: center;
@@ -152,11 +152,12 @@ h1 {
 
 main {
   display: grid;
-  gap: clamp(40px, 6vw, 76px);
+  gap: clamp(32px, 5vw, 64px);
   padding: clamp(28px, 5vw, 72px);
 }
 
 .overview,
+.decision-dashboard,
 .data-status,
 .backtest,
 .participation,
@@ -171,6 +172,60 @@ main {
   grid-template-columns: minmax(0, 1fr) minmax(320px, 0.9fr);
   gap: 28px;
   align-items: end;
+}
+
+.decision-dashboard {
+  display: grid;
+  gap: 18px;
+}
+
+.decision-dashboard > .section-heading {
+  max-width: 760px;
+}
+
+.analysis-disclosure {
+  display: grid;
+  gap: 18px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.64);
+  box-shadow: 0 10px 34px rgba(23, 33, 28, 0.06);
+  overflow: clip;
+}
+
+.analysis-disclosure > summary {
+  cursor: pointer;
+  list-style: none;
+  padding: 18px 20px;
+  color: var(--green-2);
+  font-weight: 850;
+}
+
+.analysis-disclosure > summary::-webkit-details-marker {
+  display: none;
+}
+
+.analysis-disclosure > summary::after {
+  content: "+";
+  float: right;
+  color: var(--green);
+  font-weight: 900;
+}
+
+.analysis-disclosure[open] > summary {
+  border-bottom: 1px solid var(--line);
+}
+
+.analysis-disclosure[open] > summary::after {
+  content: "-";
+}
+
+.analysis-disclosure > *:not(summary) {
+  margin-inline: 20px;
+}
+
+.analysis-disclosure > *:last-child {
+  margin-bottom: 20px;
 }
 
 .runtime-error {
@@ -3224,7 +3279,7 @@ footer {
 
 @media (max-width: 760px) {
   .hero {
-    min-height: 88svh;
+    min-height: 72svh;
   }
 
   .status-layout {
@@ -3286,7 +3341,7 @@ footer {
   }
 
   .candidate-comparison__grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-columns: 1fr;
   }
 
   .candidate-comparison__calibrated {
@@ -3304,7 +3359,15 @@ footer {
 
   .race-day-watchlist__grid,
   .race-day-watchlist__notes {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-columns: 1fr;
+  }
+
+  .analysis-disclosure > summary {
+    padding: 16px;
+  }
+
+  .analysis-disclosure > *:not(summary) {
+    margin-inline: 14px;
   }
 
   .route-visibility-summary {

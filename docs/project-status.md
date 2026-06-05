@@ -22,10 +22,10 @@ The application is live on GitHub Pages:
 https://bugragormus.github.io/Padok/
 ```
 
-The latest committed analysis layer is:
+The latest completed product step is:
 
 ```text
-0d0f4b8 Add race day watchlist
+Decision-flow UI simplification
 ```
 
 The app currently shows:
@@ -38,6 +38,7 @@ The app currently shows:
 - Signal calibration and weight recommendation artifacts.
 - A candidate comparison artifact that combines route, readiness, actor, pedigree, owner, strengths, cautions, and calibrated ranking.
 - A race-day watchlist artifact that groups core contenders, upside profiles, risk flags, and data checklist notes.
+- A simplified first decision screen that groups the decision brief, race-day watchlist, candidate comparison, and Gazi radar together.
 - A static API index and a local read-only MCP bridge over the generated analysis artifacts.
 
 ## Current Data Coverage
@@ -215,36 +216,36 @@ No paid hosting or database is currently required.
 
 ## Current UX State
 
-The UI is useful but now too dense for a normal end user.
+The UI has started moving from a report wall toward a guided decision product.
 
 Good current pieces:
 
 - The app has real analysis artifacts behind it, not only manually written copy.
 - Route participation, readiness, calibration, comparison, and watchlist layers are all generated from data.
+- The top user flow now starts with a decision dashboard rather than raw matrices or technical validation.
+- The long participation matrix starts collapsed behind a detail control.
 - The static API and MCP bridge give us a path toward automation and AI-assisted querying.
 - Live Pages deployment can work without paid infrastructure.
 
 Weak current pieces:
 
-- The first screen has too many panels competing for attention.
-- Technical/progress panels are mixed with end-user decision panels.
-- The user has to infer the intended workflow instead of being guided through it.
-- Route entry lists and diagnostic reports should become drill-down views, not always-visible content.
-- There is no clean "Today, what should I look at?" screen yet.
+- Some technical/progress panels are still too prominent below the main decision screen.
+- The user flow is clearer, but candidate detail and comparison still need to feel like one cohesive workflow.
+- Route race and validation sections still need stronger tab/detail organization.
 - There is no horse-centered comparison page yet.
 - There is no simple explanation panel per horse showing why a score changed.
 
 ## Recommended Next Steps
 
-### 1. UX Simplification Pass
+### 1. Continue UX Simplification
 
 Turn the UI into a guided decision product instead of a report wall:
 
-- First screen: summary, race-day watchlist, top candidates, and clear confidence/status.
+- First screen: summary, race-day watchlist, top candidates, and clear confidence/status. The first version of this is now in place.
 - Secondary tabs: candidates, comparison, route races, validation, data health.
 - Technical/progress details should move to docs or collapsible diagnostics.
 - Every panel should answer one user question in plain Turkish.
-- Hide long race entry lists behind expand/collapse controls.
+- Keep long race entry lists and matrices behind expand/collapse controls.
 
 ### 2. Horse-Centered Detail View
 
