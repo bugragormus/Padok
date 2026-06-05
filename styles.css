@@ -526,6 +526,44 @@ h2 {
   font-size: 0.9rem;
 }
 
+.manifest-health {
+  grid-column: 1 / -1;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(88px, 1fr));
+  gap: 8px;
+}
+
+.manifest-year-chip {
+  display: grid;
+  gap: 3px;
+  min-width: 0;
+  padding: 9px 10px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  text-decoration: none;
+}
+
+.manifest-year-chip strong {
+  color: var(--ink);
+  font-size: 0.86rem;
+}
+
+.manifest-year-chip span {
+  color: var(--muted);
+  font-size: 0.7rem;
+  font-weight: 800;
+}
+
+.manifest-year-chip--clean {
+  border-color: rgba(36, 95, 70, 0.22);
+  background: #eef6f1;
+}
+
+.manifest-year-chip--warn {
+  border-color: rgba(197, 154, 61, 0.38);
+  background: #fff8e8;
+}
+
 .data-horizon {
   margin-top: 36px;
   padding-top: 28px;

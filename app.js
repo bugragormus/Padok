@@ -365,6 +365,7 @@ const renderDataManifest = (manifest) => {
     ["Katılım JSON", manifest.summary?.participationReportCount ?? 0],
     ["Readiness JSON", manifest.summary?.readinessReportCount ?? 0]
   ];
+  const readinessHealth = manifest.reports?.readiness ?? [];
 
   container.innerHTML = `
     <article class="manifest-card">
@@ -381,6 +382,22 @@ const renderDataManifest = (manifest) => {
           </span>
         `).join("")}
       </div>
+      ${readinessHealth.length ? `
+        <div class="manifest-health" aria-label="Yıllık readiness kalite durumu">
+          ${readinessHealth.map((entry) => {
+            const warningCount = entry.summary?.warningCount ?? 0;
+            const healthLabel = warningCount ? `${warningCount} uyarı` : "temiz";
+            const healthClass = warningCount ? "manifest-year-chip--warn" : "manifest-year-chip--clean";
+
+            return `
+              <a class="manifest-year-chip ${healthClass}" href="./${escapeHtml(entry.path)}" download>
+                <strong>${escapeHtml(entry.year)}</strong>
+                <span>${escapeHtml(healthLabel)}</span>
+              </a>
+            `;
+          }).join("")}
+        </div>
+      ` : ""}
       <a class="artifact-card__link" href="./data/padok-data-manifest.json" download>Manifest indir</a>
       <em>Son üretim: ${escapeHtml(formatTimestamp(manifest.generatedAt))}</em>
     </article>
