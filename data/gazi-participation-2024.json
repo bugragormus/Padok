@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-06-05T00:04:00.751Z",
+  "generatedAt": "2026-06-05T00:07:08.806Z",
   "sourceYear": 2024,
   "sourceGeneratedAt": "2026-06-03T12:49:11.539Z",
   "methodology": {
@@ -19,7 +19,12 @@
     "topThreeWithPrepStartCount": 2,
     "topThreeWithoutPrepStartCount": 1,
     "topThreePrepStartRate": 67,
-    "averagePrepStartCount": 1.2
+    "averagePrepStartCount": 1.2,
+    "routeVisibilityCounts": {
+      "Tek koşu sinyali": 7,
+      "Geniş rota görünürlüğü": 10,
+      "Rota dışı profil": 5
+    }
   },
   "columns": [
     {
@@ -151,6 +156,17 @@
           "startingPrice": null
         }
       ],
+      "routeVisibility": {
+        "score": 20,
+        "label": "Tek koşu sinyali",
+        "reason": "At yalnızca bir takip koşusunda göründü; form sinyali var ama dar.",
+        "totalRaceCount": 5,
+        "ranCount": 1,
+        "skippedCount": 4,
+        "pendingCount": 0,
+        "missingCount": 0,
+        "dataCompleteness": 100
+      },
       "cells": {
         "disi-tay-deneme": {
           "status": "not-run"
@@ -263,6 +279,17 @@
           "startingPrice": "6,30"
         }
       ],
+      "routeVisibility": {
+        "score": 40,
+        "label": "Geniş rota görünürlüğü",
+        "reason": "At birden fazla takip koşusunda göründüğü için rota sinyali daha okunabilir.",
+        "totalRaceCount": 5,
+        "ranCount": 2,
+        "skippedCount": 3,
+        "pendingCount": 0,
+        "missingCount": 0,
+        "dataCompleteness": 100
+      },
       "cells": {
         "disi-tay-deneme": {
           "status": "not-run"
@@ -387,6 +414,17 @@
           "startingPrice": null
         }
       ],
+      "routeVisibility": {
+        "score": 0,
+        "label": "Rota dışı profil",
+        "reason": "At takip edilen hazırlık rotasına katılmadan Gazi alanına gelmiş.",
+        "totalRaceCount": 5,
+        "ranCount": 0,
+        "skippedCount": 5,
+        "pendingCount": 0,
+        "missingCount": 0,
+        "dataCompleteness": 100
+      },
       "cells": {
         "disi-tay-deneme": {
           "status": "not-run"
@@ -487,6 +525,17 @@
           "startingPrice": null
         }
       ],
+      "routeVisibility": {
+        "score": 0,
+        "label": "Rota dışı profil",
+        "reason": "At takip edilen hazırlık rotasına katılmadan Gazi alanına gelmiş.",
+        "totalRaceCount": 5,
+        "ranCount": 0,
+        "skippedCount": 5,
+        "pendingCount": 0,
+        "missingCount": 0,
+        "dataCompleteness": 100
+      },
       "cells": {
         "disi-tay-deneme": {
           "status": "not-run"
@@ -587,6 +636,17 @@
           "startingPrice": null
         }
       ],
+      "routeVisibility": {
+        "score": 40,
+        "label": "Geniş rota görünürlüğü",
+        "reason": "At birden fazla takip koşusunda göründüğü için rota sinyali daha okunabilir.",
+        "totalRaceCount": 5,
+        "ranCount": 2,
+        "skippedCount": 3,
+        "pendingCount": 0,
+        "missingCount": 0,
+        "dataCompleteness": 100
+      },
       "cells": {
         "disi-tay-deneme": {
           "status": "not-run"
@@ -711,6 +771,17 @@
           "startingPrice": null
         }
       ],
+      "routeVisibility": {
+        "score": 40,
+        "label": "Geniş rota görünürlüğü",
+        "reason": "At birden fazla takip koşusunda göründüğü için rota sinyali daha okunabilir.",
+        "totalRaceCount": 5,
+        "ranCount": 2,
+        "skippedCount": 3,
+        "pendingCount": 0,
+        "missingCount": 0,
+        "dataCompleteness": 100
+      },
       "cells": {
         "disi-tay-deneme": {
           "status": "ran",
@@ -835,6 +906,17 @@
           "startingPrice": null
         }
       ],
+      "routeVisibility": {
+        "score": 40,
+        "label": "Geniş rota görünürlüğü",
+        "reason": "At birden fazla takip koşusunda göründüğü için rota sinyali daha okunabilir.",
+        "totalRaceCount": 5,
+        "ranCount": 2,
+        "skippedCount": 3,
+        "pendingCount": 0,
+        "missingCount": 0,
+        "dataCompleteness": 100
+      },
       "cells": {
         "disi-tay-deneme": {
           "status": "ran",
@@ -959,6 +1041,17 @@
           "startingPrice": null
         }
       ],
+      "routeVisibility": {
+        "score": 20,
+        "label": "Tek koşu sinyali",
+        "reason": "At yalnızca bir takip koşusunda göründü; form sinyali var ama dar.",
+        "totalRaceCount": 5,
+        "ranCount": 1,
+        "skippedCount": 4,
+        "pendingCount": 0,
+        "missingCount": 0,
+        "dataCompleteness": 100
+      },
       "cells": {
         "disi-tay-deneme": {
           "status": "not-run"
@@ -1071,6 +1164,17 @@
           "startingPrice": "4,15"
         }
       ],
+      "routeVisibility": {
+        "score": 40,
+        "label": "Geniş rota görünürlüğü",
+        "reason": "At birden fazla takip koşusunda göründüğü için rota sinyali daha okunabilir.",
+        "totalRaceCount": 5,
+        "ranCount": 2,
+        "skippedCount": 3,
+        "pendingCount": 0,
+        "missingCount": 0,
+        "dataCompleteness": 100
+      },
       "cells": {
         "disi-tay-deneme": {
           "status": "not-run"
@@ -1195,6 +1299,17 @@
           "startingPrice": null
         }
       ],
+      "routeVisibility": {
+        "score": 0,
+        "label": "Rota dışı profil",
+        "reason": "At takip edilen hazırlık rotasına katılmadan Gazi alanına gelmiş.",
+        "totalRaceCount": 5,
+        "ranCount": 0,
+        "skippedCount": 5,
+        "pendingCount": 0,
+        "missingCount": 0,
+        "dataCompleteness": 100
+      },
       "cells": {
         "disi-tay-deneme": {
           "status": "not-run"
@@ -1295,6 +1410,17 @@
           "startingPrice": "5,20"
         }
       ],
+      "routeVisibility": {
+        "score": 40,
+        "label": "Geniş rota görünürlüğü",
+        "reason": "At birden fazla takip koşusunda göründüğü için rota sinyali daha okunabilir.",
+        "totalRaceCount": 5,
+        "ranCount": 2,
+        "skippedCount": 3,
+        "pendingCount": 0,
+        "missingCount": 0,
+        "dataCompleteness": 100
+      },
       "cells": {
         "disi-tay-deneme": {
           "status": "not-run"
@@ -1419,6 +1545,17 @@
           "startingPrice": "10,35"
         }
       ],
+      "routeVisibility": {
+        "score": 40,
+        "label": "Geniş rota görünürlüğü",
+        "reason": "At birden fazla takip koşusunda göründüğü için rota sinyali daha okunabilir.",
+        "totalRaceCount": 5,
+        "ranCount": 2,
+        "skippedCount": 3,
+        "pendingCount": 0,
+        "missingCount": 0,
+        "dataCompleteness": 100
+      },
       "cells": {
         "disi-tay-deneme": {
           "status": "not-run"
@@ -1543,6 +1680,17 @@
           "startingPrice": "10,55"
         }
       ],
+      "routeVisibility": {
+        "score": 20,
+        "label": "Tek koşu sinyali",
+        "reason": "At yalnızca bir takip koşusunda göründü; form sinyali var ama dar.",
+        "totalRaceCount": 5,
+        "ranCount": 1,
+        "skippedCount": 4,
+        "pendingCount": 0,
+        "missingCount": 0,
+        "dataCompleteness": 100
+      },
       "cells": {
         "disi-tay-deneme": {
           "status": "not-run"
@@ -1655,6 +1803,17 @@
           "startingPrice": null
         }
       ],
+      "routeVisibility": {
+        "score": 0,
+        "label": "Rota dışı profil",
+        "reason": "At takip edilen hazırlık rotasına katılmadan Gazi alanına gelmiş.",
+        "totalRaceCount": 5,
+        "ranCount": 0,
+        "skippedCount": 5,
+        "pendingCount": 0,
+        "missingCount": 0,
+        "dataCompleteness": 100
+      },
       "cells": {
         "disi-tay-deneme": {
           "status": "not-run"
@@ -1755,6 +1914,17 @@
           "startingPrice": "2,15"
         }
       ],
+      "routeVisibility": {
+        "score": 40,
+        "label": "Geniş rota görünürlüğü",
+        "reason": "At birden fazla takip koşusunda göründüğü için rota sinyali daha okunabilir.",
+        "totalRaceCount": 5,
+        "ranCount": 2,
+        "skippedCount": 3,
+        "pendingCount": 0,
+        "missingCount": 0,
+        "dataCompleteness": 100
+      },
       "cells": {
         "disi-tay-deneme": {
           "status": "not-run"
@@ -1879,6 +2049,17 @@
           "startingPrice": null
         }
       ],
+      "routeVisibility": {
+        "score": 40,
+        "label": "Geniş rota görünürlüğü",
+        "reason": "At birden fazla takip koşusunda göründüğü için rota sinyali daha okunabilir.",
+        "totalRaceCount": 5,
+        "ranCount": 2,
+        "skippedCount": 3,
+        "pendingCount": 0,
+        "missingCount": 0,
+        "dataCompleteness": 100
+      },
       "cells": {
         "disi-tay-deneme": {
           "status": "ran",
@@ -2003,6 +2184,17 @@
           "startingPrice": null
         }
       ],
+      "routeVisibility": {
+        "score": 0,
+        "label": "Rota dışı profil",
+        "reason": "At takip edilen hazırlık rotasına katılmadan Gazi alanına gelmiş.",
+        "totalRaceCount": 5,
+        "ranCount": 0,
+        "skippedCount": 5,
+        "pendingCount": 0,
+        "missingCount": 0,
+        "dataCompleteness": 100
+      },
       "cells": {
         "disi-tay-deneme": {
           "status": "not-run"
@@ -2103,6 +2295,17 @@
           "startingPrice": null
         }
       ],
+      "routeVisibility": {
+        "score": 20,
+        "label": "Tek koşu sinyali",
+        "reason": "At yalnızca bir takip koşusunda göründü; form sinyali var ama dar.",
+        "totalRaceCount": 5,
+        "ranCount": 1,
+        "skippedCount": 4,
+        "pendingCount": 0,
+        "missingCount": 0,
+        "dataCompleteness": 100
+      },
       "cells": {
         "disi-tay-deneme": {
           "status": "not-run"
@@ -2215,6 +2418,17 @@
           "startingPrice": "85,65"
         }
       ],
+      "routeVisibility": {
+        "score": 20,
+        "label": "Tek koşu sinyali",
+        "reason": "At yalnızca bir takip koşusunda göründü; form sinyali var ama dar.",
+        "totalRaceCount": 5,
+        "ranCount": 1,
+        "skippedCount": 4,
+        "pendingCount": 0,
+        "missingCount": 0,
+        "dataCompleteness": 100
+      },
       "cells": {
         "disi-tay-deneme": {
           "status": "not-run"
@@ -2327,6 +2541,17 @@
           "startingPrice": null
         }
       ],
+      "routeVisibility": {
+        "score": 20,
+        "label": "Tek koşu sinyali",
+        "reason": "At yalnızca bir takip koşusunda göründü; form sinyali var ama dar.",
+        "totalRaceCount": 5,
+        "ranCount": 1,
+        "skippedCount": 4,
+        "pendingCount": 0,
+        "missingCount": 0,
+        "dataCompleteness": 100
+      },
       "cells": {
         "disi-tay-deneme": {
           "status": "not-run"
@@ -2439,6 +2664,17 @@
           "startingPrice": null
         }
       ],
+      "routeVisibility": {
+        "score": 40,
+        "label": "Geniş rota görünürlüğü",
+        "reason": "At birden fazla takip koşusunda göründüğü için rota sinyali daha okunabilir.",
+        "totalRaceCount": 5,
+        "ranCount": 2,
+        "skippedCount": 3,
+        "pendingCount": 0,
+        "missingCount": 0,
+        "dataCompleteness": 100
+      },
       "cells": {
         "disi-tay-deneme": {
           "status": "ran",
@@ -2563,6 +2799,17 @@
           "startingPrice": null
         }
       ],
+      "routeVisibility": {
+        "score": 20,
+        "label": "Tek koşu sinyali",
+        "reason": "At yalnızca bir takip koşusunda göründü; form sinyali var ama dar.",
+        "totalRaceCount": 5,
+        "ranCount": 1,
+        "skippedCount": 4,
+        "pendingCount": 0,
+        "missingCount": 0,
+        "dataCompleteness": 100
+      },
       "cells": {
         "disi-tay-deneme": {
           "status": "not-run"

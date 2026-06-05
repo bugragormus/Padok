@@ -663,6 +663,76 @@ const getPrepRaceStateMeta = (race) => {
   };
 };
 
+const buildRouteVisibilityFallback = (prepStates) => {
+  const totalRaceCount = prepStates.length;
+  const ranCount = prepStates.filter((race) => race.status === "ran").length;
+  const skippedCount = prepStates.filter((race) => race.status === "not-run").length;
+  const pendingCount = prepStates.filter((race) => race.status === "pending").length;
+  const missingCount = prepStates.filter((race) => race.status === "missing-race").length;
+  const completedSignalCount = ranCount + skippedCount;
+  const score = totalRaceCount ? Math.round((ranCount / totalRaceCount) * 100) : 0;
+  const dataCompleteness = totalRaceCount ? Math.round((completedSignalCount / totalRaceCount) * 100) : 0;
+  const label = pendingCount
+    ? "Sonuç bekleyen rota"
+    : ranCount >= 2
+      ? "Geniş rota görünürlüğü"
+      : ranCount === 1
+        ? "Tek koşu sinyali"
+        : totalRaceCount
+          ? "Rota dışı profil"
+          : "Rota verisi yok";
+  const reason = pendingCount
+    ? "Bazı hazırlık koşuları tamamlanınca bu okuma güçlenecek."
+    : ranCount >= 2
+      ? "At birden fazla takip koşusunda göründüğü için rota sinyali daha okunabilir."
+      : ranCount === 1
+        ? "At yalnızca bir takip koşusunda göründü; form sinyali var ama dar."
+        : totalRaceCount
+          ? "At takip edilen hazırlık rotasına katılmadan Gazi alanına gelmiş."
+          : "Bu sezon için takip edilen hazırlık koşusu bulunamadı.";
+
+  return {
+    score,
+    label,
+    reason,
+    totalRaceCount,
+    ranCount,
+    skippedCount,
+    pendingCount,
+    missingCount,
+    dataCompleteness
+  };
+};
+
+const getRouteVisibility = (row, prepColumns) => {
+  return row.routeVisibility ?? buildRouteVisibilityFallback(getPrepRaceStates(row, prepColumns));
+};
+
+const renderRouteVisibilityPanel = (visibility) => {
+  return `
+    <div class="route-visibility-panel">
+      <div>
+        <span>Rota görünürlüğü</span>
+        <strong>${escapeHtml(visibility.label)} · ${escapeHtml(visibility.score)}/100</strong>
+        <p>${escapeHtml(visibility.reason)}</p>
+      </div>
+      <div class="route-visibility-panel__metrics">
+        ${[
+          ["Koştu", visibility.ranCount],
+          ["Pas", visibility.skippedCount],
+          ["Bekliyor", visibility.pendingCount],
+          ["Veri", `%${visibility.dataCompleteness}`]
+        ].map(([label, value]) => `
+          <span>
+            <small>${escapeHtml(label)}</small>
+            <b>${escapeHtml(value)}</b>
+          </span>
+        `).join("")}
+      </div>
+    </div>
+  `;
+};
+
 const renderPrepSignalStrip = (row, prepColumns) => {
   const prepStates = getPrepRaceStates(row, prepColumns);
   if (!prepStates.length) return "";
@@ -1320,6 +1390,7 @@ const renderParticipationDetail = (report, tableColumns, rows = report.rows) => 
   const profileSummary = summarizeProfileMatches(historicalMatches);
   const profileReading = buildProfileReading(selectedRow, tableColumns, profileSummary);
   const readiness = getReadinessAssessment(selectedRow, tableColumns, profileSummary);
+  const routeVisibility = getRouteVisibility(selectedRow, prepColumns);
 
   const metrics = [
     ["Readiness", `${readiness.score}/100`],
@@ -1361,6 +1432,8 @@ const renderParticipationDetail = (report, tableColumns, rows = report.rows) => 
         <p>${escapeHtml(profileReading.reason)}</p>
         <em>${escapeHtml(profileReading.caution)}</em>
       </div>
+
+      ${renderRouteVisibilityPanel(routeVisibility)}
 
       ${renderPrepSignalStrip(selectedRow, prepColumns)}
 

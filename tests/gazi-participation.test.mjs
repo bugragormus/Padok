@@ -61,6 +61,8 @@ test("buildParticipationReport marks Gazi runners that skipped tracked prep race
     ["mehmet-akif-ersoy", "ran", 1],
     ["sait-akson", "ran", 2]
   ]);
+  assert.equal(alpha.routeVisibility.label, "Geniş rota görünürlüğü");
+  assert.equal(alpha.routeVisibility.score, 100);
 
   const omega = report.rows.find((row) => row.horseName === "OMEGA");
   assert.equal(omega.hasPrepStart, false);
@@ -73,6 +75,11 @@ test("buildParticipationReport marks Gazi runners that skipped tracked prep race
     ["mehmet-akif-ersoy", "not-run"],
     ["sait-akson", "not-run"]
   ]);
+  assert.equal(omega.routeVisibility.label, "Rota dışı profil");
+  assert.equal(omega.routeVisibility.score, 0);
+  assert.equal(report.summary.routeVisibilityCounts["Geniş rota görünürlüğü"], 1);
+  assert.equal(report.summary.routeVisibilityCounts["Tek koşu sinyali"], 1);
+  assert.equal(report.summary.routeVisibilityCounts["Rota dışı profil"], 1);
 });
 
 test("buildParticipationReport handles seasons before the Gazi field is known", () => {

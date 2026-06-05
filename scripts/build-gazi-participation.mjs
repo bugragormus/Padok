@@ -135,6 +135,51 @@ const buildPrepRaceStates = (cells, columns) => {
     });
 };
 
+const buildRouteVisibility = (prepRaceStates) => {
+  const totalRaceCount = prepRaceStates.length;
+  const ranCount = prepRaceStates.filter((race) => race.status === "ran").length;
+  const skippedCount = prepRaceStates.filter((race) => race.status === "not-run").length;
+  const pendingCount = prepRaceStates.filter((race) => race.status === "pending").length;
+  const missingCount = prepRaceStates.filter((race) => race.status === "missing-race").length;
+  const completedSignalCount = ranCount + skippedCount;
+  const score = totalRaceCount > 0
+    ? percentage(ranCount, totalRaceCount)
+    : 0;
+  const dataCompleteness = totalRaceCount > 0
+    ? percentage(completedSignalCount, totalRaceCount)
+    : 0;
+  const label = pendingCount > 0
+    ? "Sonuç bekleyen rota"
+    : ranCount >= 2
+      ? "Geniş rota görünürlüğü"
+      : ranCount === 1
+        ? "Tek koşu sinyali"
+        : totalRaceCount > 0
+          ? "Rota dışı profil"
+          : "Rota verisi yok";
+  const reason = pendingCount > 0
+    ? "Bazı hazırlık koşuları tamamlanınca bu okuma güçlenecek."
+    : ranCount >= 2
+      ? "At birden fazla takip koşusunda göründüğü için rota sinyali daha okunabilir."
+      : ranCount === 1
+        ? "At yalnızca bir takip koşusunda göründü; form sinyali var ama dar."
+        : totalRaceCount > 0
+          ? "At takip edilen hazırlık rotasına katılmadan Gazi alanına gelmiş."
+          : "Bu sezon için takip edilen hazırlık koşusu bulunamadı.";
+
+  return {
+    score,
+    label,
+    reason,
+    totalRaceCount,
+    ranCount,
+    skippedCount,
+    pendingCount,
+    missingCount,
+    dataCompleteness
+  };
+};
+
 export const buildParticipationReport = (routeReport) => {
   const routeRaces = routeReport.routeRaces ?? [];
   const columns = buildColumns(routeRaces);
@@ -161,6 +206,7 @@ export const buildParticipationReport = (routeReport) => {
     const pendingPrepCount = prepCells.filter((cell) => cell.status === "pending").length;
     const bestPrep = findBestPrep(cells, columns);
     const prepRaceStates = buildPrepRaceStates(cells, columns);
+    const routeVisibility = buildRouteVisibility(prepRaceStates);
 
     return {
       horseName: gaziEntry.horse_name,
@@ -178,6 +224,7 @@ export const buildParticipationReport = (routeReport) => {
       bestPrepRaceName: bestPrep?.raceName ?? null,
       bestPrepFinishPosition: bestPrep?.finishPosition ?? null,
       prepRaceStates,
+      routeVisibility,
       cells
     };
   });
@@ -187,6 +234,11 @@ export const buildParticipationReport = (routeReport) => {
   const runnersWithoutPrepStartCount = rows.filter((row) => row.prepStartCount === 0).length;
   const topThreeWithPrepStartCount = topThreeRows.filter((row) => row.prepStartCount > 0).length;
   const topThreeWithoutPrepStartCount = topThreeRows.length - topThreeWithPrepStartCount;
+  const routeVisibilityCounts = rows.reduce((counts, row) => {
+    const label = row.routeVisibility?.label ?? "Bilinmiyor";
+    counts[label] = (counts[label] ?? 0) + 1;
+    return counts;
+  }, {});
 
   return {
     generatedAt: new Date().toISOString(),
@@ -209,7 +261,8 @@ export const buildParticipationReport = (routeReport) => {
       topThreeWithPrepStartCount,
       topThreeWithoutPrepStartCount,
       topThreePrepStartRate: percentage(topThreeWithPrepStartCount, topThreeRows.length),
-      averagePrepStartCount: average(rows.map((row) => row.prepStartCount))
+      averagePrepStartCount: average(rows.map((row) => row.prepStartCount)),
+      routeVisibilityCounts
     },
     columns,
     rows

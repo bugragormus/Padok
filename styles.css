@@ -1338,6 +1338,66 @@ h2 {
   font-style: normal;
 }
 
+.route-visibility-panel {
+  display: grid;
+  grid-template-columns: minmax(0, 0.9fr) minmax(260px, 1.1fr);
+  gap: 12px;
+  padding: 14px;
+  border: 1px solid rgba(36, 95, 70, 0.2);
+  border-radius: 8px;
+  background: #fbfcfa;
+}
+
+.route-visibility-panel > div:first-child {
+  display: grid;
+  align-content: start;
+  gap: 7px;
+}
+
+.route-visibility-panel span,
+.route-visibility-panel p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.76rem;
+  line-height: 1.45;
+}
+
+.route-visibility-panel > div:first-child span {
+  font-weight: 850;
+}
+
+.route-visibility-panel strong {
+  color: var(--green-2);
+  font-size: 1rem;
+  line-height: 1.25;
+}
+
+.route-visibility-panel__metrics {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 8px;
+}
+
+.route-visibility-panel__metrics span {
+  display: grid;
+  gap: 4px;
+  min-height: 64px;
+  padding: 9px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: #fff;
+}
+
+.route-visibility-panel__metrics small {
+  color: var(--muted);
+  font-size: 0.68rem;
+}
+
+.route-visibility-panel__metrics b {
+  color: var(--ink);
+  font-size: 0.95rem;
+}
+
 .prep-signal-strip {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(126px, 1fr));
@@ -2126,12 +2186,14 @@ footer {
   .horse-detail__metrics,
   .horse-detail__grid,
   .artifact-lens-panel,
+  .route-visibility-panel,
   .readiness-panel,
   .profile-match {
     grid-template-columns: 1fr;
   }
 
-  .artifact-lens-panel__grid {
+  .artifact-lens-panel__grid,
+  .route-visibility-panel__metrics {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
