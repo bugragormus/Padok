@@ -18,6 +18,7 @@
     "build:gazi-data-horizon": "node scripts/build-gazi-data-horizon.mjs",
     "build:data-manifest": "node scripts/build-data-manifest.mjs",
     "build:api-index": "node scripts/build-padok-api-index.mjs",
+    "mcp:server": "node scripts/padok-mcp-server.mjs",
     "backtest:gazi-route": "node scripts/backtest-gazi-route.mjs",
     "analyze:gazi-context": "node scripts/analyze-gazi-context.mjs",
     "score:gazi-race-similarity": "node scripts/score-gazi-race-similarity.mjs"
