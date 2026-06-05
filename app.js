@@ -8,7 +8,7 @@ import {
   sortReadinessProfiles
 } from "./scripts/readiness-model.mjs";
 
-const APP_DATA_VERSION = "20260606-horse-profile";
+const APP_DATA_VERSION = "20260606-horse-comparison";
 
 const state = {
   data: null,
@@ -2111,6 +2111,130 @@ const renderParticipationDetail = (report, tableColumns, rows = report.rows) => 
   `;
 };
 
+const buildHorseProfileContext = (row, report, tableColumns) => {
+  const prepColumns = tableColumns.filter((column) => !column.isTarget);
+  const historicalMatches = getHistoricalProfileMatches(row, report);
+  const profileSummary = summarizeProfileMatches(historicalMatches);
+  const readiness = getReadinessAssessment(row, tableColumns, profileSummary);
+  const routeVisibility = getRouteVisibility(row, prepColumns);
+  const artifactCandidate = getArtifactCandidate(row.horseName, report.sourceYear);
+  const strengths = artifactCandidate?.strengths ?? getCandidateStrengths({
+    row,
+    readiness,
+    routeVisibility,
+    profileSummary
+  }, tableColumns);
+  const cautions = artifactCandidate?.cautions ?? getCandidateCautions({
+    row,
+    readiness,
+    routeVisibility,
+    profileSummary
+  }, tableColumns);
+  const prepStarts = getParticipationRouteStarts(row, prepColumns);
+
+  return {
+    row,
+    profileSummary,
+    readiness,
+    routeVisibility,
+    strengths,
+    cautions,
+    prepPath: prepStarts.length
+      ? prepStarts.map(({ column, cell }) => `${column.name} ${formatPosition(cell.finishPosition)}`).join(" · ")
+      : "Takip edilen prep rotasında start yok"
+  };
+};
+
+const getComparisonRows = (report, tableColumns) => {
+  const rows = report.rows ?? [];
+  const selectedNames = new Set();
+  const selectedRows = [];
+  const addByName = (horseName) => {
+    if (!horseName || selectedNames.has(horseName)) return;
+    const row = rows.find((candidate) => candidate.horseName === horseName);
+    if (!row) return;
+    selectedNames.add(horseName);
+    selectedRows.push(row);
+  };
+
+  addByName(state.selectedParticipationHorse);
+  (state.candidateComparison?.sourceYear === report.sourceYear
+    ? state.candidateComparison.calibratedRanking ?? []
+    : []
+  ).forEach((entry) => addByName(entry.horseName));
+
+  rows
+    .map((row) => buildHorseProfileContext(row, report, tableColumns))
+    .sort((a, b) => b.readiness.score - a.readiness.score || b.readiness.confidence - a.readiness.confidence)
+    .forEach(({ row }) => addByName(row.horseName));
+
+  return selectedRows.slice(0, 3);
+};
+
+const renderHorseComparison = (report, tableColumns) => {
+  const container = document.querySelector("#horse-comparison");
+  if (!container) return;
+
+  const comparisonRows = getComparisonRows(report, tableColumns);
+  if (comparisonRows.length < 2) {
+    container.innerHTML = "";
+    return;
+  }
+
+  const contexts = comparisonRows.map((row) => buildHorseProfileContext(row, report, tableColumns));
+  const bestReadiness = Math.max(...contexts.map((context) => context.readiness.score));
+  const bestUpside = Math.max(...contexts.map((context) => context.readiness.upside));
+  const bestRoute = Math.max(...contexts.map((context) => context.routeVisibility.score));
+
+  container.innerHTML = `
+    <section class="horse-comparison__panel" aria-label="Yan yana at karşılaştırması">
+      <div class="horse-comparison__header">
+        <div>
+          <p class="section-kicker">Yan yana karşılaştır</p>
+          <h3>Seçili atı en yakın karar adaylarıyla kıyasla.</h3>
+        </div>
+        <span>Karşılaştırma seçili atı ve kalibre listenin üst adaylarını birlikte okur.</span>
+      </div>
+      <div class="horse-comparison__grid">
+        ${contexts.map((context) => `
+          <article class="compare-card ${context.row.horseName === state.selectedParticipationHorse ? "compare-card--selected" : ""}">
+            <div class="compare-card__top">
+              <span>${context.row.horseName === state.selectedParticipationHorse ? "Seçili at" : "Karşı aday"}</span>
+              <strong>${escapeHtml(context.row.horseName)}</strong>
+              <em>${escapeHtml(context.row.sire ?? "Baba bekleniyor")} / ${escapeHtml(context.row.dam ?? "Anne bekleniyor")}</em>
+            </div>
+            <div class="compare-card__metrics">
+              ${[
+                ["Readiness", context.readiness.score, bestReadiness],
+                ["Upside", context.readiness.upside, bestUpside],
+                ["Rota", context.routeVisibility.score, bestRoute],
+                ["Güven", context.readiness.confidence, Math.max(...contexts.map((item) => item.readiness.confidence))]
+              ].map(([label, value, best]) => `
+                <span class="${value === best ? "compare-card__metric--best" : ""}">
+                  <small>${escapeHtml(label)}</small>
+                  <b>${escapeHtml(value)}</b>
+                </span>
+              `).join("")}
+            </div>
+            <p>${escapeHtml(context.routeVisibility.label)} · ${escapeHtml(context.prepPath)}</p>
+            <div class="compare-card__lists">
+              <div>
+                <small>Güçlü</small>
+                ${context.strengths.slice(0, 3).map((item) => `<i>${escapeHtml(item)}</i>`).join("") || "<i>Net sinyal yok</i>"}
+              </div>
+              <div>
+                <small>Risk</small>
+                ${context.cautions.slice(0, 3).map((item) => `<i>${escapeHtml(item)}</i>`).join("") || "<i>Belirgin risk yok</i>"}
+              </div>
+            </div>
+            <button type="button" data-horse-name="${escapeHtml(context.row.horseName)}">Bu ata geç</button>
+          </article>
+        `).join("")}
+      </div>
+    </section>
+  `;
+};
+
 const renderParticipation = (report) => {
   const summary = report.summary;
   const sourceYear = report.sourceYear ?? "Güncel";
@@ -2149,6 +2273,7 @@ const renderParticipation = (report) => {
   renderActiveFilterBar(filteredRows, report.rows.length);
   renderFilteredGroupSummary(filteredRows, report, tableColumns);
   renderParticipationDetail(report, tableColumns, filteredRows);
+  renderHorseComparison(report, tableColumns);
 
   document.querySelector("#participation-table").innerHTML = filteredRows.length
     ? `
@@ -2381,6 +2506,14 @@ const bindEvents = () => {
     if (!row || !state.participationReport) return;
     state.selectedParticipationHorse = row.dataset.horseName;
     renderParticipation(state.participationReport);
+  });
+
+  document.querySelector("#horse-comparison").addEventListener("click", (event) => {
+    const row = event.target.closest("[data-horse-name]");
+    if (!row || !state.participationReport) return;
+    state.selectedParticipationHorse = row.dataset.horseName;
+    renderParticipation(state.participationReport);
+    document.querySelector("#participation-detail")?.scrollIntoView({ behavior: "smooth", block: "start" });
   });
 };
 

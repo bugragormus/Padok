@@ -2839,6 +2839,161 @@ h2 {
   line-height: 1.5;
 }
 
+.horse-comparison {
+  margin-top: 18px;
+}
+
+.horse-comparison:empty {
+  display: none;
+}
+
+.horse-comparison__panel {
+  display: grid;
+  gap: 14px;
+  padding: 18px;
+  border: 1px solid rgba(36, 95, 70, 0.2);
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.62);
+}
+
+.horse-comparison__header {
+  display: flex;
+  justify-content: space-between;
+  gap: 18px;
+  align-items: start;
+}
+
+.horse-comparison__header h3 {
+  margin: 0;
+  font-size: clamp(1.25rem, 2.4vw, 1.9rem);
+  line-height: 1.1;
+}
+
+.horse-comparison__header span {
+  max-width: 360px;
+  color: var(--muted);
+  font-size: 0.78rem;
+  line-height: 1.5;
+  text-align: right;
+}
+
+.horse-comparison__grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.compare-card {
+  display: grid;
+  align-content: start;
+  gap: 12px;
+  min-width: 0;
+  padding: 14px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: #fff;
+}
+
+.compare-card--selected {
+  border-color: rgba(36, 95, 70, 0.42);
+  box-shadow: 0 12px 34px rgba(36, 95, 70, 0.1);
+}
+
+.compare-card__top {
+  display: grid;
+  gap: 5px;
+}
+
+.compare-card__top span,
+.compare-card__lists small {
+  color: var(--green);
+  font-size: 0.7rem;
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
+.compare-card__top strong {
+  font-size: 1.05rem;
+  line-height: 1.2;
+}
+
+.compare-card__top em,
+.compare-card p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.74rem;
+  font-style: normal;
+  line-height: 1.45;
+}
+
+.compare-card__metrics {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 6px;
+}
+
+.compare-card__metrics span {
+  display: grid;
+  gap: 3px;
+  min-height: 58px;
+  padding: 7px;
+  border: 1px solid #edf0ea;
+  border-radius: 8px;
+  background: #fbfcfa;
+}
+
+.compare-card__metrics small {
+  color: var(--muted);
+  font-size: 0.64rem;
+}
+
+.compare-card__metrics b {
+  color: var(--ink);
+  font-size: 0.9rem;
+}
+
+.compare-card__metric--best {
+  border-color: rgba(36, 95, 70, 0.28) !important;
+  background: #eef6f1 !important;
+}
+
+.compare-card__lists {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 8px;
+}
+
+.compare-card__lists div {
+  display: grid;
+  align-content: start;
+  gap: 6px;
+  min-height: 112px;
+  padding: 10px;
+  border: 1px solid #edf0ea;
+  border-radius: 8px;
+  background: #fbfcfa;
+}
+
+.compare-card__lists i {
+  color: var(--green-2);
+  font-size: 0.7rem;
+  font-style: normal;
+  font-weight: 800;
+  line-height: 1.35;
+}
+
+.compare-card button {
+  min-height: 38px;
+  border: 1px solid rgba(36, 95, 70, 0.24);
+  border-radius: 8px;
+  background: #eef6f1;
+  color: var(--green-2);
+  font: inherit;
+  font-size: 0.78rem;
+  font-weight: 900;
+  cursor: pointer;
+}
+
 .profile-match {
   display: grid;
   grid-template-columns: minmax(190px, 0.65fr) minmax(0, 1.35fr);
@@ -3496,9 +3651,19 @@ footer {
   .artifact-lens-panel,
   .route-visibility-panel,
   .horse-decision-summary,
+  .horse-comparison__grid,
   .readiness-panel,
   .profile-match {
     grid-template-columns: 1fr;
+  }
+
+  .horse-comparison__header {
+    display: grid;
+  }
+
+  .horse-comparison__header span {
+    max-width: none;
+    text-align: left;
   }
 
   .horse-decision-summary__lists {
