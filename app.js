@@ -1492,12 +1492,16 @@ const renderFilteredGroupSummary = (filteredRows, report, tableColumns) => {
     const profileSummary = summarizeProfileMatches(historicalMatches);
     const readiness = getReadinessAssessment(row, tableColumns, profileSummary);
     const routeVisibility = getRouteVisibility(row, prepColumns);
+    const reason = getProfileReason(row, tableColumns, profileSummary);
+    const signalParts = getProfileSignalParts(row, tableColumns, profileSummary);
 
     return {
       row,
       profileSummary,
       readiness,
-      routeVisibility
+      routeVisibility,
+      reason,
+      signalParts
     };
   });
   const topReadiness = [...profiles].sort((a, b) => b.readiness.score - a.readiness.score || b.readiness.confidence - a.readiness.confidence)[0];
@@ -1522,6 +1526,10 @@ const renderFilteredGroupSummary = (filteredRows, report, tableColumns) => {
           <strong>${escapeHtml(profile.row.horseName)}</strong>
           <span>Readiness ${escapeHtml(profile.readiness.score)} · Upside ${escapeHtml(profile.readiness.upside)}</span>
           <em>${escapeHtml(profile.routeVisibility.label)} · ${escapeHtml(profile.profileSummary.count)} geçmiş eşleşme</em>
+          <p>${escapeHtml(profile.reason)}</p>
+          <div class="filtered-candidate__signals">
+            ${profile.signalParts.slice(0, 2).map((part) => `<i>+${escapeHtml(part.value)} ${escapeHtml(part.label)}</i>`).join("")}
+          </div>
         </button>
       `).join("")}
     </div>
