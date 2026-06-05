@@ -205,6 +205,11 @@ const main = async () => {
   });
 
   log.steps.push({
+    step: "build-decision-matrix",
+    result: runNpmScript("build:gazi-decision-matrix", ["--out", "data/gazi-decision-matrix.json"])
+  });
+
+  log.steps.push({
     step: "build-api-index",
     result: runNpmScript("build:api-index", ["--out", "data/padok-api-index.json"])
   });

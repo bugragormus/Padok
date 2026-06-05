@@ -15,6 +15,7 @@ test("Padok MCP server exposes static API artifacts as resources", async () => {
 
   assert.ok(resources.some((resource) => resource.uri === "padok://endpoint/readiness-report"));
   assert.ok(resources.some((resource) => resource.uri === "padok://endpoint/decision-brief"));
+  assert.ok(resources.some((resource) => resource.uri === "padok://endpoint/decision-matrix"));
   assert.ok(resources.some((resource) => resource.uri === "padok://endpoint/candidate-comparison"));
   assert.ok(resources.some((resource) => resource.uri === "padok://endpoint/context-history"));
   assert.ok(resources.some((resource) => resource.uri === "padok://endpoint/feature-breakdown"));
@@ -70,6 +71,7 @@ test("Padok MCP tools return model summary and top candidates", async () => {
 
   assert.ok(tools.some((tool) => tool.name === "padok.model_summary"));
   assert.ok(tools.some((tool) => tool.name === "padok.decision_brief"));
+  assert.ok(tools.some((tool) => tool.name === "padok.decision_matrix"));
   assert.ok(tools.some((tool) => tool.name === "padok.candidate_comparison"));
   assert.ok(tools.some((tool) => tool.name === "padok.context_history"));
   assert.ok(tools.some((tool) => tool.name === "padok.feature_breakdown"));
@@ -89,6 +91,13 @@ test("Padok MCP tools return model summary and top candidates", async () => {
   const brief = JSON.parse(briefResult.content[0].text);
 
   assert.ok(brief.picks.scoreLeader.horseName);
+
+  const matrixResult = await callPadokTool(apiIndex, "padok.decision_matrix");
+  const matrix = JSON.parse(matrixResult.content[0].text);
+
+  assert.equal(matrix.summary.leaderHorse, "SPECIAL MAN");
+  assert.ok(matrix.candidates.length > 0);
+  assert.ok(matrix.upsetWatch.length > 0);
 
   const comparisonResult = await callPadokTool(apiIndex, "padok.candidate_comparison", {
     limit: 2

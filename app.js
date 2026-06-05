@@ -8,7 +8,7 @@ import {
   sortReadinessProfiles
 } from "./scripts/readiness-model.mjs";
 
-const APP_DATA_VERSION = "20260606-surprise-review";
+const APP_DATA_VERSION = "20260606-decision-matrix";
 
 const state = {
   data: null,
@@ -17,6 +17,7 @@ const state = {
   modelBacktest: null,
   signalCalibration: null,
   decisionBrief: null,
+  decisionMatrix: null,
   candidateComparison: null,
   featureBreakdown: null,
   raceDayWatchlist: null,
@@ -341,6 +342,50 @@ const renderDecisionBrief = (brief) => {
         </div>
       ` : ""}
     </article>
+  `;
+};
+
+const renderDecisionMatrix = (matrix) => {
+  const container = document.querySelector("#decision-matrix");
+  if (!container) return;
+
+  if (!matrix?.candidates?.length || matrix.sourceYear !== state.participationReport?.sourceYear) {
+    container.innerHTML = "";
+    return;
+  }
+
+  const cards = matrix.candidates.slice(0, 4);
+  const lessons = matrix.lessons ?? [];
+
+  container.innerHTML = `
+    <section class="decision-matrix__panel" aria-label="Karar matrisi">
+      <div class="decision-matrix__header">
+        <div>
+          <p class="section-kicker">Karar matrisi</p>
+          <h3>${escapeHtml(matrix.summary?.headline ?? "Karar matrisi hazırlanıyor.")}</h3>
+        </div>
+        <span>${escapeHtml(matrix.sourceYear ?? "-")} · ${escapeHtml(matrix.summary?.candidateCount ?? cards.length)} aday · Ortalama ${escapeHtml(matrix.summary?.averageDecisionScore ?? "-")}</span>
+      </div>
+      <div class="decision-matrix__grid">
+        ${cards.map((candidate) => `
+          <button class="decision-matrix-card" type="button" data-horse-name="${escapeHtml(candidate.horseName)}">
+            <span>${escapeHtml(candidate.role ?? "Aday")}</span>
+            <strong>${escapeHtml(candidate.horseName)}</strong>
+            <div>
+              <small>Karar ${escapeHtml(candidate.scores?.decisionScore ?? "-")}</small>
+              <small>Sürpriz ${escapeHtml(candidate.scores?.upsetScore ?? "-")}</small>
+              <small>Risk ${escapeHtml(candidate.scores?.riskScore ?? "-")}</small>
+            </div>
+            <p>${escapeHtml(candidate.reason ?? "-")}</p>
+          </button>
+        `).join("")}
+      </div>
+      ${lessons.length ? `
+        <div class="decision-matrix__lessons">
+          ${lessons.slice(0, 3).map((lesson) => `<p>${escapeHtml(lesson)}</p>`).join("")}
+        </div>
+      ` : ""}
+    </section>
   `;
 };
 
@@ -2493,6 +2538,7 @@ const loadAnalysisYear = async (year) => {
   renderHistoricalPatterns();
   renderDataStatus(state.routeReport);
   renderRouteReport(state.routeReport);
+  renderDecisionMatrix(state.decisionMatrix);
   renderRaceDayWatchlist(state.raceDayWatchlist);
   renderSurpriseReview(state.surpriseReview);
   renderParticipation(state.participationReport);
@@ -2503,6 +2549,14 @@ const bindEvents = () => {
     const button = event.target.closest("[data-decision-horse]");
     if (!button || !state.participationReport) return;
     state.selectedParticipationHorse = button.dataset.decisionHorse;
+    renderParticipation(state.participationReport);
+    document.querySelector("#participation-detail")?.scrollIntoView({ behavior: "smooth", block: "start" });
+  });
+
+  document.querySelector("#decision-matrix").addEventListener("click", (event) => {
+    const row = event.target.closest("[data-horse-name]");
+    if (!row || !row.dataset.horseName || !state.participationReport) return;
+    state.selectedParticipationHorse = row.dataset.horseName;
     renderParticipation(state.participationReport);
     document.querySelector("#participation-detail")?.scrollIntoView({ behavior: "smooth", block: "start" });
   });
@@ -2628,13 +2682,14 @@ const renderFatalError = (error) => {
 };
 
 const init = async () => {
-  const [knowledge, routeReport, backtestReport, modelBacktest, signalCalibration, decisionBrief, candidateComparison, featureBreakdown, raceDayWatchlist, surpriseReview, participationReport, readinessReport, horizon] = await Promise.all([
+  const [knowledge, routeReport, backtestReport, modelBacktest, signalCalibration, decisionBrief, decisionMatrix, candidateComparison, featureBreakdown, raceDayWatchlist, surpriseReview, participationReport, readinessReport, horizon] = await Promise.all([
     readJson("./data/gazi-knowledge-base.json"),
     readOptionalJson("./data/gazi-route-report.json"),
     readOptionalJson("./data/gazi-backtest-report.json"),
     readOptionalJson("./data/gazi-model-backtest.json"),
     readOptionalJson("./data/gazi-signal-calibration.json"),
     readOptionalJson("./data/gazi-decision-brief.json"),
+    readOptionalJson("./data/gazi-decision-matrix.json"),
     readOptionalJson("./data/gazi-candidate-comparison.json"),
     readOptionalJson("./data/gazi-feature-breakdown.json"),
     readOptionalJson("./data/gazi-race-day-watchlist.json"),
@@ -2666,6 +2721,10 @@ const init = async () => {
 
   if (decisionBrief) {
     state.decisionBrief = decisionBrief;
+  }
+
+  if (decisionMatrix) {
+    state.decisionMatrix = decisionMatrix;
   }
 
   if (candidateComparison) {
@@ -2714,6 +2773,7 @@ const init = async () => {
   renderModelBacktest(state.modelBacktest);
   renderSignalCalibration(state.signalCalibration);
   renderDecisionBrief(state.decisionBrief);
+  renderDecisionMatrix(state.decisionMatrix);
   renderRaceDayWatchlist(state.raceDayWatchlist);
   renderSurpriseReview(state.surpriseReview);
   if (state.participationReport) renderParticipation(state.participationReport);

@@ -17,6 +17,7 @@
     "build:gazi-model-backtest": "node scripts/build-gazi-model-backtest.mjs",
     "build:gazi-decision-brief": "node scripts/build-gazi-decision-brief.mjs",
     "build:gazi-candidate-comparison": "node scripts/build-gazi-candidate-comparison.mjs",
+    "build:gazi-decision-matrix": "node scripts/build-gazi-decision-matrix.mjs",
     "build:gazi-context-history": "node scripts/build-gazi-context-history.mjs",
     "build:gazi-feature-breakdown": "node scripts/build-gazi-feature-breakdown.mjs",
     "build:gazi-signal-calibration": "node scripts/build-gazi-signal-calibration.mjs",

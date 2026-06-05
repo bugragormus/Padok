@@ -14,6 +14,7 @@ test("buildApiIndex exposes static API endpoints for app and MCP consumers", () 
         readiness: "data/gazi-readiness-report.json",
         decisionBrief: "data/gazi-decision-brief.json",
         candidateComparison: "data/gazi-candidate-comparison.json",
+        decisionMatrix: "data/gazi-decision-matrix.json",
         contextHistory: "data/gazi-context-history.json",
         featureBreakdown: "data/gazi-feature-breakdown.json",
         raceDayWatchlist: "data/gazi-race-day-watchlist.json",
@@ -32,6 +33,11 @@ test("buildApiIndex exposes static API endpoints for app and MCP consumers", () 
     candidateComparison: {
       summary: {
         candidateCount: 4
+      }
+    },
+    decisionMatrix: {
+      summary: {
+        leaderHorse: "LEADER"
       }
     },
     contextHistory: {
@@ -62,6 +68,7 @@ test("buildApiIndex exposes static API endpoints for app and MCP consumers", () 
   assert.equal(payload.summary.yearRange, "2020-2025");
   assert.equal(payload.summary.modelTopPickPodiumRate, 67);
   assert.equal(payload.summary.candidateComparisonCount, 4);
+  assert.equal(payload.summary.decisionMatrixLeader, "LEADER");
   assert.equal(payload.summary.contextHistoryEntityCount, 50);
   assert.equal(payload.summary.featureBreakdownRunnerCount, 22);
   assert.equal(payload.summary.signalCalibrationSeasonCount, 6);
@@ -69,6 +76,7 @@ test("buildApiIndex exposes static API endpoints for app and MCP consumers", () 
   assert.equal(payload.summary.surpriseReviewState, "completed");
   assert.ok(payload.endpoints.some((endpoint) => endpoint.id === "readiness-report"));
   assert.ok(payload.endpoints.some((endpoint) => endpoint.id === "decision-brief"));
+  assert.ok(payload.endpoints.some((endpoint) => endpoint.id === "decision-matrix"));
   assert.ok(payload.endpoints.some((endpoint) => endpoint.id === "candidate-comparison"));
   assert.ok(payload.endpoints.some((endpoint) => endpoint.id === "context-history"));
   assert.ok(payload.endpoints.some((endpoint) => endpoint.id === "feature-breakdown"));
@@ -76,5 +84,5 @@ test("buildApiIndex exposes static API endpoints for app and MCP consumers", () 
   assert.ok(payload.endpoints.some((endpoint) => endpoint.id === "race-day-watchlist"));
   assert.ok(payload.endpoints.some((endpoint) => endpoint.id === "surprise-review"));
   assert.ok(payload.endpoints.some((endpoint) => endpoint.id === "model-backtest"));
-  assert.deepEqual(payload.mcpBridge.recommendedResources.slice(0, 8), ["manifest", "decision-brief", "candidate-comparison", "context-history", "feature-breakdown", "signal-calibration", "race-day-watchlist", "surprise-review"]);
+  assert.deepEqual(payload.mcpBridge.recommendedResources.slice(0, 9), ["manifest", "decision-brief", "decision-matrix", "candidate-comparison", "context-history", "feature-breakdown", "signal-calibration", "race-day-watchlist", "surprise-review"]);
 });

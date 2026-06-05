@@ -1,0 +1,539 @@
+{
+  "generatedAt": "2026-06-05T22:38:18.661Z",
+  "sourceYear": 2025,
+  "summary": {
+    "candidateCount": 4,
+    "leaderHorse": "SPECIAL MAN",
+    "upsetHorse": "HANDSOME KING",
+    "riskHorse": "TONBİ",
+    "averageDecisionScore": 68,
+    "headline": "SPECIAL MAN karar matrisinde önde; HANDSOME KING sürpriz penceresinde ayrıca izlenmeli."
+  },
+  "candidates": [
+    {
+      "horseName": "SPECIAL MAN",
+      "role": "Ana aday",
+      "scores": {
+        "decisionScore": 81,
+        "upsetScore": 35,
+        "riskScore": 0,
+        "confidenceScore": 100
+      },
+      "readiness": {
+        "score": 100,
+        "confidence": 100,
+        "upside": 68,
+        "risk": 0,
+        "label": "Güçlü aday profili"
+      },
+      "route": {
+        "label": "Geniş rota görünürlüğü",
+        "score": 40,
+        "prepStartCount": 2,
+        "bestPrepRaceName": "Mehmet Akif Ersoy",
+        "bestPrepFinishPosition": 1
+      },
+      "actors": {
+        "jockey": "VEDAT ABİŞ",
+        "jockeyChanged": false,
+        "sire": "LUXOR",
+        "dam": "KIZIM MELİKE",
+        "damsire": "KANEKO",
+        "owner": "MELİH TEMEL",
+        "actorSummary": "jokey: 1/3 ilk 3 · baba hattı: 0/5 ilk 3"
+      },
+      "calibratedReadiness": {
+        "rank": 1,
+        "rankDelta": 0,
+        "score": 96,
+        "scoreDelta": -4,
+        "originalRank": 1,
+        "originalScore": 100
+      },
+      "strengths": [
+        "Yüksek readiness",
+        "Upside potansiyeli",
+        "Veri güveni yüksek",
+        "Prep galibiyeti",
+        "Aktör geçmişi katkısı"
+      ],
+      "cautions": [],
+      "reason": "Readiness 100 ve karar skoru 81. Kalibre sırada 1. En güçlü feature grubu At performansı.",
+      "feature": {
+        "compositeScore": 74,
+        "strongestGroup": "horsePerformance",
+        "weakestGroup": "routeProfile"
+      }
+    },
+    {
+      "horseName": "BOON NAM",
+      "role": "Güvenli profil",
+      "scores": {
+        "decisionScore": 75,
+        "upsetScore": 33,
+        "riskScore": 0,
+        "confidenceScore": 100
+      },
+      "readiness": {
+        "score": 99,
+        "confidence": 100,
+        "upside": 68,
+        "risk": 0,
+        "label": "Güçlü aday profili"
+      },
+      "route": {
+        "label": "Geniş rota görünürlüğü",
+        "score": 40,
+        "prepStartCount": 2,
+        "bestPrepRaceName": "Kısrak",
+        "bestPrepFinishPosition": 1
+      },
+      "actors": {
+        "jockey": "ERHAN YAVUZ",
+        "jockeyChanged": false,
+        "sire": "VICTOIRE PISA (JPN)",
+        "dam": "ZEHİR",
+        "damsire": "OKAWANGO (USA)",
+        "owner": "ARMAĞAN ARAZ",
+        "actorSummary": "Geçmiş aktör sinyali bulunamadı."
+      },
+      "calibratedReadiness": {
+        "rank": 2,
+        "rankDelta": 0,
+        "score": 95,
+        "scoreDelta": -4,
+        "originalRank": 2,
+        "originalScore": 99
+      },
+      "strengths": [
+        "Yüksek readiness",
+        "Upside potansiyeli",
+        "Veri güveni yüksek",
+        "Prep galibiyeti",
+        "Geçmiş benzerlik"
+      ],
+      "cautions": [],
+      "reason": "Readiness 99 ve karar skoru 75. Kalibre sırada 2. En güçlü feature grubu At performansı.",
+      "feature": {
+        "compositeScore": 66,
+        "strongestGroup": "horsePerformance",
+        "weakestGroup": "owner"
+      }
+    },
+    {
+      "horseName": "HANDSOME KING",
+      "role": "Sürpriz adayı",
+      "scores": {
+        "decisionScore": 66,
+        "upsetScore": 42,
+        "riskScore": 12,
+        "confidenceScore": 95
+      },
+      "readiness": {
+        "score": 95,
+        "confidence": 100,
+        "upside": 58,
+        "risk": 0,
+        "label": "Güçlü aday profili"
+      },
+      "route": {
+        "label": "Tek koşu sinyali",
+        "score": 20,
+        "prepStartCount": 1,
+        "bestPrepRaceName": "Sait Akson",
+        "bestPrepFinishPosition": 1
+      },
+      "actors": {
+        "jockey": "HIŞMAN ÇİZİK",
+        "jockeyChanged": false,
+        "sire": "VICTOIRE PISA (JPN)",
+        "dam": "NADİRE",
+        "damsire": "WIN RIVER WIN (USA)",
+        "owner": "ASUMAN YENİCE",
+        "actorSummary": "jokey: 1/5 ilk 3"
+      },
+      "calibratedReadiness": {
+        "rank": 3,
+        "rankDelta": 0,
+        "score": 91,
+        "scoreDelta": -4,
+        "originalRank": 3,
+        "originalScore": 95
+      },
+      "strengths": [
+        "Yüksek readiness",
+        "Veri güveni yüksek",
+        "Prep galibiyeti",
+        "Aktör geçmişi katkısı",
+        "Geçmiş benzerlik"
+      ],
+      "cautions": [
+        "Tek koşu sinyali"
+      ],
+      "reason": "Readiness 95 ve karar skoru 66. Kalibre sırada 3. En güçlü feature grubu At performansı.",
+      "feature": {
+        "compositeScore": 70,
+        "strongestGroup": "horsePerformance",
+        "weakestGroup": "routeProfile"
+      }
+    },
+    {
+      "horseName": "TONBİ",
+      "role": "Riskli izleme",
+      "scores": {
+        "decisionScore": 51,
+        "upsetScore": 41,
+        "riskScore": 39,
+        "confidenceScore": 90
+      },
+      "readiness": {
+        "score": 91,
+        "confidence": 100,
+        "upside": 58,
+        "risk": 14,
+        "label": "Güçlü aday profili"
+      },
+      "route": {
+        "label": "Tek koşu sinyali",
+        "score": 20,
+        "prepStartCount": 1,
+        "bestPrepRaceName": "Erkek Tay Deneme",
+        "bestPrepFinishPosition": 1
+      },
+      "actors": {
+        "jockey": "MEHMET AKYAVUZ",
+        "jockeyChanged": true,
+        "sire": "APPROVE (IRE)",
+        "dam": "NEFERU",
+        "damsire": "UNACCOUNTED FOR (USA)",
+        "owner": "ŞEVKİ BALCI",
+        "actorSummary": "jokey: 0/4 ilk 3 · baba hattı: 1/1 ilk 3"
+      },
+      "calibratedReadiness": {
+        "rank": 4,
+        "rankDelta": 0,
+        "score": 87,
+        "scoreDelta": -4,
+        "originalRank": 4,
+        "originalScore": 91
+      },
+      "strengths": [
+        "Yüksek readiness",
+        "Veri güveni yüksek",
+        "Prep galibiyeti",
+        "Aktör geçmişi katkısı",
+        "Geçmiş benzerlik"
+      ],
+      "cautions": [
+        "Tek koşu sinyali",
+        "Jokey sürekliliği kırılmış"
+      ],
+      "reason": "Readiness 91 ve karar skoru 51. Kalibre sırada 4. En güçlü feature grubu At performansı. Risk okumasında zayıf grup Sahip.",
+      "feature": {
+        "compositeScore": 60,
+        "strongestGroup": "horsePerformance",
+        "weakestGroup": "owner"
+      }
+    }
+  ],
+  "upsetWatch": [
+    {
+      "horseName": "HANDSOME KING",
+      "role": "Güvenli profil",
+      "scores": {
+        "decisionScore": 66,
+        "upsetScore": 42,
+        "riskScore": 12,
+        "confidenceScore": 95
+      },
+      "readiness": {
+        "score": 95,
+        "confidence": 100,
+        "upside": 58,
+        "risk": 0,
+        "label": "Güçlü aday profili"
+      },
+      "route": {
+        "label": "Tek koşu sinyali",
+        "score": 20,
+        "prepStartCount": 1,
+        "bestPrepRaceName": "Sait Akson",
+        "bestPrepFinishPosition": 1
+      },
+      "actors": {
+        "jockey": "HIŞMAN ÇİZİK",
+        "jockeyChanged": false,
+        "sire": "VICTOIRE PISA (JPN)",
+        "dam": "NADİRE",
+        "damsire": "WIN RIVER WIN (USA)",
+        "owner": "ASUMAN YENİCE",
+        "actorSummary": "jokey: 1/5 ilk 3"
+      },
+      "calibratedReadiness": {
+        "rank": 3,
+        "rankDelta": 0,
+        "score": 91,
+        "scoreDelta": -4,
+        "originalRank": 3,
+        "originalScore": 95
+      },
+      "strengths": [
+        "Yüksek readiness",
+        "Veri güveni yüksek",
+        "Prep galibiyeti",
+        "Aktör geçmişi katkısı",
+        "Geçmiş benzerlik"
+      ],
+      "cautions": [
+        "Tek koşu sinyali"
+      ],
+      "reason": "Readiness 95 ve karar skoru 66. Kalibre sırada 3. En güçlü feature grubu At performansı.",
+      "feature": {
+        "compositeScore": 70,
+        "strongestGroup": "horsePerformance",
+        "weakestGroup": "routeProfile"
+      }
+    },
+    {
+      "horseName": "TONBİ",
+      "role": "Riskli izleme",
+      "scores": {
+        "decisionScore": 51,
+        "upsetScore": 41,
+        "riskScore": 39,
+        "confidenceScore": 90
+      },
+      "readiness": {
+        "score": 91,
+        "confidence": 100,
+        "upside": 58,
+        "risk": 14,
+        "label": "Güçlü aday profili"
+      },
+      "route": {
+        "label": "Tek koşu sinyali",
+        "score": 20,
+        "prepStartCount": 1,
+        "bestPrepRaceName": "Erkek Tay Deneme",
+        "bestPrepFinishPosition": 1
+      },
+      "actors": {
+        "jockey": "MEHMET AKYAVUZ",
+        "jockeyChanged": true,
+        "sire": "APPROVE (IRE)",
+        "dam": "NEFERU",
+        "damsire": "UNACCOUNTED FOR (USA)",
+        "owner": "ŞEVKİ BALCI",
+        "actorSummary": "jokey: 0/4 ilk 3 · baba hattı: 1/1 ilk 3"
+      },
+      "calibratedReadiness": {
+        "rank": 4,
+        "rankDelta": 0,
+        "score": 87,
+        "scoreDelta": -4,
+        "originalRank": 4,
+        "originalScore": 91
+      },
+      "strengths": [
+        "Yüksek readiness",
+        "Veri güveni yüksek",
+        "Prep galibiyeti",
+        "Aktör geçmişi katkısı",
+        "Geçmiş benzerlik"
+      ],
+      "cautions": [
+        "Tek koşu sinyali",
+        "Jokey sürekliliği kırılmış"
+      ],
+      "reason": "Readiness 91 ve karar skoru 51. Kalibre sırada 4. En güçlü feature grubu At performansı. Risk okumasında zayıf grup Sahip.",
+      "feature": {
+        "compositeScore": 60,
+        "strongestGroup": "horsePerformance",
+        "weakestGroup": "owner"
+      }
+    },
+    {
+      "horseName": "BOON NAM",
+      "role": "Güvenli profil",
+      "scores": {
+        "decisionScore": 75,
+        "upsetScore": 33,
+        "riskScore": 0,
+        "confidenceScore": 100
+      },
+      "readiness": {
+        "score": 99,
+        "confidence": 100,
+        "upside": 68,
+        "risk": 0,
+        "label": "Güçlü aday profili"
+      },
+      "route": {
+        "label": "Geniş rota görünürlüğü",
+        "score": 40,
+        "prepStartCount": 2,
+        "bestPrepRaceName": "Kısrak",
+        "bestPrepFinishPosition": 1
+      },
+      "actors": {
+        "jockey": "ERHAN YAVUZ",
+        "jockeyChanged": false,
+        "sire": "VICTOIRE PISA (JPN)",
+        "dam": "ZEHİR",
+        "damsire": "OKAWANGO (USA)",
+        "owner": "ARMAĞAN ARAZ",
+        "actorSummary": "Geçmiş aktör sinyali bulunamadı."
+      },
+      "calibratedReadiness": {
+        "rank": 2,
+        "rankDelta": 0,
+        "score": 95,
+        "scoreDelta": -4,
+        "originalRank": 2,
+        "originalScore": 99
+      },
+      "strengths": [
+        "Yüksek readiness",
+        "Upside potansiyeli",
+        "Veri güveni yüksek",
+        "Prep galibiyeti",
+        "Geçmiş benzerlik"
+      ],
+      "cautions": [],
+      "reason": "Readiness 99 ve karar skoru 75. Kalibre sırada 2. En güçlü feature grubu At performansı.",
+      "feature": {
+        "compositeScore": 66,
+        "strongestGroup": "horsePerformance",
+        "weakestGroup": "owner"
+      }
+    }
+  ],
+  "riskWatch": [
+    {
+      "horseName": "TONBİ",
+      "role": "Riskli izleme",
+      "scores": {
+        "decisionScore": 51,
+        "upsetScore": 41,
+        "riskScore": 39,
+        "confidenceScore": 90
+      },
+      "readiness": {
+        "score": 91,
+        "confidence": 100,
+        "upside": 58,
+        "risk": 14,
+        "label": "Güçlü aday profili"
+      },
+      "route": {
+        "label": "Tek koşu sinyali",
+        "score": 20,
+        "prepStartCount": 1,
+        "bestPrepRaceName": "Erkek Tay Deneme",
+        "bestPrepFinishPosition": 1
+      },
+      "actors": {
+        "jockey": "MEHMET AKYAVUZ",
+        "jockeyChanged": true,
+        "sire": "APPROVE (IRE)",
+        "dam": "NEFERU",
+        "damsire": "UNACCOUNTED FOR (USA)",
+        "owner": "ŞEVKİ BALCI",
+        "actorSummary": "jokey: 0/4 ilk 3 · baba hattı: 1/1 ilk 3"
+      },
+      "calibratedReadiness": {
+        "rank": 4,
+        "rankDelta": 0,
+        "score": 87,
+        "scoreDelta": -4,
+        "originalRank": 4,
+        "originalScore": 91
+      },
+      "strengths": [
+        "Yüksek readiness",
+        "Veri güveni yüksek",
+        "Prep galibiyeti",
+        "Aktör geçmişi katkısı",
+        "Geçmiş benzerlik"
+      ],
+      "cautions": [
+        "Tek koşu sinyali",
+        "Jokey sürekliliği kırılmış"
+      ],
+      "reason": "Readiness 91 ve karar skoru 51. Kalibre sırada 4. En güçlü feature grubu At performansı. Risk okumasında zayıf grup Sahip.",
+      "feature": {
+        "compositeScore": 60,
+        "strongestGroup": "horsePerformance",
+        "weakestGroup": "owner"
+      }
+    },
+    {
+      "horseName": "HANDSOME KING",
+      "role": "Sürpriz adayı",
+      "scores": {
+        "decisionScore": 66,
+        "upsetScore": 42,
+        "riskScore": 12,
+        "confidenceScore": 95
+      },
+      "readiness": {
+        "score": 95,
+        "confidence": 100,
+        "upside": 58,
+        "risk": 0,
+        "label": "Güçlü aday profili"
+      },
+      "route": {
+        "label": "Tek koşu sinyali",
+        "score": 20,
+        "prepStartCount": 1,
+        "bestPrepRaceName": "Sait Akson",
+        "bestPrepFinishPosition": 1
+      },
+      "actors": {
+        "jockey": "HIŞMAN ÇİZİK",
+        "jockeyChanged": false,
+        "sire": "VICTOIRE PISA (JPN)",
+        "dam": "NADİRE",
+        "damsire": "WIN RIVER WIN (USA)",
+        "owner": "ASUMAN YENİCE",
+        "actorSummary": "jokey: 1/5 ilk 3"
+      },
+      "calibratedReadiness": {
+        "rank": 3,
+        "rankDelta": 0,
+        "score": 91,
+        "scoreDelta": -4,
+        "originalRank": 3,
+        "originalScore": 95
+      },
+      "strengths": [
+        "Yüksek readiness",
+        "Veri güveni yüksek",
+        "Prep galibiyeti",
+        "Aktör geçmişi katkısı",
+        "Geçmiş benzerlik"
+      ],
+      "cautions": [
+        "Tek koşu sinyali"
+      ],
+      "reason": "Readiness 95 ve karar skoru 66. Kalibre sırada 3. En güçlü feature grubu At performansı.",
+      "feature": {
+        "compositeScore": 70,
+        "strongestGroup": "horsePerformance",
+        "weakestGroup": "routeProfile"
+      }
+    }
+  ],
+  "lessons": [
+    "Kazanan ana skor sıralamasında 9. olduğu için top-5 dışı profiller için ayrı sürpriz taraması gerekir.",
+    "Kazananın en zayıf görünen grubu \"Rota profili\"; düşük görünen grup otomatik eleme nedeni olmamalı.",
+    "Kazananın en güçlü grubu \"Veri güveni\"; sürpriz açıklamasında bu sinyal geriye dönük kontrol edilmeli.",
+    "Kazanan model liderinden \"Soy hattı\" tarafında 14 puan önde.",
+    "Model lideri \"At performansı\" tarafında kazanana göre 35 puan avantajlıydı."
+  ],
+  "methodology": {
+    "note": "Decision matrix, aday karşılaştırmasını feature breakdown, kalibrasyon ve sürpriz dersleriyle tek karar ekranına indirger.",
+    "disclaimer": "Karar destek ve analiz çıktısıdır; kesin sonuç tahmini veya bahis önerisi değildir."
+  }
+}

@@ -23,7 +23,7 @@ const endpoint = ({ id, path, description, freshness, schema }) => ({
   schema
 });
 
-export const buildApiIndex = ({ manifest, modelBacktest, candidateComparison, contextHistory, featureBreakdown, signalCalibration, raceDayWatchlist, surpriseReview }) => {
+export const buildApiIndex = ({ manifest, modelBacktest, candidateComparison, decisionMatrix, contextHistory, featureBreakdown, signalCalibration, raceDayWatchlist, surpriseReview }) => {
   const defaultReports = manifest?.defaultReports ?? {};
 
   return {
@@ -40,6 +40,7 @@ export const buildApiIndex = ({ manifest, modelBacktest, candidateComparison, co
       modelTopPickPodiumRate: modelBacktest?.summary?.topPickPodiumRate ?? null,
       modelWinnerTopThreeRate: modelBacktest?.summary?.winnerTopThreeRate ?? null,
       candidateComparisonCount: candidateComparison?.summary?.candidateCount ?? null,
+      decisionMatrixLeader: decisionMatrix?.summary?.leaderHorse ?? null,
       contextHistoryEntityCount: contextHistory?.summary?.entityCount ?? null,
       featureBreakdownRunnerCount: featureBreakdown?.summary?.runnerCount ?? null,
       signalCalibrationSeasonCount: signalCalibration?.summary?.completedSeasonCount ?? null,
@@ -88,6 +89,13 @@ export const buildApiIndex = ({ manifest, modelBacktest, candidateComparison, co
         description: "Öne çıkan Gazi adaylarının readiness, rota, jokey, soy hattı, sahip, güçlü taraf ve dikkat sinyali karşılaştırması.",
         freshness: "Decision brief ve readiness sonrası yeniden üretilir.",
         schema: ["summary", "candidates", "methodology"]
+      }),
+      endpoint({
+        id: "decision-matrix",
+        path: defaultReports.decisionMatrix ?? "data/gazi-decision-matrix.json",
+        description: "Adayları ana aday, sürpriz adayı, güvenli profil ve riskli izleme rollerine ayıran karar matrisi.",
+        freshness: "Candidate comparison, feature breakdown ve calibration sonrası yeniden üretilir.",
+        schema: ["summary", "candidates", "upsetWatch", "riskWatch", "lessons", "methodology"]
       }),
       endpoint({
         id: "context-history",
@@ -150,6 +158,7 @@ export const buildApiIndex = ({ manifest, modelBacktest, candidateComparison, co
       recommendedResources: [
         "manifest",
         "decision-brief",
+        "decision-matrix",
         "candidate-comparison",
         "context-history",
         "feature-breakdown",
@@ -170,6 +179,7 @@ const main = async () => {
   const manifestPath = getArgValue(args, "--manifest") ?? "data/padok-data-manifest.json";
   const modelBacktestPath = getArgValue(args, "--model-backtest") ?? "data/gazi-model-backtest.json";
   const candidateComparisonPath = getArgValue(args, "--candidate-comparison") ?? "data/gazi-candidate-comparison.json";
+  const decisionMatrixPath = getArgValue(args, "--decision-matrix") ?? "data/gazi-decision-matrix.json";
   const contextHistoryPath = getArgValue(args, "--context-history") ?? "data/gazi-context-history.json";
   const featureBreakdownPath = getArgValue(args, "--feature-breakdown") ?? "data/gazi-feature-breakdown.json";
   const signalCalibrationPath = getArgValue(args, "--signal-calibration") ?? "data/gazi-signal-calibration.json";
@@ -180,6 +190,7 @@ const main = async () => {
     manifest: await readOptionalJson(manifestPath),
     modelBacktest: await readOptionalJson(modelBacktestPath),
     candidateComparison: await readOptionalJson(candidateComparisonPath),
+    decisionMatrix: await readOptionalJson(decisionMatrixPath),
     contextHistory: await readOptionalJson(contextHistoryPath),
     featureBreakdown: await readOptionalJson(featureBreakdownPath),
     signalCalibration: await readOptionalJson(signalCalibrationPath),
@@ -194,6 +205,7 @@ const main = async () => {
     endpointCount: payload.endpoints.length,
     modelBacktestSeasonCount: payload.summary.modelBacktestSeasonCount,
     candidateComparisonCount: payload.summary.candidateComparisonCount,
+    decisionMatrixLeader: payload.summary.decisionMatrixLeader,
     contextHistoryEntityCount: payload.summary.contextHistoryEntityCount,
     featureBreakdownRunnerCount: payload.summary.featureBreakdownRunnerCount,
     signalCalibrationSeasonCount: payload.summary.signalCalibrationSeasonCount,

@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-06-05T22:26:19.908Z",
+  "generatedAt": "2026-06-05T22:38:18.662Z",
   "name": "Padok Static API",
   "version": "0.1.0",
   "description": "GitHub Pages üzerinden yayınlanan Padok veri ve analiz artifact katalogu.",
@@ -12,6 +12,7 @@
     "modelTopPickPodiumRate": 67,
     "modelWinnerTopThreeRate": 50,
     "candidateComparisonCount": 4,
+    "decisionMatrixLeader": "SPECIAL MAN",
     "contextHistoryEntityCount": 403,
     "featureBreakdownRunnerCount": 22,
     "signalCalibrationSeasonCount": 6,
@@ -87,6 +88,20 @@
       "schema": [
         "summary",
         "candidates",
+        "methodology"
+      ]
+    },
+    {
+      "id": "decision-matrix",
+      "path": "data/gazi-decision-matrix.json",
+      "description": "Adayları ana aday, sürpriz adayı, güvenli profil ve riskli izleme rollerine ayıran karar matrisi.",
+      "freshness": "Candidate comparison, feature breakdown ve calibration sonrası yeniden üretilir.",
+      "schema": [
+        "summary",
+        "candidates",
+        "upsetWatch",
+        "riskWatch",
+        "lessons",
         "methodology"
       ]
     },
@@ -197,6 +212,7 @@
     "recommendedResources": [
       "manifest",
       "decision-brief",
+      "decision-matrix",
       "candidate-comparison",
       "context-history",
       "feature-breakdown",
