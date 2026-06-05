@@ -169,6 +169,11 @@ const main = async () => {
     result: runNpmScript("build:data-manifest", ["--data-dir", "data", "--out", "data/padok-data-manifest.json"])
   });
 
+  log.steps.push({
+    step: "build-api-index",
+    result: runNpmScript("build:api-index", ["--out", "data/padok-api-index.json"])
+  });
+
   await writeFile("data/gazi-range-refresh-log.json", `${JSON.stringify(log, null, 2)}\n`, "utf8");
   console.log(JSON.stringify({
     startYear,

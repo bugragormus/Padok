@@ -37,4 +37,5 @@ test("buildDataManifest indexes yearly route participation and readiness artifac
   assert.equal(manifest.reports.readiness[0].summary.warningCount, 0);
   assert.equal(manifest.defaultReports.readiness, "data/gazi-readiness-report.json");
   assert.equal(manifest.defaultReports.modelBacktest, "data/gazi-model-backtest.json");
+  assert.equal(manifest.defaultReports.apiIndex, "data/padok-api-index.json");
 });

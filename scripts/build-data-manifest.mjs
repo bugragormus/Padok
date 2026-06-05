@@ -71,7 +71,8 @@ export const buildDataManifest = async (dataDir = "data") => {
       readiness: "data/gazi-readiness-report.json",
       backtest: "data/gazi-backtest-report.json",
       modelBacktest: "data/gazi-model-backtest.json",
-      horizon: "data/gazi-data-horizon.json"
+      horizon: "data/gazi-data-horizon.json",
+      apiIndex: "data/padok-api-index.json"
     },
     years,
     reports: entriesByType

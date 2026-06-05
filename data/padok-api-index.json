@@ -1,0 +1,105 @@
+{
+  "generatedAt": "2026-06-05T12:27:11.167Z",
+  "name": "Padok Static API",
+  "version": "0.1.0",
+  "description": "GitHub Pages üzerinden yayınlanan Padok veri ve analiz artifact katalogu.",
+  "basePath": "./data/",
+  "summary": {
+    "yearRange": "2020-2025",
+    "yearCount": 6,
+    "readinessReportCount": 6,
+    "modelBacktestSeasonCount": 6,
+    "modelTopPickPodiumRate": 67,
+    "modelWinnerTopThreeRate": 50
+  },
+  "endpoints": [
+    {
+      "id": "manifest",
+      "path": "data/padok-data-manifest.json",
+      "description": "Yayınlanan yıllık artifact dosyalarının keşif kataloğu.",
+      "freshness": "Her data build/deploy sonrası yenilenir.",
+      "schema": [
+        "summary",
+        "defaultReports",
+        "years",
+        "reports"
+      ]
+    },
+    {
+      "id": "route-report",
+      "path": "data/gazi-route-report.json",
+      "description": "Varsayılan Gazi rota koşuları, sonuçları ve yarış benzerlik sinyalleri.",
+      "freshness": "Canlı/scheduled veri yenileme ile güncellenir.",
+      "schema": [
+        "summary",
+        "routeRaces"
+      ]
+    },
+    {
+      "id": "participation-report",
+      "path": "data/gazi-participation-report.json",
+      "description": "Gazi koşucularının takip edilen prep rotalarındaki katılım matrisi.",
+      "freshness": "Route report sonrası yeniden üretilir.",
+      "schema": [
+        "summary",
+        "columns",
+        "rows"
+      ]
+    },
+    {
+      "id": "readiness-report",
+      "path": "data/gazi-readiness-report.json",
+      "description": "At bazlı readiness sıralamaları, lensler, kalibrasyon ve aktör geçmişi sinyalleri.",
+      "freshness": "Participation report sonrası yeniden üretilir.",
+      "schema": [
+        "summary",
+        "quality",
+        "calibration",
+        "lensSummaries",
+        "rankings"
+      ]
+    },
+    {
+      "id": "model-backtest",
+      "path": "data/gazi-model-backtest.json",
+      "description": "Readiness modelinin tamamlanmış sezonlardaki performansı ve sürpriz sonuç açıklamaları.",
+      "freshness": "Yıllık readiness raporları sonrası yeniden üretilir.",
+      "schema": [
+        "summary",
+        "blindSpots",
+        "seasons"
+      ]
+    },
+    {
+      "id": "route-backtest",
+      "path": "data/gazi-backtest-report.json",
+      "description": "Prep rota koşularının Gazi ilk 3 kapsama ve isabet metrikleri.",
+      "freshness": "Route raporları sonrası yeniden üretilir.",
+      "schema": [
+        "summary",
+        "aggregate",
+        "seasons"
+      ]
+    },
+    {
+      "id": "data-horizon",
+      "path": "data/gazi-data-horizon.json",
+      "description": "Mevcut veri kapsamı, hedef yıl aralıkları ve genişletme planı.",
+      "freshness": "Data manifest sonrası yeniden üretilir.",
+      "schema": [
+        "summary",
+        "tiers",
+        "seasons"
+      ]
+    }
+  ],
+  "mcpBridge": {
+    "recommendedResources": [
+      "manifest",
+      "readiness-report",
+      "model-backtest",
+      "participation-report"
+    ],
+    "note": "MCP server ilk aşamada bu statik artifactleri resource olarak sunabilir; daha sonra canlı refresh komutları tool olarak eklenebilir."
+  }
+}
