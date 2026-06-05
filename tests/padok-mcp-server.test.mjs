@@ -2,6 +2,8 @@ import assert from "node:assert/strict";
 import test from "node:test";
 import {
   buildResourceList,
+  buildToolList,
+  callPadokTool,
   handleMcpRequest,
   loadApiIndex,
   readEndpointResource
@@ -53,4 +55,61 @@ test("Padok MCP request handler supports initialize, list, and read", async () =
   const modelBacktest = JSON.parse(readResponse.result.contents[0].text);
 
   assert.equal(modelBacktest.summary.seasonCount, 6);
+});
+
+test("Padok MCP tools return model summary and top candidates", async () => {
+  const apiIndex = await loadApiIndex("data/padok-api-index.json");
+  const tools = buildToolList();
+
+  assert.ok(tools.some((tool) => tool.name === "padok.model_summary"));
+  assert.ok(tools.some((tool) => tool.name === "padok.top_candidates"));
+  assert.ok(tools.some((tool) => tool.name === "padok.horse_profile"));
+
+  const summaryResult = await callPadokTool(apiIndex, "padok.model_summary");
+  const summary = JSON.parse(summaryResult.content[0].text);
+
+  assert.equal(summary.summary.seasonCount, 6);
+  assert.ok(summary.blindSpots.length > 0);
+
+  const candidatesResult = await callPadokTool(apiIndex, "padok.top_candidates", {
+    lens: "score",
+    limit: 3
+  });
+  const candidates = JSON.parse(candidatesResult.content[0].text);
+
+  assert.equal(candidates.lens, "score");
+  assert.equal(candidates.candidates.length, 3);
+  assert.equal(candidates.candidates[0].rank, 1);
+});
+
+test("Padok MCP horse_profile returns one horse across readiness lenses", async () => {
+  const apiIndex = await loadApiIndex("data/padok-api-index.json");
+  const result = await callPadokTool(apiIndex, "padok.horse_profile", {
+    horseName: "SPECIAL MAN"
+  });
+  const profile = JSON.parse(result.content[0].text);
+
+  assert.equal(profile.horseName, "SPECIAL MAN");
+  assert.ok(profile.rankings.some((ranking) => ranking.lens === "score"));
+  assert.ok(profile.readiness.parts.some((part) => part.label === "aktör geçmişi"));
+});
+
+test("Padok MCP request handler supports tool calls", async () => {
+  const apiIndex = await loadApiIndex("data/padok-api-index.json");
+  const response = await handleMcpRequest(apiIndex, {
+    jsonrpc: "2.0",
+    id: 4,
+    method: "tools/call",
+    params: {
+      name: "padok.top_candidates",
+      arguments: {
+        lens: "upside",
+        limit: 2
+      }
+    }
+  });
+  const payload = JSON.parse(response.result.content[0].text);
+
+  assert.equal(payload.lens, "upside");
+  assert.equal(payload.candidates.length, 2);
 });
