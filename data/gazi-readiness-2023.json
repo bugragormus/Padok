@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-06-05T00:33:49.595Z",
+  "generatedAt": "2026-06-05T00:46:31.797Z",
   "sourceYear": 2023,
   "sourceGeneratedAt": "2026-06-05T00:07:08.805Z",
   "methodology": {
@@ -29,9 +29,9 @@
     "state": "completed",
     "winnerName": "URFA ASLANI",
     "winnerScore": 37,
-    "winnerScoreRank": 18,
-    "winnerUpsideRank": 12,
-    "winnerLowRiskRank": 18,
+    "winnerScoreRank": 19,
+    "winnerUpsideRank": 13,
+    "winnerLowRiskRank": 19,
     "winnerUncertaintyRank": 1,
     "winnerRouteVisibility": {
       "score": 0,
@@ -47,7 +47,7 @@
     "topScoreHorse": "GENERAL BRIELLA",
     "topScoreFinish": 13,
     "topPickHit": false,
-    "winnerGap": 17,
+    "winnerGap": 18,
     "missReasons": [
       "Kazanan takip edilen prep rotalarında hiç görünmedi.",
       "Kazananın upside metriği düşük kaldı; geç gelişen form sıçraması ayrıca modellenmeli.",
@@ -81,9 +81,9 @@
         "QUALIZTO",
         "COSMIC KID"
       ],
-      "averageValue": 67,
+      "averageValue": 68,
       "highSignalCount": 13,
-      "watchlistCount": 15
+      "watchlistCount": 16
     },
     "upside": {
       "topHorse": "GENERAL BRIELLA",
@@ -103,7 +103,7 @@
         "QUALIZTO",
         "COSMIC KID"
       ],
-      "averageValue": 63.2,
+      "averageValue": 63.4,
       "highSignalCount": 14,
       "watchlistCount": 17
     },
@@ -114,7 +114,7 @@
         "THE RAPTOR",
         "TURDEMİRKIR"
       ],
-      "averageValue": 31.4,
+      "averageValue": 31.2,
       "highSignalCount": 0,
       "watchlistCount": 5
     }
@@ -204,7 +204,24 @@
               "yoğun prep"
             ]
           }
-        ]
+        ],
+        "actorContext": {
+          "totalScore": 0,
+          "signals": [
+            {
+              "label": "jokey",
+              "name": "MEHMET AKYAVUZ",
+              "starts": 2,
+              "wins": 0,
+              "topThree": 0,
+              "topThreeRate": 0,
+              "winRate": 0,
+              "averageFinish": "7.0",
+              "score": 0
+            }
+          ],
+          "summary": "jokey: 0/2 ilk 3"
+        }
       },
       {
         "rank": 2,
@@ -285,18 +302,46 @@
               "prep galibi"
             ]
           }
-        ]
+        ],
+        "actorContext": {
+          "totalScore": 0,
+          "signals": [
+            {
+              "label": "jokey",
+              "name": "AYHAN KURŞUN",
+              "starts": 3,
+              "wins": 0,
+              "topThree": 0,
+              "topThreeRate": 0,
+              "winRate": 0,
+              "averageFinish": "10.7",
+              "score": 0
+            },
+            {
+              "label": "baba hattı",
+              "name": "TOROK (IRE)",
+              "starts": 5,
+              "wins": 0,
+              "topThree": 1,
+              "topThreeRate": 20,
+              "winRate": 0,
+              "averageFinish": "11.2",
+              "score": 0
+            }
+          ],
+          "summary": "jokey: 0/3 ilk 3 · baba hattı: 1/5 ilk 3"
+        }
       },
       {
         "rank": 3,
         "horseName": "COSMIC KID",
         "gaziFinishPosition": 15,
-        "lensValue": 90,
+        "lensValue": 94,
         "badge": "Güçlü aday profili",
         "reason": "Geçmiş ilk 3 profilleriyle benzerlik yoğunluğu var.",
         "meta": "Yüksek güven · Düşük risk · Upside 34",
         "readiness": {
-          "score": 90,
+          "score": 94,
           "confidence": 100,
           "upside": 34,
           "risk": 0,
@@ -324,6 +369,10 @@
             {
               "label": "veri derinliği",
               "value": 10
+            },
+            {
+              "label": "aktör geçmişi",
+              "value": 4
             }
           ]
         },
@@ -366,100 +415,46 @@
               "yoğun prep"
             ]
           }
-        ]
+        ],
+        "actorContext": {
+          "totalScore": 4,
+          "signals": [
+            {
+              "label": "jokey",
+              "name": "GÖKHAN KOCAKAYA",
+              "starts": 3,
+              "wins": 0,
+              "topThree": 3,
+              "topThreeRate": 100,
+              "winRate": 0,
+              "averageFinish": "2.3",
+              "score": 4
+            },
+            {
+              "label": "sahip",
+              "name": "DENİZ KURTEL",
+              "starts": 3,
+              "wins": 0,
+              "topThree": 0,
+              "topThreeRate": 0,
+              "winRate": 0,
+              "averageFinish": "13.3",
+              "score": 0
+            }
+          ],
+          "summary": "jokey: 3/3 ilk 3 · sahip: 0/3 ilk 3"
+        }
       },
       {
         "rank": 4,
-        "horseName": "MOONLIGHT FAIRY",
-        "gaziFinishPosition": 4,
-        "lensValue": 88,
-        "badge": "Güçlü aday profili",
-        "reason": "Prep galibiyeti kompozit skoru yukarı taşıyor.",
-        "meta": "Yüksek güven · Düşük risk · Upside 58",
-        "readiness": {
-          "score": 88,
-          "confidence": 100,
-          "upside": 58,
-          "risk": 14,
-          "label": "Güçlü aday profili",
-          "confidenceLabel": "Yüksek güven",
-          "riskLabel": "Düşük risk",
-          "primaryReason": "Prep galibiyeti kompozit skoru yukarı taşıyor.",
-          "parts": [
-            {
-              "label": "prep formu",
-              "value": 28
-            },
-            {
-              "label": "profil kanıtı",
-              "value": 30
-            },
-            {
-              "label": "rota şekli",
-              "value": 13
-            },
-            {
-              "label": "jokey sürekliliği",
-              "value": 7
-            },
-            {
-              "label": "veri derinliği",
-              "value": 10
-            }
-          ]
-        },
-        "profileSummary": {
-          "count": 4,
-          "averageFinish": "1.3",
-          "strongestSignal": "prep galibi",
-          "note": "4/4 benzer örnek Gazi'de ilk 2 içinde bitirmiş."
-        },
-        "historicalMatches": [
-          {
-            "horseName": "BURGAS",
-            "year": 2021,
-            "gaziFinishPosition": 1,
-            "matchingSignals": [
-              "prep galibi",
-              "jokey değişimi"
-            ]
-          },
-          {
-            "horseName": "SECRET POWER",
-            "year": 2022,
-            "gaziFinishPosition": 1,
-            "matchingSignals": [
-              "prep galibi"
-            ]
-          },
-          {
-            "horseName": "CALL TO VICTORY",
-            "year": 2020,
-            "gaziFinishPosition": 1,
-            "matchingSignals": [
-              "prep galibi"
-            ]
-          },
-          {
-            "horseName": "MUCİZE KIZ",
-            "year": 2022,
-            "gaziFinishPosition": 2,
-            "matchingSignals": [
-              "jokey değişimi"
-            ]
-          }
-        ]
-      },
-      {
-        "rank": 5,
         "horseName": "NATIVE POWER(8) (GB)",
         "gaziFinishPosition": 5,
-        "lensValue": 88,
+        "lensValue": 91,
         "badge": "Güçlü aday profili",
         "reason": "Geçmiş ilk 3 profilleriyle benzerlik yoğunluğu var.",
         "meta": "Yüksek güven · Düşük risk · Upside 34",
         "readiness": {
-          "score": 88,
+          "score": 91,
           "confidence": 100,
           "upside": 34,
           "risk": 14,
@@ -487,6 +482,10 @@
             {
               "label": "veri derinliği",
               "value": 10
+            },
+            {
+              "label": "aktör geçmişi",
+              "value": 3
             }
           ]
         },
@@ -530,10 +529,266 @@
               "jokey değişimi"
             ]
           }
-        ]
+        ],
+        "actorContext": {
+          "totalScore": 3,
+          "signals": [
+            {
+              "label": "jokey",
+              "name": "AKIN SÖZEN",
+              "starts": 3,
+              "wins": 0,
+              "topThree": 0,
+              "topThreeRate": 0,
+              "winRate": 0,
+              "averageFinish": "8.0",
+              "score": 0
+            },
+            {
+              "label": "baba hattı",
+              "name": "NATIVE KHAN (FR)",
+              "starts": 2,
+              "wins": 1,
+              "topThree": 2,
+              "topThreeRate": 100,
+              "winRate": 50,
+              "averageFinish": "2.0",
+              "score": 3
+            }
+          ],
+          "summary": "jokey: 0/3 ilk 3 · baba hattı: 2/2 ilk 3"
+        }
+      },
+      {
+        "rank": 5,
+        "horseName": "MOONLIGHT FAIRY",
+        "gaziFinishPosition": 4,
+        "lensValue": 89,
+        "badge": "Güçlü aday profili",
+        "reason": "Prep galibiyeti kompozit skoru yukarı taşıyor.",
+        "meta": "Yüksek güven · Düşük risk · Upside 58",
+        "readiness": {
+          "score": 89,
+          "confidence": 100,
+          "upside": 58,
+          "risk": 14,
+          "label": "Güçlü aday profili",
+          "confidenceLabel": "Yüksek güven",
+          "riskLabel": "Düşük risk",
+          "primaryReason": "Prep galibiyeti kompozit skoru yukarı taşıyor.",
+          "parts": [
+            {
+              "label": "prep formu",
+              "value": 28
+            },
+            {
+              "label": "profil kanıtı",
+              "value": 30
+            },
+            {
+              "label": "rota şekli",
+              "value": 13
+            },
+            {
+              "label": "jokey sürekliliği",
+              "value": 7
+            },
+            {
+              "label": "veri derinliği",
+              "value": 10
+            },
+            {
+              "label": "aktör geçmişi",
+              "value": 1
+            }
+          ]
+        },
+        "profileSummary": {
+          "count": 4,
+          "averageFinish": "1.3",
+          "strongestSignal": "prep galibi",
+          "note": "4/4 benzer örnek Gazi'de ilk 2 içinde bitirmiş."
+        },
+        "historicalMatches": [
+          {
+            "horseName": "BURGAS",
+            "year": 2021,
+            "gaziFinishPosition": 1,
+            "matchingSignals": [
+              "prep galibi",
+              "jokey değişimi"
+            ]
+          },
+          {
+            "horseName": "SECRET POWER",
+            "year": 2022,
+            "gaziFinishPosition": 1,
+            "matchingSignals": [
+              "prep galibi"
+            ]
+          },
+          {
+            "horseName": "CALL TO VICTORY",
+            "year": 2020,
+            "gaziFinishPosition": 1,
+            "matchingSignals": [
+              "prep galibi"
+            ]
+          },
+          {
+            "horseName": "MUCİZE KIZ",
+            "year": 2022,
+            "gaziFinishPosition": 2,
+            "matchingSignals": [
+              "jokey değişimi"
+            ]
+          }
+        ],
+        "actorContext": {
+          "totalScore": 1,
+          "signals": [
+            {
+              "label": "jokey",
+              "name": "MÜSLÜM ÇELİK",
+              "starts": 3,
+              "wins": 0,
+              "topThree": 1,
+              "topThreeRate": 33,
+              "winRate": 0,
+              "averageFinish": "7.0",
+              "score": 1
+            }
+          ],
+          "summary": "jokey: 1/3 ilk 3"
+        }
       },
       {
         "rank": 6,
+        "horseName": "LORD OF PELENNOR",
+        "gaziFinishPosition": 12,
+        "lensValue": 89,
+        "badge": "Güçlü aday profili",
+        "reason": "Geçmiş ilk 3 profilleriyle benzerlik yoğunluğu var.",
+        "meta": "Yüksek güven · Düşük risk · Upside 34",
+        "readiness": {
+          "score": 89,
+          "confidence": 100,
+          "upside": 34,
+          "risk": 14,
+          "label": "Güçlü aday profili",
+          "confidenceLabel": "Yüksek güven",
+          "riskLabel": "Düşük risk",
+          "primaryReason": "Geçmiş ilk 3 profilleriyle benzerlik yoğunluğu var.",
+          "parts": [
+            {
+              "label": "prep formu",
+              "value": 19
+            },
+            {
+              "label": "profil kanıtı",
+              "value": 30
+            },
+            {
+              "label": "rota şekli",
+              "value": 18
+            },
+            {
+              "label": "jokey sürekliliği",
+              "value": 7
+            },
+            {
+              "label": "veri derinliği",
+              "value": 10
+            },
+            {
+              "label": "aktör geçmişi",
+              "value": 5
+            }
+          ]
+        },
+        "profileSummary": {
+          "count": 4,
+          "averageFinish": "1.3",
+          "strongestSignal": "yoğun prep",
+          "note": "4/4 benzer örnek Gazi'de ilk 2 içinde bitirmiş."
+        },
+        "historicalMatches": [
+          {
+            "horseName": "BURGAS",
+            "year": 2021,
+            "gaziFinishPosition": 1,
+            "matchingSignals": [
+              "jokey değişimi",
+              "yoğun prep"
+            ]
+          },
+          {
+            "horseName": "SECRET POWER",
+            "year": 2022,
+            "gaziFinishPosition": 1,
+            "matchingSignals": [
+              "yoğun prep"
+            ]
+          },
+          {
+            "horseName": "CALL TO VICTORY",
+            "year": 2020,
+            "gaziFinishPosition": 1,
+            "matchingSignals": [
+              "yoğun prep"
+            ]
+          },
+          {
+            "horseName": "MUCİZE KIZ",
+            "year": 2022,
+            "gaziFinishPosition": 2,
+            "matchingSignals": [
+              "jokey değişimi"
+            ]
+          }
+        ],
+        "actorContext": {
+          "totalScore": 5,
+          "signals": [
+            {
+              "label": "jokey",
+              "name": "ÖZCAN YILDIRIM",
+              "starts": 3,
+              "wins": 1,
+              "topThree": 1,
+              "topThreeRate": 33,
+              "winRate": 33,
+              "averageFinish": "4.7",
+              "score": 2
+            },
+            {
+              "label": "sahip",
+              "name": "AYŞEGÜL KURTEL",
+              "starts": 2,
+              "wins": 1,
+              "topThree": 1,
+              "topThreeRate": 50,
+              "winRate": 50,
+              "averageFinish": "6.0",
+              "score": 2
+            },
+            {
+              "label": "baba hattı",
+              "name": "VICTORY GALLOP (CAN)",
+              "starts": 5,
+              "wins": 1,
+              "topThree": 1,
+              "topThreeRate": 20,
+              "winRate": 20,
+              "averageFinish": "6.6",
+              "score": 1
+            }
+          ],
+          "summary": "jokey: 1/3 ilk 3 · sahip: 1/2 ilk 3 · baba hattı: 1/5 ilk 3"
+        }
+      },
+      {
+        "rank": 7,
         "horseName": "HEAD VORKER",
         "gaziFinishPosition": 6,
         "lensValue": 88,
@@ -612,89 +867,24 @@
               "jokey değişimi"
             ]
           }
-        ]
-      },
-      {
-        "rank": 7,
-        "horseName": "LORD OF PELENNOR",
-        "gaziFinishPosition": 12,
-        "lensValue": 84,
-        "badge": "Güçlü aday profili",
-        "reason": "Geçmiş ilk 3 profilleriyle benzerlik yoğunluğu var.",
-        "meta": "Yüksek güven · Düşük risk · Upside 34",
-        "readiness": {
-          "score": 84,
-          "confidence": 100,
-          "upside": 34,
-          "risk": 14,
-          "label": "Güçlü aday profili",
-          "confidenceLabel": "Yüksek güven",
-          "riskLabel": "Düşük risk",
-          "primaryReason": "Geçmiş ilk 3 profilleriyle benzerlik yoğunluğu var.",
-          "parts": [
+        ],
+        "actorContext": {
+          "totalScore": 0,
+          "signals": [
             {
-              "label": "prep formu",
-              "value": 19
-            },
-            {
-              "label": "profil kanıtı",
-              "value": 30
-            },
-            {
-              "label": "rota şekli",
-              "value": 18
-            },
-            {
-              "label": "jokey sürekliliği",
-              "value": 7
-            },
-            {
-              "label": "veri derinliği",
-              "value": 10
+              "label": "jokey",
+              "name": "MEHMET SALİH ÇELİK",
+              "starts": 1,
+              "wins": 0,
+              "topThree": 0,
+              "topThreeRate": 0,
+              "winRate": 0,
+              "averageFinish": "10.0",
+              "score": 0
             }
-          ]
-        },
-        "profileSummary": {
-          "count": 4,
-          "averageFinish": "1.3",
-          "strongestSignal": "yoğun prep",
-          "note": "4/4 benzer örnek Gazi'de ilk 2 içinde bitirmiş."
-        },
-        "historicalMatches": [
-          {
-            "horseName": "BURGAS",
-            "year": 2021,
-            "gaziFinishPosition": 1,
-            "matchingSignals": [
-              "jokey değişimi",
-              "yoğun prep"
-            ]
-          },
-          {
-            "horseName": "SECRET POWER",
-            "year": 2022,
-            "gaziFinishPosition": 1,
-            "matchingSignals": [
-              "yoğun prep"
-            ]
-          },
-          {
-            "horseName": "CALL TO VICTORY",
-            "year": 2020,
-            "gaziFinishPosition": 1,
-            "matchingSignals": [
-              "yoğun prep"
-            ]
-          },
-          {
-            "horseName": "MUCİZE KIZ",
-            "year": 2022,
-            "gaziFinishPosition": 2,
-            "matchingSignals": [
-              "jokey değişimi"
-            ]
-          }
-        ]
+          ],
+          "summary": "jokey: 0/1 ilk 3"
+        }
       },
       {
         "rank": 8,
@@ -776,7 +966,35 @@
               "jokey değişimi"
             ]
           }
-        ]
+        ],
+        "actorContext": {
+          "totalScore": 0,
+          "signals": [
+            {
+              "label": "jokey",
+              "name": "VEDAT ABİŞ",
+              "starts": 1,
+              "wins": 0,
+              "topThree": 0,
+              "topThreeRate": 0,
+              "winRate": 0,
+              "averageFinish": "11.0",
+              "score": 0
+            },
+            {
+              "label": "sahip",
+              "name": "FEDAİ KAHRAMAN",
+              "starts": 1,
+              "wins": 0,
+              "topThree": 0,
+              "topThreeRate": 0,
+              "winRate": 0,
+              "averageFinish": "8.0",
+              "score": 0
+            }
+          ],
+          "summary": "jokey: 0/1 ilk 3 · sahip: 0/1 ilk 3"
+        }
       },
       {
         "rank": 9,
@@ -858,10 +1076,152 @@
               "jokey değişimi"
             ]
           }
-        ]
+        ],
+        "actorContext": {
+          "totalScore": 0,
+          "signals": [
+            {
+              "label": "jokey",
+              "name": "NEVZAT AVCİ",
+              "starts": 2,
+              "wins": 0,
+              "topThree": 0,
+              "topThreeRate": 0,
+              "winRate": 0,
+              "averageFinish": "20.5",
+              "score": 0
+            },
+            {
+              "label": "baba hattı",
+              "name": "TOROK (IRE)",
+              "starts": 5,
+              "wins": 0,
+              "topThree": 1,
+              "topThreeRate": 20,
+              "winRate": 0,
+              "averageFinish": "11.2",
+              "score": 0
+            }
+          ],
+          "summary": "jokey: 0/2 ilk 3 · baba hattı: 1/5 ilk 3"
+        }
       },
       {
         "rank": 10,
+        "horseName": "BRIGHT FIRE",
+        "gaziFinishPosition": 16,
+        "lensValue": 75,
+        "badge": "Ciddi takip profili",
+        "reason": "Geçmiş ilk 3 profilleriyle benzerlik yoğunluğu var.",
+        "meta": "Yüksek güven · Düşük risk · Upside 34",
+        "readiness": {
+          "score": 75,
+          "confidence": 100,
+          "upside": 34,
+          "risk": 14,
+          "label": "Ciddi takip profili",
+          "confidenceLabel": "Yüksek güven",
+          "riskLabel": "Düşük risk",
+          "primaryReason": "Geçmiş ilk 3 profilleriyle benzerlik yoğunluğu var.",
+          "parts": [
+            {
+              "label": "prep formu",
+              "value": 7
+            },
+            {
+              "label": "profil kanıtı",
+              "value": 30
+            },
+            {
+              "label": "rota şekli",
+              "value": 18
+            },
+            {
+              "label": "jokey sürekliliği",
+              "value": 7
+            },
+            {
+              "label": "veri derinliği",
+              "value": 10
+            },
+            {
+              "label": "aktör geçmişi",
+              "value": 3
+            }
+          ]
+        },
+        "profileSummary": {
+          "count": 4,
+          "averageFinish": "1.3",
+          "strongestSignal": "yoğun prep",
+          "note": "4/4 benzer örnek Gazi'de ilk 2 içinde bitirmiş."
+        },
+        "historicalMatches": [
+          {
+            "horseName": "BURGAS",
+            "year": 2021,
+            "gaziFinishPosition": 1,
+            "matchingSignals": [
+              "jokey değişimi",
+              "yoğun prep"
+            ]
+          },
+          {
+            "horseName": "SECRET POWER",
+            "year": 2022,
+            "gaziFinishPosition": 1,
+            "matchingSignals": [
+              "yoğun prep"
+            ]
+          },
+          {
+            "horseName": "CALL TO VICTORY",
+            "year": 2020,
+            "gaziFinishPosition": 1,
+            "matchingSignals": [
+              "yoğun prep"
+            ]
+          },
+          {
+            "horseName": "MUCİZE KIZ",
+            "year": 2022,
+            "gaziFinishPosition": 2,
+            "matchingSignals": [
+              "jokey değişimi"
+            ]
+          }
+        ],
+        "actorContext": {
+          "totalScore": 3,
+          "signals": [
+            {
+              "label": "jokey",
+              "name": "MERTCAN ÇELİK",
+              "starts": 2,
+              "wins": 0,
+              "topThree": 0,
+              "topThreeRate": 0,
+              "winRate": 0,
+              "averageFinish": "15.0",
+              "score": 0
+            },
+            {
+              "label": "baba hattı",
+              "name": "NATIVE KHAN (FR)",
+              "starts": 2,
+              "wins": 1,
+              "topThree": 2,
+              "topThreeRate": 100,
+              "winRate": 50,
+              "averageFinish": "2.0",
+              "score": 3
+            }
+          ],
+          "summary": "jokey: 0/2 ilk 3 · baba hattı: 2/2 ilk 3"
+        }
+      },
+      {
+        "rank": 11,
         "horseName": "ALTINSİMA",
         "gaziFinishPosition": 9,
         "lensValue": 75,
@@ -923,100 +1283,23 @@
               "jokey değişimi"
             ]
           }
-        ]
-      },
-      {
-        "rank": 11,
-        "horseName": "BRIGHT FIRE",
-        "gaziFinishPosition": 16,
-        "lensValue": 72,
-        "badge": "Ciddi takip profili",
-        "reason": "Geçmiş ilk 3 profilleriyle benzerlik yoğunluğu var.",
-        "meta": "Yüksek güven · Düşük risk · Upside 34",
-        "readiness": {
-          "score": 72,
-          "confidence": 100,
-          "upside": 34,
-          "risk": 14,
-          "label": "Ciddi takip profili",
-          "confidenceLabel": "Yüksek güven",
-          "riskLabel": "Düşük risk",
-          "primaryReason": "Geçmiş ilk 3 profilleriyle benzerlik yoğunluğu var.",
-          "parts": [
-            {
-              "label": "prep formu",
-              "value": 7
-            },
-            {
-              "label": "profil kanıtı",
-              "value": 30
-            },
-            {
-              "label": "rota şekli",
-              "value": 18
-            },
-            {
-              "label": "jokey sürekliliği",
-              "value": 7
-            },
-            {
-              "label": "veri derinliği",
-              "value": 10
-            }
-          ]
-        },
-        "profileSummary": {
-          "count": 4,
-          "averageFinish": "1.3",
-          "strongestSignal": "yoğun prep",
-          "note": "4/4 benzer örnek Gazi'de ilk 2 içinde bitirmiş."
-        },
-        "historicalMatches": [
-          {
-            "horseName": "BURGAS",
-            "year": 2021,
-            "gaziFinishPosition": 1,
-            "matchingSignals": [
-              "jokey değişimi",
-              "yoğun prep"
-            ]
-          },
-          {
-            "horseName": "SECRET POWER",
-            "year": 2022,
-            "gaziFinishPosition": 1,
-            "matchingSignals": [
-              "yoğun prep"
-            ]
-          },
-          {
-            "horseName": "CALL TO VICTORY",
-            "year": 2020,
-            "gaziFinishPosition": 1,
-            "matchingSignals": [
-              "yoğun prep"
-            ]
-          },
-          {
-            "horseName": "MUCİZE KIZ",
-            "year": 2022,
-            "gaziFinishPosition": 2,
-            "matchingSignals": [
-              "jokey değişimi"
-            ]
-          }
-        ]
+        ],
+        "actorContext": {
+          "totalScore": 0,
+          "signals": [],
+          "summary": "Geçmiş aktör sinyali bulunamadı."
+        }
       },
       {
         "rank": 12,
         "horseName": "SOUND OF SUMMER",
         "gaziFinishPosition": 20,
-        "lensValue": 72,
+        "lensValue": 73,
         "badge": "Ciddi takip profili",
         "reason": "Geçmiş ilk 3 profilleriyle benzerlik yoğunluğu var.",
         "meta": "Yüksek güven · Düşük risk · Upside 34",
         "readiness": {
-          "score": 72,
+          "score": 73,
           "confidence": 100,
           "upside": 34,
           "risk": 14,
@@ -1044,6 +1327,10 @@
             {
               "label": "veri derinliği",
               "value": 10
+            },
+            {
+              "label": "aktör geçmişi",
+              "value": 1
             }
           ]
         },
@@ -1087,7 +1374,46 @@
               "jokey değişimi"
             ]
           }
-        ]
+        ],
+        "actorContext": {
+          "totalScore": 1,
+          "signals": [
+            {
+              "label": "jokey",
+              "name": "GÖRKEM ÖZÇELİK",
+              "starts": 1,
+              "wins": 0,
+              "topThree": 0,
+              "topThreeRate": 0,
+              "winRate": 0,
+              "averageFinish": "5.0",
+              "score": 0
+            },
+            {
+              "label": "sahip",
+              "name": "MELİS KURTEL EMİN",
+              "starts": 2,
+              "wins": 0,
+              "topThree": 1,
+              "topThreeRate": 50,
+              "winRate": 0,
+              "averageFinish": "5.0",
+              "score": 1
+            },
+            {
+              "label": "baba hattı",
+              "name": "TOROK (IRE)",
+              "starts": 5,
+              "wins": 0,
+              "topThree": 1,
+              "topThreeRate": 20,
+              "winRate": 0,
+              "averageFinish": "11.2",
+              "score": 0
+            }
+          ],
+          "summary": "jokey: 0/1 ilk 3 · sahip: 1/2 ilk 3 · baba hattı: 1/5 ilk 3"
+        }
       },
       {
         "rank": 13,
@@ -1152,7 +1478,24 @@
               "jokey değişimi"
             ]
           }
-        ]
+        ],
+        "actorContext": {
+          "totalScore": 0,
+          "signals": [
+            {
+              "label": "jokey",
+              "name": "MUSTAFA ÇİÇEK",
+              "starts": 3,
+              "wins": 0,
+              "topThree": 0,
+              "topThreeRate": 0,
+              "winRate": 0,
+              "averageFinish": "13.0",
+              "score": 0
+            }
+          ],
+          "summary": "jokey: 0/3 ilk 3"
+        }
       },
       {
         "rank": 14,
@@ -1217,19 +1560,47 @@
               "jokey değişimi"
             ]
           }
-        ]
+        ],
+        "actorContext": {
+          "totalScore": 0,
+          "signals": [
+            {
+              "label": "jokey",
+              "name": "TOLGA YILDIZ",
+              "starts": 3,
+              "wins": 0,
+              "topThree": 0,
+              "topThreeRate": 0,
+              "winRate": 0,
+              "averageFinish": "14.0",
+              "score": 0
+            },
+            {
+              "label": "baba hattı",
+              "name": "THREE VALLEYS (USA)",
+              "starts": 1,
+              "wins": 0,
+              "topThree": 0,
+              "topThreeRate": 0,
+              "winRate": 0,
+              "averageFinish": "13.0",
+              "score": 0
+            }
+          ],
+          "summary": "jokey: 0/3 ilk 3 · baba hattı: 0/1 ilk 3"
+        }
       },
       {
         "rank": 15,
         "horseName": "ÇAKALIN KIZI",
         "gaziFinishPosition": 7,
-        "lensValue": 55,
+        "lensValue": 56,
         "badge": "İzleme listesi",
         "reason": "Temel rota sinyali var; ayırıcı veri henüz sınırlı.",
         "meta": "Orta güven · Düşük risk · Upside 0",
         "readiness": {
-          "score": 55,
-          "confidence": 70,
+          "score": 56,
+          "confidence": 71,
           "upside": 0,
           "risk": 18,
           "label": "İzleme listesi",
@@ -1252,6 +1623,10 @@
             {
               "label": "veri derinliği",
               "value": 10
+            },
+            {
+              "label": "aktör geçmişi",
+              "value": 1
             }
           ]
         },
@@ -1261,22 +1636,50 @@
           "strongestSignal": "Yok",
           "note": "Geçmiş ilk 3 içinde aynı profil sinyaliyle güçlü eşleşme bulunmadı."
         },
-        "historicalMatches": []
+        "historicalMatches": [],
+        "actorContext": {
+          "totalScore": 1,
+          "signals": [
+            {
+              "label": "jokey",
+              "name": "HIŞMAN ÇİZİK",
+              "starts": 3,
+              "wins": 0,
+              "topThree": 1,
+              "topThreeRate": 33,
+              "winRate": 0,
+              "averageFinish": "10.0",
+              "score": 1
+            },
+            {
+              "label": "baba hattı",
+              "name": "ÇAKAL CARLOS",
+              "starts": 1,
+              "wins": 0,
+              "topThree": 0,
+              "topThreeRate": 0,
+              "winRate": 0,
+              "averageFinish": "14.0",
+              "score": 0
+            }
+          ],
+          "summary": "jokey: 1/3 ilk 3 · baba hattı: 0/1 ilk 3"
+        }
       },
       {
         "rank": 16,
         "horseName": "ANADOLU KOPARAN",
         "gaziFinishPosition": 8,
-        "lensValue": 49,
-        "badge": "Eksik sinyal",
+        "lensValue": 52,
+        "badge": "İzleme listesi",
         "reason": "Temel rota sinyali var; ayırıcı veri henüz sınırlı.",
         "meta": "Orta güven · Düşük risk · Upside 0",
         "readiness": {
-          "score": 49,
-          "confidence": 70,
+          "score": 52,
+          "confidence": 72,
           "upside": 0,
           "risk": 18,
-          "label": "Eksik sinyal",
+          "label": "İzleme listesi",
           "confidenceLabel": "Orta güven",
           "riskLabel": "Düşük risk",
           "primaryReason": "Temel rota sinyali var; ayırıcı veri henüz sınırlı.",
@@ -1296,6 +1699,10 @@
             {
               "label": "veri derinliği",
               "value": 10
+            },
+            {
+              "label": "aktör geçmişi",
+              "value": 3
             }
           ]
         },
@@ -1305,7 +1712,35 @@
           "strongestSignal": "Yok",
           "note": "Geçmiş ilk 3 içinde aynı profil sinyaliyle güçlü eşleşme bulunmadı."
         },
-        "historicalMatches": []
+        "historicalMatches": [],
+        "actorContext": {
+          "totalScore": 3,
+          "signals": [
+            {
+              "label": "jokey",
+              "name": "HALİS KARATAŞ",
+              "starts": 3,
+              "wins": 0,
+              "topThree": 0,
+              "topThreeRate": 0,
+              "winRate": 0,
+              "averageFinish": "5.7",
+              "score": 0
+            },
+            {
+              "label": "baba hattı",
+              "name": "NATIVE KHAN (FR)",
+              "starts": 2,
+              "wins": 1,
+              "topThree": 2,
+              "topThreeRate": 100,
+              "winRate": 50,
+              "averageFinish": "2.0",
+              "score": 3
+            }
+          ],
+          "summary": "jokey: 0/3 ilk 3 · baba hattı: 2/2 ilk 3"
+        }
       },
       {
         "rank": 17,
@@ -1349,10 +1784,103 @@
           "strongestSignal": "Yok",
           "note": "Geçmiş ilk 3 içinde aynı profil sinyaliyle güçlü eşleşme bulunmadı."
         },
-        "historicalMatches": []
+        "historicalMatches": [],
+        "actorContext": {
+          "totalScore": 0,
+          "signals": [
+            {
+              "label": "jokey",
+              "name": "SADETTİN BOYRAZ",
+              "starts": 3,
+              "wins": 0,
+              "topThree": 0,
+              "topThreeRate": 0,
+              "winRate": 0,
+              "averageFinish": "14.7",
+              "score": 0
+            }
+          ],
+          "summary": "jokey: 0/3 ilk 3"
+        }
       },
       {
         "rank": 18,
+        "horseName": "WILD DANGER",
+        "gaziFinishPosition": 21,
+        "lensValue": 39,
+        "badge": "Eksik sinyal",
+        "reason": "Rota dışı geldiği için upside var, fakat veri güveni sınırlı.",
+        "meta": "Düşük güven · Kontrollü risk · Upside 18",
+        "readiness": {
+          "score": 39,
+          "confidence": 52,
+          "upside": 18,
+          "risk": 44,
+          "label": "Eksik sinyal",
+          "confidenceLabel": "Düşük güven",
+          "riskLabel": "Kontrollü risk",
+          "primaryReason": "Rota dışı geldiği için upside var, fakat veri güveni sınırlı.",
+          "parts": [
+            {
+              "label": "prep formu",
+              "value": 8
+            },
+            {
+              "label": "rota şekli",
+              "value": 8
+            },
+            {
+              "label": "jokey sürekliliği",
+              "value": 13
+            },
+            {
+              "label": "veri derinliği",
+              "value": 8
+            },
+            {
+              "label": "aktör geçmişi",
+              "value": 2
+            }
+          ]
+        },
+        "profileSummary": {
+          "count": 0,
+          "averageFinish": "-",
+          "strongestSignal": "Yok",
+          "note": "Geçmiş ilk 3 içinde aynı profil sinyaliyle güçlü eşleşme bulunmadı."
+        },
+        "historicalMatches": [],
+        "actorContext": {
+          "totalScore": 2,
+          "signals": [
+            {
+              "label": "jokey",
+              "name": "KADİR TOKAÇOĞLU",
+              "starts": 2,
+              "wins": 0,
+              "topThree": 1,
+              "topThreeRate": 50,
+              "winRate": 0,
+              "averageFinish": "12.5",
+              "score": 2
+            },
+            {
+              "label": "sahip",
+              "name": "SEMA ULAŞ",
+              "starts": 2,
+              "wins": 0,
+              "topThree": 0,
+              "topThreeRate": 0,
+              "winRate": 0,
+              "averageFinish": "20.5",
+              "score": 0
+            }
+          ],
+          "summary": "jokey: 1/2 ilk 3 · sahip: 0/2 ilk 3"
+        }
+      },
+      {
+        "rank": 19,
         "horseName": "URFA ASLANI",
         "gaziFinishPosition": 1,
         "lensValue": 37,
@@ -1393,10 +1921,27 @@
           "strongestSignal": "Yok",
           "note": "Geçmiş ilk 3 içinde aynı profil sinyaliyle güçlü eşleşme bulunmadı."
         },
-        "historicalMatches": []
+        "historicalMatches": [],
+        "actorContext": {
+          "totalScore": 0,
+          "signals": [
+            {
+              "label": "jokey",
+              "name": "MEHMET KAYA",
+              "starts": 3,
+              "wins": 0,
+              "topThree": 0,
+              "topThreeRate": 0,
+              "winRate": 0,
+              "averageFinish": "10.0",
+              "score": 0
+            }
+          ],
+          "summary": "jokey: 0/3 ilk 3"
+        }
       },
       {
-        "rank": 19,
+        "rank": 20,
         "horseName": "THE RAPTOR",
         "gaziFinishPosition": 11,
         "lensValue": 37,
@@ -1437,10 +1982,15 @@
           "strongestSignal": "Yok",
           "note": "Geçmiş ilk 3 içinde aynı profil sinyaliyle güçlü eşleşme bulunmadı."
         },
-        "historicalMatches": []
+        "historicalMatches": [],
+        "actorContext": {
+          "totalScore": 0,
+          "signals": [],
+          "summary": "Geçmiş aktör sinyali bulunamadı."
+        }
       },
       {
-        "rank": 20,
+        "rank": 21,
         "horseName": "TURDEMİRKIR",
         "gaziFinishPosition": 17,
         "lensValue": 37,
@@ -1481,51 +2031,24 @@
           "strongestSignal": "Yok",
           "note": "Geçmiş ilk 3 içinde aynı profil sinyaliyle güçlü eşleşme bulunmadı."
         },
-        "historicalMatches": []
-      },
-      {
-        "rank": 21,
-        "horseName": "WILD DANGER",
-        "gaziFinishPosition": 21,
-        "lensValue": 37,
-        "badge": "Eksik sinyal",
-        "reason": "Rota dışı geldiği için upside var, fakat veri güveni sınırlı.",
-        "meta": "Düşük güven · Kontrollü risk · Upside 18",
-        "readiness": {
-          "score": 37,
-          "confidence": 50,
-          "upside": 18,
-          "risk": 44,
-          "label": "Eksik sinyal",
-          "confidenceLabel": "Düşük güven",
-          "riskLabel": "Kontrollü risk",
-          "primaryReason": "Rota dışı geldiği için upside var, fakat veri güveni sınırlı.",
-          "parts": [
+        "historicalMatches": [],
+        "actorContext": {
+          "totalScore": 0,
+          "signals": [
             {
-              "label": "prep formu",
-              "value": 8
-            },
-            {
-              "label": "rota şekli",
-              "value": 8
-            },
-            {
-              "label": "jokey sürekliliği",
-              "value": 13
-            },
-            {
-              "label": "veri derinliği",
-              "value": 8
+              "label": "jokey",
+              "name": "FERİT YARDIMCI",
+              "starts": 1,
+              "wins": 0,
+              "topThree": 0,
+              "topThreeRate": 0,
+              "winRate": 0,
+              "averageFinish": "16.0",
+              "score": 0
             }
-          ]
-        },
-        "profileSummary": {
-          "count": 0,
-          "averageFinish": "-",
-          "strongestSignal": "Yok",
-          "note": "Geçmiş ilk 3 içinde aynı profil sinyaliyle güçlü eşleşme bulunmadı."
-        },
-        "historicalMatches": []
+          ],
+          "summary": "jokey: 0/1 ilk 3"
+        }
       },
       {
         "rank": 22,
@@ -1569,7 +2092,12 @@
           "strongestSignal": "Yok",
           "note": "Geçmiş ilk 3 içinde aynı profil sinyaliyle güçlü eşleşme bulunmadı."
         },
-        "historicalMatches": []
+        "historicalMatches": [],
+        "actorContext": {
+          "totalScore": 0,
+          "signals": [],
+          "summary": "Geçmiş aktör sinyali bulunamadı."
+        }
       }
     ],
     "upside": [
@@ -1656,7 +2184,8 @@
               "yoğun prep"
             ]
           }
-        ]
+        ],
+        "actorContext": null
       },
       {
         "rank": 2,
@@ -1737,7 +2266,8 @@
               "prep galibi"
             ]
           }
-        ]
+        ],
+        "actorContext": null
       },
       {
         "rank": 3,
@@ -1746,9 +2276,9 @@
         "lensValue": 58,
         "badge": "Upside 58",
         "reason": "Prep galibiyeti bu profilde upside sinyalini yukarı çekiyor.",
-        "meta": "Yüksek güven · Risk 14 · Readiness 88",
+        "meta": "Yüksek güven · Risk 14 · Readiness 89",
         "readiness": {
-          "score": 88,
+          "score": 89,
           "confidence": 100,
           "upside": 58,
           "risk": 14,
@@ -1776,6 +2306,10 @@
             {
               "label": "veri derinliği",
               "value": 10
+            },
+            {
+              "label": "aktör geçmişi",
+              "value": 1
             }
           ]
         },
@@ -1819,7 +2353,8 @@
               "jokey değişimi"
             ]
           }
-        ]
+        ],
+        "actorContext": null
       },
       {
         "rank": 4,
@@ -1901,7 +2436,8 @@
               "jokey değişimi"
             ]
           }
-        ]
+        ],
+        "actorContext": null
       },
       {
         "rank": 5,
@@ -1910,9 +2446,9 @@
         "lensValue": 34,
         "badge": "Upside 34",
         "reason": "Geçmiş profil kanıtı ve rota formu birlikte patlama ihtimali üretiyor.",
-        "meta": "Yüksek güven · Risk 0 · Readiness 90",
+        "meta": "Yüksek güven · Risk 0 · Readiness 94",
         "readiness": {
-          "score": 90,
+          "score": 94,
           "confidence": 100,
           "upside": 34,
           "risk": 0,
@@ -1940,6 +2476,10 @@
             {
               "label": "veri derinliği",
               "value": 10
+            },
+            {
+              "label": "aktör geçmişi",
+              "value": 4
             }
           ]
         },
@@ -1982,7 +2522,8 @@
               "yoğun prep"
             ]
           }
-        ]
+        ],
+        "actorContext": null
       },
       {
         "rank": 6,
@@ -1991,9 +2532,9 @@
         "lensValue": 34,
         "badge": "Upside 34",
         "reason": "Geçmiş profil kanıtı ve rota formu birlikte patlama ihtimali üretiyor.",
-        "meta": "Yüksek güven · Risk 14 · Readiness 88",
+        "meta": "Yüksek güven · Risk 14 · Readiness 91",
         "readiness": {
-          "score": 88,
+          "score": 91,
           "confidence": 100,
           "upside": 34,
           "risk": 14,
@@ -2021,6 +2562,10 @@
             {
               "label": "veri derinliği",
               "value": 10
+            },
+            {
+              "label": "aktör geçmişi",
+              "value": 3
             }
           ]
         },
@@ -2064,7 +2609,8 @@
               "jokey değişimi"
             ]
           }
-        ]
+        ],
+        "actorContext": null
       },
       {
         "rank": 7,
@@ -2073,9 +2619,9 @@
         "lensValue": 34,
         "badge": "Upside 34",
         "reason": "Geçmiş profil kanıtı ve rota formu birlikte patlama ihtimali üretiyor.",
-        "meta": "Yüksek güven · Risk 14 · Readiness 84",
+        "meta": "Yüksek güven · Risk 14 · Readiness 89",
         "readiness": {
-          "score": 84,
+          "score": 89,
           "confidence": 100,
           "upside": 34,
           "risk": 14,
@@ -2103,6 +2649,10 @@
             {
               "label": "veri derinliği",
               "value": 10
+            },
+            {
+              "label": "aktör geçmişi",
+              "value": 5
             }
           ]
         },
@@ -2146,7 +2696,8 @@
               "jokey değişimi"
             ]
           }
-        ]
+        ],
+        "actorContext": null
       },
       {
         "rank": 8,
@@ -2228,7 +2779,8 @@
               "jokey değişimi"
             ]
           }
-        ]
+        ],
+        "actorContext": null
       },
       {
         "rank": 9,
@@ -2310,7 +2862,8 @@
               "jokey değişimi"
             ]
           }
-        ]
+        ],
+        "actorContext": null
       },
       {
         "rank": 10,
@@ -2319,9 +2872,9 @@
         "lensValue": 34,
         "badge": "Upside 34",
         "reason": "Geçmiş profil kanıtı ve rota formu birlikte patlama ihtimali üretiyor.",
-        "meta": "Yüksek güven · Risk 14 · Readiness 72",
+        "meta": "Yüksek güven · Risk 14 · Readiness 75",
         "readiness": {
-          "score": 72,
+          "score": 75,
           "confidence": 100,
           "upside": 34,
           "risk": 14,
@@ -2349,6 +2902,10 @@
             {
               "label": "veri derinliği",
               "value": 10
+            },
+            {
+              "label": "aktör geçmişi",
+              "value": 3
             }
           ]
         },
@@ -2392,7 +2949,8 @@
               "jokey değişimi"
             ]
           }
-        ]
+        ],
+        "actorContext": null
       },
       {
         "rank": 11,
@@ -2401,9 +2959,9 @@
         "lensValue": 34,
         "badge": "Upside 34",
         "reason": "Geçmiş profil kanıtı ve rota formu birlikte patlama ihtimali üretiyor.",
-        "meta": "Yüksek güven · Risk 14 · Readiness 72",
+        "meta": "Yüksek güven · Risk 14 · Readiness 73",
         "readiness": {
-          "score": 72,
+          "score": 73,
           "confidence": 100,
           "upside": 34,
           "risk": 14,
@@ -2431,6 +2989,10 @@
             {
               "label": "veri derinliği",
               "value": 10
+            },
+            {
+              "label": "aktör geçmişi",
+              "value": 1
             }
           ]
         },
@@ -2474,10 +3036,60 @@
               "jokey değişimi"
             ]
           }
-        ]
+        ],
+        "actorContext": null
       },
       {
         "rank": 12,
+        "horseName": "WILD DANGER",
+        "gaziFinishPosition": 21,
+        "lensValue": 18,
+        "badge": "Upside 18",
+        "reason": "Rota dışı profil, düşük görünürlükten gelen sürpriz ihtimali taşıyor.",
+        "meta": "Düşük güven · Risk 44 · Readiness 39",
+        "readiness": {
+          "score": 39,
+          "confidence": 52,
+          "upside": 18,
+          "risk": 44,
+          "label": "Eksik sinyal",
+          "confidenceLabel": "Düşük güven",
+          "riskLabel": "Kontrollü risk",
+          "primaryReason": "Rota dışı geldiği için upside var, fakat veri güveni sınırlı.",
+          "parts": [
+            {
+              "label": "prep formu",
+              "value": 8
+            },
+            {
+              "label": "rota şekli",
+              "value": 8
+            },
+            {
+              "label": "jokey sürekliliği",
+              "value": 13
+            },
+            {
+              "label": "veri derinliği",
+              "value": 8
+            },
+            {
+              "label": "aktör geçmişi",
+              "value": 2
+            }
+          ]
+        },
+        "profileSummary": {
+          "count": 0,
+          "averageFinish": "-",
+          "strongestSignal": "Yok",
+          "note": "Geçmiş ilk 3 içinde aynı profil sinyaliyle güçlü eşleşme bulunmadı."
+        },
+        "historicalMatches": [],
+        "actorContext": null
+      },
+      {
+        "rank": 13,
         "horseName": "URFA ASLANI",
         "gaziFinishPosition": 1,
         "lensValue": 18,
@@ -2518,10 +3130,11 @@
           "strongestSignal": "Yok",
           "note": "Geçmiş ilk 3 içinde aynı profil sinyaliyle güçlü eşleşme bulunmadı."
         },
-        "historicalMatches": []
+        "historicalMatches": [],
+        "actorContext": null
       },
       {
-        "rank": 13,
+        "rank": 14,
         "horseName": "THE RAPTOR",
         "gaziFinishPosition": 11,
         "lensValue": 18,
@@ -2562,10 +3175,11 @@
           "strongestSignal": "Yok",
           "note": "Geçmiş ilk 3 içinde aynı profil sinyaliyle güçlü eşleşme bulunmadı."
         },
-        "historicalMatches": []
+        "historicalMatches": [],
+        "actorContext": null
       },
       {
-        "rank": 14,
+        "rank": 15,
         "horseName": "TURDEMİRKIR",
         "gaziFinishPosition": 17,
         "lensValue": 18,
@@ -2606,51 +3220,8 @@
           "strongestSignal": "Yok",
           "note": "Geçmiş ilk 3 içinde aynı profil sinyaliyle güçlü eşleşme bulunmadı."
         },
-        "historicalMatches": []
-      },
-      {
-        "rank": 15,
-        "horseName": "WILD DANGER",
-        "gaziFinishPosition": 21,
-        "lensValue": 18,
-        "badge": "Upside 18",
-        "reason": "Rota dışı profil, düşük görünürlükten gelen sürpriz ihtimali taşıyor.",
-        "meta": "Düşük güven · Risk 44 · Readiness 37",
-        "readiness": {
-          "score": 37,
-          "confidence": 50,
-          "upside": 18,
-          "risk": 44,
-          "label": "Eksik sinyal",
-          "confidenceLabel": "Düşük güven",
-          "riskLabel": "Kontrollü risk",
-          "primaryReason": "Rota dışı geldiği için upside var, fakat veri güveni sınırlı.",
-          "parts": [
-            {
-              "label": "prep formu",
-              "value": 8
-            },
-            {
-              "label": "rota şekli",
-              "value": 8
-            },
-            {
-              "label": "jokey sürekliliği",
-              "value": 13
-            },
-            {
-              "label": "veri derinliği",
-              "value": 8
-            }
-          ]
-        },
-        "profileSummary": {
-          "count": 0,
-          "averageFinish": "-",
-          "strongestSignal": "Yok",
-          "note": "Geçmiş ilk 3 içinde aynı profil sinyaliyle güçlü eşleşme bulunmadı."
-        },
-        "historicalMatches": []
+        "historicalMatches": [],
+        "actorContext": null
       },
       {
         "rank": 16,
@@ -2694,7 +3265,8 @@
           "strongestSignal": "Yok",
           "note": "Geçmiş ilk 3 içinde aynı profil sinyaliyle güçlü eşleşme bulunmadı."
         },
-        "historicalMatches": []
+        "historicalMatches": [],
+        "actorContext": null
       },
       {
         "rank": 17,
@@ -2759,7 +3331,8 @@
               "jokey değişimi"
             ]
           }
-        ]
+        ],
+        "actorContext": null
       },
       {
         "rank": 18,
@@ -2824,7 +3397,8 @@
               "jokey değişimi"
             ]
           }
-        ]
+        ],
+        "actorContext": null
       },
       {
         "rank": 19,
@@ -2889,7 +3463,8 @@
               "jokey değişimi"
             ]
           }
-        ]
+        ],
+        "actorContext": null
       },
       {
         "rank": 20,
@@ -2898,10 +3473,10 @@
         "lensValue": 0,
         "badge": "Upside 0",
         "reason": "Geçmiş profil kanıtı ve rota formu birlikte patlama ihtimali üretiyor.",
-        "meta": "Orta güven · Risk 18 · Readiness 55",
+        "meta": "Orta güven · Risk 18 · Readiness 56",
         "readiness": {
-          "score": 55,
-          "confidence": 70,
+          "score": 56,
+          "confidence": 71,
           "upside": 0,
           "risk": 18,
           "label": "İzleme listesi",
@@ -2924,6 +3499,10 @@
             {
               "label": "veri derinliği",
               "value": 10
+            },
+            {
+              "label": "aktör geçmişi",
+              "value": 1
             }
           ]
         },
@@ -2933,7 +3512,8 @@
           "strongestSignal": "Yok",
           "note": "Geçmiş ilk 3 içinde aynı profil sinyaliyle güçlü eşleşme bulunmadı."
         },
-        "historicalMatches": []
+        "historicalMatches": [],
+        "actorContext": null
       },
       {
         "rank": 21,
@@ -2942,13 +3522,13 @@
         "lensValue": 0,
         "badge": "Upside 0",
         "reason": "Geçmiş profil kanıtı ve rota formu birlikte patlama ihtimali üretiyor.",
-        "meta": "Orta güven · Risk 18 · Readiness 49",
+        "meta": "Orta güven · Risk 18 · Readiness 52",
         "readiness": {
-          "score": 49,
-          "confidence": 70,
+          "score": 52,
+          "confidence": 72,
           "upside": 0,
           "risk": 18,
-          "label": "Eksik sinyal",
+          "label": "İzleme listesi",
           "confidenceLabel": "Orta güven",
           "riskLabel": "Düşük risk",
           "primaryReason": "Temel rota sinyali var; ayırıcı veri henüz sınırlı.",
@@ -2968,6 +3548,10 @@
             {
               "label": "veri derinliği",
               "value": 10
+            },
+            {
+              "label": "aktör geçmişi",
+              "value": 3
             }
           ]
         },
@@ -2977,7 +3561,8 @@
           "strongestSignal": "Yok",
           "note": "Geçmiş ilk 3 içinde aynı profil sinyaliyle güçlü eşleşme bulunmadı."
         },
-        "historicalMatches": []
+        "historicalMatches": [],
+        "actorContext": null
       },
       {
         "rank": 22,
@@ -3021,7 +3606,8 @@
           "strongestSignal": "Yok",
           "note": "Geçmiş ilk 3 içinde aynı profil sinyaliyle güçlü eşleşme bulunmadı."
         },
-        "historicalMatches": []
+        "historicalMatches": [],
+        "actorContext": null
       }
     ],
     "lowRisk": [
@@ -3108,7 +3694,8 @@
               "yoğun prep"
             ]
           }
-        ]
+        ],
+        "actorContext": null
       },
       {
         "rank": 2,
@@ -3189,7 +3776,8 @@
               "prep galibi"
             ]
           }
-        ]
+        ],
+        "actorContext": null
       },
       {
         "rank": 3,
@@ -3200,7 +3788,7 @@
         "reason": "Veri güveni yüksek ve risk göstergeleri sınırlı.",
         "meta": "Yüksek güven · Düşük risk · Upside 34",
         "readiness": {
-          "score": 90,
+          "score": 94,
           "confidence": 100,
           "upside": 34,
           "risk": 0,
@@ -3228,6 +3816,10 @@
             {
               "label": "veri derinliği",
               "value": 10
+            },
+            {
+              "label": "aktör geçmişi",
+              "value": 4
             }
           ]
         },
@@ -3270,92 +3862,11 @@
               "yoğun prep"
             ]
           }
-        ]
+        ],
+        "actorContext": null
       },
       {
         "rank": 4,
-        "horseName": "MOONLIGHT FAIRY",
-        "gaziFinishPosition": 4,
-        "lensValue": 86,
-        "badge": "Risk dengesi 86",
-        "reason": "Veri güveni yüksek ve risk göstergeleri sınırlı.",
-        "meta": "Yüksek güven · Düşük risk · Upside 58",
-        "readiness": {
-          "score": 88,
-          "confidence": 100,
-          "upside": 58,
-          "risk": 14,
-          "label": "Güçlü aday profili",
-          "confidenceLabel": "Yüksek güven",
-          "riskLabel": "Düşük risk",
-          "primaryReason": "Prep galibiyeti kompozit skoru yukarı taşıyor.",
-          "parts": [
-            {
-              "label": "prep formu",
-              "value": 28
-            },
-            {
-              "label": "profil kanıtı",
-              "value": 30
-            },
-            {
-              "label": "rota şekli",
-              "value": 13
-            },
-            {
-              "label": "jokey sürekliliği",
-              "value": 7
-            },
-            {
-              "label": "veri derinliği",
-              "value": 10
-            }
-          ]
-        },
-        "profileSummary": {
-          "count": 4,
-          "averageFinish": "1.3",
-          "strongestSignal": "prep galibi",
-          "note": "4/4 benzer örnek Gazi'de ilk 2 içinde bitirmiş."
-        },
-        "historicalMatches": [
-          {
-            "horseName": "BURGAS",
-            "year": 2021,
-            "gaziFinishPosition": 1,
-            "matchingSignals": [
-              "prep galibi",
-              "jokey değişimi"
-            ]
-          },
-          {
-            "horseName": "SECRET POWER",
-            "year": 2022,
-            "gaziFinishPosition": 1,
-            "matchingSignals": [
-              "prep galibi"
-            ]
-          },
-          {
-            "horseName": "CALL TO VICTORY",
-            "year": 2020,
-            "gaziFinishPosition": 1,
-            "matchingSignals": [
-              "prep galibi"
-            ]
-          },
-          {
-            "horseName": "MUCİZE KIZ",
-            "year": 2022,
-            "gaziFinishPosition": 2,
-            "matchingSignals": [
-              "jokey değişimi"
-            ]
-          }
-        ]
-      },
-      {
-        "rank": 5,
         "horseName": "NATIVE POWER(8) (GB)",
         "gaziFinishPosition": 5,
         "lensValue": 86,
@@ -3363,7 +3874,7 @@
         "reason": "Veri güveni yüksek ve risk göstergeleri sınırlı.",
         "meta": "Yüksek güven · Düşük risk · Upside 34",
         "readiness": {
-          "score": 88,
+          "score": 91,
           "confidence": 100,
           "upside": 34,
           "risk": 14,
@@ -3391,6 +3902,10 @@
             {
               "label": "veri derinliği",
               "value": 10
+            },
+            {
+              "label": "aktör geçmişi",
+              "value": 3
             }
           ]
         },
@@ -3434,10 +3949,185 @@
               "jokey değişimi"
             ]
           }
-        ]
+        ],
+        "actorContext": null
+      },
+      {
+        "rank": 5,
+        "horseName": "MOONLIGHT FAIRY",
+        "gaziFinishPosition": 4,
+        "lensValue": 86,
+        "badge": "Risk dengesi 86",
+        "reason": "Veri güveni yüksek ve risk göstergeleri sınırlı.",
+        "meta": "Yüksek güven · Düşük risk · Upside 58",
+        "readiness": {
+          "score": 89,
+          "confidence": 100,
+          "upside": 58,
+          "risk": 14,
+          "label": "Güçlü aday profili",
+          "confidenceLabel": "Yüksek güven",
+          "riskLabel": "Düşük risk",
+          "primaryReason": "Prep galibiyeti kompozit skoru yukarı taşıyor.",
+          "parts": [
+            {
+              "label": "prep formu",
+              "value": 28
+            },
+            {
+              "label": "profil kanıtı",
+              "value": 30
+            },
+            {
+              "label": "rota şekli",
+              "value": 13
+            },
+            {
+              "label": "jokey sürekliliği",
+              "value": 7
+            },
+            {
+              "label": "veri derinliği",
+              "value": 10
+            },
+            {
+              "label": "aktör geçmişi",
+              "value": 1
+            }
+          ]
+        },
+        "profileSummary": {
+          "count": 4,
+          "averageFinish": "1.3",
+          "strongestSignal": "prep galibi",
+          "note": "4/4 benzer örnek Gazi'de ilk 2 içinde bitirmiş."
+        },
+        "historicalMatches": [
+          {
+            "horseName": "BURGAS",
+            "year": 2021,
+            "gaziFinishPosition": 1,
+            "matchingSignals": [
+              "prep galibi",
+              "jokey değişimi"
+            ]
+          },
+          {
+            "horseName": "SECRET POWER",
+            "year": 2022,
+            "gaziFinishPosition": 1,
+            "matchingSignals": [
+              "prep galibi"
+            ]
+          },
+          {
+            "horseName": "CALL TO VICTORY",
+            "year": 2020,
+            "gaziFinishPosition": 1,
+            "matchingSignals": [
+              "prep galibi"
+            ]
+          },
+          {
+            "horseName": "MUCİZE KIZ",
+            "year": 2022,
+            "gaziFinishPosition": 2,
+            "matchingSignals": [
+              "jokey değişimi"
+            ]
+          }
+        ],
+        "actorContext": null
       },
       {
         "rank": 6,
+        "horseName": "LORD OF PELENNOR",
+        "gaziFinishPosition": 12,
+        "lensValue": 86,
+        "badge": "Risk dengesi 86",
+        "reason": "Veri güveni yüksek ve risk göstergeleri sınırlı.",
+        "meta": "Yüksek güven · Düşük risk · Upside 34",
+        "readiness": {
+          "score": 89,
+          "confidence": 100,
+          "upside": 34,
+          "risk": 14,
+          "label": "Güçlü aday profili",
+          "confidenceLabel": "Yüksek güven",
+          "riskLabel": "Düşük risk",
+          "primaryReason": "Geçmiş ilk 3 profilleriyle benzerlik yoğunluğu var.",
+          "parts": [
+            {
+              "label": "prep formu",
+              "value": 19
+            },
+            {
+              "label": "profil kanıtı",
+              "value": 30
+            },
+            {
+              "label": "rota şekli",
+              "value": 18
+            },
+            {
+              "label": "jokey sürekliliği",
+              "value": 7
+            },
+            {
+              "label": "veri derinliği",
+              "value": 10
+            },
+            {
+              "label": "aktör geçmişi",
+              "value": 5
+            }
+          ]
+        },
+        "profileSummary": {
+          "count": 4,
+          "averageFinish": "1.3",
+          "strongestSignal": "yoğun prep",
+          "note": "4/4 benzer örnek Gazi'de ilk 2 içinde bitirmiş."
+        },
+        "historicalMatches": [
+          {
+            "horseName": "BURGAS",
+            "year": 2021,
+            "gaziFinishPosition": 1,
+            "matchingSignals": [
+              "jokey değişimi",
+              "yoğun prep"
+            ]
+          },
+          {
+            "horseName": "SECRET POWER",
+            "year": 2022,
+            "gaziFinishPosition": 1,
+            "matchingSignals": [
+              "yoğun prep"
+            ]
+          },
+          {
+            "horseName": "CALL TO VICTORY",
+            "year": 2020,
+            "gaziFinishPosition": 1,
+            "matchingSignals": [
+              "yoğun prep"
+            ]
+          },
+          {
+            "horseName": "MUCİZE KIZ",
+            "year": 2022,
+            "gaziFinishPosition": 2,
+            "matchingSignals": [
+              "jokey değişimi"
+            ]
+          }
+        ],
+        "actorContext": null
+      },
+      {
+        "rank": 7,
         "horseName": "HEAD VORKER",
         "gaziFinishPosition": 6,
         "lensValue": 86,
@@ -3516,89 +4206,8 @@
               "jokey değişimi"
             ]
           }
-        ]
-      },
-      {
-        "rank": 7,
-        "horseName": "LORD OF PELENNOR",
-        "gaziFinishPosition": 12,
-        "lensValue": 86,
-        "badge": "Risk dengesi 86",
-        "reason": "Veri güveni yüksek ve risk göstergeleri sınırlı.",
-        "meta": "Yüksek güven · Düşük risk · Upside 34",
-        "readiness": {
-          "score": 84,
-          "confidence": 100,
-          "upside": 34,
-          "risk": 14,
-          "label": "Güçlü aday profili",
-          "confidenceLabel": "Yüksek güven",
-          "riskLabel": "Düşük risk",
-          "primaryReason": "Geçmiş ilk 3 profilleriyle benzerlik yoğunluğu var.",
-          "parts": [
-            {
-              "label": "prep formu",
-              "value": 19
-            },
-            {
-              "label": "profil kanıtı",
-              "value": 30
-            },
-            {
-              "label": "rota şekli",
-              "value": 18
-            },
-            {
-              "label": "jokey sürekliliği",
-              "value": 7
-            },
-            {
-              "label": "veri derinliği",
-              "value": 10
-            }
-          ]
-        },
-        "profileSummary": {
-          "count": 4,
-          "averageFinish": "1.3",
-          "strongestSignal": "yoğun prep",
-          "note": "4/4 benzer örnek Gazi'de ilk 2 içinde bitirmiş."
-        },
-        "historicalMatches": [
-          {
-            "horseName": "BURGAS",
-            "year": 2021,
-            "gaziFinishPosition": 1,
-            "matchingSignals": [
-              "jokey değişimi",
-              "yoğun prep"
-            ]
-          },
-          {
-            "horseName": "SECRET POWER",
-            "year": 2022,
-            "gaziFinishPosition": 1,
-            "matchingSignals": [
-              "yoğun prep"
-            ]
-          },
-          {
-            "horseName": "CALL TO VICTORY",
-            "year": 2020,
-            "gaziFinishPosition": 1,
-            "matchingSignals": [
-              "yoğun prep"
-            ]
-          },
-          {
-            "horseName": "MUCİZE KIZ",
-            "year": 2022,
-            "gaziFinishPosition": 2,
-            "matchingSignals": [
-              "jokey değişimi"
-            ]
-          }
-        ]
+        ],
+        "actorContext": null
       },
       {
         "rank": 8,
@@ -3680,7 +4289,8 @@
               "jokey değişimi"
             ]
           }
-        ]
+        ],
+        "actorContext": null
       },
       {
         "rank": 9,
@@ -3762,7 +4372,8 @@
               "jokey değişimi"
             ]
           }
-        ]
+        ],
+        "actorContext": null
       },
       {
         "rank": 10,
@@ -3773,7 +4384,7 @@
         "reason": "Veri güveni yüksek ve risk göstergeleri sınırlı.",
         "meta": "Yüksek güven · Düşük risk · Upside 34",
         "readiness": {
-          "score": 72,
+          "score": 75,
           "confidence": 100,
           "upside": 34,
           "risk": 14,
@@ -3801,6 +4412,10 @@
             {
               "label": "veri derinliği",
               "value": 10
+            },
+            {
+              "label": "aktör geçmişi",
+              "value": 3
             }
           ]
         },
@@ -3844,7 +4459,8 @@
               "jokey değişimi"
             ]
           }
-        ]
+        ],
+        "actorContext": null
       },
       {
         "rank": 11,
@@ -3855,7 +4471,7 @@
         "reason": "Veri güveni yüksek ve risk göstergeleri sınırlı.",
         "meta": "Yüksek güven · Düşük risk · Upside 34",
         "readiness": {
-          "score": 72,
+          "score": 73,
           "confidence": 100,
           "upside": 34,
           "risk": 14,
@@ -3883,6 +4499,10 @@
             {
               "label": "veri derinliği",
               "value": 10
+            },
+            {
+              "label": "aktör geçmişi",
+              "value": 1
             }
           ]
         },
@@ -3926,7 +4546,8 @@
               "jokey değişimi"
             ]
           }
-        ]
+        ],
+        "actorContext": null
       },
       {
         "rank": 12,
@@ -3991,7 +4612,8 @@
               "jokey değişimi"
             ]
           }
-        ]
+        ],
+        "actorContext": null
       },
       {
         "rank": 13,
@@ -4056,7 +4678,8 @@
               "jokey değişimi"
             ]
           }
-        ]
+        ],
+        "actorContext": null
       },
       {
         "rank": 14,
@@ -4121,19 +4744,69 @@
               "jokey değişimi"
             ]
           }
-        ]
+        ],
+        "actorContext": null
       },
       {
         "rank": 15,
-        "horseName": "ÇAKALIN KIZI",
-        "gaziFinishPosition": 7,
-        "lensValue": 52,
-        "badge": "Risk dengesi 52",
+        "horseName": "ANADOLU KOPARAN",
+        "gaziFinishPosition": 8,
+        "lensValue": 54,
+        "badge": "Risk dengesi 54",
         "reason": "Veri güveni yüksek ve risk göstergeleri sınırlı.",
         "meta": "Orta güven · Düşük risk · Upside 0",
         "readiness": {
-          "score": 55,
-          "confidence": 70,
+          "score": 52,
+          "confidence": 72,
+          "upside": 0,
+          "risk": 18,
+          "label": "İzleme listesi",
+          "confidenceLabel": "Orta güven",
+          "riskLabel": "Düşük risk",
+          "primaryReason": "Temel rota sinyali var; ayırıcı veri henüz sınırlı.",
+          "parts": [
+            {
+              "label": "prep formu",
+              "value": 13
+            },
+            {
+              "label": "rota şekli",
+              "value": 13
+            },
+            {
+              "label": "jokey sürekliliği",
+              "value": 13
+            },
+            {
+              "label": "veri derinliği",
+              "value": 10
+            },
+            {
+              "label": "aktör geçmişi",
+              "value": 3
+            }
+          ]
+        },
+        "profileSummary": {
+          "count": 0,
+          "averageFinish": "-",
+          "strongestSignal": "Yok",
+          "note": "Geçmiş ilk 3 içinde aynı profil sinyaliyle güçlü eşleşme bulunmadı."
+        },
+        "historicalMatches": [],
+        "actorContext": null
+      },
+      {
+        "rank": 16,
+        "horseName": "ÇAKALIN KIZI",
+        "gaziFinishPosition": 7,
+        "lensValue": 53,
+        "badge": "Risk dengesi 53",
+        "reason": "Veri güveni yüksek ve risk göstergeleri sınırlı.",
+        "meta": "Orta güven · Düşük risk · Upside 0",
+        "readiness": {
+          "score": 56,
+          "confidence": 71,
           "upside": 0,
           "risk": 18,
           "label": "İzleme listesi",
@@ -4156,6 +4829,10 @@
             {
               "label": "veri derinliği",
               "value": 10
+            },
+            {
+              "label": "aktör geçmişi",
+              "value": 1
             }
           ]
         },
@@ -4165,51 +4842,8 @@
           "strongestSignal": "Yok",
           "note": "Geçmiş ilk 3 içinde aynı profil sinyaliyle güçlü eşleşme bulunmadı."
         },
-        "historicalMatches": []
-      },
-      {
-        "rank": 16,
-        "horseName": "ANADOLU KOPARAN",
-        "gaziFinishPosition": 8,
-        "lensValue": 52,
-        "badge": "Risk dengesi 52",
-        "reason": "Veri güveni yüksek ve risk göstergeleri sınırlı.",
-        "meta": "Orta güven · Düşük risk · Upside 0",
-        "readiness": {
-          "score": 49,
-          "confidence": 70,
-          "upside": 0,
-          "risk": 18,
-          "label": "Eksik sinyal",
-          "confidenceLabel": "Orta güven",
-          "riskLabel": "Düşük risk",
-          "primaryReason": "Temel rota sinyali var; ayırıcı veri henüz sınırlı.",
-          "parts": [
-            {
-              "label": "prep formu",
-              "value": 13
-            },
-            {
-              "label": "rota şekli",
-              "value": 13
-            },
-            {
-              "label": "jokey sürekliliği",
-              "value": 13
-            },
-            {
-              "label": "veri derinliği",
-              "value": 10
-            }
-          ]
-        },
-        "profileSummary": {
-          "count": 0,
-          "averageFinish": "-",
-          "strongestSignal": "Yok",
-          "note": "Geçmiş ilk 3 içinde aynı profil sinyaliyle güçlü eşleşme bulunmadı."
-        },
-        "historicalMatches": []
+        "historicalMatches": [],
+        "actorContext": null
       },
       {
         "rank": 17,
@@ -4253,10 +4887,60 @@
           "strongestSignal": "Yok",
           "note": "Geçmiş ilk 3 içinde aynı profil sinyaliyle güçlü eşleşme bulunmadı."
         },
-        "historicalMatches": []
+        "historicalMatches": [],
+        "actorContext": null
       },
       {
         "rank": 18,
+        "horseName": "WILD DANGER",
+        "gaziFinishPosition": 21,
+        "lensValue": 8,
+        "badge": "Risk dengesi 8",
+        "reason": "Güven skoru riskten daha güçlü kaldığı için dengeli aday olarak okunuyor.",
+        "meta": "Düşük güven · Kontrollü risk · Upside 18",
+        "readiness": {
+          "score": 39,
+          "confidence": 52,
+          "upside": 18,
+          "risk": 44,
+          "label": "Eksik sinyal",
+          "confidenceLabel": "Düşük güven",
+          "riskLabel": "Kontrollü risk",
+          "primaryReason": "Rota dışı geldiği için upside var, fakat veri güveni sınırlı.",
+          "parts": [
+            {
+              "label": "prep formu",
+              "value": 8
+            },
+            {
+              "label": "rota şekli",
+              "value": 8
+            },
+            {
+              "label": "jokey sürekliliği",
+              "value": 13
+            },
+            {
+              "label": "veri derinliği",
+              "value": 8
+            },
+            {
+              "label": "aktör geçmişi",
+              "value": 2
+            }
+          ]
+        },
+        "profileSummary": {
+          "count": 0,
+          "averageFinish": "-",
+          "strongestSignal": "Yok",
+          "note": "Geçmiş ilk 3 içinde aynı profil sinyaliyle güçlü eşleşme bulunmadı."
+        },
+        "historicalMatches": [],
+        "actorContext": null
+      },
+      {
+        "rank": 19,
         "horseName": "URFA ASLANI",
         "gaziFinishPosition": 1,
         "lensValue": 6,
@@ -4297,10 +4981,11 @@
           "strongestSignal": "Yok",
           "note": "Geçmiş ilk 3 içinde aynı profil sinyaliyle güçlü eşleşme bulunmadı."
         },
-        "historicalMatches": []
+        "historicalMatches": [],
+        "actorContext": null
       },
       {
-        "rank": 19,
+        "rank": 20,
         "horseName": "THE RAPTOR",
         "gaziFinishPosition": 11,
         "lensValue": 6,
@@ -4341,10 +5026,11 @@
           "strongestSignal": "Yok",
           "note": "Geçmiş ilk 3 içinde aynı profil sinyaliyle güçlü eşleşme bulunmadı."
         },
-        "historicalMatches": []
+        "historicalMatches": [],
+        "actorContext": null
       },
       {
-        "rank": 20,
+        "rank": 21,
         "horseName": "TURDEMİRKIR",
         "gaziFinishPosition": 17,
         "lensValue": 6,
@@ -4385,51 +5071,8 @@
           "strongestSignal": "Yok",
           "note": "Geçmiş ilk 3 içinde aynı profil sinyaliyle güçlü eşleşme bulunmadı."
         },
-        "historicalMatches": []
-      },
-      {
-        "rank": 21,
-        "horseName": "WILD DANGER",
-        "gaziFinishPosition": 21,
-        "lensValue": 6,
-        "badge": "Risk dengesi 6",
-        "reason": "Güven skoru riskten daha güçlü kaldığı için dengeli aday olarak okunuyor.",
-        "meta": "Düşük güven · Kontrollü risk · Upside 18",
-        "readiness": {
-          "score": 37,
-          "confidence": 50,
-          "upside": 18,
-          "risk": 44,
-          "label": "Eksik sinyal",
-          "confidenceLabel": "Düşük güven",
-          "riskLabel": "Kontrollü risk",
-          "primaryReason": "Rota dışı geldiği için upside var, fakat veri güveni sınırlı.",
-          "parts": [
-            {
-              "label": "prep formu",
-              "value": 8
-            },
-            {
-              "label": "rota şekli",
-              "value": 8
-            },
-            {
-              "label": "jokey sürekliliği",
-              "value": 13
-            },
-            {
-              "label": "veri derinliği",
-              "value": 8
-            }
-          ]
-        },
-        "profileSummary": {
-          "count": 0,
-          "averageFinish": "-",
-          "strongestSignal": "Yok",
-          "note": "Geçmiş ilk 3 içinde aynı profil sinyaliyle güçlü eşleşme bulunmadı."
-        },
-        "historicalMatches": []
+        "historicalMatches": [],
+        "actorContext": null
       },
       {
         "rank": 22,
@@ -4473,7 +5116,8 @@
           "strongestSignal": "Yok",
           "note": "Geçmiş ilk 3 içinde aynı profil sinyaliyle güçlü eşleşme bulunmadı."
         },
-        "historicalMatches": []
+        "historicalMatches": [],
+        "actorContext": null
       }
     ],
     "uncertainty": [
@@ -4519,7 +5163,8 @@
           "strongestSignal": "Yok",
           "note": "Geçmiş ilk 3 içinde aynı profil sinyaliyle güçlü eşleşme bulunmadı."
         },
-        "historicalMatches": []
+        "historicalMatches": [],
+        "actorContext": null
       },
       {
         "rank": 2,
@@ -4563,7 +5208,8 @@
           "strongestSignal": "Yok",
           "note": "Geçmiş ilk 3 içinde aynı profil sinyaliyle güçlü eşleşme bulunmadı."
         },
-        "historicalMatches": []
+        "historicalMatches": [],
+        "actorContext": null
       },
       {
         "rank": 3,
@@ -4607,54 +5253,11 @@
           "strongestSignal": "Yok",
           "note": "Geçmiş ilk 3 içinde aynı profil sinyaliyle güçlü eşleşme bulunmadı."
         },
-        "historicalMatches": []
+        "historicalMatches": [],
+        "actorContext": null
       },
       {
         "rank": 4,
-        "horseName": "WILD DANGER",
-        "gaziFinishPosition": 21,
-        "lensValue": 55,
-        "badge": "Belirsizlik 55",
-        "reason": "Takip edilen rotada görünmediği için eksik ama izlenmesi gereken profil.",
-        "meta": "Kontrollü risk · Güven 50 · Upside 18",
-        "readiness": {
-          "score": 37,
-          "confidence": 50,
-          "upside": 18,
-          "risk": 44,
-          "label": "Eksik sinyal",
-          "confidenceLabel": "Düşük güven",
-          "riskLabel": "Kontrollü risk",
-          "primaryReason": "Rota dışı geldiği için upside var, fakat veri güveni sınırlı.",
-          "parts": [
-            {
-              "label": "prep formu",
-              "value": 8
-            },
-            {
-              "label": "rota şekli",
-              "value": 8
-            },
-            {
-              "label": "jokey sürekliliği",
-              "value": 13
-            },
-            {
-              "label": "veri derinliği",
-              "value": 8
-            }
-          ]
-        },
-        "profileSummary": {
-          "count": 0,
-          "averageFinish": "-",
-          "strongestSignal": "Yok",
-          "note": "Geçmiş ilk 3 içinde aynı profil sinyaliyle güçlü eşleşme bulunmadı."
-        },
-        "historicalMatches": []
-      },
-      {
-        "rank": 5,
         "horseName": "SAMURAI KAJIKI",
         "gaziFinishPosition": 22,
         "lensValue": 55,
@@ -4695,7 +5298,57 @@
           "strongestSignal": "Yok",
           "note": "Geçmiş ilk 3 içinde aynı profil sinyaliyle güçlü eşleşme bulunmadı."
         },
-        "historicalMatches": []
+        "historicalMatches": [],
+        "actorContext": null
+      },
+      {
+        "rank": 5,
+        "horseName": "WILD DANGER",
+        "gaziFinishPosition": 21,
+        "lensValue": 54,
+        "badge": "Belirsizlik 54",
+        "reason": "Takip edilen rotada görünmediği için eksik ama izlenmesi gereken profil.",
+        "meta": "Kontrollü risk · Güven 52 · Upside 18",
+        "readiness": {
+          "score": 39,
+          "confidence": 52,
+          "upside": 18,
+          "risk": 44,
+          "label": "Eksik sinyal",
+          "confidenceLabel": "Düşük güven",
+          "riskLabel": "Kontrollü risk",
+          "primaryReason": "Rota dışı geldiği için upside var, fakat veri güveni sınırlı.",
+          "parts": [
+            {
+              "label": "prep formu",
+              "value": 8
+            },
+            {
+              "label": "rota şekli",
+              "value": 8
+            },
+            {
+              "label": "jokey sürekliliği",
+              "value": 13
+            },
+            {
+              "label": "veri derinliği",
+              "value": 8
+            },
+            {
+              "label": "aktör geçmişi",
+              "value": 2
+            }
+          ]
+        },
+        "profileSummary": {
+          "count": 0,
+          "averageFinish": "-",
+          "strongestSignal": "Yok",
+          "note": "Geçmiş ilk 3 içinde aynı profil sinyaliyle güçlü eşleşme bulunmadı."
+        },
+        "historicalMatches": [],
+        "actorContext": null
       },
       {
         "rank": 6,
@@ -4706,7 +5359,7 @@
         "reason": "Upside ve risk birlikte yüksek; karar için daha fazla bağlam gerekiyor.",
         "meta": "Düşük risk · Güven 100 · Upside 58",
         "readiness": {
-          "score": 88,
+          "score": 89,
           "confidence": 100,
           "upside": 58,
           "risk": 14,
@@ -4734,6 +5387,10 @@
             {
               "label": "veri derinliği",
               "value": 10
+            },
+            {
+              "label": "aktör geçmişi",
+              "value": 1
             }
           ]
         },
@@ -4777,7 +5434,8 @@
               "jokey değişimi"
             ]
           }
-        ]
+        ],
+        "actorContext": null
       },
       {
         "rank": 7,
@@ -4859,7 +5517,8 @@
               "jokey değişimi"
             ]
           }
-        ]
+        ],
+        "actorContext": null
       },
       {
         "rank": 8,
@@ -4944,7 +5603,8 @@
               "yoğun prep"
             ]
           }
-        ]
+        ],
+        "actorContext": null
       },
       {
         "rank": 9,
@@ -5025,7 +5685,8 @@
               "prep galibi"
             ]
           }
-        ]
+        ],
+        "actorContext": null
       },
       {
         "rank": 10,
@@ -5107,7 +5768,8 @@
               "jokey değişimi"
             ]
           }
-        ]
+        ],
+        "actorContext": null
       },
       {
         "rank": 11,
@@ -5118,7 +5780,7 @@
         "reason": "Upside ve risk birlikte yüksek; karar için daha fazla bağlam gerekiyor.",
         "meta": "Düşük risk · Güven 100 · Upside 34",
         "readiness": {
-          "score": 88,
+          "score": 91,
           "confidence": 100,
           "upside": 34,
           "risk": 14,
@@ -5146,6 +5808,10 @@
             {
               "label": "veri derinliği",
               "value": 10
+            },
+            {
+              "label": "aktör geçmişi",
+              "value": 3
             }
           ]
         },
@@ -5189,7 +5855,8 @@
               "jokey değişimi"
             ]
           }
-        ]
+        ],
+        "actorContext": null
       },
       {
         "rank": 12,
@@ -5271,7 +5938,8 @@
               "jokey değişimi"
             ]
           }
-        ]
+        ],
+        "actorContext": null
       },
       {
         "rank": 13,
@@ -5282,7 +5950,7 @@
         "reason": "Upside ve risk birlikte yüksek; karar için daha fazla bağlam gerekiyor.",
         "meta": "Düşük risk · Güven 100 · Upside 34",
         "readiness": {
-          "score": 84,
+          "score": 89,
           "confidence": 100,
           "upside": 34,
           "risk": 14,
@@ -5310,6 +5978,10 @@
             {
               "label": "veri derinliği",
               "value": 10
+            },
+            {
+              "label": "aktör geçmişi",
+              "value": 5
             }
           ]
         },
@@ -5353,7 +6025,8 @@
               "jokey değişimi"
             ]
           }
-        ]
+        ],
+        "actorContext": null
       },
       {
         "rank": 14,
@@ -5364,7 +6037,7 @@
         "reason": "Upside ve risk birlikte yüksek; karar için daha fazla bağlam gerekiyor.",
         "meta": "Düşük risk · Güven 100 · Upside 34",
         "readiness": {
-          "score": 72,
+          "score": 75,
           "confidence": 100,
           "upside": 34,
           "risk": 14,
@@ -5392,6 +6065,10 @@
             {
               "label": "veri derinliği",
               "value": 10
+            },
+            {
+              "label": "aktör geçmişi",
+              "value": 3
             }
           ]
         },
@@ -5435,7 +6112,8 @@
               "jokey değişimi"
             ]
           }
-        ]
+        ],
+        "actorContext": null
       },
       {
         "rank": 15,
@@ -5446,7 +6124,7 @@
         "reason": "Upside ve risk birlikte yüksek; karar için daha fazla bağlam gerekiyor.",
         "meta": "Düşük risk · Güven 100 · Upside 34",
         "readiness": {
-          "score": 72,
+          "score": 73,
           "confidence": 100,
           "upside": 34,
           "risk": 14,
@@ -5474,6 +6152,10 @@
             {
               "label": "veri derinliği",
               "value": 10
+            },
+            {
+              "label": "aktör geçmişi",
+              "value": 1
             }
           ]
         },
@@ -5517,7 +6199,8 @@
               "jokey değişimi"
             ]
           }
-        ]
+        ],
+        "actorContext": null
       },
       {
         "rank": 16,
@@ -5528,7 +6211,7 @@
         "reason": "Upside ve risk birlikte yüksek; karar için daha fazla bağlam gerekiyor.",
         "meta": "Düşük risk · Güven 100 · Upside 34",
         "readiness": {
-          "score": 90,
+          "score": 94,
           "confidence": 100,
           "upside": 34,
           "risk": 0,
@@ -5556,6 +6239,10 @@
             {
               "label": "veri derinliği",
               "value": 10
+            },
+            {
+              "label": "aktör geçmişi",
+              "value": 4
             }
           ]
         },
@@ -5598,7 +6285,8 @@
               "yoğun prep"
             ]
           }
-        ]
+        ],
+        "actorContext": null
       },
       {
         "rank": 17,
@@ -5663,7 +6351,8 @@
               "jokey değişimi"
             ]
           }
-        ]
+        ],
+        "actorContext": null
       },
       {
         "rank": 18,
@@ -5728,7 +6417,8 @@
               "jokey değişimi"
             ]
           }
-        ]
+        ],
+        "actorContext": null
       },
       {
         "rank": 19,
@@ -5793,98 +6483,11 @@
               "jokey değişimi"
             ]
           }
-        ]
+        ],
+        "actorContext": null
       },
       {
         "rank": 20,
-        "horseName": "ÇAKALIN KIZI",
-        "gaziFinishPosition": 7,
-        "lensValue": 16,
-        "badge": "Belirsizlik 16",
-        "reason": "Upside ve risk birlikte yüksek; karar için daha fazla bağlam gerekiyor.",
-        "meta": "Düşük risk · Güven 70 · Upside 0",
-        "readiness": {
-          "score": 55,
-          "confidence": 70,
-          "upside": 0,
-          "risk": 18,
-          "label": "İzleme listesi",
-          "confidenceLabel": "Orta güven",
-          "riskLabel": "Düşük risk",
-          "primaryReason": "Temel rota sinyali var; ayırıcı veri henüz sınırlı.",
-          "parts": [
-            {
-              "label": "prep formu",
-              "value": 19
-            },
-            {
-              "label": "rota şekli",
-              "value": 13
-            },
-            {
-              "label": "jokey sürekliliği",
-              "value": 13
-            },
-            {
-              "label": "veri derinliği",
-              "value": 10
-            }
-          ]
-        },
-        "profileSummary": {
-          "count": 0,
-          "averageFinish": "-",
-          "strongestSignal": "Yok",
-          "note": "Geçmiş ilk 3 içinde aynı profil sinyaliyle güçlü eşleşme bulunmadı."
-        },
-        "historicalMatches": []
-      },
-      {
-        "rank": 21,
-        "horseName": "ANADOLU KOPARAN",
-        "gaziFinishPosition": 8,
-        "lensValue": 16,
-        "badge": "Belirsizlik 16",
-        "reason": "Upside ve risk birlikte yüksek; karar için daha fazla bağlam gerekiyor.",
-        "meta": "Düşük risk · Güven 70 · Upside 0",
-        "readiness": {
-          "score": 49,
-          "confidence": 70,
-          "upside": 0,
-          "risk": 18,
-          "label": "Eksik sinyal",
-          "confidenceLabel": "Orta güven",
-          "riskLabel": "Düşük risk",
-          "primaryReason": "Temel rota sinyali var; ayırıcı veri henüz sınırlı.",
-          "parts": [
-            {
-              "label": "prep formu",
-              "value": 13
-            },
-            {
-              "label": "rota şekli",
-              "value": 13
-            },
-            {
-              "label": "jokey sürekliliği",
-              "value": 13
-            },
-            {
-              "label": "veri derinliği",
-              "value": 10
-            }
-          ]
-        },
-        "profileSummary": {
-          "count": 0,
-          "averageFinish": "-",
-          "strongestSignal": "Yok",
-          "note": "Geçmiş ilk 3 içinde aynı profil sinyaliyle güçlü eşleşme bulunmadı."
-        },
-        "historicalMatches": []
-      },
-      {
-        "rank": 22,
         "horseName": "POYRİ",
         "gaziFinishPosition": 18,
         "lensValue": 16,
@@ -5925,7 +6528,106 @@
           "strongestSignal": "Yok",
           "note": "Geçmiş ilk 3 içinde aynı profil sinyaliyle güçlü eşleşme bulunmadı."
         },
-        "historicalMatches": []
+        "historicalMatches": [],
+        "actorContext": null
+      },
+      {
+        "rank": 21,
+        "horseName": "ÇAKALIN KIZI",
+        "gaziFinishPosition": 7,
+        "lensValue": 15,
+        "badge": "Belirsizlik 15",
+        "reason": "Upside ve risk birlikte yüksek; karar için daha fazla bağlam gerekiyor.",
+        "meta": "Düşük risk · Güven 71 · Upside 0",
+        "readiness": {
+          "score": 56,
+          "confidence": 71,
+          "upside": 0,
+          "risk": 18,
+          "label": "İzleme listesi",
+          "confidenceLabel": "Orta güven",
+          "riskLabel": "Düşük risk",
+          "primaryReason": "Temel rota sinyali var; ayırıcı veri henüz sınırlı.",
+          "parts": [
+            {
+              "label": "prep formu",
+              "value": 19
+            },
+            {
+              "label": "rota şekli",
+              "value": 13
+            },
+            {
+              "label": "jokey sürekliliği",
+              "value": 13
+            },
+            {
+              "label": "veri derinliği",
+              "value": 10
+            },
+            {
+              "label": "aktör geçmişi",
+              "value": 1
+            }
+          ]
+        },
+        "profileSummary": {
+          "count": 0,
+          "averageFinish": "-",
+          "strongestSignal": "Yok",
+          "note": "Geçmiş ilk 3 içinde aynı profil sinyaliyle güçlü eşleşme bulunmadı."
+        },
+        "historicalMatches": [],
+        "actorContext": null
+      },
+      {
+        "rank": 22,
+        "horseName": "ANADOLU KOPARAN",
+        "gaziFinishPosition": 8,
+        "lensValue": 14,
+        "badge": "Belirsizlik 14",
+        "reason": "Upside ve risk birlikte yüksek; karar için daha fazla bağlam gerekiyor.",
+        "meta": "Düşük risk · Güven 72 · Upside 0",
+        "readiness": {
+          "score": 52,
+          "confidence": 72,
+          "upside": 0,
+          "risk": 18,
+          "label": "İzleme listesi",
+          "confidenceLabel": "Orta güven",
+          "riskLabel": "Düşük risk",
+          "primaryReason": "Temel rota sinyali var; ayırıcı veri henüz sınırlı.",
+          "parts": [
+            {
+              "label": "prep formu",
+              "value": 13
+            },
+            {
+              "label": "rota şekli",
+              "value": 13
+            },
+            {
+              "label": "jokey sürekliliği",
+              "value": 13
+            },
+            {
+              "label": "veri derinliği",
+              "value": 10
+            },
+            {
+              "label": "aktör geçmişi",
+              "value": 3
+            }
+          ]
+        },
+        "profileSummary": {
+          "count": 0,
+          "averageFinish": "-",
+          "strongestSignal": "Yok",
+          "note": "Geçmiş ilk 3 içinde aynı profil sinyaliyle güçlü eşleşme bulunmadı."
+        },
+        "historicalMatches": [],
+        "actorContext": null
       }
     ]
   }

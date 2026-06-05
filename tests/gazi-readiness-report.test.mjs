@@ -63,13 +63,13 @@ test("buildReadinessReport emits lens rankings for a participation report", () =
 
 test("buildReadinessReport only uses earlier seasons as profile evidence", () => {
   const current = report(2024, [
-    row({ horseName: "CURRENT", bestPrepFinishPosition: 1 })
+    row({ horseName: "CURRENT", bestPrepFinishPosition: 1, gaziJockeyName: "SIGNAL JOCKEY", owner: "SIGNAL OWNER" })
   ]);
   const earlier = report(2023, [
-    row({ horseName: "EARLIER TOP", gaziFinishPosition: 2, bestPrepFinishPosition: 1 })
+    row({ horseName: "EARLIER TOP", gaziFinishPosition: 2, bestPrepFinishPosition: 1, gaziJockeyName: "SIGNAL JOCKEY", owner: "SIGNAL OWNER" })
   ]);
   const future = report(2025, [
-    row({ horseName: "FUTURE TOP", gaziFinishPosition: 1, bestPrepFinishPosition: 1 })
+    row({ horseName: "FUTURE TOP", gaziFinishPosition: 1, bestPrepFinishPosition: 1, gaziJockeyName: "SIGNAL JOCKEY", owner: "SIGNAL OWNER" })
   ]);
 
   const payload = buildReadinessReport(current, {
@@ -80,6 +80,8 @@ test("buildReadinessReport only uses earlier seasons as profile evidence", () =>
   assert.equal(payload.summary.comparisonSeasonCount, 1);
   assert.equal(payload.quality.comparisonSeasonCount, 1);
   assert.deepEqual(matches.map((match) => match.year), [2023]);
+  assert.equal(payload.rankings.score[0].actorContext.signals.find((signal) => signal.label === "jokey").starts, 1);
+  assert.ok(payload.rankings.score[0].readiness.parts.some((part) => part.label === "aktör geçmişi"));
 });
 
 test("buildReadinessReport calibrates completed seasons against the actual Gazi winner", () => {

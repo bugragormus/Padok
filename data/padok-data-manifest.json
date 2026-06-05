@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-06-05T00:33:49.608Z",
+  "generatedAt": "2026-06-05T00:46:31.809Z",
   "summary": {
     "yearRange": "2020-2025",
     "yearCount": 6,
@@ -188,7 +188,7 @@
         "year": 2020,
         "type": "readiness",
         "path": "data/gazi-readiness-2020.json",
-        "generatedAt": "2026-06-05T00:33:49.586Z",
+        "generatedAt": "2026-06-05T00:46:31.787Z",
         "sourceGeneratedAt": "2026-06-05T00:07:08.802Z",
         "summary": {
           "analysisState": "field-available",
@@ -201,7 +201,7 @@
         "year": 2021,
         "type": "readiness",
         "path": "data/gazi-readiness-2021.json",
-        "generatedAt": "2026-06-05T00:33:49.587Z",
+        "generatedAt": "2026-06-05T00:46:31.789Z",
         "sourceGeneratedAt": "2026-06-05T00:07:08.803Z",
         "summary": {
           "analysisState": "field-available",
@@ -214,7 +214,7 @@
         "year": 2022,
         "type": "readiness",
         "path": "data/gazi-readiness-2022.json",
-        "generatedAt": "2026-06-05T00:33:49.589Z",
+        "generatedAt": "2026-06-05T00:46:31.790Z",
         "sourceGeneratedAt": "2026-06-05T00:07:08.804Z",
         "summary": {
           "analysisState": "field-available",
@@ -227,7 +227,7 @@
         "year": 2023,
         "type": "readiness",
         "path": "data/gazi-readiness-2023.json",
-        "generatedAt": "2026-06-05T00:33:49.595Z",
+        "generatedAt": "2026-06-05T00:46:31.797Z",
         "sourceGeneratedAt": "2026-06-05T00:07:08.805Z",
         "summary": {
           "analysisState": "field-available",
@@ -240,7 +240,7 @@
         "year": 2024,
         "type": "readiness",
         "path": "data/gazi-readiness-2024.json",
-        "generatedAt": "2026-06-05T00:33:49.597Z",
+        "generatedAt": "2026-06-05T00:46:31.799Z",
         "sourceGeneratedAt": "2026-06-05T00:07:08.806Z",
         "summary": {
           "analysisState": "field-available",
@@ -253,7 +253,7 @@
         "year": 2025,
         "type": "readiness",
         "path": "data/gazi-readiness-2025.json",
-        "generatedAt": "2026-06-05T00:33:49.598Z",
+        "generatedAt": "2026-06-05T00:46:31.800Z",
         "sourceGeneratedAt": "2026-06-05T00:07:08.807Z",
         "summary": {
           "analysisState": "field-available",

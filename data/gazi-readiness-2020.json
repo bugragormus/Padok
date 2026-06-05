@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-06-05T00:33:49.586Z",
+  "generatedAt": "2026-06-05T00:46:31.787Z",
   "sourceYear": 2020,
   "sourceGeneratedAt": "2026-06-05T00:07:08.802Z",
   "methodology": {
@@ -162,7 +162,12 @@
           "strongestSignal": "Yok",
           "note": "Geçmiş ilk 3 içinde aynı profil sinyaliyle güçlü eşleşme bulunmadı."
         },
-        "historicalMatches": []
+        "historicalMatches": [],
+        "actorContext": {
+          "totalScore": 0,
+          "signals": [],
+          "summary": "Geçmiş aktör sinyali bulunamadı."
+        }
       },
       {
         "rank": 2,
@@ -206,7 +211,12 @@
           "strongestSignal": "Yok",
           "note": "Geçmiş ilk 3 içinde aynı profil sinyaliyle güçlü eşleşme bulunmadı."
         },
-        "historicalMatches": []
+        "historicalMatches": [],
+        "actorContext": {
+          "totalScore": 0,
+          "signals": [],
+          "summary": "Geçmiş aktör sinyali bulunamadı."
+        }
       },
       {
         "rank": 3,
@@ -250,7 +260,12 @@
           "strongestSignal": "Yok",
           "note": "Geçmiş ilk 3 içinde aynı profil sinyaliyle güçlü eşleşme bulunmadı."
         },
-        "historicalMatches": []
+        "historicalMatches": [],
+        "actorContext": {
+          "totalScore": 0,
+          "signals": [],
+          "summary": "Geçmiş aktör sinyali bulunamadı."
+        }
       },
       {
         "rank": 4,
@@ -294,7 +309,12 @@
           "strongestSignal": "Yok",
           "note": "Geçmiş ilk 3 içinde aynı profil sinyaliyle güçlü eşleşme bulunmadı."
         },
-        "historicalMatches": []
+        "historicalMatches": [],
+        "actorContext": {
+          "totalScore": 0,
+          "signals": [],
+          "summary": "Geçmiş aktör sinyali bulunamadı."
+        }
       },
       {
         "rank": 5,
@@ -338,7 +358,12 @@
           "strongestSignal": "Yok",
           "note": "Geçmiş ilk 3 içinde aynı profil sinyaliyle güçlü eşleşme bulunmadı."
         },
-        "historicalMatches": []
+        "historicalMatches": [],
+        "actorContext": {
+          "totalScore": 0,
+          "signals": [],
+          "summary": "Geçmiş aktör sinyali bulunamadı."
+        }
       },
       {
         "rank": 6,
@@ -382,7 +407,12 @@
           "strongestSignal": "Yok",
           "note": "Geçmiş ilk 3 içinde aynı profil sinyaliyle güçlü eşleşme bulunmadı."
         },
-        "historicalMatches": []
+        "historicalMatches": [],
+        "actorContext": {
+          "totalScore": 0,
+          "signals": [],
+          "summary": "Geçmiş aktör sinyali bulunamadı."
+        }
       },
       {
         "rank": 7,
@@ -426,7 +456,12 @@
           "strongestSignal": "Yok",
           "note": "Geçmiş ilk 3 içinde aynı profil sinyaliyle güçlü eşleşme bulunmadı."
         },
-        "historicalMatches": []
+        "historicalMatches": [],
+        "actorContext": {
+          "totalScore": 0,
+          "signals": [],
+          "summary": "Geçmiş aktör sinyali bulunamadı."
+        }
       },
       {
         "rank": 8,
@@ -470,7 +505,12 @@
           "strongestSignal": "Yok",
           "note": "Geçmiş ilk 3 içinde aynı profil sinyaliyle güçlü eşleşme bulunmadı."
         },
-        "historicalMatches": []
+        "historicalMatches": [],
+        "actorContext": {
+          "totalScore": 0,
+          "signals": [],
+          "summary": "Geçmiş aktör sinyali bulunamadı."
+        }
       },
       {
         "rank": 9,
@@ -514,7 +554,12 @@
           "strongestSignal": "Yok",
           "note": "Geçmiş ilk 3 içinde aynı profil sinyaliyle güçlü eşleşme bulunmadı."
         },
-        "historicalMatches": []
+        "historicalMatches": [],
+        "actorContext": {
+          "totalScore": 0,
+          "signals": [],
+          "summary": "Geçmiş aktör sinyali bulunamadı."
+        }
       },
       {
         "rank": 10,
@@ -558,7 +603,12 @@
           "strongestSignal": "Yok",
           "note": "Geçmiş ilk 3 içinde aynı profil sinyaliyle güçlü eşleşme bulunmadı."
         },
-        "historicalMatches": []
+        "historicalMatches": [],
+        "actorContext": {
+          "totalScore": 0,
+          "signals": [],
+          "summary": "Geçmiş aktör sinyali bulunamadı."
+        }
       },
       {
         "rank": 11,
@@ -602,7 +652,12 @@
           "strongestSignal": "Yok",
           "note": "Geçmiş ilk 3 içinde aynı profil sinyaliyle güçlü eşleşme bulunmadı."
         },
-        "historicalMatches": []
+        "historicalMatches": [],
+        "actorContext": {
+          "totalScore": 0,
+          "signals": [],
+          "summary": "Geçmiş aktör sinyali bulunamadı."
+        }
       },
       {
         "rank": 12,
@@ -646,7 +701,12 @@
           "strongestSignal": "Yok",
           "note": "Geçmiş ilk 3 içinde aynı profil sinyaliyle güçlü eşleşme bulunmadı."
         },
-        "historicalMatches": []
+        "historicalMatches": [],
+        "actorContext": {
+          "totalScore": 0,
+          "signals": [],
+          "summary": "Geçmiş aktör sinyali bulunamadı."
+        }
       },
       {
         "rank": 13,
@@ -690,7 +750,12 @@
           "strongestSignal": "Yok",
           "note": "Geçmiş ilk 3 içinde aynı profil sinyaliyle güçlü eşleşme bulunmadı."
         },
-        "historicalMatches": []
+        "historicalMatches": [],
+        "actorContext": {
+          "totalScore": 0,
+          "signals": [],
+          "summary": "Geçmiş aktör sinyali bulunamadı."
+        }
       },
       {
         "rank": 14,
@@ -734,7 +799,12 @@
           "strongestSignal": "Yok",
           "note": "Geçmiş ilk 3 içinde aynı profil sinyaliyle güçlü eşleşme bulunmadı."
         },
-        "historicalMatches": []
+        "historicalMatches": [],
+        "actorContext": {
+          "totalScore": 0,
+          "signals": [],
+          "summary": "Geçmiş aktör sinyali bulunamadı."
+        }
       },
       {
         "rank": 15,
@@ -778,7 +848,12 @@
           "strongestSignal": "Yok",
           "note": "Geçmiş ilk 3 içinde aynı profil sinyaliyle güçlü eşleşme bulunmadı."
         },
-        "historicalMatches": []
+        "historicalMatches": [],
+        "actorContext": {
+          "totalScore": 0,
+          "signals": [],
+          "summary": "Geçmiş aktör sinyali bulunamadı."
+        }
       }
     ],
     "upside": [
@@ -824,7 +899,8 @@
           "strongestSignal": "Yok",
           "note": "Geçmiş ilk 3 içinde aynı profil sinyaliyle güçlü eşleşme bulunmadı."
         },
-        "historicalMatches": []
+        "historicalMatches": [],
+        "actorContext": null
       },
       {
         "rank": 2,
@@ -868,7 +944,8 @@
           "strongestSignal": "Yok",
           "note": "Geçmiş ilk 3 içinde aynı profil sinyaliyle güçlü eşleşme bulunmadı."
         },
-        "historicalMatches": []
+        "historicalMatches": [],
+        "actorContext": null
       },
       {
         "rank": 3,
@@ -912,7 +989,8 @@
           "strongestSignal": "Yok",
           "note": "Geçmiş ilk 3 içinde aynı profil sinyaliyle güçlü eşleşme bulunmadı."
         },
-        "historicalMatches": []
+        "historicalMatches": [],
+        "actorContext": null
       },
       {
         "rank": 4,
@@ -956,7 +1034,8 @@
           "strongestSignal": "Yok",
           "note": "Geçmiş ilk 3 içinde aynı profil sinyaliyle güçlü eşleşme bulunmadı."
         },
-        "historicalMatches": []
+        "historicalMatches": [],
+        "actorContext": null
       },
       {
         "rank": 5,
@@ -1000,7 +1079,8 @@
           "strongestSignal": "Yok",
           "note": "Geçmiş ilk 3 içinde aynı profil sinyaliyle güçlü eşleşme bulunmadı."
         },
-        "historicalMatches": []
+        "historicalMatches": [],
+        "actorContext": null
       },
       {
         "rank": 6,
@@ -1044,7 +1124,8 @@
           "strongestSignal": "Yok",
           "note": "Geçmiş ilk 3 içinde aynı profil sinyaliyle güçlü eşleşme bulunmadı."
         },
-        "historicalMatches": []
+        "historicalMatches": [],
+        "actorContext": null
       },
       {
         "rank": 7,
@@ -1088,7 +1169,8 @@
           "strongestSignal": "Yok",
           "note": "Geçmiş ilk 3 içinde aynı profil sinyaliyle güçlü eşleşme bulunmadı."
         },
-        "historicalMatches": []
+        "historicalMatches": [],
+        "actorContext": null
       },
       {
         "rank": 8,
@@ -1132,7 +1214,8 @@
           "strongestSignal": "Yok",
           "note": "Geçmiş ilk 3 içinde aynı profil sinyaliyle güçlü eşleşme bulunmadı."
         },
-        "historicalMatches": []
+        "historicalMatches": [],
+        "actorContext": null
       },
       {
         "rank": 9,
@@ -1176,7 +1259,8 @@
           "strongestSignal": "Yok",
           "note": "Geçmiş ilk 3 içinde aynı profil sinyaliyle güçlü eşleşme bulunmadı."
         },
-        "historicalMatches": []
+        "historicalMatches": [],
+        "actorContext": null
       },
       {
         "rank": 10,
@@ -1220,7 +1304,8 @@
           "strongestSignal": "Yok",
           "note": "Geçmiş ilk 3 içinde aynı profil sinyaliyle güçlü eşleşme bulunmadı."
         },
-        "historicalMatches": []
+        "historicalMatches": [],
+        "actorContext": null
       },
       {
         "rank": 11,
@@ -1264,7 +1349,8 @@
           "strongestSignal": "Yok",
           "note": "Geçmiş ilk 3 içinde aynı profil sinyaliyle güçlü eşleşme bulunmadı."
         },
-        "historicalMatches": []
+        "historicalMatches": [],
+        "actorContext": null
       },
       {
         "rank": 12,
@@ -1308,7 +1394,8 @@
           "strongestSignal": "Yok",
           "note": "Geçmiş ilk 3 içinde aynı profil sinyaliyle güçlü eşleşme bulunmadı."
         },
-        "historicalMatches": []
+        "historicalMatches": [],
+        "actorContext": null
       },
       {
         "rank": 13,
@@ -1352,7 +1439,8 @@
           "strongestSignal": "Yok",
           "note": "Geçmiş ilk 3 içinde aynı profil sinyaliyle güçlü eşleşme bulunmadı."
         },
-        "historicalMatches": []
+        "historicalMatches": [],
+        "actorContext": null
       },
       {
         "rank": 14,
@@ -1396,7 +1484,8 @@
           "strongestSignal": "Yok",
           "note": "Geçmiş ilk 3 içinde aynı profil sinyaliyle güçlü eşleşme bulunmadı."
         },
-        "historicalMatches": []
+        "historicalMatches": [],
+        "actorContext": null
       },
       {
         "rank": 15,
@@ -1440,7 +1529,8 @@
           "strongestSignal": "Yok",
           "note": "Geçmiş ilk 3 içinde aynı profil sinyaliyle güçlü eşleşme bulunmadı."
         },
-        "historicalMatches": []
+        "historicalMatches": [],
+        "actorContext": null
       }
     ],
     "lowRisk": [
@@ -1486,7 +1576,8 @@
           "strongestSignal": "Yok",
           "note": "Geçmiş ilk 3 içinde aynı profil sinyaliyle güçlü eşleşme bulunmadı."
         },
-        "historicalMatches": []
+        "historicalMatches": [],
+        "actorContext": null
       },
       {
         "rank": 2,
@@ -1530,7 +1621,8 @@
           "strongestSignal": "Yok",
           "note": "Geçmiş ilk 3 içinde aynı profil sinyaliyle güçlü eşleşme bulunmadı."
         },
-        "historicalMatches": []
+        "historicalMatches": [],
+        "actorContext": null
       },
       {
         "rank": 3,
@@ -1574,7 +1666,8 @@
           "strongestSignal": "Yok",
           "note": "Geçmiş ilk 3 içinde aynı profil sinyaliyle güçlü eşleşme bulunmadı."
         },
-        "historicalMatches": []
+        "historicalMatches": [],
+        "actorContext": null
       },
       {
         "rank": 4,
@@ -1618,7 +1711,8 @@
           "strongestSignal": "Yok",
           "note": "Geçmiş ilk 3 içinde aynı profil sinyaliyle güçlü eşleşme bulunmadı."
         },
-        "historicalMatches": []
+        "historicalMatches": [],
+        "actorContext": null
       },
       {
         "rank": 5,
@@ -1662,7 +1756,8 @@
           "strongestSignal": "Yok",
           "note": "Geçmiş ilk 3 içinde aynı profil sinyaliyle güçlü eşleşme bulunmadı."
         },
-        "historicalMatches": []
+        "historicalMatches": [],
+        "actorContext": null
       },
       {
         "rank": 6,
@@ -1706,7 +1801,8 @@
           "strongestSignal": "Yok",
           "note": "Geçmiş ilk 3 içinde aynı profil sinyaliyle güçlü eşleşme bulunmadı."
         },
-        "historicalMatches": []
+        "historicalMatches": [],
+        "actorContext": null
       },
       {
         "rank": 7,
@@ -1750,7 +1846,8 @@
           "strongestSignal": "Yok",
           "note": "Geçmiş ilk 3 içinde aynı profil sinyaliyle güçlü eşleşme bulunmadı."
         },
-        "historicalMatches": []
+        "historicalMatches": [],
+        "actorContext": null
       },
       {
         "rank": 8,
@@ -1794,7 +1891,8 @@
           "strongestSignal": "Yok",
           "note": "Geçmiş ilk 3 içinde aynı profil sinyaliyle güçlü eşleşme bulunmadı."
         },
-        "historicalMatches": []
+        "historicalMatches": [],
+        "actorContext": null
       },
       {
         "rank": 9,
@@ -1838,7 +1936,8 @@
           "strongestSignal": "Yok",
           "note": "Geçmiş ilk 3 içinde aynı profil sinyaliyle güçlü eşleşme bulunmadı."
         },
-        "historicalMatches": []
+        "historicalMatches": [],
+        "actorContext": null
       },
       {
         "rank": 10,
@@ -1882,7 +1981,8 @@
           "strongestSignal": "Yok",
           "note": "Geçmiş ilk 3 içinde aynı profil sinyaliyle güçlü eşleşme bulunmadı."
         },
-        "historicalMatches": []
+        "historicalMatches": [],
+        "actorContext": null
       },
       {
         "rank": 11,
@@ -1926,7 +2026,8 @@
           "strongestSignal": "Yok",
           "note": "Geçmiş ilk 3 içinde aynı profil sinyaliyle güçlü eşleşme bulunmadı."
         },
-        "historicalMatches": []
+        "historicalMatches": [],
+        "actorContext": null
       },
       {
         "rank": 12,
@@ -1970,7 +2071,8 @@
           "strongestSignal": "Yok",
           "note": "Geçmiş ilk 3 içinde aynı profil sinyaliyle güçlü eşleşme bulunmadı."
         },
-        "historicalMatches": []
+        "historicalMatches": [],
+        "actorContext": null
       },
       {
         "rank": 13,
@@ -2014,7 +2116,8 @@
           "strongestSignal": "Yok",
           "note": "Geçmiş ilk 3 içinde aynı profil sinyaliyle güçlü eşleşme bulunmadı."
         },
-        "historicalMatches": []
+        "historicalMatches": [],
+        "actorContext": null
       },
       {
         "rank": 14,
@@ -2058,7 +2161,8 @@
           "strongestSignal": "Yok",
           "note": "Geçmiş ilk 3 içinde aynı profil sinyaliyle güçlü eşleşme bulunmadı."
         },
-        "historicalMatches": []
+        "historicalMatches": [],
+        "actorContext": null
       },
       {
         "rank": 15,
@@ -2102,7 +2206,8 @@
           "strongestSignal": "Yok",
           "note": "Geçmiş ilk 3 içinde aynı profil sinyaliyle güçlü eşleşme bulunmadı."
         },
-        "historicalMatches": []
+        "historicalMatches": [],
+        "actorContext": null
       }
     ],
     "uncertainty": [
@@ -2148,7 +2253,8 @@
           "strongestSignal": "Yok",
           "note": "Geçmiş ilk 3 içinde aynı profil sinyaliyle güçlü eşleşme bulunmadı."
         },
-        "historicalMatches": []
+        "historicalMatches": [],
+        "actorContext": null
       },
       {
         "rank": 2,
@@ -2192,7 +2298,8 @@
           "strongestSignal": "Yok",
           "note": "Geçmiş ilk 3 içinde aynı profil sinyaliyle güçlü eşleşme bulunmadı."
         },
-        "historicalMatches": []
+        "historicalMatches": [],
+        "actorContext": null
       },
       {
         "rank": 3,
@@ -2236,7 +2343,8 @@
           "strongestSignal": "Yok",
           "note": "Geçmiş ilk 3 içinde aynı profil sinyaliyle güçlü eşleşme bulunmadı."
         },
-        "historicalMatches": []
+        "historicalMatches": [],
+        "actorContext": null
       },
       {
         "rank": 4,
@@ -2280,7 +2388,8 @@
           "strongestSignal": "Yok",
           "note": "Geçmiş ilk 3 içinde aynı profil sinyaliyle güçlü eşleşme bulunmadı."
         },
-        "historicalMatches": []
+        "historicalMatches": [],
+        "actorContext": null
       },
       {
         "rank": 5,
@@ -2324,7 +2433,8 @@
           "strongestSignal": "Yok",
           "note": "Geçmiş ilk 3 içinde aynı profil sinyaliyle güçlü eşleşme bulunmadı."
         },
-        "historicalMatches": []
+        "historicalMatches": [],
+        "actorContext": null
       },
       {
         "rank": 6,
@@ -2368,7 +2478,8 @@
           "strongestSignal": "Yok",
           "note": "Geçmiş ilk 3 içinde aynı profil sinyaliyle güçlü eşleşme bulunmadı."
         },
-        "historicalMatches": []
+        "historicalMatches": [],
+        "actorContext": null
       },
       {
         "rank": 7,
@@ -2412,7 +2523,8 @@
           "strongestSignal": "Yok",
           "note": "Geçmiş ilk 3 içinde aynı profil sinyaliyle güçlü eşleşme bulunmadı."
         },
-        "historicalMatches": []
+        "historicalMatches": [],
+        "actorContext": null
       },
       {
         "rank": 8,
@@ -2456,7 +2568,8 @@
           "strongestSignal": "Yok",
           "note": "Geçmiş ilk 3 içinde aynı profil sinyaliyle güçlü eşleşme bulunmadı."
         },
-        "historicalMatches": []
+        "historicalMatches": [],
+        "actorContext": null
       },
       {
         "rank": 9,
@@ -2500,7 +2613,8 @@
           "strongestSignal": "Yok",
           "note": "Geçmiş ilk 3 içinde aynı profil sinyaliyle güçlü eşleşme bulunmadı."
         },
-        "historicalMatches": []
+        "historicalMatches": [],
+        "actorContext": null
       },
       {
         "rank": 10,
@@ -2544,7 +2658,8 @@
           "strongestSignal": "Yok",
           "note": "Geçmiş ilk 3 içinde aynı profil sinyaliyle güçlü eşleşme bulunmadı."
         },
-        "historicalMatches": []
+        "historicalMatches": [],
+        "actorContext": null
       },
       {
         "rank": 11,
@@ -2588,7 +2703,8 @@
           "strongestSignal": "Yok",
           "note": "Geçmiş ilk 3 içinde aynı profil sinyaliyle güçlü eşleşme bulunmadı."
         },
-        "historicalMatches": []
+        "historicalMatches": [],
+        "actorContext": null
       },
       {
         "rank": 12,
@@ -2632,7 +2748,8 @@
           "strongestSignal": "Yok",
           "note": "Geçmiş ilk 3 içinde aynı profil sinyaliyle güçlü eşleşme bulunmadı."
         },
-        "historicalMatches": []
+        "historicalMatches": [],
+        "actorContext": null
       },
       {
         "rank": 13,
@@ -2676,7 +2793,8 @@
           "strongestSignal": "Yok",
           "note": "Geçmiş ilk 3 içinde aynı profil sinyaliyle güçlü eşleşme bulunmadı."
         },
-        "historicalMatches": []
+        "historicalMatches": [],
+        "actorContext": null
       },
       {
         "rank": 14,
@@ -2720,7 +2838,8 @@
           "strongestSignal": "Yok",
           "note": "Geçmiş ilk 3 içinde aynı profil sinyaliyle güçlü eşleşme bulunmadı."
         },
-        "historicalMatches": []
+        "historicalMatches": [],
+        "actorContext": null
       },
       {
         "rank": 15,
@@ -2764,7 +2883,8 @@
           "strongestSignal": "Yok",
           "note": "Geçmiş ilk 3 içinde aynı profil sinyaliyle güçlü eşleşme bulunmadı."
         },
-        "historicalMatches": []
+        "historicalMatches": [],
+        "actorContext": null
       }
     ]
   }

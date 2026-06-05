@@ -1,6 +1,7 @@
 import { mkdir, readFile, writeFile } from "node:fs/promises";
 import { dirname } from "node:path";
 import {
+  clamp,
   getReadinessAssessment,
   getReadinessLensBadge,
   getReadinessLensMeta,
@@ -27,6 +28,87 @@ const rowHasJockeyChange = (row, tableColumns) => {
     .map((cell) => cell.jockeyName);
 
   return new Set(jockeyNames).size > 1;
+};
+
+const normalizeEntityName = (value) => String(value ?? "").trim().toLocaleUpperCase("tr-TR");
+
+const addEntityResult = (statsMap, key, finishPosition) => {
+  const normalizedKey = normalizeEntityName(key);
+  if (!normalizedKey || !Number.isFinite(finishPosition)) return;
+
+  const stats = statsMap.get(normalizedKey) ?? {
+    starts: 0,
+    wins: 0,
+    topThree: 0,
+    finishTotal: 0
+  };
+
+  stats.starts += 1;
+  stats.wins += finishPosition === 1 ? 1 : 0;
+  stats.topThree += finishPosition <= 3 ? 1 : 0;
+  stats.finishTotal += finishPosition;
+  statsMap.set(normalizedKey, stats);
+};
+
+const buildActorHistoryIndex = (participationReport, comparisonReports) => {
+  const selectedYear = participationReport.sourceYear;
+  const index = {
+    jockey: new Map(),
+    owner: new Map(),
+    sire: new Map()
+  };
+
+  comparisonReports
+    .filter((report) => Number.isFinite(report.sourceYear) && (!Number.isFinite(selectedYear) || report.sourceYear < selectedYear))
+    .forEach((report) => {
+      (report.rows ?? []).forEach((row) => {
+        addEntityResult(index.jockey, row.gaziJockeyName, row.gaziFinishPosition);
+        addEntityResult(index.owner, row.owner, row.gaziFinishPosition);
+        addEntityResult(index.sire, row.sire, row.gaziFinishPosition);
+      });
+    });
+
+  return index;
+};
+
+const toActorSignal = (statsMap, key, label, maxScore) => {
+  const stats = statsMap.get(normalizeEntityName(key));
+  if (!stats || stats.starts === 0) return null;
+
+  const topThreeRate = stats.topThree / stats.starts;
+  const winRate = stats.wins / stats.starts;
+  const averageFinish = stats.finishTotal / stats.starts;
+  const score = clamp(Math.round((topThreeRate * maxScore * 0.7) + (winRate * maxScore * 0.3)), 0, maxScore);
+
+  return {
+    label,
+    name: key,
+    starts: stats.starts,
+    wins: stats.wins,
+    topThree: stats.topThree,
+    topThreeRate: Math.round(topThreeRate * 100),
+    winRate: Math.round(winRate * 100),
+    averageFinish: averageFinish.toFixed(1),
+    score
+  };
+};
+
+const buildActorContext = (row, actorHistoryIndex) => {
+  const signals = [
+    toActorSignal(actorHistoryIndex.jockey, row.gaziJockeyName, "jokey", 5),
+    toActorSignal(actorHistoryIndex.owner, row.owner, "sahip", 4),
+    toActorSignal(actorHistoryIndex.sire, row.sire, "baba hattı", 3)
+  ].filter(Boolean);
+
+  const totalScore = signals.reduce((sum, signal) => sum + signal.score, 0);
+
+  return {
+    totalScore,
+    signals,
+    summary: signals.length
+      ? signals.map((signal) => `${signal.label}: ${signal.topThree}/${signal.starts} ilk 3`).join(" · ")
+      : "Geçmiş aktör sinyali bulunamadı."
+  };
 };
 
 const getHistoricalProfileMatches = (selectedRow, selectedReport, comparisonReports) => {
@@ -94,7 +176,7 @@ const summarizeProfileMatches = (matches) => {
   };
 };
 
-const toRankingEntry = ({ row, readiness, profileSummary, historicalMatches }, lens, index) => {
+const toRankingEntry = ({ row, readiness, profileSummary, historicalMatches, actorContext }, lens, index) => {
   return {
     rank: index + 1,
     horseName: row.horseName,
@@ -105,7 +187,8 @@ const toRankingEntry = ({ row, readiness, profileSummary, historicalMatches }, l
     meta: getReadinessLensMeta(readiness, lens),
     readiness,
     profileSummary,
-    historicalMatches
+    historicalMatches,
+    actorContext: lens === "score" ? actorContext : null
   };
 };
 
@@ -221,18 +304,22 @@ const buildQualitySummary = (profiles, participationReport, comparisonReports) =
 export const buildReadinessReport = (participationReport, options = {}) => {
   const comparisonReports = options.comparisonReports ?? [];
   const tableColumns = participationReport.columns ?? [];
+  const actorHistoryIndex = buildActorHistoryIndex(participationReport, comparisonReports);
   const profiles = (participationReport.rows ?? []).map((row) => {
     const historicalMatches = getHistoricalProfileMatches(row, participationReport, comparisonReports);
     const profileSummary = summarizeProfileMatches(historicalMatches);
+    const actorContext = buildActorContext(row, actorHistoryIndex);
     const readiness = getReadinessAssessment(row, profileSummary, {
-      hasJockeyChange: rowHasJockeyChange(row, tableColumns)
+      hasJockeyChange: rowHasJockeyChange(row, tableColumns),
+      actorContext
     });
 
     return {
       row,
       readiness,
       profileSummary,
-      historicalMatches
+      historicalMatches,
+      actorContext
     };
   });
   const rankings = Object.fromEntries(Object.keys(readinessLensLabels).map((lens) => {

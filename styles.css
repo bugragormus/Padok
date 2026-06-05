@@ -2051,6 +2051,41 @@ h2 {
   text-overflow: ellipsis;
 }
 
+.artifact-actor-panel {
+  display: grid;
+  grid-column: 1 / -1;
+  gap: 8px;
+  padding-top: 10px;
+  border-top: 1px solid var(--line);
+}
+
+.artifact-actor-panel > div {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 8px;
+}
+
+.artifact-actor-panel > div span {
+  display: grid;
+  gap: 4px;
+  padding: 9px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: #fff;
+}
+
+.artifact-actor-panel b {
+  color: var(--ink);
+  font-size: 0.76rem;
+}
+
+.artifact-actor-panel em {
+  color: var(--muted);
+  font-size: 0.68rem;
+  font-style: normal;
+  line-height: 1.35;
+}
+
 .horse-detail__grid {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -2674,6 +2709,10 @@ footer {
   .artifact-lens-panel__grid,
   .route-visibility-panel__metrics {
     grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .artifact-actor-panel > div {
+    grid-template-columns: 1fr;
   }
 
   .profile-score {

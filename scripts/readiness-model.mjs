@@ -28,8 +28,15 @@ export const getPrepFormScore = (row) => {
   return 7;
 };
 
+const getActorSignalScore = (actorContext = {}) => {
+  const signals = actorContext.signals ?? [];
+  const score = signals.reduce((sum, signal) => sum + (signal.score ?? 0), 0);
+  return clamp(score, 0, 12);
+};
+
 export const getReadinessAssessment = (row, profileSummary, options = {}) => {
   const hasJockeyChange = Boolean(options.hasJockeyChange);
+  const actorSignal = getActorSignalScore(options.actorContext);
   const numericAverage = Number.parseFloat(profileSummary.averageFinish);
   const profileEvidence = clamp((profileSummary.count * 7) + (Number.isFinite(numericAverage) ? Math.round(12 - (numericAverage * 3)) : 0), 0, 30);
   const prepForm = getPrepFormScore(row);
@@ -42,8 +49,8 @@ export const getReadinessAssessment = (row, profileSummary, options = {}) => {
     row.gaziJockeyName,
     row.bestPrepRaceName
   ].filter(Boolean).length * 2;
-  const score = clamp(prepForm + profileEvidence + routeShape + continuity + dataDepth, 0, 100);
-  const confidence = clamp(35 + (row.hasPrepStart ? 20 : 0) + (profileSummary.count * 8) + (row.sire && row.dam ? 10 : 0) + (row.owner ? 5 : 0), 0, 100);
+  const score = clamp(prepForm + profileEvidence + routeShape + continuity + dataDepth + actorSignal, 0, 100);
+  const confidence = clamp(35 + (row.hasPrepStart ? 20 : 0) + (profileSummary.count * 8) + (row.sire && row.dam ? 10 : 0) + (row.owner ? 5 : 0) + Math.round(actorSignal * 0.8), 0, 100);
   const upside = clamp(
     (row.bestPrepFinishPosition === 1 ? 34 : 0)
       + (profileSummary.count >= 3 ? 24 : profileSummary.count * 6)
@@ -85,7 +92,8 @@ export const getReadinessAssessment = (row, profileSummary, options = {}) => {
       { label: "profil kanıtı", value: profileEvidence },
       { label: "rota şekli", value: routeShape },
       { label: "jokey sürekliliği", value: continuity },
-      { label: "veri derinliği", value: dataDepth }
+      { label: "veri derinliği", value: dataDepth },
+      { label: "aktör geçmişi", value: actorSignal }
     ].filter((part) => part.value > 0)
   };
 };

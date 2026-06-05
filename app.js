@@ -8,7 +8,7 @@ import {
   sortReadinessProfiles
 } from "./scripts/readiness-model.mjs";
 
-const APP_DATA_VERSION = "20260605-live-data";
+const APP_DATA_VERSION = "20260605-actor-context";
 
 const state = {
   data: null,
@@ -460,13 +460,15 @@ const getArtifactLensRows = (horseName) => {
         label,
         rank: entry.rank,
         value: entry.lensValue,
-        badge: entry.badge
+        badge: entry.badge,
+        actorContext: entry.actorContext ?? null
       }
       : {
         label,
         rank: "-",
         value: "-",
-        badge: "Artifact içinde yok"
+        badge: "Artifact içinde yok",
+        actorContext: null
       };
   });
 };
@@ -474,6 +476,9 @@ const getArtifactLensRows = (horseName) => {
 const renderArtifactLensPanel = (horseName) => {
   const lensRows = getArtifactLensRows(horseName);
   if (!lensRows.length) return "";
+
+  const actorContext = lensRows.find((row) => row.actorContext)?.actorContext;
+  const actorSignals = actorContext?.signals ?? [];
 
   return `
     <div class="artifact-lens-panel">
@@ -491,6 +496,23 @@ const renderArtifactLensPanel = (horseName) => {
           </span>
         `).join("")}
       </div>
+      ${actorContext ? `
+        <div class="artifact-actor-panel" aria-label="Aktör geçmişi sinyalleri">
+          <strong>Aktör geçmişi</strong>
+          <p>${escapeHtml(actorContext.summary)}</p>
+          ${actorSignals.length ? `
+            <div>
+              ${actorSignals.map((signal) => `
+                <span>
+                  <small>${escapeHtml(signal.label)}</small>
+                  <b>+${escapeHtml(signal.score)} katkı</b>
+                  <em>${escapeHtml(signal.topThree)} ilk 3 · ${escapeHtml(signal.starts)} start · Ort. ${escapeHtml(signal.averageFinish)}</em>
+                </span>
+              `).join("")}
+            </div>
+          ` : ""}
+        </div>
+      ` : ""}
     </div>
   `;
 };
