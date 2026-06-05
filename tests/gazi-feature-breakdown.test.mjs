@@ -56,6 +56,15 @@ test("buildFeatureBreakdown separates horse, route, actor, pedigree, owner, and 
           ]
         }
       ]
+    },
+    contextHistory: {
+      byType: {
+        jockey: [{ entityName: "JOCKEY", score: 70, starts: 3, topThree: 2 }],
+        owner: [{ entityName: "OWNER", score: 66 }],
+        sire: [{ entityName: "SIRE", score: 80 }],
+        dam: [{ entityName: "DAM", score: 50 }],
+        damsire: [{ entityName: "DAMSIRE", score: 40 }]
+      }
     }
   });
 
@@ -66,6 +75,6 @@ test("buildFeatureBreakdown separates horse, route, actor, pedigree, owner, and 
   assert.equal(payload.profiles[0].groups.horsePerformance.label, "At performansı");
   assert.equal(payload.profiles[0].groups.routeProfile.score, 80);
   assert.ok(payload.profiles[0].groups.pedigree.score > 60);
-  assert.equal(payload.profiles[0].groups.owner.score, 42);
+  assert.equal(payload.profiles[0].groups.owner.score, 66);
   assert.equal(payload.profiles[0].groups.dataConfidence.score, 76);
 });

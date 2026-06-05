@@ -185,6 +185,11 @@ const main = async () => {
   });
 
   log.steps.push({
+    step: "build-context-history",
+    result: runNpmScript("build:gazi-context-history", ["--data-dir", "data", "--out", "data/gazi-context-history.json"])
+  });
+
+  log.steps.push({
     step: "build-feature-breakdown",
     result: runNpmScript("build:gazi-feature-breakdown", ["--out", "data/gazi-feature-breakdown.json"])
   });

@@ -9,6 +9,14 @@ const getArgValue = (args, name) => {
 
 const readJson = async (path) => JSON.parse(await readFile(path, "utf8"));
 
+const readOptionalJson = async (path) => {
+  try {
+    return JSON.parse(await readFile(path, "utf8"));
+  } catch {
+    return null;
+  }
+};
+
 const normalizeName = (value) => String(value ?? "").trim().toLocaleUpperCase("tr-TR");
 
 const clamp = (value, min = 0, max = 100) => Math.min(max, Math.max(min, value));
@@ -33,6 +41,14 @@ const actorContextScore = (entry, label) => {
   return clamp(Math.round(((signal.score ?? 0) / 12) * 100));
 };
 
+const entityScore = (contextHistory, type, name) => {
+  if (!contextHistory || !name) return null;
+  const targetName = normalizeName(name);
+  const entity = (contextHistory.byType?.[type] ?? [])
+    .find((item) => normalizeName(item.entityName) === targetName);
+  return entity ?? null;
+};
+
 const hasJockeyChange = (row) => {
   const jockeyNames = new Set((row?.prepRaceStates ?? [])
     .filter((race) => race.status === "ran" && race.jockeyName)
@@ -42,23 +58,28 @@ const hasJockeyChange = (row) => {
   return jockeyNames.size > 1;
 };
 
-const pedigreeScore = (row, entry) => {
+const pedigreeScore = (row, entry, contextHistory) => {
   const availability = [row?.sire, row?.dam, row?.damsire].filter(Boolean).length;
   const availabilityScore = Math.round((availability / 3) * 62);
-  const sireSignal = actorContextScore(entry, "baba hattı");
-  return clamp(availabilityScore + Math.round(sireSignal * 0.38));
+  const sireSignal = entityScore(contextHistory, "sire", row?.sire)?.score ?? actorContextScore(entry, "baba hattı");
+  const damSignal = entityScore(contextHistory, "dam", row?.dam)?.score ?? 0;
+  const damsireSignal = entityScore(contextHistory, "damsire", row?.damsire)?.score ?? 0;
+  const historyScore = Math.round((sireSignal * 0.55) + (damSignal * 0.28) + (damsireSignal * 0.17));
+  return clamp(Math.round((availabilityScore * 0.56) + (historyScore * 0.44)));
 };
 
-const ownerScore = (row) => {
+const ownerScore = (row, contextHistory) => {
   if (!row?.owner) return 0;
-  return 42;
+  const owner = entityScore(contextHistory, "owner", row.owner);
+  return owner ? owner.score : 42;
 };
 
-const groupScores = ({ row, entry }) => {
+const groupScores = ({ row, entry, contextHistory }) => {
   const readiness = entry?.readiness ?? {};
   const parts = partsByLabel(readiness);
   const routeScore = row?.routeVisibility?.score ?? (row?.prepStartCount ? 45 : 18);
-  const actorScore = clamp(Math.round(((parts["aktör geçmişi"] ?? 0) / 12) * 100));
+  const jockeyHistory = entityScore(contextHistory, "jockey", row?.gaziJockeyName);
+  const actorScore = jockeyHistory?.score ?? clamp(Math.round(((parts["aktör geçmişi"] ?? 0) / 12) * 100));
   const continuityScore = clamp(Math.round(((parts["jokey sürekliliği"] ?? 0) / 13) * 100));
   const formScore = clamp(Math.round(((parts["prep formu"] ?? 0) / 28) * 100));
   const profileScore = clamp(Math.round(((parts["profil kanıtı"] ?? 0) / 30) * 100));
@@ -79,22 +100,24 @@ const groupScores = ({ row, entry }) => {
     actorContext: {
       score: clamp(Math.round((actorScore * 0.55) + (continuityScore * 0.45))),
       label: "Jokey/aktör",
-      note: hasJockeyChange(row)
-        ? "Jokey sürekliliği kırılmış; aktör geçmişiyle birlikte okunmalı."
-        : "Jokey hattı daha sabit görünüyor."
+      note: jockeyHistory
+        ? `${row.gaziJockeyName} tarihsel context skoru ${jockeyHistory.score}; ${jockeyHistory.topThree}/${jockeyHistory.starts} ilk 3.`
+        : hasJockeyChange(row)
+          ? "Jokey sürekliliği kırılmış; aktör geçmişiyle birlikte okunmalı."
+          : "Jokey hattı daha sabit görünüyor."
     },
     pedigree: {
-      score: pedigreeScore(row, entry),
+      score: pedigreeScore(row, entry, contextHistory),
       label: "Soy hattı",
       note: row?.sire && row?.dam
-        ? `${row.sire} / ${row.dam} bilgisi mevcut; tarihsel soy performansı sınırlı ağırlıkla okunur.`
+        ? `${row.sire} / ${row.dam} bilgisi mevcut; tarihsel soy context'i sınırlı ağırlıkla okunur.`
         : "Soy hattı eksik olduğu için pedigree prior düşük güvenlidir."
     },
     owner: {
-      score: ownerScore(row),
+      score: ownerScore(row, contextHistory),
       label: "Sahip",
       note: row?.owner
-        ? `${row.owner} bilgisi mevcut; gerçek sahip başarı oranı sonraki veri genişletmede hesaplanacak.`
+        ? `${row.owner} context skoru ${ownerScore(row, contextHistory)}; küçük örneklerde temkinli okunmalı.`
         : "Sahip bilgisi eksik."
     },
     dataConfidence: {
@@ -130,8 +153,8 @@ const strongestAndWeakest = (groups) => {
   };
 };
 
-const buildProfile = ({ row, entry }) => {
-  const groups = groupScores({ row, entry });
+const buildProfile = ({ row, entry, contextHistory }) => {
+  const groups = groupScores({ row, entry, contextHistory });
   const extremes = strongestAndWeakest(groups);
 
   return {
@@ -162,11 +185,11 @@ const buildGroupAverages = (profiles) => {
   }));
 };
 
-export const buildFeatureBreakdown = ({ readiness, participation }) => {
+export const buildFeatureBreakdown = ({ readiness, participation, contextHistory = null }) => {
   const profiles = (readiness.rankings?.score ?? [])
     .map((entry) => {
       const row = rowByHorse(participation, entry.horseName);
-      return row ? buildProfile({ row, entry }) : null;
+      return row ? buildProfile({ row, entry, contextHistory }) : null;
     })
     .filter(Boolean)
     .sort((a, b) => b.compositeScore - a.compositeScore || b.readinessScore - a.readinessScore);
@@ -194,7 +217,9 @@ export const buildFeatureBreakdown = ({ readiness, participation }) => {
         dataConfidence: 0.15
       },
       safeguards: [
-        "Sahip ve pedigree skorları ilk sürümde veri varlığı ve sınırlı actor sinyaliyle hesaplanır.",
+        contextHistory
+          ? "Sahip, jokey ve soy hattı skorları context history artifact'iyle zenginleştirilir."
+          : "Sahip ve pedigree skorları context history yoksa veri varlığı ve sınırlı actor sinyaliyle hesaplanır.",
         "Eksik veri düşük güven olarak gösterilir; otomatik performans cezası sayılmaz.",
         "Gazi sonucu feature üretiminde kullanılmaz; yalnızca tamamlanmış sezonlarda değerlendirme alanı olarak taşınır."
       ]
@@ -206,10 +231,12 @@ const main = async () => {
   const args = process.argv.slice(2);
   const readinessPath = getArgValue(args, "--readiness") ?? "data/gazi-readiness-report.json";
   const participationPath = getArgValue(args, "--participation") ?? "data/gazi-participation-report.json";
+  const contextHistoryPath = getArgValue(args, "--context-history") ?? "data/gazi-context-history.json";
   const outPath = getArgValue(args, "--out") ?? "data/gazi-feature-breakdown.json";
   const payload = buildFeatureBreakdown({
     readiness: await readJson(readinessPath),
-    participation: await readJson(participationPath)
+    participation: await readJson(participationPath),
+    contextHistory: await readOptionalJson(contextHistoryPath)
   });
 
   await mkdir(dirname(outPath), { recursive: true });

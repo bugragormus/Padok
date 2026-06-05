@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-06-05T22:16:07.126Z",
+  "generatedAt": "2026-06-05T22:22:16.881Z",
   "name": "Padok Static API",
   "version": "0.1.0",
   "description": "GitHub Pages üzerinden yayınlanan Padok veri ve analiz artifact katalogu.",
@@ -12,6 +12,7 @@
     "modelTopPickPodiumRate": 67,
     "modelWinnerTopThreeRate": 50,
     "candidateComparisonCount": 4,
+    "contextHistoryEntityCount": 403,
     "featureBreakdownRunnerCount": 22,
     "signalCalibrationSeasonCount": 6,
     "raceDayCoreCount": 4
@@ -85,6 +86,18 @@
       "schema": [
         "summary",
         "candidates",
+        "methodology"
+      ]
+    },
+    {
+      "id": "context-history",
+      "path": "data/gazi-context-history.json",
+      "description": "Tamamlanmış Gazi sezonlarından jokey, sahip, baba, anne ve anne-baba entity context istatistikleri.",
+      "freshness": "Yıllık participation raporları sonrası yeniden üretilir.",
+      "schema": [
+        "summary",
+        "entities",
+        "byType",
         "methodology"
       ]
     },
@@ -168,6 +181,7 @@
       "manifest",
       "decision-brief",
       "candidate-comparison",
+      "context-history",
       "feature-breakdown",
       "signal-calibration",
       "race-day-watchlist",

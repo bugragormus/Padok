@@ -16,6 +16,7 @@ test("Padok MCP server exposes static API artifacts as resources", async () => {
   assert.ok(resources.some((resource) => resource.uri === "padok://endpoint/readiness-report"));
   assert.ok(resources.some((resource) => resource.uri === "padok://endpoint/decision-brief"));
   assert.ok(resources.some((resource) => resource.uri === "padok://endpoint/candidate-comparison"));
+  assert.ok(resources.some((resource) => resource.uri === "padok://endpoint/context-history"));
   assert.ok(resources.some((resource) => resource.uri === "padok://endpoint/feature-breakdown"));
   assert.ok(resources.some((resource) => resource.uri === "padok://endpoint/signal-calibration"));
   assert.ok(resources.some((resource) => resource.uri === "padok://endpoint/race-day-watchlist"));
@@ -69,6 +70,7 @@ test("Padok MCP tools return model summary and top candidates", async () => {
   assert.ok(tools.some((tool) => tool.name === "padok.model_summary"));
   assert.ok(tools.some((tool) => tool.name === "padok.decision_brief"));
   assert.ok(tools.some((tool) => tool.name === "padok.candidate_comparison"));
+  assert.ok(tools.some((tool) => tool.name === "padok.context_history"));
   assert.ok(tools.some((tool) => tool.name === "padok.feature_breakdown"));
   assert.ok(tools.some((tool) => tool.name === "padok.signal_calibration"));
   assert.ok(tools.some((tool) => tool.name === "padok.race_day_watchlist"));
@@ -103,6 +105,15 @@ test("Padok MCP tools return model summary and top candidates", async () => {
   assert.equal(featureBreakdown.profiles.length, 1);
   assert.equal(featureBreakdown.profiles[0].horseName, "SPECIAL MAN");
   assert.ok(featureBreakdown.profiles[0].groups.horsePerformance.score > 0);
+
+  const contextResult = await callPadokTool(apiIndex, "padok.context_history", {
+    entityType: "jockey",
+    limit: 2
+  });
+  const context = JSON.parse(contextResult.content[0].text);
+
+  assert.equal(context.entities.length, 2);
+  assert.equal(context.entities[0].entityType, "jockey");
 
   const calibrationResult = await callPadokTool(apiIndex, "padok.signal_calibration", {
     limit: 2

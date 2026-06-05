@@ -38,6 +38,7 @@ test("buildDataManifest indexes yearly route participation and readiness artifac
   assert.equal(manifest.defaultReports.readiness, "data/gazi-readiness-report.json");
   assert.equal(manifest.defaultReports.decisionBrief, "data/gazi-decision-brief.json");
   assert.equal(manifest.defaultReports.candidateComparison, "data/gazi-candidate-comparison.json");
+  assert.equal(manifest.defaultReports.contextHistory, "data/gazi-context-history.json");
   assert.equal(manifest.defaultReports.featureBreakdown, "data/gazi-feature-breakdown.json");
   assert.equal(manifest.defaultReports.raceDayWatchlist, "data/gazi-race-day-watchlist.json");
   assert.equal(manifest.defaultReports.signalCalibration, "data/gazi-signal-calibration.json");

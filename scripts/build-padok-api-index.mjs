@@ -23,7 +23,7 @@ const endpoint = ({ id, path, description, freshness, schema }) => ({
   schema
 });
 
-export const buildApiIndex = ({ manifest, modelBacktest, candidateComparison, featureBreakdown, signalCalibration, raceDayWatchlist }) => {
+export const buildApiIndex = ({ manifest, modelBacktest, candidateComparison, contextHistory, featureBreakdown, signalCalibration, raceDayWatchlist }) => {
   const defaultReports = manifest?.defaultReports ?? {};
 
   return {
@@ -40,6 +40,7 @@ export const buildApiIndex = ({ manifest, modelBacktest, candidateComparison, fe
       modelTopPickPodiumRate: modelBacktest?.summary?.topPickPodiumRate ?? null,
       modelWinnerTopThreeRate: modelBacktest?.summary?.winnerTopThreeRate ?? null,
       candidateComparisonCount: candidateComparison?.summary?.candidateCount ?? null,
+      contextHistoryEntityCount: contextHistory?.summary?.entityCount ?? null,
       featureBreakdownRunnerCount: featureBreakdown?.summary?.runnerCount ?? null,
       signalCalibrationSeasonCount: signalCalibration?.summary?.completedSeasonCount ?? null,
       raceDayCoreCount: raceDayWatchlist?.summary?.coreCount ?? null
@@ -86,6 +87,13 @@ export const buildApiIndex = ({ manifest, modelBacktest, candidateComparison, fe
         description: "Öne çıkan Gazi adaylarının readiness, rota, jokey, soy hattı, sahip, güçlü taraf ve dikkat sinyali karşılaştırması.",
         freshness: "Decision brief ve readiness sonrası yeniden üretilir.",
         schema: ["summary", "candidates", "methodology"]
+      }),
+      endpoint({
+        id: "context-history",
+        path: defaultReports.contextHistory ?? "data/gazi-context-history.json",
+        description: "Tamamlanmış Gazi sezonlarından jokey, sahip, baba, anne ve anne-baba entity context istatistikleri.",
+        freshness: "Yıllık participation raporları sonrası yeniden üretilir.",
+        schema: ["summary", "entities", "byType", "methodology"]
       }),
       endpoint({
         id: "feature-breakdown",
@@ -135,6 +143,7 @@ export const buildApiIndex = ({ manifest, modelBacktest, candidateComparison, fe
         "manifest",
         "decision-brief",
         "candidate-comparison",
+        "context-history",
         "feature-breakdown",
         "signal-calibration",
         "race-day-watchlist",
@@ -152,6 +161,7 @@ const main = async () => {
   const manifestPath = getArgValue(args, "--manifest") ?? "data/padok-data-manifest.json";
   const modelBacktestPath = getArgValue(args, "--model-backtest") ?? "data/gazi-model-backtest.json";
   const candidateComparisonPath = getArgValue(args, "--candidate-comparison") ?? "data/gazi-candidate-comparison.json";
+  const contextHistoryPath = getArgValue(args, "--context-history") ?? "data/gazi-context-history.json";
   const featureBreakdownPath = getArgValue(args, "--feature-breakdown") ?? "data/gazi-feature-breakdown.json";
   const signalCalibrationPath = getArgValue(args, "--signal-calibration") ?? "data/gazi-signal-calibration.json";
   const raceDayWatchlistPath = getArgValue(args, "--race-day-watchlist") ?? "data/gazi-race-day-watchlist.json";
@@ -160,6 +170,7 @@ const main = async () => {
     manifest: await readOptionalJson(manifestPath),
     modelBacktest: await readOptionalJson(modelBacktestPath),
     candidateComparison: await readOptionalJson(candidateComparisonPath),
+    contextHistory: await readOptionalJson(contextHistoryPath),
     featureBreakdown: await readOptionalJson(featureBreakdownPath),
     signalCalibration: await readOptionalJson(signalCalibrationPath),
     raceDayWatchlist: await readOptionalJson(raceDayWatchlistPath)
@@ -172,6 +183,7 @@ const main = async () => {
     endpointCount: payload.endpoints.length,
     modelBacktestSeasonCount: payload.summary.modelBacktestSeasonCount,
     candidateComparisonCount: payload.summary.candidateComparisonCount,
+    contextHistoryEntityCount: payload.summary.contextHistoryEntityCount,
     featureBreakdownRunnerCount: payload.summary.featureBreakdownRunnerCount,
     signalCalibrationSeasonCount: payload.summary.signalCalibrationSeasonCount,
     raceDayCoreCount: payload.summary.raceDayCoreCount

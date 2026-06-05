@@ -126,6 +126,26 @@ export const buildToolList = () => [
     }
   },
   {
+    name: "padok.context_history",
+    description: "Return historical context stats for jockey, owner, sire, dam, and damsire entities.",
+    inputSchema: {
+      type: "object",
+      properties: {
+        entityType: {
+          type: "string",
+          enum: ["jockey", "owner", "sire", "dam", "damsire"]
+        },
+        limit: {
+          type: "integer",
+          minimum: 1,
+          maximum: 50,
+          default: 10
+        }
+      },
+      additionalProperties: false
+    }
+  },
+  {
     name: "padok.race_day_watchlist",
     description: "Return race-day Gazi watchlist groups: core contenders, upside watch, risk flags, and data checklist.",
     inputSchema: {
@@ -219,6 +239,19 @@ export const callPadokTool = async (apiIndex, name, args = {}) => {
     return asContent({
       ...breakdown,
       profiles
+    });
+  }
+
+  if (name === "padok.context_history") {
+    const context = await readEndpointJson(apiIndex, "context-history");
+    const limit = clampLimit(args.limit, 10);
+    const entities = args.entityType
+      ? (context.byType?.[args.entityType] ?? []).slice(0, limit)
+      : (context.entities ?? []).slice(0, limit);
+
+    return asContent({
+      ...context,
+      entities
     });
   }
 
