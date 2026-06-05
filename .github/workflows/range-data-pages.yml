@@ -1,0 +1,90 @@
+name: Deploy Expanded Gazi Data
+
+on:
+  workflow_dispatch:
+    inputs:
+      start_year:
+        description: "First Gazi season to refresh"
+        required: true
+        default: "2015"
+      end_year:
+        description: "Last Gazi season to refresh"
+        required: true
+        default: "2026"
+      default_year:
+        description: "Season selected as the default app report"
+        required: true
+        default: "2026"
+      race_index_pages:
+        description: "TJK race index pages per season"
+        required: true
+        default: "20"
+      named_race_pages:
+        description: "TJK named race pages to scan"
+        required: true
+        default: "120"
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  refresh-and-deploy:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+
+      - name: Install SQLite
+        run: sudo apt-get update && sudo apt-get install -y sqlite3
+
+      - name: Run tests
+        run: npm test
+
+      - name: Initialize runtime database
+        run: |
+          mkdir -p data/raw data/processed
+          sqlite3 data/padok.sqlite < db/schema.sql
+
+      - name: Refresh expanded Gazi data range
+        run: |
+          npm run refresh:gazi-range -- \
+            --start-year "${{ inputs.start_year }}" \
+            --end-year "${{ inputs.end_year }}" \
+            --default-year "${{ inputs.default_year }}" \
+            --race-index-pages "${{ inputs.race_index_pages }}" \
+            --named-race-pages "${{ inputs.named_race_pages }}"
+
+      - name: Prepare static site
+        run: |
+          mkdir -p dist/assets dist/data dist/scripts
+          cp index.html app.js styles.css .nojekyll dist/
+          cp assets/* dist/assets/
+          cp scripts/readiness-model.mjs dist/scripts/
+          cp data/gazi-knowledge-base.json data/gazi-route-report.json data/gazi-route-*.json data/gazi-backtest-report.json data/gazi-model-backtest.json data/gazi-participation-report.json data/gazi-participation-*.json data/gazi-readiness-report.json data/gazi-readiness-*.json data/gazi-data-horizon.json data/padok-data-manifest.json data/gazi-range-refresh-log.json dist/data/
+
+      - name: Configure Pages
+        uses: actions/configure-pages@v5
+
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: "dist"
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4

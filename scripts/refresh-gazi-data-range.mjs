@@ -18,14 +18,18 @@ const runCommand = (command, args) => {
 const runNpmScript = (scriptName, args) => {
   const output = runCommand("npm", ["run", scriptName, "--", ...args]);
   const lines = output.trim().split("\n").filter(Boolean);
-  const lastJsonLine = [...lines].reverse().find((line) => line.trim().startsWith("{"));
-  if (!lastJsonLine) return { rawOutput: output };
 
-  try {
-    return JSON.parse(lines.slice(lines.indexOf(lastJsonLine)).join("\n"));
-  } catch {
-    return { rawOutput: output };
+  for (let index = lines.length - 1; index >= 0; index -= 1) {
+    if (!lines[index].trim().startsWith("{")) continue;
+
+    try {
+      return JSON.parse(lines.slice(index).join("\n"));
+    } catch {
+      // Keep scanning earlier lines; npm scripts may print multiple JSON blocks.
+    }
   }
+
+  return { rawOutput: output };
 };
 
 const toDisplayDate = (year, month, day) => `${String(day).padStart(2, "0")}.${String(month).padStart(2, "0")}.${year}`;
