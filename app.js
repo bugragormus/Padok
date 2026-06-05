@@ -1459,6 +1459,81 @@ const renderActiveFilterBar = (filteredRows, totalRows) => {
   `;
 };
 
+const averageRounded = (values) => {
+  const numericValues = values.filter(Number.isFinite);
+  if (!numericValues.length) return null;
+  return Math.round(numericValues.reduce((sum, value) => sum + value, 0) / numericValues.length);
+};
+
+const renderFilteredGroupSummary = (filteredRows, report, tableColumns) => {
+  const container = document.querySelector("#filtered-group-summary");
+  if (!container) return;
+
+  const activeFilters = getActiveParticipationFilters();
+  if (!activeFilters.length) {
+    container.innerHTML = "";
+    return;
+  }
+
+  if (!filteredRows.length) {
+    container.innerHTML = `
+      <article class="filtered-group-summary__empty">
+        <span>Filtre grubu</span>
+        <strong>Eşleşen at yok</strong>
+        <p>Bu filtre kombinasyonu için Gazi koşucusu bulunamadı. Filtreleri temizleyip daha geniş bir gruba bakabilirsin.</p>
+      </article>
+    `;
+    return;
+  }
+
+  const prepColumns = tableColumns.filter((column) => !column.isTarget);
+  const profiles = filteredRows.map((row) => {
+    const historicalMatches = getHistoricalProfileMatches(row, report);
+    const profileSummary = summarizeProfileMatches(historicalMatches);
+    const readiness = getReadinessAssessment(row, tableColumns, profileSummary);
+    const routeVisibility = getRouteVisibility(row, prepColumns);
+
+    return {
+      row,
+      profileSummary,
+      readiness,
+      routeVisibility
+    };
+  });
+  const topReadiness = [...profiles].sort((a, b) => b.readiness.score - a.readiness.score || b.readiness.confidence - a.readiness.confidence)[0];
+  const topUpside = [...profiles].sort((a, b) => b.readiness.upside - a.readiness.upside || b.readiness.score - a.readiness.score)[0];
+  const noPrepCount = filteredRows.filter((row) => row.prepStartCount === 0).length;
+  const prepWinnerCount = filteredRows.filter((row) => row.bestPrepFinishPosition === 1).length;
+  const averageReadiness = averageRounded(profiles.map((profile) => profile.readiness.score));
+  const averageRouteVisibility = averageRounded(profiles.map((profile) => profile.routeVisibility.score));
+  const topNames = profiles
+    .sort((a, b) => b.readiness.score - a.readiness.score || b.profileSummary.count - a.profileSummary.count)
+    .slice(0, 3)
+    .map((profile) => profile.row.horseName);
+
+  container.innerHTML = `
+    <article class="filtered-group-summary__intro">
+      <span>Filtre grubu</span>
+      <strong>${escapeHtml(filteredRows.length)} at · Ort. readiness ${escapeHtml(averageReadiness ?? "-")}</strong>
+      <p>${escapeHtml(topNames.length ? `Bu grupta öne çıkanlar: ${topNames.join(", ")}.` : "Bu grup için aday listesi bekleniyor.")}</p>
+    </article>
+    <div class="filtered-group-summary__metrics">
+      ${[
+        ["En yüksek readiness", topReadiness ? `${topReadiness.row.horseName} · ${topReadiness.readiness.score}` : "-"],
+        ["En yüksek upside", topUpside ? `${topUpside.row.horseName} · ${topUpside.readiness.upside}` : "-"],
+        ["Rota dışı", `${noPrepCount} at`],
+        ["Prep galibi", `${prepWinnerCount} at`],
+        ["Ort. rota görünürlüğü", averageRouteVisibility === null ? "-" : `%${averageRouteVisibility}`]
+      ].map(([label, value]) => `
+        <span>
+          <small>${escapeHtml(label)}</small>
+          <strong>${escapeHtml(value)}</strong>
+        </span>
+      `).join("")}
+    </div>
+  `;
+};
+
 const renderParticipationDetail = (report, tableColumns, rows = report.rows) => {
   const selectedRow = rows.find((row) => row.horseName === state.selectedParticipationHorse)
     ?? rows[0];
@@ -1640,6 +1715,7 @@ const renderParticipation = (report) => {
 
   const filteredRows = getFilteredParticipationRows(report.rows, tableColumns);
   renderActiveFilterBar(filteredRows, report.rows.length);
+  renderFilteredGroupSummary(filteredRows, report, tableColumns);
   renderParticipationDetail(report, tableColumns, filteredRows);
 
   document.querySelector("#participation-table").innerHTML = filteredRows.length
