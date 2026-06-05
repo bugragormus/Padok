@@ -1506,17 +1506,25 @@ const renderFilteredGroupSummary = (filteredRows, report, tableColumns) => {
   const prepWinnerCount = filteredRows.filter((row) => row.bestPrepFinishPosition === 1).length;
   const averageReadiness = averageRounded(profiles.map((profile) => profile.readiness.score));
   const averageRouteVisibility = averageRounded(profiles.map((profile) => profile.routeVisibility.score));
-  const topNames = profiles
+  const topProfiles = [...profiles]
     .sort((a, b) => b.readiness.score - a.readiness.score || b.profileSummary.count - a.profileSummary.count)
-    .slice(0, 3)
-    .map((profile) => profile.row.horseName);
+    .slice(0, 3);
 
   container.innerHTML = `
     <article class="filtered-group-summary__intro">
       <span>Filtre grubu</span>
       <strong>${escapeHtml(filteredRows.length)} at · Ort. readiness ${escapeHtml(averageReadiness ?? "-")}</strong>
-      <p>${escapeHtml(topNames.length ? `Bu grupta öne çıkanlar: ${topNames.join(", ")}.` : "Bu grup için aday listesi bekleniyor.")}</p>
+      <p>${escapeHtml(topProfiles.length ? "Bu gruptaki hızlı adayları doğrudan detayda inceleyebilirsin." : "Bu grup için aday listesi bekleniyor.")}</p>
     </article>
+    <div class="filtered-group-summary__candidates" aria-label="Filtreli grupta öne çıkan atlar">
+      ${topProfiles.map((profile) => `
+        <button class="filtered-candidate ${profile.row.horseName === state.selectedParticipationHorse ? "filtered-candidate--selected" : ""}" type="button" data-horse-name="${escapeHtml(profile.row.horseName)}" aria-pressed="${profile.row.horseName === state.selectedParticipationHorse}">
+          <strong>${escapeHtml(profile.row.horseName)}</strong>
+          <span>Readiness ${escapeHtml(profile.readiness.score)} · Upside ${escapeHtml(profile.readiness.upside)}</span>
+          <em>${escapeHtml(profile.routeVisibility.label)} · ${escapeHtml(profile.profileSummary.count)} geçmiş eşleşme</em>
+        </button>
+      `).join("")}
+    </div>
     <div class="filtered-group-summary__metrics">
       ${[
         ["En yüksek readiness", topReadiness ? `${topReadiness.row.horseName} · ${topReadiness.readiness.score}` : "-"],
@@ -1912,6 +1920,13 @@ const bindEvents = () => {
     state.participationFilter = "all";
     state.routeVisibilityFilter = "all";
     state.selectedParticipationHorse = null;
+    renderParticipation(state.participationReport);
+  });
+
+  document.querySelector("#filtered-group-summary").addEventListener("click", (event) => {
+    const row = event.target.closest("[data-horse-name]");
+    if (!row || !state.participationReport) return;
+    state.selectedParticipationHorse = row.dataset.horseName;
     renderParticipation(state.participationReport);
   });
 };
