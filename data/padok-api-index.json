@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-06-05T17:01:50.394Z",
+  "generatedAt": "2026-06-05T17:06:44.874Z",
   "name": "Padok Static API",
   "version": "0.1.0",
   "description": "GitHub Pages üzerinden yayınlanan Padok veri ve analiz artifact katalogu.",
@@ -96,6 +96,8 @@
         "signals",
         "metrics",
         "missDiagnostics",
+        "weightRecommendations",
+        "whatIfSimulation",
         "methodology"
       ]
     },

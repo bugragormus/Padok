@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-06-05T17:01:45.620Z",
+  "generatedAt": "2026-06-05T17:06:18.051Z",
   "summary": {
     "completedSeasonCount": 6,
     "runnerCount": 125,
@@ -235,8 +235,214 @@
       ]
     }
   ],
+  "weightRecommendations": {
+    "summary": {
+      "increaseCount": 0,
+      "decreaseCount": 2,
+      "keepCount": 4,
+      "strongestIncrease": null,
+      "strongestDecrease": "prep formu"
+    },
+    "recommendations": [
+      {
+        "label": "prep formu",
+        "modelPart": "prepForm",
+        "currentMax": 28,
+        "direction": "decrease",
+        "suggestedDelta": -2,
+        "suggestedMax": 26,
+        "confidence": "high",
+        "reason": "prep formu model kaçırmalarında lider lehine sık büyüyor; ağırlık azaltılıp sürpriz profiller korunmalı."
+      },
+      {
+        "label": "profil kanıtı",
+        "modelPart": "profileEvidence",
+        "currentMax": 30,
+        "direction": "decrease",
+        "suggestedDelta": -2,
+        "suggestedMax": 28,
+        "confidence": "medium",
+        "reason": "profil kanıtı model kaçırmalarında lider lehine sık büyüyor; ağırlık azaltılıp sürpriz profiller korunmalı."
+      },
+      {
+        "label": "rota şekli",
+        "modelPart": "routeShape",
+        "currentMax": 18,
+        "direction": "keep",
+        "suggestedDelta": 0,
+        "suggestedMax": 18,
+        "confidence": "high",
+        "reason": "rota şekli için ayrım sınırlı veya örneklem düşük; ağırlık şimdilik korunmalı."
+      },
+      {
+        "label": "jokey sürekliliği",
+        "modelPart": "continuity",
+        "currentMax": 13,
+        "direction": "keep",
+        "suggestedDelta": 0,
+        "suggestedMax": 13,
+        "confidence": "high",
+        "reason": "jokey sürekliliği için ayrım sınırlı veya örneklem düşük; ağırlık şimdilik korunmalı."
+      },
+      {
+        "label": "aktör geçmişi",
+        "modelPart": "actorSignal",
+        "currentMax": 12,
+        "direction": "keep",
+        "suggestedDelta": 0,
+        "suggestedMax": 12,
+        "confidence": "medium",
+        "reason": "aktör geçmişi için ayrım sınırlı veya örneklem düşük; ağırlık şimdilik korunmalı."
+      },
+      {
+        "label": "veri derinliği",
+        "modelPart": "dataDepth",
+        "currentMax": 10,
+        "direction": "keep",
+        "suggestedDelta": 0,
+        "suggestedMax": 10,
+        "confidence": "high",
+        "reason": "veri derinliği için ayrım sınırlı veya örneklem düşük; ağırlık şimdilik korunmalı."
+      }
+    ]
+  },
+  "whatIfSimulation": {
+    "baseline": {
+      "seasonCount": 6,
+      "topPickPodiumRate": 67,
+      "topPickWinRate": 33,
+      "averageWinnerScoreRank": 8.3,
+      "averageTopThreeOverlap": 1.3,
+      "seasons": [
+        {
+          "year": 2020,
+          "topPickName": "CALL TO VICTORY",
+          "topPickFinish": 1,
+          "topPickPodium": true,
+          "topPickWon": true,
+          "winnerScoreRank": 1,
+          "topThreeOverlap": 1
+        },
+        {
+          "year": 2021,
+          "topPickName": "REAL RUNNER",
+          "topPickFinish": 2,
+          "topPickPodium": true,
+          "topPickWon": false,
+          "winnerScoreRank": 3,
+          "topThreeOverlap": 2
+        },
+        {
+          "year": 2022,
+          "topPickName": "SECRET POWER",
+          "topPickFinish": 1,
+          "topPickPodium": true,
+          "topPickWon": true,
+          "winnerScoreRank": 1,
+          "topThreeOverlap": 2
+        },
+        {
+          "year": 2023,
+          "topPickName": "GENERAL BRIELLA",
+          "topPickFinish": 13,
+          "topPickPodium": false,
+          "topPickWon": false,
+          "winnerScoreRank": 19,
+          "topThreeOverlap": 1
+        },
+        {
+          "year": 2024,
+          "topPickName": "MADRAS",
+          "topPickFinish": 15,
+          "topPickPodium": false,
+          "topPickWon": false,
+          "winnerScoreRank": 17,
+          "topThreeOverlap": 0
+        },
+        {
+          "year": 2025,
+          "topPickName": "SPECIAL MAN",
+          "topPickFinish": 3,
+          "topPickPodium": true,
+          "topPickWon": false,
+          "winnerScoreRank": 9,
+          "topThreeOverlap": 2
+        }
+      ]
+    },
+    "adjusted": {
+      "seasonCount": 6,
+      "topPickPodiumRate": 67,
+      "topPickWinRate": 33,
+      "averageWinnerScoreRank": 8.3,
+      "averageTopThreeOverlap": 1.3,
+      "seasons": [
+        {
+          "year": 2020,
+          "topPickName": "CALL TO VICTORY",
+          "topPickFinish": 1,
+          "topPickPodium": true,
+          "topPickWon": true,
+          "winnerScoreRank": 1,
+          "topThreeOverlap": 1
+        },
+        {
+          "year": 2021,
+          "topPickName": "REAL RUNNER",
+          "topPickFinish": 2,
+          "topPickPodium": true,
+          "topPickWon": false,
+          "winnerScoreRank": 3,
+          "topThreeOverlap": 2
+        },
+        {
+          "year": 2022,
+          "topPickName": "SECRET POWER",
+          "topPickFinish": 1,
+          "topPickPodium": true,
+          "topPickWon": true,
+          "winnerScoreRank": 1,
+          "topThreeOverlap": 2
+        },
+        {
+          "year": 2023,
+          "topPickName": "GENERAL BRIELLA",
+          "topPickFinish": 13,
+          "topPickPodium": false,
+          "topPickWon": false,
+          "winnerScoreRank": 19,
+          "topThreeOverlap": 1
+        },
+        {
+          "year": 2024,
+          "topPickName": "MADRAS",
+          "topPickFinish": 15,
+          "topPickPodium": false,
+          "topPickWon": false,
+          "winnerScoreRank": 17,
+          "topThreeOverlap": 0
+        },
+        {
+          "year": 2025,
+          "topPickName": "SPECIAL MAN",
+          "topPickFinish": 3,
+          "topPickPodium": true,
+          "topPickWon": false,
+          "winnerScoreRank": 9,
+          "topThreeOverlap": 2
+        }
+      ]
+    },
+    "delta": {
+      "topPickPodiumRate": 0,
+      "topPickWinRate": 0,
+      "averageWinnerScoreRank": 0,
+      "averageTopThreeOverlap": 0
+    },
+    "note": "What-if simülasyonu önerilen ağırlık deltalarını mevcut skor parçalarına oransal uygular; gerçek model değişikliği değildir."
+  },
   "methodology": {
     "note": "Signal calibration, tamamlanmış sezonlarda readiness parça puanlarının Gazi podyumu ve kazanan profilleriyle ilişkisini özetler.",
-    "limitation": "Örneklem küçük olduğu için bu rapor otomatik ağırlık değiştirmez; ağırlık kararları için yön gösterir."
+    "limitation": "Örneklem küçük olduğu için bu rapor otomatik ağırlık değiştirmez; önerilen ağırlıklar manuel inceleme ve backtest sonrası uygulanmalıdır."
   }
 }

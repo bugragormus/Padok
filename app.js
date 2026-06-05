@@ -548,6 +548,8 @@ const renderSignalCalibration = (report) => {
 
   const signals = (report.signals ?? []).slice(0, 4);
   const missDiagnostics = (report.missDiagnostics ?? []).slice(0, 3);
+  const recommendations = (report.weightRecommendations?.recommendations ?? []).slice(0, 4);
+  const simulation = report.whatIfSimulation ?? null;
 
   container.innerHTML = `
     <div class="signal-calibration" aria-label="Model sinyal kalibrasyonu">
@@ -574,6 +576,33 @@ const renderSignalCalibration = (report) => {
             <span>
               <strong>${escapeHtml(miss.year)} · ${escapeHtml(miss.winnerName)}</strong>
               <em>Kazanan ana skorda ${escapeHtml(miss.winnerScoreRank)}. sıradaydı; en büyük fark ${escapeHtml(miss.largestGaps?.[0]?.label ?? "-")} sinyalinde.</em>
+            </span>
+          `).join("")}
+        </div>
+      ` : ""}
+      ${recommendations.length ? `
+        <div class="signal-calibration__weights" aria-label="Ağırlık önerileri">
+          ${recommendations.map((recommendation) => `
+            <span class="signal-weight signal-weight--${escapeHtml(recommendation.direction)}">
+              <strong>${escapeHtml(recommendation.label)}</strong>
+              <em>${escapeHtml(recommendation.direction === "increase" ? "Artır" : recommendation.direction === "decrease" ? "Azalt" : "Koru")} · ${escapeHtml(recommendation.suggestedDelta > 0 ? `+${recommendation.suggestedDelta}` : recommendation.suggestedDelta)}</em>
+              <small>${escapeHtml(recommendation.reason)}</small>
+            </span>
+          `).join("")}
+        </div>
+      ` : ""}
+      ${simulation ? `
+        <div class="signal-calibration__simulation" aria-label="Ağırlık simülasyonu">
+          ${[
+            ["Top aday ilk 3", `${simulation.baseline.topPickPodiumRate}%`, `${simulation.adjusted.topPickPodiumRate}%`, simulation.delta.topPickPodiumRate],
+            ["Top aday kazandı", `${simulation.baseline.topPickWinRate}%`, `${simulation.adjusted.topPickWinRate}%`, simulation.delta.topPickWinRate],
+            ["Kazanan ort. sıra", simulation.baseline.averageWinnerScoreRank, simulation.adjusted.averageWinnerScoreRank, simulation.delta.averageWinnerScoreRank],
+            ["İlk 3 örtüşme", simulation.baseline.averageTopThreeOverlap, simulation.adjusted.averageTopThreeOverlap, simulation.delta.averageTopThreeOverlap]
+          ].map(([label, before, after, delta]) => `
+            <span>
+              <small>${escapeHtml(label)}</small>
+              <strong>${escapeHtml(before)} → ${escapeHtml(after)}</strong>
+              <em>${escapeHtml(Number(delta) > 0 ? `+${delta}` : delta)}</em>
             </span>
           `).join("")}
         </div>

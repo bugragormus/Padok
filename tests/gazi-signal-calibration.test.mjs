@@ -71,4 +71,9 @@ test("buildSignalCalibration summarizes signal separation and miss diagnostics",
   assert.equal(payload.missDiagnostics.length, 1);
   assert.equal(payload.missDiagnostics[0].winnerName, "WINNER");
   assert.equal(payload.missDiagnostics[0].largestGaps[0].label, "prep formu");
+  assert.equal(payload.weightRecommendations.summary.increaseCount, 1);
+  assert.ok(payload.weightRecommendations.recommendations.some((recommendation) => recommendation.label === "profil kanıtı" && recommendation.direction === "increase"));
+  assert.equal(payload.whatIfSimulation.baseline.seasonCount, 1);
+  assert.equal(payload.whatIfSimulation.adjusted.seasonCount, 1);
+  assert.ok(Number.isFinite(payload.whatIfSimulation.delta.topPickPodiumRate));
 });

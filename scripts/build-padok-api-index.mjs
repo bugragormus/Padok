@@ -90,7 +90,7 @@ export const buildApiIndex = ({ manifest, modelBacktest, candidateComparison, si
         path: defaultReports.signalCalibration ?? "data/gazi-signal-calibration.json",
         description: "Readiness parça puanlarının geçmiş Gazi podyum/kazanan ayrımı ve model kaçırma davranışı üzerindeki kalibrasyon özeti.",
         freshness: "Yıllık readiness raporları ve model backtest sonrası yeniden üretilir.",
-        schema: ["summary", "signals", "metrics", "missDiagnostics", "methodology"]
+        schema: ["summary", "signals", "metrics", "missDiagnostics", "weightRecommendations", "whatIfSimulation", "methodology"]
       }),
       endpoint({
         id: "model-backtest",

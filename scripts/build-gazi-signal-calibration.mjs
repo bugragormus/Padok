@@ -119,11 +119,160 @@ const buildMissDiagnostics = (readinessReports) => {
     });
 };
 
+const signalWeightDirections = {
+  "prep formu": {
+    currentMax: 28,
+    modelPart: "prepForm"
+  },
+  "profil kanıtı": {
+    currentMax: 30,
+    modelPart: "profileEvidence"
+  },
+  "rota şekli": {
+    currentMax: 18,
+    modelPart: "routeShape"
+  },
+  "jokey sürekliliği": {
+    currentMax: 13,
+    modelPart: "continuity"
+  },
+  "veri derinliği": {
+    currentMax: 10,
+    modelPart: "dataDepth"
+  },
+  "aktör geçmişi": {
+    currentMax: 12,
+    modelPart: "actorSignal"
+  }
+};
+
+const recommendationForSignal = (signal, missDiagnostics) => {
+  const config = signalWeightDirections[signal.label] ?? {};
+  const repeatedMissGapCount = missDiagnostics.filter((miss) => {
+    return (miss.largestGaps ?? []).some((gap) => gap.label === signal.label && gap.gap >= 8);
+  }).length;
+  const separation = signal.separation ?? 0;
+  const confidence = signal.overallPresenceRate >= 80 ? "high" : signal.overallPresenceRate >= 45 ? "medium" : "low";
+  const direction = separation >= 4 && repeatedMissGapCount <= 1
+    ? "increase"
+    : separation <= -2 || repeatedMissGapCount >= 2
+      ? "decrease"
+      : "keep";
+  const delta = direction === "increase"
+    ? Math.min(4, Math.max(1, Math.round(separation / 2)))
+    : direction === "decrease"
+      ? -Math.min(4, Math.max(1, repeatedMissGapCount || Math.round(Math.abs(separation) / 2)))
+      : 0;
+
+  return {
+    label: signal.label,
+    modelPart: config.modelPart ?? signal.label,
+    currentMax: config.currentMax ?? null,
+    direction,
+    suggestedDelta: delta,
+    suggestedMax: Number.isFinite(config.currentMax) ? Math.max(0, config.currentMax + delta) : null,
+    confidence,
+    reason: direction === "increase"
+      ? `${signal.label} podyum profillerinde +${signal.separation} ayrışıyor; ağırlık kontrollü artırılabilir.`
+      : direction === "decrease"
+        ? repeatedMissGapCount >= 2
+          ? `${signal.label} model kaçırmalarında lider lehine sık büyüyor; ağırlık azaltılıp sürpriz profiller korunmalı.`
+          : `${signal.label} podyum dışı profillerde daha yüksek; ağırlık dikkatle azaltılmalı.`
+        : `${signal.label} için ayrım sınırlı veya örneklem düşük; ağırlık şimdilik korunmalı.`
+  };
+};
+
+const buildWeightRecommendations = (signals, missDiagnostics) => {
+  const recommendations = signals.map((signal) => recommendationForSignal(signal, missDiagnostics));
+  const actionCounts = recommendations.reduce((counts, recommendation) => {
+    counts[recommendation.direction] = (counts[recommendation.direction] ?? 0) + 1;
+    return counts;
+  }, {});
+
+  return {
+    summary: {
+      increaseCount: actionCounts.increase ?? 0,
+      decreaseCount: actionCounts.decrease ?? 0,
+      keepCount: actionCounts.keep ?? 0,
+      strongestIncrease: recommendations.find((recommendation) => recommendation.direction === "increase")?.label ?? null,
+      strongestDecrease: recommendations.find((recommendation) => recommendation.direction === "decrease")?.label ?? null
+    },
+    recommendations
+  };
+};
+
+const adjustedScoreForRow = (row, recommendations) => {
+  const delta = recommendations.reduce((sum, recommendation) => {
+    if (!Number.isFinite(recommendation.currentMax) || recommendation.currentMax <= 0) return sum;
+    const partValue = row.parts[recommendation.label] ?? 0;
+    return sum + (recommendation.suggestedDelta * (partValue / recommendation.currentMax));
+  }, 0);
+
+  return Math.min(100, Math.max(0, Math.round(((row.score ?? 0) + delta) * 10) / 10));
+};
+
+const rankRows = (rows, scoreKey) => {
+  return [...rows].sort((a, b) => (b[scoreKey] ?? 0) - (a[scoreKey] ?? 0) || (a.finishPosition ?? 99) - (b.finishPosition ?? 99));
+};
+
+const summarizeRankingSimulation = (seasonRows, scoreKey) => {
+  const seasons = [...new Set(seasonRows.map((row) => row.year))].sort((a, b) => a - b);
+  const seasonSummaries = seasons.map((year) => {
+    const ranked = rankRows(seasonRows.filter((row) => row.year === year), scoreKey);
+    const topPick = ranked[0] ?? null;
+    const winnerIndex = ranked.findIndex((row) => row.isWinner);
+    const topThreeOverlap = ranked.slice(0, 3).filter((row) => row.isPodium).length;
+
+    return {
+      year,
+      topPickName: topPick?.horseName ?? null,
+      topPickFinish: topPick?.finishPosition ?? null,
+      topPickPodium: Number.isFinite(topPick?.finishPosition) && topPick.finishPosition <= 3,
+      topPickWon: topPick?.finishPosition === 1,
+      winnerScoreRank: winnerIndex === -1 ? null : winnerIndex + 1,
+      topThreeOverlap
+    };
+  });
+
+  return {
+    seasonCount: seasonSummaries.length,
+    topPickPodiumRate: percentage(seasonSummaries.filter((season) => season.topPickPodium).length, seasonSummaries.length),
+    topPickWinRate: percentage(seasonSummaries.filter((season) => season.topPickWon).length, seasonSummaries.length),
+    averageWinnerScoreRank: average(seasonSummaries.map((season) => season.winnerScoreRank)),
+    averageTopThreeOverlap: average(seasonSummaries.map((season) => season.topThreeOverlap)),
+    seasons: seasonSummaries
+  };
+};
+
+const buildWhatIfSimulation = (rows, recommendations) => {
+  const simulatedRows = rows.map((row) => ({
+    ...row,
+    adjustedScore: adjustedScoreForRow(row, recommendations)
+  }));
+  const baseline = summarizeRankingSimulation(rows, "score");
+  const adjusted = summarizeRankingSimulation(simulatedRows, "adjustedScore");
+
+  return {
+    baseline,
+    adjusted,
+    delta: {
+      topPickPodiumRate: adjusted.topPickPodiumRate - baseline.topPickPodiumRate,
+      topPickWinRate: adjusted.topPickWinRate - baseline.topPickWinRate,
+      averageWinnerScoreRank: Math.round(((adjusted.averageWinnerScoreRank ?? 0) - (baseline.averageWinnerScoreRank ?? 0)) * 10) / 10,
+      averageTopThreeOverlap: Math.round(((adjusted.averageTopThreeOverlap ?? 0) - (baseline.averageTopThreeOverlap ?? 0)) * 10) / 10
+    },
+    note: "What-if simülasyonu önerilen ağırlık deltalarını mevcut skor parçalarına oransal uygular; gerçek model değişikliği değildir."
+  };
+};
+
 export const buildSignalCalibration = (readinessReports) => {
   const rows = completedRows(readinessReports);
   const completedSeasonCount = new Set(rows.map((row) => row.year)).size;
   const podiumRows = rows.filter((row) => row.isPodium);
   const signals = buildSignalRows(rows);
+  const missDiagnostics = buildMissDiagnostics(readinessReports);
+  const weightRecommendations = buildWeightRecommendations(signals, missDiagnostics);
+  const whatIfSimulation = buildWhatIfSimulation(rows, weightRecommendations.recommendations);
 
   return {
     generatedAt: new Date().toISOString(),
@@ -136,10 +285,12 @@ export const buildSignalCalibration = (readinessReports) => {
     },
     signals,
     metrics: buildMetricRows(rows),
-    missDiagnostics: buildMissDiagnostics(readinessReports),
+    missDiagnostics,
+    weightRecommendations,
+    whatIfSimulation,
     methodology: {
       note: "Signal calibration, tamamlanmış sezonlarda readiness parça puanlarının Gazi podyumu ve kazanan profilleriyle ilişkisini özetler.",
-      limitation: "Örneklem küçük olduğu için bu rapor otomatik ağırlık değiştirmez; ağırlık kararları için yön gösterir."
+      limitation: "Örneklem küçük olduğu için bu rapor otomatik ağırlık değiştirmez; önerilen ağırlıklar manuel inceleme ve backtest sonrası uygulanmalıdır."
     }
   };
 };
@@ -163,7 +314,9 @@ const main = async () => {
     outPath,
     completedSeasonCount: payload.summary.completedSeasonCount,
     runnerCount: payload.summary.runnerCount,
-    strongestPositiveSignal: payload.summary.strongestPositiveSignal
+    strongestPositiveSignal: payload.summary.strongestPositiveSignal,
+    increaseCount: payload.weightRecommendations.summary.increaseCount,
+    decreaseCount: payload.weightRecommendations.summary.decreaseCount
   }, null, 2));
 };
 
