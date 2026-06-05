@@ -285,6 +285,7 @@ const renderReadinessArtifact = (report) => {
 
   const summary = report.summary ?? {};
   const quality = report.quality ?? {};
+  const calibration = report.calibration ?? null;
   const metrics = [
     ["Analiz yılı", report.sourceYear ?? "-"],
     ["Koşucu", summary.runnerCount ?? 0],
@@ -323,6 +324,40 @@ const renderReadinessArtifact = (report) => {
           <span>Artifact kalite kontrolünde kritik uyarı yok.</span>
         </div>
       `}
+      ${calibration?.state === "completed" ? `
+        <div class="artifact-calibration" aria-label="Readiness kalibrasyon özeti">
+          <div>
+            <small>Model kalibrasyonu</small>
+            <strong>Kazanan ${escapeHtml(calibration.winnerName ?? "-")} ana skorda ${escapeHtml(calibration.winnerScoreRank ?? "-")}. sıradaydı</strong>
+            <p>${escapeHtml(calibration.lesson ?? "Tamamlanan sezon model kalibrasyonu için kullanılıyor.")}</p>
+          </div>
+          <div class="artifact-calibration__metrics">
+            <span>
+              <small>Model lideri</small>
+              <b>${escapeHtml(calibration.topScoreHorse ?? "-")}</b>
+            </span>
+            <span>
+              <small>Lider sonucu</small>
+              <b>${escapeHtml(formatPosition(calibration.topScoreFinish))}</b>
+            </span>
+            <span>
+              <small>Kazanan farkı</small>
+              <b>${escapeHtml(calibration.winnerGap ?? 0)}</b>
+            </span>
+          </div>
+          ${calibration.missReasons?.length ? `
+            <div class="artifact-calibration__reasons">
+              ${calibration.missReasons.slice(0, 3).map((reason) => `<span>${escapeHtml(reason)}</span>`).join("")}
+            </div>
+          ` : ""}
+        </div>
+      ` : calibration?.state ? `
+        <div class="artifact-calibration artifact-calibration--pending" aria-label="Readiness kalibrasyon bekleme durumu">
+          <small>Model kalibrasyonu</small>
+          <strong>Gazi sonucu bekleniyor</strong>
+          <p>${escapeHtml(calibration.note ?? "Sonuç tamamlandığında kazanan farkı ve kaçırılan sinyaller hesaplanacak.")}</p>
+        </div>
+      ` : ""}
       <div class="artifact-rankings" aria-label="Readiness artifact ilk 3 listeleri">
         ${rankingLenses.map(([key, label]) => {
           const entries = report.rankings?.[key]?.slice(0, 3) ?? [];

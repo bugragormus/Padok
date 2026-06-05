@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-06-05T00:07:08.816Z",
+  "generatedAt": "2026-06-05T00:33:49.608Z",
   "summary": {
     "yearRange": "2020-2025",
     "yearCount": 6,
@@ -188,8 +188,8 @@
         "year": 2020,
         "type": "readiness",
         "path": "data/gazi-readiness-2020.json",
-        "generatedAt": "2026-06-04T17:21:55.412Z",
-        "sourceGeneratedAt": "2026-06-03T22:26:03.450Z",
+        "generatedAt": "2026-06-05T00:33:49.586Z",
+        "sourceGeneratedAt": "2026-06-05T00:07:08.802Z",
         "summary": {
           "analysisState": "field-available",
           "runnerCount": 15,
@@ -201,8 +201,8 @@
         "year": 2021,
         "type": "readiness",
         "path": "data/gazi-readiness-2021.json",
-        "generatedAt": "2026-06-04T17:21:55.507Z",
-        "sourceGeneratedAt": "2026-06-03T22:26:03.543Z",
+        "generatedAt": "2026-06-05T00:33:49.587Z",
+        "sourceGeneratedAt": "2026-06-05T00:07:08.803Z",
         "summary": {
           "analysisState": "field-available",
           "runnerCount": 22,
@@ -214,8 +214,8 @@
         "year": 2022,
         "type": "readiness",
         "path": "data/gazi-readiness-2022.json",
-        "generatedAt": "2026-06-04T17:21:55.595Z",
-        "sourceGeneratedAt": "2026-06-03T22:26:03.637Z",
+        "generatedAt": "2026-06-05T00:33:49.589Z",
+        "sourceGeneratedAt": "2026-06-05T00:07:08.804Z",
         "summary": {
           "analysisState": "field-available",
           "runnerCount": 22,
@@ -227,8 +227,8 @@
         "year": 2023,
         "type": "readiness",
         "path": "data/gazi-readiness-2023.json",
-        "generatedAt": "2026-06-04T17:21:55.687Z",
-        "sourceGeneratedAt": "2026-06-03T22:26:03.730Z",
+        "generatedAt": "2026-06-05T00:33:49.595Z",
+        "sourceGeneratedAt": "2026-06-05T00:07:08.805Z",
         "summary": {
           "analysisState": "field-available",
           "runnerCount": 22,
@@ -240,8 +240,8 @@
         "year": 2024,
         "type": "readiness",
         "path": "data/gazi-readiness-2024.json",
-        "generatedAt": "2026-06-04T17:21:55.788Z",
-        "sourceGeneratedAt": "2026-06-03T22:26:03.823Z",
+        "generatedAt": "2026-06-05T00:33:49.597Z",
+        "sourceGeneratedAt": "2026-06-05T00:07:08.806Z",
         "summary": {
           "analysisState": "field-available",
           "runnerCount": 22,
@@ -253,8 +253,8 @@
         "year": 2025,
         "type": "readiness",
         "path": "data/gazi-readiness-2025.json",
-        "generatedAt": "2026-06-04T17:21:55.884Z",
-        "sourceGeneratedAt": "2026-06-03T22:26:03.918Z",
+        "generatedAt": "2026-06-05T00:33:49.598Z",
+        "sourceGeneratedAt": "2026-06-05T00:07:08.807Z",
         "summary": {
           "analysisState": "field-available",
           "runnerCount": 22,

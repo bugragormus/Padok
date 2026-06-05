@@ -1,7 +1,7 @@
 {
-  "generatedAt": "2026-06-04T17:21:55.788Z",
+  "generatedAt": "2026-06-05T00:33:49.597Z",
   "sourceYear": 2024,
-  "sourceGeneratedAt": "2026-06-03T22:26:03.823Z",
+  "sourceGeneratedAt": "2026-06-05T00:07:08.806Z",
   "methodology": {
     "target": "Gazi horse readiness",
     "warning": "Readiness skoru karar destek sinyalidir; kesin sonuç tahmini veya bahis önerisi değildir.",
@@ -24,6 +24,37 @@
     "historicalEvidenceCount": 21,
     "warningCount": 0,
     "warnings": []
+  },
+  "calibration": {
+    "state": "completed",
+    "winnerName": "DRAGON FLAME",
+    "winnerScore": 59,
+    "winnerScoreRank": 17,
+    "winnerUpsideRank": 22,
+    "winnerLowRiskRank": 17,
+    "winnerUncertaintyRank": 22,
+    "winnerRouteVisibility": {
+      "score": 20,
+      "label": "Tek koşu sinyali",
+      "reason": "At yalnızca bir takip koşusunda göründü; form sinyali var ama dar.",
+      "totalRaceCount": 5,
+      "ranCount": 1,
+      "skippedCount": 4,
+      "pendingCount": 0,
+      "missingCount": 0,
+      "dataCompleteness": 100
+    },
+    "topScoreHorse": "MADRAS",
+    "topScoreFinish": 15,
+    "topPickHit": false,
+    "winnerGap": 16,
+    "missReasons": [
+      "Kazanan prep galibi değildi; en iyi takip derecesi Erkek Tay Deneme 2. sıra.",
+      "Kazanan yalnızca tek takip koşusunda göründü; model geniş rota görünürlüğünü daha çok ödüllendirdi.",
+      "Kazananın upside metriği düşük kaldı; geç gelişen form sıçraması ayrıca modellenmeli.",
+      "Model lideri MADRAS oldu; ana skor görünür prep performansını öne aldı."
+    ],
+    "lesson": "Ana skor gerçek kazananı lider seçmedi; tek koşu sinyali, jokey değişimi ve geç form sıçraması kalibrasyonda ayrıca izlenmeli."
   },
   "lenses": {
     "score": {

@@ -1,7 +1,7 @@
 {
-  "generatedAt": "2026-06-04T17:21:55.595Z",
+  "generatedAt": "2026-06-05T00:33:49.589Z",
   "sourceYear": 2022,
-  "sourceGeneratedAt": "2026-06-03T22:26:03.637Z",
+  "sourceGeneratedAt": "2026-06-05T00:07:08.804Z",
   "methodology": {
     "target": "Gazi horse readiness",
     "warning": "Readiness skoru karar destek sinyalidir; kesin sonuç tahmini veya bahis önerisi değildir.",
@@ -24,6 +24,32 @@
     "historicalEvidenceCount": 12,
     "warningCount": 0,
     "warnings": []
+  },
+  "calibration": {
+    "state": "completed",
+    "winnerName": "SECRET POWER",
+    "winnerScore": 99,
+    "winnerScoreRank": 1,
+    "winnerUpsideRank": 1,
+    "winnerLowRiskRank": 1,
+    "winnerUncertaintyRank": 9,
+    "winnerRouteVisibility": {
+      "score": 40,
+      "label": "Geniş rota görünürlüğü",
+      "reason": "At birden fazla takip koşusunda göründüğü için rota sinyali daha okunabilir.",
+      "totalRaceCount": 5,
+      "ranCount": 2,
+      "skippedCount": 3,
+      "pendingCount": 0,
+      "missingCount": 0,
+      "dataCompleteness": 100
+    },
+    "topScoreHorse": "SECRET POWER",
+    "topScoreFinish": 1,
+    "topPickHit": true,
+    "winnerGap": 0,
+    "missReasons": [],
+    "lesson": "Ana skor gerçek kazananı lider seçti; mevcut ağırlıklar bu sezon için hedefe yakın çalıştı."
   },
   "lenses": {
     "score": {

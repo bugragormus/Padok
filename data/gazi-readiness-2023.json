@@ -1,7 +1,7 @@
 {
-  "generatedAt": "2026-06-04T17:21:55.687Z",
+  "generatedAt": "2026-06-05T00:33:49.595Z",
   "sourceYear": 2023,
-  "sourceGeneratedAt": "2026-06-03T22:26:03.730Z",
+  "sourceGeneratedAt": "2026-06-05T00:07:08.805Z",
   "methodology": {
     "target": "Gazi horse readiness",
     "warning": "Readiness skoru karar destek sinyalidir; kesin sonuç tahmini veya bahis önerisi değildir.",
@@ -24,6 +24,36 @@
     "historicalEvidenceCount": 14,
     "warningCount": 0,
     "warnings": []
+  },
+  "calibration": {
+    "state": "completed",
+    "winnerName": "URFA ASLANI",
+    "winnerScore": 37,
+    "winnerScoreRank": 18,
+    "winnerUpsideRank": 12,
+    "winnerLowRiskRank": 18,
+    "winnerUncertaintyRank": 1,
+    "winnerRouteVisibility": {
+      "score": 0,
+      "label": "Rota dışı profil",
+      "reason": "At takip edilen hazırlık rotasına katılmadan Gazi alanına gelmiş.",
+      "totalRaceCount": 5,
+      "ranCount": 0,
+      "skippedCount": 5,
+      "pendingCount": 0,
+      "missingCount": 0,
+      "dataCompleteness": 100
+    },
+    "topScoreHorse": "GENERAL BRIELLA",
+    "topScoreFinish": 13,
+    "topPickHit": false,
+    "winnerGap": 17,
+    "missReasons": [
+      "Kazanan takip edilen prep rotalarında hiç görünmedi.",
+      "Kazananın upside metriği düşük kaldı; geç gelişen form sıçraması ayrıca modellenmeli.",
+      "Model lideri GENERAL BRIELLA oldu; ana skor görünür prep performansını öne aldı."
+    ],
+    "lesson": "Ana skor gerçek kazananı lider seçmedi; tek koşu sinyali, jokey değişimi ve geç form sıçraması kalibrasyonda ayrıca izlenmeli."
   },
   "lenses": {
     "score": {

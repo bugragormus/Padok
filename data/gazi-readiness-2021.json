@@ -1,7 +1,7 @@
 {
-  "generatedAt": "2026-06-04T17:21:55.507Z",
+  "generatedAt": "2026-06-05T00:33:49.587Z",
   "sourceYear": 2021,
-  "sourceGeneratedAt": "2026-06-03T22:26:03.543Z",
+  "sourceGeneratedAt": "2026-06-05T00:07:08.803Z",
   "methodology": {
     "target": "Gazi horse readiness",
     "warning": "Readiness skoru karar destek sinyalidir; kesin sonuç tahmini veya bahis önerisi değildir.",
@@ -26,6 +26,35 @@
     "warnings": [
       "Profil karşılaştırması için geçmiş sezon sayısı düşük."
     ]
+  },
+  "calibration": {
+    "state": "completed",
+    "winnerName": "BURGAS",
+    "winnerScore": 83,
+    "winnerScoreRank": 4,
+    "winnerUpsideRank": 3,
+    "winnerLowRiskRank": 6,
+    "winnerUncertaintyRank": 8,
+    "winnerRouteVisibility": {
+      "score": 40,
+      "label": "Geniş rota görünürlüğü",
+      "reason": "At birden fazla takip koşusunda göründüğü için rota sinyali daha okunabilir.",
+      "totalRaceCount": 5,
+      "ranCount": 2,
+      "skippedCount": 3,
+      "pendingCount": 0,
+      "missingCount": 0,
+      "dataCompleteness": 100
+    },
+    "topScoreHorse": "REAL RUNNER",
+    "topScoreFinish": 2,
+    "topPickHit": true,
+    "winnerGap": 3,
+    "missReasons": [
+      "Kazanan Gazi'ye jokey değişimiyle geldi; mevcut skor sürekliliği daha yüksek puanlıyor.",
+      "Model lideri REAL RUNNER oldu; ana skor görünür prep performansını öne aldı."
+    ],
+    "lesson": "Ana skor gerçek kazananı lider seçmedi; tek koşu sinyali, jokey değişimi ve geç form sıçraması kalibrasyonda ayrıca izlenmeli."
   },
   "lenses": {
     "score": {

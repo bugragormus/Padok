@@ -128,6 +128,68 @@ const summarizeLens = (entries) => {
   };
 };
 
+const findRankingPosition = (entries, horseName) => {
+  const index = entries.findIndex((entry) => entry.horseName === horseName);
+  return index === -1 ? null : index + 1;
+};
+
+const getWinnerMissReasons = (winnerProfile, scoreLeader, tableColumns) => {
+  if (!winnerProfile) return [];
+
+  const { row, readiness } = winnerProfile;
+  const reasons = [
+    row.bestPrepFinishPosition > 1 ? `Kazanan prep galibi değildi; en iyi takip derecesi ${row.bestPrepRaceName ?? "bilinmeyen koşu"} ${row.bestPrepFinishPosition}. sıra.` : null,
+    row.prepStartCount === 0 ? "Kazanan takip edilen prep rotalarında hiç görünmedi." : null,
+    row.prepStartCount === 1 ? "Kazanan yalnızca tek takip koşusunda göründü; model geniş rota görünürlüğünü daha çok ödüllendirdi." : null,
+    rowHasJockeyChange(row, tableColumns) ? "Kazanan Gazi'ye jokey değişimiyle geldi; mevcut skor sürekliliği daha yüksek puanlıyor." : null,
+    readiness.upside < 35 ? "Kazananın upside metriği düşük kaldı; geç gelişen form sıçraması ayrıca modellenmeli." : null,
+    scoreLeader && scoreLeader.row.horseName !== row.horseName ? `Model lideri ${scoreLeader.row.horseName} oldu; ana skor görünür prep performansını öne aldı.` : null
+  ].filter(Boolean);
+
+  return [...new Set(reasons)];
+};
+
+const buildCalibrationSummary = (profiles, rankings, participationReport, tableColumns) => {
+  const winnerProfile = profiles.find(({ row }) => row.gaziFinishPosition === 1);
+  const scoreLeader = sortReadinessProfiles(profiles, "score")[0] ?? null;
+
+  if (!winnerProfile) {
+    return {
+      state: participationReport.summary?.analysisState === "completed" ? "winner-missing" : "awaiting-result",
+      note: "Gazi sonucu henüz readiness kalibrasyonu için tamamlanmadı."
+    };
+  }
+
+  const winnerName = winnerProfile.row.horseName;
+  const scoreRank = findRankingPosition(rankings.score ?? [], winnerName);
+  const upsideRank = findRankingPosition(rankings.upside ?? [], winnerName);
+  const lowRiskRank = findRankingPosition(rankings.lowRisk ?? [], winnerName);
+  const uncertaintyRank = findRankingPosition(rankings.uncertainty ?? [], winnerName);
+  const scoreLeaderEntry = rankings.score?.[0] ?? null;
+  const topPickHit = Number.isFinite(scoreLeaderEntry?.gaziFinishPosition) && scoreLeaderEntry.gaziFinishPosition <= 3;
+  const winnerGap = Number.isFinite(scoreRank) ? scoreRank - 1 : null;
+  const missReasons = getWinnerMissReasons(winnerProfile, scoreLeader, tableColumns);
+
+  return {
+    state: "completed",
+    winnerName,
+    winnerScore: winnerProfile.readiness.score,
+    winnerScoreRank: scoreRank,
+    winnerUpsideRank: upsideRank,
+    winnerLowRiskRank: lowRiskRank,
+    winnerUncertaintyRank: uncertaintyRank,
+    winnerRouteVisibility: winnerProfile.row.routeVisibility ?? null,
+    topScoreHorse: scoreLeaderEntry?.horseName ?? null,
+    topScoreFinish: scoreLeaderEntry?.gaziFinishPosition ?? null,
+    topPickHit,
+    winnerGap,
+    missReasons,
+    lesson: winnerGap && winnerGap > 0
+      ? "Ana skor gerçek kazananı lider seçmedi; tek koşu sinyali, jokey değişimi ve geç form sıçraması kalibrasyonda ayrıca izlenmeli."
+      : "Ana skor gerçek kazananı lider seçti; mevcut ağırlıklar bu sezon için hedefe yakın çalıştı."
+  };
+};
+
 const buildQualitySummary = (profiles, participationReport, comparisonReports) => {
   const runnerCount = profiles.length;
   const comparisonSeasonCount = comparisonReports.filter((report) => Number.isFinite(report.sourceYear) && report.sourceYear < participationReport.sourceYear).length;
@@ -183,6 +245,7 @@ export const buildReadinessReport = (participationReport, options = {}) => {
     return [lens, summarizeLens(entries)];
   }));
   const quality = buildQualitySummary(profiles, participationReport, comparisonReports);
+  const calibration = buildCalibrationSummary(profiles, rankings, participationReport, tableColumns);
 
   return {
     generatedAt: new Date().toISOString(),
@@ -202,6 +265,7 @@ export const buildReadinessReport = (participationReport, options = {}) => {
       topUncertaintyHorse: rankings.uncertainty?.[0]?.horseName ?? null
     },
     quality,
+    calibration,
     lenses: readinessLensLabels,
     lensSummaries,
     rankings

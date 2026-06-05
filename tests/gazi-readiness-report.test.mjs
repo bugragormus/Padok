@@ -58,6 +58,7 @@ test("buildReadinessReport emits lens rankings for a participation report", () =
   assert.equal(payload.quality.prepSignalCount, 1);
   assert.equal(payload.quality.warningCount, 2);
   assert.ok(payload.rankings.uncertainty[0].lensValue > 0);
+  assert.equal(payload.calibration.state, "awaiting-result");
 });
 
 test("buildReadinessReport only uses earlier seasons as profile evidence", () => {
@@ -79,4 +80,36 @@ test("buildReadinessReport only uses earlier seasons as profile evidence", () =>
   assert.equal(payload.summary.comparisonSeasonCount, 1);
   assert.equal(payload.quality.comparisonSeasonCount, 1);
   assert.deepEqual(matches.map((match) => match.year), [2023]);
+});
+
+test("buildReadinessReport calibrates completed seasons against the actual Gazi winner", () => {
+  const payload = buildReadinessReport(report(2025, [
+    row({ horseName: "VISIBLE PREP STAR", gaziFinishPosition: 2, bestPrepFinishPosition: 1, prepStartCount: 2 }),
+    row({
+      horseName: "LATE WINNER",
+      gaziFinishPosition: 1,
+      bestPrepFinishPosition: 4,
+      prepStartCount: 1,
+      cells: {
+        "sait-akson": {
+          status: "ran",
+          jockeyName: "OLD JOCKEY"
+        },
+        gazi: {
+          status: "ran",
+          jockeyName: "NEW JOCKEY"
+        }
+      }
+    })
+  ]));
+
+  assert.equal(payload.calibration.state, "completed");
+  assert.equal(payload.calibration.winnerName, "LATE WINNER");
+  assert.equal(payload.calibration.topScoreHorse, "VISIBLE PREP STAR");
+  assert.equal(payload.calibration.topScoreFinish, 2);
+  assert.equal(payload.calibration.topPickHit, true);
+  assert.equal(payload.calibration.winnerScoreRank, 2);
+  assert.equal(payload.calibration.winnerGap, 1);
+  assert.ok(payload.calibration.missReasons.some((reason) => reason.includes("prep galibi değildi")));
+  assert.ok(payload.calibration.missReasons.some((reason) => reason.includes("jokey değişimi")));
 });
