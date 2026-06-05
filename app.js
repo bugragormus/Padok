@@ -733,6 +733,55 @@ const renderRouteVisibilityPanel = (visibility) => {
   `;
 };
 
+const getRouteVisibilityCounts = (report, tableColumns) => {
+  if (report.summary?.routeVisibilityCounts) return report.summary.routeVisibilityCounts;
+
+  return (report.rows ?? []).reduce((counts, row) => {
+    const label = getRouteVisibility(row, tableColumns.filter((column) => !column.isTarget)).label;
+    counts[label] = (counts[label] ?? 0) + 1;
+    return counts;
+  }, {});
+};
+
+const renderRouteVisibilitySummary = (report, tableColumns) => {
+  const container = document.querySelector("#route-visibility-summary");
+  if (!container) return;
+
+  const counts = getRouteVisibilityCounts(report, tableColumns);
+  const total = report.summary?.gaziRunnerCount ?? report.rows?.length ?? 0;
+  const rows = Object.entries(counts)
+    .sort((a, b) => b[1] - a[1] || a[0].localeCompare(b[0], "tr"));
+
+  if (!rows.length || total === 0) {
+    container.innerHTML = "";
+    return;
+  }
+
+  const dominant = rows[0];
+  const dominantRate = Math.round((dominant[1] / total) * 100);
+
+  container.innerHTML = `
+    <article class="route-visibility-summary__intro">
+      <span>Alan kompozisyonu</span>
+      <strong>${escapeHtml(dominant[0])}</strong>
+      <p>${escapeHtml(`${dominant[1]}/${total} at bu grupta. Bu sezonun baskın rota okuması %${dominantRate} ağırlıkla burada.`)}</p>
+    </article>
+    <div class="route-visibility-summary__grid">
+      ${rows.map(([label, count]) => {
+        const rate = Math.round((count / total) * 100);
+
+        return `
+          <span>
+            <small>${escapeHtml(label)}</small>
+            <strong>${escapeHtml(count)} at</strong>
+            <em>%${escapeHtml(rate)}</em>
+          </span>
+        `;
+      }).join("")}
+    </div>
+  `;
+};
+
 const renderPrepSignalStrip = (row, prepColumns) => {
   const prepStates = getPrepRaceStates(row, prepColumns);
   if (!prepStates.length) return "";
@@ -1541,6 +1590,7 @@ const renderParticipation = (report) => {
 
   const tableColumns = getParticipationTableColumns(report);
   renderParticipationFilters(report.rows, tableColumns);
+  renderRouteVisibilitySummary(report, tableColumns);
   renderParticipationInsights(report, tableColumns);
   renderProfileShortlist(report, tableColumns);
 

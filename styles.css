@@ -878,6 +878,54 @@ h2 {
   margin-top: 18px;
 }
 
+.route-visibility-summary {
+  display: grid;
+  grid-template-columns: minmax(210px, 0.42fr) minmax(0, 1fr);
+  gap: 10px;
+  margin-top: 18px;
+}
+
+.route-visibility-summary__intro,
+.route-visibility-summary__grid span {
+  display: grid;
+  align-content: start;
+  gap: 7px;
+  min-width: 0;
+  padding: 14px;
+  border: 1px solid rgba(36, 95, 70, 0.2);
+  border-radius: 8px;
+  background: #fbfcfa;
+}
+
+.route-visibility-summary__intro span,
+.route-visibility-summary__intro p,
+.route-visibility-summary__grid small,
+.route-visibility-summary__grid em {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.74rem;
+  font-style: normal;
+  line-height: 1.45;
+}
+
+.route-visibility-summary__intro span,
+.route-visibility-summary__grid small {
+  font-weight: 850;
+}
+
+.route-visibility-summary__intro strong,
+.route-visibility-summary__grid strong {
+  color: var(--green-2);
+  font-size: 1rem;
+  line-height: 1.25;
+}
+
+.route-visibility-summary__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 10px;
+}
+
 .insight-card {
   display: grid;
   align-content: start;
@@ -2155,6 +2203,10 @@ footer {
   }
 
   .surprise-radar {
+    grid-template-columns: 1fr;
+  }
+
+  .route-visibility-summary {
     grid-template-columns: 1fr;
   }
 
