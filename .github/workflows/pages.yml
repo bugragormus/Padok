@@ -147,6 +147,9 @@ jobs:
       - name: Build Gazi candidate comparison
         run: npm run build:gazi-candidate-comparison -- --out data/gazi-candidate-comparison.json
 
+      - name: Build Gazi feature breakdown
+        run: npm run build:gazi-feature-breakdown -- --out data/gazi-feature-breakdown.json
+
       - name: Build Gazi race day watchlist
         run: npm run build:gazi-race-day-watchlist -- --out data/gazi-race-day-watchlist.json
 
@@ -159,7 +162,7 @@ jobs:
           cp index.html app.js styles.css .nojekyll dist/
           cp assets/* dist/assets/
           cp scripts/readiness-model.mjs dist/scripts/
-          cp data/gazi-knowledge-base.json data/gazi-route-report.json data/gazi-route-2020.json data/gazi-route-2021.json data/gazi-route-2022.json data/gazi-route-2023.json data/gazi-route-2024.json data/gazi-route-2025.json data/gazi-route-2026.json data/gazi-backtest-report.json data/gazi-model-backtest.json data/gazi-signal-calibration.json data/gazi-decision-brief.json data/gazi-candidate-comparison.json data/gazi-race-day-watchlist.json data/gazi-participation-report.json data/gazi-participation-*.json data/gazi-readiness-report.json data/gazi-readiness-*.json data/gazi-data-horizon.json data/padok-data-manifest.json data/padok-api-index.json dist/data/
+          cp data/gazi-knowledge-base.json data/gazi-route-report.json data/gazi-route-2020.json data/gazi-route-2021.json data/gazi-route-2022.json data/gazi-route-2023.json data/gazi-route-2024.json data/gazi-route-2025.json data/gazi-route-2026.json data/gazi-backtest-report.json data/gazi-model-backtest.json data/gazi-signal-calibration.json data/gazi-decision-brief.json data/gazi-candidate-comparison.json data/gazi-feature-breakdown.json data/gazi-race-day-watchlist.json data/gazi-participation-report.json data/gazi-participation-*.json data/gazi-readiness-report.json data/gazi-readiness-*.json data/gazi-data-horizon.json data/padok-data-manifest.json data/padok-api-index.json dist/data/
 
       - name: Configure Pages
         uses: actions/configure-pages@v5

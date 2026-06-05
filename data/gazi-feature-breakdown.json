@@ -1,0 +1,967 @@
+{
+  "generatedAt": "2026-06-05T22:15:59.105Z",
+  "sourceYear": 2025,
+  "summary": {
+    "runnerCount": 22,
+    "leaderHorse": "SPECIAL MAN",
+    "averageCompositeScore": 54,
+    "groupAverages": {
+      "horsePerformance": 63,
+      "routeProfile": 21,
+      "actorContext": 41,
+      "pedigree": 63,
+      "owner": 42,
+      "dataConfidence": 89
+    }
+  },
+  "profiles": [
+    {
+      "horseName": "SPECIAL MAN",
+      "gaziFinishPosition": 3,
+      "compositeScore": 71,
+      "readinessScore": 100,
+      "groups": {
+        "horsePerformance": {
+          "score": 100,
+          "label": "At performansı",
+          "note": "Mehmet Akif Ersoy 1. ve geçmiş profil kanıtı birlikte okunur."
+        },
+        "routeProfile": {
+          "score": 40,
+          "label": "Rota profili",
+          "note": "At birden fazla takip koşusunda göründüğü için rota sinyali daha okunabilir."
+        },
+        "actorContext": {
+          "score": 49,
+          "label": "Jokey/aktör",
+          "note": "Jokey hattı daha sabit görünüyor."
+        },
+        "pedigree": {
+          "score": 62,
+          "label": "Soy hattı",
+          "note": "LUXOR / KIZIM MELİKE bilgisi mevcut; tarihsel soy performansı sınırlı ağırlıkla okunur."
+        },
+        "owner": {
+          "score": 42,
+          "label": "Sahip",
+          "note": "MELİH TEMEL bilgisi mevcut; gerçek sahip başarı oranı sonraki veri genişletmede hesaplanacak."
+        },
+        "dataConfidence": {
+          "score": 100,
+          "label": "Veri güveni",
+          "note": "Yüksek güven"
+        }
+      },
+      "strongestGroup": "horsePerformance",
+      "weakestGroup": "routeProfile",
+      "flags": []
+    },
+    {
+      "horseName": "BOON NAM",
+      "gaziFinishPosition": 14,
+      "compositeScore": 71,
+      "readinessScore": 99,
+      "groups": {
+        "horsePerformance": {
+          "score": 100,
+          "label": "At performansı",
+          "note": "Kısrak 1. ve geçmiş profil kanıtı birlikte okunur."
+        },
+        "routeProfile": {
+          "score": 40,
+          "label": "Rota profili",
+          "note": "At birden fazla takip koşusunda göründüğü için rota sinyali daha okunabilir."
+        },
+        "actorContext": {
+          "score": 45,
+          "label": "Jokey/aktör",
+          "note": "Jokey hattı daha sabit görünüyor."
+        },
+        "pedigree": {
+          "score": 62,
+          "label": "Soy hattı",
+          "note": "VICTOIRE PISA (JPN) / ZEHİR bilgisi mevcut; tarihsel soy performansı sınırlı ağırlıkla okunur."
+        },
+        "owner": {
+          "score": 42,
+          "label": "Sahip",
+          "note": "ARMAĞAN ARAZ bilgisi mevcut; gerçek sahip başarı oranı sonraki veri genişletmede hesaplanacak."
+        },
+        "dataConfidence": {
+          "score": 100,
+          "label": "Veri güveni",
+          "note": "Yüksek güven"
+        }
+      },
+      "strongestGroup": "horsePerformance",
+      "weakestGroup": "routeProfile",
+      "flags": []
+    },
+    {
+      "horseName": "HANDSOME KING",
+      "gaziFinishPosition": 2,
+      "compositeScore": 67,
+      "readinessScore": 95,
+      "groups": {
+        "horsePerformance": {
+          "score": 100,
+          "label": "At performansı",
+          "note": "Sait Akson 1. ve geçmiş profil kanıtı birlikte okunur."
+        },
+        "routeProfile": {
+          "score": 20,
+          "label": "Rota profili",
+          "note": "At yalnızca bir takip koşusunda göründü; form sinyali var ama dar."
+        },
+        "actorContext": {
+          "score": 49,
+          "label": "Jokey/aktör",
+          "note": "Jokey hattı daha sabit görünüyor."
+        },
+        "pedigree": {
+          "score": 62,
+          "label": "Soy hattı",
+          "note": "VICTOIRE PISA (JPN) / NADİRE bilgisi mevcut; tarihsel soy performansı sınırlı ağırlıkla okunur."
+        },
+        "owner": {
+          "score": 42,
+          "label": "Sahip",
+          "note": "ASUMAN YENİCE bilgisi mevcut; gerçek sahip başarı oranı sonraki veri genişletmede hesaplanacak."
+        },
+        "dataConfidence": {
+          "score": 100,
+          "label": "Veri güveni",
+          "note": "Yüksek güven"
+        }
+      },
+      "strongestGroup": "horsePerformance",
+      "weakestGroup": "routeProfile",
+      "flags": []
+    },
+    {
+      "horseName": "TONBİ",
+      "gaziFinishPosition": 8,
+      "compositeScore": 67,
+      "readinessScore": 91,
+      "groups": {
+        "horsePerformance": {
+          "score": 100,
+          "label": "At performansı",
+          "note": "Erkek Tay Deneme 1. ve geçmiş profil kanıtı birlikte okunur."
+        },
+        "routeProfile": {
+          "score": 20,
+          "label": "Rota profili",
+          "note": "At yalnızca bir takip koşusunda göründü; form sinyali var ama dar."
+        },
+        "actorContext": {
+          "score": 38,
+          "label": "Jokey/aktör",
+          "note": "Jokey sürekliliği kırılmış; aktör geçmişiyle birlikte okunmalı."
+        },
+        "pedigree": {
+          "score": 72,
+          "label": "Soy hattı",
+          "note": "APPROVE (IRE) / NEFERU bilgisi mevcut; tarihsel soy performansı sınırlı ağırlıkla okunur."
+        },
+        "owner": {
+          "score": 42,
+          "label": "Sahip",
+          "note": "ŞEVKİ BALCI bilgisi mevcut; gerçek sahip başarı oranı sonraki veri genişletmede hesaplanacak."
+        },
+        "dataConfidence": {
+          "score": 100,
+          "label": "Veri güveni",
+          "note": "Yüksek güven"
+        }
+      },
+      "strongestGroup": "horsePerformance",
+      "weakestGroup": "routeProfile",
+      "flags": [
+        "jockey-change"
+      ]
+    },
+    {
+      "horseName": "DEJAVU",
+      "gaziFinishPosition": 17,
+      "compositeScore": 61,
+      "readinessScore": 85,
+      "groups": {
+        "horsePerformance": {
+          "score": 65,
+          "label": "At performansı",
+          "note": "Kısrak 4. ve geçmiş profil kanıtı birlikte okunur."
+        },
+        "routeProfile": {
+          "score": 40,
+          "label": "Rota profili",
+          "note": "At birden fazla takip koşusunda göründüğü için rota sinyali daha okunabilir."
+        },
+        "actorContext": {
+          "score": 49,
+          "label": "Jokey/aktör",
+          "note": "Jokey hattı daha sabit görünüyor."
+        },
+        "pedigree": {
+          "score": 65,
+          "label": "Soy hattı",
+          "note": "TOROK (IRE) / AMEILA bilgisi mevcut; tarihsel soy performansı sınırlı ağırlıkla okunur."
+        },
+        "owner": {
+          "score": 42,
+          "label": "Sahip",
+          "note": "BARIŞ GÖKTÜRK bilgisi mevcut; gerçek sahip başarı oranı sonraki veri genişletmede hesaplanacak."
+        },
+        "dataConfidence": {
+          "score": 100,
+          "label": "Veri güveni",
+          "note": "Yüksek güven"
+        }
+      },
+      "strongestGroup": "dataConfidence",
+      "weakestGroup": "routeProfile",
+      "flags": []
+    },
+    {
+      "horseName": "PETITE LOUVE",
+      "gaziFinishPosition": 18,
+      "compositeScore": 61,
+      "readinessScore": 84,
+      "groups": {
+        "horsePerformance": {
+          "score": 79,
+          "label": "At performansı",
+          "note": "Kısrak 3. ve geçmiş profil kanıtı birlikte okunur."
+        },
+        "routeProfile": {
+          "score": 40,
+          "label": "Rota profili",
+          "note": "At birden fazla takip koşusunda göründüğü için rota sinyali daha okunabilir."
+        },
+        "actorContext": {
+          "score": 24,
+          "label": "Jokey/aktör",
+          "note": "Jokey sürekliliği kırılmış; aktör geçmişiyle birlikte okunmalı."
+        },
+        "pedigree": {
+          "score": 62,
+          "label": "Soy hattı",
+          "note": "TOUCH THE WOLF / REYAREYA bilgisi mevcut; tarihsel soy performansı sınırlı ağırlıkla okunur."
+        },
+        "owner": {
+          "score": 42,
+          "label": "Sahip",
+          "note": "KEMAL KURT bilgisi mevcut; gerçek sahip başarı oranı sonraki veri genişletmede hesaplanacak."
+        },
+        "dataConfidence": {
+          "score": 100,
+          "label": "Veri güveni",
+          "note": "Yüksek güven"
+        }
+      },
+      "strongestGroup": "dataConfidence",
+      "weakestGroup": "actorContext",
+      "flags": [
+        "jockey-change"
+      ]
+    },
+    {
+      "horseName": "BRAIN BROOSTER",
+      "gaziFinishPosition": 5,
+      "compositeScore": 58,
+      "readinessScore": 79,
+      "groups": {
+        "horsePerformance": {
+          "score": 65,
+          "label": "At performansı",
+          "note": "Erkek Tay Deneme 4. ve geçmiş profil kanıtı birlikte okunur."
+        },
+        "routeProfile": {
+          "score": 40,
+          "label": "Rota profili",
+          "note": "At birden fazla takip koşusunda göründüğü için rota sinyali daha okunabilir."
+        },
+        "actorContext": {
+          "score": 29,
+          "label": "Jokey/aktör",
+          "note": "Jokey sürekliliği kırılmış; aktör geçmişiyle birlikte okunmalı."
+        },
+        "pedigree": {
+          "score": 62,
+          "label": "Soy hattı",
+          "note": "VICTOIRE PISA (JPN) / NONA bilgisi mevcut; tarihsel soy performansı sınırlı ağırlıkla okunur."
+        },
+        "owner": {
+          "score": 42,
+          "label": "Sahip",
+          "note": "CEM KAAN PARSAK bilgisi mevcut; gerçek sahip başarı oranı sonraki veri genişletmede hesaplanacak."
+        },
+        "dataConfidence": {
+          "score": 100,
+          "label": "Veri güveni",
+          "note": "Yüksek güven"
+        }
+      },
+      "strongestGroup": "dataConfidence",
+      "weakestGroup": "actorContext",
+      "flags": [
+        "jockey-change"
+      ]
+    },
+    {
+      "horseName": "PUROSANGUE",
+      "gaziFinishPosition": 22,
+      "compositeScore": 57,
+      "readinessScore": 79,
+      "groups": {
+        "horsePerformance": {
+          "score": 79,
+          "label": "At performansı",
+          "note": "Sait Akson 3. ve geçmiş profil kanıtı birlikte okunur."
+        },
+        "routeProfile": {
+          "score": 20,
+          "label": "Rota profili",
+          "note": "At yalnızca bir takip koşusunda göründü; form sinyali var ama dar."
+        },
+        "actorContext": {
+          "score": 24,
+          "label": "Jokey/aktör",
+          "note": "Jokey sürekliliği kırılmış; aktör geçmişiyle birlikte okunmalı."
+        },
+        "pedigree": {
+          "score": 62,
+          "label": "Soy hattı",
+          "note": "SIR PRANCEALOT (IRE) / FRANKLY J'RAY (USA) bilgisi mevcut; tarihsel soy performansı sınırlı ağırlıkla okunur."
+        },
+        "owner": {
+          "score": 42,
+          "label": "Sahip",
+          "note": "EMRE KOÇ bilgisi mevcut; gerçek sahip başarı oranı sonraki veri genişletmede hesaplanacak."
+        },
+        "dataConfidence": {
+          "score": 100,
+          "label": "Veri güveni",
+          "note": "Yüksek güven"
+        }
+      },
+      "strongestGroup": "dataConfidence",
+      "weakestGroup": "routeProfile",
+      "flags": [
+        "jockey-change"
+      ]
+    },
+    {
+      "horseName": "CUTHA",
+      "gaziFinishPosition": 1,
+      "compositeScore": 55,
+      "readinessScore": 76,
+      "groups": {
+        "horsePerformance": {
+          "score": 65,
+          "label": "At performansı",
+          "note": "Sait Akson 4. ve geçmiş profil kanıtı birlikte okunur."
+        },
+        "routeProfile": {
+          "score": 20,
+          "label": "Rota profili",
+          "note": "At yalnızca bir takip koşusunda göründü; form sinyali var ama dar."
+        },
+        "actorContext": {
+          "score": 38,
+          "label": "Jokey/aktör",
+          "note": "Jokey sürekliliği kırılmış; aktör geçmişiyle birlikte okunmalı."
+        },
+        "pedigree": {
+          "score": 62,
+          "label": "Soy hattı",
+          "note": "VICTOIRE PISA (JPN) / SUZİ DIOMAND bilgisi mevcut; tarihsel soy performansı sınırlı ağırlıkla okunur."
+        },
+        "owner": {
+          "score": 42,
+          "label": "Sahip",
+          "note": "HULUSİ ÇİL bilgisi mevcut; gerçek sahip başarı oranı sonraki veri genişletmede hesaplanacak."
+        },
+        "dataConfidence": {
+          "score": 100,
+          "label": "Veri güveni",
+          "note": "Yüksek güven"
+        }
+      },
+      "strongestGroup": "dataConfidence",
+      "weakestGroup": "routeProfile",
+      "flags": [
+        "jockey-change"
+      ]
+    },
+    {
+      "horseName": "BELGRATHAN",
+      "gaziFinishPosition": 4,
+      "compositeScore": 53,
+      "readinessScore": 73,
+      "groups": {
+        "horsePerformance": {
+          "score": 65,
+          "label": "At performansı",
+          "note": "Mehmet Akif Ersoy 5. ve geçmiş profil kanıtı birlikte okunur."
+        },
+        "routeProfile": {
+          "score": 20,
+          "label": "Rota profili",
+          "note": "At yalnızca bir takip koşusunda göründü; form sinyali var ama dar."
+        },
+        "actorContext": {
+          "score": 24,
+          "label": "Jokey/aktör",
+          "note": "Jokey sürekliliği kırılmış; aktör geçmişiyle birlikte okunmalı."
+        },
+        "pedigree": {
+          "score": 62,
+          "label": "Soy hattı",
+          "note": "GRAYSTORM / SANTA PEKAN bilgisi mevcut; tarihsel soy performansı sınırlı ağırlıkla okunur."
+        },
+        "owner": {
+          "score": 42,
+          "label": "Sahip",
+          "note": "YASEMİN KAVLAK İÇER bilgisi mevcut; gerçek sahip başarı oranı sonraki veri genişletmede hesaplanacak."
+        },
+        "dataConfidence": {
+          "score": 100,
+          "label": "Veri güveni",
+          "note": "Yüksek güven"
+        }
+      },
+      "strongestGroup": "dataConfidence",
+      "weakestGroup": "routeProfile",
+      "flags": [
+        "jockey-change"
+      ]
+    },
+    {
+      "horseName": "TULUMAR",
+      "gaziFinishPosition": 12,
+      "compositeScore": 53,
+      "readinessScore": 73,
+      "groups": {
+        "horsePerformance": {
+          "score": 65,
+          "label": "At performansı",
+          "note": "Mehmet Akif Ersoy 4. ve geçmiş profil kanıtı birlikte okunur."
+        },
+        "routeProfile": {
+          "score": 20,
+          "label": "Rota profili",
+          "note": "At yalnızca bir takip koşusunda göründü; form sinyali var ama dar."
+        },
+        "actorContext": {
+          "score": 24,
+          "label": "Jokey/aktör",
+          "note": "Jokey sürekliliği kırılmış; aktör geçmişiyle birlikte okunmalı."
+        },
+        "pedigree": {
+          "score": 62,
+          "label": "Soy hattı",
+          "note": "TOUCH THE WOLF / MISS HALE bilgisi mevcut; tarihsel soy performansı sınırlı ağırlıkla okunur."
+        },
+        "owner": {
+          "score": 42,
+          "label": "Sahip",
+          "note": "YAKUP ELĞAÇ bilgisi mevcut; gerçek sahip başarı oranı sonraki veri genişletmede hesaplanacak."
+        },
+        "dataConfidence": {
+          "score": 100,
+          "label": "Veri güveni",
+          "note": "Yüksek güven"
+        }
+      },
+      "strongestGroup": "dataConfidence",
+      "weakestGroup": "routeProfile",
+      "flags": [
+        "jockey-change"
+      ]
+    },
+    {
+      "horseName": "MAGIC SELECTRA",
+      "gaziFinishPosition": 19,
+      "compositeScore": 53,
+      "readinessScore": 72,
+      "groups": {
+        "horsePerformance": {
+          "score": 51,
+          "label": "At performansı",
+          "note": "Erkek Tay Deneme 9. ve geçmiş profil kanıtı birlikte okunur."
+        },
+        "routeProfile": {
+          "score": 40,
+          "label": "Rota profili",
+          "note": "At birden fazla takip koşusunda göründüğü için rota sinyali daha okunabilir."
+        },
+        "actorContext": {
+          "score": 24,
+          "label": "Jokey/aktör",
+          "note": "Jokey sürekliliği kırılmış; aktör geçmişiyle birlikte okunmalı."
+        },
+        "pedigree": {
+          "score": 62,
+          "label": "Soy hattı",
+          "note": "BLUEGRASS CAT (USA) / MISS MAKER (USA) bilgisi mevcut; tarihsel soy performansı sınırlı ağırlıkla okunur."
+        },
+        "owner": {
+          "score": 42,
+          "label": "Sahip",
+          "note": "NİMET ARİF KURTEL bilgisi mevcut; gerçek sahip başarı oranı sonraki veri genişletmede hesaplanacak."
+        },
+        "dataConfidence": {
+          "score": 100,
+          "label": "Veri güveni",
+          "note": "Yüksek güven"
+        }
+      },
+      "strongestGroup": "dataConfidence",
+      "weakestGroup": "actorContext",
+      "flags": [
+        "jockey-change"
+      ]
+    },
+    {
+      "horseName": "ZAMBUR AGA",
+      "gaziFinishPosition": 10,
+      "compositeScore": 50,
+      "readinessScore": 61,
+      "groups": {
+        "horsePerformance": {
+          "score": 53,
+          "label": "At performansı",
+          "note": "Mehmet Akif Ersoy 2. ve geçmiş profil kanıtı birlikte okunur."
+        },
+        "routeProfile": {
+          "score": 20,
+          "label": "Rota profili",
+          "note": "At yalnızca bir takip koşusunda göründü; form sinyali var ama dar."
+        },
+        "actorContext": {
+          "score": 54,
+          "label": "Jokey/aktör",
+          "note": "Jokey hattı daha sabit görünüyor."
+        },
+        "pedigree": {
+          "score": 62,
+          "label": "Soy hattı",
+          "note": "PAPA CLEM (USA) / IMPASSIONED bilgisi mevcut; tarihsel soy performansı sınırlı ağırlıkla okunur."
+        },
+        "owner": {
+          "score": 42,
+          "label": "Sahip",
+          "note": "İZZET TİĞİT bilgisi mevcut; gerçek sahip başarı oranı sonraki veri genişletmede hesaplanacak."
+        },
+        "dataConfidence": {
+          "score": 72,
+          "label": "Veri güveni",
+          "note": "Orta güven"
+        }
+      },
+      "strongestGroup": "dataConfidence",
+      "weakestGroup": "routeProfile",
+      "flags": []
+    },
+    {
+      "horseName": "ALBAYRAK",
+      "gaziFinishPosition": 11,
+      "compositeScore": 49,
+      "readinessScore": 68,
+      "groups": {
+        "horsePerformance": {
+          "score": 51,
+          "label": "At performansı",
+          "note": "Sait Akson 9. ve geçmiş profil kanıtı birlikte okunur."
+        },
+        "routeProfile": {
+          "score": 20,
+          "label": "Rota profili",
+          "note": "At yalnızca bir takip koşusunda göründü; form sinyali var ama dar."
+        },
+        "actorContext": {
+          "score": 29,
+          "label": "Jokey/aktör",
+          "note": "Jokey sürekliliği kırılmış; aktör geçmişiyle birlikte okunmalı."
+        },
+        "pedigree": {
+          "score": 62,
+          "label": "Soy hattı",
+          "note": "WIENER WALZER (GER) / LEAVE ME ALONE bilgisi mevcut; tarihsel soy performansı sınırlı ağırlıkla okunur."
+        },
+        "owner": {
+          "score": 42,
+          "label": "Sahip",
+          "note": "MEHMET ALBAYRAK bilgisi mevcut; gerçek sahip başarı oranı sonraki veri genişletmede hesaplanacak."
+        },
+        "dataConfidence": {
+          "score": 100,
+          "label": "Veri güveni",
+          "note": "Yüksek güven"
+        }
+      },
+      "strongestGroup": "dataConfidence",
+      "weakestGroup": "routeProfile",
+      "flags": [
+        "jockey-change"
+      ]
+    },
+    {
+      "horseName": "BROARTS",
+      "gaziFinishPosition": 20,
+      "compositeScore": 49,
+      "readinessScore": 67,
+      "groups": {
+        "horsePerformance": {
+          "score": 51,
+          "label": "At performansı",
+          "note": "Mehmet Akif Ersoy 7. ve geçmiş profil kanıtı birlikte okunur."
+        },
+        "routeProfile": {
+          "score": 20,
+          "label": "Rota profili",
+          "note": "At yalnızca bir takip koşusunda göründü; form sinyali var ama dar."
+        },
+        "actorContext": {
+          "score": 24,
+          "label": "Jokey/aktör",
+          "note": "Jokey sürekliliği kırılmış; aktör geçmişiyle birlikte okunmalı."
+        },
+        "pedigree": {
+          "score": 62,
+          "label": "Soy hattı",
+          "note": "CATAPULT (USA) / LUCEAFAR bilgisi mevcut; tarihsel soy performansı sınırlı ağırlıkla okunur."
+        },
+        "owner": {
+          "score": 42,
+          "label": "Sahip",
+          "note": "MÜZEYYEN KARABULUT bilgisi mevcut; gerçek sahip başarı oranı sonraki veri genişletmede hesaplanacak."
+        },
+        "dataConfidence": {
+          "score": 100,
+          "label": "Veri güveni",
+          "note": "Yüksek güven"
+        }
+      },
+      "strongestGroup": "dataConfidence",
+      "weakestGroup": "routeProfile",
+      "flags": [
+        "jockey-change"
+      ]
+    },
+    {
+      "horseName": "LOST KING",
+      "gaziFinishPosition": 15,
+      "compositeScore": 48,
+      "readinessScore": 59,
+      "groups": {
+        "horsePerformance": {
+          "score": 53,
+          "label": "At performansı",
+          "note": "Sait Akson 2. ve geçmiş profil kanıtı birlikte okunur."
+        },
+        "routeProfile": {
+          "score": 20,
+          "label": "Rota profili",
+          "note": "At yalnızca bir takip koşusunda göründü; form sinyali var ama dar."
+        },
+        "actorContext": {
+          "score": 45,
+          "label": "Jokey/aktör",
+          "note": "Jokey hattı daha sabit görünüyor."
+        },
+        "pedigree": {
+          "score": 62,
+          "label": "Soy hattı",
+          "note": "NATIONAL DEFENSE (GB) / KASSAMA (FR) bilgisi mevcut; tarihsel soy performansı sınırlı ağırlıkla okunur."
+        },
+        "owner": {
+          "score": 42,
+          "label": "Sahip",
+          "note": "AHMET ALABAY bilgisi mevcut; gerçek sahip başarı oranı sonraki veri genişletmede hesaplanacak."
+        },
+        "dataConfidence": {
+          "score": 70,
+          "label": "Veri güveni",
+          "note": "Orta güven"
+        }
+      },
+      "strongestGroup": "dataConfidence",
+      "weakestGroup": "routeProfile",
+      "flags": []
+    },
+    {
+      "horseName": "GRANDE FLUSSO",
+      "gaziFinishPosition": 13,
+      "compositeScore": 46,
+      "readinessScore": 56,
+      "groups": {
+        "horsePerformance": {
+          "score": 44,
+          "label": "At performansı",
+          "note": "Mehmet Akif Ersoy 3. ve geçmiş profil kanıtı birlikte okunur."
+        },
+        "routeProfile": {
+          "score": 20,
+          "label": "Rota profili",
+          "note": "At yalnızca bir takip koşusunda göründü; form sinyali var ama dar."
+        },
+        "actorContext": {
+          "score": 49,
+          "label": "Jokey/aktör",
+          "note": "Jokey hattı daha sabit görünüyor."
+        },
+        "pedigree": {
+          "score": 62,
+          "label": "Soy hattı",
+          "note": "HAKEEM (USA) / MACHETE bilgisi mevcut; tarihsel soy performansı sınırlı ağırlıkla okunur."
+        },
+        "owner": {
+          "score": 42,
+          "label": "Sahip",
+          "note": "BARAN BÜYÜKDERE bilgisi mevcut; gerçek sahip başarı oranı sonraki veri genişletmede hesaplanacak."
+        },
+        "dataConfidence": {
+          "score": 71,
+          "label": "Veri güveni",
+          "note": "Orta güven"
+        }
+      },
+      "strongestGroup": "dataConfidence",
+      "weakestGroup": "routeProfile",
+      "flags": []
+    },
+    {
+      "horseName": "DATABASE",
+      "gaziFinishPosition": 6,
+      "compositeScore": 44,
+      "readinessScore": 62,
+      "groups": {
+        "horsePerformance": {
+          "score": 42,
+          "label": "At performansı",
+          "note": "Prep performans referansı sınırlı."
+        },
+        "routeProfile": {
+          "score": 0,
+          "label": "Rota profili",
+          "note": "At takip edilen hazırlık rotasına katılmadan Gazi alanına gelmiş."
+        },
+        "actorContext": {
+          "score": 68,
+          "label": "Jokey/aktör",
+          "note": "Jokey hattı daha sabit görünüyor."
+        },
+        "pedigree": {
+          "score": 62,
+          "label": "Soy hattı",
+          "note": "SUPER SAVER (USA) / YEŞİLMİŞİK bilgisi mevcut; tarihsel soy performansı sınırlı ağırlıkla okunur."
+        },
+        "owner": {
+          "score": 42,
+          "label": "Sahip",
+          "note": "EMRAH AGUN bilgisi mevcut; gerçek sahip başarı oranı sonraki veri genişletmede hesaplanacak."
+        },
+        "dataConfidence": {
+          "score": 70,
+          "label": "Veri güveni",
+          "note": "Orta güven"
+        }
+      },
+      "strongestGroup": "dataConfidence",
+      "weakestGroup": "routeProfile",
+      "flags": [
+        "route-blind"
+      ]
+    },
+    {
+      "horseName": "PATRICK STAR",
+      "gaziFinishPosition": 9,
+      "compositeScore": 43,
+      "readinessScore": 59,
+      "groups": {
+        "horsePerformance": {
+          "score": 42,
+          "label": "At performansı",
+          "note": "Prep performans referansı sınırlı."
+        },
+        "routeProfile": {
+          "score": 0,
+          "label": "Rota profili",
+          "note": "At takip edilen hazırlık rotasına katılmadan Gazi alanına gelmiş."
+        },
+        "actorContext": {
+          "score": 54,
+          "label": "Jokey/aktör",
+          "note": "Jokey hattı daha sabit görünüyor."
+        },
+        "pedigree": {
+          "score": 68,
+          "label": "Soy hattı",
+          "note": "MARCAVELLY (USA) / KİSOS bilgisi mevcut; tarihsel soy performansı sınırlı ağırlıkla okunur."
+        },
+        "owner": {
+          "score": 42,
+          "label": "Sahip",
+          "note": "SELVA SAĞUN bilgisi mevcut; gerçek sahip başarı oranı sonraki veri genişletmede hesaplanacak."
+        },
+        "dataConfidence": {
+          "score": 68,
+          "label": "Veri güveni",
+          "note": "Orta güven"
+        }
+      },
+      "strongestGroup": "pedigree",
+      "weakestGroup": "routeProfile",
+      "flags": [
+        "route-blind"
+      ]
+    },
+    {
+      "horseName": "MAGIC WEAPON",
+      "gaziFinishPosition": 7,
+      "compositeScore": 42,
+      "readinessScore": 59,
+      "groups": {
+        "horsePerformance": {
+          "score": 42,
+          "label": "At performansı",
+          "note": "Prep performans referansı sınırlı."
+        },
+        "routeProfile": {
+          "score": 0,
+          "label": "Rota profili",
+          "note": "At takip edilen hazırlık rotasına katılmadan Gazi alanına gelmiş."
+        },
+        "actorContext": {
+          "score": 54,
+          "label": "Jokey/aktör",
+          "note": "Jokey hattı daha sabit görünüyor."
+        },
+        "pedigree": {
+          "score": 62,
+          "label": "Soy hattı",
+          "note": "TIZWAY (USA) / INVINCIBLE GIRL bilgisi mevcut; tarihsel soy performansı sınırlı ağırlıkla okunur."
+        },
+        "owner": {
+          "score": 42,
+          "label": "Sahip",
+          "note": "MELİS KURTEL EMİN bilgisi mevcut; gerçek sahip başarı oranı sonraki veri genişletmede hesaplanacak."
+        },
+        "dataConfidence": {
+          "score": 68,
+          "label": "Veri güveni",
+          "note": "Orta güven"
+        }
+      },
+      "strongestGroup": "dataConfidence",
+      "weakestGroup": "routeProfile",
+      "flags": [
+        "route-blind"
+      ]
+    },
+    {
+      "horseName": "HOPE BREEZE",
+      "gaziFinishPosition": 16,
+      "compositeScore": 41,
+      "readinessScore": 58,
+      "groups": {
+        "horsePerformance": {
+          "score": 42,
+          "label": "At performansı",
+          "note": "Prep performans referansı sınırlı."
+        },
+        "routeProfile": {
+          "score": 0,
+          "label": "Rota profili",
+          "note": "At takip edilen hazırlık rotasına katılmadan Gazi alanına gelmiş."
+        },
+        "actorContext": {
+          "score": 49,
+          "label": "Jokey/aktör",
+          "note": "Jokey hattı daha sabit görünüyor."
+        },
+        "pedigree": {
+          "score": 65,
+          "label": "Soy hattı",
+          "note": "TOROK (IRE) / KATSUYA bilgisi mevcut; tarihsel soy performansı sınırlı ağırlıkla okunur."
+        },
+        "owner": {
+          "score": 42,
+          "label": "Sahip",
+          "note": "ÜMİT DURUCAN bilgisi mevcut; gerçek sahip başarı oranı sonraki veri genişletmede hesaplanacak."
+        },
+        "dataConfidence": {
+          "score": 67,
+          "label": "Veri güveni",
+          "note": "Orta güven"
+        }
+      },
+      "strongestGroup": "dataConfidence",
+      "weakestGroup": "routeProfile",
+      "flags": [
+        "route-blind"
+      ]
+    },
+    {
+      "horseName": "BRAVE CHAMPİON",
+      "gaziFinishPosition": 21,
+      "compositeScore": 41,
+      "readinessScore": 58,
+      "groups": {
+        "horsePerformance": {
+          "score": 42,
+          "label": "At performansı",
+          "note": "Prep performans referansı sınırlı."
+        },
+        "routeProfile": {
+          "score": 0,
+          "label": "Rota profili",
+          "note": "At takip edilen hazırlık rotasına katılmadan Gazi alanına gelmiş."
+        },
+        "actorContext": {
+          "score": 49,
+          "label": "Jokey/aktör",
+          "note": "Jokey hattı daha sabit görünüyor."
+        },
+        "pedigree": {
+          "score": 62,
+          "label": "Soy hattı",
+          "note": "MORE THAN A GAME (USA) / TROY EAGLE bilgisi mevcut; tarihsel soy performansı sınırlı ağırlıkla okunur."
+        },
+        "owner": {
+          "score": 42,
+          "label": "Sahip",
+          "note": "HAKAN SANER bilgisi mevcut; gerçek sahip başarı oranı sonraki veri genişletmede hesaplanacak."
+        },
+        "dataConfidence": {
+          "score": 67,
+          "label": "Veri güveni",
+          "note": "Orta güven"
+        }
+      },
+      "strongestGroup": "dataConfidence",
+      "weakestGroup": "routeProfile",
+      "flags": [
+        "route-blind"
+      ]
+    }
+  ],
+  "methodology": {
+    "note": "Feature breakdown, readiness ve katılım raporlarını ayrı feature gruplarına ayırır; tek başına sonuç tahmini değildir.",
+    "weights": {
+      "horsePerformance": 0.3,
+      "routeProfile": 0.2,
+      "actorContext": 0.16,
+      "pedigree": 0.12,
+      "owner": 0.07,
+      "dataConfidence": 0.15
+    },
+    "safeguards": [
+      "Sahip ve pedigree skorları ilk sürümde veri varlığı ve sınırlı actor sinyaliyle hesaplanır.",
+      "Eksik veri düşük güven olarak gösterilir; otomatik performans cezası sayılmaz.",
+      "Gazi sonucu feature üretiminde kullanılmaz; yalnızca tamamlanmış sezonlarda değerlendirme alanı olarak taşınır."
+    ]
+  }
+}

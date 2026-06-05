@@ -23,7 +23,7 @@ const endpoint = ({ id, path, description, freshness, schema }) => ({
   schema
 });
 
-export const buildApiIndex = ({ manifest, modelBacktest, candidateComparison, signalCalibration, raceDayWatchlist }) => {
+export const buildApiIndex = ({ manifest, modelBacktest, candidateComparison, featureBreakdown, signalCalibration, raceDayWatchlist }) => {
   const defaultReports = manifest?.defaultReports ?? {};
 
   return {
@@ -40,6 +40,7 @@ export const buildApiIndex = ({ manifest, modelBacktest, candidateComparison, si
       modelTopPickPodiumRate: modelBacktest?.summary?.topPickPodiumRate ?? null,
       modelWinnerTopThreeRate: modelBacktest?.summary?.winnerTopThreeRate ?? null,
       candidateComparisonCount: candidateComparison?.summary?.candidateCount ?? null,
+      featureBreakdownRunnerCount: featureBreakdown?.summary?.runnerCount ?? null,
       signalCalibrationSeasonCount: signalCalibration?.summary?.completedSeasonCount ?? null,
       raceDayCoreCount: raceDayWatchlist?.summary?.coreCount ?? null
     },
@@ -87,6 +88,13 @@ export const buildApiIndex = ({ manifest, modelBacktest, candidateComparison, si
         schema: ["summary", "candidates", "methodology"]
       }),
       endpoint({
+        id: "feature-breakdown",
+        path: defaultReports.featureBreakdown ?? "data/gazi-feature-breakdown.json",
+        description: "Gazi adaylarını at performansı, rota, aktör, pedigree, sahip ve veri güveni feature gruplarına ayıran rapor.",
+        freshness: "Readiness ve participation report sonrası yeniden üretilir.",
+        schema: ["summary", "profiles", "methodology"]
+      }),
+      endpoint({
         id: "signal-calibration",
         path: defaultReports.signalCalibration ?? "data/gazi-signal-calibration.json",
         description: "Readiness parça puanlarının geçmiş Gazi podyum/kazanan ayrımı ve model kaçırma davranışı üzerindeki kalibrasyon özeti.",
@@ -127,6 +135,7 @@ export const buildApiIndex = ({ manifest, modelBacktest, candidateComparison, si
         "manifest",
         "decision-brief",
         "candidate-comparison",
+        "feature-breakdown",
         "signal-calibration",
         "race-day-watchlist",
         "readiness-report",
@@ -143,6 +152,7 @@ const main = async () => {
   const manifestPath = getArgValue(args, "--manifest") ?? "data/padok-data-manifest.json";
   const modelBacktestPath = getArgValue(args, "--model-backtest") ?? "data/gazi-model-backtest.json";
   const candidateComparisonPath = getArgValue(args, "--candidate-comparison") ?? "data/gazi-candidate-comparison.json";
+  const featureBreakdownPath = getArgValue(args, "--feature-breakdown") ?? "data/gazi-feature-breakdown.json";
   const signalCalibrationPath = getArgValue(args, "--signal-calibration") ?? "data/gazi-signal-calibration.json";
   const raceDayWatchlistPath = getArgValue(args, "--race-day-watchlist") ?? "data/gazi-race-day-watchlist.json";
   const outPath = getArgValue(args, "--out") ?? "data/padok-api-index.json";
@@ -150,6 +160,7 @@ const main = async () => {
     manifest: await readOptionalJson(manifestPath),
     modelBacktest: await readOptionalJson(modelBacktestPath),
     candidateComparison: await readOptionalJson(candidateComparisonPath),
+    featureBreakdown: await readOptionalJson(featureBreakdownPath),
     signalCalibration: await readOptionalJson(signalCalibrationPath),
     raceDayWatchlist: await readOptionalJson(raceDayWatchlistPath)
   });
@@ -161,6 +172,7 @@ const main = async () => {
     endpointCount: payload.endpoints.length,
     modelBacktestSeasonCount: payload.summary.modelBacktestSeasonCount,
     candidateComparisonCount: payload.summary.candidateComparisonCount,
+    featureBreakdownRunnerCount: payload.summary.featureBreakdownRunnerCount,
     signalCalibrationSeasonCount: payload.summary.signalCalibrationSeasonCount,
     raceDayCoreCount: payload.summary.raceDayCoreCount
   }, null, 2));

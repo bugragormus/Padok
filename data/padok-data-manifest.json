@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-06-05T17:19:37.409Z",
+  "generatedAt": "2026-06-05T22:16:07.134Z",
   "summary": {
     "yearRange": "2020-2025",
     "yearCount": 6,
@@ -13,6 +13,7 @@
     "readiness": "data/gazi-readiness-report.json",
     "decisionBrief": "data/gazi-decision-brief.json",
     "candidateComparison": "data/gazi-candidate-comparison.json",
+    "featureBreakdown": "data/gazi-feature-breakdown.json",
     "signalCalibration": "data/gazi-signal-calibration.json",
     "raceDayWatchlist": "data/gazi-race-day-watchlist.json",
     "backtest": "data/gazi-backtest-report.json",

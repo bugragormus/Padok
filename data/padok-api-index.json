@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-06-05T17:19:37.421Z",
+  "generatedAt": "2026-06-05T22:16:07.126Z",
   "name": "Padok Static API",
   "version": "0.1.0",
   "description": "GitHub Pages üzerinden yayınlanan Padok veri ve analiz artifact katalogu.",
@@ -12,6 +12,7 @@
     "modelTopPickPodiumRate": 67,
     "modelWinnerTopThreeRate": 50,
     "candidateComparisonCount": 4,
+    "featureBreakdownRunnerCount": 22,
     "signalCalibrationSeasonCount": 6,
     "raceDayCoreCount": 4
   },
@@ -88,6 +89,17 @@
       ]
     },
     {
+      "id": "feature-breakdown",
+      "path": "data/gazi-feature-breakdown.json",
+      "description": "Gazi adaylarını at performansı, rota, aktör, pedigree, sahip ve veri güveni feature gruplarına ayıran rapor.",
+      "freshness": "Readiness ve participation report sonrası yeniden üretilir.",
+      "schema": [
+        "summary",
+        "profiles",
+        "methodology"
+      ]
+    },
+    {
       "id": "signal-calibration",
       "path": "data/gazi-signal-calibration.json",
       "description": "Readiness parça puanlarının geçmiş Gazi podyum/kazanan ayrımı ve model kaçırma davranışı üzerindeki kalibrasyon özeti.",
@@ -156,6 +168,7 @@
       "manifest",
       "decision-brief",
       "candidate-comparison",
+      "feature-breakdown",
       "signal-calibration",
       "race-day-watchlist",
       "readiness-report",

@@ -8,7 +8,7 @@ import {
   sortReadinessProfiles
 } from "./scripts/readiness-model.mjs";
 
-const APP_DATA_VERSION = "20260606-horse-comparison";
+const APP_DATA_VERSION = "20260606-feature-breakdown";
 
 const state = {
   data: null,
@@ -18,6 +18,7 @@ const state = {
   signalCalibration: null,
   decisionBrief: null,
   candidateComparison: null,
+  featureBreakdown: null,
   raceDayWatchlist: null,
   participationReport: null,
   readinessReport: null,
@@ -1312,6 +1313,45 @@ const renderHorseDecisionSummary = (summary) => `
   </div>
 `;
 
+const getFeatureProfile = (horseName, sourceYear) => {
+  if (state.featureBreakdown?.sourceYear !== sourceYear) return null;
+  const targetName = String(horseName ?? "").trim().toLocaleUpperCase("tr-TR");
+  return (state.featureBreakdown.profiles ?? [])
+    .find((profile) => String(profile.horseName ?? "").trim().toLocaleUpperCase("tr-TR") === targetName) ?? null;
+};
+
+const renderFeatureBreakdownPanel = (profile) => {
+  if (!profile?.groups) return "";
+
+  const groupOrder = ["horsePerformance", "routeProfile", "actorContext", "pedigree", "owner", "dataConfidence"];
+
+  return `
+    <div class="feature-breakdown-panel" aria-label="Feature grup puanları">
+      <div class="feature-breakdown-panel__header">
+        <div>
+          <span>Feature grupları</span>
+          <strong>Composite ${escapeHtml(profile.compositeScore)} · En güçlü: ${escapeHtml(profile.groups[profile.strongestGroup]?.label ?? "-")}</strong>
+        </div>
+        <em>Tek skor yerine katkı gruplarını ayrı oku.</em>
+      </div>
+      <div class="feature-breakdown-panel__grid">
+        ${groupOrder.map((key) => {
+          const group = profile.groups[key];
+          if (!group) return "";
+
+          return `
+            <span class="${key === profile.strongestGroup ? "feature-breakdown-panel__group--strong" : ""} ${key === profile.weakestGroup ? "feature-breakdown-panel__group--weak" : ""}">
+              <small>${escapeHtml(group.label)}</small>
+              <b>${escapeHtml(group.score)}</b>
+              <em>${escapeHtml(group.note)}</em>
+            </span>
+          `;
+        }).join("")}
+      </div>
+    </div>
+  `;
+};
+
 const renderReadinessLensControls = () => {
   return `
     <div class="readiness-lenses" aria-label="Readiness analiz mercekleri">
@@ -1979,6 +2019,7 @@ const renderParticipationDetail = (report, tableColumns, rows = report.rows) => 
   const readiness = getReadinessAssessment(selectedRow, tableColumns, profileSummary);
   const routeVisibility = getRouteVisibility(selectedRow, prepColumns);
   const artifactCandidate = getArtifactCandidate(selectedRow.horseName, report.sourceYear);
+  const featureProfile = getFeatureProfile(selectedRow.horseName, report.sourceYear);
   const decisionSummary = buildHorseDecisionSummary({
     row: selectedRow,
     tableColumns,
@@ -2023,6 +2064,8 @@ const renderParticipationDetail = (report, tableColumns, rows = report.rows) => 
       </div>
 
       ${renderHorseDecisionSummary(decisionSummary)}
+
+      ${renderFeatureBreakdownPanel(featureProfile)}
 
       <div class="profile-reading">
         <span>Profil okuması</span>
@@ -2537,7 +2580,7 @@ const renderFatalError = (error) => {
 };
 
 const init = async () => {
-  const [knowledge, routeReport, backtestReport, modelBacktest, signalCalibration, decisionBrief, candidateComparison, raceDayWatchlist, participationReport, readinessReport, horizon] = await Promise.all([
+  const [knowledge, routeReport, backtestReport, modelBacktest, signalCalibration, decisionBrief, candidateComparison, featureBreakdown, raceDayWatchlist, participationReport, readinessReport, horizon] = await Promise.all([
     readJson("./data/gazi-knowledge-base.json"),
     readOptionalJson("./data/gazi-route-report.json"),
     readOptionalJson("./data/gazi-backtest-report.json"),
@@ -2545,6 +2588,7 @@ const init = async () => {
     readOptionalJson("./data/gazi-signal-calibration.json"),
     readOptionalJson("./data/gazi-decision-brief.json"),
     readOptionalJson("./data/gazi-candidate-comparison.json"),
+    readOptionalJson("./data/gazi-feature-breakdown.json"),
     readOptionalJson("./data/gazi-race-day-watchlist.json"),
     readOptionalJson("./data/gazi-participation-report.json"),
     readOptionalJson("./data/gazi-readiness-report.json"),
@@ -2577,6 +2621,10 @@ const init = async () => {
 
   if (candidateComparison) {
     state.candidateComparison = candidateComparison;
+  }
+
+  if (featureBreakdown) {
+    state.featureBreakdown = featureBreakdown;
   }
 
   if (raceDayWatchlist) {

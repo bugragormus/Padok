@@ -2489,6 +2489,93 @@ h2 {
   line-height: 1.25;
 }
 
+.feature-breakdown-panel {
+  display: grid;
+  gap: 12px;
+  padding: 14px;
+  border: 1px solid rgba(63, 98, 120, 0.2);
+  border-radius: 8px;
+  background: #f3f7f8;
+}
+
+.feature-breakdown-panel__header {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  align-items: start;
+}
+
+.feature-breakdown-panel__header div {
+  display: grid;
+  gap: 5px;
+}
+
+.feature-breakdown-panel__header span {
+  color: var(--blue);
+  font-size: 0.72rem;
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
+.feature-breakdown-panel__header strong {
+  color: var(--green-2);
+  font-size: 1rem;
+  line-height: 1.25;
+}
+
+.feature-breakdown-panel__header em {
+  max-width: 260px;
+  color: var(--muted);
+  font-size: 0.74rem;
+  font-style: normal;
+  line-height: 1.45;
+  text-align: right;
+}
+
+.feature-breakdown-panel__grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 8px;
+}
+
+.feature-breakdown-panel__grid span {
+  display: grid;
+  align-content: start;
+  gap: 5px;
+  min-height: 112px;
+  padding: 10px;
+  border: 1px solid #dfe7e8;
+  border-radius: 8px;
+  background: #fff;
+}
+
+.feature-breakdown-panel__grid small {
+  color: var(--muted);
+  font-size: 0.68rem;
+  font-weight: 850;
+}
+
+.feature-breakdown-panel__grid b {
+  color: var(--ink);
+  font-size: 1rem;
+}
+
+.feature-breakdown-panel__grid em {
+  color: var(--muted);
+  font-size: 0.68rem;
+  font-style: normal;
+  line-height: 1.35;
+}
+
+.feature-breakdown-panel__group--strong {
+  border-color: rgba(36, 95, 70, 0.3) !important;
+  background: #eef6f1 !important;
+}
+
+.feature-breakdown-panel__group--weak {
+  border-color: rgba(154, 78, 78, 0.24) !important;
+}
+
 .profile-reading {
   display: grid;
   gap: 8px;
@@ -3664,6 +3751,19 @@ footer {
   .horse-comparison__header span {
     max-width: none;
     text-align: left;
+  }
+
+  .feature-breakdown-panel__header {
+    display: grid;
+  }
+
+  .feature-breakdown-panel__header em {
+    max-width: none;
+    text-align: left;
+  }
+
+  .feature-breakdown-panel__grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
   .horse-decision-summary__lists {

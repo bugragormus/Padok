@@ -107,6 +107,25 @@ export const buildToolList = () => [
     }
   },
   {
+    name: "padok.feature_breakdown",
+    description: "Return horse-level feature group breakdowns for performance, route, actor, pedigree, owner, and data confidence.",
+    inputSchema: {
+      type: "object",
+      properties: {
+        horseName: {
+          type: "string"
+        },
+        limit: {
+          type: "integer",
+          minimum: 1,
+          maximum: 20,
+          default: 6
+        }
+      },
+      additionalProperties: false
+    }
+  },
+  {
     name: "padok.race_day_watchlist",
     description: "Return race-day Gazi watchlist groups: core contenders, upside watch, risk flags, and data checklist.",
     inputSchema: {
@@ -186,6 +205,20 @@ export const callPadokTool = async (apiIndex, name, args = {}) => {
       ...calibration,
       signals: (calibration.signals ?? []).slice(0, limit),
       missDiagnostics: (calibration.missDiagnostics ?? []).slice(0, limit)
+    });
+  }
+
+  if (name === "padok.feature_breakdown") {
+    const breakdown = await readEndpointJson(apiIndex, "feature-breakdown");
+    const targetName = normalizeName(args.horseName);
+    const limit = clampLimit(args.limit, 6);
+    const profiles = targetName
+      ? (breakdown.profiles ?? []).filter((profile) => normalizeName(profile.horseName) === targetName)
+      : (breakdown.profiles ?? []).slice(0, limit);
+
+    return asContent({
+      ...breakdown,
+      profiles
     });
   }
 
