@@ -1,0 +1,100 @@
+{
+  "generatedAt": "2026-06-05T22:26:11.027Z",
+  "sourceYear": 2025,
+  "state": "completed",
+  "headline": "CUTHA Gazi'yi kazandı ama model lideri SPECIAL MAN idi. Kazanan 9 numaralı readiness profilinden geldi; en zayıf görünen feature grubu yarış öncesi riski büyüttü.",
+  "actualWinner": {
+    "horseName": "CUTHA",
+    "readinessRank": 9,
+    "readinessScore": 76,
+    "compositeScore": 58,
+    "strongestGroup": "dataConfidence",
+    "weakestGroup": "routeProfile",
+    "flags": [
+      "jockey-change"
+    ]
+  },
+  "modelLeader": {
+    "horseName": "SPECIAL MAN",
+    "finishPosition": 3,
+    "readinessRank": 1,
+    "readinessScore": 100,
+    "compositeScore": 74,
+    "strongestGroup": "horsePerformance",
+    "weakestGroup": "routeProfile"
+  },
+  "featureDeltas": [
+    {
+      "key": "horsePerformance",
+      "label": "At performansı",
+      "winnerScore": 65,
+      "leaderScore": 100,
+      "delta": -35,
+      "winnerNote": "Sait Akson 4. ve geçmiş profil kanıtı birlikte okunur.",
+      "leaderNote": "Mehmet Akif Ersoy 1. ve geçmiş profil kanıtı birlikte okunur."
+    },
+    {
+      "key": "routeProfile",
+      "label": "Rota profili",
+      "winnerScore": 20,
+      "leaderScore": 40,
+      "delta": -20,
+      "winnerNote": "At yalnızca bir takip koşusunda göründü; form sinyali var ama dar.",
+      "leaderNote": "At birden fazla takip koşusunda göründüğü için rota sinyali daha okunabilir."
+    },
+    {
+      "key": "actorContext",
+      "label": "Jokey/aktör",
+      "winnerScore": 60,
+      "leaderScore": 68,
+      "delta": -8,
+      "winnerNote": "AHMET ÇELİK tarihsel context skoru 65; 3/5 ilk 3.",
+      "leaderNote": "VEDAT ABİŞ tarihsel context skoru 41; 2/4 ilk 3."
+    },
+    {
+      "key": "pedigree",
+      "label": "Soy hattı",
+      "winnerScore": 62,
+      "leaderScore": 48,
+      "delta": 14,
+      "winnerNote": "VICTOIRE PISA (JPN) / SUZİ DIOMAND bilgisi mevcut; tarihsel soy context'i sınırlı ağırlıkla okunur.",
+      "leaderNote": "LUXOR / KIZIM MELİKE bilgisi mevcut; tarihsel soy context'i sınırlı ağırlıkla okunur."
+    },
+    {
+      "key": "owner",
+      "label": "Sahip",
+      "winnerScore": 36,
+      "leaderScore": 59,
+      "delta": -23,
+      "winnerNote": "HULUSİ ÇİL context skoru 36; küçük örneklerde temkinli okunmalı.",
+      "leaderNote": "MELİH TEMEL context skoru 59; küçük örneklerde temkinli okunmalı."
+    },
+    {
+      "key": "dataConfidence",
+      "label": "Veri güveni",
+      "winnerScore": 100,
+      "leaderScore": 100,
+      "delta": 0,
+      "winnerNote": "Yüksek güven",
+      "leaderNote": "Yüksek güven"
+    }
+  ],
+  "missReasons": [
+    "Kazanan prep galibi değildi; en iyi takip derecesi Sait Akson 4. sıra.",
+    "Kazanan yalnızca tek takip koşusunda göründü; model geniş rota görünürlüğünü daha çok ödüllendirdi.",
+    "Kazanan Gazi'ye jokey değişimiyle geldi; mevcut skor sürekliliği daha yüksek puanlıyor.",
+    "Kazananın upside metriği düşük kaldı; geç gelişen form sıçraması ayrıca modellenmeli.",
+    "Model lideri SPECIAL MAN oldu; ana skor görünür prep performansını öne aldı."
+  ],
+  "lessons": [
+    "Kazanan ana skor sıralamasında 9. olduğu için top-5 dışı profiller için ayrı sürpriz taraması gerekir.",
+    "Kazananın en zayıf görünen grubu \"Rota profili\"; düşük görünen grup otomatik eleme nedeni olmamalı.",
+    "Kazananın en güçlü grubu \"Veri güveni\"; sürpriz açıklamasında bu sinyal geriye dönük kontrol edilmeli.",
+    "Kazanan model liderinden \"Soy hattı\" tarafında 14 puan önde.",
+    "Model lideri \"At performansı\" tarafında kazanana göre 35 puan avantajlıydı."
+  ],
+  "methodology": {
+    "note": "Surprise review, tamamlanmış Gazi sezonunda gerçek kazananı model lideriyle karşılaştırır ve kaçırılan sinyalleri açıklar.",
+    "disclaimer": "Bu rapor yarış sonrası açıklama amaçlıdır; gelecek yarışları kesin bilme iddiası taşımaz."
+  }
+}

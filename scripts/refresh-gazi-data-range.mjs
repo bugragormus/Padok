@@ -200,6 +200,11 @@ const main = async () => {
   });
 
   log.steps.push({
+    step: "build-surprise-review",
+    result: runNpmScript("build:gazi-surprise-review", ["--out", "data/gazi-surprise-review.json"])
+  });
+
+  log.steps.push({
     step: "build-api-index",
     result: runNpmScript("build:api-index", ["--out", "data/padok-api-index.json"])
   });

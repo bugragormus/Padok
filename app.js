@@ -8,7 +8,7 @@ import {
   sortReadinessProfiles
 } from "./scripts/readiness-model.mjs";
 
-const APP_DATA_VERSION = "20260606-feature-breakdown";
+const APP_DATA_VERSION = "20260606-surprise-review";
 
 const state = {
   data: null,
@@ -20,6 +20,7 @@ const state = {
   candidateComparison: null,
   featureBreakdown: null,
   raceDayWatchlist: null,
+  surpriseReview: null,
   participationReport: null,
   readinessReport: null,
   dataHorizon: null,
@@ -1759,6 +1760,44 @@ const renderRaceDayWatchlist = (watchlist) => {
   `;
 };
 
+const renderSurpriseReview = (review) => {
+  const container = document.querySelector("#surprise-review");
+  if (!container) return;
+
+  if (!review || review.sourceYear !== state.participationReport?.sourceYear || review.state !== "completed") {
+    container.innerHTML = "";
+    return;
+  }
+
+  container.innerHTML = `
+    <section class="surprise-review__panel" aria-label="Sürpriz sonuç incelemesi">
+      <div class="surprise-review__header">
+        <div>
+          <p class="section-kicker">Sonuç sonrası okuma</p>
+          <h3>${escapeHtml(review.headline)}</h3>
+        </div>
+        <span>${escapeHtml(review.sourceYear)} · Kazanan ${escapeHtml(review.actualWinner?.horseName ?? "-")} · Model lideri ${escapeHtml(review.modelLeader?.horseName ?? "-")}</span>
+      </div>
+      <div class="surprise-review__matchup">
+        ${[
+          ["Gerçek kazanan", review.actualWinner],
+          ["Model lideri", review.modelLeader]
+        ].map(([label, item]) => `
+          <button type="button" data-horse-name="${escapeHtml(item?.horseName ?? "")}">
+            <span>${escapeHtml(label)}</span>
+            <strong>${escapeHtml(item?.horseName ?? "-")}</strong>
+            <em>Readiness ${escapeHtml(item?.readinessScore ?? "-")} · Composite ${escapeHtml(item?.compositeScore ?? "-")}</em>
+            <small>Güçlü: ${escapeHtml(item?.strongestGroup ?? "-")} · Zayıf: ${escapeHtml(item?.weakestGroup ?? "-")}</small>
+          </button>
+        `).join("")}
+      </div>
+      <div class="surprise-review__lessons">
+        ${review.lessons.slice(0, 4).map((lesson) => `<p>${escapeHtml(lesson)}</p>`).join("")}
+      </div>
+    </section>
+  `;
+};
+
 const renderProfileShortlist = (report, tableColumns) => {
   const profiles = buildParticipationProfiles(report, tableColumns);
   const readinessBoard = sortReadinessProfiles(profiles, state.readinessLens).slice(0, 4);
@@ -2455,6 +2494,7 @@ const loadAnalysisYear = async (year) => {
   renderDataStatus(state.routeReport);
   renderRouteReport(state.routeReport);
   renderRaceDayWatchlist(state.raceDayWatchlist);
+  renderSurpriseReview(state.surpriseReview);
   renderParticipation(state.participationReport);
 };
 
@@ -2507,6 +2547,14 @@ const bindEvents = () => {
     if (!row || !state.participationReport) return;
     state.selectedParticipationHorse = row.dataset.horseName;
     renderParticipation(state.participationReport);
+  });
+
+  document.querySelector("#surprise-review").addEventListener("click", (event) => {
+    const row = event.target.closest("[data-horse-name]");
+    if (!row || !row.dataset.horseName || !state.participationReport) return;
+    state.selectedParticipationHorse = row.dataset.horseName;
+    renderParticipation(state.participationReport);
+    document.querySelector("#participation-detail")?.scrollIntoView({ behavior: "smooth", block: "start" });
   });
 
   document.querySelector("#analysis-year-select").addEventListener("change", async (event) => {
@@ -2580,7 +2628,7 @@ const renderFatalError = (error) => {
 };
 
 const init = async () => {
-  const [knowledge, routeReport, backtestReport, modelBacktest, signalCalibration, decisionBrief, candidateComparison, featureBreakdown, raceDayWatchlist, participationReport, readinessReport, horizon] = await Promise.all([
+  const [knowledge, routeReport, backtestReport, modelBacktest, signalCalibration, decisionBrief, candidateComparison, featureBreakdown, raceDayWatchlist, surpriseReview, participationReport, readinessReport, horizon] = await Promise.all([
     readJson("./data/gazi-knowledge-base.json"),
     readOptionalJson("./data/gazi-route-report.json"),
     readOptionalJson("./data/gazi-backtest-report.json"),
@@ -2590,6 +2638,7 @@ const init = async () => {
     readOptionalJson("./data/gazi-candidate-comparison.json"),
     readOptionalJson("./data/gazi-feature-breakdown.json"),
     readOptionalJson("./data/gazi-race-day-watchlist.json"),
+    readOptionalJson("./data/gazi-surprise-review.json"),
     readOptionalJson("./data/gazi-participation-report.json"),
     readOptionalJson("./data/gazi-readiness-report.json"),
     readOptionalJson("./data/gazi-data-horizon.json")
@@ -2631,6 +2680,10 @@ const init = async () => {
     state.raceDayWatchlist = raceDayWatchlist;
   }
 
+  if (surpriseReview) {
+    state.surpriseReview = surpriseReview;
+  }
+
   if (participationReport) {
     state.participationReport = participationReport;
     if (Number.isFinite(state.participationReport.sourceYear)) {
@@ -2662,6 +2715,7 @@ const init = async () => {
   renderSignalCalibration(state.signalCalibration);
   renderDecisionBrief(state.decisionBrief);
   renderRaceDayWatchlist(state.raceDayWatchlist);
+  renderSurpriseReview(state.surpriseReview);
   if (state.participationReport) renderParticipation(state.participationReport);
   renderAnalysisYearControl();
   if (state.dataHorizon) await loadParticipationComparison();

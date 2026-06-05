@@ -75,6 +75,7 @@ export const buildDataManifest = async (dataDir = "data") => {
       featureBreakdown: "data/gazi-feature-breakdown.json",
       signalCalibration: "data/gazi-signal-calibration.json",
       raceDayWatchlist: "data/gazi-race-day-watchlist.json",
+      surpriseReview: "data/gazi-surprise-review.json",
       backtest: "data/gazi-backtest-report.json",
       modelBacktest: "data/gazi-model-backtest.json",
       horizon: "data/gazi-data-horizon.json",

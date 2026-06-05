@@ -155,6 +155,15 @@ export const buildToolList = () => [
     }
   },
   {
+    name: "padok.surprise_review",
+    description: "Return the post-race surprise review comparing the actual Gazi winner with the model leader.",
+    inputSchema: {
+      type: "object",
+      properties: {},
+      additionalProperties: false
+    }
+  },
+  {
     name: "padok.model_summary",
     description: "Return readiness model backtest summary, blind spots, and recent surprise reviews.",
     inputSchema: {
@@ -257,6 +266,10 @@ export const callPadokTool = async (apiIndex, name, args = {}) => {
 
   if (name === "padok.race_day_watchlist") {
     return asContent(await readEndpointJson(apiIndex, "race-day-watchlist"));
+  }
+
+  if (name === "padok.surprise_review") {
+    return asContent(await readEndpointJson(apiIndex, "surprise-review"));
   }
 
   if (name === "padok.model_summary") {

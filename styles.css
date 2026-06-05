@@ -1412,6 +1412,108 @@ h2 {
   line-height: 1.45;
 }
 
+.surprise-review {
+  display: grid;
+  margin: 0 0 18px;
+}
+
+.surprise-review:empty {
+  display: none;
+}
+
+.surprise-review__panel {
+  display: grid;
+  gap: 14px;
+  padding: 16px;
+  border: 1px solid rgba(154, 78, 78, 0.24);
+  border-radius: 8px;
+  background: #fff8f5;
+}
+
+.surprise-review__header {
+  display: flex;
+  justify-content: space-between;
+  gap: 18px;
+  align-items: start;
+}
+
+.surprise-review__header h3 {
+  margin: 0;
+  color: var(--ink);
+  font-size: clamp(1.2rem, 2.3vw, 1.8rem);
+  line-height: 1.16;
+}
+
+.surprise-review__header span {
+  max-width: 320px;
+  color: var(--muted);
+  font-size: 0.76rem;
+  line-height: 1.5;
+  text-align: right;
+}
+
+.surprise-review__matchup {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.surprise-review__matchup button {
+  display: grid;
+  gap: 6px;
+  min-height: 124px;
+  padding: 12px;
+  border: 1px solid rgba(154, 78, 78, 0.18);
+  border-radius: 8px;
+  background: #fff;
+  color: inherit;
+  cursor: pointer;
+  font: inherit;
+  text-align: left;
+}
+
+.surprise-review__matchup button:hover {
+  border-color: rgba(154, 78, 78, 0.44);
+}
+
+.surprise-review__matchup span {
+  color: var(--rose);
+  font-size: 0.7rem;
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
+.surprise-review__matchup strong {
+  color: var(--ink);
+  font-size: 1rem;
+}
+
+.surprise-review__matchup em,
+.surprise-review__matchup small {
+  color: var(--muted);
+  font-size: 0.72rem;
+  font-style: normal;
+  line-height: 1.4;
+}
+
+.surprise-review__lessons {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 8px;
+}
+
+.surprise-review__lessons p {
+  margin: 0;
+  min-height: 72px;
+  padding: 10px;
+  border: 1px solid rgba(154, 78, 78, 0.14);
+  border-radius: 8px;
+  background: #fff;
+  color: var(--muted);
+  font-size: 0.74rem;
+  line-height: 1.45;
+}
+
 .backtest-layout {
   display: grid;
   grid-template-columns: minmax(0, 1.35fr) minmax(300px, 0.65fr);
@@ -3669,6 +3771,20 @@ footer {
 
   .race-day-watchlist__grid,
   .race-day-watchlist__notes {
+    grid-template-columns: 1fr;
+  }
+
+  .surprise-review__header {
+    display: grid;
+  }
+
+  .surprise-review__header span {
+    max-width: none;
+    text-align: left;
+  }
+
+  .surprise-review__matchup,
+  .surprise-review__lessons {
     grid-template-columns: 1fr;
   }
 

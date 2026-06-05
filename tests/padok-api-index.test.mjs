@@ -17,6 +17,7 @@ test("buildApiIndex exposes static API endpoints for app and MCP consumers", () 
         contextHistory: "data/gazi-context-history.json",
         featureBreakdown: "data/gazi-feature-breakdown.json",
         raceDayWatchlist: "data/gazi-race-day-watchlist.json",
+        surpriseReview: "data/gazi-surprise-review.json",
         signalCalibration: "data/gazi-signal-calibration.json",
         modelBacktest: "data/gazi-model-backtest.json"
       }
@@ -52,6 +53,9 @@ test("buildApiIndex exposes static API endpoints for app and MCP consumers", () 
       summary: {
         coreCount: 4
       }
+    },
+    surpriseReview: {
+      state: "completed"
     }
   });
 
@@ -62,6 +66,7 @@ test("buildApiIndex exposes static API endpoints for app and MCP consumers", () 
   assert.equal(payload.summary.featureBreakdownRunnerCount, 22);
   assert.equal(payload.summary.signalCalibrationSeasonCount, 6);
   assert.equal(payload.summary.raceDayCoreCount, 4);
+  assert.equal(payload.summary.surpriseReviewState, "completed");
   assert.ok(payload.endpoints.some((endpoint) => endpoint.id === "readiness-report"));
   assert.ok(payload.endpoints.some((endpoint) => endpoint.id === "decision-brief"));
   assert.ok(payload.endpoints.some((endpoint) => endpoint.id === "candidate-comparison"));
@@ -69,6 +74,7 @@ test("buildApiIndex exposes static API endpoints for app and MCP consumers", () 
   assert.ok(payload.endpoints.some((endpoint) => endpoint.id === "feature-breakdown"));
   assert.ok(payload.endpoints.some((endpoint) => endpoint.id === "signal-calibration"));
   assert.ok(payload.endpoints.some((endpoint) => endpoint.id === "race-day-watchlist"));
+  assert.ok(payload.endpoints.some((endpoint) => endpoint.id === "surprise-review"));
   assert.ok(payload.endpoints.some((endpoint) => endpoint.id === "model-backtest"));
-  assert.deepEqual(payload.mcpBridge.recommendedResources.slice(0, 7), ["manifest", "decision-brief", "candidate-comparison", "context-history", "feature-breakdown", "signal-calibration", "race-day-watchlist"]);
+  assert.deepEqual(payload.mcpBridge.recommendedResources.slice(0, 8), ["manifest", "decision-brief", "candidate-comparison", "context-history", "feature-breakdown", "signal-calibration", "race-day-watchlist", "surprise-review"]);
 });

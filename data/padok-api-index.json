@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-06-05T22:22:16.881Z",
+  "generatedAt": "2026-06-05T22:26:19.908Z",
   "name": "Padok Static API",
   "version": "0.1.0",
   "description": "GitHub Pages üzerinden yayınlanan Padok veri ve analiz artifact katalogu.",
@@ -15,7 +15,8 @@
     "contextHistoryEntityCount": 403,
     "featureBreakdownRunnerCount": 22,
     "signalCalibrationSeasonCount": 6,
-    "raceDayCoreCount": 4
+    "raceDayCoreCount": 4,
+    "surpriseReviewState": "completed"
   },
   "endpoints": [
     {
@@ -143,6 +144,22 @@
       ]
     },
     {
+      "id": "surprise-review",
+      "path": "data/gazi-surprise-review.json",
+      "description": "Tamamlanmış Gazi sonucu için model lideri ile gerçek kazananı karşılaştıran sürpriz açıklama raporu.",
+      "freshness": "Model backtest ve feature breakdown sonrası yeniden üretilir.",
+      "schema": [
+        "state",
+        "headline",
+        "actualWinner",
+        "modelLeader",
+        "featureDeltas",
+        "missReasons",
+        "lessons",
+        "methodology"
+      ]
+    },
+    {
       "id": "model-backtest",
       "path": "data/gazi-model-backtest.json",
       "description": "Readiness modelinin tamamlanmış sezonlardaki performansı ve sürpriz sonuç açıklamaları.",
@@ -185,6 +202,7 @@
       "feature-breakdown",
       "signal-calibration",
       "race-day-watchlist",
+      "surprise-review",
       "readiness-report",
       "model-backtest",
       "participation-report"

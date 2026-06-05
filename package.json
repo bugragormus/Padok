@@ -21,6 +21,7 @@
     "build:gazi-feature-breakdown": "node scripts/build-gazi-feature-breakdown.mjs",
     "build:gazi-signal-calibration": "node scripts/build-gazi-signal-calibration.mjs",
     "build:gazi-race-day-watchlist": "node scripts/build-gazi-race-day-watchlist.mjs",
+    "build:gazi-surprise-review": "node scripts/build-gazi-surprise-review.mjs",
     "build:gazi-data-horizon": "node scripts/build-gazi-data-horizon.mjs",
     "build:data-manifest": "node scripts/build-data-manifest.mjs",
     "build:api-index": "node scripts/build-padok-api-index.mjs",
