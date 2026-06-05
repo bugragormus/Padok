@@ -275,6 +275,100 @@ h2 {
   font-size: 1.05rem;
 }
 
+.decision-brief-card {
+  display: grid;
+  gap: 14px;
+  margin-top: 18px;
+  padding: 16px;
+  border: 1px solid rgba(36, 95, 70, 0.2);
+  border-radius: 8px;
+  background: #fbfcfa;
+}
+
+.decision-brief-card__header {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  align-items: start;
+}
+
+.decision-brief-card__header h3 {
+  margin: 0;
+  font-size: 1.06rem;
+  line-height: 1.35;
+}
+
+.decision-brief-card__header a {
+  flex: 0 0 auto;
+  padding: 8px 10px;
+  border: 1px solid rgba(36, 95, 70, 0.28);
+  border-radius: 8px;
+  background: #eef6f1;
+  color: var(--green-2);
+  font-size: 0.72rem;
+  font-weight: 900;
+}
+
+.decision-brief-card__metrics,
+.decision-picks {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 8px;
+}
+
+.decision-brief-card__metrics span,
+.decision-pick {
+  display: grid;
+  gap: 5px;
+  min-width: 0;
+  padding: 10px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: #fff;
+}
+
+.decision-brief-card__metrics small,
+.decision-pick span,
+.decision-pick em,
+.decision-pick p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.72rem;
+  font-style: normal;
+  line-height: 1.35;
+}
+
+.decision-brief-card__metrics strong,
+.decision-pick strong {
+  overflow: hidden;
+  color: var(--green-2);
+  font-size: 0.92rem;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.decision-pick {
+  cursor: pointer;
+  text-align: left;
+}
+
+.decision-pick:hover {
+  border-color: rgba(36, 95, 70, 0.34);
+  box-shadow: 0 12px 24px rgba(36, 95, 70, 0.08);
+}
+
+.decision-notes {
+  display: grid;
+  gap: 7px;
+}
+
+.decision-notes span {
+  color: #4c5f73;
+  font-size: 0.76rem;
+  font-weight: 800;
+  line-height: 1.4;
+}
+
 .status-layout {
   display: grid;
   grid-template-columns: minmax(0, 1.15fr) minmax(280px, 0.85fr);
@@ -2643,6 +2737,15 @@ footer {
   .status-layout {
     grid-template-columns: 1fr;
     gap: 28px;
+  }
+
+  .decision-brief-card__header {
+    display: grid;
+  }
+
+  .decision-brief-card__metrics,
+  .decision-picks {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
   .backtest-layout {

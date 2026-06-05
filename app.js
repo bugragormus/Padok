@@ -8,13 +8,14 @@ import {
   sortReadinessProfiles
 } from "./scripts/readiness-model.mjs";
 
-const APP_DATA_VERSION = "20260605-surprise-review";
+const APP_DATA_VERSION = "20260605-decision-brief-ui";
 
 const state = {
   data: null,
   routeReport: null,
   backtestReport: null,
   modelBacktest: null,
+  decisionBrief: null,
   participationReport: null,
   readinessReport: null,
   dataManifest: null,
@@ -387,6 +388,67 @@ const renderReadinessArtifact = (report) => {
       </div>
       <a class="artifact-card__link" href="${escapeHtml(report.artifactPath ?? "./data/gazi-readiness-report.json")}" download>JSON indir</a>
       <em>Son üretim: ${escapeHtml(formatTimestamp(report.generatedAt))}</em>
+    </article>
+  `;
+};
+
+const decisionPickLabels = {
+  scoreLeader: "Ana lider",
+  upsideWatch: "Upside",
+  lowRisk: "Düşük risk",
+  uncertaintyWatch: "Belirsizlik"
+};
+
+const renderDecisionBrief = (brief) => {
+  const container = document.querySelector("#decision-brief");
+  if (!container) return;
+
+  if (!brief) {
+    container.innerHTML = "";
+    return;
+  }
+
+  const picks = Object.entries(brief.picks ?? {}).filter(([, pick]) => pick?.horseName);
+  const modelPerformance = brief.modelPerformance ?? {};
+  const metrics = [
+    ["Analiz yılı", brief.sourceYear ?? "-"],
+    ["Koşucu", brief.state?.runnerCount ?? "-"],
+    ["Top aday ilk 3", modelPerformance.topPickPodiumRate === undefined ? "-" : `%${modelPerformance.topPickPodiumRate}`],
+    ["Kazanan top 3", modelPerformance.winnerTopThreeRate === undefined ? "-" : `%${modelPerformance.winnerTopThreeRate}`]
+  ];
+
+  container.innerHTML = `
+    <article class="decision-brief-card" aria-label="Gazi karar destek özeti">
+      <div class="decision-brief-card__header">
+        <div>
+          <p class="section-kicker">Karar özeti</p>
+          <h3>${escapeHtml(brief.headline ?? "Karar özeti hazırlanıyor.")}</h3>
+        </div>
+        <a href="./data/gazi-decision-brief.json" download>JSON</a>
+      </div>
+      <div class="decision-brief-card__metrics">
+        ${metrics.map(([label, value]) => `
+          <span>
+            <small>${escapeHtml(label)}</small>
+            <strong>${escapeHtml(value)}</strong>
+          </span>
+        `).join("")}
+      </div>
+      <div class="decision-picks" aria-label="Decision brief aday rolleri">
+        ${picks.map(([key, pick]) => `
+          <button class="decision-pick" type="button" data-decision-horse="${escapeHtml(pick.horseName)}">
+            <span>${escapeHtml(decisionPickLabels[key] ?? key)}</span>
+            <strong>${escapeHtml(pick.horseName)}</strong>
+            <em>${escapeHtml(pick.value ?? "-")}/100 · ${escapeHtml(pick.meta ?? pick.badge ?? "-")}</em>
+            <p>${escapeHtml(pick.reason ?? "-")}</p>
+          </button>
+        `).join("")}
+      </div>
+      ${brief.decisionNotes?.length ? `
+        <div class="decision-notes">
+          ${brief.decisionNotes.slice(0, 3).map((note) => `<span>${escapeHtml(note)}</span>`).join("")}
+        </div>
+      ` : ""}
     </article>
   `;
 };
@@ -2087,6 +2149,14 @@ const loadAnalysisYear = async (year) => {
 };
 
 const bindEvents = () => {
+  document.querySelector("#decision-brief").addEventListener("click", (event) => {
+    const button = event.target.closest("[data-decision-horse]");
+    if (!button || !state.participationReport) return;
+    state.selectedParticipationHorse = button.dataset.decisionHorse;
+    renderParticipation(state.participationReport);
+    document.querySelector("#participation-detail")?.scrollIntoView({ behavior: "smooth", block: "start" });
+  });
+
   document.querySelector("#participation-table").addEventListener("click", (event) => {
     const row = event.target.closest("[data-horse-name]");
     if (!row || !state.participationReport) return;
@@ -2178,11 +2248,12 @@ const renderFatalError = (error) => {
 };
 
 const init = async () => {
-  const [knowledge, routeReport, backtestReport, modelBacktest, participationReport, readinessReport, manifest, horizon] = await Promise.all([
+  const [knowledge, routeReport, backtestReport, modelBacktest, decisionBrief, participationReport, readinessReport, manifest, horizon] = await Promise.all([
     readJson("./data/gazi-knowledge-base.json"),
     readOptionalJson("./data/gazi-route-report.json"),
     readOptionalJson("./data/gazi-backtest-report.json"),
     readOptionalJson("./data/gazi-model-backtest.json"),
+    readOptionalJson("./data/gazi-decision-brief.json"),
     readOptionalJson("./data/gazi-participation-report.json"),
     readOptionalJson("./data/gazi-readiness-report.json"),
     readOptionalJson("./data/padok-data-manifest.json"),
@@ -2203,6 +2274,10 @@ const init = async () => {
 
   if (modelBacktest) {
     state.modelBacktest = modelBacktest;
+  }
+
+  if (decisionBrief) {
+    state.decisionBrief = decisionBrief;
   }
 
   if (participationReport) {
@@ -2237,6 +2312,7 @@ const init = async () => {
   }
   if (state.backtestReport) renderBacktest(state.backtestReport);
   renderModelBacktest(state.modelBacktest);
+  renderDecisionBrief(state.decisionBrief);
   if (state.participationReport) renderParticipation(state.participationReport);
   renderReadinessArtifact(state.readinessReport);
   renderDataManifest(state.dataManifest);
