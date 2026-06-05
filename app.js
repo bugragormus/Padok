@@ -8,12 +8,13 @@ import {
   sortReadinessProfiles
 } from "./scripts/readiness-model.mjs";
 
-const APP_DATA_VERSION = "20260605-actor-context";
+const APP_DATA_VERSION = "20260605-model-backtest";
 
 const state = {
   data: null,
   routeReport: null,
   backtestReport: null,
+  modelBacktest: null,
   participationReport: null,
   readinessReport: null,
   dataManifest: null,
@@ -630,6 +631,61 @@ const renderBacktest = (report) => {
     .join("");
 
   document.querySelector("#backtest-warning").textContent = report.methodology.warning;
+};
+
+const renderModelBacktest = (report) => {
+  const container = document.querySelector("#model-backtest");
+  if (!container) return;
+
+  if (!report?.summary?.seasonCount) {
+    container.innerHTML = "";
+    return;
+  }
+
+  const summary = report.summary;
+  const recentSeasons = (report.seasons ?? []).slice(-4).reverse();
+  const blindSpots = (report.blindSpots ?? []).slice(0, 4);
+
+  container.innerHTML = `
+    <div class="model-check model-check--artifact" aria-label="Readiness model backtest artifact">
+      <div>
+        <p class="section-kicker">Model backtest</p>
+        <h4>Readiness tahmini geçmişte ne kadar yakaladı?</h4>
+        <span>${escapeHtml(summary.yearRange ?? "-")} sezonları · ${escapeHtml(summary.seasonCount)} tamamlanmış Gazi · leakage kontrollü artifact</span>
+      </div>
+      <div class="model-check__metrics">
+        <div>
+          <span>Top aday ilk 3</span>
+          <strong>%${escapeHtml(summary.topPickPodiumRate)}</strong>
+        </div>
+        <div>
+          <span>Top aday kazandı</span>
+          <strong>%${escapeHtml(summary.topPickWinRate)}</strong>
+        </div>
+        <div>
+          <span>Kazanan model top 3</span>
+          <strong>%${escapeHtml(summary.winnerTopThreeRate)}</strong>
+        </div>
+        <div>
+          <span>Ort. kazanan sırası</span>
+          <strong>${escapeHtml(summary.averageWinnerScoreRank ?? "-")}</strong>
+        </div>
+      </div>
+      <div class="model-check__seasons">
+        ${recentSeasons.map((season) => `
+          <span>
+            <strong>${escapeHtml(season.year)}</strong>
+            ${escapeHtml(season.topPickName ?? "-")} · Gazi ${escapeHtml(formatPosition(season.topPickFinish))} · Kazanan sıra ${escapeHtml(season.winnerScoreRank ?? "-")}
+          </span>
+        `).join("")}
+      </div>
+      ${blindSpots.length ? `
+        <div class="model-check__blindspots">
+          ${blindSpots.map((entry) => `<span>${escapeHtml(entry.count)} sezon · ${escapeHtml(entry.reason)}</span>`).join("")}
+        </div>
+      ` : ""}
+    </div>
+  `;
 };
 
 const participationStateLabels = {
@@ -2122,10 +2178,11 @@ const renderFatalError = (error) => {
 };
 
 const init = async () => {
-  const [knowledge, routeReport, backtestReport, participationReport, readinessReport, manifest, horizon] = await Promise.all([
+  const [knowledge, routeReport, backtestReport, modelBacktest, participationReport, readinessReport, manifest, horizon] = await Promise.all([
     readJson("./data/gazi-knowledge-base.json"),
     readOptionalJson("./data/gazi-route-report.json"),
     readOptionalJson("./data/gazi-backtest-report.json"),
+    readOptionalJson("./data/gazi-model-backtest.json"),
     readOptionalJson("./data/gazi-participation-report.json"),
     readOptionalJson("./data/gazi-readiness-report.json"),
     readOptionalJson("./data/padok-data-manifest.json"),
@@ -2142,6 +2199,10 @@ const init = async () => {
 
   if (backtestReport) {
     state.backtestReport = backtestReport;
+  }
+
+  if (modelBacktest) {
+    state.modelBacktest = modelBacktest;
   }
 
   if (participationReport) {
@@ -2175,6 +2236,7 @@ const init = async () => {
     renderDataStatus(state.routeReport ?? { year: state.data.targetRace.editionFocus, routeRaces: [] });
   }
   if (state.backtestReport) renderBacktest(state.backtestReport);
+  renderModelBacktest(state.modelBacktest);
   if (state.participationReport) renderParticipation(state.participationReport);
   renderReadinessArtifact(state.readinessReport);
   renderDataManifest(state.dataManifest);

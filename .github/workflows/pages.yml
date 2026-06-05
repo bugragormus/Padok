@@ -119,6 +119,14 @@ jobs:
               --out "data/gazi-readiness-${year}.json"
           done
 
+      - name: Build Gazi model backtest
+        run: |
+          inputs=""
+          for readiness in data/gazi-readiness-[0-9][0-9][0-9][0-9].json; do
+            inputs="$inputs --input $readiness"
+          done
+          npm run build:gazi-model-backtest -- $inputs --out data/gazi-model-backtest.json
+
       - name: Build Gazi data horizon
         run: npm run build:gazi-data-horizon -- --data-dir data --out data/gazi-data-horizon.json
 
@@ -130,7 +138,7 @@ jobs:
           mkdir -p dist/assets dist/data
           cp index.html app.js styles.css .nojekyll dist/
           cp assets/* dist/assets/
-          cp data/gazi-knowledge-base.json data/gazi-route-report.json data/gazi-route-2020.json data/gazi-route-2021.json data/gazi-route-2022.json data/gazi-route-2023.json data/gazi-route-2024.json data/gazi-route-2025.json data/gazi-route-2026.json data/gazi-backtest-report.json data/gazi-participation-report.json data/gazi-participation-*.json data/gazi-readiness-report.json data/gazi-readiness-*.json data/gazi-data-horizon.json data/padok-data-manifest.json dist/data/
+          cp data/gazi-knowledge-base.json data/gazi-route-report.json data/gazi-route-2020.json data/gazi-route-2021.json data/gazi-route-2022.json data/gazi-route-2023.json data/gazi-route-2024.json data/gazi-route-2025.json data/gazi-route-2026.json data/gazi-backtest-report.json data/gazi-model-backtest.json data/gazi-participation-report.json data/gazi-participation-*.json data/gazi-readiness-report.json data/gazi-readiness-*.json data/gazi-data-horizon.json data/padok-data-manifest.json dist/data/
 
       - name: Configure Pages
         uses: actions/configure-pages@v5
