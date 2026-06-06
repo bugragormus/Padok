@@ -23,7 +23,7 @@ const endpoint = ({ id, path, description, freshness, schema }) => ({
   schema
 });
 
-export const buildApiIndex = ({ manifest, modelBacktest, candidateComparison, decisionMatrix, contextHistory, featureBreakdown, signalCalibration, raceDayWatchlist, surpriseReview }) => {
+export const buildApiIndex = ({ manifest, modelBacktest, candidateComparison, decisionMatrix, contextHistory, featureBreakdown, signalCalibration, raceDayWatchlist, surpriseReview, racePrediction }) => {
   const defaultReports = manifest?.defaultReports ?? {};
 
   return {
@@ -45,7 +45,8 @@ export const buildApiIndex = ({ manifest, modelBacktest, candidateComparison, de
       featureBreakdownRunnerCount: featureBreakdown?.summary?.runnerCount ?? null,
       signalCalibrationSeasonCount: signalCalibration?.summary?.completedSeasonCount ?? null,
       raceDayCoreCount: raceDayWatchlist?.summary?.coreCount ?? null,
-      surpriseReviewState: surpriseReview?.state ?? null
+      surpriseReviewState: surpriseReview?.state ?? null,
+      racePredictionLeader: racePrediction?.summary?.leaderHorse ?? null
     },
     endpoints: [
       endpoint({
@@ -133,6 +134,13 @@ export const buildApiIndex = ({ manifest, modelBacktest, candidateComparison, de
         schema: ["state", "headline", "actualWinner", "modelLeader", "featureDeltas", "missReasons", "lessons", "methodology"]
       }),
       endpoint({
+        id: "race-prediction",
+        path: defaultReports.racePrediction ?? "data/race-prediction-mehmet-akif-ersoy-2026.json",
+        description: "Tek koşu kartı için HP, form, jokey ve mesafe/orijin sinyallerinden üretilen açıklanabilir tahmin matrisi.",
+        freshness: "Race card/deklare verisi yenilendiğinde yeniden üretilir.",
+        schema: ["race", "summary", "predictions", "methodology"]
+      }),
+      endpoint({
         id: "model-backtest",
         path: defaultReports.modelBacktest ?? "data/gazi-model-backtest.json",
         description: "Readiness modelinin tamamlanmış sezonlardaki performansı ve sürpriz sonuç açıklamaları.",
@@ -165,6 +173,7 @@ export const buildApiIndex = ({ manifest, modelBacktest, candidateComparison, de
         "signal-calibration",
         "race-day-watchlist",
         "surprise-review",
+        "race-prediction",
         "readiness-report",
         "model-backtest",
         "participation-report"
@@ -185,6 +194,7 @@ const main = async () => {
   const signalCalibrationPath = getArgValue(args, "--signal-calibration") ?? "data/gazi-signal-calibration.json";
   const raceDayWatchlistPath = getArgValue(args, "--race-day-watchlist") ?? "data/gazi-race-day-watchlist.json";
   const surpriseReviewPath = getArgValue(args, "--surprise-review") ?? "data/gazi-surprise-review.json";
+  const racePredictionPath = getArgValue(args, "--race-prediction") ?? "data/race-prediction-mehmet-akif-ersoy-2026.json";
   const outPath = getArgValue(args, "--out") ?? "data/padok-api-index.json";
   const payload = buildApiIndex({
     manifest: await readOptionalJson(manifestPath),
@@ -195,7 +205,8 @@ const main = async () => {
     featureBreakdown: await readOptionalJson(featureBreakdownPath),
     signalCalibration: await readOptionalJson(signalCalibrationPath),
     raceDayWatchlist: await readOptionalJson(raceDayWatchlistPath),
-    surpriseReview: await readOptionalJson(surpriseReviewPath)
+    surpriseReview: await readOptionalJson(surpriseReviewPath),
+    racePrediction: await readOptionalJson(racePredictionPath)
   });
 
   await mkdir(dirname(outPath), { recursive: true });
@@ -210,7 +221,8 @@ const main = async () => {
     featureBreakdownRunnerCount: payload.summary.featureBreakdownRunnerCount,
     signalCalibrationSeasonCount: payload.summary.signalCalibrationSeasonCount,
     raceDayCoreCount: payload.summary.raceDayCoreCount,
-    surpriseReviewState: payload.summary.surpriseReviewState
+    surpriseReviewState: payload.summary.surpriseReviewState,
+    racePredictionLeader: payload.summary.racePredictionLeader
   }, null, 2));
 };
 

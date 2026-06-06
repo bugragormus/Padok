@@ -210,6 +210,11 @@ const main = async () => {
   });
 
   log.steps.push({
+    step: "build-race-prediction",
+    result: runNpmScript("build:race-prediction", ["--out", "data/race-prediction-mehmet-akif-ersoy-2026.json"])
+  });
+
+  log.steps.push({
     step: "build-api-index",
     result: runNpmScript("build:api-index", ["--out", "data/padok-api-index.json"])
   });

@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-06-05T22:38:18.668Z",
+  "generatedAt": "2026-06-06T12:27:33.275Z",
   "summary": {
     "yearRange": "2020-2025",
     "yearCount": 6,
@@ -19,6 +19,7 @@
     "signalCalibration": "data/gazi-signal-calibration.json",
     "raceDayWatchlist": "data/gazi-race-day-watchlist.json",
     "surpriseReview": "data/gazi-surprise-review.json",
+    "racePrediction": "data/race-prediction-mehmet-akif-ersoy-2026.json",
     "backtest": "data/gazi-backtest-report.json",
     "modelBacktest": "data/gazi-model-backtest.json",
     "horizon": "data/gazi-data-horizon.json",

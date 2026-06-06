@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-06-05T22:38:18.662Z",
+  "generatedAt": "2026-06-06T12:27:33.275Z",
   "name": "Padok Static API",
   "version": "0.1.0",
   "description": "GitHub Pages üzerinden yayınlanan Padok veri ve analiz artifact katalogu.",
@@ -17,7 +17,8 @@
     "featureBreakdownRunnerCount": 22,
     "signalCalibrationSeasonCount": 6,
     "raceDayCoreCount": 4,
-    "surpriseReviewState": "completed"
+    "surpriseReviewState": "completed",
+    "racePredictionLeader": "UPAMECANO"
   },
   "endpoints": [
     {
@@ -175,6 +176,18 @@
       ]
     },
     {
+      "id": "race-prediction",
+      "path": "data/race-prediction-mehmet-akif-ersoy-2026.json",
+      "description": "Tek koşu kartı için HP, form, jokey ve mesafe/orijin sinyallerinden üretilen açıklanabilir tahmin matrisi.",
+      "freshness": "Race card/deklare verisi yenilendiğinde yeniden üretilir.",
+      "schema": [
+        "race",
+        "summary",
+        "predictions",
+        "methodology"
+      ]
+    },
+    {
       "id": "model-backtest",
       "path": "data/gazi-model-backtest.json",
       "description": "Readiness modelinin tamamlanmış sezonlardaki performansı ve sürpriz sonuç açıklamaları.",
@@ -219,6 +232,7 @@
       "signal-calibration",
       "race-day-watchlist",
       "surprise-review",
+      "race-prediction",
       "readiness-report",
       "model-backtest",
       "participation-report"

@@ -19,6 +19,7 @@ test("buildApiIndex exposes static API endpoints for app and MCP consumers", () 
         featureBreakdown: "data/gazi-feature-breakdown.json",
         raceDayWatchlist: "data/gazi-race-day-watchlist.json",
         surpriseReview: "data/gazi-surprise-review.json",
+        racePrediction: "data/race-prediction-mehmet-akif-ersoy-2026.json",
         signalCalibration: "data/gazi-signal-calibration.json",
         modelBacktest: "data/gazi-model-backtest.json"
       }
@@ -62,6 +63,11 @@ test("buildApiIndex exposes static API endpoints for app and MCP consumers", () 
     },
     surpriseReview: {
       state: "completed"
+    },
+    racePrediction: {
+      summary: {
+        leaderHorse: "UPAMECANO"
+      }
     }
   });
 
@@ -74,6 +80,7 @@ test("buildApiIndex exposes static API endpoints for app and MCP consumers", () 
   assert.equal(payload.summary.signalCalibrationSeasonCount, 6);
   assert.equal(payload.summary.raceDayCoreCount, 4);
   assert.equal(payload.summary.surpriseReviewState, "completed");
+  assert.equal(payload.summary.racePredictionLeader, "UPAMECANO");
   assert.ok(payload.endpoints.some((endpoint) => endpoint.id === "readiness-report"));
   assert.ok(payload.endpoints.some((endpoint) => endpoint.id === "decision-brief"));
   assert.ok(payload.endpoints.some((endpoint) => endpoint.id === "decision-matrix"));
@@ -83,6 +90,7 @@ test("buildApiIndex exposes static API endpoints for app and MCP consumers", () 
   assert.ok(payload.endpoints.some((endpoint) => endpoint.id === "signal-calibration"));
   assert.ok(payload.endpoints.some((endpoint) => endpoint.id === "race-day-watchlist"));
   assert.ok(payload.endpoints.some((endpoint) => endpoint.id === "surprise-review"));
+  assert.ok(payload.endpoints.some((endpoint) => endpoint.id === "race-prediction"));
   assert.ok(payload.endpoints.some((endpoint) => endpoint.id === "model-backtest"));
   assert.deepEqual(payload.mcpBridge.recommendedResources.slice(0, 9), ["manifest", "decision-brief", "decision-matrix", "candidate-comparison", "context-history", "feature-breakdown", "signal-calibration", "race-day-watchlist", "surprise-review"]);
 });

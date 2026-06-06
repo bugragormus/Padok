@@ -1,0 +1,448 @@
+{
+  "generatedAt": "2026-06-06T12:25:10.034Z",
+  "source": {
+    "name": "TJK Deklareler",
+    "url": "https://medya-cdn.tjk.org/raporftp/TJKPDF/2026/2026-06-06/PDF/Deklareler/06.06.2026-Ankara-Deklareler-TR.pdf"
+  },
+  "race": {
+    "id": "2026-06-06-ankara-mehmet-akif-ersoy",
+    "date": "2026-06-06",
+    "venue": "Ankara",
+    "raceNo": 1,
+    "raceTime": "16:00",
+    "name": "Mehmet Akif Ersoy Koşusu",
+    "class": "G2",
+    "ageBreed": "3 Yaşlı İngilizler",
+    "distance": 2200,
+    "surface": "Çim",
+    "going": "Biraz yumuşak",
+    "weather": "Az bulutlu",
+    "temperatureC": 27
+  },
+  "summary": {
+    "runnerCount": 13,
+    "scratchCount": 3,
+    "leaderHorse": "UPAMECANO",
+    "upsetHorse": "CABOOSE",
+    "headline": "UPAMECANO modelde önde; CABOOSE geniş kupon penceresinde izlenmeli."
+  },
+  "predictions": [
+    {
+      "rank": 1,
+      "programNo": 14,
+      "horseName": "UPAMECANO",
+      "role": "Birincilik adayı",
+      "jockey": "G.KOCAKAYA",
+      "trainer": "İ.B.OĞULLARI",
+      "owner": "TAL. ÖZTÜRK",
+      "handicapPoint": 108,
+      "recentForm": "1111-11",
+      "scratch": false,
+      "scores": {
+        "hp": 100,
+        "form": 100,
+        "jockey": 92,
+        "stamina": 55,
+        "risk": 2,
+        "winScore": 91,
+        "placeScore": 88,
+        "upsetScore": 51
+      },
+      "notes": [
+        "HP 108 ile sınıf sinyali güçlü.",
+        "Son form dizisi 1111-11 güçlü momentum veriyor.",
+        "G.KOCAKAYA faktörü karar skorunu yukarı çekiyor."
+      ]
+    },
+    {
+      "rank": 2,
+      "programNo": 1,
+      "horseName": "BAY NALÇAKAN",
+      "role": "Ana rakip",
+      "jockey": "H.KARATAŞ",
+      "trainer": "H.TURAN",
+      "owner": "EMR. NALÇAKAN",
+      "handicapPoint": 92,
+      "recentForm": "41-1115",
+      "scratch": false,
+      "scores": {
+        "hp": 85,
+        "form": 100,
+        "jockey": 92,
+        "stamina": 80,
+        "risk": 3,
+        "winScore": 89,
+        "placeScore": 88,
+        "upsetScore": 60
+      },
+      "notes": [
+        "HP 92 ile sınıf sinyali güçlü.",
+        "Son form dizisi 41-1115 güçlü momentum veriyor.",
+        "2200m Çim için orijin/stamina tarafı destekleyici.",
+        "H.KARATAŞ faktörü karar skorunu yukarı çekiyor."
+      ]
+    },
+    {
+      "rank": 3,
+      "programNo": 16,
+      "horseName": "VOICE OF KHAN",
+      "role": "Ana rakip",
+      "jockey": "A.SÖZEN",
+      "trainer": "C.AKGÜL",
+      "owner": "V. İBR. ARACI",
+      "handicapPoint": 86,
+      "recentForm": "131-419",
+      "scratch": false,
+      "scores": {
+        "hp": 80,
+        "form": 88,
+        "jockey": 84,
+        "stamina": 80,
+        "risk": 4,
+        "winScore": 82,
+        "placeScore": 82,
+        "upsetScore": 56
+      },
+      "notes": [
+        "Son form dizisi 131-419 güçlü momentum veriyor.",
+        "2200m Çim için orijin/stamina tarafı destekleyici."
+      ]
+    },
+    {
+      "rank": 4,
+      "programNo": 9,
+      "horseName": "MASSIMO SUPREMO",
+      "role": "Tabela adayı",
+      "jockey": "M.KAYA",
+      "trainer": "C.ŞİMŞEK",
+      "owner": "H. KAA. MÜJDECİ",
+      "handicapPoint": 89,
+      "recentForm": "414146",
+      "scratch": false,
+      "scores": {
+        "hp": 82,
+        "form": 77,
+        "jockey": 84,
+        "stamina": 80,
+        "risk": 4,
+        "winScore": 80,
+        "placeScore": 79,
+        "upsetScore": 53
+      },
+      "notes": [
+        "2200m Çim için orijin/stamina tarafı destekleyici."
+      ]
+    },
+    {
+      "rank": 5,
+      "programNo": 4,
+      "horseName": "BUILD YOUR DREAMS",
+      "role": "Tabela adayı",
+      "jockey": "Ö.YILDIRIM",
+      "trainer": "A.GÜVEN",
+      "owner": "TUĞ. İPEK",
+      "handicapPoint": 94,
+      "recentForm": "3631-08",
+      "scratch": false,
+      "scores": {
+        "hp": 87,
+        "form": 75,
+        "jockey": 84,
+        "stamina": 62,
+        "risk": 3,
+        "winScore": 78,
+        "placeScore": 77,
+        "upsetScore": 47
+      },
+      "notes": [
+        "HP 94 ile sınıf sinyali güçlü."
+      ]
+    },
+    {
+      "rank": 6,
+      "programNo": 3,
+      "horseName": "BİZON",
+      "role": "Tabela adayı",
+      "jockey": "M.AKYAVUZ",
+      "trainer": "İ.AKKILIÇ",
+      "owner": "SAL. YILDIZER",
+      "handicapPoint": 77,
+      "recentForm": "1-33141",
+      "scratch": false,
+      "scores": {
+        "hp": 71,
+        "form": 100,
+        "jockey": 74,
+        "stamina": 62,
+        "risk": 6,
+        "winScore": 77,
+        "placeScore": 78,
+        "upsetScore": 56
+      },
+      "notes": [
+        "Son form dizisi 1-33141 güçlü momentum veriyor."
+      ]
+    },
+    {
+      "rank": 7,
+      "programNo": 5,
+      "horseName": "CABOOSE",
+      "role": "Sürpriz adayı",
+      "jockey": "A.ÇELİK",
+      "trainer": "K.BALTACI",
+      "owner": "SER. GÜL",
+      "handicapPoint": 59,
+      "recentForm": "2-133",
+      "scratch": false,
+      "scores": {
+        "hp": 55,
+        "form": 96,
+        "jockey": 92,
+        "stamina": 80,
+        "risk": 10,
+        "winScore": 75,
+        "placeScore": 77,
+        "upsetScore": 64
+      },
+      "notes": [
+        "Son form dizisi 2-133 güçlü momentum veriyor.",
+        "2200m Çim için orijin/stamina tarafı destekleyici.",
+        "A.ÇELİK faktörü karar skorunu yukarı çekiyor."
+      ]
+    },
+    {
+      "rank": 8,
+      "programNo": 12,
+      "horseName": "SNOW LEOPARD",
+      "role": "Tabela adayı",
+      "jockey": "E.ÇİZİK",
+      "trainer": "H.SUNKAR",
+      "owner": "GÜL. YANIK",
+      "handicapPoint": 76,
+      "recentForm": "111245",
+      "scratch": false,
+      "scores": {
+        "hp": 70,
+        "form": 85,
+        "jockey": 74,
+        "stamina": 80,
+        "risk": 7,
+        "winScore": 75,
+        "placeScore": 76,
+        "upsetScore": 56
+      },
+      "notes": [
+        "Son form dizisi 111245 güçlü momentum veriyor.",
+        "2200m Çim için orijin/stamina tarafı destekleyici."
+      ]
+    },
+    {
+      "rank": 9,
+      "programNo": 8,
+      "horseName": "INVESTIGATOR",
+      "role": "Sürpriz adayı",
+      "jockey": "S.KAYA",
+      "trainer": "Y.ŞİMŞEK",
+      "owner": "FED. KAHRAMAN",
+      "handicapPoint": 63,
+      "recentForm": "12-1",
+      "scratch": false,
+      "scores": {
+        "hp": 58,
+        "form": 100,
+        "jockey": 84,
+        "stamina": 80,
+        "risk": 17,
+        "winScore": 74,
+        "placeScore": 77,
+        "upsetScore": 63
+      },
+      "notes": [
+        "Son form dizisi 12-1 güçlü momentum veriyor.",
+        "2200m Çim için orijin/stamina tarafı destekleyici."
+      ]
+    },
+    {
+      "rank": 10,
+      "programNo": 7,
+      "horseName": "FATHER OF FATHERS",
+      "role": "Tabela adayı",
+      "jockey": "A.KURŞUN",
+      "trainer": "B.TURGUL",
+      "owner": "AKA. MIRIZ",
+      "handicapPoint": 71,
+      "recentForm": "213343",
+      "scratch": false,
+      "scores": {
+        "hp": 66,
+        "form": 78,
+        "jockey": 84,
+        "stamina": 80,
+        "risk": 7,
+        "winScore": 73,
+        "placeScore": 75,
+        "upsetScore": 56
+      },
+      "notes": [
+        "Son form dizisi 213343 güçlü momentum veriyor.",
+        "2200m Çim için orijin/stamina tarafı destekleyici."
+      ]
+    },
+    {
+      "rank": 11,
+      "programNo": 11,
+      "horseName": "SHADOW SOLDIER",
+      "role": "Tabela adayı",
+      "jockey": "V.ABİŞ",
+      "trainer": "S.SÜSLÜ",
+      "owner": "ALİ UÇAK",
+      "handicapPoint": 80,
+      "recentForm": "134225",
+      "scratch": false,
+      "scores": {
+        "hp": 74,
+        "form": 75,
+        "jockey": 84,
+        "stamina": 55,
+        "risk": 8,
+        "winScore": 71,
+        "placeScore": 72,
+        "upsetScore": 48
+      },
+      "notes": []
+    },
+    {
+      "rank": 12,
+      "programNo": 6,
+      "horseName": "ERSELE BEYİ",
+      "role": "Tabela adayı",
+      "jockey": "E.ÇANKAYA",
+      "trainer": "M.ÖRTÜNÇ",
+      "owner": "MUR. AKTAŞ",
+      "handicapPoint": 79,
+      "recentForm": "523-526",
+      "scratch": false,
+      "scores": {
+        "hp": 73,
+        "form": 70,
+        "jockey": 74,
+        "stamina": 62,
+        "risk": 6,
+        "winScore": 69,
+        "placeScore": 70,
+        "upsetScore": 47
+      },
+      "notes": []
+    },
+    {
+      "rank": 13,
+      "programNo": 2,
+      "horseName": "BIGBOYCAPRICE",
+      "role": "Tabela adayı",
+      "jockey": "S.ÇELİK",
+      "trainer": "T.TÜRKMEN",
+      "owner": "ERK. SÜSLÜ",
+      "handicapPoint": 55,
+      "recentForm": "21-5683",
+      "scratch": false,
+      "scores": {
+        "hp": 51,
+        "form": 57,
+        "jockey": 74,
+        "stamina": 80,
+        "risk": 11,
+        "winScore": 59,
+        "placeScore": 62,
+        "upsetScore": 52
+      },
+      "notes": [
+        "2200m Çim için orijin/stamina tarafı destekleyici."
+      ]
+    },
+    {
+      "rank": 14,
+      "programNo": 15,
+      "horseName": "VICTORY WALTZ",
+      "role": "Koşmaz",
+      "jockey": null,
+      "trainer": "Y.YILDIZ",
+      "owner": "CEMKESER",
+      "handicapPoint": 68,
+      "recentForm": "132322",
+      "scratch": true,
+      "scores": {
+        "hp": 63,
+        "form": 88,
+        "jockey": 35,
+        "stamina": 80,
+        "risk": 100,
+        "winScore": 48,
+        "placeScore": 0,
+        "upsetScore": 43
+      },
+      "notes": [
+        "Son form dizisi 132322 güçlü momentum veriyor.",
+        "2200m Çim için orijin/stamina tarafı destekleyici.",
+        "Risk yüksek; tek başına güvenli favori gibi okunmamalı."
+      ]
+    },
+    {
+      "rank": 15,
+      "programNo": 13,
+      "horseName": "TYPHOON",
+      "role": "Koşmaz",
+      "jockey": null,
+      "trainer": "A.ÖCAL",
+      "owner": "BAR. KARAGÖZ",
+      "handicapPoint": 61,
+      "recentForm": "332441",
+      "scratch": true,
+      "scores": {
+        "hp": 56,
+        "form": 87,
+        "jockey": 35,
+        "stamina": 55,
+        "risk": 100,
+        "winScore": 40,
+        "placeScore": 0,
+        "upsetScore": 38
+      },
+      "notes": [
+        "Son form dizisi 332441 güçlü momentum veriyor.",
+        "Risk yüksek; tek başına güvenli favori gibi okunmamalı."
+      ]
+    },
+    {
+      "rank": 16,
+      "programNo": 10,
+      "horseName": "RACING STAR",
+      "role": "Koşmaz",
+      "jockey": null,
+      "trainer": "H.YÜZBAŞI",
+      "owner": "DEN. KURTEL",
+      "handicapPoint": 47,
+      "recentForm": "441360",
+      "scratch": true,
+      "scores": {
+        "hp": 44,
+        "form": 82,
+        "jockey": 35,
+        "stamina": 80,
+        "risk": 100,
+        "winScore": 39,
+        "placeScore": 0,
+        "upsetScore": 45
+      },
+      "notes": [
+        "Son form dizisi 441360 güçlü momentum veriyor.",
+        "2200m Çim için orijin/stamina tarafı destekleyici.",
+        "Risk yüksek; tek başına güvenli favori gibi okunmamalı."
+      ]
+    }
+  ],
+  "methodology": {
+    "note": "Race prediction, tek koşu kartındaki HP, son form, jokey gücü ve mesafe/orijin dayanıklılığını açıklanabilir şekilde puanlar.",
+    "limitation": "Bu modül henüz idman, AGF, detaylı tempo ve atın tüm kariyer koşularını otomatik okumaz.",
+    "disclaimer": "Analiz çıktısıdır; kesin sonuç tahmini veya bahis önerisi değildir."
+  }
+}

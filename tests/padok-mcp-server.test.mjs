@@ -22,6 +22,7 @@ test("Padok MCP server exposes static API artifacts as resources", async () => {
   assert.ok(resources.some((resource) => resource.uri === "padok://endpoint/signal-calibration"));
   assert.ok(resources.some((resource) => resource.uri === "padok://endpoint/race-day-watchlist"));
   assert.ok(resources.some((resource) => resource.uri === "padok://endpoint/surprise-review"));
+  assert.ok(resources.some((resource) => resource.uri === "padok://endpoint/race-prediction"));
   assert.ok(resources.some((resource) => resource.uri === "padok://endpoint/model-backtest"));
 
   const readiness = await readEndpointResource(apiIndex, "padok://endpoint/readiness-report");
@@ -78,6 +79,7 @@ test("Padok MCP tools return model summary and top candidates", async () => {
   assert.ok(tools.some((tool) => tool.name === "padok.signal_calibration"));
   assert.ok(tools.some((tool) => tool.name === "padok.race_day_watchlist"));
   assert.ok(tools.some((tool) => tool.name === "padok.surprise_review"));
+  assert.ok(tools.some((tool) => tool.name === "padok.race_prediction"));
   assert.ok(tools.some((tool) => tool.name === "padok.top_candidates"));
   assert.ok(tools.some((tool) => tool.name === "padok.horse_profile"));
 
@@ -147,6 +149,12 @@ test("Padok MCP tools return model summary and top candidates", async () => {
   assert.equal(surprise.state, "completed");
   assert.equal(surprise.actualWinner.horseName, "CUTHA");
   assert.ok(surprise.lessons.length > 0);
+
+  const racePredictionResult = await callPadokTool(apiIndex, "padok.race_prediction");
+  const racePrediction = JSON.parse(racePredictionResult.content[0].text);
+
+  assert.equal(racePrediction.summary.leaderHorse, "UPAMECANO");
+  assert.ok(racePrediction.predictions.length > 0);
 
   const candidatesResult = await callPadokTool(apiIndex, "padok.top_candidates", {
     lens: "score",

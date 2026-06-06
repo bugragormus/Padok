@@ -173,6 +173,15 @@ export const buildToolList = () => [
     }
   },
   {
+    name: "padok.race_prediction",
+    description: "Return the current single-race prediction matrix with ranked horses, roles, scores, and limitations.",
+    inputSchema: {
+      type: "object",
+      properties: {},
+      additionalProperties: false
+    }
+  },
+  {
     name: "padok.model_summary",
     description: "Return readiness model backtest summary, blind spots, and recent surprise reviews.",
     inputSchema: {
@@ -283,6 +292,10 @@ export const callPadokTool = async (apiIndex, name, args = {}) => {
 
   if (name === "padok.surprise_review") {
     return asContent(await readEndpointJson(apiIndex, "surprise-review"));
+  }
+
+  if (name === "padok.race_prediction") {
+    return asContent(await readEndpointJson(apiIndex, "race-prediction"));
   }
 
   if (name === "padok.model_summary") {

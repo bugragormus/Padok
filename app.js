@@ -8,7 +8,7 @@ import {
   sortReadinessProfiles
 } from "./scripts/readiness-model.mjs";
 
-const APP_DATA_VERSION = "20260606-decision-matrix";
+const APP_DATA_VERSION = "20260606-race-prediction";
 
 const state = {
   data: null,
@@ -22,6 +22,7 @@ const state = {
   featureBreakdown: null,
   raceDayWatchlist: null,
   surpriseReview: null,
+  racePrediction: null,
   participationReport: null,
   readinessReport: null,
   dataHorizon: null,
@@ -1843,6 +1844,51 @@ const renderSurpriseReview = (review) => {
   `;
 };
 
+const renderRacePrediction = (prediction) => {
+  const container = document.querySelector("#race-prediction");
+  if (!container) return;
+
+  if (!prediction?.predictions?.length) {
+    container.innerHTML = "";
+    return;
+  }
+
+  const runnable = prediction.predictions.filter((entry) => !entry.scratch);
+  const upsetHorse = prediction.summary?.upsetHorse;
+  const visible = [
+    ...runnable.slice(0, 5),
+    ...(upsetHorse ? runnable.filter((entry) => entry.horseName === upsetHorse) : [])
+  ].filter((entry, index, entries) => entries.findIndex((candidate) => candidate.horseName === entry.horseName) === index).slice(0, 6);
+  const race = prediction.race ?? {};
+
+  container.innerHTML = `
+    <section class="race-prediction__panel" aria-label="Tek koşu tahmini">
+      <div class="race-prediction__header">
+        <div>
+          <p class="section-kicker">Bugünkü koşu tahmini</p>
+          <h3>${escapeHtml(prediction.summary?.headline ?? "Koşu tahmini hazırlanıyor.")}</h3>
+        </div>
+        <span>${escapeHtml(race.date ?? "-")} · ${escapeHtml(race.venue ?? "-")} · ${escapeHtml(race.distance ?? "-")}m ${escapeHtml(race.surface ?? "")}</span>
+      </div>
+      <div class="race-prediction__grid">
+        ${visible.map((entry) => `
+          <article class="race-prediction-card">
+            <span>${escapeHtml(entry.rank)} · ${escapeHtml(entry.role)}</span>
+            <strong>${escapeHtml(entry.programNo)} ${escapeHtml(entry.horseName)}</strong>
+            <em>${escapeHtml(entry.jockey ?? "-")} · HP ${escapeHtml(entry.handicapPoint ?? "-")} · ${escapeHtml(entry.recentForm ?? "-")}</em>
+            <div>
+              <small>Win ${escapeHtml(entry.scores?.winScore ?? "-")}</small>
+              <small>Place ${escapeHtml(entry.scores?.placeScore ?? "-")}</small>
+              <small>Risk ${escapeHtml(entry.scores?.risk ?? "-")}</small>
+            </div>
+            <p>${escapeHtml(entry.notes?.[0] ?? prediction.methodology?.limitation ?? "-")}</p>
+          </article>
+        `).join("")}
+      </div>
+    </section>
+  `;
+};
+
 const renderProfileShortlist = (report, tableColumns) => {
   const profiles = buildParticipationProfiles(report, tableColumns);
   const readinessBoard = sortReadinessProfiles(profiles, state.readinessLens).slice(0, 4);
@@ -2541,6 +2587,7 @@ const loadAnalysisYear = async (year) => {
   renderDecisionMatrix(state.decisionMatrix);
   renderRaceDayWatchlist(state.raceDayWatchlist);
   renderSurpriseReview(state.surpriseReview);
+  renderRacePrediction(state.racePrediction);
   renderParticipation(state.participationReport);
 };
 
@@ -2682,7 +2729,7 @@ const renderFatalError = (error) => {
 };
 
 const init = async () => {
-  const [knowledge, routeReport, backtestReport, modelBacktest, signalCalibration, decisionBrief, decisionMatrix, candidateComparison, featureBreakdown, raceDayWatchlist, surpriseReview, participationReport, readinessReport, horizon] = await Promise.all([
+  const [knowledge, routeReport, backtestReport, modelBacktest, signalCalibration, decisionBrief, decisionMatrix, candidateComparison, featureBreakdown, raceDayWatchlist, surpriseReview, racePrediction, participationReport, readinessReport, horizon] = await Promise.all([
     readJson("./data/gazi-knowledge-base.json"),
     readOptionalJson("./data/gazi-route-report.json"),
     readOptionalJson("./data/gazi-backtest-report.json"),
@@ -2694,6 +2741,7 @@ const init = async () => {
     readOptionalJson("./data/gazi-feature-breakdown.json"),
     readOptionalJson("./data/gazi-race-day-watchlist.json"),
     readOptionalJson("./data/gazi-surprise-review.json"),
+    readOptionalJson("./data/race-prediction-mehmet-akif-ersoy-2026.json"),
     readOptionalJson("./data/gazi-participation-report.json"),
     readOptionalJson("./data/gazi-readiness-report.json"),
     readOptionalJson("./data/gazi-data-horizon.json")
@@ -2743,6 +2791,10 @@ const init = async () => {
     state.surpriseReview = surpriseReview;
   }
 
+  if (racePrediction) {
+    state.racePrediction = racePrediction;
+  }
+
   if (participationReport) {
     state.participationReport = participationReport;
     if (Number.isFinite(state.participationReport.sourceYear)) {
@@ -2776,6 +2828,7 @@ const init = async () => {
   renderDecisionMatrix(state.decisionMatrix);
   renderRaceDayWatchlist(state.raceDayWatchlist);
   renderSurpriseReview(state.surpriseReview);
+  renderRacePrediction(state.racePrediction);
   if (state.participationReport) renderParticipation(state.participationReport);
   renderAnalysisYearControl();
   if (state.dataHorizon) await loadParticipationComparison();
