@@ -173,6 +173,15 @@ export const buildToolList = () => [
     }
   },
   {
+    name: "padok.race_card",
+    description: "Return the current normalized single-race card that feeds the prediction pipeline.",
+    inputSchema: {
+      type: "object",
+      properties: {},
+      additionalProperties: false
+    }
+  },
+  {
     name: "padok.race_prediction",
     description: "Return the current single-race prediction matrix with ranked horses, roles, scores, and limitations.",
     inputSchema: {
@@ -292,6 +301,10 @@ export const callPadokTool = async (apiIndex, name, args = {}) => {
 
   if (name === "padok.surprise_review") {
     return asContent(await readEndpointJson(apiIndex, "surprise-review"));
+  }
+
+  if (name === "padok.race_card") {
+    return asContent(await readEndpointJson(apiIndex, "race-card"));
   }
 
   if (name === "padok.race_prediction") {

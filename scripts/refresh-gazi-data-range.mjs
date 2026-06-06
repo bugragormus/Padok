@@ -210,8 +210,19 @@ const main = async () => {
   });
 
   log.steps.push({
+    step: "build-race-card",
+    result: runNpmScript("build:race-card", [
+      "--input", "data/race-cards/sources/2026-06-06-ankara-mehmet-akif-ersoy.txt",
+      "--out", "data/race-cards/2026-06-06-ankara-mehmet-akif-ersoy.json"
+    ])
+  });
+
+  log.steps.push({
     step: "build-race-prediction",
-    result: runNpmScript("build:race-prediction", ["--out", "data/race-prediction-mehmet-akif-ersoy-2026.json"])
+    result: runNpmScript("build:race-prediction", [
+      "--input", "data/race-cards/2026-06-06-ankara-mehmet-akif-ersoy.json",
+      "--out", "data/race-prediction-mehmet-akif-ersoy-2026.json"
+    ])
   });
 
   log.steps.push({

@@ -23,6 +23,7 @@
     "build:gazi-signal-calibration": "node scripts/build-gazi-signal-calibration.mjs",
     "build:gazi-race-day-watchlist": "node scripts/build-gazi-race-day-watchlist.mjs",
     "build:gazi-surprise-review": "node scripts/build-gazi-surprise-review.mjs",
+    "build:race-card": "node scripts/build-race-card-from-declaration.mjs",
     "build:race-prediction": "node scripts/build-race-prediction.mjs",
     "build:gazi-data-horizon": "node scripts/build-gazi-data-horizon.mjs",
     "build:data-manifest": "node scripts/build-data-manifest.mjs",

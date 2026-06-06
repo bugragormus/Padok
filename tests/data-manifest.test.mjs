@@ -43,6 +43,7 @@ test("buildDataManifest indexes yearly route participation and readiness artifac
   assert.equal(manifest.defaultReports.featureBreakdown, "data/gazi-feature-breakdown.json");
   assert.equal(manifest.defaultReports.raceDayWatchlist, "data/gazi-race-day-watchlist.json");
   assert.equal(manifest.defaultReports.surpriseReview, "data/gazi-surprise-review.json");
+  assert.equal(manifest.defaultReports.raceCard, "data/race-cards/2026-06-06-ankara-mehmet-akif-ersoy.json");
   assert.equal(manifest.defaultReports.racePrediction, "data/race-prediction-mehmet-akif-ersoy-2026.json");
   assert.equal(manifest.defaultReports.signalCalibration, "data/gazi-signal-calibration.json");
   assert.equal(manifest.defaultReports.modelBacktest, "data/gazi-model-backtest.json");

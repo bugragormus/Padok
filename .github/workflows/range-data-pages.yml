@@ -83,16 +83,18 @@ jobs:
           npm run build:gazi-race-day-watchlist -- --out data/gazi-race-day-watchlist.json
           npm run build:gazi-surprise-review -- --out data/gazi-surprise-review.json
           npm run build:gazi-decision-matrix -- --out data/gazi-decision-matrix.json
-          npm run build:race-prediction -- --out data/race-prediction-mehmet-akif-ersoy-2026.json
+          npm run build:race-card -- --input data/race-cards/sources/2026-06-06-ankara-mehmet-akif-ersoy.txt --out data/race-cards/2026-06-06-ankara-mehmet-akif-ersoy.json
+          npm run build:race-prediction -- --input data/race-cards/2026-06-06-ankara-mehmet-akif-ersoy.json --out data/race-prediction-mehmet-akif-ersoy-2026.json
           npm run build:api-index -- --out data/padok-api-index.json
 
       - name: Prepare static site
         run: |
-          mkdir -p dist/assets dist/data dist/scripts
+          mkdir -p dist/assets dist/data dist/data/race-cards dist/scripts
           cp index.html app.js styles.css .nojekyll dist/
           cp assets/* dist/assets/
           cp scripts/readiness-model.mjs dist/scripts/
           cp data/gazi-knowledge-base.json data/gazi-route-report.json data/gazi-route-*.json data/gazi-backtest-report.json data/gazi-model-backtest.json data/gazi-signal-calibration.json data/gazi-decision-brief.json data/gazi-candidate-comparison.json data/gazi-decision-matrix.json data/gazi-context-history.json data/gazi-feature-breakdown.json data/gazi-race-day-watchlist.json data/gazi-surprise-review.json data/race-prediction-mehmet-akif-ersoy-2026.json data/gazi-participation-report.json data/gazi-participation-*.json data/gazi-readiness-report.json data/gazi-readiness-*.json data/gazi-data-horizon.json data/padok-data-manifest.json data/padok-api-index.json data/gazi-range-refresh-log.json dist/data/
+          cp data/race-cards/2026-06-06-ankara-mehmet-akif-ersoy.json dist/data/race-cards/
 
       - name: Configure Pages
         uses: actions/configure-pages@v5

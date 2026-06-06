@@ -1,0 +1,19 @@
+# Source: TJK Deklareler
+# URL: https://medya-cdn.tjk.org/raporftp/TJKPDF/2026/2026-06-06/PDF/Deklareler/06.06.2026-Ankara-Deklareler-TR.pdf
+# Format: programNo | horseName | age | sire | dam | weight | jockey | trainer | owner | handicapPoint | recentForm | status
+1 | BAY NALÇAKAN | 3y d e | TOROK (IRE) | KASSAMA (FR) | 58 | H.KARATAŞ | H.TURAN | EMR. NALÇAKAN | 92 | 41-1115
+2 | BIGBOYCAPRICE | 3y d e | TOROK (IRE) | MASSANDRA | 58 | S.ÇELİK | T.TÜRKMEN | ERK. SÜSLÜ | 55 | 21-5683
+3 | BİZON | 3y d e | KANEKO | STORMLIGHT | 58 | M.AKYAVUZ | İ.AKKILIÇ | SAL. YILDIZER | 77 | 1-33141
+4 | BUILD YOUR DREAMS | 3y d e | TILSIT (USA) | AMIGRA | 58 | Ö.YILDIRIM | A.GÜVEN | TUĞ. İPEK | 94 | 3631-08
+5 | CABOOSE | 3y d e | TOROK (IRE) | SHORTY | 58 | A.ÇELİK | K.BALTACI | SER. GÜL | 59 | 2-133
+6 | ERSELE BEYİ | 3y k e | GENERAL QUARTERS (USA) | KEDİ KIZ | 58 | E.ÇANKAYA | M.ÖRTÜNÇ | MUR. AKTAŞ | 79 | 523-526
+7 | FATHER OF FATHERS | 3y d e | LOPE Y FERNANDEZ (IRE) | QUİTA (GB) | 58 | A.KURŞUN | B.TURGUL | AKA. MIRIZ | 71 | 213343
+8 | INVESTIGATOR | 3y d e | KING DAVID (USA) | JUMHURIYA (IRE) | 58 | S.KAYA | Y.ŞİMŞEK | FED. KAHRAMAN | 63 | 12-1
+9 | MASSIMO SUPREMO | 3y d e | TOROK (IRE) | ORDIA (GER) | 58 | M.KAYA | C.ŞİMŞEK | H. KAA. MÜJDECİ | 89 | 414146
+10 | RACING STAR | 3y a e | SADLER'S JOY (USA) | CHAPEAU CHIC (USA) | 58 | - | H.YÜZBAŞI | DEN. KURTEL | 47 | 441360 | KOŞMAZ
+11 | SHADOW SOLDIER | 3y d e | AGRESIVO (USA) | THIS IS MY GIRL | 58 | V.ABİŞ | S.SÜSLÜ | ALİ UÇAK | 80 | 134225
+12 | SNOW LEOPARD | 3y k e | NATIVE KHAN (FR) | MARADESPINA (IRE) | 58 | E.ÇİZİK | H.SUNKAR | GÜL. YANIK | 76 | 111245
+13 | TYPHOON | 3y d e | MYBOYCHARLIE (IRE) | AYSUN SULTAN | 58 | - | A.ÖCAL | BAR. KARAGÖZ | 61 | 332441 | KOŞMAZ
+14 | UPAMECANO | 3y d e | EPAULETTE (AUS) | ELİF HATUN | 58 | G.KOCAKAYA | İ.B.OĞULLARI | TAL. ÖZTÜRK | 108 | 1111-11
+15 | VICTORY WALTZ | 3y d e | TIZWAY (USA) | PEACE TALK (USA) | 58 | - | Y.YILDIZ | CEMKESER | 68 | 132322 | KOŞMAZ
+16 | VOICE OF KHAN | 3y d e | GAZIBORA KHAN (GB) | ISABELLA OF FRANCE (GB) | 58 | A.SÖZEN | C.AKGÜL | V. İBR. ARACI | 86 | 131-419
