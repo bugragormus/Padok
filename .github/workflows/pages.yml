@@ -163,10 +163,27 @@ jobs:
         run: npm run build:gazi-decision-matrix -- --out data/gazi-decision-matrix.json
 
       - name: Build race card
-        run: npm run build:race-card -- --input data/race-cards/sources/2026-06-06-ankara-mehmet-akif-ersoy.txt --out data/race-cards/2026-06-06-ankara-mehmet-akif-ersoy.json
+        run: |
+          npm run build:race-card -- \
+            --input data/race-cards/sources/2026-06-28-istanbul-gazi.txt \
+            --out data/race-cards/2026-06-28-istanbul-gazi.json \
+            --id 2026-06-28-istanbul-gazi \
+            --date 2026-06-28 \
+            --venue İstanbul \
+            --race-no 2 \
+            --name '100. Gazi Koşusu' \
+            --class G1 \
+            --age-breed '3 Yaşlı İngilizler' \
+            --distance 2400 \
+            --surface Çim \
+            --going Bilinmiyor \
+            --weather Bilinmiyor \
+            --temperature-c 0 \
+            --source-name 'TJK Deklareler' \
+            --source-url 'https://medya-cdn.tjk.org/raporftp/TJKPDF/2026/2026-06-28/PDF/Deklareler/28.06.2026-%C4%B0stanbul-Deklareler-TR.pdf'
 
       - name: Build race prediction
-        run: npm run build:race-prediction -- --input data/race-cards/2026-06-06-ankara-mehmet-akif-ersoy.json --out data/race-prediction-mehmet-akif-ersoy-2026.json
+        run: npm run build:race-prediction -- --input data/race-cards/2026-06-28-istanbul-gazi.json --out data/race-prediction-gazi-2026.json
 
       - name: Build API index
         run: npm run build:api-index -- --out data/padok-api-index.json
@@ -177,8 +194,8 @@ jobs:
           cp index.html app.js styles.css .nojekyll dist/
           cp assets/* dist/assets/
           cp scripts/readiness-model.mjs dist/scripts/
-          cp data/gazi-knowledge-base.json data/gazi-route-report.json data/gazi-route-2020.json data/gazi-route-2021.json data/gazi-route-2022.json data/gazi-route-2023.json data/gazi-route-2024.json data/gazi-route-2025.json data/gazi-route-2026.json data/gazi-backtest-report.json data/gazi-model-backtest.json data/gazi-signal-calibration.json data/gazi-decision-brief.json data/gazi-candidate-comparison.json data/gazi-decision-matrix.json data/gazi-context-history.json data/gazi-feature-breakdown.json data/gazi-race-day-watchlist.json data/gazi-surprise-review.json data/race-prediction-mehmet-akif-ersoy-2026.json data/gazi-participation-report.json data/gazi-participation-*.json data/gazi-readiness-report.json data/gazi-readiness-*.json data/gazi-data-horizon.json data/padok-data-manifest.json data/padok-api-index.json dist/data/
-          cp data/race-cards/2026-06-06-ankara-mehmet-akif-ersoy.json dist/data/race-cards/
+          cp data/gazi-knowledge-base.json data/gazi-route-report.json data/gazi-route-2020.json data/gazi-route-2021.json data/gazi-route-2022.json data/gazi-route-2023.json data/gazi-route-2024.json data/gazi-route-2025.json data/gazi-route-2026.json data/gazi-backtest-report.json data/gazi-model-backtest.json data/gazi-signal-calibration.json data/gazi-decision-brief.json data/gazi-candidate-comparison.json data/gazi-decision-matrix.json data/gazi-context-history.json data/gazi-feature-breakdown.json data/gazi-race-day-watchlist.json data/gazi-surprise-review.json data/race-prediction-gazi-2026.json data/gazi-participation-report.json data/gazi-participation-*.json data/gazi-readiness-report.json data/gazi-readiness-*.json data/gazi-data-horizon.json data/padok-data-manifest.json data/padok-api-index.json dist/data/
+          cp data/race-cards/2026-06-28-istanbul-gazi.json dist/data/race-cards/
 
       - name: Configure Pages
         uses: actions/configure-pages@v5

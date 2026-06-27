@@ -8,7 +8,7 @@ import {
   sortReadinessProfiles
 } from "./scripts/readiness-model.mjs";
 
-const APP_DATA_VERSION = "20260606-race-prediction";
+const APP_DATA_VERSION = "20260628-gazi-prediction";
 
 const state = {
   data: null,
@@ -2741,7 +2741,7 @@ const init = async () => {
     readOptionalJson("./data/gazi-feature-breakdown.json"),
     readOptionalJson("./data/gazi-race-day-watchlist.json"),
     readOptionalJson("./data/gazi-surprise-review.json"),
-    readOptionalJson("./data/race-prediction-mehmet-akif-ersoy-2026.json"),
+    readOptionalJson("./data/race-prediction-gazi-2026.json"),
     readOptionalJson("./data/gazi-participation-report.json"),
     readOptionalJson("./data/gazi-readiness-report.json"),
     readOptionalJson("./data/gazi-data-horizon.json")

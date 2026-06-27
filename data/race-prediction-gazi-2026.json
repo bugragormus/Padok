@@ -1,0 +1,1233 @@
+{
+  "generatedAt": "2026-06-27T21:44:00.865Z",
+  "source": {
+    "name": "TJK Deklareler",
+    "url": "https://medya-cdn.tjk.org/raporftp/TJKPDF/2026/2026-06-28/PDF/Deklareler/28.06.2026-%C4%B0stanbul-Deklareler-TR.pdf"
+  },
+  "race": {
+    "id": "2026-06-28-istanbul-gazi",
+    "date": "2026-06-28",
+    "venue": "İstanbul",
+    "raceNo": 2,
+    "raceTime": "",
+    "name": "100. Gazi Koşusu",
+    "class": "G1",
+    "ageBreed": "3 Yaşlı İngilizler",
+    "distance": 2400,
+    "surface": "Çim",
+    "going": "Bilinmiyor",
+    "weather": "Bilinmiyor",
+    "temperatureC": 0
+  },
+  "summary": {
+    "runnerCount": 22,
+    "scratchCount": 5,
+    "leaderHorse": "BAY NALÇAKAN",
+    "upsetHorse": "AIMUS LIBERATUS",
+    "headline": "BAY NALÇAKAN modelde önde; AIMUS LIBERATUS geniş kupon penceresinde izlenmeli."
+  },
+  "predictions": [
+    {
+      "rank": 1,
+      "programNo": 5,
+      "horseName": "BAY NALÇAKAN",
+      "role": "Birincilik adayı",
+      "jockey": "H.KARATAŞ",
+      "trainer": "H.TURAN",
+      "owner": "EMR. NALÇAKAN",
+      "handicapPoint": 101,
+      "recentForm": "1-11151",
+      "scratch": false,
+      "scores": {
+        "hp": 94,
+        "form": 100,
+        "jockey": 79,
+        "stamina": 80,
+        "owner": 55,
+        "pedigree": 44,
+        "risk": 2,
+        "winScore": 84,
+        "placeScore": 84,
+        "upsetScore": 60
+      },
+      "contextSignals": {
+        "jockey": null,
+        "owner": null,
+        "sire": {
+          "entityType": "sire",
+          "entityName": "TOROK (IRE)",
+          "starts": 16,
+          "wins": 1,
+          "topThree": 3,
+          "topThreeRate": 19,
+          "winRate": 6,
+          "averageFinish": 11.8,
+          "seasonCount": 4,
+          "distinctHorseCount": 16,
+          "sampleConfidence": 100,
+          "score": 32,
+          "rank": 12
+        },
+        "dam": {
+          "entityType": "dam",
+          "entityName": "KASSAMA (FR)",
+          "starts": 1,
+          "wins": 0,
+          "topThree": 0,
+          "topThreeRate": 0,
+          "winRate": 0,
+          "averageFinish": 15,
+          "seasonCount": 1,
+          "distinctHorseCount": 1,
+          "sampleConfidence": 17,
+          "score": 3,
+          "rank": 64
+        },
+        "damsire": null
+      },
+      "notes": [
+        "HP 101 ile sınıf sinyali güçlü.",
+        "Son form dizisi 1-11151 güçlü momentum veriyor.",
+        "2400m Çim için orijin/stamina tarafı destekleyici."
+      ]
+    },
+    {
+      "rank": 2,
+      "programNo": 19,
+      "horseName": "UPAMECANO",
+      "role": "Ana rakip",
+      "jockey": "G.KOCAKAYA",
+      "trainer": "İ.B.OĞULLARI",
+      "owner": "TAL. ÖZTÜRK",
+      "handicapPoint": 108,
+      "recentForm": "111-113",
+      "scratch": false,
+      "scores": {
+        "hp": 100,
+        "form": 100,
+        "jockey": 79,
+        "stamina": 55,
+        "owner": 55,
+        "pedigree": 55,
+        "risk": 3,
+        "winScore": 83,
+        "placeScore": 83,
+        "upsetScore": 55
+      },
+      "contextSignals": {
+        "jockey": null,
+        "owner": null,
+        "sire": null,
+        "dam": null,
+        "damsire": null
+      },
+      "notes": [
+        "HP 108 ile sınıf sinyali güçlü.",
+        "Son form dizisi 111-113 güçlü momentum veriyor."
+      ]
+    },
+    {
+      "rank": 3,
+      "programNo": 15,
+      "horseName": "MUCHO BUENO",
+      "role": "Ana rakip",
+      "jockey": "V.ABİŞ",
+      "trainer": "M.DEMİR",
+      "owner": "AYŞ. KURTEL",
+      "handicapPoint": 102,
+      "recentForm": "244-212",
+      "scratch": false,
+      "scores": {
+        "hp": 94,
+        "form": 93,
+        "jockey": 74,
+        "stamina": 80,
+        "owner": 55,
+        "pedigree": 46,
+        "risk": 2,
+        "winScore": 82,
+        "placeScore": 82,
+        "upsetScore": 58
+      },
+      "contextSignals": {
+        "jockey": null,
+        "owner": null,
+        "sire": {
+          "entityType": "sire",
+          "entityName": "TIZWAY (USA)",
+          "starts": 2,
+          "wins": 0,
+          "topThree": 0,
+          "topThreeRate": 0,
+          "winRate": 0,
+          "averageFinish": 9.5,
+          "seasonCount": 2,
+          "distinctHorseCount": 2,
+          "sampleConfidence": 33,
+          "score": 7,
+          "rank": 23
+        },
+        "dam": null,
+        "damsire": null
+      },
+      "notes": [
+        "HP 102 ile sınıf sinyali güçlü.",
+        "Son form dizisi 244-212 güçlü momentum veriyor.",
+        "2400m Çim için orijin/stamina tarafı destekleyici."
+      ]
+    },
+    {
+      "rank": 4,
+      "programNo": 4,
+      "horseName": "BALLAD KING",
+      "role": "Tabela adayı",
+      "jockey": "A.SÖZEN",
+      "trainer": "M.DEMİR",
+      "owner": "DEN. KURTEL",
+      "handicapPoint": 98,
+      "recentForm": "16-1234",
+      "scratch": false,
+      "scores": {
+        "hp": 91,
+        "form": 92,
+        "jockey": 74,
+        "stamina": 80,
+        "owner": 55,
+        "pedigree": 55,
+        "risk": 2,
+        "winScore": 82,
+        "placeScore": 81,
+        "upsetScore": 60
+      },
+      "contextSignals": {
+        "jockey": null,
+        "owner": null,
+        "sire": null,
+        "dam": null,
+        "damsire": null
+      },
+      "notes": [
+        "HP 98 ile sınıf sinyali güçlü.",
+        "Son form dizisi 16-1234 güçlü momentum veriyor.",
+        "2400m Çim için orijin/stamina tarafı destekleyici."
+      ]
+    },
+    {
+      "rank": 5,
+      "programNo": 16,
+      "horseName": "RABOVO",
+      "role": "Tabela adayı",
+      "jockey": "A.ÇELİK",
+      "trainer": "M.KAYA",
+      "owner": "FED. KAHRAMAN",
+      "handicapPoint": 95,
+      "recentForm": "122-121",
+      "scratch": false,
+      "scores": {
+        "hp": 88,
+        "form": 100,
+        "jockey": 79,
+        "stamina": 62,
+        "owner": 55,
+        "pedigree": 55,
+        "risk": 3,
+        "winScore": 80,
+        "placeScore": 80,
+        "upsetScore": 59
+      },
+      "contextSignals": {
+        "jockey": null,
+        "owner": null,
+        "sire": null,
+        "dam": null,
+        "damsire": null
+      },
+      "notes": [
+        "HP 95 ile sınıf sinyali güçlü.",
+        "Son form dizisi 122-121 güçlü momentum veriyor."
+      ]
+    },
+    {
+      "rank": 6,
+      "programNo": 1,
+      "horseName": "AIMUS LIBERATUS",
+      "role": "Sürpriz adayı",
+      "jockey": "Ö.YILDIRIM",
+      "trainer": "İ.B.OĞULLARI",
+      "owner": "ENG. BEKİROĞULLARI",
+      "handicapPoint": 89,
+      "recentForm": "21-1611",
+      "scratch": false,
+      "scores": {
+        "hp": 82,
+        "form": 100,
+        "jockey": 74,
+        "stamina": 80,
+        "owner": 55,
+        "pedigree": 46,
+        "risk": 4,
+        "winScore": 79,
+        "placeScore": 80,
+        "upsetScore": 62
+      },
+      "contextSignals": {
+        "jockey": null,
+        "owner": null,
+        "sire": {
+          "entityType": "sire",
+          "entityName": "TOROK (IRE)",
+          "starts": 16,
+          "wins": 1,
+          "topThree": 3,
+          "topThreeRate": 19,
+          "winRate": 6,
+          "averageFinish": 11.8,
+          "seasonCount": 4,
+          "distinctHorseCount": 16,
+          "sampleConfidence": 100,
+          "score": 32,
+          "rank": 12
+        },
+        "dam": null,
+        "damsire": null
+      },
+      "notes": [
+        "Son form dizisi 21-1611 güçlü momentum veriyor.",
+        "2400m Çim için orijin/stamina tarafı destekleyici."
+      ]
+    },
+    {
+      "rank": 7,
+      "programNo": 18,
+      "horseName": "THE REAL ONE",
+      "role": "Tabela adayı",
+      "jockey": "M.S.ÇELİK",
+      "trainer": "İ.TEMEL",
+      "owner": "CEM ÖZBELGE",
+      "handicapPoint": 90,
+      "recentForm": "1111",
+      "scratch": false,
+      "scores": {
+        "hp": 83,
+        "form": 100,
+        "jockey": 60,
+        "stamina": 80,
+        "owner": 55,
+        "pedigree": 46,
+        "risk": 4,
+        "winScore": 78,
+        "placeScore": 79,
+        "upsetScore": 60
+      },
+      "contextSignals": {
+        "jockey": null,
+        "owner": null,
+        "sire": {
+          "entityType": "sire",
+          "entityName": "TOROK (IRE)",
+          "starts": 16,
+          "wins": 1,
+          "topThree": 3,
+          "topThreeRate": 19,
+          "winRate": 6,
+          "averageFinish": 11.8,
+          "seasonCount": 4,
+          "distinctHorseCount": 16,
+          "sampleConfidence": 100,
+          "score": 32,
+          "rank": 12
+        },
+        "dam": null,
+        "damsire": null
+      },
+      "notes": [
+        "Son form dizisi 1111 güçlü momentum veriyor.",
+        "2400m Çim için orijin/stamina tarafı destekleyici."
+      ]
+    },
+    {
+      "rank": 8,
+      "programNo": 10,
+      "horseName": "JOYFUL FOREVER",
+      "role": "Tabela adayı",
+      "jockey": "S.KAYA",
+      "trainer": "M.DEMİR",
+      "owner": "M. KUR. EMİN",
+      "handicapPoint": 89,
+      "recentForm": "123413",
+      "scratch": false,
+      "scores": {
+        "hp": 82,
+        "form": 90,
+        "jockey": 74,
+        "stamina": 80,
+        "owner": 55,
+        "pedigree": 55,
+        "risk": 4,
+        "winScore": 78,
+        "placeScore": 78,
+        "upsetScore": 60
+      },
+      "contextSignals": {
+        "jockey": null,
+        "owner": null,
+        "sire": null,
+        "dam": null,
+        "damsire": null
+      },
+      "notes": [
+        "Son form dizisi 123413 güçlü momentum veriyor.",
+        "2400m Çim için orijin/stamina tarafı destekleyici."
+      ]
+    },
+    {
+      "rank": 9,
+      "programNo": 3,
+      "horseName": "ANSHBA",
+      "role": "Tabela adayı",
+      "jockey": "A.KURŞUN",
+      "trainer": "İ.B.OĞULLARI",
+      "owner": "Y. ERK. ERSEVER",
+      "handicapPoint": 87,
+      "recentForm": "112-121",
+      "scratch": false,
+      "scores": {
+        "hp": 81,
+        "form": 100,
+        "jockey": 74,
+        "stamina": 62,
+        "owner": 55,
+        "pedigree": 50,
+        "risk": 4,
+        "winScore": 77,
+        "placeScore": 77,
+        "upsetScore": 59
+      },
+      "contextSignals": {
+        "jockey": null,
+        "owner": null,
+        "sire": {
+          "entityType": "sire",
+          "entityName": "FLY BY ME",
+          "starts": 1,
+          "wins": 0,
+          "topThree": 0,
+          "topThreeRate": 0,
+          "winRate": 0,
+          "averageFinish": 22,
+          "seasonCount": 1,
+          "distinctHorseCount": 1,
+          "sampleConfidence": 17,
+          "score": 3,
+          "rank": 42
+        },
+        "dam": null,
+        "damsire": null
+      },
+      "notes": [
+        "Son form dizisi 112-121 güçlü momentum veriyor."
+      ]
+    },
+    {
+      "rank": 10,
+      "programNo": 2,
+      "horseName": "ALMIGHTY ESPRIT",
+      "role": "Tabela adayı",
+      "jockey": "S.ÇELİK",
+      "trainer": "T.ŞİT",
+      "owner": "G. Ş ÖZBELGE",
+      "handicapPoint": 89,
+      "recentForm": "121-111",
+      "scratch": false,
+      "scores": {
+        "hp": 82,
+        "form": 100,
+        "jockey": 68,
+        "stamina": 62,
+        "owner": 55,
+        "pedigree": 50,
+        "risk": 4,
+        "winScore": 76,
+        "placeScore": 77,
+        "upsetScore": 58
+      },
+      "contextSignals": {
+        "jockey": null,
+        "owner": null,
+        "sire": {
+          "entityType": "sire",
+          "entityName": "BLUEGRASS CAT (USA)",
+          "starts": 1,
+          "wins": 0,
+          "topThree": 0,
+          "topThreeRate": 0,
+          "winRate": 0,
+          "averageFinish": 19,
+          "seasonCount": 1,
+          "distinctHorseCount": 1,
+          "sampleConfidence": 17,
+          "score": 3,
+          "rank": 31
+        },
+        "dam": null,
+        "damsire": null
+      },
+      "notes": [
+        "Son form dizisi 121-111 güçlü momentum veriyor."
+      ]
+    },
+    {
+      "rank": 11,
+      "programNo": 12,
+      "horseName": "MANDRAKE",
+      "role": "Tabela adayı",
+      "jockey": "M.ÇELİK",
+      "trainer": "K.ŞENTÜRK",
+      "owner": "C. KAA. PARSAK",
+      "handicapPoint": 90,
+      "recentForm": "321111",
+      "scratch": false,
+      "scores": {
+        "hp": 83,
+        "form": 100,
+        "jockey": 60,
+        "stamina": 62,
+        "owner": 55,
+        "pedigree": 55,
+        "risk": 4,
+        "winScore": 76,
+        "placeScore": 76,
+        "upsetScore": 58
+      },
+      "contextSignals": {
+        "jockey": null,
+        "owner": null,
+        "sire": null,
+        "dam": null,
+        "damsire": null
+      },
+      "notes": [
+        "Son form dizisi 321111 güçlü momentum veriyor."
+      ]
+    },
+    {
+      "rank": 12,
+      "programNo": 14,
+      "horseName": "METAL HEART",
+      "role": "Tabela adayı",
+      "jockey": "M.A.SOLMAZ",
+      "trainer": "V.YILDIRIM",
+      "owner": "ALİ UÇAK",
+      "handicapPoint": 96,
+      "recentForm": "431319",
+      "scratch": false,
+      "scores": {
+        "hp": 89,
+        "form": 93,
+        "jockey": 60,
+        "stamina": 62,
+        "owner": 55,
+        "pedigree": 55,
+        "risk": 3,
+        "winScore": 76,
+        "placeScore": 76,
+        "upsetScore": 55
+      },
+      "contextSignals": {
+        "jockey": null,
+        "owner": null,
+        "sire": null,
+        "dam": null,
+        "damsire": null
+      },
+      "notes": [
+        "HP 96 ile sınıf sinyali güçlü.",
+        "Son form dizisi 431319 güçlü momentum veriyor."
+      ]
+    },
+    {
+      "rank": 13,
+      "programNo": 22,
+      "horseName": "NEURO MATH",
+      "role": "Tabela adayı",
+      "jockey": "M.KAYA",
+      "trainer": "H.KABUKCI",
+      "owner": "YEN. GİRİŞKEN",
+      "handicapPoint": 91,
+      "recentForm": "1-15312",
+      "scratch": false,
+      "scores": {
+        "hp": 84,
+        "form": 90,
+        "jockey": 74,
+        "stamina": 62,
+        "owner": 55,
+        "pedigree": 55,
+        "risk": 4,
+        "winScore": 76,
+        "placeScore": 76,
+        "upsetScore": 56
+      },
+      "contextSignals": {
+        "jockey": null,
+        "owner": null,
+        "sire": null,
+        "dam": null,
+        "damsire": null
+      },
+      "notes": [
+        "Son form dizisi 1-15312 güçlü momentum veriyor."
+      ]
+    },
+    {
+      "rank": 14,
+      "programNo": 20,
+      "horseName": "WHIZBANG",
+      "role": "Tabela adayı",
+      "jockey": "S.BOYRAZ",
+      "trainer": "E.MUTLU",
+      "owner": "ÖZG. ATAŞ",
+      "handicapPoint": 97,
+      "recentForm": "32-9217",
+      "scratch": false,
+      "scores": {
+        "hp": 90,
+        "form": 73,
+        "jockey": 60,
+        "stamina": 80,
+        "owner": 55,
+        "pedigree": 55,
+        "risk": 2,
+        "winScore": 75,
+        "placeScore": 74,
+        "upsetScore": 53
+      },
+      "contextSignals": {
+        "jockey": null,
+        "owner": null,
+        "sire": null,
+        "dam": null,
+        "damsire": null
+      },
+      "notes": [
+        "HP 97 ile sınıf sinyali güçlü.",
+        "2400m Çim için orijin/stamina tarafı destekleyici."
+      ]
+    },
+    {
+      "rank": 15,
+      "programNo": 21,
+      "horseName": "JAEHAERA",
+      "role": "Tabela adayı",
+      "jockey": "A.YILDIZ",
+      "trainer": "A.TEPEBAŞI",
+      "owner": "ŞEY. ERCAN",
+      "handicapPoint": 89,
+      "recentForm": "1-23123",
+      "scratch": false,
+      "scores": {
+        "hp": 82,
+        "form": 96,
+        "jockey": 60,
+        "stamina": 62,
+        "owner": 55,
+        "pedigree": 50,
+        "risk": 4,
+        "winScore": 74,
+        "placeScore": 75,
+        "upsetScore": 56
+      },
+      "contextSignals": {
+        "jockey": null,
+        "owner": null,
+        "sire": {
+          "entityType": "sire",
+          "entityName": "KANEKO",
+          "starts": 1,
+          "wins": 0,
+          "topThree": 0,
+          "topThreeRate": 0,
+          "winRate": 0,
+          "averageFinish": 4,
+          "seasonCount": 1,
+          "distinctHorseCount": 1,
+          "sampleConfidence": 17,
+          "score": 3,
+          "rank": 47
+        },
+        "dam": null,
+        "damsire": null
+      },
+      "notes": [
+        "Son form dizisi 1-23123 güçlü momentum veriyor."
+      ]
+    },
+    {
+      "rank": 16,
+      "programNo": 17,
+      "horseName": "SILENT TREATMENT",
+      "role": "Tabela adayı",
+      "jockey": "M.AKYAVUZ",
+      "trainer": "E.ACER",
+      "owner": "MUR. KANAR",
+      "handicapPoint": 93,
+      "recentForm": "1-14422",
+      "scratch": false,
+      "scores": {
+        "hp": 86,
+        "form": 77,
+        "jockey": 68,
+        "stamina": 62,
+        "owner": 55,
+        "pedigree": 55,
+        "risk": 3,
+        "winScore": 73,
+        "placeScore": 73,
+        "upsetScore": 52
+      },
+      "contextSignals": {
+        "jockey": null,
+        "owner": null,
+        "sire": null,
+        "dam": null,
+        "damsire": null
+      },
+      "notes": [
+        "HP 93 ile sınıf sinyali güçlü."
+      ]
+    },
+    {
+      "rank": 17,
+      "programNo": 8,
+      "horseName": "GOLDRAKHAN",
+      "role": "Tabela adayı",
+      "jockey": "M.M.BİLGİN",
+      "trainer": "E.USLU",
+      "owner": "V. İBR. ARACI",
+      "handicapPoint": 90,
+      "recentForm": "2-15342",
+      "scratch": false,
+      "scores": {
+        "hp": 83,
+        "form": 74,
+        "jockey": 60,
+        "stamina": 80,
+        "owner": 55,
+        "pedigree": 50,
+        "risk": 4,
+        "winScore": 72,
+        "placeScore": 72,
+        "upsetScore": 54
+      },
+      "contextSignals": {
+        "jockey": null,
+        "owner": null,
+        "sire": {
+          "entityType": "sire",
+          "entityName": "NATIVE KHAN (FR)",
+          "starts": 7,
+          "wins": 1,
+          "topThree": 2,
+          "topThreeRate": 29,
+          "winRate": 14,
+          "averageFinish": 6.4,
+          "seasonCount": 4,
+          "distinctHorseCount": 7,
+          "sampleConfidence": 100,
+          "score": 40,
+          "rank": 7
+        },
+        "dam": null,
+        "damsire": null
+      },
+      "notes": [
+        "2400m Çim için orijin/stamina tarafı destekleyici."
+      ]
+    },
+    {
+      "rank": 18,
+      "programNo": 9,
+      "horseName": "JAZZ RUNNER",
+      "role": "Tabela adayı",
+      "jockey": "F.R.BEBEK",
+      "trainer": "H.YÜZBAŞI",
+      "owner": "SEM. ULAŞ",
+      "handicapPoint": 85,
+      "recentForm": "110184",
+      "scratch": false,
+      "scores": {
+        "hp": 79,
+        "form": 90,
+        "jockey": 60,
+        "stamina": 62,
+        "owner": 55,
+        "pedigree": 48,
+        "risk": 5,
+        "winScore": 72,
+        "placeScore": 72,
+        "upsetScore": 55
+      },
+      "contextSignals": {
+        "jockey": null,
+        "owner": null,
+        "sire": {
+          "entityType": "sire",
+          "entityName": "BLUEGRASS CAT (USA)",
+          "starts": 1,
+          "wins": 0,
+          "topThree": 0,
+          "topThreeRate": 0,
+          "winRate": 0,
+          "averageFinish": 19,
+          "seasonCount": 1,
+          "distinctHorseCount": 1,
+          "sampleConfidence": 17,
+          "score": 3,
+          "rank": 31
+        },
+        "dam": {
+          "entityType": "dam",
+          "entityName": "MISS MAKER (USA)",
+          "starts": 1,
+          "wins": 0,
+          "topThree": 0,
+          "topThreeRate": 0,
+          "winRate": 0,
+          "averageFinish": 19,
+          "seasonCount": 1,
+          "distinctHorseCount": 1,
+          "sampleConfidence": 17,
+          "score": 3,
+          "rank": 81
+        },
+        "damsire": null
+      },
+      "notes": [
+        "Son form dizisi 110184 güçlü momentum veriyor."
+      ]
+    },
+    {
+      "rank": 19,
+      "programNo": 13,
+      "horseName": "MASSIMO SUPREMO",
+      "role": "Tabela adayı",
+      "jockey": "E.AKTUĞ",
+      "trainer": "C.ŞİMŞEK",
+      "owner": "H. KAA. MÜJDECİ",
+      "handicapPoint": 89,
+      "recentForm": "141460",
+      "scratch": false,
+      "scores": {
+        "hp": 82,
+        "form": 77,
+        "jockey": 60,
+        "stamina": 80,
+        "owner": 55,
+        "pedigree": 46,
+        "risk": 4,
+        "winScore": 72,
+        "placeScore": 72,
+        "upsetScore": 55
+      },
+      "contextSignals": {
+        "jockey": null,
+        "owner": null,
+        "sire": {
+          "entityType": "sire",
+          "entityName": "TOROK (IRE)",
+          "starts": 16,
+          "wins": 1,
+          "topThree": 3,
+          "topThreeRate": 19,
+          "winRate": 6,
+          "averageFinish": 11.8,
+          "seasonCount": 4,
+          "distinctHorseCount": 16,
+          "sampleConfidence": 100,
+          "score": 32,
+          "rank": 12
+        },
+        "dam": null,
+        "damsire": null
+      },
+      "notes": [
+        "2400m Çim için orijin/stamina tarafı destekleyici."
+      ]
+    },
+    {
+      "rank": 20,
+      "programNo": 7,
+      "horseName": "ERSELE BEYİ",
+      "role": "Tabela adayı",
+      "jockey": "E.ÇANKAYA",
+      "trainer": "M.ÖRTÜNÇ",
+      "owner": "MUR. AKTAŞ",
+      "handicapPoint": 90,
+      "recentForm": "23-5262",
+      "scratch": false,
+      "scores": {
+        "hp": 83,
+        "form": 72,
+        "jockey": 68,
+        "stamina": 62,
+        "owner": 55,
+        "pedigree": 50,
+        "risk": 4,
+        "winScore": 70,
+        "placeScore": 70,
+        "upsetScore": 51
+      },
+      "contextSignals": {
+        "jockey": null,
+        "owner": null,
+        "sire": {
+          "entityType": "sire",
+          "entityName": "GENERAL QUARTERS (USA)",
+          "starts": 1,
+          "wins": 0,
+          "topThree": 0,
+          "topThreeRate": 0,
+          "winRate": 0,
+          "averageFinish": 13,
+          "seasonCount": 1,
+          "distinctHorseCount": 1,
+          "sampleConfidence": 17,
+          "score": 3,
+          "rank": 43
+        },
+        "dam": null,
+        "damsire": null
+      },
+      "notes": []
+    },
+    {
+      "rank": 21,
+      "programNo": 11,
+      "horseName": "KRALIN DANSI",
+      "role": "Tabela adayı",
+      "jockey": "H.ÇİZİK",
+      "trainer": "İ.H.BAYDAN",
+      "owner": "SAD. GÜZEL",
+      "handicapPoint": 89,
+      "recentForm": "621758",
+      "scratch": false,
+      "scores": {
+        "hp": 82,
+        "form": 66,
+        "jockey": 60,
+        "stamina": 62,
+        "owner": 55,
+        "pedigree": 55,
+        "risk": 4,
+        "winScore": 68,
+        "placeScore": 68,
+        "upsetScore": 49
+      },
+      "contextSignals": {
+        "jockey": null,
+        "owner": null,
+        "sire": null,
+        "dam": null,
+        "damsire": null
+      },
+      "notes": []
+    },
+    {
+      "rank": 22,
+      "programNo": 6,
+      "horseName": "BRANDO",
+      "role": "Tabela adayı",
+      "jockey": "E.ÇİZİK",
+      "trainer": "F.KİP",
+      "owner": "İHS. ERTEN",
+      "handicapPoint": 92,
+      "recentForm": "488-570",
+      "scratch": false,
+      "scores": {
+        "hp": 85,
+        "form": 43,
+        "jockey": 68,
+        "stamina": 62,
+        "owner": 55,
+        "pedigree": 50,
+        "risk": 3,
+        "winScore": 64,
+        "placeScore": 63,
+        "upsetScore": 43
+      },
+      "contextSignals": {
+        "jockey": null,
+        "owner": null,
+        "sire": {
+          "entityType": "sire",
+          "entityName": "PAPA CLEM (USA)",
+          "starts": 1,
+          "wins": 0,
+          "topThree": 0,
+          "topThreeRate": 0,
+          "winRate": 0,
+          "averageFinish": 10,
+          "seasonCount": 1,
+          "distinctHorseCount": 1,
+          "sampleConfidence": 17,
+          "score": 3,
+          "rank": 55
+        },
+        "dam": null,
+        "damsire": null
+      },
+      "notes": [
+        "HP 92 ile sınıf sinyali güçlü."
+      ]
+    },
+    {
+      "rank": 23,
+      "programNo": 24,
+      "horseName": "FALCONNIDAE",
+      "role": "Koşmaz",
+      "jockey": null,
+      "trainer": "Y.DEMİRKIRAN",
+      "owner": "H. EVR. ŞAHİN",
+      "handicapPoint": 80,
+      "recentForm": "1-21117",
+      "scratch": true,
+      "scores": {
+        "hp": 74,
+        "form": 100,
+        "jockey": 44,
+        "stamina": 62,
+        "owner": 55,
+        "pedigree": 56,
+        "risk": 100,
+        "winScore": 54,
+        "placeScore": 0,
+        "upsetScore": 46
+      },
+      "contextSignals": {
+        "jockey": null,
+        "owner": null,
+        "sire": {
+          "entityType": "sire",
+          "entityName": "TORUK MACTO (IRE)",
+          "starts": 1,
+          "wins": 0,
+          "topThree": 1,
+          "topThreeRate": 100,
+          "winRate": 0,
+          "averageFinish": 3,
+          "seasonCount": 1,
+          "distinctHorseCount": 1,
+          "sampleConfidence": 17,
+          "score": 59,
+          "rank": 4
+        },
+        "dam": null,
+        "damsire": null
+      },
+      "notes": [
+        "Son form dizisi 1-21117 güçlü momentum veriyor.",
+        "Risk yüksek; tek başına güvenli favori gibi okunmamalı."
+      ]
+    },
+    {
+      "rank": 24,
+      "programNo": 26,
+      "horseName": "RAND AL THOR",
+      "role": "Koşmaz",
+      "jockey": null,
+      "trainer": "S.S.GÖRGÜ",
+      "owner": "MUR. AYDIN",
+      "handicapPoint": 80,
+      "recentForm": "5-41335",
+      "scratch": true,
+      "scores": {
+        "hp": 74,
+        "form": 88,
+        "jockey": 44,
+        "stamina": 62,
+        "owner": 55,
+        "pedigree": 46,
+        "risk": 100,
+        "winScore": 50,
+        "placeScore": 0,
+        "upsetScore": 42
+      },
+      "contextSignals": {
+        "jockey": null,
+        "owner": null,
+        "sire": {
+          "entityType": "sire",
+          "entityName": "GRAYSTORM",
+          "starts": 2,
+          "wins": 0,
+          "topThree": 0,
+          "topThreeRate": 0,
+          "winRate": 0,
+          "averageFinish": 4,
+          "seasonCount": 2,
+          "distinctHorseCount": 2,
+          "sampleConfidence": 33,
+          "score": 7,
+          "rank": 19
+        },
+        "dam": null,
+        "damsire": null
+      },
+      "notes": [
+        "Son form dizisi 5-41335 güçlü momentum veriyor.",
+        "Risk yüksek; tek başına güvenli favori gibi okunmamalı."
+      ]
+    },
+    {
+      "rank": 25,
+      "programNo": 27,
+      "horseName": "BİZON",
+      "role": "Koşmaz",
+      "jockey": null,
+      "trainer": "İ.AKKILIÇ",
+      "owner": "SAL. YILDIZER",
+      "handicapPoint": 77,
+      "recentForm": "331417",
+      "scratch": true,
+      "scores": {
+        "hp": 71,
+        "form": 91,
+        "jockey": 44,
+        "stamina": 62,
+        "owner": 55,
+        "pedigree": 50,
+        "risk": 100,
+        "winScore": 50,
+        "placeScore": 0,
+        "upsetScore": 44
+      },
+      "contextSignals": {
+        "jockey": null,
+        "owner": null,
+        "sire": {
+          "entityType": "sire",
+          "entityName": "KANEKO",
+          "starts": 1,
+          "wins": 0,
+          "topThree": 0,
+          "topThreeRate": 0,
+          "winRate": 0,
+          "averageFinish": 4,
+          "seasonCount": 1,
+          "distinctHorseCount": 1,
+          "sampleConfidence": 17,
+          "score": 3,
+          "rank": 47
+        },
+        "dam": null,
+        "damsire": null
+      },
+      "notes": [
+        "Son form dizisi 331417 güçlü momentum veriyor.",
+        "Risk yüksek; tek başına güvenli favori gibi okunmamalı."
+      ]
+    },
+    {
+      "rank": 26,
+      "programNo": 23,
+      "horseName": "SUPER TOMO",
+      "role": "Koşmaz",
+      "jockey": null,
+      "trainer": "H.SUNKAR",
+      "owner": "SEM. KATI",
+      "handicapPoint": 81,
+      "recentForm": "222260",
+      "scratch": true,
+      "scores": {
+        "hp": 75,
+        "form": 80,
+        "jockey": 44,
+        "stamina": 62,
+        "owner": 55,
+        "pedigree": 50,
+        "risk": 100,
+        "winScore": 49,
+        "placeScore": 0,
+        "upsetScore": 40
+      },
+      "contextSignals": {
+        "jockey": null,
+        "owner": null,
+        "sire": {
+          "entityType": "sire",
+          "entityName": "SUPER SAVER (USA)",
+          "starts": 1,
+          "wins": 0,
+          "topThree": 0,
+          "topThreeRate": 0,
+          "winRate": 0,
+          "averageFinish": 6,
+          "seasonCount": 1,
+          "distinctHorseCount": 1,
+          "sampleConfidence": 17,
+          "score": 3,
+          "rank": 63
+        },
+        "dam": null,
+        "damsire": null
+      },
+      "notes": [
+        "Son form dizisi 222260 güçlü momentum veriyor.",
+        "Risk yüksek; tek başına güvenli favori gibi okunmamalı."
+      ]
+    },
+    {
+      "rank": 27,
+      "programNo": 25,
+      "horseName": "SHADOW SOLDIER",
+      "role": "Koşmaz",
+      "jockey": null,
+      "trainer": "S.SÜSLÜ",
+      "owner": "ALİ UÇAK",
+      "handicapPoint": 80,
+      "recentForm": "342256",
+      "scratch": true,
+      "scores": {
+        "hp": 74,
+        "form": 72,
+        "jockey": 44,
+        "stamina": 55,
+        "owner": 55,
+        "pedigree": 50,
+        "risk": 100,
+        "winScore": 45,
+        "placeScore": 0,
+        "upsetScore": 37
+      },
+      "contextSignals": {
+        "jockey": null,
+        "owner": null,
+        "sire": {
+          "entityType": "sire",
+          "entityName": "AGRESIVO (USA)",
+          "starts": 1,
+          "wins": 0,
+          "topThree": 0,
+          "topThreeRate": 0,
+          "winRate": 0,
+          "averageFinish": 13,
+          "seasonCount": 1,
+          "distinctHorseCount": 1,
+          "sampleConfidence": 17,
+          "score": 3,
+          "rank": 26
+        },
+        "dam": null,
+        "damsire": null
+      },
+      "notes": [
+        "Risk yüksek; tek başına güvenli favori gibi okunmamalı."
+      ]
+    }
+  ],
+  "methodology": {
+    "note": "Race prediction, tek koşu kartındaki HP, son form, jokey gücü, mesafe/orijin dayanıklılığı, sahip ve geçmiş Gazi context sinyallerini açıklanabilir şekilde puanlar.",
+    "limitation": "Bu modül henüz idman, AGF, detaylı tempo ve atın tüm kariyer koşularını otomatik okumaz.",
+    "disclaimer": "Analiz çıktısıdır; kesin sonuç tahmini veya bahis önerisi değildir."
+  }
+}
